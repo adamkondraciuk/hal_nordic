@@ -44,24 +44,26 @@ NOTICE: This file has been modified by Nordic Semiconductor ASA.
 
 void SystemCoreClockUpdate(void)
 {
-    SystemCoreClock = __SYSTEM_CLOCK;
+    SystemCoreClock = __SYSTEM_CLOCK >> (NRF_CLOCK_NS->HFCLKCTRL & (CLOCK_HFCLKCTRL_HCLK_Msk));
 }
 
 void SystemInit(void)
 {
     /* Trimming of the device. Copy all the trimming values from FICR into the target addresses. Trim
      until one ADDR is not initialized. */
-    uint32_t index = 0;
-    for (index = 0; index < 32ul && NRF_FICR_NS->TRIMCNF[index].ADDR != (uint32_t *)0xFFFFFFFFul; index++){
-        #if defined ( __ICCARM__ )
-            /* IAR will complain about the order of volatile pointer accesses. */
-            #pragma diag_suppress=Pa082
-        #endif
-        *NRF_FICR_NS->TRIMCNF[index].ADDR = NRF_FICR_NS->TRIMCNF[index].DATA;
-        #if defined ( __ICCARM__ )
-            #pragma diag_default=Pa082
-        #endif
-    }
+    #if !defined (DISABLE_FICR_TRIMCNF)
+        uint32_t index = 0;
+        for (index = 0; index < 32ul && NRF_FICR_NS->TRIMCNF[index].ADDR != (uint32_t *)0xFFFFFFFFul; index++){
+          #if defined ( __ICCARM__ )
+              /* IAR will complain about the order of volatile pointer accesses. */
+              #pragma diag_suppress=Pa082
+          #endif
+          *NRF_FICR_NS->TRIMCNF[index].ADDR = NRF_FICR_NS->TRIMCNF[index].DATA;
+          #if defined ( __ICCARM__ )
+              #pragma diag_default=Pa082
+          #endif
+        }
+    #endif
 
     /* Workaround for Errata 49 "SLEEPENTER and SLEEPEXIT events asserted after pin reset" found at the Errata document
        for your device located at https://infocenter.nordicsemi.com/index.jsp  */
@@ -81,7 +83,7 @@ void SystemInit(void)
         if (NRF_RESET_NS->RESETREAS & RESET_RESETREAS_RESETPIN_Msk){
             NRF_RESET_NS->RESETREAS = ~RESET_RESETREAS_RESETPIN_Msk;
         }
-    }    
+    }
 
     SystemCoreClockUpdate();
 }

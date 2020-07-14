@@ -45,6 +45,31 @@ NOTICE: This file has been modified by Nordic Semiconductor ASA.
 #define TRACE_TRACEDATA2_PIN (24)
 #define TRACE_TRACEDATA3_PIN (25)
 
+#define ARM_CS_LOCK       0x00000000ul
+#define ARM_CS_UNLOCK     0xC5ACCE55ul
+
+#define CS_TIMESTAMP_BASE 0xE0053000ul
+#define CS_TIMESTAMP_CCNTR ((uint32_t *)(CS_TIMESTAMP_BASE | 0x00ul))
+#define CS_TIMESTAMP_CCNTR_Enable 0x00000001ul
+
+#define ATB_FUNNEL_CTRL_SlaveMask      (0xFFul)
+#define ATB_FUNNEL_CTRL_EnSlave(slave) (1 << slave)
+#define ATB_FUNNEL_CTRL_HoldTime(ht) (ht << 8)
+#define ATB_FUNNEL_PRICTRL_SetPri(slave, pri) ((pri & 0x7) << (slave * 3))
+
+#define ATB_FUNNEL_CM33 0xE005A000ul
+#define ATB_FUNNEL_COMMON 0xE005B000ul
+#define ATB_FUNNEL_CTRL(base)    ((uint32_t *)(base | 0x000ul))
+#define ATB_FUNNEL_PRICTRL(base) ((uint32_t *)(base | 0x004ul))
+#define ATB_FUNNEL_LAR(base)     ((uint32_t *)(base | 0xFB0ul))
+
+#define ATB_REPLICATOR_IDFILTER_DisFilterId(id)      (1 << id)
+
+#define ATB_REPLICATOR_BASE 0xE0058000ul
+#define ATB_REPLICATOR_IDFILTER0 ((uint32_t *)(ATB_REPLICATOR_BASE | 0x000ul))
+#define ATB_REPLICATOR_IDFILTER1 ((uint32_t *)(ATB_REPLICATOR_BASE | 0x004ul))
+#define ATB_REPLICATOR_LAR       ((uint32_t *)(ATB_REPLICATOR_BASE | 0xFB0ul))
+
 #if defined ( __CC_ARM )
     uint32_t SystemCoreClock __attribute__((used)) = __SYSTEM_CLOCK;  
 #elif defined ( __ICCARM__ )
@@ -88,7 +113,7 @@ void SystemInit(void)
             NRF_POWER_S->EVENTS_SLEEPENTER = (POWER_EVENTS_SLEEPENTER_EVENTS_SLEEPENTER_NotGenerated << POWER_EVENTS_SLEEPENTER_EVENTS_SLEEPENTER_Pos);
             NRF_POWER_S->EVENTS_SLEEPEXIT = (POWER_EVENTS_SLEEPEXIT_EVENTS_SLEEPEXIT_NotGenerated << POWER_EVENTS_SLEEPEXIT_EVENTS_SLEEPEXIT_Pos);
         }
-
+        
         /* Workaround for Errata 14 "REGULATORS: LDO mode at startup" found at the Errata document
             for your device located at https://infocenter.nordicsemi.com/index.jsp  */
         if (nrf91_errata_14()){
@@ -117,16 +142,18 @@ void SystemInit(void)
 
         /* Trimming of the device. Copy all the trimming values from FICR into the target addresses. Trim
          until one ADDR is not initialized. */
-        uint32_t index = 0;
-        for (index = 0; index < 256ul && NRF_FICR_S->TRIMCNF[index].ADDR != 0xFFFFFFFFul; index++){
-          #if defined ( __ICCARM__ )
-              #pragma diag_suppress=Pa082
-          #endif
-          *(volatile uint32_t *)NRF_FICR_S->TRIMCNF[index].ADDR = NRF_FICR_S->TRIMCNF[index].DATA;
-          #if defined ( __ICCARM__ )
-              #pragma diag_default=Pa082
-          #endif
-        }
+        #if !defined (DISABLE_FICR_TRIMCNF)
+            uint32_t index = 0;
+            for (index = 0; index < 256ul && NRF_FICR_S->TRIMCNF[index].ADDR != 0xFFFFFFFFul; index++){
+              #if defined ( __ICCARM__ )
+                  #pragma diag_suppress=Pa082
+              #endif
+              *(volatile uint32_t *)NRF_FICR_S->TRIMCNF[index].ADDR = NRF_FICR_S->TRIMCNF[index].DATA;
+              #if defined ( __ICCARM__ )
+                  #pragma diag_default=Pa082
+              #endif
+            }
+        #endif
 
         /* Set UICR->HFXOSRC and UICR->HFXOCNT to working defaults if UICR was erased */
         if (uicr_HFXOSRC_erased() || uicr_HFXOCNT_erased()) {
@@ -192,24 +219,63 @@ void SystemInit(void)
             // Set trace port speed to 32 MHz
             NRF_TAD_S->TRACEPORTSPEED = TAD_TRACEPORTSPEED_TRACEPORTSPEED_32MHz;
 
-            *((uint32_t *)(0xE0053000ul)) = 0x00000001ul;
-            
-            *((uint32_t *)(0xE005AFB0ul))  = 0xC5ACCE55ul;
-            *((uint32_t *)(0xE005A000ul)) &= 0xFFFFFF00ul;
-            *((uint32_t *)(0xE005A004ul))  = 0x00000009ul;
-            *((uint32_t *)(0xE005A000ul))  = 0x00000303ul;
-            *((uint32_t *)(0xE005AFB0ul))  = 0x00000000ul;
+            //-----------------------------------------------------------------------------
+            // Timestamp configuration, base address 0xE0053000
+            //-----------------------------------------------------------------------------
 
-            *((uint32_t *)(0xE005BFB0ul))  = 0xC5ACCE55ul;
-            *((uint32_t *)(0xE005B000ul)) &= 0xFFFFFF00ul;
-            *((uint32_t *)(0xE005B004ul))  = 0x00003000ul;
-            *((uint32_t *)(0xE005B000ul))  = 0x00000308ul;
-            *((uint32_t *)(0xE005BFB0ul))  = 0x00000000ul;
+            *CS_TIMESTAMP_CCNTR = CS_TIMESTAMP_CCNTR_Enable;  // The counter is enabled and is incrementing
 
-            *((uint32_t *)(0xE0058FB0ul)) = 0xC5ACCE55ul;
-            *((uint32_t *)(0xE0058000ul)) = 0x00000000ul;
-            *((uint32_t *)(0xE0058004ul)) = 0x00000000ul;
-            *((uint32_t *)(0xE0058FB0ul)) = 0x00000000ul;
+            //-----------------------------------------------------------------------------
+            // C-M33F Atb Funnel configuration, base address 0xE005A000
+            //-----------------------------------------------------------------------------
+
+            *ATB_FUNNEL_LAR(ATB_FUNNEL_CM33) = ARM_CS_UNLOCK; // Clear the software lock
+
+            // Disable all sources to set up Priority value and set 4 transactions hold time
+            *ATB_FUNNEL_CTRL(ATB_FUNNEL_CM33) &= ~ATB_FUNNEL_CTRL_SlaveMask;
+
+            // Priority value of the first and second slave port
+            *ATB_FUNNEL_PRICTRL(ATB_FUNNEL_CM33) = ATB_FUNNEL_PRICTRL_SetPri(0, 1)
+                                                 | ATB_FUNNEL_PRICTRL_SetPri(1, 1);
+
+            // Enable slave port 0 and 1
+            *ATB_FUNNEL_CTRL(ATB_FUNNEL_CM33) = ATB_FUNNEL_CTRL_HoldTime(3)
+                                              | ATB_FUNNEL_CTRL_EnSlave(0)
+                                              | ATB_FUNNEL_CTRL_EnSlave(1);
+
+            *ATB_FUNNEL_LAR(ATB_FUNNEL_CM33) = ARM_CS_LOCK;   // Set the software lock
+
+            //-----------------------------------------------------------------------------
+            // Common Atb Funnel configuration, base address 0xE005B000
+            //-----------------------------------------------------------------------------
+
+            *ATB_FUNNEL_LAR(ATB_FUNNEL_COMMON) = ARM_CS_UNLOCK; // Clear the software lock
+
+            // Disable all sources to set up Priority value and set 4 transactions hold time
+            *ATB_FUNNEL_CTRL(ATB_FUNNEL_COMMON) &= ~ATB_FUNNEL_CTRL_SlaveMask;
+
+            // Priority value of the fourth slave port
+            *ATB_FUNNEL_PRICTRL(ATB_FUNNEL_COMMON) = ATB_FUNNEL_PRICTRL_SetPri(3, 4);
+
+             // Enable slave port 3
+            *ATB_FUNNEL_CTRL(ATB_FUNNEL_COMMON) = ATB_FUNNEL_CTRL_HoldTime(3)
+                                                | ATB_FUNNEL_CTRL_EnSlave(3);
+
+            *ATB_FUNNEL_LAR(ATB_FUNNEL_COMMON) = ARM_CS_LOCK;   // Set the software lock
+
+            //-----------------------------------------------------------------------------
+            // Atb Replicator configuration, base address 0xE0058000
+            //-----------------------------------------------------------------------------
+
+            *ATB_REPLICATOR_LAR = ARM_CS_UNLOCK; // Clear the software lock
+
+            // Disable the TPIU id filter
+            *ATB_REPLICATOR_IDFILTER0 = 0;
+
+            // Disable the ETB id filter
+            *ATB_REPLICATOR_IDFILTER1 = 0;
+
+            *ATB_REPLICATOR_LAR = ARM_CS_LOCK;   // Set the software lock
 
             /* Rom table does not list ETB, or TPIU base addresses.
              * Some debug probes may require manual configuration of these peripherals to enable tracing.
@@ -227,9 +293,9 @@ void SystemInit(void)
     * compiler. Since the FPU consumes energy, remember to disable FPU use in the compiler if floating point unit
     * operations are not used in your code. */
     #if (__FPU_USED == 1)
-      SCB->CPACR |= (3UL << 20) | (3UL << 22);
-      __DSB();
-      __ISB();
+        SCB->CPACR |= (3UL << 20) | (3UL << 22);
+        __DSB();
+        __ISB();
     #endif
     
     SystemCoreClockUpdate();
@@ -254,6 +320,7 @@ void SystemInit(void)
         }
         return false;
     }
+
 #endif
 
 /*lint --flb "Leave library region" */
