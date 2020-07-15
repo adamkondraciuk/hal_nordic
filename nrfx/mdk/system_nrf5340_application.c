@@ -74,7 +74,7 @@ void SystemInit(void)
         /* Set all ARM SAU regions to NonSecure if TrustZone extensions are enabled.
         * Nordic SPU should handle Secure Attribution tasks */
         #if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U)
-          SAU->CTRL |= (1 << SAU_CTRL_ALLNS_Pos);
+            SAU->CTRL |= (1 << SAU_CTRL_ALLNS_Pos);
         #endif
 
         /* Workaround for Errata 97 "ERASEPROTECT, APPROTECT, or startup problems" found at the Errata document
@@ -89,20 +89,22 @@ void SystemInit(void)
             }
         }
 
-        /* Trimming of the device. Copy all the trimming values from FICR into the target addresses. Trim
-         until one ADDR is not initialized. */
-        uint32_t index = 0;
-        for (index = 0; index < 32ul && NRF_FICR_S->TRIMCNF[index].ADDR != (uint32_t *)0xFFFFFFFFul; index++){
-            #if defined ( __ICCARM__ )
-                /* IAR will complain about the order of volatile pointer accesses. */
-                #pragma diag_suppress=Pa082
-            #endif
-            *NRF_FICR_S->TRIMCNF[index].ADDR = NRF_FICR_S->TRIMCNF[index].DATA;
-            #if defined ( __ICCARM__ )
-                #pragma diag_default=Pa082
-            #endif
-        }
-
+        #if !defined (DISABLE_FICR_TRIMCNF)
+            /* Trimming of the device. Copy all the trimming values from FICR into the target addresses. Trim
+             until one ADDR is not initialized. */
+            uint32_t index = 0;
+            for (index = 0; index < 32ul && NRF_FICR_S->TRIMCNF[index].ADDR != (uint32_t *)0xFFFFFFFFul; index++){
+                #if defined ( __ICCARM__ )
+                    /* IAR will complain about the order of volatile pointer accesses. */
+                    #pragma diag_suppress=Pa082
+                #endif
+                *NRF_FICR_S->TRIMCNF[index].ADDR = NRF_FICR_S->TRIMCNF[index].DATA;
+                #if defined ( __ICCARM__ )
+                    #pragma diag_default=Pa082
+                #endif
+            }
+        #endif
+        
         /* errata 64 must be before errata 42, as errata 42 is dependant on the changes in errata 64*/
         /* Workaround for Errata 64 "VREGMAIN has invalid configuration when CPU is running at 128 MHz" found at the Errata document
            for your device located at https://infocenter.nordicsemi.com/index.jsp  */
@@ -137,7 +139,7 @@ void SystemInit(void)
                 NRF_POWER_S->EVENTS_SLEEPEXIT = 0;
             }
         }
-
+        
         /* Workaround for Errata 55 "Bits in RESETREAS are set when they should not be" found at the Errata document
            for your device located at https://infocenter.nordicsemi.com/index.jsp  */
         if (nrf53_errata_55())
@@ -153,7 +155,7 @@ void SystemInit(void)
         {
             *((volatile uint32_t *)0x5000470Cul) =0x65ul;
         }
-        
+
         #if defined(CONFIG_NFCT_PINS_AS_GPIOS)
 
             if ((NRF_UICR_S->NFCPINS & UICR_NFCPINS_PROTECT_Msk) == (UICR_NFCPINS_PROTECT_NFC << UICR_NFCPINS_PROTECT_Pos))
@@ -222,14 +224,13 @@ void SystemInit(void)
 
             // Set trace port speed to 64 MHz
             NRF_TAD_S->TRACEPORTSPEED = TAD_TRACEPORTSPEED_TRACEPORTSPEED_64MHz;
-
         #endif
 
-        /* Allow Non-Secure code to run FPU instructions.
+        /* Allow Non-Secure code to run FPU instructions. 
          * If only the secure code should control FPU power state these registers should be configured accordingly in the secure application code. */
         SCB->NSACR |= (3UL << 10);
     #endif
-
+    
     /* Enable the FPU if the compiler used floating point unit instructions. __FPU_USED is a MACRO defined by the
     * compiler. Since the FPU consumes energy, remember to disable FPU use in the compiler if floating point unit
     * operations are not used in your code. */
@@ -238,7 +239,7 @@ void SystemInit(void)
         __DSB();
         __ISB();
     #endif
-
+    
     SystemCoreClockUpdate();
 }
 

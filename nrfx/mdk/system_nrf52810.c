@@ -69,7 +69,7 @@ void SystemInit(void)
     if (nrf52_errata_31()){
         *(volatile uint32_t *)0x4000053C = ((*(volatile uint32_t *)0x10000244) & 0x0000E000) >> 13;
     }
-
+    
     #if defined (DEVELOP_IN_NRF52832)
     /* Workaround for Errata 32 "DIF: Debug session automatically enables TracePort pins" found at the Errata document
        for nRF52832 device located at https://infocenter.nordicsemi.com/index.jsp */
@@ -147,7 +147,7 @@ void SystemInit(void)
         if (NRF_POWER->RESETREAS & POWER_RESETREAS_RESETPIN_Msk){
             NRF_POWER->RESETREAS =  ~POWER_RESETREAS_RESETPIN_Msk;
         }
-    }
+    }    
     
     #if defined (DEVELOP_IN_NRF52832)
     /* Workaround for Errata 182 "RADIO: Fixes for anomalies #102, #106, and #107 do not take effect" found at the Errata document

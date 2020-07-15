@@ -3,33 +3,42 @@
 
 /*
 
-Copyright (c) 2010 - 2020, Nordic Semiconductor ASA All rights reserved.
+Copyright (c) 2010 - 2020, Nordic Semiconductor ASA
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
 
 1. Redistributions of source code must retain the above copyright notice, this
    list of conditions and the following disclaimer.
 
-2. Redistributions in binary form must reproduce the above copyright
-   notice, this list of conditions and the following disclaimer in the
-   documentation and/or other materials provided with the distribution.
+2. Redistributions in binary form, except as embedded into a Nordic
+   Semiconductor ASA integrated circuit in a product or a software update for
+   such product, must reproduce the above copyright notice, this list of
+   conditions and the following disclaimer in the documentation and/or other
+   materials provided with the distribution.
 
 3. Neither the name of Nordic Semiconductor ASA nor the names of its
    contributors may be used to endorse or promote products derived from this
    software without specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY, AND FITNESS FOR A PARTICULAR PURPOSE
-ARE DISCLAIMED. IN NO EVENT SHALL NORDIC SEMICONDUCTOR ASA OR CONTRIBUTORS BE
+4. This software, with or without modification, must only be used with a
+   Nordic Semiconductor ASA integrated circuit.
+
+5. Any software provided in binary form under this license must not be reverse
+   engineered, decompiled, modified and/or disassembled.
+
+THIS SOFTWARE IS PROVIDED BY NORDIC SEMICONDUCTOR ASA "AS IS" AND ANY EXPRESS
+OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY, NONINFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL NORDIC SEMICONDUCTOR ASA OR CONTRIBUTORS BE
 LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE.
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
@@ -118,7 +127,9 @@ static bool nrf51_errata_78(void) __UNUSED;
 
 static bool nrf51_errata_1(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_1)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -167,7 +178,9 @@ static bool nrf51_errata_1(void)
 
 static bool nrf51_errata_2(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_2)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -216,7 +229,9 @@ static bool nrf51_errata_2(void)
 
 static bool nrf51_errata_3(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_3)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -265,7 +280,9 @@ static bool nrf51_errata_3(void)
 
 static bool nrf51_errata_4(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_4)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         return false;
@@ -274,7 +291,9 @@ static bool nrf51_errata_4(void)
 
 static bool nrf51_errata_5(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_5)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         return false;
@@ -283,7 +302,9 @@ static bool nrf51_errata_5(void)
 
 static bool nrf51_errata_6(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_6)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -332,7 +353,9 @@ static bool nrf51_errata_6(void)
 
 static bool nrf51_errata_7(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_7)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -381,7 +404,9 @@ static bool nrf51_errata_7(void)
 
 static bool nrf51_errata_8(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_8)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -430,7 +455,9 @@ static bool nrf51_errata_8(void)
 
 static bool nrf51_errata_9(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_9)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -479,7 +506,9 @@ static bool nrf51_errata_9(void)
 
 static bool nrf51_errata_10(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_10)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -528,7 +557,9 @@ static bool nrf51_errata_10(void)
 
 static bool nrf51_errata_11(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_11)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -577,7 +608,9 @@ static bool nrf51_errata_11(void)
 
 static bool nrf51_errata_12(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_12)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -626,7 +659,9 @@ static bool nrf51_errata_12(void)
 
 static bool nrf51_errata_13(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_13)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -675,7 +710,9 @@ static bool nrf51_errata_13(void)
 
 static bool nrf51_errata_14(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_14)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -724,7 +761,9 @@ static bool nrf51_errata_14(void)
 
 static bool nrf51_errata_15(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_15)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -773,7 +812,9 @@ static bool nrf51_errata_15(void)
 
 static bool nrf51_errata_16(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_16)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -822,7 +863,9 @@ static bool nrf51_errata_16(void)
 
 static bool nrf51_errata_17(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_17)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -871,7 +914,9 @@ static bool nrf51_errata_17(void)
 
 static bool nrf51_errata_18(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_18)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -920,7 +965,9 @@ static bool nrf51_errata_18(void)
 
 static bool nrf51_errata_19(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_19)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -969,7 +1016,9 @@ static bool nrf51_errata_19(void)
 
 static bool nrf51_errata_20(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_20)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1018,7 +1067,9 @@ static bool nrf51_errata_20(void)
 
 static bool nrf51_errata_21(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_21)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1067,7 +1118,9 @@ static bool nrf51_errata_21(void)
 
 static bool nrf51_errata_22(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_22)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1116,7 +1169,9 @@ static bool nrf51_errata_22(void)
 
 static bool nrf51_errata_23(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_23)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1165,7 +1220,9 @@ static bool nrf51_errata_23(void)
 
 static bool nrf51_errata_24(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_24)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1214,7 +1271,9 @@ static bool nrf51_errata_24(void)
 
 static bool nrf51_errata_25(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_25)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1263,7 +1322,9 @@ static bool nrf51_errata_25(void)
 
 static bool nrf51_errata_26(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_26)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1312,7 +1373,9 @@ static bool nrf51_errata_26(void)
 
 static bool nrf51_errata_27(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_27)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1361,7 +1424,9 @@ static bool nrf51_errata_27(void)
 
 static bool nrf51_errata_28(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_28)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1410,7 +1475,9 @@ static bool nrf51_errata_28(void)
 
 static bool nrf51_errata_29(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_29)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1459,7 +1526,9 @@ static bool nrf51_errata_29(void)
 
 static bool nrf51_errata_30(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_30)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1508,7 +1577,9 @@ static bool nrf51_errata_30(void)
 
 static bool nrf51_errata_31(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_31)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1557,7 +1628,9 @@ static bool nrf51_errata_31(void)
 
 static bool nrf51_errata_32(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_32)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1606,7 +1679,9 @@ static bool nrf51_errata_32(void)
 
 static bool nrf51_errata_33(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_33)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1655,7 +1730,9 @@ static bool nrf51_errata_33(void)
 
 static bool nrf51_errata_34(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_34)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1704,7 +1781,9 @@ static bool nrf51_errata_34(void)
 
 static bool nrf51_errata_35(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_35)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1753,7 +1832,9 @@ static bool nrf51_errata_35(void)
 
 static bool nrf51_errata_36(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_36)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1802,7 +1883,9 @@ static bool nrf51_errata_36(void)
 
 static bool nrf51_errata_37(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_37)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1851,7 +1934,9 @@ static bool nrf51_errata_37(void)
 
 static bool nrf51_errata_38(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_38)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1900,7 +1985,9 @@ static bool nrf51_errata_38(void)
 
 static bool nrf51_errata_39(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_39)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1949,7 +2036,9 @@ static bool nrf51_errata_39(void)
 
 static bool nrf51_errata_40(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_40)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -1998,7 +2087,9 @@ static bool nrf51_errata_40(void)
 
 static bool nrf51_errata_41(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_41)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2047,7 +2138,9 @@ static bool nrf51_errata_41(void)
 
 static bool nrf51_errata_42(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_42)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2096,7 +2189,9 @@ static bool nrf51_errata_42(void)
 
 static bool nrf51_errata_43(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_43)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2145,7 +2240,9 @@ static bool nrf51_errata_43(void)
 
 static bool nrf51_errata_44(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_44)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2194,7 +2291,9 @@ static bool nrf51_errata_44(void)
 
 static bool nrf51_errata_45(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_45)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2243,7 +2342,9 @@ static bool nrf51_errata_45(void)
 
 static bool nrf51_errata_46(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_46)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2292,7 +2393,9 @@ static bool nrf51_errata_46(void)
 
 static bool nrf51_errata_47(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_47)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2341,7 +2444,9 @@ static bool nrf51_errata_47(void)
 
 static bool nrf51_errata_48(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_48)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2390,7 +2495,9 @@ static bool nrf51_errata_48(void)
 
 static bool nrf51_errata_49(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_49)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2439,7 +2546,9 @@ static bool nrf51_errata_49(void)
 
 static bool nrf51_errata_50(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_50)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         return false;
@@ -2448,7 +2557,9 @@ static bool nrf51_errata_50(void)
 
 static bool nrf51_errata_51(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_51)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         return false;
@@ -2457,7 +2568,9 @@ static bool nrf51_errata_51(void)
 
 static bool nrf51_errata_52(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_52)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         return false;
@@ -2466,7 +2579,9 @@ static bool nrf51_errata_52(void)
 
 static bool nrf51_errata_53(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_53)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         return false;
@@ -2475,7 +2590,9 @@ static bool nrf51_errata_53(void)
 
 static bool nrf51_errata_54(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_54)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         return false;
@@ -2484,7 +2601,9 @@ static bool nrf51_errata_54(void)
 
 static bool nrf51_errata_55(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_55)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2533,7 +2652,9 @@ static bool nrf51_errata_55(void)
 
 static bool nrf51_errata_56(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_56)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2582,7 +2703,9 @@ static bool nrf51_errata_56(void)
 
 static bool nrf51_errata_57(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_57)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2631,7 +2754,9 @@ static bool nrf51_errata_57(void)
 
 static bool nrf51_errata_58(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_58)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2680,7 +2805,9 @@ static bool nrf51_errata_58(void)
 
 static bool nrf51_errata_59(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_59)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2729,7 +2856,9 @@ static bool nrf51_errata_59(void)
 
 static bool nrf51_errata_60(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_60)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2778,7 +2907,9 @@ static bool nrf51_errata_60(void)
 
 static bool nrf51_errata_61(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_61)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2827,7 +2958,9 @@ static bool nrf51_errata_61(void)
 
 static bool nrf51_errata_62(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_62)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2876,7 +3009,9 @@ static bool nrf51_errata_62(void)
 
 static bool nrf51_errata_63(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_63)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2925,7 +3060,9 @@ static bool nrf51_errata_63(void)
 
 static bool nrf51_errata_64(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_64)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -2974,7 +3111,9 @@ static bool nrf51_errata_64(void)
 
 static bool nrf51_errata_65(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_65)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -3023,7 +3162,9 @@ static bool nrf51_errata_65(void)
 
 static bool nrf51_errata_66(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_66)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -3072,7 +3213,9 @@ static bool nrf51_errata_66(void)
 
 static bool nrf51_errata_67(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_67)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -3121,7 +3264,9 @@ static bool nrf51_errata_67(void)
 
 static bool nrf51_errata_68(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_68)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -3170,7 +3315,9 @@ static bool nrf51_errata_68(void)
 
 static bool nrf51_errata_69(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_69)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -3219,7 +3366,9 @@ static bool nrf51_errata_69(void)
 
 static bool nrf51_errata_70(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_70)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -3268,7 +3417,9 @@ static bool nrf51_errata_70(void)
 
 static bool nrf51_errata_71(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_71)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -3317,7 +3468,9 @@ static bool nrf51_errata_71(void)
 
 static bool nrf51_errata_72(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_72)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -3366,7 +3519,9 @@ static bool nrf51_errata_72(void)
 
 static bool nrf51_errata_73(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_73)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -3415,7 +3570,9 @@ static bool nrf51_errata_73(void)
 
 static bool nrf51_errata_74(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_74)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -3464,7 +3621,9 @@ static bool nrf51_errata_74(void)
 
 static bool nrf51_errata_75(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_75)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -3513,7 +3672,9 @@ static bool nrf51_errata_75(void)
 
 static bool nrf51_errata_76(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_76)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\
@@ -3562,7 +3723,9 @@ static bool nrf51_errata_76(void)
 
 static bool nrf51_errata_77(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_77)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         return false;
@@ -3571,7 +3734,9 @@ static bool nrf51_errata_77(void)
 
 static bool nrf51_errata_78(void)
 {
-    #ifndef NRF51_SERIES
+    #if defined (DISABLE_WORKAROUND_78)
+        return false;
+    #elif !defined(NRF51_SERIES)
         return false;
     #else
         #if defined (NRF51422_XXAA) || defined (DEVELOP_IN_NRF51422)\

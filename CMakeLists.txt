@@ -23,6 +23,8 @@ if(CONFIG_HAS_NRFX)
   zephyr_compile_definitions_ifdef(CONFIG_SOC_NRF5340_CPUAPP NRF5340_XXAA_APPLICATION)
   zephyr_compile_definitions_ifdef(CONFIG_SOC_NRF5340_CPUNET NRF5340_XXAA_NETWORK)
   zephyr_compile_definitions_ifdef(CONFIG_SOC_NRF9160        NRF9160_XXAA)
+  zephyr_compile_definitions_ifdef(CONFIG_SOC_SERIES_HALTIUM HALTIUM_XXAA)
+  zephyr_compile_definitions_ifdef(CONFIG_SOC_HALTIUM_CPUAPP NRF_APPLICATION)
 
   # Connect Kconfig compilation option for Non-Secure software with option required by MDK/nrfx
   zephyr_compile_definitions_ifdef(CONFIG_ARM_NONSECURE_FIRMWARE NRF_TRUSTZONE_NONSECURE)
@@ -37,6 +39,7 @@ if(CONFIG_HAS_NRFX)
   zephyr_library_sources_ifdef(CONFIG_SOC_NRF5340_CPUAPP nrfx/mdk/system_nrf5340_application.c)
   zephyr_library_sources_ifdef(CONFIG_SOC_NRF5340_CPUNET nrfx/mdk/system_nrf5340_network.c)
   zephyr_library_sources_ifdef(CONFIG_SOC_NRF9160        nrfx/mdk/system_nrf9160.c)
+  zephyr_library_sources_ifdef(CONFIG_SOC_HALTIUM_CPUAPP nrfx/mdk/system_haltium_application.c)
 
   zephyr_library_sources(nrfx_glue.c)
 

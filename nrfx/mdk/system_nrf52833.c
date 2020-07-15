@@ -102,7 +102,7 @@ void SystemInit(void)
        for your device located at https://infocenter.nordicsemi.com/index.jsp  */
     if (nrf52_errata_136()){
         if (NRF_POWER->RESETREAS & POWER_RESETREAS_RESETPIN_Msk){
-            NRF_POWER->RESETREAS = ~POWER_RESETREAS_RESETPIN_Msk;
+            NRF_POWER->RESETREAS =  ~POWER_RESETREAS_RESETPIN_Msk;
         }
     }
     

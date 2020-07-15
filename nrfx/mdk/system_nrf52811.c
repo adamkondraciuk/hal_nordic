@@ -156,5 +156,4 @@ void SystemInit(void)
     SystemCoreClockUpdate();
 }
 
-
 /*lint --flb "Leave library region" */

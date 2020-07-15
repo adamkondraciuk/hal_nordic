@@ -33,7 +33,6 @@ NOTICE: This file has been modified by Nordic Semiconductor ASA.
 
 #define __SYSTEM_CLOCK_64M      (64000000UL)
 
-
 #if defined ( __CC_ARM )
     uint32_t SystemCoreClock __attribute__((used)) = __SYSTEM_CLOCK_64M;
 #elif defined ( __ICCARM__ )
@@ -120,7 +119,7 @@ void SystemInit(void)
     /* Workaround for Errata 120 "QSPI: Data read or written is corrupted" found at the Errata document
        for your device located at https://infocenter.nordicsemi.com/index.jsp  */
     if (nrf52_errata_120()){
-        *(volatile uint32_t *)0x40029640ul = 0x200ul;
+        *(volatile uint32_t *)0x40029640ul = 0x200ul; 
     }
     
     /* Workaround for Errata 136 "System: Bits in RESETREAS are set when they should not be" found at the Errata document
@@ -175,5 +174,6 @@ void SystemInit(void)
 
     SystemCoreClockUpdate();
 }
+
 
 /*lint --flb "Leave library region" */

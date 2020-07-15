@@ -33,6 +33,8 @@ NOTICE: This file has been modified by Nordic Semiconductor ASA.
 
 #define __SYSTEM_CLOCK_64M      (64000000UL)
 
+static bool ic_11060(void);
+
 
 #if defined ( __CC_ARM )
     uint32_t SystemCoreClock __attribute__((used)) = __SYSTEM_CLOCK_64M;
@@ -157,7 +159,14 @@ void SystemInit(void)
     if (nrf52_errata_182()){
         *(volatile uint32_t *) 0x4000173C |= (0x1 << 10);
     }
-    
+
+    /* Workaround for IC-11060 present in certain FPGA versions of Quark and Graviton. See Jira issue for details. */
+    if (ic_11060()){
+        NRF_NFCT->EVENTS_READY = 0;
+        NRF_NFCT->EVENTS_FIELDDETECTED = 0;
+        NRF_NFCT->EVENTS_ERROR = 0;
+    }
+
     /* Enable the FPU if the compiler used floating point unit instructions. __FPU_USED is a MACRO defined by the
      * compiler. Since the FPU consumes energy, remember to disable FPU use in the compiler if floating point unit
      * operations are not used in your code. */
@@ -201,6 +210,20 @@ void SystemInit(void)
     #endif
 
     SystemCoreClockUpdate();
+}
+
+
+static bool ic_11060(void)
+{
+    #if defined (DISABLE_WORKAROUND_IC11060)
+        return false;
+    #endif
+
+    if (NRF_NFCT->EVENTS_READY || NRF_NFCT->EVENTS_FIELDDETECTED || NRF_NFCT->EVENTS_ERROR){
+        return true;
+    }
+
+    return false;
 }
 
 

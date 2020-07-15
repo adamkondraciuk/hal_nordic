@@ -1,32 +1,41 @@
 /*
 
-Copyright (c) 2010 - 2020, Nordic Semiconductor ASA All rights reserved.
+Copyright (c) 2010 - 2020, Nordic Semiconductor ASA
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
 
 1. Redistributions of source code must retain the above copyright notice, this
    list of conditions and the following disclaimer.
 
-2. Redistributions in binary form must reproduce the above copyright
-   notice, this list of conditions and the following disclaimer in the
-   documentation and/or other materials provided with the distribution.
+2. Redistributions in binary form, except as embedded into a Nordic
+   Semiconductor ASA integrated circuit in a product or a software update for
+   such product, must reproduce the above copyright notice, this list of
+   conditions and the following disclaimer in the documentation and/or other
+   materials provided with the distribution.
 
 3. Neither the name of Nordic Semiconductor ASA nor the names of its
    contributors may be used to endorse or promote products derived from this
    software without specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY, AND FITNESS FOR A PARTICULAR PURPOSE
-ARE DISCLAIMED. IN NO EVENT SHALL NORDIC SEMICONDUCTOR ASA OR CONTRIBUTORS BE
+4. This software, with or without modification, must only be used with a
+   Nordic Semiconductor ASA integrated circuit.
+
+5. Any software provided in binary form under this license must not be reverse
+   engineered, decompiled, modified and/or disassembled.
+
+THIS SOFTWARE IS PROVIDED BY NORDIC SEMICONDUCTOR ASA "AS IS" AND ANY EXPRESS
+OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY, NONINFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL NORDIC SEMICONDUCTOR ASA OR CONTRIBUTORS BE
 LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE.
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
@@ -35,8 +44,1453 @@ POSSIBILITY OF SUCH DAMAGE.
 
 /*lint ++flb "Enter library region" */
 
+/* Peripheral: AMLI */
+/* Description: AHB Multi-Layer Interface 0 */
+
+/* Register: AMLI_RAMPRI_CPU */
+/* Description: AHB bus master priority register for CPU */
+
+/* Bit 0 : Priority register for RAM AHB slave */
+#define AMLI_RAMPRI_CPU_RAM_Pos (0UL) /*!< Position of RAM field. */
+#define AMLI_RAMPRI_CPU_RAM_Msk (0x1UL << AMLI_RAMPRI_CPU_RAM_Pos) /*!< Bit mask of RAM field. */
+#define AMLI_RAMPRI_CPU_RAM_Pri0 (0UL) /*!< Priority 0 */
+#define AMLI_RAMPRI_CPU_RAM_Pri1 (1UL) /*!< Priority 1 */
+
+/* Register: AMLI_RAMPRI_EXTRAM */
+/* Description: Description collection: AHB bus master priority register for external RAM slave port (EXTRAMs) */
+
+/* Bit 0 : Priority register for RAM AHB slave */
+#define AMLI_RAMPRI_EXTRAM_RAM_Pos (0UL) /*!< Position of RAM field. */
+#define AMLI_RAMPRI_EXTRAM_RAM_Msk (0x1UL << AMLI_RAMPRI_EXTRAM_RAM_Pos) /*!< Bit mask of RAM field. */
+#define AMLI_RAMPRI_EXTRAM_RAM_Pri0 (0UL) /*!< Priority 0 */
+#define AMLI_RAMPRI_EXTRAM_RAM_Pri1 (1UL) /*!< Priority 1 */
+
+
+/* Peripheral: CC_AES */
+/* Description: CRYPTOCELL AES engine */
+
+/* Register: CC_AES_AES_KEY_0_0 */
+/* Description: Bits 31:0 of AES_KEY_0 key in non-tunneling operations, and as the first tunnel stage key in tunneling operations. */
+
+/* Bits 31..0 : Bits 31:0 of AES_KEY_0. */
+#define CC_AES_AES_KEY_0_0_AES_KEY_0_0_Pos (0UL) /*!< Position of AES_KEY_0_0 field. */
+#define CC_AES_AES_KEY_0_0_AES_KEY_0_0_Msk (0xFFFFFFFFUL << CC_AES_AES_KEY_0_0_AES_KEY_0_0_Pos) /*!< Bit mask of AES_KEY_0_0 field. */
+
+/* Register: CC_AES_AES_KEY_0_1 */
+/* Description: Bits 63:32 of AES_KEY_0 key in non-tunneling operations, and as the first tunnel stage key in tunneling operations. */
+
+/* Bits 31..0 : Bits 63:32 of AES_KEY_0. */
+#define CC_AES_AES_KEY_0_1_AES_KEY_0_1_Pos (0UL) /*!< Position of AES_KEY_0_1 field. */
+#define CC_AES_AES_KEY_0_1_AES_KEY_0_1_Msk (0xFFFFFFFFUL << CC_AES_AES_KEY_0_1_AES_KEY_0_1_Pos) /*!< Bit mask of AES_KEY_0_1 field. */
+
+/* Register: CC_AES_AES_KEY_0_2 */
+/* Description: Bits 95:64 of AES_KEY_0 key in non-tunneling operations, and as the first tunnel stage key in tunneling operations. */
+
+/* Bits 31..0 : Bits 95:64 of AES_KEY_0. */
+#define CC_AES_AES_KEY_0_2_AES_KEY_0_2_Pos (0UL) /*!< Position of AES_KEY_0_2 field. */
+#define CC_AES_AES_KEY_0_2_AES_KEY_0_2_Msk (0xFFFFFFFFUL << CC_AES_AES_KEY_0_2_AES_KEY_0_2_Pos) /*!< Bit mask of AES_KEY_0_2 field. */
+
+/* Register: CC_AES_AES_KEY_0_3 */
+/* Description: Bits 127:96 of AES_KEY_0 key in non-tunneling operations, and as the first tunnel stage key in tunneling operations. */
+
+/* Bits 31..0 : Bits 127:96 of AES_KEY_0. */
+#define CC_AES_AES_KEY_0_3_AES_KEY_0_3_Pos (0UL) /*!< Position of AES_KEY_0_3 field. */
+#define CC_AES_AES_KEY_0_3_AES_KEY_0_3_Msk (0xFFFFFFFFUL << CC_AES_AES_KEY_0_3_AES_KEY_0_3_Pos) /*!< Bit mask of AES_KEY_0_3 field. */
+
+/* Register: CC_AES_AES_IV_0_0 */
+/* Description: Bits 31:0 of AES_IV_0 Initialization Value (IV) register in non-tunneling operations, and as the first tunnel stage IV register in tunneling operations. */
+
+/* Bits 31..0 : Bits 31:0 of AES_IV_0 */
+#define CC_AES_AES_IV_0_0_AES_IV_0_0_Pos (0UL) /*!< Position of AES_IV_0_0 field. */
+#define CC_AES_AES_IV_0_0_AES_IV_0_0_Msk (0xFFFFFFFFUL << CC_AES_AES_IV_0_0_AES_IV_0_0_Pos) /*!< Bit mask of AES_IV_0_0 field. */
+
+/* Register: CC_AES_AES_IV_0_1 */
+/* Description: Bits 63:32 of AES_IV_0 Initialization Value (IV) register in non-tunneling operations, and as the first tunnel stage IV register in tunneling operations. */
+
+/* Bits 31..0 : Bits 63:32 of AES_IV_0. */
+#define CC_AES_AES_IV_0_1_AES_IV_0_1_Pos (0UL) /*!< Position of AES_IV_0_1 field. */
+#define CC_AES_AES_IV_0_1_AES_IV_0_1_Msk (0xFFFFFFFFUL << CC_AES_AES_IV_0_1_AES_IV_0_1_Pos) /*!< Bit mask of AES_IV_0_1 field. */
+
+/* Register: CC_AES_AES_IV_0_2 */
+/* Description: Bits 95:64 of AES_IV_0 Initialization Value (IV) register in non-tunneling operations, and as the first tunnel stage IV register in tunneling operations. */
+
+/* Bits 31..0 : Bits 95:64 of AES_IV_0. */
+#define CC_AES_AES_IV_0_2_AES_IV_0_2_Pos (0UL) /*!< Position of AES_IV_0_2 field. */
+#define CC_AES_AES_IV_0_2_AES_IV_0_2_Msk (0xFFFFFFFFUL << CC_AES_AES_IV_0_2_AES_IV_0_2_Pos) /*!< Bit mask of AES_IV_0_2 field. */
+
+/* Register: CC_AES_AES_IV_0_3 */
+/* Description: Bits 127:96 of AES_IV_0 Initialization Value (IV) register in non-tunneling operations, and as the first tunnel stage IV register in tunneling operations. */
+
+/* Bits 31..0 : Bits 127:96 of AES_IV_0. */
+#define CC_AES_AES_IV_0_3_AES_IV_0_3_Pos (0UL) /*!< Position of AES_IV_0_3 field. */
+#define CC_AES_AES_IV_0_3_AES_IV_0_3_Msk (0xFFFFFFFFUL << CC_AES_AES_IV_0_3_AES_IV_0_3_Pos) /*!< Bit mask of AES_IV_0_3 field. */
+
+/* Register: CC_AES_AES_CTR_0_0 */
+/* Description: Bits 31:0 of AES_CTR_0 AES counter (CTR) register in non-tunneling operations, and as the first tunnel stage CTR register in tunneling operations. */
+
+/* Bits 31..0 : Bits 31:0 of AES_CTR_0. */
+#define CC_AES_AES_CTR_0_0_AES_CTR_0_0_Pos (0UL) /*!< Position of AES_CTR_0_0 field. */
+#define CC_AES_AES_CTR_0_0_AES_CTR_0_0_Msk (0xFFFFFFFFUL << CC_AES_AES_CTR_0_0_AES_CTR_0_0_Pos) /*!< Bit mask of AES_CTR_0_0 field. */
+
+/* Register: CC_AES_AES_CTR_0_1 */
+/* Description: Bits 63:32 of AES_CTR_0 AES counter (CTR) register in non-tunneling operations, and as the first tunnel stage CTR register in tunneling operations. */
+
+/* Bits 31..0 : Bits 63:32 of AES_CTR_0. */
+#define CC_AES_AES_CTR_0_1_AES_CTR_0_1_Pos (0UL) /*!< Position of AES_CTR_0_1 field. */
+#define CC_AES_AES_CTR_0_1_AES_CTR_0_1_Msk (0xFFFFFFFFUL << CC_AES_AES_CTR_0_1_AES_CTR_0_1_Pos) /*!< Bit mask of AES_CTR_0_1 field. */
+
+/* Register: CC_AES_AES_CTR_0_2 */
+/* Description: Bits 95:64 of AES_CTR_0 AES counter (CTR) register in non-tunneling operations, and as the first tunnel stage CTR register in tunneling operations. */
+
+/* Bits 31..0 : Bits 95:64 of AES_CTR_0. */
+#define CC_AES_AES_CTR_0_2_AES_CTR_0_2_Pos (0UL) /*!< Position of AES_CTR_0_2 field. */
+#define CC_AES_AES_CTR_0_2_AES_CTR_0_2_Msk (0xFFFFFFFFUL << CC_AES_AES_CTR_0_2_AES_CTR_0_2_Pos) /*!< Bit mask of AES_CTR_0_2 field. */
+
+/* Register: CC_AES_AES_CTR_0_3 */
+/* Description: Bits 127:96 of AES_CTR_0 AES counter (CTR) register in non-tunneling operations, and as the first tunnel stage CTR register in tunneling operations. */
+
+/* Bits 31..0 : Bits 127:96 of AES_CTR_0. */
+#define CC_AES_AES_CTR_0_3_AES_CTR_0_3_Pos (0UL) /*!< Position of AES_CTR_0_3 field. */
+#define CC_AES_AES_CTR_0_3_AES_CTR_0_3_Msk (0xFFFFFFFFUL << CC_AES_AES_CTR_0_3_AES_CTR_0_3_Pos) /*!< Bit mask of AES_CTR_0_3 field. */
+
+/* Register: CC_AES_AES_BUSY */
+/* Description: This register is set when the AES core is active */
+
+/* Bit 0 : AES busy status */
+#define CC_AES_AES_BUSY_AES_BUSY_Pos (0UL) /*!< Position of AES_BUSY field. */
+#define CC_AES_AES_BUSY_AES_BUSY_Msk (0x1UL << CC_AES_AES_BUSY_AES_BUSY_Pos) /*!< Bit mask of AES_BUSY field. */
+#define CC_AES_AES_BUSY_AES_BUSY_Disabled (0UL) /*!< AES core is idle */
+#define CC_AES_AES_BUSY_AES_BUSY_Enabled (1UL) /*!< AES core is busy */
+
+/* Register: CC_AES_AES_SK */
+/* Description: Writing to this address trigger sampling of the HW key to the AES_KEY_0 register */
+
+/* Bit 0 : Sample HW key to AES_KEY_0 registers. */
+#define CC_AES_AES_SK_AES_SK_Pos (0UL) /*!< Position of AES_SK field. */
+#define CC_AES_AES_SK_AES_SK_Msk (0x1UL << CC_AES_AES_SK_AES_SK_Pos) /*!< Bit mask of AES_SK field. */
+
+/* Register: CC_AES_AES_CMAC_INIT */
+/* Description: Writing to this address triggers the AES engine generating of K1 and K2 for AES-CMAC operations. */
+
+/* Bit 0 : Generate K1 and K2 for AES-CMAC operations */
+#define CC_AES_AES_CMAC_INIT_AES_CMAC_INIT_Pos (0UL) /*!< Position of AES_CMAC_INIT field. */
+#define CC_AES_AES_CMAC_INIT_AES_CMAC_INIT_Msk (0x1UL << CC_AES_AES_CMAC_INIT_AES_CMAC_INIT_Pos) /*!< Bit mask of AES_CMAC_INIT field. */
+
+/* Register: CC_AES_AES_REMAINING_BYTES */
+/* Description: This register should be set with the amount of remaining bytes until the end of the current AES operation. */
+
+/* Bits 31..0 : Remaining bytes util the end of the current AES operation. */
+#define CC_AES_AES_REMAINING_BYTES_AES_REMAINING_BYTES_Pos (0UL) /*!< Position of AES_REMAINING_BYTES field. */
+#define CC_AES_AES_REMAINING_BYTES_AES_REMAINING_BYTES_Msk (0xFFFFFFFFUL << CC_AES_AES_REMAINING_BYTES_AES_REMAINING_BYTES_Pos) /*!< Bit mask of AES_REMAINING_BYTES field. */
+
+/* Register: CC_AES_AES_CONTROL */
+/* Description: This register holds the configuration of the AES engine */
+
+/* Bit 31 : Direct access, not DIN-DOUT. */
+#define CC_AES_AES_CONTROL_DIRECT_ACCESS_Pos (31UL) /*!< Position of DIRECT_ACCESS field. */
+#define CC_AES_AES_CONTROL_DIRECT_ACCESS_Msk (0x1UL << CC_AES_AES_CONTROL_DIRECT_ACCESS_Pos) /*!< Bit mask of DIRECT_ACCESS field. */
+#define CC_AES_AES_CONTROL_DIRECT_ACCESS_Disable (0UL) /*!< Access AES block through DIN-DOUT interface */
+#define CC_AES_AES_CONTROL_DIRECT_ACCESS_Enable (1UL) /*!< Access AES block directly */
+
+/* Bit 29 : This field determines the value that is written to AES_KEY_0, when AES_SK is kicked */
+#define CC_AES_AES_CONTROL_AES_XOR_CRYPTOKEY_Pos (29UL) /*!< Position of AES_XOR_CRYPTOKEY field. */
+#define CC_AES_AES_CONTROL_AES_XOR_CRYPTOKEY_Msk (0x1UL << CC_AES_AES_CONTROL_AES_XOR_CRYPTOKEY_Pos) /*!< Bit mask of AES_XOR_CRYPTOKEY field. */
+#define CC_AES_AES_CONTROL_AES_XOR_CRYPTOKEY_Disable (0UL) /*!< The value that is written to AES_KEY_0 is the value of the HW cryptokey as is. */
+#define CC_AES_AES_CONTROL_AES_XOR_CRYPTOKEY_Enable (1UL) /*!< The value that is written to AES_KEY_0 is the value of the HW cryptokey XORed with the current value of AES_KEY_0. */
+
+/* Bit 28 : This field determines for AES-TO-HASH-AND-DOUT tunneling operations, whether the AES outputs to the HASH the result of the first or the second tunneling stage. */
+#define CC_AES_AES_CONTROL_AES_OUT_MID_TUN_TO_HASH_Pos (28UL) /*!< Position of AES_OUT_MID_TUN_TO_HASH field. */
+#define CC_AES_AES_CONTROL_AES_OUT_MID_TUN_TO_HASH_Msk (0x1UL << CC_AES_AES_CONTROL_AES_OUT_MID_TUN_TO_HASH_Pos) /*!< Bit mask of AES_OUT_MID_TUN_TO_HASH field. */
+#define CC_AES_AES_CONTROL_AES_OUT_MID_TUN_TO_HASH_Disable (0UL) /*!< The AES engine writes to the hash the result of the second tunnel stage. */
+#define CC_AES_AES_CONTROL_AES_OUT_MID_TUN_TO_HASH_Enable (1UL) /*!< The AES engine writes to the hash the result of the first tunnel stage. */
+
+/* Bit 26 : This field determines whether the input data to the second tunnel stage is padded with zeroes (according to the remaining_bytes value) */
+#define CC_AES_AES_CONTROL_AES_TUNNEL_B1_PAD_EN_Pos (26UL) /*!< Position of AES_TUNNEL_B1_PAD_EN field. */
+#define CC_AES_AES_CONTROL_AES_TUNNEL_B1_PAD_EN_Msk (0x1UL << CC_AES_AES_CONTROL_AES_TUNNEL_B1_PAD_EN_Pos) /*!< Bit mask of AES_TUNNEL_B1_PAD_EN field. */
+#define CC_AES_AES_CONTROL_AES_TUNNEL_B1_PAD_EN_Disable (0UL) /*!< The data input to the second tunnel block is not padded with zeros. */
+#define CC_AES_AES_CONTROL_AES_TUNNEL_B1_PAD_EN_Enable (1UL) /*!< The data input to the second tunnel block is padded with zeros. */
+
+/* Bit 25 : This fields determines whether the AES output is the result of the first or second tunneling stage */
+#define CC_AES_AES_CONTROL_AES_OUTPUT_MID_TUNNEL_DATA_Pos (25UL) /*!< Position of AES_OUTPUT_MID_TUNNEL_DATA field. */
+#define CC_AES_AES_CONTROL_AES_OUTPUT_MID_TUNNEL_DATA_Msk (0x1UL << CC_AES_AES_CONTROL_AES_OUTPUT_MID_TUNNEL_DATA_Pos) /*!< Bit mask of AES_OUTPUT_MID_TUNNEL_DATA field. */
+#define CC_AES_AES_CONTROL_AES_OUTPUT_MID_TUNNEL_DATA_Disable (0UL) /*!< The AES engine outputs the result of the second tunnel stage (standard tunneling). */
+#define CC_AES_AES_CONTROL_AES_OUTPUT_MID_TUNNEL_DATA_Enable (1UL) /*!< The AES engine outputs the result of the first tunnel stage. */
+
+/* Bit 24 : This field determines whether the first tunnel stage performs encrypt or decrypt operation */
+#define CC_AES_AES_CONTROL_AES_TUNNEL0_ENCRYPT_Pos (24UL) /*!< Position of AES_TUNNEL0_ENCRYPT field. */
+#define CC_AES_AES_CONTROL_AES_TUNNEL0_ENCRYPT_Msk (0x1UL << CC_AES_AES_CONTROL_AES_TUNNEL0_ENCRYPT_Pos) /*!< Bit mask of AES_TUNNEL0_ENCRYPT field. */
+#define CC_AES_AES_CONTROL_AES_TUNNEL0_ENCRYPT_Decrypt (0UL) /*!< The first tunnel stage performs decrypt operations. */
+#define CC_AES_AES_CONTROL_AES_TUNNEL0_ENCRYPT_Encrypt (1UL) /*!< The first tunnel stage performs encrypt operations. */
+
+/* Bit 23 : This field determines for tunneling operations the data that is fed to the second tunneling stage. */
+#define CC_AES_AES_CONTROL_AES_TUN_B1_USES_PADDED_DATA_IN_Pos (23UL) /*!< Position of AES_TUN_B1_USES_PADDED_DATA_IN field. */
+#define CC_AES_AES_CONTROL_AES_TUN_B1_USES_PADDED_DATA_IN_Msk (0x1UL << CC_AES_AES_CONTROL_AES_TUN_B1_USES_PADDED_DATA_IN_Pos) /*!< Bit mask of AES_TUN_B1_USES_PADDED_DATA_IN field. */
+#define CC_AES_AES_CONTROL_AES_TUN_B1_USES_PADDED_DATA_IN_Disable (0UL) /*!< Use output of the first block - standard tunneling operation. */
+#define CC_AES_AES_CONTROL_AES_TUN_B1_USES_PADDED_DATA_IN_Enable (1UL) /*!< Use data_in after padding rather than the output of the first block. */
+
+/* Bit 22 : This field determines whether the second tunnel stage performs encrypt or decrypt operation. */
+#define CC_AES_AES_CONTROL_AES_TUNNEL1_DECRYPT_Pos (22UL) /*!< Position of AES_TUNNEL1_DECRYPT field. */
+#define CC_AES_AES_CONTROL_AES_TUNNEL1_DECRYPT_Msk (0x1UL << CC_AES_AES_CONTROL_AES_TUNNEL1_DECRYPT_Pos) /*!< Bit mask of AES_TUNNEL1_DECRYPT field. */
+#define CC_AES_AES_CONTROL_AES_TUNNEL1_DECRYPT_Encrypt (0UL) /*!< Second tunnel stage performs encrypt operations. */
+#define CC_AES_AES_CONTROL_AES_TUNNEL1_DECRYPT_Decrypt (1UL) /*!< Second tunnel stage performs decrypt operations. */
+
+/* Bits 15..14 : This field determines the AES key length of the second stage operation in tunneling operations. */
+#define CC_AES_AES_CONTROL_NK_KEY1_Pos (14UL) /*!< Position of NK_KEY1 field. */
+#define CC_AES_AES_CONTROL_NK_KEY1_Msk (0x3UL << CC_AES_AES_CONTROL_NK_KEY1_Pos) /*!< Bit mask of NK_KEY1 field. */
+#define CC_AES_AES_CONTROL_NK_KEY1_128Bits (0x0UL) /*!< 128 bits key length */
+#define CC_AES_AES_CONTROL_NK_KEY1_192Bits (0x1UL) /*!< 192 bits key length */
+#define CC_AES_AES_CONTROL_NK_KEY1_256Bits (0x2UL) /*!< 256 bits key length */
+
+/* Bits 13..12 : This field determines the AES Key length in non-tunneling operations, and the AES key length of the first stage in tunneling operations */
+#define CC_AES_AES_CONTROL_NK_KEY0_Pos (12UL) /*!< Position of NK_KEY0 field. */
+#define CC_AES_AES_CONTROL_NK_KEY0_Msk (0x3UL << CC_AES_AES_CONTROL_NK_KEY0_Pos) /*!< Bit mask of NK_KEY0 field. */
+#define CC_AES_AES_CONTROL_NK_KEY0_128Bits (0x0UL) /*!< 128 bits key length */
+#define CC_AES_AES_CONTROL_NK_KEY0_192Bits (0x1UL) /*!< 192 bits key length */
+#define CC_AES_AES_CONTROL_NK_KEY0_256Bits (0x2UL) /*!< 256 bits key length */
+
+/* Bit 10 : This field determines whether the AES performs dual-tunnel operations or standard non-tunneling operations. */
+#define CC_AES_AES_CONTROL_AES_TUNNEL_IS_ON_Pos (10UL) /*!< Position of AES_TUNNEL_IS_ON field. */
+#define CC_AES_AES_CONTROL_AES_TUNNEL_IS_ON_Msk (0x1UL << CC_AES_AES_CONTROL_AES_TUNNEL_IS_ON_Pos) /*!< Bit mask of AES_TUNNEL_IS_ON field. */
+#define CC_AES_AES_CONTROL_AES_TUNNEL_IS_ON_Disable (0UL) /*!< Non-tunneling mode */
+#define CC_AES_AES_CONTROL_AES_TUNNEL_IS_ON_Enable (1UL) /*!< Tunneling mode */
+
+/* Bit 8 : If MODE_KEY0 is set to CBC in combination with this field and this field, AES mode is CBC with ESSIV. */
+#define CC_AES_AES_CONTROL_CBC_IS_ESSIV_Pos (8UL) /*!< Position of CBC_IS_ESSIV field. */
+#define CC_AES_AES_CONTROL_CBC_IS_ESSIV_Msk (0x1UL << CC_AES_AES_CONTROL_CBC_IS_ESSIV_Pos) /*!< Bit mask of CBC_IS_ESSIV field. */
+
+/* Bits 7..5 : This field determines the AES mode of the second stage operation in tunneling operations */
+#define CC_AES_AES_CONTROL_MODE_KEY1_Pos (5UL) /*!< Position of MODE_KEY1 field. */
+#define CC_AES_AES_CONTROL_MODE_KEY1_Msk (0x7UL << CC_AES_AES_CONTROL_MODE_KEY1_Pos) /*!< Bit mask of MODE_KEY1 field. */
+#define CC_AES_AES_CONTROL_MODE_KEY1_ECB (0x0UL) /*!< Electronic Code Book mode */
+#define CC_AES_AES_CONTROL_MODE_KEY1_CBC (0x1UL) /*!< Cipher Block Chaining mode */
+#define CC_AES_AES_CONTROL_MODE_KEY1_CTR (0x2UL) /*!< Counter mode */
+#define CC_AES_AES_CONTROL_MODE_KEY1_CBCMAC (0x3UL) /*!< Cipher Block Chaining Message Authentication Code */
+#define CC_AES_AES_CONTROL_MODE_KEY1_XEXXTS (0x4UL) /*!< Xor-Encrypt-Xor (XEX)-based tweaked-codebook mode with ciphertext stealing (XTS) */
+#define CC_AES_AES_CONTROL_MODE_KEY1_XCBCMAC (0x5UL) /*!< AES in CBC mode with extensions to overcome fixed length limitations */
+#define CC_AES_AES_CONTROL_MODE_KEY1_OFB (0x6UL) /*!< AES Output FeedBack mode */
+#define CC_AES_AES_CONTROL_MODE_KEY1_CMAC (0x7UL) /*!< Cipher-based Message Authentication Code */
+
+/* Bits 4..2 : This field determines the AES mode in non-tunneling operations, and the AES mode of the first stage in tunneling operations */
+#define CC_AES_AES_CONTROL_MODE_KEY0_Pos (2UL) /*!< Position of MODE_KEY0 field. */
+#define CC_AES_AES_CONTROL_MODE_KEY0_Msk (0x7UL << CC_AES_AES_CONTROL_MODE_KEY0_Pos) /*!< Bit mask of MODE_KEY0 field. */
+#define CC_AES_AES_CONTROL_MODE_KEY0_ECB (0x0UL) /*!< Electronic Code Book mode */
+#define CC_AES_AES_CONTROL_MODE_KEY0_CBC (0x1UL) /*!< Cipher Block Chaining mode */
+#define CC_AES_AES_CONTROL_MODE_KEY0_CTR (0x2UL) /*!< Counter mode */
+#define CC_AES_AES_CONTROL_MODE_KEY0_CBCMAC (0x3UL) /*!< Cipher Block Chaining Message Authentication Code */
+#define CC_AES_AES_CONTROL_MODE_KEY0_XEXXTS (0x4UL) /*!< Xor-Encrypt-Xor (XEX)-based tweaked-codebook mode with ciphertext stealing (XTS) */
+#define CC_AES_AES_CONTROL_MODE_KEY0_XCBCMAC (0x5UL) /*!< AES in CBC mode with extensions to overcome fixed length limitations */
+#define CC_AES_AES_CONTROL_MODE_KEY0_OFB (0x6UL) /*!< AES Output FeedBack mode */
+#define CC_AES_AES_CONTROL_MODE_KEY0_CMAC (0x7UL) /*!< Cipher-based Message Authentication Code */
+
+/* Bit 1 : If MODE_KEY0 is set to CBC in combination with this field, AES mode is CBC-CTS. If MODE_KEY0 is set to CTR in combination with this field, AES mode is GCTR. */
+#define CC_AES_AES_CONTROL_MODE0_IS_CBC_CTS_Pos (1UL) /*!< Position of MODE0_IS_CBC_CTS field. */
+#define CC_AES_AES_CONTROL_MODE0_IS_CBC_CTS_Msk (0x1UL << CC_AES_AES_CONTROL_MODE0_IS_CBC_CTS_Pos) /*!< Bit mask of MODE0_IS_CBC_CTS field. */
+
+/* Bit 0 : This field determines whether the AES engine performs encrypt or decrypt operation in non-tunnel mode. */
+#define CC_AES_AES_CONTROL_DEC_KEY0_Pos (0UL) /*!< Position of DEC_KEY0 field. */
+#define CC_AES_AES_CONTROL_DEC_KEY0_Msk (0x1UL << CC_AES_AES_CONTROL_DEC_KEY0_Pos) /*!< Bit mask of DEC_KEY0 field. */
+#define CC_AES_AES_CONTROL_DEC_KEY0_Encrypt (0UL) /*!< Perform non-tunnel encrypt operations */
+#define CC_AES_AES_CONTROL_DEC_KEY0_Decrypt (1UL) /*!< Perform non-tunnel decrypt operations */
+
+/* Register: CC_AES_AES_HW_FLAGS */
+/* Description: This register holds the pre-synthesis HW flag configuration of the AES engine */
+
+/* Bit 12 : the DFA_CNTRMSR_EXIST flag */
+#define CC_AES_AES_HW_FLAGS_DFA_CNTRMSR_EXIST_Pos (12UL) /*!< Position of DFA_CNTRMSR_EXIST field. */
+#define CC_AES_AES_HW_FLAGS_DFA_CNTRMSR_EXIST_Msk (0x1UL << CC_AES_AES_HW_FLAGS_DFA_CNTRMSR_EXIST_Pos) /*!< Bit mask of DFA_CNTRMSR_EXIST field. */
+
+/* Bit 11 : the SECOND_REGS_SET_EXIST flag */
+#define CC_AES_AES_HW_FLAGS_SECOND_REGS_SET_EXIST_Pos (11UL) /*!< Position of SECOND_REGS_SET_EXIST field. */
+#define CC_AES_AES_HW_FLAGS_SECOND_REGS_SET_EXIST_Msk (0x1UL << CC_AES_AES_HW_FLAGS_SECOND_REGS_SET_EXIST_Pos) /*!< Bit mask of SECOND_REGS_SET_EXIST field. */
+
+/* Bit 10 : the AES_TUNNEL_EXISTS flag */
+#define CC_AES_AES_HW_FLAGS_AES_TUNNEL_EXISTS_Pos (10UL) /*!< Position of AES_TUNNEL_EXISTS field. */
+#define CC_AES_AES_HW_FLAGS_AES_TUNNEL_EXISTS_Msk (0x1UL << CC_AES_AES_HW_FLAGS_AES_TUNNEL_EXISTS_Pos) /*!< Bit mask of AES_TUNNEL_EXISTS field. */
+
+/* Bit 9 : the AES_SUPPORT_PREV_IV flag */
+#define CC_AES_AES_HW_FLAGS_AES_SUPPORT_PREV_IV_Pos (9UL) /*!< Position of AES_SUPPORT_PREV_IV field. */
+#define CC_AES_AES_HW_FLAGS_AES_SUPPORT_PREV_IV_Msk (0x1UL << CC_AES_AES_HW_FLAGS_AES_SUPPORT_PREV_IV_Pos) /*!< Bit mask of AES_SUPPORT_PREV_IV field. */
+
+/* Bit 8 : the USE_5_SBOXES flag */
+#define CC_AES_AES_HW_FLAGS_USE_5_SBOXES_Pos (8UL) /*!< Position of USE_5_SBOXES field. */
+#define CC_AES_AES_HW_FLAGS_USE_5_SBOXES_Msk (0x1UL << CC_AES_AES_HW_FLAGS_USE_5_SBOXES_Pos) /*!< Bit mask of USE_5_SBOXES field. */
+
+/* Bit 5 : the USE_SBOX_TABLE flag */
+#define CC_AES_AES_HW_FLAGS_USE_SBOX_TABLE_Pos (5UL) /*!< Position of USE_SBOX_TABLE field. */
+#define CC_AES_AES_HW_FLAGS_USE_SBOX_TABLE_Msk (0x1UL << CC_AES_AES_HW_FLAGS_USE_SBOX_TABLE_Pos) /*!< Bit mask of USE_SBOX_TABLE field. */
+
+/* Bit 4 : the ONLY_ENCRYPT flag */
+#define CC_AES_AES_HW_FLAGS_ONLY_ENCRYPT_Pos (4UL) /*!< Position of ONLY_ENCRYPT field. */
+#define CC_AES_AES_HW_FLAGS_ONLY_ENCRYPT_Msk (0x1UL << CC_AES_AES_HW_FLAGS_ONLY_ENCRYPT_Pos) /*!< Bit mask of ONLY_ENCRYPT field. */
+
+/* Bit 3 : the CTR_EXIST flag */
+#define CC_AES_AES_HW_FLAGS_CTR_EXIST_Pos (3UL) /*!< Position of CTR_EXIST field. */
+#define CC_AES_AES_HW_FLAGS_CTR_EXIST_Msk (0x1UL << CC_AES_AES_HW_FLAGS_CTR_EXIST_Pos) /*!< Bit mask of CTR_EXIST field. */
+
+/* Bit 2 : the DPA_CNTRMSR_EXIST flag */
+#define CC_AES_AES_HW_FLAGS_DPA_CNTRMSR_EXIST_Pos (2UL) /*!< Position of DPA_CNTRMSR_EXIST field. */
+#define CC_AES_AES_HW_FLAGS_DPA_CNTRMSR_EXIST_Msk (0x1UL << CC_AES_AES_HW_FLAGS_DPA_CNTRMSR_EXIST_Pos) /*!< Bit mask of DPA_CNTRMSR_EXIST field. */
+
+/* Bit 1 : the AES_LARGE_RKEK flag */
+#define CC_AES_AES_HW_FLAGS_AES_LARGE_RKEK_Pos (1UL) /*!< Position of AES_LARGE_RKEK field. */
+#define CC_AES_AES_HW_FLAGS_AES_LARGE_RKEK_Msk (0x1UL << CC_AES_AES_HW_FLAGS_AES_LARGE_RKEK_Pos) /*!< Bit mask of AES_LARGE_RKEK field. */
+
+/* Bit 0 : the SUPPORT_256_192_KEY flag */
+#define CC_AES_AES_HW_FLAGS_SUPPORT_256_192_KEY_Pos (0UL) /*!< Position of SUPPORT_256_192_KEY field. */
+#define CC_AES_AES_HW_FLAGS_SUPPORT_256_192_KEY_Msk (0x1UL << CC_AES_AES_HW_FLAGS_SUPPORT_256_192_KEY_Pos) /*!< Bit mask of SUPPORT_256_192_KEY field. */
+
+/* Register: CC_AES_AES_RBG_SEED */
+/* Description: The random 8 bits from the TRNG should be written to this address. It operates as the seed to the AES RBG's operation. */
+
+/* Bits 7..0 : Random 8 bits seed from TRNG. */
+#define CC_AES_AES_RBG_SEED_AES_RBG_SEED_Pos (0UL) /*!< Position of AES_RBG_SEED field. */
+#define CC_AES_AES_RBG_SEED_AES_RBG_SEED_Msk (0xFFUL << CC_AES_AES_RBG_SEED_AES_RBG_SEED_Pos) /*!< Bit mask of AES_RBG_SEED field. */
+
+/* Register: CC_AES_AES_CTR_NO_INCREMENT */
+/* Description: This register enables the AES CTR 'no increment' mode, in which the counter mode is not incremented between 2 blocks. */
+
+/* Bit 0 : This field enables the AES CTR 'no increment' mode, in which the counter mode is not incremented between 2 blocks. */
+#define CC_AES_AES_CTR_NO_INCREMENT_AES_CTR_NO_INCREMENT_Pos (0UL) /*!< Position of AES_CTR_NO_INCREMENT field. */
+#define CC_AES_AES_CTR_NO_INCREMENT_AES_CTR_NO_INCREMENT_Msk (0x1UL << CC_AES_AES_CTR_NO_INCREMENT_AES_CTR_NO_INCREMENT_Pos) /*!< Bit mask of AES_CTR_NO_INCREMENT field. */
+#define CC_AES_AES_CTR_NO_INCREMENT_AES_CTR_NO_INCREMENT_Disable (0UL) /*!< Counter always incremented between blocks */
+#define CC_AES_AES_CTR_NO_INCREMENT_AES_CTR_NO_INCREMENT_Enable (1UL) /*!< Do not increment counter between blocks */
+
+/* Register: CC_AES_AES_DFA_IS_ON */
+/* Description: Turn the Differential Fault Analysis (DFA) counter-measures on. */
+
+/* Bit 0 : Enable DFA counter-measure */
+#define CC_AES_AES_DFA_IS_ON_AES_DFA_IS_ON_Pos (0UL) /*!< Position of AES_DFA_IS_ON field. */
+#define CC_AES_AES_DFA_IS_ON_AES_DFA_IS_ON_Msk (0x1UL << CC_AES_AES_DFA_IS_ON_AES_DFA_IS_ON_Pos) /*!< Bit mask of AES_DFA_IS_ON field. */
+#define CC_AES_AES_DFA_IS_ON_AES_DFA_IS_ON_Disable (0UL) /*!< DFA counter-measure disabled */
+#define CC_AES_AES_DFA_IS_ON_AES_DFA_IS_ON_Enable (1UL) /*!< DFA counter-measure enabled */
+
+/* Register: CC_AES_AES_SW_RESET */
+/* Description: Request reset of AES engine from software. */
+
+/* Bit 0 : Reset AES engine */
+#define CC_AES_AES_SW_RESET_AES_SW_RESET_Pos (0UL) /*!< Position of AES_SW_RESET field. */
+#define CC_AES_AES_SW_RESET_AES_SW_RESET_Msk (0x1UL << CC_AES_AES_SW_RESET_AES_SW_RESET_Pos) /*!< Bit mask of AES_SW_RESET field. */
+#define CC_AES_AES_SW_RESET_AES_SW_RESET_Disable (0UL) /*!< DFA counter-measure disabled */
+#define CC_AES_AES_SW_RESET_AES_SW_RESET_Enable (1UL) /*!< DFA counter-measure enabled */
+
+/* Register: CC_AES_AES_DFA_ERROR_STATUS */
+/* Description: After a DFA violation has occured this register is set and the AES block is disabled until the next reset. */
+
+/* Bit 0 :   */
+#define CC_AES_AES_DFA_ERROR_STATUS_AES_DFA_ERROR_STATUS_Pos (0UL) /*!< Position of AES_DFA_ERROR_STATUS field. */
+#define CC_AES_AES_DFA_ERROR_STATUS_AES_DFA_ERROR_STATUS_Msk (0x1UL << CC_AES_AES_DFA_ERROR_STATUS_AES_DFA_ERROR_STATUS_Pos) /*!< Bit mask of AES_DFA_ERROR_STATUS field. */
+#define CC_AES_AES_DFA_ERROR_STATUS_AES_DFA_ERROR_STATUS_Disabled (0UL) /*!< No DFA violation detected */
+#define CC_AES_AES_DFA_ERROR_STATUS_AES_DFA_ERROR_STATUS_Enabled (1UL) /*!< DFA violation has occured */
+
+/* Register: CC_AES_AES_RBG_SEEDING_RDY */
+/* Description: The AES RBG seeding should be performed only if this register is set to 1. */
+
+/* Bit 0 : AES RBG ready for seeding */
+#define CC_AES_AES_RBG_SEEDING_RDY_AES_RBG_SEEDING_RDY_Pos (0UL) /*!< Position of AES_RBG_SEEDING_RDY field. */
+#define CC_AES_AES_RBG_SEEDING_RDY_AES_RBG_SEEDING_RDY_Msk (0x1UL << CC_AES_AES_RBG_SEEDING_RDY_AES_RBG_SEEDING_RDY_Pos) /*!< Bit mask of AES_RBG_SEEDING_RDY field. */
+#define CC_AES_AES_RBG_SEEDING_RDY_AES_RBG_SEEDING_RDY_Disabled (0UL) /*!< AES RBG not ready for seeding */
+#define CC_AES_AES_RBG_SEEDING_RDY_AES_RBG_SEEDING_RDY_Enabled (1UL) /*!< AES RBG ready for seeding */
+
+/* Register: CC_AES_AES_CMAC_SIZE0_KICK */
+/* Description: Writing to this address triggers the AES engine to perform a CMAC operation with size 0. The CMAC result can be read from the AES_IV_0 register. */
+
+/* Bit 0 : Force AES CMAC operation with size 0. */
+#define CC_AES_AES_CMAC_SIZE0_KICK_AES_CMAC_SIZE0_KICK_Pos (0UL) /*!< Position of AES_CMAC_SIZE0_KICK field. */
+#define CC_AES_AES_CMAC_SIZE0_KICK_AES_CMAC_SIZE0_KICK_Msk (0x1UL << CC_AES_AES_CMAC_SIZE0_KICK_AES_CMAC_SIZE0_KICK_Pos) /*!< Bit mask of AES_CMAC_SIZE0_KICK field. */
+#define CC_AES_AES_CMAC_SIZE0_KICK_AES_CMAC_SIZE0_KICK_Disable (0UL) /*!< Normal AES CMAC operation */
+#define CC_AES_AES_CMAC_SIZE0_KICK_AES_CMAC_SIZE0_KICK_Enable (1UL) /*!< Force CMAC operation with size 0 */
+
+/* Register: CC_AES_AES_DUMMY_ROUNDS_ENABLE */
+/* Description: This fields determines whether the DUMMY ROUNDS countermeasures mechanism is supported */
+
+/* Bit 0 :   */
+#define CC_AES_AES_DUMMY_ROUNDS_ENABLE_AES_DUMMY_ROUNDS_ENABLE_Pos (0UL) /*!< Position of AES_DUMMY_ROUNDS_ENABLE field. */
+#define CC_AES_AES_DUMMY_ROUNDS_ENABLE_AES_DUMMY_ROUNDS_ENABLE_Msk (0x1UL << CC_AES_AES_DUMMY_ROUNDS_ENABLE_AES_DUMMY_ROUNDS_ENABLE_Pos) /*!< Bit mask of AES_DUMMY_ROUNDS_ENABLE field. */
+
+
+/* Peripheral: CC_AHB */
+/* Description: CRYPTOCELL AHB interface */
+
+/* Register: CC_AHB_AHBM_SINGLES */
+/* Description: This register forces the AHB master transactions to always be singles. */
+
+/* Bit 0 : Force AHB master singles */
+#define CC_AHB_AHBM_SINGLES_AHB_SINGLES_Pos (0UL) /*!< Position of AHB_SINGLES field. */
+#define CC_AHB_AHBM_SINGLES_AHB_SINGLES_Msk (0x1UL << CC_AHB_AHBM_SINGLES_AHB_SINGLES_Pos) /*!< Bit mask of AHB_SINGLES field. */
+
+/* Register: CC_AHB_AHBM_HPROT */
+/* Description: This register holds the AHB prot value */
+
+/* Bits 3..0 : The AHB prot value */
+#define CC_AHB_AHBM_HPROT_AHB_PROT_Pos (0UL) /*!< Position of AHB_PROT field. */
+#define CC_AHB_AHBM_HPROT_AHB_PROT_Msk (0xFUL << CC_AHB_AHBM_HPROT_AHB_PROT_Pos) /*!< Bit mask of AHB_PROT field. */
+
+/* Register: CC_AHB_AHBM_HMASTLOCK */
+/* Description: This register holds AHB hmastlock value */
+
+/* Bit 0 : The hmastlock value. */
+#define CC_AHB_AHBM_HMASTLOCK_AHB_HMASTLOCK_Pos (0UL) /*!< Position of AHB_HMASTLOCK field. */
+#define CC_AHB_AHBM_HMASTLOCK_AHB_HMASTLOCK_Msk (0x1UL << CC_AHB_AHBM_HMASTLOCK_AHB_HMASTLOCK_Pos) /*!< Bit mask of AHB_HMASTLOCK field. */
+
+
+/* Peripheral: CC_CHACHA */
+/* Description: CRYPTOCELL CHACHA engine */
+
+/* Register: CC_CHACHA_CHACHA_CONTROL_REG */
+/* Description: CHACHA/SALSA general configuration. */
+
+/* Bit 10 : Use 96 bit Initialization Value (IV) */
+#define CC_CHACHA_CHACHA_CONTROL_REG_USE_IV_96BIT_Pos (10UL) /*!< Position of USE_IV_96BIT field. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_USE_IV_96BIT_Msk (0x1UL << CC_CHACHA_CHACHA_CONTROL_REG_USE_IV_96BIT_Pos) /*!< Bit mask of USE_IV_96BIT field. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_USE_IV_96BIT_Disable (0UL) /*!< Use default size IV of 64 bit */
+#define CC_CHACHA_CHACHA_CONTROL_REG_USE_IV_96BIT_Enable (1UL) /*!< The IV is 96 bit */
+
+/* Bit 9 : Reset block counter for new messages */
+#define CC_CHACHA_CHACHA_CONTROL_REG_RESET_BLOCK_CNT_Pos (9UL) /*!< Position of RESET_BLOCK_CNT field. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_RESET_BLOCK_CNT_Msk (0x1UL << CC_CHACHA_CHACHA_CONTROL_REG_RESET_BLOCK_CNT_Pos) /*!< Bit mask of RESET_BLOCK_CNT field. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_RESET_BLOCK_CNT_Disable (0UL) /*!< Use current block counter value */
+#define CC_CHACHA_CHACHA_CONTROL_REG_RESET_BLOCK_CNT_Enable (1UL) /*!< Reset block counter value to zero */
+
+/* Bits 5..4 : Set number of permutation rounds, default value is 20. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_NUM_OF_ROUNDS_Pos (4UL) /*!< Position of NUM_OF_ROUNDS field. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_NUM_OF_ROUNDS_Msk (0x3UL << CC_CHACHA_CHACHA_CONTROL_REG_NUM_OF_ROUNDS_Pos) /*!< Bit mask of NUM_OF_ROUNDS field. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_NUM_OF_ROUNDS_20Rounds (0UL) /*!< 20 rounds (default) */
+#define CC_CHACHA_CHACHA_CONTROL_REG_NUM_OF_ROUNDS_12Rounds (1UL) /*!< 12 rounds */
+#define CC_CHACHA_CHACHA_CONTROL_REG_NUM_OF_ROUNDS_8Rounds (2UL) /*!< 8 rounds */
+
+/* Bit 3 : For all core modes */
+#define CC_CHACHA_CHACHA_CONTROL_REG_KEY_LEN_Pos (3UL) /*!< Position of KEY_LEN field. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_KEY_LEN_Msk (0x1UL << CC_CHACHA_CHACHA_CONTROL_REG_KEY_LEN_Pos) /*!< Bit mask of KEY_LEN field. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_KEY_LEN_256Bits (0UL) /*!< 256 bits key size */
+#define CC_CHACHA_CHACHA_CONTROL_REG_KEY_LEN_128Bits (1UL) /*!< 128 bits key size */
+
+/* Bit 2 : Calculate key automatically to use for Poly1305 MAC generation. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_CALC_KEY_FOR_POLY1305_Pos (2UL) /*!< Position of CALC_KEY_FOR_POLY1305 field. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_CALC_KEY_FOR_POLY1305_Msk (0x1UL << CC_CHACHA_CHACHA_CONTROL_REG_CALC_KEY_FOR_POLY1305_Pos) /*!< Bit mask of CALC_KEY_FOR_POLY1305 field. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_CALC_KEY_FOR_POLY1305_Disable (0UL) /*!< Do not calculate Poly1305 MAC key */
+#define CC_CHACHA_CHACHA_CONTROL_REG_CALC_KEY_FOR_POLY1305_Enable (1UL) /*!< Automatically calculate Poly1305 MAC key */
+
+/* Bit 1 : Perform initialization for a new message from host */
+#define CC_CHACHA_CHACHA_CONTROL_REG_INIT_FROM_HOST_Pos (1UL) /*!< Position of INIT_FROM_HOST field. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_INIT_FROM_HOST_Msk (0x1UL << CC_CHACHA_CHACHA_CONTROL_REG_INIT_FROM_HOST_Pos) /*!< Bit mask of INIT_FROM_HOST field. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_INIT_FROM_HOST_Disable (0UL) /*!< Message already initialized */
+#define CC_CHACHA_CHACHA_CONTROL_REG_INIT_FROM_HOST_Enable (1UL) /*!< Initialize new message */
+
+/* Bit 0 : Configure the core for either ChaCha or Salsa operation */
+#define CC_CHACHA_CHACHA_CONTROL_REG_CHACHA_OR_SALSA_Pos (0UL) /*!< Position of CHACHA_OR_SALSA field. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_CHACHA_OR_SALSA_Msk (0x1UL << CC_CHACHA_CHACHA_CONTROL_REG_CHACHA_OR_SALSA_Pos) /*!< Bit mask of CHACHA_OR_SALSA field. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_CHACHA_OR_SALSA_EnableChacha (0UL) /*!< The core operates in ChaCha mode. */
+#define CC_CHACHA_CHACHA_CONTROL_REG_CHACHA_OR_SALSA_EnableSalsa (1UL) /*!< The core operates in Salsa mode. */
+
+/* Register: CC_CHACHA_CHACHA_VERSION */
+/* Description: CHACHA/SALSA Version */
+
+/* Bits 31..0 :   */
+#define CC_CHACHA_CHACHA_VERSION_CHACHA_VERSION_Pos (0UL) /*!< Position of CHACHA_VERSION field. */
+#define CC_CHACHA_CHACHA_VERSION_CHACHA_VERSION_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_VERSION_CHACHA_VERSION_Pos) /*!< Bit mask of CHACHA_VERSION field. */
+
+/* Register: CC_CHACHA_CHACHA_KEY0 */
+/* Description: Bits 31:0 of the CHACHA_KEY */
+
+/* Bits 31..0 :   */
+#define CC_CHACHA_CHACHA_KEY0_CHACHA_KEY0_Pos (0UL) /*!< Position of CHACHA_KEY0 field. */
+#define CC_CHACHA_CHACHA_KEY0_CHACHA_KEY0_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_KEY0_CHACHA_KEY0_Pos) /*!< Bit mask of CHACHA_KEY0 field. */
+
+/* Register: CC_CHACHA_CHACHA_KEY1 */
+/* Description: Bits 63:32 of the CHACHA_KEY */
+
+/* Bits 31..0 :   */
+#define CC_CHACHA_CHACHA_KEY1_CHACHA_KEY1_Pos (0UL) /*!< Position of CHACHA_KEY1 field. */
+#define CC_CHACHA_CHACHA_KEY1_CHACHA_KEY1_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_KEY1_CHACHA_KEY1_Pos) /*!< Bit mask of CHACHA_KEY1 field. */
+
+/* Register: CC_CHACHA_CHACHA_KEY2 */
+/* Description: Bits 95:64 of the CHACHA_KEY */
+
+/* Bits 31..0 :   */
+#define CC_CHACHA_CHACHA_KEY2_CHACHA_KEY2_Pos (0UL) /*!< Position of CHACHA_KEY2 field. */
+#define CC_CHACHA_CHACHA_KEY2_CHACHA_KEY2_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_KEY2_CHACHA_KEY2_Pos) /*!< Bit mask of CHACHA_KEY2 field. */
+
+/* Register: CC_CHACHA_CHACHA_KEY3 */
+/* Description: Bits 127:96 of the CHACHA_KEY */
+
+/* Bits 31..0 :   */
+#define CC_CHACHA_CHACHA_KEY3_CHACHA_KEY3_Pos (0UL) /*!< Position of CHACHA_KEY3 field. */
+#define CC_CHACHA_CHACHA_KEY3_CHACHA_KEY3_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_KEY3_CHACHA_KEY3_Pos) /*!< Bit mask of CHACHA_KEY3 field. */
+
+/* Register: CC_CHACHA_CHACHA_KEY4 */
+/* Description: Bits 159:128 of the CHACHA_KEY */
+
+/* Bits 31..0 :   */
+#define CC_CHACHA_CHACHA_KEY4_CHACHA_KEY4_Pos (0UL) /*!< Position of CHACHA_KEY4 field. */
+#define CC_CHACHA_CHACHA_KEY4_CHACHA_KEY4_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_KEY4_CHACHA_KEY4_Pos) /*!< Bit mask of CHACHA_KEY4 field. */
+
+/* Register: CC_CHACHA_CHACHA_KEY5 */
+/* Description: Bits 191:160 of the CHACHA_KEY */
+
+/* Bits 31..0 :   */
+#define CC_CHACHA_CHACHA_KEY5_CHACHA_KEY5_Pos (0UL) /*!< Position of CHACHA_KEY5 field. */
+#define CC_CHACHA_CHACHA_KEY5_CHACHA_KEY5_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_KEY5_CHACHA_KEY5_Pos) /*!< Bit mask of CHACHA_KEY5 field. */
+
+/* Register: CC_CHACHA_CHACHA_KEY6 */
+/* Description: Bits 223:192 of the CHACHA_KEY */
+
+/* Bits 31..0 :   */
+#define CC_CHACHA_CHACHA_KEY6_CHACHA_KEY6_Pos (0UL) /*!< Position of CHACHA_KEY6 field. */
+#define CC_CHACHA_CHACHA_KEY6_CHACHA_KEY6_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_KEY6_CHACHA_KEY6_Pos) /*!< Bit mask of CHACHA_KEY6 field. */
+
+/* Register: CC_CHACHA_CHACHA_KEY7 */
+/* Description: Bits 255:224 of the CHACHA_KEY */
+
+/* Bits 31..0 :   */
+#define CC_CHACHA_CHACHA_KEY7_CHACHA_KEY7_Pos (0UL) /*!< Position of CHACHA_KEY7 field. */
+#define CC_CHACHA_CHACHA_KEY7_CHACHA_KEY7_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_KEY7_CHACHA_KEY7_Pos) /*!< Bit mask of CHACHA_KEY7 field. */
+
+/* Register: CC_CHACHA_CHACHA_IV_0 */
+/* Description: ChaCha Initialization Value (IV) register */
+
+/* Bits 31..0 : Bits 63:32 of CHACHA_IV */
+#define CC_CHACHA_CHACHA_IV_0_CHACHA_IV_0_Pos (0UL) /*!< Position of CHACHA_IV_0 field. */
+#define CC_CHACHA_CHACHA_IV_0_CHACHA_IV_0_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_IV_0_CHACHA_IV_0_Pos) /*!< Bit mask of CHACHA_IV_0 field. */
+
+/* Register: CC_CHACHA_CHACHA_IV_1 */
+/* Description: ChaCha Initialization Value (IV) register */
+
+/* Bits 31..0 : Bits 63:32 of CHACHA_IV */
+#define CC_CHACHA_CHACHA_IV_1_CHACHA_IV_1_Pos (0UL) /*!< Position of CHACHA_IV_1 field. */
+#define CC_CHACHA_CHACHA_IV_1_CHACHA_IV_1_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_IV_1_CHACHA_IV_1_Pos) /*!< Bit mask of CHACHA_IV_1 field. */
+
+/* Register: CC_CHACHA_CHACHA_BUSY */
+/* Description: This register is set when the CHACHA/SALSA core is active */
+
+/* Bit 0 : This register is set when the CHACHA/SALSA core is active */
+#define CC_CHACHA_CHACHA_BUSY_CHACHA_BUSY_Pos (0UL) /*!< Position of CHACHA_BUSY field. */
+#define CC_CHACHA_CHACHA_BUSY_CHACHA_BUSY_Msk (0x1UL << CC_CHACHA_CHACHA_BUSY_CHACHA_BUSY_Pos) /*!< Bit mask of CHACHA_BUSY field. */
+#define CC_CHACHA_CHACHA_BUSY_CHACHA_BUSY_Idle (0UL) /*!< Chacha engine idle */
+#define CC_CHACHA_CHACHA_BUSY_CHACHA_BUSY_Busy (1UL) /*!< Chacha engine busy */
+
+/* Register: CC_CHACHA_CHACHA_HW_FLAGS */
+/* Description: Synthesis HW flag configuration of the core engine */
+
+/* Bit 2 : If this flag is set, the next matrix calculated when the current one is written to data output path. */
+#define CC_CHACHA_CHACHA_HW_FLAGS_FAST_CHACHA_Pos (2UL) /*!< Position of FAST_CHACHA field. */
+#define CC_CHACHA_CHACHA_HW_FLAGS_FAST_CHACHA_Msk (0x1UL << CC_CHACHA_CHACHA_HW_FLAGS_FAST_CHACHA_Pos) /*!< Bit mask of FAST_CHACHA field. */
+#define CC_CHACHA_CHACHA_HW_FLAGS_FAST_CHACHA_Disable (0UL) /*!< Calculate next matrix after DOUT write has completed */
+#define CC_CHACHA_CHACHA_HW_FLAGS_FAST_CHACHA_Enable (1UL) /*!< Calculate next matrix during DOUT write */
+
+/* Bit 1 : If this flag is set, the engine include Salsa support */
+#define CC_CHACHA_CHACHA_HW_FLAGS_SALSA_EXISTS_Pos (1UL) /*!< Position of SALSA_EXISTS field. */
+#define CC_CHACHA_CHACHA_HW_FLAGS_SALSA_EXISTS_Msk (0x1UL << CC_CHACHA_CHACHA_HW_FLAGS_SALSA_EXISTS_Pos) /*!< Bit mask of SALSA_EXISTS field. */
+#define CC_CHACHA_CHACHA_HW_FLAGS_SALSA_EXISTS_Disabled (0UL) /*!< Engine does not support Salsa permutation */
+#define CC_CHACHA_CHACHA_HW_FLAGS_SALSA_EXISTS_Enabled (1UL) /*!< Engine is able to perform Salsa permutation */
+
+/* Bit 0 : If this flag is set, the engine include ChaCha support */
+#define CC_CHACHA_CHACHA_HW_FLAGS_CHACHA_EXISTS_Pos (0UL) /*!< Position of CHACHA_EXISTS field. */
+#define CC_CHACHA_CHACHA_HW_FLAGS_CHACHA_EXISTS_Msk (0x1UL << CC_CHACHA_CHACHA_HW_FLAGS_CHACHA_EXISTS_Pos) /*!< Bit mask of CHACHA_EXISTS field. */
+#define CC_CHACHA_CHACHA_HW_FLAGS_CHACHA_EXISTS_Disabled (0UL) /*!< Engine does not support ChaCha permutation */
+#define CC_CHACHA_CHACHA_HW_FLAGS_CHACHA_EXISTS_Enabled (1UL) /*!< Engine is able to perform ChaCha permutation */
+
+/* Register: CC_CHACHA_CHACHA_BLOCK_CNT_LSB */
+/* Description: Store the LSB value of the block counter, in order to support suspend/resume of operation */
+
+/* Bits 31..0 : Bits 31:0 (LSB) of the block counter */
+#define CC_CHACHA_CHACHA_BLOCK_CNT_LSB_CHACHA_BLOCK_CNT_LSB_Pos (0UL) /*!< Position of CHACHA_BLOCK_CNT_LSB field. */
+#define CC_CHACHA_CHACHA_BLOCK_CNT_LSB_CHACHA_BLOCK_CNT_LSB_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_BLOCK_CNT_LSB_CHACHA_BLOCK_CNT_LSB_Pos) /*!< Bit mask of CHACHA_BLOCK_CNT_LSB field. */
+
+/* Register: CC_CHACHA_CHACHA_BLOCK_CNT_MSB */
+/* Description: Store the MSB value of the block counter, in order to support suspend/resume of operation */
+
+/* Bits 31..0 : Bits 63:32 (MSB) of the block counter */
+#define CC_CHACHA_CHACHA_BLOCK_CNT_MSB_CHACHA_BLOCK_CNT_MSB_Pos (0UL) /*!< Position of CHACHA_BLOCK_CNT_MSB field. */
+#define CC_CHACHA_CHACHA_BLOCK_CNT_MSB_CHACHA_BLOCK_CNT_MSB_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_BLOCK_CNT_MSB_CHACHA_BLOCK_CNT_MSB_Pos) /*!< Bit mask of CHACHA_BLOCK_CNT_MSB field. */
+
+/* Register: CC_CHACHA_CHACHA_SW_RESET */
+/* Description: Resets CHACHA/SALSA engine. */
+
+/* Bit 0 : Writing to this address resets the ChaCha engine. The reset takes 4 CORE_CLK cycles. */
+#define CC_CHACHA_CHACHA_SW_RESET_CHACHA_SW_RESET_Pos (0UL) /*!< Position of CHACHA_SW_RESET field. */
+#define CC_CHACHA_CHACHA_SW_RESET_CHACHA_SW_RESET_Msk (0x1UL << CC_CHACHA_CHACHA_SW_RESET_CHACHA_SW_RESET_Pos) /*!< Bit mask of CHACHA_SW_RESET field. */
+#define CC_CHACHA_CHACHA_SW_RESET_CHACHA_SW_RESET_Disable (0UL) /*!< Default value */
+#define CC_CHACHA_CHACHA_SW_RESET_CHACHA_SW_RESET_Enable (1UL) /*!< Reset CHACHA core */
+
+/* Register: CC_CHACHA_CHACHA_FOR_POLY_KEY0 */
+/* Description: Auto-generated key for use in Poly1305 MAC. */
+
+/* Bits 31..0 : Bits 31:0 of CHACHA_FOR_POLY_KEY */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY0_CHACHA_FOR_POLY_KEY0_Pos (0UL) /*!< Position of CHACHA_FOR_POLY_KEY0 field. */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY0_CHACHA_FOR_POLY_KEY0_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_FOR_POLY_KEY0_CHACHA_FOR_POLY_KEY0_Pos) /*!< Bit mask of CHACHA_FOR_POLY_KEY0 field. */
+
+/* Register: CC_CHACHA_CHACHA_FOR_POLY_KEY1 */
+/* Description: Auto-generated key for use in Poly1305 MAC. */
+
+/* Bits 31..0 : Bits 63:32 of CHACHA_FOR_POLY_KEY */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY1_CHACHA_FOR_POLY_KEY1_Pos (0UL) /*!< Position of CHACHA_FOR_POLY_KEY1 field. */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY1_CHACHA_FOR_POLY_KEY1_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_FOR_POLY_KEY1_CHACHA_FOR_POLY_KEY1_Pos) /*!< Bit mask of CHACHA_FOR_POLY_KEY1 field. */
+
+/* Register: CC_CHACHA_CHACHA_FOR_POLY_KEY2 */
+/* Description: Auto-generated key for use in Poly1305 MAC. */
+
+/* Bits 31..0 : Bits 95:64 of CHACHA_FOR_POLY_KEY */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY2_CHACHA_FOR_POLY_KEY2_Pos (0UL) /*!< Position of CHACHA_FOR_POLY_KEY2 field. */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY2_CHACHA_FOR_POLY_KEY2_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_FOR_POLY_KEY2_CHACHA_FOR_POLY_KEY2_Pos) /*!< Bit mask of CHACHA_FOR_POLY_KEY2 field. */
+
+/* Register: CC_CHACHA_CHACHA_FOR_POLY_KEY3 */
+/* Description: Auto-generated key for use in Poly1305 MAC. */
+
+/* Bits 31..0 : Bits 127:96 of CHACHA_FOR_POLY_KEY */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY3_CHACHA_FOR_POLY_KEY3_Pos (0UL) /*!< Position of CHACHA_FOR_POLY_KEY3 field. */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY3_CHACHA_FOR_POLY_KEY3_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_FOR_POLY_KEY3_CHACHA_FOR_POLY_KEY3_Pos) /*!< Bit mask of CHACHA_FOR_POLY_KEY3 field. */
+
+/* Register: CC_CHACHA_CHACHA_FOR_POLY_KEY4 */
+/* Description: Auto-generated key for use in Poly1305 MAC. */
+
+/* Bits 31..0 : Bits 159:128 of CHACHA_FOR_POLY_KEY */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY4_CHACHA_FOR_POLY_KEY4_Pos (0UL) /*!< Position of CHACHA_FOR_POLY_KEY4 field. */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY4_CHACHA_FOR_POLY_KEY4_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_FOR_POLY_KEY4_CHACHA_FOR_POLY_KEY4_Pos) /*!< Bit mask of CHACHA_FOR_POLY_KEY4 field. */
+
+/* Register: CC_CHACHA_CHACHA_FOR_POLY_KEY5 */
+/* Description: Auto-generated key for use in Poly1305 MAC. */
+
+/* Bits 31..0 : Bits 191:160 of CHACHA_FOR_POLY_KEY */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY5_CHACHA_FOR_POLY_KEY5_Pos (0UL) /*!< Position of CHACHA_FOR_POLY_KEY5 field. */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY5_CHACHA_FOR_POLY_KEY5_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_FOR_POLY_KEY5_CHACHA_FOR_POLY_KEY5_Pos) /*!< Bit mask of CHACHA_FOR_POLY_KEY5 field. */
+
+/* Register: CC_CHACHA_CHACHA_FOR_POLY_KEY6 */
+/* Description: Auto-generated key for use in Poly1305 MAC. */
+
+/* Bits 31..0 : Bits 223:192 of CHACHA_FOR_POLY_KEY */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY6_CHACHA_FOR_POLY_KEY6_Pos (0UL) /*!< Position of CHACHA_FOR_POLY_KEY6 field. */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY6_CHACHA_FOR_POLY_KEY6_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_FOR_POLY_KEY6_CHACHA_FOR_POLY_KEY6_Pos) /*!< Bit mask of CHACHA_FOR_POLY_KEY6 field. */
+
+/* Register: CC_CHACHA_CHACHA_FOR_POLY_KEY7 */
+/* Description: Auto-generated key for use in Poly1305 MAC. */
+
+/* Bits 31..0 : Bits 255:224 of CHACHA_FOR_POLY_KEY */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY7_CHACHA_FOR_POLY_KEY7_Pos (0UL) /*!< Position of CHACHA_FOR_POLY_KEY7 field. */
+#define CC_CHACHA_CHACHA_FOR_POLY_KEY7_CHACHA_FOR_POLY_KEY7_Msk (0xFFFFFFFFUL << CC_CHACHA_CHACHA_FOR_POLY_KEY7_CHACHA_FOR_POLY_KEY7_Pos) /*!< Bit mask of CHACHA_FOR_POLY_KEY7 field. */
+
+/* Register: CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG */
+/* Description: CHACHA/SALSA DATA ORDER configuration. */
+
+/* Bit 4 : Change the byte order of the output data. */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DOUT_BYTE_ORDER_Pos (4UL) /*!< Position of CHACHA_DOUT_BYTE_ORDER field. */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DOUT_BYTE_ORDER_Msk (0x1UL << CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DOUT_BYTE_ORDER_Pos) /*!< Bit mask of CHACHA_DOUT_BYTE_ORDER field. */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DOUT_BYTE_ORDER_Disable (0UL) /*!< Do not change byte order of output data */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DOUT_BYTE_ORDER_Enable (1UL) /*!< Reverse each byte in each word output (b0-&gt;b3, b1-&gt;b2, b2-&gt;b1,b3-&gt;b0) */
+
+/* Bit 3 : Change the words order of the output data. */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DOUT_WORD_ORDER_Pos (3UL) /*!< Position of CHACHA_DOUT_WORD_ORDER field. */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DOUT_WORD_ORDER_Msk (0x1UL << CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DOUT_WORD_ORDER_Pos) /*!< Bit mask of CHACHA_DOUT_WORD_ORDER field. */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DOUT_WORD_ORDER_Disable (0UL) /*!< Do not change word order of output data */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DOUT_WORD_ORDER_Enable (1UL) /*!< Reverse each word in 128 bit output ( w0-&gt;w3, w1-&gt;w2, w2- &gt;w1,w3-w0) */
+
+/* Bit 2 : Change the quarter of a matrix order in core */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_CORE_MATRIX_LBE_ORDER_Pos (2UL) /*!< Position of CHACHA_CORE_MATRIX_LBE_ORDER field. */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_CORE_MATRIX_LBE_ORDER_Msk (0x1UL << CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_CORE_MATRIX_LBE_ORDER_Pos) /*!< Bit mask of CHACHA_CORE_MATRIX_LBE_ORDER field. */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_CORE_MATRIX_LBE_ORDER_Disable (0UL) /*!< Do not change matrix order */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_CORE_MATRIX_LBE_ORDER_Enable (1UL) /*!< Reverse each quarter of a matrix (m[0-127]-&gt;m[384-511], m[128-255]-&gt;m[256-383], m[256- 383]-&gt;m[128-255], m[384-511]- &gt;m[0-127]) */
+
+/* Bit 1 : Change the byte order of the input data. */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DIN_BYTE_ORDER_Pos (1UL) /*!< Position of CHACHA_DIN_BYTE_ORDER field. */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DIN_BYTE_ORDER_Msk (0x1UL << CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DIN_BYTE_ORDER_Pos) /*!< Bit mask of CHACHA_DIN_BYTE_ORDER field. */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DIN_BYTE_ORDER_Disable (0UL) /*!< Do not reverse each byte in each word input */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DIN_BYTE_ORDER_Enable (1UL) /*!< Reverse each byte in each word input (b0-&gt;b3, b1-&gt;b2, b2- &gt;b1,b3-&gt;b0) */
+
+/* Bit 0 : Change the words order of the input data. */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DIN_WORD_ORDER_Pos (0UL) /*!< Position of CHACHA_DIN_WORD_ORDER field. */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DIN_WORD_ORDER_Msk (0x1UL << CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DIN_WORD_ORDER_Pos) /*!< Bit mask of CHACHA_DIN_WORD_ORDER field. */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DIN_WORD_ORDER_Disable (0UL) /*!< Do not reverse each word in 128 bit input */
+#define CC_CHACHA_CHACHA_BYTE_WORD_ORDER_CNTL_REG_CHACHA_DIN_WORD_ORDER_Enable (1UL) /*!< Reverse each word in 128 bit input ( w0-&gt;w3, w1-&gt;w2, w2- &gt;w1,w3-w0)) */
+
+/* Register: CC_CHACHA_CHACHA_DEBUG_REG */
+/* Description: Debug register for Chacha */
+
+/* Bit 3 :   */
+#define CC_CHACHA_CHACHA_DEBUG_REG_CHACHA_DEBUG_ERR_Pos (3UL) /*!< Position of CHACHA_DEBUG_ERR field. */
+#define CC_CHACHA_CHACHA_DEBUG_REG_CHACHA_DEBUG_ERR_Msk (0x1UL << CC_CHACHA_CHACHA_DEBUG_REG_CHACHA_DEBUG_ERR_Pos) /*!< Bit mask of CHACHA_DEBUG_ERR field. */
+
+/* Bits 2..0 :   */
+#define CC_CHACHA_CHACHA_DEBUG_REG_CHACHA_DEBUG_FSM_STATE_Pos (0UL) /*!< Position of CHACHA_DEBUG_FSM_STATE field. */
+#define CC_CHACHA_CHACHA_DEBUG_REG_CHACHA_DEBUG_FSM_STATE_Msk (0x7UL << CC_CHACHA_CHACHA_DEBUG_REG_CHACHA_DEBUG_FSM_STATE_Pos) /*!< Bit mask of CHACHA_DEBUG_FSM_STATE field. */
+
+
+/* Peripheral: CC_CTL */
+/* Description: CRYPTOCELL CTL interface */
+
+/* Register: CC_CTL_CRYPTO_CTL */
+/* Description: Defines the cryptographic flow */
+
+/* Bits 4..0 : Determine the active cryptographic engines */
+#define CC_CTL_CRYPTO_CTL_MODE_Pos (0UL) /*!< Position of MODE field. */
+#define CC_CTL_CRYPTO_CTL_MODE_Msk (0x1FUL << CC_CTL_CRYPTO_CTL_MODE_Pos) /*!< Bit mask of MODE field. */
+#define CC_CTL_CRYPTO_CTL_MODE_Bypass (0UL) /*!< Bypass engines */
+#define CC_CTL_CRYPTO_CTL_MODE_AESActive (1UL) /*!< AES is active */
+#define CC_CTL_CRYPTO_CTL_MODE_AESToHashActive (2UL) /*!< AES-to-Hash is active */
+#define CC_CTL_CRYPTO_CTL_MODE_AESAndHashActive (3UL) /*!< AES-and-Hash is active */
+#define CC_CTL_CRYPTO_CTL_MODE_HashActive (7UL) /*!< Hash is active */
+#define CC_CTL_CRYPTO_CTL_MODE_AESMACAndBypassActive (9UL) /*!< AES-MAC and BYPASS is active */
+#define CC_CTL_CRYPTO_CTL_MODE_AESToHashAndDOUTActive (10UL) /*!< AES-to-Hash and DOUT is active */
+
+/* Register: CC_CTL_CRYPTO_BUSY */
+/* Description: This register is set when the cryptographic core is busy. */
+
+/* Bit 0 : Cryptographic core busy */
+#define CC_CTL_CRYPTO_BUSY_CRYPTO_BUSY_Pos (0UL) /*!< Position of CRYPTO_BUSY field. */
+#define CC_CTL_CRYPTO_BUSY_CRYPTO_BUSY_Msk (0x1UL << CC_CTL_CRYPTO_BUSY_CRYPTO_BUSY_Pos) /*!< Bit mask of CRYPTO_BUSY field. */
+#define CC_CTL_CRYPTO_BUSY_CRYPTO_BUSY_Disabled (0UL) /*!< Cryptographic core is not busy */
+#define CC_CTL_CRYPTO_BUSY_CRYPTO_BUSY_Enabled (1UL) /*!< Asserted when AES_BUSY or HASH_BUSY is enabled, or when DIN_FIFO is not empty. */
+
+/* Register: CC_CTL_HASH_BUSY */
+/* Description: This register is set when the Hash engine is busy */
+
+/* Bit 0 : Hash core busy */
+#define CC_CTL_HASH_BUSY_HASH_BUSY_Pos (0UL) /*!< Position of HASH_BUSY field. */
+#define CC_CTL_HASH_BUSY_HASH_BUSY_Msk (0x1UL << CC_CTL_HASH_BUSY_HASH_BUSY_Pos) /*!< Bit mask of HASH_BUSY field. */
+#define CC_CTL_HASH_BUSY_HASH_BUSY_Disabled (0UL) /*!< Hash engine is not busy */
+#define CC_CTL_HASH_BUSY_HASH_BUSY_Enabled (1UL) /*!< Asserted when hash engine is busy */
+
+/* Register: CC_CTL_VERSION */
+/* Description: This register holds the current HW version */
+
+/* Bits 31..0 : Auto-generated, hard-coded unique number. */
+#define CC_CTL_VERSION_VERSION_Pos (0UL) /*!< Position of VERSION field. */
+#define CC_CTL_VERSION_VERSION_Msk (0xFFFFFFFFUL << CC_CTL_VERSION_VERSION_Pos) /*!< Bit mask of VERSION field. */
+
+/* Register: CC_CTL_CONTEXT_ID */
+/* Description: A general-purpose read/write register used by firmware for controlling cryptographic context */
+
+/* Bits 7..0 : Context ID */
+#define CC_CTL_CONTEXT_ID_CONTEXT_ID_Pos (0UL) /*!< Position of CONTEXT_ID field. */
+#define CC_CTL_CONTEXT_ID_CONTEXT_ID_Msk (0xFFUL << CC_CTL_CONTEXT_ID_CONTEXT_ID_Pos) /*!< Bit mask of CONTEXT_ID field. */
+
+/* Register: CC_CTL_HASH_COMPARE_ERR_ID_FIFO0 */
+/* Description: This register holds the flow ID of the descriptor that caused that last error */
+
+/* Bits 25..0 : Holds the flow of the descriptor that caused the last error. */
+#define CC_CTL_HASH_COMPARE_ERR_ID_FIFO0_HASH_COMPARE_ERR_ID_FIFO0_Pos (0UL) /*!< Position of HASH_COMPARE_ERR_ID_FIFO0 field. */
+#define CC_CTL_HASH_COMPARE_ERR_ID_FIFO0_HASH_COMPARE_ERR_ID_FIFO0_Msk (0x3FFFFFFUL << CC_CTL_HASH_COMPARE_ERR_ID_FIFO0_HASH_COMPARE_ERR_ID_FIFO0_Pos) /*!< Bit mask of HASH_COMPARE_ERR_ID_FIFO0 field. */
+
+/* Register: CC_CTL_HASH_COMPARE_ERR_ID_FIFO1 */
+/* Description: This register holds the flow ID of the descriptor that caused the one-before-last error */
+
+/* Bits 25..0 : Holds the flow of the descriptor that caused the one-before-last error. */
+#define CC_CTL_HASH_COMPARE_ERR_ID_FIFO1_HASH_COMPARE_ERR_ID_FIFO1_Pos (0UL) /*!< Position of HASH_COMPARE_ERR_ID_FIFO1 field. */
+#define CC_CTL_HASH_COMPARE_ERR_ID_FIFO1_HASH_COMPARE_ERR_ID_FIFO1_Msk (0x3FFFFFFUL << CC_CTL_HASH_COMPARE_ERR_ID_FIFO1_HASH_COMPARE_ERR_ID_FIFO1_Pos) /*!< Bit mask of HASH_COMPARE_ERR_ID_FIFO1 field. */
+
+/* Register: CC_CTL_HASH_COMPARE_ERR_ID_FIFO2 */
+/* Description: This register holds the flow ID of the descriptor that caused the two-before-last error */
+
+/* Bits 25..0 : Holds the flow of the descriptor that caused the two-before-last error. */
+#define CC_CTL_HASH_COMPARE_ERR_ID_FIFO2_HASH_COMPARE_ERROR_ID_FIFO2_Pos (0UL) /*!< Position of HASH_COMPARE_ERROR_ID_FIFO2 field. */
+#define CC_CTL_HASH_COMPARE_ERR_ID_FIFO2_HASH_COMPARE_ERROR_ID_FIFO2_Msk (0x3FFFFFFUL << CC_CTL_HASH_COMPARE_ERR_ID_FIFO2_HASH_COMPARE_ERROR_ID_FIFO2_Pos) /*!< Bit mask of HASH_COMPARE_ERROR_ID_FIFO2 field. */
+
+/* Register: CC_CTL_HASH_COMPARE_ERR_ID_FIFO3 */
+/* Description: This register holds the flow ID of the descriptor that caused the three-before-last error */
+
+/* Bits 25..0 : Holds the flow of the descriptor that caused that three-before-last error. */
+#define CC_CTL_HASH_COMPARE_ERR_ID_FIFO3_ID_Pos (0UL) /*!< Position of ID field. */
+#define CC_CTL_HASH_COMPARE_ERR_ID_FIFO3_ID_Msk (0x3FFFFFFUL << CC_CTL_HASH_COMPARE_ERR_ID_FIFO3_ID_Pos) /*!< Bit mask of ID field. */
+
+
+/* Peripheral: CC_DIN */
+/* Description: CRYPTOCELL Data IN interface */
+
+/* Register: CC_DIN_DIN_BUFFER */
+/* Description: Can be used by the CPU to write data directly to the DIN buffer to be sent to engines */
+
+/* Bits 31..0 : This register is mapped into 8 addresses in order to enable a CPU burst */
+#define CC_DIN_DIN_BUFFER_DIN_BUFFER_DATA_Pos (0UL) /*!< Position of DIN_BUFFER_DATA field. */
+#define CC_DIN_DIN_BUFFER_DIN_BUFFER_DATA_Msk (0xFFFFFFFFUL << CC_DIN_DIN_BUFFER_DIN_BUFFER_DATA_Pos) /*!< Bit mask of DIN_BUFFER_DATA field. */
+
+/* Register: CC_DIN_DIN_MEM_DMA_BUSY */
+/* Description: Indicates whether memory source DMA (DIN) is busy */
+
+/* Bit 0 : Source DMA busy status */
+#define CC_DIN_DIN_MEM_DMA_BUSY_DIN_MEM_DMA_BUSY_Pos (0UL) /*!< Position of DIN_MEM_DMA_BUSY field. */
+#define CC_DIN_DIN_MEM_DMA_BUSY_DIN_MEM_DMA_BUSY_Msk (0x1UL << CC_DIN_DIN_MEM_DMA_BUSY_DIN_MEM_DMA_BUSY_Pos) /*!< Bit mask of DIN_MEM_DMA_BUSY field. */
+#define CC_DIN_DIN_MEM_DMA_BUSY_DIN_MEM_DMA_BUSY_Disabled (0UL) /*!< DIN not busy */
+#define CC_DIN_DIN_MEM_DMA_BUSY_DIN_MEM_DMA_BUSY_Enabled (1UL) /*!< DIN busy */
+
+/* Register: CC_DIN_SRC_LLI_SRAM_ADDR */
+/* Description: Location of LLI table located in the SRAM. In SINGLE/MULTI_LLI mode writing to this register triggers the DMA */
+
+/* Bits 14..0 : Source LLI table address in SRAM */
+#define CC_DIN_SRC_LLI_SRAM_ADDR_SRC_LLI_SRAM_ADDR_Pos (0UL) /*!< Position of SRC_LLI_SRAM_ADDR field. */
+#define CC_DIN_SRC_LLI_SRAM_ADDR_SRC_LLI_SRAM_ADDR_Msk (0x7FFFUL << CC_DIN_SRC_LLI_SRAM_ADDR_SRC_LLI_SRAM_ADDR_Pos) /*!< Bit mask of SRC_LLI_SRAM_ADDR field. */
+
+/* Register: CC_DIN_SRC_LLI_WORD0 */
+/* Description: This register is used in direct LLI mode and holds the location of the data source in the memory. */
+
+/* Bits 31..0 : Source address within memory. */
+#define CC_DIN_SRC_LLI_WORD0_SRC_LLI_WORD0_Pos (0UL) /*!< Position of SRC_LLI_WORD0 field. */
+#define CC_DIN_SRC_LLI_WORD0_SRC_LLI_WORD0_Msk (0xFFFFFFFFUL << CC_DIN_SRC_LLI_WORD0_SRC_LLI_WORD0_Pos) /*!< Bit mask of SRC_LLI_WORD0 field. */
+
+/* Register: CC_DIN_SRC_LLI_WORD1 */
+/* Description: This register is used in direct LLI mode and holds the number of bytes to be read from the memory. Writing to this register triggers the DMA. */
+
+/* Bit 31 : Indicate the last LLI entry */
+#define CC_DIN_SRC_LLI_WORD1_LAST_Pos (31UL) /*!< Position of LAST field. */
+#define CC_DIN_SRC_LLI_WORD1_LAST_Msk (0x1UL << CC_DIN_SRC_LLI_WORD1_LAST_Pos) /*!< Bit mask of LAST field. */
+#define CC_DIN_SRC_LLI_WORD1_LAST_LLIEntry (1UL) /*!< Last LLI entry */
+
+/* Bit 30 : Indicate the first LLI entry */
+#define CC_DIN_SRC_LLI_WORD1_FIRST_Pos (30UL) /*!< Position of FIRST field. */
+#define CC_DIN_SRC_LLI_WORD1_FIRST_Msk (0x1UL << CC_DIN_SRC_LLI_WORD1_FIRST_Pos) /*!< Bit mask of FIRST field. */
+#define CC_DIN_SRC_LLI_WORD1_FIRST_LLIEntry (1UL) /*!< First LLI entry */
+
+/* Bits 29..0 : Total number of bytes to read using DMA in this entry */
+#define CC_DIN_SRC_LLI_WORD1_BYTES_NUM_Pos (0UL) /*!< Position of BYTES_NUM field. */
+#define CC_DIN_SRC_LLI_WORD1_BYTES_NUM_Msk (0x3FFFFFFFUL << CC_DIN_SRC_LLI_WORD1_BYTES_NUM_Pos) /*!< Bit mask of BYTES_NUM field. */
+
+/* Register: CC_DIN_SRAM_SRC_ADDR */
+/* Description: Location of start address for data to be read from SRAM. */
+
+/* Bits 31..0 : SRAM source base address of data */
+#define CC_DIN_SRAM_SRC_ADDR_SRAM_SOURCE_Pos (0UL) /*!< Position of SRAM_SOURCE field. */
+#define CC_DIN_SRAM_SRC_ADDR_SRAM_SOURCE_Msk (0xFFFFFFFFUL << CC_DIN_SRAM_SRC_ADDR_SRAM_SOURCE_Pos) /*!< Bit mask of SRAM_SOURCE field. */
+
+/* Register: CC_DIN_DIN_SRAM_BYTES_LEN */
+/* Description: This register holds the size of the data in bytes to be read from the SRAM. */
+
+/* Bits 31..0 : Size of data in bytes to read from SRAM. This is the trigger to the SRAM SRC DMA. */
+#define CC_DIN_DIN_SRAM_BYTES_LEN_BYTES_LEN_Pos (0UL) /*!< Position of BYTES_LEN field. */
+#define CC_DIN_DIN_SRAM_BYTES_LEN_BYTES_LEN_Msk (0xFFFFFFFFUL << CC_DIN_DIN_SRAM_BYTES_LEN_BYTES_LEN_Pos) /*!< Bit mask of BYTES_LEN field. */
+
+/* Register: CC_DIN_DIN_SRAM_DMA_BUSY */
+/* Description: This register holds the status of the SRAM DMA DIN */
+
+/* Bit 0 : DIN SRAM DMA busy */
+#define CC_DIN_DIN_SRAM_DMA_BUSY_BUSY_Pos (0UL) /*!< Position of BUSY field. */
+#define CC_DIN_DIN_SRAM_DMA_BUSY_BUSY_Msk (0x1UL << CC_DIN_DIN_SRAM_DMA_BUSY_BUSY_Pos) /*!< Bit mask of BUSY field. */
+#define CC_DIN_DIN_SRAM_DMA_BUSY_BUSY_Disabled (0UL) /*!< DIN SRAM DMA not busy */
+#define CC_DIN_DIN_SRAM_DMA_BUSY_BUSY_Enabled (1UL) /*!< DIN SRAM DMA busy */
+
+/* Register: CC_DIN_DIN_SRAM_ENDIANNESS */
+/* Description: This register defines the endianness of the DIN interface to SRAM. */
+
+/* Bit 0 : DIN SRAM endianness */
+#define CC_DIN_DIN_SRAM_ENDIANNESS_SRAM_DIN_ENDIANNESS_Pos (0UL) /*!< Position of SRAM_DIN_ENDIANNESS field. */
+#define CC_DIN_DIN_SRAM_ENDIANNESS_SRAM_DIN_ENDIANNESS_Msk (0x1UL << CC_DIN_DIN_SRAM_ENDIANNESS_SRAM_DIN_ENDIANNESS_Pos) /*!< Bit mask of SRAM_DIN_ENDIANNESS field. */
+#define CC_DIN_DIN_SRAM_ENDIANNESS_SRAM_DIN_ENDIANNESS_LittleEndian (0UL) /*!< Use little-endian for DIN interface to SRAM */
+#define CC_DIN_DIN_SRAM_ENDIANNESS_SRAM_DIN_ENDIANNESS_BigEndian (1UL) /*!< Use big-endian for DIN interface to SRAM */
+
+/* Register: CC_DIN_DIN_SW_RESET */
+/* Description: Perform a DIN reset from software. */
+
+/* Bit 0 : Writing any value to this address resets the DIN interface */
+#define CC_DIN_DIN_SW_RESET_DIN_SW_RESET_Pos (0UL) /*!< Position of DIN_SW_RESET field. */
+#define CC_DIN_DIN_SW_RESET_DIN_SW_RESET_Msk (0x1UL << CC_DIN_DIN_SW_RESET_DIN_SW_RESET_Pos) /*!< Bit mask of DIN_SW_RESET field. */
+
+/* Register: CC_DIN_DIN_CPU_DATA_SIZE */
+/* Description: Data path to DIN is OTF */
+
+/* Bits 15..0 : When using CPU direct write to the DIN buffer, the size of input data in bytes should be written to this register. */
+#define CC_DIN_DIN_CPU_DATA_SIZE_CPU_DIN_SIZE_Pos (0UL) /*!< Position of CPU_DIN_SIZE field. */
+#define CC_DIN_DIN_CPU_DATA_SIZE_CPU_DIN_SIZE_Msk (0xFFFFUL << CC_DIN_DIN_CPU_DATA_SIZE_CPU_DIN_SIZE_Pos) /*!< Bit mask of CPU_DIN_SIZE field. */
+
+/* Register: CC_DIN_WRITE_ALIGN_LAST */
+/* Description: Indication that the next write from the CPU is the last one. This is needed only when the data size is NOT modulo 4 (e.g. HASH padding). */
+
+/* Bit 0 : Next write from CPU is the last word */
+#define CC_DIN_WRITE_ALIGN_LAST_LAST_Pos (0UL) /*!< Position of LAST field. */
+#define CC_DIN_WRITE_ALIGN_LAST_LAST_Msk (0x1UL << CC_DIN_WRITE_ALIGN_LAST_LAST_Pos) /*!< Bit mask of LAST field. */
+
+/* Register: CC_DIN_DIN_FIFO_EMPTY */
+/* Description: DIN FIFO empty indication */
+
+/* Bit 0 : Status bit for DIN FIFO empty */
+#define CC_DIN_DIN_FIFO_EMPTY_EMPTY_Pos (0UL) /*!< Position of EMPTY field. */
+#define CC_DIN_DIN_FIFO_EMPTY_EMPTY_Msk (0x1UL << CC_DIN_DIN_FIFO_EMPTY_EMPTY_Pos) /*!< Bit mask of EMPTY field. */
+#define CC_DIN_DIN_FIFO_EMPTY_EMPTY_False (0UL) /*!< FIFO contains data */
+#define CC_DIN_DIN_FIFO_EMPTY_EMPTY_True (1UL) /*!< FIFO is empty */
+
+/* Register: CC_DIN_DISABLE_OUTSTD_REQ */
+/* Description: Disable outstanding DIN request */
+
+/* Bit 0 : Disables the outstanding request */
+#define CC_DIN_DISABLE_OUTSTD_REQ_DISABLE_OUTSTD_REQ_Pos (0UL) /*!< Position of DISABLE_OUTSTD_REQ field. */
+#define CC_DIN_DISABLE_OUTSTD_REQ_DISABLE_OUTSTD_REQ_Msk (0x1UL << CC_DIN_DISABLE_OUTSTD_REQ_DISABLE_OUTSTD_REQ_Pos) /*!< Bit mask of DISABLE_OUTSTD_REQ field. */
+#define CC_DIN_DISABLE_OUTSTD_REQ_DISABLE_OUTSTD_REQ_Disabled (0UL) /*!< Default value */
+#define CC_DIN_DISABLE_OUTSTD_REQ_DISABLE_OUTSTD_REQ_Enabled (1UL) /*!< Disable any outstanding DIN request */
+
+/* Register: CC_DIN_DIN_FIFO_RST_PNTR */
+/* Description: Write to this register to reset the DIN_FIFO pointers. */
+
+/* Bit 0 : Writing any value to this address resets the DIN_FIFO pointers. */
+#define CC_DIN_DIN_FIFO_RST_PNTR_RST_Pos (0UL) /*!< Position of RST field. */
+#define CC_DIN_DIN_FIFO_RST_PNTR_RST_Msk (0x1UL << CC_DIN_DIN_FIFO_RST_PNTR_RST_Pos) /*!< Bit mask of RST field. */
+
+
+/* Peripheral: CC_DOUT */
+/* Description: CRYPTOCELL Data OUT interface */
+
+/* Register: CC_DOUT_DOUT_BUFFER */
+/* Description: Cryptographic results directly accessible by the CPU. */
+
+/* Bits 31..0 : This address can be used by the CPU to read data directly from the DOUT buffer. */
+#define CC_DOUT_DOUT_BUFFER_DOUT_BUFFER_DATA_Pos (0UL) /*!< Position of DOUT_BUFFER_DATA field. */
+#define CC_DOUT_DOUT_BUFFER_DOUT_BUFFER_DATA_Msk (0xFFFFFFFFUL << CC_DOUT_DOUT_BUFFER_DOUT_BUFFER_DATA_Pos) /*!< Bit mask of DOUT_BUFFER_DATA field. */
+
+/* Register: CC_DOUT_DOUT_MEM_DMA_BUSY */
+/* Description: Indicates whether memory destination DMA (DOUT) is busy */
+
+/* Bit 0 : Destination DMA busy status */
+#define CC_DOUT_DOUT_MEM_DMA_BUSY_DOUT_MEM_DMA_BUSY_Pos (0UL) /*!< Position of DOUT_MEM_DMA_BUSY field. */
+#define CC_DOUT_DOUT_MEM_DMA_BUSY_DOUT_MEM_DMA_BUSY_Msk (0x1UL << CC_DOUT_DOUT_MEM_DMA_BUSY_DOUT_MEM_DMA_BUSY_Pos) /*!< Bit mask of DOUT_MEM_DMA_BUSY field. */
+#define CC_DOUT_DOUT_MEM_DMA_BUSY_DOUT_MEM_DMA_BUSY_Disabled (0UL) /*!< DOUT not busy */
+#define CC_DOUT_DOUT_MEM_DMA_BUSY_DOUT_MEM_DMA_BUSY_Enabled (1UL) /*!< DOUT busy */
+
+/* Register: CC_DOUT_DST_LLI_SRAM_ADDR */
+/* Description: Destination LLI table address in SRAM. */
+
+/* Bits 14..0 : Destination LLI table address in SRAM */
+#define CC_DOUT_DST_LLI_SRAM_ADDR_DST_LLI_SRAM_ADDR_Pos (0UL) /*!< Position of DST_LLI_SRAM_ADDR field. */
+#define CC_DOUT_DST_LLI_SRAM_ADDR_DST_LLI_SRAM_ADDR_Msk (0x7FFFUL << CC_DOUT_DST_LLI_SRAM_ADDR_DST_LLI_SRAM_ADDR_Pos) /*!< Bit mask of DST_LLI_SRAM_ADDR field. */
+
+/* Register: CC_DOUT_DST_LLI_WORD0 */
+/* Description: This register is used in direct LLI mode and holds the location of the data destination in the memory. */
+
+/* Bits 31..0 : Destination address within memory */
+#define CC_DOUT_DST_LLI_WORD0_DST_LLI_WORD0_Pos (0UL) /*!< Position of DST_LLI_WORD0 field. */
+#define CC_DOUT_DST_LLI_WORD0_DST_LLI_WORD0_Msk (0xFFFFFFFFUL << CC_DOUT_DST_LLI_WORD0_DST_LLI_WORD0_Pos) /*!< Bit mask of DST_LLI_WORD0 field. */
+
+/* Register: CC_DOUT_DST_LLI_WORD1 */
+/* Description: This register is used in direct LLI mode and holds the number of bytes to be written to the memory. */
+
+/* Bit 31 : Indicate the last LLI entry */
+#define CC_DOUT_DST_LLI_WORD1_LAST_Pos (31UL) /*!< Position of LAST field. */
+#define CC_DOUT_DST_LLI_WORD1_LAST_Msk (0x1UL << CC_DOUT_DST_LLI_WORD1_LAST_Pos) /*!< Bit mask of LAST field. */
+#define CC_DOUT_DST_LLI_WORD1_LAST_LLIEntry (1UL) /*!< Last LLI entry */
+
+/* Bit 30 : Indicate the first LLI entry */
+#define CC_DOUT_DST_LLI_WORD1_FIRST_Pos (30UL) /*!< Position of FIRST field. */
+#define CC_DOUT_DST_LLI_WORD1_FIRST_Msk (0x1UL << CC_DOUT_DST_LLI_WORD1_FIRST_Pos) /*!< Bit mask of FIRST field. */
+#define CC_DOUT_DST_LLI_WORD1_FIRST_LLIEntry (1UL) /*!< First LLI entry */
+
+/* Bits 29..0 : Total number of bytes to write using DMA in this entry */
+#define CC_DOUT_DST_LLI_WORD1_BYTES_NUM_Pos (0UL) /*!< Position of BYTES_NUM field. */
+#define CC_DOUT_DST_LLI_WORD1_BYTES_NUM_Msk (0x3FFFFFFFUL << CC_DOUT_DST_LLI_WORD1_BYTES_NUM_Pos) /*!< Bit mask of BYTES_NUM field. */
+
+/* Register: CC_DOUT_SRAM_DEST_ADDR */
+/* Description: Location of result to be sent to in SRAM. */
+
+/* Bits 31..0 : SRAM destination base address for data. */
+#define CC_DOUT_SRAM_DEST_ADDR_SRAM_DEST_Pos (0UL) /*!< Position of SRAM_DEST field. */
+#define CC_DOUT_SRAM_DEST_ADDR_SRAM_DEST_Msk (0xFFFFFFFFUL << CC_DOUT_SRAM_DEST_ADDR_SRAM_DEST_Pos) /*!< Bit mask of SRAM_DEST field. */
+
+/* Register: CC_DOUT_DOUT_SRAM_BYTES_LEN */
+/* Description: This register holds the size of the data (in bytes) to be written to the SRAM. */
+
+/* Bits 31..0 : Size of data in bytes to write to SRAM. This is the trigger to the SRAM DST DMA. */
+#define CC_DOUT_DOUT_SRAM_BYTES_LEN_BYTES_LEN_Pos (0UL) /*!< Position of BYTES_LEN field. */
+#define CC_DOUT_DOUT_SRAM_BYTES_LEN_BYTES_LEN_Msk (0xFFFFFFFFUL << CC_DOUT_DOUT_SRAM_BYTES_LEN_BYTES_LEN_Pos) /*!< Bit mask of BYTES_LEN field. */
+
+/* Register: CC_DOUT_DOUT_SRAM_DMA_BUSY */
+/* Description: This register holds the status of the SRAM DMA DOUT. */
+
+/* Bit 0 : DOUT SRAM DMA busy */
+#define CC_DOUT_DOUT_SRAM_DMA_BUSY_BUSY_Pos (0UL) /*!< Position of BUSY field. */
+#define CC_DOUT_DOUT_SRAM_DMA_BUSY_BUSY_Msk (0x1UL << CC_DOUT_DOUT_SRAM_DMA_BUSY_BUSY_Pos) /*!< Bit mask of BUSY field. */
+#define CC_DOUT_DOUT_SRAM_DMA_BUSY_BUSY_Disabled (0UL) /*!< DOUT SRAM DMA not busy */
+#define CC_DOUT_DOUT_SRAM_DMA_BUSY_BUSY_Enabled (1UL) /*!< DOUT SRAM DMA busy */
+
+/* Register: CC_DOUT_DOUT_SRAM_ENDIANNESS */
+/* Description: This register defines the endianness of the DOUT interface from SRAM. */
+
+/* Bit 0 : DOUT SRAM endianness */
+#define CC_DOUT_DOUT_SRAM_ENDIANNESS_DOUT_SRAM_ENDIANNESS_Pos (0UL) /*!< Position of DOUT_SRAM_ENDIANNESS field. */
+#define CC_DOUT_DOUT_SRAM_ENDIANNESS_DOUT_SRAM_ENDIANNESS_Msk (0x1UL << CC_DOUT_DOUT_SRAM_ENDIANNESS_DOUT_SRAM_ENDIANNESS_Pos) /*!< Bit mask of DOUT_SRAM_ENDIANNESS field. */
+#define CC_DOUT_DOUT_SRAM_ENDIANNESS_DOUT_SRAM_ENDIANNESS_LittleEndian (0UL) /*!< Use little-endian for DOUT interface to SRAM */
+#define CC_DOUT_DOUT_SRAM_ENDIANNESS_DOUT_SRAM_ENDIANNESS_BigEndian (1UL) /*!< Use big-endian for DOUT interface to SRAM */
+
+/* Register: CC_DOUT_READ_ALIGN_LAST */
+/* Description: Indication that the next read from the CPU is the last one. This is needed only when the data size is NOT modulo 4, e.g. for HASH padding. */
+
+/* Bit 0 : When next read from CPU is the last one, the read align content can be flushed */
+#define CC_DOUT_READ_ALIGN_LAST_LAST_Pos (0UL) /*!< Position of LAST field. */
+#define CC_DOUT_READ_ALIGN_LAST_LAST_Msk (0x1UL << CC_DOUT_READ_ALIGN_LAST_LAST_Pos) /*!< Bit mask of LAST field. */
+#define CC_DOUT_READ_ALIGN_LAST_LAST_Flush (1UL) /*!< Flush the read aligned content */
+
+/* Register: CC_DOUT_DOUT_FIFO_EMPTY */
+/* Description: DOUT FIFO empty indication */
+
+/* Bit 0 : Status bit for DOUT FIFO empty */
+#define CC_DOUT_DOUT_FIFO_EMPTY_EMPTY_Pos (0UL) /*!< Position of EMPTY field. */
+#define CC_DOUT_DOUT_FIFO_EMPTY_EMPTY_Msk (0x1UL << CC_DOUT_DOUT_FIFO_EMPTY_EMPTY_Pos) /*!< Bit mask of EMPTY field. */
+#define CC_DOUT_DOUT_FIFO_EMPTY_EMPTY_False (0UL) /*!< FIFO contains data */
+#define CC_DOUT_DOUT_FIFO_EMPTY_EMPTY_True (1UL) /*!< FIFO is empty */
+
+/* Register: CC_DOUT_DOUT_SW_RESET */
+/* Description: Perform a DOUT reset from software. */
+
+/* Bit 0 : Writing any value to this address resets the DOUT interface */
+#define CC_DOUT_DOUT_SW_RESET_DOUT_SW_RESET_Pos (0UL) /*!< Position of DOUT_SW_RESET field. */
+#define CC_DOUT_DOUT_SW_RESET_DOUT_SW_RESET_Msk (0x1UL << CC_DOUT_DOUT_SW_RESET_DOUT_SW_RESET_Pos) /*!< Bit mask of DOUT_SW_RESET field. */
+
+
+/* Peripheral: CC_HASH */
+/* Description: CRYPTOCELL HASH engine */
+
+/* Register: CC_HASH_HASH_H0 */
+/* Description: H0 data. Can only be written in the following HASH_CONTROL modes: SHA1 SHA224 SHA256 */
+
+/* Bits 31..0 : 1) Write initial Hash value. 2) Read final Hash value - result. */
+#define CC_HASH_HASH_H0_HASH_H0_Pos (0UL) /*!< Position of HASH_H0 field. */
+#define CC_HASH_HASH_H0_HASH_H0_Msk (0xFFFFFFFFUL << CC_HASH_HASH_H0_HASH_H0_Pos) /*!< Bit mask of HASH_H0 field. */
+
+/* Register: CC_HASH_HASH_H1 */
+/* Description: H1 data. Can only be written in the following HASH_CONTROL modes: SHA1 SHA224 SHA256 */
+
+/* Bits 31..0 : 1) Write initial Hash value. 2) Read final Hash value - result. */
+#define CC_HASH_HASH_H1_HASH_H1_Pos (0UL) /*!< Position of HASH_H1 field. */
+#define CC_HASH_HASH_H1_HASH_H1_Msk (0xFFFFFFFFUL << CC_HASH_HASH_H1_HASH_H1_Pos) /*!< Bit mask of HASH_H1 field. */
+
+/* Register: CC_HASH_HASH_H2 */
+/* Description: H2 data. Can only be written in the following HASH_CONTROL modes: SHA1 SHA224 SHA256 */
+
+/* Bits 31..0 : 1) Write initial Hash value. 2) Read final Hash value - result. */
+#define CC_HASH_HASH_H2_HASH_H2_Pos (0UL) /*!< Position of HASH_H2 field. */
+#define CC_HASH_HASH_H2_HASH_H2_Msk (0xFFFFFFFFUL << CC_HASH_HASH_H2_HASH_H2_Pos) /*!< Bit mask of HASH_H2 field. */
+
+/* Register: CC_HASH_HASH_H3 */
+/* Description: H3 data. Can only be written in the following HASH_CONTROL modes: SHA1 SHA224 SHA256 */
+
+/* Bits 31..0 : 1) Write initial Hash value. 2) Read final Hash value - result. */
+#define CC_HASH_HASH_H3_HASH_H3_Pos (0UL) /*!< Position of HASH_H3 field. */
+#define CC_HASH_HASH_H3_HASH_H3_Msk (0xFFFFFFFFUL << CC_HASH_HASH_H3_HASH_H3_Pos) /*!< Bit mask of HASH_H3 field. */
+
+/* Register: CC_HASH_HASH_H4 */
+/* Description: H4 data. Can only be written in the following HASH_CONTROL modes: SHA1 SHA224 SHA256 */
+
+/* Bits 31..0 : 1) Write initial Hash value. 2) Read final Hash value - result. */
+#define CC_HASH_HASH_H4_HASH_H4_Pos (0UL) /*!< Position of HASH_H4 field. */
+#define CC_HASH_HASH_H4_HASH_H4_Msk (0xFFFFFFFFUL << CC_HASH_HASH_H4_HASH_H4_Pos) /*!< Bit mask of HASH_H4 field. */
+
+/* Register: CC_HASH_HASH_H5 */
+/* Description: H5 data. Can only be written in the following HASH_CONTROL modes: SHA224 SHA256 */
+
+/* Bits 31..0 : 1) Write initial Hash value. 2) Read final Hash value - result. */
+#define CC_HASH_HASH_H5_HASH_H5_Pos (0UL) /*!< Position of HASH_H5 field. */
+#define CC_HASH_HASH_H5_HASH_H5_Msk (0xFFFFFFFFUL << CC_HASH_HASH_H5_HASH_H5_Pos) /*!< Bit mask of HASH_H5 field. */
+
+/* Register: CC_HASH_HASH_H6 */
+/* Description: H6 data. Can only be written in the following HASH_CONTROL modes: SHA224 SHA256 */
+
+/* Bits 31..0 : 1) Write initial Hash value. 2) Read final Hash value - result. */
+#define CC_HASH_HASH_H6_HASH_H6_Pos (0UL) /*!< Position of HASH_H6 field. */
+#define CC_HASH_HASH_H6_HASH_H6_Msk (0xFFFFFFFFUL << CC_HASH_HASH_H6_HASH_H6_Pos) /*!< Bit mask of HASH_H6 field. */
+
+/* Register: CC_HASH_HASH_H7 */
+/* Description: H7 data. Can only be written in the following HASH_CONTROL modes: SHA224 SHA256 */
+
+/* Bits 31..0 : 1) Write initial Hash value. 2) Read final Hash value - result. */
+#define CC_HASH_HASH_H7_HASH_H7_Pos (0UL) /*!< Position of HASH_H7 field. */
+#define CC_HASH_HASH_H7_HASH_H7_Msk (0xFFFFFFFFUL << CC_HASH_HASH_H7_HASH_H7_Pos) /*!< Bit mask of HASH_H7 field. */
+
+/* Register: CC_HASH_AUTO_HW_PADDING */
+/* Description: HW padding automatically activated by engine. */
+
+/* Bit 0 : Enable Automatic HW padding (No need for SW intervention by writing PAD_CFG). */
+#define CC_HASH_AUTO_HW_PADDING_EN_Pos (0UL) /*!< Position of EN field. */
+#define CC_HASH_AUTO_HW_PADDING_EN_Msk (0x1UL << CC_HASH_AUTO_HW_PADDING_EN_Pos) /*!< Bit mask of EN field. */
+
+/* Register: CC_HASH_LOAD_INIT_STATE */
+/* Description: Indication to HASH that the following data is to be loaded into initial value registers in HASH(H0:H15) or IV to AES MAC */
+
+/* Bit 0 : Load data to initial state registers. digest/iv for hash/aes_mac. */
+#define CC_HASH_LOAD_INIT_STATE_LOAD_Pos (0UL) /*!< Position of LOAD field. */
+#define CC_HASH_LOAD_INIT_STATE_LOAD_Msk (0x1UL << CC_HASH_LOAD_INIT_STATE_LOAD_Pos) /*!< Bit mask of LOAD field. */
+
+/* Register: CC_HASH_HASH_VERSION */
+/* Description: HASH VERSION Register */
+
+/* Bits 15..12 : Major version number */
+#define CC_HASH_HASH_VERSION_MAJOR_VERSION_NUMBER_Pos (12UL) /*!< Position of MAJOR_VERSION_NUMBER field. */
+#define CC_HASH_HASH_VERSION_MAJOR_VERSION_NUMBER_Msk (0xFUL << CC_HASH_HASH_VERSION_MAJOR_VERSION_NUMBER_Pos) /*!< Bit mask of MAJOR_VERSION_NUMBER field. */
+
+/* Bits 11..8 : Minor version number */
+#define CC_HASH_HASH_VERSION_MINOR_VERSION_NUMBER_Pos (8UL) /*!< Position of MINOR_VERSION_NUMBER field. */
+#define CC_HASH_HASH_VERSION_MINOR_VERSION_NUMBER_Msk (0xFUL << CC_HASH_HASH_VERSION_MINOR_VERSION_NUMBER_Pos) /*!< Bit mask of MINOR_VERSION_NUMBER field. */
+
+/* Bits 7..0 :   */
+#define CC_HASH_HASH_VERSION_FIXES_Pos (0UL) /*!< Position of FIXES field. */
+#define CC_HASH_HASH_VERSION_FIXES_Msk (0xFFUL << CC_HASH_HASH_VERSION_FIXES_Pos) /*!< Bit mask of FIXES field. */
+
+/* Register: CC_HASH_HASH_CONTROL */
+/* Description: HASH_CONTROL register for selecting HASH mode to run */
+
+/* Bits 3..0 : Select HASH mode to execute */
+#define CC_HASH_HASH_CONTROL_MODE_Pos (0UL) /*!< Position of MODE field. */
+#define CC_HASH_HASH_CONTROL_MODE_Msk (0xFUL << CC_HASH_HASH_CONTROL_MODE_Pos) /*!< Bit mask of MODE field. */
+#define CC_HASH_HASH_CONTROL_MODE_MD5 (0UL) /*!< MD5 digest mode, if present */
+#define CC_HASH_HASH_CONTROL_MODE_SHA1 (1UL) /*!< SHA-1 digest mode */
+#define CC_HASH_HASH_CONTROL_MODE_SHA256 (2UL) /*!< SHA-256 digest mode */
+#define CC_HASH_HASH_CONTROL_MODE_SHA224 (10UL) /*!< SHA-224 digest mode */
+
+/* Register: CC_HASH_HASH_PAD_EN */
+/* Description: Enable automatic padding by HW pad block */
+
+/* Bit 0 : Enable automatic padding. */
+#define CC_HASH_HASH_PAD_EN_HASH_PAD_Pos (0UL) /*!< Position of HASH_PAD field. */
+#define CC_HASH_HASH_PAD_EN_HASH_PAD_Msk (0x1UL << CC_HASH_HASH_PAD_EN_HASH_PAD_Pos) /*!< Bit mask of HASH_PAD field. */
+#define CC_HASH_HASH_PAD_EN_HASH_PAD_Disable (0UL) /*!< Automatic padding not enabled */
+#define CC_HASH_HASH_PAD_EN_HASH_PAD_Enable (1UL) /*!< Automatic padding enabled */
+
+/* Register: CC_HASH_HASH_PAD_CFG */
+/* Description: HASH_PAD_CFG Register. */
+
+/* Bit 2 : Enable Padding generation. */
+#define CC_HASH_HASH_PAD_CFG_DO_PAD_Pos (2UL) /*!< Position of DO_PAD field. */
+#define CC_HASH_HASH_PAD_CFG_DO_PAD_Msk (0x1UL << CC_HASH_HASH_PAD_CFG_DO_PAD_Pos) /*!< Bit mask of DO_PAD field. */
+#define CC_HASH_HASH_PAD_CFG_DO_PAD_Disable (0UL) /*!< Padding generation disabled */
+#define CC_HASH_HASH_PAD_CFG_DO_PAD_Enable (1UL) /*!< Padding generation enabled */
+
+/* Register: CC_HASH_HASH_CUR_LEN_0 */
+/* Description: Bits 31:0 of current hash length */
+
+/* Bits 31..0 :   */
+#define CC_HASH_HASH_CUR_LEN_0_HASH_CUR_LEN_0_Pos (0UL) /*!< Position of HASH_CUR_LEN_0 field. */
+#define CC_HASH_HASH_CUR_LEN_0_HASH_CUR_LEN_0_Msk (0xFFFFFFFFUL << CC_HASH_HASH_CUR_LEN_0_HASH_CUR_LEN_0_Pos) /*!< Bit mask of HASH_CUR_LEN_0 field. */
+
+/* Register: CC_HASH_HASH_CUR_LEN_1 */
+/* Description: Bits 63:32 of current hash length */
+
+/* Bits 31..0 :   */
+#define CC_HASH_HASH_CUR_LEN_1_HASH_CUR_LEN_1_Pos (0UL) /*!< Position of HASH_CUR_LEN_1 field. */
+#define CC_HASH_HASH_CUR_LEN_1_HASH_CUR_LEN_1_Msk (0xFFFFFFFFUL << CC_HASH_HASH_CUR_LEN_1_HASH_CUR_LEN_1_Pos) /*!< Bit mask of HASH_CUR_LEN_1 field. */
+
+/* Register: CC_HASH_HASH_PARAM */
+/* Description: HASH parameters enabled in the design */
+
+/* Bit 18 : Indicate if HASH to dout is present in the design */
+#define CC_HASH_HASH_PARAM_DUMP_HASH_TO_DOUT_EXISTS_Pos (18UL) /*!< Position of DUMP_HASH_TO_DOUT_EXISTS field. */
+#define CC_HASH_HASH_PARAM_DUMP_HASH_TO_DOUT_EXISTS_Msk (0x1UL << CC_HASH_HASH_PARAM_DUMP_HASH_TO_DOUT_EXISTS_Pos) /*!< Bit mask of DUMP_HASH_TO_DOUT_EXISTS field. */
+
+/* Bit 17 : Indicate if COMPARE digest logic is present in the design */
+#define CC_HASH_HASH_PARAM_HASH_COMPARE_EXISTS_Pos (17UL) /*!< Position of HASH_COMPARE_EXISTS field. */
+#define CC_HASH_HASH_PARAM_HASH_COMPARE_EXISTS_Msk (0x1UL << CC_HASH_HASH_PARAM_HASH_COMPARE_EXISTS_Pos) /*!< Bit mask of HASH_COMPARE_EXISTS field. */
+
+/* Bit 16 : Indicate if SHA-256 is present in the design */
+#define CC_HASH_HASH_PARAM_SHA_256_EXISTS_Pos (16UL) /*!< Position of SHA_256_EXISTS field. */
+#define CC_HASH_HASH_PARAM_SHA_256_EXISTS_Msk (0x1UL << CC_HASH_HASH_PARAM_SHA_256_EXISTS_Pos) /*!< Bit mask of SHA_256_EXISTS field. */
+
+/* Bit 15 : Indicate if HMAC is present in the design */
+#define CC_HASH_HASH_PARAM_HMAC_EXISTS_Pos (15UL) /*!< Position of HMAC_EXISTS field. */
+#define CC_HASH_HASH_PARAM_HMAC_EXISTS_Msk (0x1UL << CC_HASH_HASH_PARAM_HMAC_EXISTS_Pos) /*!< Bit mask of HMAC_EXISTS field. */
+
+/* Bit 14 : Indicate if MD5 is present in the design */
+#define CC_HASH_HASH_PARAM_MD5_EXISTS_Pos (14UL) /*!< Position of MD5_EXISTS field. */
+#define CC_HASH_HASH_PARAM_MD5_EXISTS_Msk (0x1UL << CC_HASH_HASH_PARAM_MD5_EXISTS_Pos) /*!< Bit mask of MD5_EXISTS field. */
+
+/* Bit 13 : Indicate if pad block is present in the design. */
+#define CC_HASH_HASH_PARAM_PAD_EXISTS_Pos (13UL) /*!< Position of PAD_EXISTS field. */
+#define CC_HASH_HASH_PARAM_PAD_EXISTS_Msk (0x1UL << CC_HASH_HASH_PARAM_PAD_EXISTS_Pos) /*!< Bit mask of PAD_EXISTS field. */
+
+/* Bit 12 : Indicate if SHA-512 is present in the design. */
+#define CC_HASH_HASH_PARAM_SHA_512_EXISTS_Pos (12UL) /*!< Position of SHA_512_EXISTS field. */
+#define CC_HASH_HASH_PARAM_SHA_512_EXISTS_Msk (0x1UL << CC_HASH_HASH_PARAM_SHA_512_EXISTS_Pos) /*!< Bit mask of SHA_512_EXISTS field. */
+
+/* Bits 11..8 : Determine the granularity of word size. */
+#define CC_HASH_HASH_PARAM_DW_Pos (8UL) /*!< Position of DW field. */
+#define CC_HASH_HASH_PARAM_DW_Msk (0xFUL << CC_HASH_HASH_PARAM_DW_Pos) /*!< Bit mask of DW field. */
+#define CC_HASH_HASH_PARAM_DW_Size32 (0UL) /*!< 32 bit word data */
+#define CC_HASH_HASH_PARAM_DW_Size64 (1UL) /*!< 64 bit word data */
+
+/* Bits 7..4 : Indicate if Hi adders are present for each Hi value or 1 adder is shared for all Hi. */
+#define CC_HASH_HASH_PARAM_CH_Pos (4UL) /*!< Position of CH field. */
+#define CC_HASH_HASH_PARAM_CH_Msk (0xFUL << CC_HASH_HASH_PARAM_CH_Pos) /*!< Bit mask of CH field. */
+#define CC_HASH_HASH_PARAM_CH_Single (0UL) /*!< One Hi value is updated at a time */
+#define CC_HASH_HASH_PARAM_CH_Multiple (1UL) /*!< All Hi values are updated at the same time. */
+
+/* Bits 3..0 : Indicates the number of concurrent words the hash is using to compute signature. */
+#define CC_HASH_HASH_PARAM_CW_Pos (0UL) /*!< Position of CW field. */
+#define CC_HASH_HASH_PARAM_CW_Msk (0xFUL << CC_HASH_HASH_PARAM_CW_Pos) /*!< Bit mask of CW field. */
+#define CC_HASH_HASH_PARAM_CW_EnableOne (1UL) /*!< One concurrent word used by hash during signature generation */
+#define CC_HASH_HASH_PARAM_CW_EnableTwo (2UL) /*!< Two concurrent words used by hash during signature generation */
+
+/* Register: CC_HASH_HASH_AES_SW_RESET */
+/* Description: Register for resetting HASH engine from software during AES operations */
+
+/* Bit 0 : Hash receive reset internally. */
+#define CC_HASH_HASH_AES_SW_RESET_HASH_AES_SW_RESET_Pos (0UL) /*!< Position of HASH_AES_SW_RESET field. */
+#define CC_HASH_HASH_AES_SW_RESET_HASH_AES_SW_RESET_Msk (0x1UL << CC_HASH_HASH_AES_SW_RESET_HASH_AES_SW_RESET_Pos) /*!< Bit mask of HASH_AES_SW_RESET field. */
+
+/* Register: CC_HASH_HASH_ENDIANESS */
+/* Description: The default value is little-endian. The data and generation of padding can be swapped to be big-endian. */
+
+/* Bit 0 :   */
+#define CC_HASH_HASH_ENDIANESS_HASH_ENDIANNESS_Pos (0UL) /*!< Position of HASH_ENDIANNESS field. */
+#define CC_HASH_HASH_ENDIANESS_HASH_ENDIANNESS_Msk (0x1UL << CC_HASH_HASH_ENDIANESS_HASH_ENDIANNESS_Pos) /*!< Bit mask of HASH_ENDIANNESS field. */
+#define CC_HASH_HASH_ENDIANESS_HASH_ENDIANNESS_LittleEndian (0UL) /*!< Use Little-endian format for data and padding */
+#define CC_HASH_HASH_ENDIANESS_HASH_ENDIANNESS_BigEndian (1UL) /*!< Use Big-endian format for data and padding */
+
+
 /* Peripheral: CC_HOST_RGF */
 /* Description: CRYPTOCELL HOST_RGF interface */
+
+/* Register: CC_HOST_RGF_HOST_RGF_IRR */
+/* Description: Interrupt request register. Each bit of this register holds the interrupt
+        status of a single interrupt source. If corresponding HOST_RGF_IMR bit is
+        unmasked, an interrupt is generated. */
+
+/* Bit 10 : The RNG interrupt status */
+#define CC_HOST_RGF_HOST_RGF_IRR_RNG_INT_Pos (10UL) /*!< Position of RNG_INT field. */
+#define CC_HOST_RGF_HOST_RGF_IRR_RNG_INT_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_IRR_RNG_INT_Pos) /*!< Bit mask of RNG_INT field. */
+
+/* Bit 9 : The PKA end of operation interrupt status. */
+#define CC_HOST_RGF_HOST_RGF_IRR_PKA_EXP_INT_Pos (9UL) /*!< Position of PKA_EXP_INT field. */
+#define CC_HOST_RGF_HOST_RGF_IRR_PKA_EXP_INT_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_IRR_PKA_EXP_INT_Pos) /*!< Bit mask of PKA_EXP_INT field. */
+
+/* Bit 8 : The AHB error interrupt status. */
+#define CC_HOST_RGF_HOST_RGF_IRR_AHB_ERR_INT_Pos (8UL) /*!< Position of AHB_ERR_INT field. */
+#define CC_HOST_RGF_HOST_RGF_IRR_AHB_ERR_INT_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_IRR_AHB_ERR_INT_Pos) /*!< Bit mask of AHB_ERR_INT field. */
+
+/* Bit 7 : The DOUT to memory DMA done interrupt status. This interrupt is asserted when all data was delivered to memory buffer from DOUT. */
+#define CC_HOST_RGF_HOST_RGF_IRR_DOUT_TO_MEM_INT_Pos (7UL) /*!< Position of DOUT_TO_MEM_INT field. */
+#define CC_HOST_RGF_HOST_RGF_IRR_DOUT_TO_MEM_INT_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_IRR_DOUT_TO_MEM_INT_Pos) /*!< Bit mask of DOUT_TO_MEM_INT field. */
+
+/* Bit 6 : The memory to DIN DMA done interrupt status. This interrupt is asserted when all data was delivered to DIN buffer from memory. */
+#define CC_HOST_RGF_HOST_RGF_IRR_MEM_TO_DIN_INT_Pos (6UL) /*!< Position of MEM_TO_DIN_INT field. */
+#define CC_HOST_RGF_HOST_RGF_IRR_MEM_TO_DIN_INT_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_IRR_MEM_TO_DIN_INT_Pos) /*!< Bit mask of MEM_TO_DIN_INT field. */
+
+/* Bit 5 : The DOUT to SRAM DMA done interrupt status. This interrupt is asserted when all data was delivered to SRAM buffer from DOUT. */
+#define CC_HOST_RGF_HOST_RGF_IRR_DOUT_TO_SRAM_INT_Pos (5UL) /*!< Position of DOUT_TO_SRAM_INT field. */
+#define CC_HOST_RGF_HOST_RGF_IRR_DOUT_TO_SRAM_INT_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_IRR_DOUT_TO_SRAM_INT_Pos) /*!< Bit mask of DOUT_TO_SRAM_INT field. */
+
+/* Bit 4 : The SRAM to DIN DMA done interrupt status. This interrupt is asserted when all data was delivered to DIN buffer from SRAM. */
+#define CC_HOST_RGF_HOST_RGF_IRR_SRAM_TO_DIN_INT_Pos (4UL) /*!< Position of SRAM_TO_DIN_INT field. */
+#define CC_HOST_RGF_HOST_RGF_IRR_SRAM_TO_DIN_INT_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_IRR_SRAM_TO_DIN_INT_Pos) /*!< Bit mask of SRAM_TO_DIN_INT field. */
+
+/* Register: CC_HOST_RGF_HOST_RGF_IMR */
+/* Description: Interrupt mask register. Each bit of this register holds the mask of a single interrupt source. */
+
+/* Bit 10 : The RNG interrupt mask */
+#define CC_HOST_RGF_HOST_RGF_IMR_RNG_INT_MASK_Pos (10UL) /*!< Position of RNG_INT_MASK field. */
+#define CC_HOST_RGF_HOST_RGF_IMR_RNG_INT_MASK_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_IMR_RNG_INT_MASK_Pos) /*!< Bit mask of RNG_INT_MASK field. */
+#define CC_HOST_RGF_HOST_RGF_IMR_RNG_INT_MASK_Disable (0UL) /*!< Do not mask RNG interrupt i.e. interrupt is generated */
+#define CC_HOST_RGF_HOST_RGF_IMR_RNG_INT_MASK_Enable (1UL) /*!< Mask RNG interrupt i.e. no interrupt is generated */
+
+/* Bit 9 : The PKA end of operation interrupt mask. */
+#define CC_HOST_RGF_HOST_RGF_IMR_PKA_EXP_MASK_Pos (9UL) /*!< Position of PKA_EXP_MASK field. */
+#define CC_HOST_RGF_HOST_RGF_IMR_PKA_EXP_MASK_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_IMR_PKA_EXP_MASK_Pos) /*!< Bit mask of PKA_EXP_MASK field. */
+#define CC_HOST_RGF_HOST_RGF_IMR_PKA_EXP_MASK_Disable (0UL) /*!< Do not mask PKA end of operation interrupt i.e. interrupt is generated */
+#define CC_HOST_RGF_HOST_RGF_IMR_PKA_EXP_MASK_Enable (1UL) /*!< Mask PKA end of operation interrupt i.e. no interrupt is generated */
+
+/* Bit 8 : The AHB error interrupt mask. */
+#define CC_HOST_RGF_HOST_RGF_IMR_AHB_ERR_MASK_Pos (8UL) /*!< Position of AHB_ERR_MASK field. */
+#define CC_HOST_RGF_HOST_RGF_IMR_AHB_ERR_MASK_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_IMR_AHB_ERR_MASK_Pos) /*!< Bit mask of AHB_ERR_MASK field. */
+#define CC_HOST_RGF_HOST_RGF_IMR_AHB_ERR_MASK_Disable (0UL) /*!< Do not mask AHB error interrupt i.e. interrupt is generated */
+#define CC_HOST_RGF_HOST_RGF_IMR_AHB_ERR_MASK_Enable (1UL) /*!< Mask AHB error interrupt i.e. no interrupt is generated */
+
+/* Bit 7 : The DOUT to memory DMA done interrupt mask. */
+#define CC_HOST_RGF_HOST_RGF_IMR_DOUT_TO_MEM_MASK_Pos (7UL) /*!< Position of DOUT_TO_MEM_MASK field. */
+#define CC_HOST_RGF_HOST_RGF_IMR_DOUT_TO_MEM_MASK_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_IMR_DOUT_TO_MEM_MASK_Pos) /*!< Bit mask of DOUT_TO_MEM_MASK field. */
+#define CC_HOST_RGF_HOST_RGF_IMR_DOUT_TO_MEM_MASK_Disable (0UL) /*!< Do not mask DOUT to memory DMA done interrupt i.e. interrupt is generated */
+#define CC_HOST_RGF_HOST_RGF_IMR_DOUT_TO_MEM_MASK_Enable (1UL) /*!< Mask DOUT to memory DMA done interrupt i.e. no interrupt is generated */
+
+/* Bit 6 : The memory to DIN DMA done interrupt mask. */
+#define CC_HOST_RGF_HOST_RGF_IMR_MEM_TO_DIN_MASK_Pos (6UL) /*!< Position of MEM_TO_DIN_MASK field. */
+#define CC_HOST_RGF_HOST_RGF_IMR_MEM_TO_DIN_MASK_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_IMR_MEM_TO_DIN_MASK_Pos) /*!< Bit mask of MEM_TO_DIN_MASK field. */
+#define CC_HOST_RGF_HOST_RGF_IMR_MEM_TO_DIN_MASK_Disable (0UL) /*!< Do not mask memory to DIN DMA done interrupt i.e. interrupt is generated */
+#define CC_HOST_RGF_HOST_RGF_IMR_MEM_TO_DIN_MASK_Enable (1UL) /*!< Mask memory to DIN DMA done interrupt i.e. no interrupt is generated */
+
+/* Bit 5 : The DOUT to SRAM DMA done interrupt mask. */
+#define CC_HOST_RGF_HOST_RGF_IMR_DOUT_TO_SRAM_MASK_Pos (5UL) /*!< Position of DOUT_TO_SRAM_MASK field. */
+#define CC_HOST_RGF_HOST_RGF_IMR_DOUT_TO_SRAM_MASK_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_IMR_DOUT_TO_SRAM_MASK_Pos) /*!< Bit mask of DOUT_TO_SRAM_MASK field. */
+#define CC_HOST_RGF_HOST_RGF_IMR_DOUT_TO_SRAM_MASK_Disable (0UL) /*!< Do not mask DOUT to SRAM DMA done interrupt i.e. interrupt is generated */
+#define CC_HOST_RGF_HOST_RGF_IMR_DOUT_TO_SRAM_MASK_Enable (1UL) /*!< Mask DOUT to SRAM DMA done interrupt i.e. no interrupt is generated */
+
+/* Bit 4 : The SRAM to DIN DMA done interrupt mask. */
+#define CC_HOST_RGF_HOST_RGF_IMR_SRAM_TO_DIN_MASK_Pos (4UL) /*!< Position of SRAM_TO_DIN_MASK field. */
+#define CC_HOST_RGF_HOST_RGF_IMR_SRAM_TO_DIN_MASK_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_IMR_SRAM_TO_DIN_MASK_Pos) /*!< Bit mask of SRAM_TO_DIN_MASK field. */
+#define CC_HOST_RGF_HOST_RGF_IMR_SRAM_TO_DIN_MASK_Disable (0UL) /*!< Do not mask SRAM to DIN DMA done interrupt i.e. interrupt is generated */
+#define CC_HOST_RGF_HOST_RGF_IMR_SRAM_TO_DIN_MASK_Enable (1UL) /*!< Mask SRAM to DIN DMA done interrupt i.e. no interrupt is generated */
+
+/* Register: CC_HOST_RGF_HOST_RGF_ICR */
+/* Description: Interrupt clear register. Writing a 1 bit into a field in this register will clear the corresponding bit in HOST_RGF_IRR. */
+
+/* Bit 10 : The RNG interrupt clear. Register RNG_ISR in the CC_RNG block must be cleared before this interrupt can be cleared. */
+#define CC_HOST_RGF_HOST_RGF_ICR_RNG_INT_CLEAR_Pos (10UL) /*!< Position of RNG_INT_CLEAR field. */
+#define CC_HOST_RGF_HOST_RGF_ICR_RNG_INT_CLEAR_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_ICR_RNG_INT_CLEAR_Pos) /*!< Bit mask of RNG_INT_CLEAR field. */
+
+/* Bit 9 : The PKA end of operation interrupt clear. */
+#define CC_HOST_RGF_HOST_RGF_ICR_PKA_EXP_CLEAR_Pos (9UL) /*!< Position of PKA_EXP_CLEAR field. */
+#define CC_HOST_RGF_HOST_RGF_ICR_PKA_EXP_CLEAR_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_ICR_PKA_EXP_CLEAR_Pos) /*!< Bit mask of PKA_EXP_CLEAR field. */
+
+/* Bit 8 : The AHB error interrupt clear. */
+#define CC_HOST_RGF_HOST_RGF_ICR_AHB_ERR_CLEAR_Pos (8UL) /*!< Position of AHB_ERR_CLEAR field. */
+#define CC_HOST_RGF_HOST_RGF_ICR_AHB_ERR_CLEAR_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_ICR_AHB_ERR_CLEAR_Pos) /*!< Bit mask of AHB_ERR_CLEAR field. */
+
+/* Bit 7 : The DOUT to memory DMA done interrupt clear. */
+#define CC_HOST_RGF_HOST_RGF_ICR_DOUT_TO_MEM_CLEAR_Pos (7UL) /*!< Position of DOUT_TO_MEM_CLEAR field. */
+#define CC_HOST_RGF_HOST_RGF_ICR_DOUT_TO_MEM_CLEAR_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_ICR_DOUT_TO_MEM_CLEAR_Pos) /*!< Bit mask of DOUT_TO_MEM_CLEAR field. */
+
+/* Bit 6 : The memory to DIN DMA done interrupt clear. */
+#define CC_HOST_RGF_HOST_RGF_ICR_MEM_TO_DIN_CLEAR_Pos (6UL) /*!< Position of MEM_TO_DIN_CLEAR field. */
+#define CC_HOST_RGF_HOST_RGF_ICR_MEM_TO_DIN_CLEAR_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_ICR_MEM_TO_DIN_CLEAR_Pos) /*!< Bit mask of MEM_TO_DIN_CLEAR field. */
+
+/* Bit 5 : The DOUT to SRAM DMA done interrupt clear. */
+#define CC_HOST_RGF_HOST_RGF_ICR_DOUT_TO_SRAM_CLEAR_Pos (5UL) /*!< Position of DOUT_TO_SRAM_CLEAR field. */
+#define CC_HOST_RGF_HOST_RGF_ICR_DOUT_TO_SRAM_CLEAR_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_ICR_DOUT_TO_SRAM_CLEAR_Pos) /*!< Bit mask of DOUT_TO_SRAM_CLEAR field. */
+
+/* Bit 4 : The SRAM to DIN DMA done interrupt clear. */
+#define CC_HOST_RGF_HOST_RGF_ICR_SRAM_TO_DIN_CLEAR_Pos (4UL) /*!< Position of SRAM_TO_DIN_CLEAR field. */
+#define CC_HOST_RGF_HOST_RGF_ICR_SRAM_TO_DIN_CLEAR_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_ICR_SRAM_TO_DIN_CLEAR_Pos) /*!< Bit mask of SRAM_TO_DIN_CLEAR field. */
+
+/* Register: CC_HOST_RGF_HOST_RGF_ENDIAN */
+/* Description: This register defines the endianness of the Host-accessible registers, and can only be written once. */
+
+/* Bit 15 : DIN write word endianness. */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DIN_RD_WBG_Pos (15UL) /*!< Position of DIN_RD_WBG field. */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DIN_RD_WBG_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_ENDIAN_DIN_RD_WBG_Pos) /*!< Bit mask of DIN_RD_WBG field. */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DIN_RD_WBG_LittleEndian (0UL) /*!< Use little endian for DIN words */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DIN_RD_WBG_BigEndian (1UL) /*!< Use big endian for DIN words */
+
+/* Bit 11 : DOUT write word endianness. */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DOUT_WR_WBG_Pos (11UL) /*!< Position of DOUT_WR_WBG field. */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DOUT_WR_WBG_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_ENDIAN_DOUT_WR_WBG_Pos) /*!< Bit mask of DOUT_WR_WBG field. */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DOUT_WR_WBG_LittleEndian (0UL) /*!< Use little endian for DOUT words */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DOUT_WR_WBG_BigEndian (1UL) /*!< Use big endian for DOUT words */
+
+/* Bit 7 : DIN write endianness */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DIN_RD_BG_Pos (7UL) /*!< Position of DIN_RD_BG field. */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DIN_RD_BG_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_ENDIAN_DIN_RD_BG_Pos) /*!< Bit mask of DIN_RD_BG field. */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DIN_RD_BG_LittleEndian (0UL) /*!< Use little endian for DIN writes */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DIN_RD_BG_BigEndian (1UL) /*!< Use big endian for DIN writes */
+
+/* Bit 3 : DOUT write endianness */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DOUT_WR_BG_Pos (3UL) /*!< Position of DOUT_WR_BG field. */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DOUT_WR_BG_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_ENDIAN_DOUT_WR_BG_Pos) /*!< Bit mask of DOUT_WR_BG field. */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DOUT_WR_BG_LittleEndian (0UL) /*!< Use little endian for DOUT writes */
+#define CC_HOST_RGF_HOST_RGF_ENDIAN_DOUT_WR_BG_BigEndian (1UL) /*!< Use big endian for DOUT writes */
+
+/* Register: CC_HOST_RGF_HOST_RGF_CC_SW_RST */
+/* Description: Writing to this register generates a general reset to CRYPTOCELL. This reset takes about 4 core clock cycles. */
+
+/* Bit 0 : Writing '1' will request a general reset from the subsystem. */
+#define CC_HOST_RGF_HOST_RGF_CC_SW_RST_CC_SW_RST_REQ_Pos (0UL) /*!< Position of CC_SW_RST_REQ field. */
+#define CC_HOST_RGF_HOST_RGF_CC_SW_RST_CC_SW_RST_REQ_Msk (0x1UL << CC_HOST_RGF_HOST_RGF_CC_SW_RST_CC_SW_RST_REQ_Pos) /*!< Bit mask of CC_SW_RST_REQ field. */
+
+/* Register: CC_HOST_RGF_HOST_RGF_SIGNATURE */
+/* Description: This register holds the CRYPTOCELL product signature. */
+
+/* Bits 31..0 : Fixed-value identification signature used by host driver to verify CRYPTOCELL presence at this address. */
+#define CC_HOST_RGF_HOST_RGF_SIGNATURE_HOST_SIGNATURE_Pos (0UL) /*!< Position of HOST_SIGNATURE field. */
+#define CC_HOST_RGF_HOST_RGF_SIGNATURE_HOST_SIGNATURE_Msk (0xFFFFFFFFUL << CC_HOST_RGF_HOST_RGF_SIGNATURE_HOST_SIGNATURE_Pos) /*!< Bit mask of HOST_SIGNATURE field. */
+
+/* Register: CC_HOST_RGF_HOST_BOOT */
+/* Description: This register holds the values of the CRYPTOCELL pre-synthesis flags. */
+
+/* Bit 30 : AES_EXISTS_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_AES_EXISTS_LOCAL_Pos (30UL) /*!< Position of AES_EXISTS_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_AES_EXISTS_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_AES_EXISTS_LOCAL_Pos) /*!< Bit mask of AES_EXISTS_LOCAL field. */
+
+/* Bit 29 : ONLY_ENCRYPT_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_ONLY_ENCRYPT_LOCAL_Pos (29UL) /*!< Position of ONLY_ENCRYPT_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_ONLY_ENCRYPT_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_ONLY_ENCRYPT_LOCAL_Pos) /*!< Bit mask of ONLY_ENCRYPT_LOCAL field. */
+
+/* Bit 28 : SUPPORT_256_192_KEY_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_SUPPORT_256_192_KEY_LOCAL_Pos (28UL) /*!< Position of SUPPORT_256_192_KEY_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_SUPPORT_256_192_KEY_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_SUPPORT_256_192_KEY_LOCAL_Pos) /*!< Bit mask of SUPPORT_256_192_KEY_LOCAL field. */
+
+/* Bit 27 : TUNNELING_ENB_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_TUNNELING_ENB_LOCAL_Pos (27UL) /*!< Position of TUNNELING_ENB_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_TUNNELING_ENB_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_TUNNELING_ENB_LOCAL_Pos) /*!< Bit mask of TUNNELING_ENB_LOCAL field. */
+
+/* Bit 26 : AES_DIN_BYTE_RESOLUTION_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_AES_DIN_BYTE_RESOLUTION_LOCAL_Pos (26UL) /*!< Position of AES_DIN_BYTE_RESOLUTION_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_AES_DIN_BYTE_RESOLUTION_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_AES_DIN_BYTE_RESOLUTION_LOCAL_Pos) /*!< Bit mask of AES_DIN_BYTE_RESOLUTION_LOCAL field. */
+
+/* Bit 25 : CTR_EXISTS_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_CTR_EXISTS_LOCAL_Pos (25UL) /*!< Position of CTR_EXISTS_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_CTR_EXISTS_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_CTR_EXISTS_LOCAL_Pos) /*!< Bit mask of CTR_EXISTS_LOCAL field. */
+
+/* Bit 24 : AES_XEX_EXISTS_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_AES_XEX_EXISTS_LOCAL_Pos (24UL) /*!< Position of AES_XEX_EXISTS_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_AES_XEX_EXISTS_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_AES_XEX_EXISTS_LOCAL_Pos) /*!< Bit mask of AES_XEX_EXISTS_LOCAL field. */
+
+/* Bit 23 : AES_XEX_HW_T_CALC_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_AES_XEX_HW_T_CALC_LOCAL_Pos (23UL) /*!< Position of AES_XEX_HW_T_CALC_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_AES_XEX_HW_T_CALC_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_AES_XEX_HW_T_CALC_LOCAL_Pos) /*!< Bit mask of AES_XEX_HW_T_CALC_LOCAL field. */
+
+/* Bit 22 : AES_CCM_EXISTS_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_AES_CCM_EXISTS_LOCAL_Pos (22UL) /*!< Position of AES_CCM_EXISTS_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_AES_CCM_EXISTS_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_AES_CCM_EXISTS_LOCAL_Pos) /*!< Bit mask of AES_CCM_EXISTS_LOCAL field. */
+
+/* Bit 21 : AES_CMAC_EXISTS_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_AES_CMAC_EXISTS_LOCAL_Pos (21UL) /*!< Position of AES_CMAC_EXISTS_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_AES_CMAC_EXISTS_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_AES_CMAC_EXISTS_LOCAL_Pos) /*!< Bit mask of AES_CMAC_EXISTS_LOCAL field. */
+
+/* Bit 20 : AES_XCBC_MAC_EXISTS_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_AES_XCBC_MAC_EXISTS_LOCAL_Pos (20UL) /*!< Position of AES_XCBC_MAC_EXISTS_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_AES_XCBC_MAC_EXISTS_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_AES_XCBC_MAC_EXISTS_LOCAL_Pos) /*!< Bit mask of AES_XCBC_MAC_EXISTS_LOCAL field. */
+
+/* Bit 19 : DES_EXISTS_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_DES_EXISTS_LOCAL_Pos (19UL) /*!< Position of DES_EXISTS_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_DES_EXISTS_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_DES_EXISTS_LOCAL_Pos) /*!< Bit mask of DES_EXISTS_LOCAL field. */
+
+/* Bit 18 : C2_EXISTS_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_C2_EXISTS_LOCAL_Pos (18UL) /*!< Position of C2_EXISTS_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_C2_EXISTS_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_C2_EXISTS_LOCAL_Pos) /*!< Bit mask of C2_EXISTS_LOCAL field. */
+
+/* Bit 17 : HASH_EXISTS_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_HASH_EXISTS_LOCAL_Pos (17UL) /*!< Position of HASH_EXISTS_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_HASH_EXISTS_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_HASH_EXISTS_LOCAL_Pos) /*!< Bit mask of HASH_EXISTS_LOCAL field. */
+
+/* Bit 16 : MD5_PRSNT_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_MD5_PRSNT_LOCAL_Pos (16UL) /*!< Position of MD5_PRSNT_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_MD5_PRSNT_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_MD5_PRSNT_LOCAL_Pos) /*!< Bit mask of MD5_PRSNT_LOCAL field. */
+
+/* Bit 15 : SHA_256_PRSNT_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_SHA_256_PRSNT_LOCAL_Pos (15UL) /*!< Position of SHA_256_PRSNT_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_SHA_256_PRSNT_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_SHA_256_PRSNT_LOCAL_Pos) /*!< Bit mask of SHA_256_PRSNT_LOCAL field. */
+
+/* Bit 14 : SHA_512_PRSNT_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_SHA_512_PRSNT_LOCAL_Pos (14UL) /*!< Position of SHA_512_PRSNT_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_SHA_512_PRSNT_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_SHA_512_PRSNT_LOCAL_Pos) /*!< Bit mask of SHA_512_PRSNT_LOCAL field. */
+
+/* Bit 13 : RC4_EXISTS_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_RC4_EXISTS_LOCAL_Pos (13UL) /*!< Position of RC4_EXISTS_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_RC4_EXISTS_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_RC4_EXISTS_LOCAL_Pos) /*!< Bit mask of RC4_EXISTS_LOCAL field. */
+
+/* Bit 12 : PKA EXISTS LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_PKA_EXISTS_LOCAL_Pos (12UL) /*!< Position of PKA_EXISTS_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_PKA_EXISTS_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_PKA_EXISTS_LOCAL_Pos) /*!< Bit mask of PKA_EXISTS_LOCAL field. */
+
+/* Bit 11 : RNG_EXISTS_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_RNG_EXISTS_LOCAL_Pos (11UL) /*!< Position of RNG_EXISTS_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_RNG_EXISTS_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_RNG_EXISTS_LOCAL_Pos) /*!< Bit mask of RNG_EXISTS_LOCAL field. */
+
+/* Bit 10 : PAU_EXISTS_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_PAU_EXISTS_LOCAL_Pos (10UL) /*!< Position of PAU_EXISTS_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_PAU_EXISTS_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_PAU_EXISTS_LOCAL_Pos) /*!< Bit mask of PAU_EXISTS_LOCAL field. */
+
+/* Bit 9 : DSCRPTR_EXISTS_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_DSCRPTR_EXISTS_LOCAL_Pos (9UL) /*!< Position of DSCRPTR_EXISTS_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_DSCRPTR_EXISTS_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_DSCRPTR_EXISTS_LOCAL_Pos) /*!< Bit mask of DSCRPTR_EXISTS_LOCAL field. */
+
+/* Bits 8..6 : SRAM_SIZE_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_SRAM_SIZE_LOCAL_Pos (6UL) /*!< Position of SRAM_SIZE_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_SRAM_SIZE_LOCAL_Msk (0x7UL << CC_HOST_RGF_HOST_BOOT_SRAM_SIZE_LOCAL_Pos) /*!< Bit mask of SRAM_SIZE_LOCAL field. */
+
+/* Bit 5 : RKEK_ECC_EXISTS_LOCAL_N */
+#define CC_HOST_RGF_HOST_BOOT_RKEK_ECC_EXISTS_LOCAL_N_Pos (5UL) /*!< Position of RKEK_ECC_EXISTS_LOCAL_N field. */
+#define CC_HOST_RGF_HOST_BOOT_RKEK_ECC_EXISTS_LOCAL_N_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_RKEK_ECC_EXISTS_LOCAL_N_Pos) /*!< Bit mask of RKEK_ECC_EXISTS_LOCAL_N field. */
+
+/* Bit 3 : EXT_MEM_SECURED_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_EXT_MEM_SECURED_LOCAL_Pos (3UL) /*!< Position of EXT_MEM_SECURED_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_EXT_MEM_SECURED_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_EXT_MEM_SECURED_LOCAL_Pos) /*!< Bit mask of EXT_MEM_SECURED_LOCAL field. */
+
+/* Bit 2 : HASH_IN_FUSES_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_HASH_IN_FUSES_LOCAL_Pos (2UL) /*!< Position of HASH_IN_FUSES_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_HASH_IN_FUSES_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_HASH_IN_FUSES_LOCAL_Pos) /*!< Bit mask of HASH_IN_FUSES_LOCAL field. */
+
+/* Bit 1 : LARGE_RKEK_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_LARGE_RKEK_LOCAL_Pos (1UL) /*!< Position of LARGE_RKEK_LOCAL field. */
+#define CC_HOST_RGF_HOST_BOOT_LARGE_RKEK_LOCAL_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_LARGE_RKEK_LOCAL_Pos) /*!< Bit mask of LARGE_RKEK_LOCAL field. */
+
+/* Bit 0 : POWER_GATING_EXISTS_LOCAL */
+#define CC_HOST_RGF_HOST_BOOT_SYNTHESIS_CONFIG_Pos (0UL) /*!< Position of SYNTHESIS_CONFIG field. */
+#define CC_HOST_RGF_HOST_BOOT_SYNTHESIS_CONFIG_Msk (0x1UL << CC_HOST_RGF_HOST_BOOT_SYNTHESIS_CONFIG_Pos) /*!< Bit mask of SYNTHESIS_CONFIG field. */
 
 /* Register: CC_HOST_RGF_HOST_CRYPTOKEY_SEL */
 /* Description: AES hardware key select */
@@ -48,10 +1502,17 @@ POSSIBILITY OF SUCH DAMAGE.
 #define CC_HOST_RGF_HOST_CRYPTOKEY_SEL_HOST_CRYPTOKEY_SEL_K_PRTL (1UL) /*!< Use hard-coded RTL key K_PRTL */
 #define CC_HOST_RGF_HOST_CRYPTOKEY_SEL_HOST_CRYPTOKEY_SEL_Session (2UL) /*!< Use provided session key */
 
-/* Register: CC_HOST_RGF_HOST_IOT_KPRTL_LOCK */
-/* Description: This write-once register is the K_PRTL lock register. When this register is set, K_PRTL cannot be used and a zeroed key will be used instead. The value of this register is saved in the CRYPTOCELL AO power domain. */
+/* Register: CC_HOST_RGF_HOST_HOST_CRY_ACCESS_EN */
+/* Description: This register defines whether the Host has access to the cry_kernel registers directly (compatibility mode) and not only through the descriptors. The default value is 0 - no access. */
 
-/* Bit 0 : This register is the K_PRTL lock register. When this register is set, K_PRTL cannot be used and a zeroed key will be used instead. The value of this register is saved in the CRYPTOCELL AO power domain. */
+/* Bit 0 : This field defines whether the Host has access to the cry_kernel registers directly (compatibility mode) and not only through the descriptors. The default value is 0 - no access. */
+#define CC_HOST_RGF_HOST_HOST_CRY_ACCESS_EN_HOST_CRY_ACCESS_EN_Pos (0UL) /*!< Position of HOST_CRY_ACCESS_EN field. */
+#define CC_HOST_RGF_HOST_HOST_CRY_ACCESS_EN_HOST_CRY_ACCESS_EN_Msk (0x1UL << CC_HOST_RGF_HOST_HOST_CRY_ACCESS_EN_HOST_CRY_ACCESS_EN_Pos) /*!< Bit mask of HOST_CRY_ACCESS_EN field. */
+
+/* Register: CC_HOST_RGF_HOST_IOT_KPRTL_LOCK */
+/* Description: This write-once register is the K_PRTL lock register. When this register is set, K_PRTL can not be used and a zeroed key will be used instead. The value of this register is saved in the CRYPTOCELL AO power domain. */
+
+/* Bit 0 : This register is the K_PRTL lock register. When this register is set, K_PRTL can not be used and a zeroed key will be used instead. The value of this register is saved in the CRYPTOCELL AO power domain. */
 #define CC_HOST_RGF_HOST_IOT_KPRTL_LOCK_HOST_IOT_KPRTL_LOCK_Pos (0UL) /*!< Position of HOST_IOT_KPRTL_LOCK field. */
 #define CC_HOST_RGF_HOST_IOT_KPRTL_LOCK_HOST_IOT_KPRTL_LOCK_Msk (0x1UL << CC_HOST_RGF_HOST_IOT_KPRTL_LOCK_HOST_IOT_KPRTL_LOCK_Pos) /*!< Bit mask of HOST_IOT_KPRTL_LOCK field. */
 #define CC_HOST_RGF_HOST_IOT_KPRTL_LOCK_HOST_IOT_KPRTL_LOCK_Disabled (0UL) /*!< K_PRTL can be selected for use from register HOST_CRYPTOKEY_SEL */
@@ -99,6 +1560,997 @@ POSSIBILITY OF SUCH DAMAGE.
 #define CC_HOST_RGF_HOST_IOT_LCS_LCS_Msk (0x7UL << CC_HOST_RGF_HOST_IOT_LCS_LCS_Pos) /*!< Bit mask of LCS field. */
 #define CC_HOST_RGF_HOST_IOT_LCS_LCS_Debug (0UL) /*!< CC310 operates in debug mode */
 #define CC_HOST_RGF_HOST_IOT_LCS_LCS_Secure (2UL) /*!< CC310 operates in secure mode */
+
+
+/* Peripheral: CC_HOST_SRAM */
+/* Description: CRYPTOCELL HOST_SRAM interface */
+
+/* Register: CC_HOST_SRAM_SRAM_DATA */
+/* Description: Read/Write data from SRAM */
+
+/* Bits 31..0 : 32 bit write or read from SRAM. 'read' triggers the SRAM read DMA address automatically incremented.  'write' triggers the SRAM write DMA address automatically incremented */
+#define CC_HOST_SRAM_SRAM_DATA_SRAM_DATA_Pos (0UL) /*!< Position of SRAM_DATA field. */
+#define CC_HOST_SRAM_SRAM_DATA_SRAM_DATA_Msk (0xFFFFFFFFUL << CC_HOST_SRAM_SRAM_DATA_SRAM_DATA_Pos) /*!< Bit mask of SRAM_DATA field. */
+
+/* Register: CC_HOST_SRAM_SRAM_ADDR */
+/* Description: First address given to SRAM DMA for read/write transactions from/to SRAM */
+
+/* Bits 14..0 : SRAM starting address */
+#define CC_HOST_SRAM_SRAM_ADDR_SRAM_ADDR_Pos (0UL) /*!< Position of SRAM_ADDR field. */
+#define CC_HOST_SRAM_SRAM_ADDR_SRAM_ADDR_Msk (0x7FFFUL << CC_HOST_SRAM_SRAM_ADDR_SRAM_ADDR_Pos) /*!< Bit mask of SRAM_ADDR field. */
+
+/* Register: CC_HOST_SRAM_SRAM_DATA_READY */
+/* Description: SRAM status register */
+
+/* Bit 0 : SRAM content is ready for read in SRAM_DATA register */
+#define CC_HOST_SRAM_SRAM_DATA_READY_SRAM_READY_Pos (0UL) /*!< Position of SRAM_READY field. */
+#define CC_HOST_SRAM_SRAM_DATA_READY_SRAM_READY_Msk (0x1UL << CC_HOST_SRAM_SRAM_DATA_READY_SRAM_READY_Pos) /*!< Bit mask of SRAM_READY field. */
+
+
+/* Peripheral: CC_MISC */
+/* Description: CRYPTOCELL MISC interface */
+
+/* Register: CC_MISC_AES_CLK_ENABLE */
+/* Description: The AES clock enable register. */
+
+/* Bit 0 : AES clock control */
+#define CC_MISC_AES_CLK_ENABLE_EN_Pos (0UL) /*!< Position of EN field. */
+#define CC_MISC_AES_CLK_ENABLE_EN_Msk (0x1UL << CC_MISC_AES_CLK_ENABLE_EN_Pos) /*!< Bit mask of EN field. */
+#define CC_MISC_AES_CLK_ENABLE_EN_Disable (0UL) /*!< AES clock is disabled */
+#define CC_MISC_AES_CLK_ENABLE_EN_Enable (1UL) /*!< AES clock is enabled */
+
+/* Register: CC_MISC_HASH_CLK_ENABLE */
+/* Description: The HASH clock enable register. */
+
+/* Bit 0 : HASH clock control */
+#define CC_MISC_HASH_CLK_ENABLE_EN_Pos (0UL) /*!< Position of EN field. */
+#define CC_MISC_HASH_CLK_ENABLE_EN_Msk (0x1UL << CC_MISC_HASH_CLK_ENABLE_EN_Pos) /*!< Bit mask of EN field. */
+#define CC_MISC_HASH_CLK_ENABLE_EN_Disable (0UL) /*!< HASH clock is disabled */
+#define CC_MISC_HASH_CLK_ENABLE_EN_Enable (1UL) /*!< HASH clock is enabled */
+
+/* Register: CC_MISC_PKA_CLK_ENABLE */
+/* Description: The PKA clock enable register. */
+
+/* Bit 0 : PKA clock control */
+#define CC_MISC_PKA_CLK_ENABLE_EN_Pos (0UL) /*!< Position of EN field. */
+#define CC_MISC_PKA_CLK_ENABLE_EN_Msk (0x1UL << CC_MISC_PKA_CLK_ENABLE_EN_Pos) /*!< Bit mask of EN field. */
+#define CC_MISC_PKA_CLK_ENABLE_EN_Disable (0UL) /*!< PKA clock is disabled */
+#define CC_MISC_PKA_CLK_ENABLE_EN_Enable (1UL) /*!< PKA clock is enabled */
+
+/* Register: CC_MISC_DMA_CLK_ENABLE */
+/* Description: DMA_CLK enable register. */
+
+/* Bit 0 : DMA clock control */
+#define CC_MISC_DMA_CLK_ENABLE_EN_Pos (0UL) /*!< Position of EN field. */
+#define CC_MISC_DMA_CLK_ENABLE_EN_Msk (0x1UL << CC_MISC_DMA_CLK_ENABLE_EN_Pos) /*!< Bit mask of EN field. */
+#define CC_MISC_DMA_CLK_ENABLE_EN_Disable (0UL) /*!< DMA clock is disabled */
+#define CC_MISC_DMA_CLK_ENABLE_EN_Enable (1UL) /*!< DMA clock is enabled */
+
+/* Register: CC_MISC_CLK_STATUS */
+/* Description: ARM TrustZone CryptoCell clocks status register. */
+
+/* Bit 8 : Check status of DMA clock */
+#define CC_MISC_CLK_STATUS_DMA_CLK_STATUS_Pos (8UL) /*!< Position of DMA_CLK_STATUS field. */
+#define CC_MISC_CLK_STATUS_DMA_CLK_STATUS_Msk (0x1UL << CC_MISC_CLK_STATUS_DMA_CLK_STATUS_Pos) /*!< Bit mask of DMA_CLK_STATUS field. */
+#define CC_MISC_CLK_STATUS_DMA_CLK_STATUS_Disabled (0UL) /*!< DMA clock is disabled */
+#define CC_MISC_CLK_STATUS_DMA_CLK_STATUS_Enabled (1UL) /*!< DMA clock is enabled */
+
+/* Bit 7 : Check status of MC clock */
+#define CC_MISC_CLK_STATUS_MC_CLK_STATUS_Pos (7UL) /*!< Position of MC_CLK_STATUS field. */
+#define CC_MISC_CLK_STATUS_MC_CLK_STATUS_Msk (0x1UL << CC_MISC_CLK_STATUS_MC_CLK_STATUS_Pos) /*!< Bit mask of MC_CLK_STATUS field. */
+#define CC_MISC_CLK_STATUS_MC_CLK_STATUS_Disabled (0UL) /*!< MC clock is disabled */
+#define CC_MISC_CLK_STATUS_MC_CLK_STATUS_Enabled (1UL) /*!< MC clock is enabled */
+
+/* Bit 3 : Check status of PKA clock */
+#define CC_MISC_CLK_STATUS_PKA_CLK_STATUS_Pos (3UL) /*!< Position of PKA_CLK_STATUS field. */
+#define CC_MISC_CLK_STATUS_PKA_CLK_STATUS_Msk (0x1UL << CC_MISC_CLK_STATUS_PKA_CLK_STATUS_Pos) /*!< Bit mask of PKA_CLK_STATUS field. */
+#define CC_MISC_CLK_STATUS_PKA_CLK_STATUS_Disabled (0UL) /*!< PKA clock is disabled */
+#define CC_MISC_CLK_STATUS_PKA_CLK_STATUS_Enabled (1UL) /*!< PKA clock is enabled */
+
+/* Bit 2 : Check status of HASH clock */
+#define CC_MISC_CLK_STATUS_HASH_CLK_STATUS_Pos (2UL) /*!< Position of HASH_CLK_STATUS field. */
+#define CC_MISC_CLK_STATUS_HASH_CLK_STATUS_Msk (0x1UL << CC_MISC_CLK_STATUS_HASH_CLK_STATUS_Pos) /*!< Bit mask of HASH_CLK_STATUS field. */
+#define CC_MISC_CLK_STATUS_HASH_CLK_STATUS_Disabled (0UL) /*!< HASH clock is disabled */
+#define CC_MISC_CLK_STATUS_HASH_CLK_STATUS_Enabled (1UL) /*!< HASH clock is enabled */
+
+/* Bit 0 : Check status of AES clock */
+#define CC_MISC_CLK_STATUS_AES_CLK_STATUS_Pos (0UL) /*!< Position of AES_CLK_STATUS field. */
+#define CC_MISC_CLK_STATUS_AES_CLK_STATUS_Msk (0x1UL << CC_MISC_CLK_STATUS_AES_CLK_STATUS_Pos) /*!< Bit mask of AES_CLK_STATUS field. */
+#define CC_MISC_CLK_STATUS_AES_CLK_STATUS_Disabled (0UL) /*!< AES clock is disabled */
+#define CC_MISC_CLK_STATUS_AES_CLK_STATUS_Enabled (1UL) /*!< AES clock is enabled */
+
+/* Register: CC_MISC_CHACHA_CLK_ENABLE */
+/* Description: CHACHA/SALSA clock enable register. */
+
+/* Bit 0 : CHACHA/SALSA clock control */
+#define CC_MISC_CHACHA_CLK_ENABLE_EN_Pos (0UL) /*!< Position of EN field. */
+#define CC_MISC_CHACHA_CLK_ENABLE_EN_Msk (0x1UL << CC_MISC_CHACHA_CLK_ENABLE_EN_Pos) /*!< Bit mask of EN field. */
+#define CC_MISC_CHACHA_CLK_ENABLE_EN_Disable (0UL) /*!< CHACHA clock is disabled */
+#define CC_MISC_CHACHA_CLK_ENABLE_EN_Enable (1UL) /*!< CHACHA clock is enabled */
+
+
+/* Peripheral: CC_PKA */
+/* Description: CRYPTOCELL PKA engine */
+
+/* Register: CC_PKA_MEMORY_MAP0 */
+/* Description: This register maps the virtual register R0 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R0 register to. */
+#define CC_PKA_MEMORY_MAP0_MEMORY_MAP0_Pos (1UL) /*!< Position of MEMORY_MAP0 field. */
+#define CC_PKA_MEMORY_MAP0_MEMORY_MAP0_Msk (0x1FFUL << CC_PKA_MEMORY_MAP0_MEMORY_MAP0_Pos) /*!< Bit mask of MEMORY_MAP0 field. */
+
+/* Register: CC_PKA_MEMORY_MAP1 */
+/* Description: This register maps the virtual register R1 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R1 register to. */
+#define CC_PKA_MEMORY_MAP1_MEMORY_MAP1_Pos (1UL) /*!< Position of MEMORY_MAP1 field. */
+#define CC_PKA_MEMORY_MAP1_MEMORY_MAP1_Msk (0x1FFUL << CC_PKA_MEMORY_MAP1_MEMORY_MAP1_Pos) /*!< Bit mask of MEMORY_MAP1 field. */
+
+/* Register: CC_PKA_MEMORY_MAP2 */
+/* Description: This register maps the virtual register R2 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R2 register to. */
+#define CC_PKA_MEMORY_MAP2_MEMORY_MAP2_Pos (1UL) /*!< Position of MEMORY_MAP2 field. */
+#define CC_PKA_MEMORY_MAP2_MEMORY_MAP2_Msk (0x1FFUL << CC_PKA_MEMORY_MAP2_MEMORY_MAP2_Pos) /*!< Bit mask of MEMORY_MAP2 field. */
+
+/* Register: CC_PKA_MEMORY_MAP3 */
+/* Description: This register maps the virtual register R3 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R3 register to. */
+#define CC_PKA_MEMORY_MAP3_MEMORY_MAP3_Pos (1UL) /*!< Position of MEMORY_MAP3 field. */
+#define CC_PKA_MEMORY_MAP3_MEMORY_MAP3_Msk (0x1FFUL << CC_PKA_MEMORY_MAP3_MEMORY_MAP3_Pos) /*!< Bit mask of MEMORY_MAP3 field. */
+
+/* Register: CC_PKA_MEMORY_MAP4 */
+/* Description: This register maps the virtual register R4 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R4 register to. */
+#define CC_PKA_MEMORY_MAP4_MEMORY_MAP4_Pos (1UL) /*!< Position of MEMORY_MAP4 field. */
+#define CC_PKA_MEMORY_MAP4_MEMORY_MAP4_Msk (0x1FFUL << CC_PKA_MEMORY_MAP4_MEMORY_MAP4_Pos) /*!< Bit mask of MEMORY_MAP4 field. */
+
+/* Register: CC_PKA_MEMORY_MAP5 */
+/* Description: This register maps the virtual register R5 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R5 register to. */
+#define CC_PKA_MEMORY_MAP5_MEMORY_MAP5_Pos (1UL) /*!< Position of MEMORY_MAP5 field. */
+#define CC_PKA_MEMORY_MAP5_MEMORY_MAP5_Msk (0x1FFUL << CC_PKA_MEMORY_MAP5_MEMORY_MAP5_Pos) /*!< Bit mask of MEMORY_MAP5 field. */
+
+/* Register: CC_PKA_MEMORY_MAP6 */
+/* Description: This register maps the virtual register R6 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R6 register to. */
+#define CC_PKA_MEMORY_MAP6_MEMORY_MAP6_Pos (1UL) /*!< Position of MEMORY_MAP6 field. */
+#define CC_PKA_MEMORY_MAP6_MEMORY_MAP6_Msk (0x1FFUL << CC_PKA_MEMORY_MAP6_MEMORY_MAP6_Pos) /*!< Bit mask of MEMORY_MAP6 field. */
+
+/* Register: CC_PKA_MEMORY_MAP7 */
+/* Description: This register maps the virtual register R7 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R7 register to. */
+#define CC_PKA_MEMORY_MAP7_MEMORY_MAP7_Pos (1UL) /*!< Position of MEMORY_MAP7 field. */
+#define CC_PKA_MEMORY_MAP7_MEMORY_MAP7_Msk (0x1FFUL << CC_PKA_MEMORY_MAP7_MEMORY_MAP7_Pos) /*!< Bit mask of MEMORY_MAP7 field. */
+
+/* Register: CC_PKA_MEMORY_MAP8 */
+/* Description: This register maps the virtual register R8 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R8 register to. */
+#define CC_PKA_MEMORY_MAP8_MEMORY_MAP8_Pos (1UL) /*!< Position of MEMORY_MAP8 field. */
+#define CC_PKA_MEMORY_MAP8_MEMORY_MAP8_Msk (0x1FFUL << CC_PKA_MEMORY_MAP8_MEMORY_MAP8_Pos) /*!< Bit mask of MEMORY_MAP8 field. */
+
+/* Register: CC_PKA_MEMORY_MAP9 */
+/* Description: This register maps the virtual register R9 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R9 register to. */
+#define CC_PKA_MEMORY_MAP9_MEMORY_MAP9_Pos (1UL) /*!< Position of MEMORY_MAP9 field. */
+#define CC_PKA_MEMORY_MAP9_MEMORY_MAP9_Msk (0x1FFUL << CC_PKA_MEMORY_MAP9_MEMORY_MAP9_Pos) /*!< Bit mask of MEMORY_MAP9 field. */
+
+/* Register: CC_PKA_MEMORY_MAP10 */
+/* Description: This register maps the virtual register R10 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R10 register to. */
+#define CC_PKA_MEMORY_MAP10_MEMORY_MAP10_Pos (1UL) /*!< Position of MEMORY_MAP10 field. */
+#define CC_PKA_MEMORY_MAP10_MEMORY_MAP10_Msk (0x1FFUL << CC_PKA_MEMORY_MAP10_MEMORY_MAP10_Pos) /*!< Bit mask of MEMORY_MAP10 field. */
+
+/* Register: CC_PKA_MEMORY_MAP11 */
+/* Description: This register maps the virtual register R11 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R11 register to. */
+#define CC_PKA_MEMORY_MAP11_MEMORY_MAP11_Pos (1UL) /*!< Position of MEMORY_MAP11 field. */
+#define CC_PKA_MEMORY_MAP11_MEMORY_MAP11_Msk (0x1FFUL << CC_PKA_MEMORY_MAP11_MEMORY_MAP11_Pos) /*!< Bit mask of MEMORY_MAP11 field. */
+
+/* Register: CC_PKA_MEMORY_MAP12 */
+/* Description: This register maps the virtual register R12 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R12 register to. */
+#define CC_PKA_MEMORY_MAP12_MEMORY_MAP12_Pos (1UL) /*!< Position of MEMORY_MAP12 field. */
+#define CC_PKA_MEMORY_MAP12_MEMORY_MAP12_Msk (0x1FFUL << CC_PKA_MEMORY_MAP12_MEMORY_MAP12_Pos) /*!< Bit mask of MEMORY_MAP12 field. */
+
+/* Register: CC_PKA_MEMORY_MAP13 */
+/* Description: This register maps the virtual register R13 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R13 register to. */
+#define CC_PKA_MEMORY_MAP13_MEMORY_MAP13_Pos (1UL) /*!< Position of MEMORY_MAP13 field. */
+#define CC_PKA_MEMORY_MAP13_MEMORY_MAP13_Msk (0x1FFUL << CC_PKA_MEMORY_MAP13_MEMORY_MAP13_Pos) /*!< Bit mask of MEMORY_MAP13 field. */
+
+/* Register: CC_PKA_MEMORY_MAP14 */
+/* Description: This register maps the virtual register R14 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R14 register to. */
+#define CC_PKA_MEMORY_MAP14_MEMORY_MAP14_Pos (1UL) /*!< Position of MEMORY_MAP14 field. */
+#define CC_PKA_MEMORY_MAP14_MEMORY_MAP14_Msk (0x1FFUL << CC_PKA_MEMORY_MAP14_MEMORY_MAP14_Pos) /*!< Bit mask of MEMORY_MAP14 field. */
+
+/* Register: CC_PKA_MEMORY_MAP15 */
+/* Description: This register maps the virtual register R15 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R15 register to. */
+#define CC_PKA_MEMORY_MAP15_MEMORY_MAP15_Pos (1UL) /*!< Position of MEMORY_MAP15 field. */
+#define CC_PKA_MEMORY_MAP15_MEMORY_MAP15_Msk (0x1FFUL << CC_PKA_MEMORY_MAP15_MEMORY_MAP15_Pos) /*!< Bit mask of MEMORY_MAP15 field. */
+
+/* Register: CC_PKA_MEMORY_MAP16 */
+/* Description: This register maps the virtual register R16 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R16 register to. */
+#define CC_PKA_MEMORY_MAP16_MEMORY_MAP16_Pos (1UL) /*!< Position of MEMORY_MAP16 field. */
+#define CC_PKA_MEMORY_MAP16_MEMORY_MAP16_Msk (0x1FFUL << CC_PKA_MEMORY_MAP16_MEMORY_MAP16_Pos) /*!< Bit mask of MEMORY_MAP16 field. */
+
+/* Register: CC_PKA_MEMORY_MAP17 */
+/* Description: This register maps the virtual register R17 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R17 register to. */
+#define CC_PKA_MEMORY_MAP17_MEMORY_MAP17_Pos (1UL) /*!< Position of MEMORY_MAP17 field. */
+#define CC_PKA_MEMORY_MAP17_MEMORY_MAP17_Msk (0x1FFUL << CC_PKA_MEMORY_MAP17_MEMORY_MAP17_Pos) /*!< Bit mask of MEMORY_MAP17 field. */
+
+/* Register: CC_PKA_MEMORY_MAP18 */
+/* Description: This register maps the virtual register R18 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R18 register to. */
+#define CC_PKA_MEMORY_MAP18_MEMORY_MAP18_Pos (1UL) /*!< Position of MEMORY_MAP18 field. */
+#define CC_PKA_MEMORY_MAP18_MEMORY_MAP18_Msk (0x1FFUL << CC_PKA_MEMORY_MAP18_MEMORY_MAP18_Pos) /*!< Bit mask of MEMORY_MAP18 field. */
+
+/* Register: CC_PKA_MEMORY_MAP19 */
+/* Description: This register maps the virtual register R19 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R19 register to. */
+#define CC_PKA_MEMORY_MAP19_MEMORY_MAP19_Pos (1UL) /*!< Position of MEMORY_MAP19 field. */
+#define CC_PKA_MEMORY_MAP19_MEMORY_MAP19_Msk (0x1FFUL << CC_PKA_MEMORY_MAP19_MEMORY_MAP19_Pos) /*!< Bit mask of MEMORY_MAP19 field. */
+
+/* Register: CC_PKA_MEMORY_MAP20 */
+/* Description: This register maps the virtual register R20 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R20 register to. */
+#define CC_PKA_MEMORY_MAP20_MEMORY_MAP20_Pos (1UL) /*!< Position of MEMORY_MAP20 field. */
+#define CC_PKA_MEMORY_MAP20_MEMORY_MAP20_Msk (0x1FFUL << CC_PKA_MEMORY_MAP20_MEMORY_MAP20_Pos) /*!< Bit mask of MEMORY_MAP20 field. */
+
+/* Register: CC_PKA_MEMORY_MAP21 */
+/* Description: This register maps the virtual register R21 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R21 register to. */
+#define CC_PKA_MEMORY_MAP21_MEMORY_MAP21_Pos (1UL) /*!< Position of MEMORY_MAP21 field. */
+#define CC_PKA_MEMORY_MAP21_MEMORY_MAP21_Msk (0x1FFUL << CC_PKA_MEMORY_MAP21_MEMORY_MAP21_Pos) /*!< Bit mask of MEMORY_MAP21 field. */
+
+/* Register: CC_PKA_MEMORY_MAP22 */
+/* Description: This register maps the virtual register R22 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R22 register to. */
+#define CC_PKA_MEMORY_MAP22_MEMORY_MAP22_Pos (1UL) /*!< Position of MEMORY_MAP22 field. */
+#define CC_PKA_MEMORY_MAP22_MEMORY_MAP22_Msk (0x1FFUL << CC_PKA_MEMORY_MAP22_MEMORY_MAP22_Pos) /*!< Bit mask of MEMORY_MAP22 field. */
+
+/* Register: CC_PKA_MEMORY_MAP23 */
+/* Description: This register maps the virtual register R23 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R23 register to. */
+#define CC_PKA_MEMORY_MAP23_MEMORY_MAP23_Pos (1UL) /*!< Position of MEMORY_MAP23 field. */
+#define CC_PKA_MEMORY_MAP23_MEMORY_MAP23_Msk (0x1FFUL << CC_PKA_MEMORY_MAP23_MEMORY_MAP23_Pos) /*!< Bit mask of MEMORY_MAP23 field. */
+
+/* Register: CC_PKA_MEMORY_MAP24 */
+/* Description: This register maps the virtual register R24 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R24 register to. */
+#define CC_PKA_MEMORY_MAP24_MEMORY_MAP24_Pos (1UL) /*!< Position of MEMORY_MAP24 field. */
+#define CC_PKA_MEMORY_MAP24_MEMORY_MAP24_Msk (0x1FFUL << CC_PKA_MEMORY_MAP24_MEMORY_MAP24_Pos) /*!< Bit mask of MEMORY_MAP24 field. */
+
+/* Register: CC_PKA_MEMORY_MAP25 */
+/* Description: This register maps the virtual register R25 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R25 register to. */
+#define CC_PKA_MEMORY_MAP25_MEMORY_MAP25_Pos (1UL) /*!< Position of MEMORY_MAP25 field. */
+#define CC_PKA_MEMORY_MAP25_MEMORY_MAP25_Msk (0x1FFUL << CC_PKA_MEMORY_MAP25_MEMORY_MAP25_Pos) /*!< Bit mask of MEMORY_MAP25 field. */
+
+/* Register: CC_PKA_MEMORY_MAP26 */
+/* Description: This register maps the virtual register R26 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R26 register to. */
+#define CC_PKA_MEMORY_MAP26_MEMORY_MAP26_Pos (1UL) /*!< Position of MEMORY_MAP26 field. */
+#define CC_PKA_MEMORY_MAP26_MEMORY_MAP26_Msk (0x1FFUL << CC_PKA_MEMORY_MAP26_MEMORY_MAP26_Pos) /*!< Bit mask of MEMORY_MAP26 field. */
+
+/* Register: CC_PKA_MEMORY_MAP27 */
+/* Description: This register maps the virtual register R27 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R27 register to. */
+#define CC_PKA_MEMORY_MAP27_MEMORY_MAP27_Pos (1UL) /*!< Position of MEMORY_MAP27 field. */
+#define CC_PKA_MEMORY_MAP27_MEMORY_MAP27_Msk (0x1FFUL << CC_PKA_MEMORY_MAP27_MEMORY_MAP27_Pos) /*!< Bit mask of MEMORY_MAP27 field. */
+
+/* Register: CC_PKA_MEMORY_MAP28 */
+/* Description: This register maps the virtual register R28 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R28 register to. */
+#define CC_PKA_MEMORY_MAP28_MEMORY_MAP28_Pos (1UL) /*!< Position of MEMORY_MAP28 field. */
+#define CC_PKA_MEMORY_MAP28_MEMORY_MAP28_Msk (0x1FFUL << CC_PKA_MEMORY_MAP28_MEMORY_MAP28_Pos) /*!< Bit mask of MEMORY_MAP28 field. */
+
+/* Register: CC_PKA_MEMORY_MAP29 */
+/* Description: This register maps the virtual register R29 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R29 register to. */
+#define CC_PKA_MEMORY_MAP29_MEMORY_MAP29_Pos (1UL) /*!< Position of MEMORY_MAP29 field. */
+#define CC_PKA_MEMORY_MAP29_MEMORY_MAP29_Msk (0x1FFUL << CC_PKA_MEMORY_MAP29_MEMORY_MAP29_Pos) /*!< Bit mask of MEMORY_MAP29 field. */
+
+/* Register: CC_PKA_MEMORY_MAP30 */
+/* Description: This register maps the virtual register R30 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R30 register to. */
+#define CC_PKA_MEMORY_MAP30_MEMORY_MAP30_Pos (1UL) /*!< Position of MEMORY_MAP30 field. */
+#define CC_PKA_MEMORY_MAP30_MEMORY_MAP30_Msk (0x1FFUL << CC_PKA_MEMORY_MAP30_MEMORY_MAP30_Pos) /*!< Bit mask of MEMORY_MAP30 field. */
+
+/* Register: CC_PKA_MEMORY_MAP31 */
+/* Description: This register maps the virtual register R31 to a physical address in memory. */
+
+/* Bits 9..1 : Contains the physical address in memory to map the R31 register to. */
+#define CC_PKA_MEMORY_MAP31_MEMORY_MAP31_Pos (1UL) /*!< Position of MEMORY_MAP31 field. */
+#define CC_PKA_MEMORY_MAP31_MEMORY_MAP31_Msk (0x1FFUL << CC_PKA_MEMORY_MAP31_MEMORY_MAP31_Pos) /*!< Bit mask of MEMORY_MAP31 field. */
+
+/* Register: CC_PKA_OPCODE */
+/* Description: This register holds the PKA's OPCODE. */
+
+/* Bits 31..27 : Defines the PKA operation */
+#define CC_PKA_OPCODE_OPCODE_Pos (27UL) /*!< Position of OPCODE field. */
+#define CC_PKA_OPCODE_OPCODE_Msk (0x1FUL << CC_PKA_OPCODE_OPCODE_Pos) /*!< Bit mask of OPCODE field. */
+#define CC_PKA_OPCODE_OPCODE_Terminate (0x00UL) /*!< Terminate */
+#define CC_PKA_OPCODE_OPCODE_Add (0x4UL) /*!< Add,Inc */
+#define CC_PKA_OPCODE_OPCODE_Sub (0x5UL) /*!< Sub,Dec,Neg */
+#define CC_PKA_OPCODE_OPCODE_ModAdd (0x6UL) /*!< ModAdd,ModInc */
+#define CC_PKA_OPCODE_OPCODE_ModSub (0x7UL) /*!< ModSub,ModDec,ModNeg */
+#define CC_PKA_OPCODE_OPCODE_AND (0x8UL) /*!< AND,TST0,CLR0 */
+#define CC_PKA_OPCODE_OPCODE_OR (0x9UL) /*!< OR,COPY,SET0 */
+#define CC_PKA_OPCODE_OPCODE_XOR (0xAUL) /*!< XOR,FLIP0,INVERT,COMPARE */
+#define CC_PKA_OPCODE_OPCODE_SHR0 (0xCUL) /*!< SHR0 */
+#define CC_PKA_OPCODE_OPCODE_SHR1 (0xDUL) /*!< SHR1 */
+#define CC_PKA_OPCODE_OPCODE_SHL0 (0xEUL) /*!< SHL0 */
+#define CC_PKA_OPCODE_OPCODE_SHL1 (0xFUL) /*!< SHL1 */
+#define CC_PKA_OPCODE_OPCODE_MulLow (0x10UL) /*!< MulLow */
+#define CC_PKA_OPCODE_OPCODE_ModMul (0x11UL) /*!< ModMul */
+#define CC_PKA_OPCODE_OPCODE_ModMulN (0x12UL) /*!< ModMulN */
+#define CC_PKA_OPCODE_OPCODE_ModExp (0x13UL) /*!< ModExp */
+#define CC_PKA_OPCODE_OPCODE_Division (0x14UL) /*!< Division */
+#define CC_PKA_OPCODE_OPCODE_Div (0x15UL) /*!< Div */
+#define CC_PKA_OPCODE_OPCODE_ModDiv (0x16UL) /*!< ModDiv */
+
+/* Bits 26..24 : The length of the operation. The value serves as a pointer to PKA length register, for example, if the value is 0, PKA_L0 holds the size of the operation. */
+#define CC_PKA_OPCODE_LEN_Pos (24UL) /*!< Position of LEN field. */
+#define CC_PKA_OPCODE_LEN_Msk (0x7UL << CC_PKA_OPCODE_LEN_Pos) /*!< Bit mask of LEN field. */
+
+/* Bits 23..18 : Operand A virtual address 0-15. */
+#define CC_PKA_OPCODE_REG_A_Pos (18UL) /*!< Position of REG_A field. */
+#define CC_PKA_OPCODE_REG_A_Msk (0x3FUL << CC_PKA_OPCODE_REG_A_Pos) /*!< Bit mask of REG_A field. */
+
+/* Bits 17..12 : Operand B virtual address 0-15. */
+#define CC_PKA_OPCODE_REG_B_Pos (12UL) /*!< Position of REG_B field. */
+#define CC_PKA_OPCODE_REG_B_Msk (0x3FUL << CC_PKA_OPCODE_REG_B_Pos) /*!< Bit mask of REG_B field. */
+
+/* Bits 11..6 : Result register virtual address 0-15. */
+#define CC_PKA_OPCODE_REG_R_Pos (6UL) /*!< Position of REG_R field. */
+#define CC_PKA_OPCODE_REG_R_Msk (0x3FUL << CC_PKA_OPCODE_REG_R_Pos) /*!< Bit mask of REG_R field. */
+
+/* Bits 5..0 : Holds the opreation's tag or the operand C virtual address. */
+#define CC_PKA_OPCODE_TAG_Pos (0UL) /*!< Position of TAG field. */
+#define CC_PKA_OPCODE_TAG_Msk (0x3FUL << CC_PKA_OPCODE_TAG_Pos) /*!< Bit mask of TAG field. */
+
+/* Register: CC_PKA_N_NP_T0_T1_ADDR */
+/* Description: This register maps N_NP_T0_T1 to a virtual address. */
+
+/* Bits 19..15 : Virtual address of temporary register number 1 */
+#define CC_PKA_N_NP_T0_T1_ADDR_T1_VIRTUAL_ADDR_Pos (15UL) /*!< Position of T1_VIRTUAL_ADDR field. */
+#define CC_PKA_N_NP_T0_T1_ADDR_T1_VIRTUAL_ADDR_Msk (0x1FUL << CC_PKA_N_NP_T0_T1_ADDR_T1_VIRTUAL_ADDR_Pos) /*!< Bit mask of T1_VIRTUAL_ADDR field. */
+
+/* Bits 14..10 : Virtual address of temporary register number 0 */
+#define CC_PKA_N_NP_T0_T1_ADDR_T0_VIRTUAL_ADDR_Pos (10UL) /*!< Position of T0_VIRTUAL_ADDR field. */
+#define CC_PKA_N_NP_T0_T1_ADDR_T0_VIRTUAL_ADDR_Msk (0x1FUL << CC_PKA_N_NP_T0_T1_ADDR_T0_VIRTUAL_ADDR_Pos) /*!< Bit mask of T0_VIRTUAL_ADDR field. */
+
+/* Bits 9..5 : Virtual address of register NP. */
+#define CC_PKA_N_NP_T0_T1_ADDR_NP_VIRTUAL_ADDR_Pos (5UL) /*!< Position of NP_VIRTUAL_ADDR field. */
+#define CC_PKA_N_NP_T0_T1_ADDR_NP_VIRTUAL_ADDR_Msk (0x1FUL << CC_PKA_N_NP_T0_T1_ADDR_NP_VIRTUAL_ADDR_Pos) /*!< Bit mask of NP_VIRTUAL_ADDR field. */
+
+/* Bits 4..0 : Virtual address of register N. */
+#define CC_PKA_N_NP_T0_T1_ADDR_N_VIRTUAL_ADDR_Pos (0UL) /*!< Position of N_VIRTUAL_ADDR field. */
+#define CC_PKA_N_NP_T0_T1_ADDR_N_VIRTUAL_ADDR_Msk (0x1FUL << CC_PKA_N_NP_T0_T1_ADDR_N_VIRTUAL_ADDR_Pos) /*!< Bit mask of N_VIRTUAL_ADDR field. */
+
+/* Register: CC_PKA_PKA_STATUS */
+/* Description: This register holds the PKA pipe status. */
+
+/* Bits 20..16 : Opcode of the last operation */
+#define CC_PKA_PKA_STATUS_OPCODE_Pos (16UL) /*!< Position of OPCODE field. */
+#define CC_PKA_PKA_STATUS_OPCODE_Msk (0x1FUL << CC_PKA_PKA_STATUS_OPCODE_Pos) /*!< Bit mask of OPCODE field. */
+
+/* Bit 15 : Indicates the Modular inverse of zero. */
+#define CC_PKA_PKA_STATUS_MODINV_OF_ZERO_Pos (15UL) /*!< Position of MODINV_OF_ZERO field. */
+#define CC_PKA_PKA_STATUS_MODINV_OF_ZERO_Msk (0x1UL << CC_PKA_PKA_STATUS_MODINV_OF_ZERO_Pos) /*!< Bit mask of MODINV_OF_ZERO field. */
+
+/* Bit 14 : Indication if the division is done by zero. */
+#define CC_PKA_PKA_STATUS_DIV_BY_ZERO_Pos (14UL) /*!< Position of DIV_BY_ZERO field. */
+#define CC_PKA_PKA_STATUS_DIV_BY_ZERO_Msk (0x1UL << CC_PKA_PKA_STATUS_DIV_BY_ZERO_Pos) /*!< Bit mask of DIV_BY_ZERO field. */
+
+/* Bit 13 : Modular overflow flag. */
+#define CC_PKA_PKA_STATUS_ALU_MODOVRFLW_Pos (13UL) /*!< Position of ALU_MODOVRFLW field. */
+#define CC_PKA_PKA_STATUS_ALU_MODOVRFLW_Msk (0x1UL << CC_PKA_PKA_STATUS_ALU_MODOVRFLW_Pos) /*!< Bit mask of ALU_MODOVRFLW field. */
+
+/* Bit 12 : Indicates if the result of ALU OUT is zero. */
+#define CC_PKA_PKA_STATUS_ALU_OUT_ZERO_Pos (12UL) /*!< Position of ALU_OUT_ZERO field. */
+#define CC_PKA_PKA_STATUS_ALU_OUT_ZERO_Msk (0x1UL << CC_PKA_PKA_STATUS_ALU_OUT_ZERO_Pos) /*!< Bit mask of ALU_OUT_ZERO field. */
+
+/* Bit 11 : Indicates the last subtraction operation's sign. */
+#define CC_PKA_PKA_STATUS_ALU_SUB_IS_ZERO_Pos (11UL) /*!< Position of ALU_SUB_IS_ZERO field. */
+#define CC_PKA_PKA_STATUS_ALU_SUB_IS_ZERO_Msk (0x1UL << CC_PKA_PKA_STATUS_ALU_SUB_IS_ZERO_Pos) /*!< Bit mask of ALU_SUB_IS_ZERO field. */
+
+/* Bit 10 : Holds the carry of the last Modular operation. */
+#define CC_PKA_PKA_STATUS_ALU_CARRY_MOD_Pos (10UL) /*!< Position of ALU_CARRY_MOD field. */
+#define CC_PKA_PKA_STATUS_ALU_CARRY_MOD_Msk (0x1UL << CC_PKA_PKA_STATUS_ALU_CARRY_MOD_Pos) /*!< Bit mask of ALU_CARRY_MOD field. */
+
+/* Bit 9 : Holds the carry of the last ALU operation. */
+#define CC_PKA_PKA_STATUS_ALU_CARRY_Pos (9UL) /*!< Position of ALU_CARRY field. */
+#define CC_PKA_PKA_STATUS_ALU_CARRY_Msk (0x1UL << CC_PKA_PKA_STATUS_ALU_CARRY_Pos) /*!< Bit mask of ALU_CARRY field. */
+
+/* Bit 8 : Indicates the last operation's sign (MSB). */
+#define CC_PKA_PKA_STATUS_ALU_SIGN_OUT_Pos (8UL) /*!< Position of ALU_SIGN_OUT field. */
+#define CC_PKA_PKA_STATUS_ALU_SIGN_OUT_Msk (0x1UL << CC_PKA_PKA_STATUS_ALU_SIGN_OUT_Pos) /*!< Bit mask of ALU_SIGN_OUT field. */
+
+/* Bits 7..4 : The least significant 4-bits of the operand updated in shift operation. */
+#define CC_PKA_PKA_STATUS_ALU_LSB_4BITS_Pos (4UL) /*!< Position of ALU_LSB_4BITS field. */
+#define CC_PKA_PKA_STATUS_ALU_LSB_4BITS_Msk (0xFUL << CC_PKA_PKA_STATUS_ALU_LSB_4BITS_Pos) /*!< Bit mask of ALU_LSB_4BITS field. */
+
+/* Bits 3..0 : The most significant 4-bits of the operand updated in shift operation. */
+#define CC_PKA_PKA_STATUS_ALU_MSB_4BITS_Pos (0UL) /*!< Position of ALU_MSB_4BITS field. */
+#define CC_PKA_PKA_STATUS_ALU_MSB_4BITS_Msk (0xFUL << CC_PKA_PKA_STATUS_ALU_MSB_4BITS_Pos) /*!< Bit mask of ALU_MSB_4BITS field. */
+
+/* Register: CC_PKA_PKA_SW_RESET */
+/* Description: Writing to this register triggers a software reset of the PKA. */
+
+/* Bit 0 : The reset mechanism takes about four PKA clock cycles until the reset line is deasserted */
+#define CC_PKA_PKA_SW_RESET_PKA_SW_RESET_Pos (0UL) /*!< Position of PKA_SW_RESET field. */
+#define CC_PKA_PKA_SW_RESET_PKA_SW_RESET_Msk (0x1UL << CC_PKA_PKA_SW_RESET_PKA_SW_RESET_Pos) /*!< Bit mask of PKA_SW_RESET field. */
+
+/* Register: CC_PKA_PKA_L0 */
+/* Description: This register holds the size of the operation. */
+
+/* Bits 12..0 : Size of the operation in bytes. */
+#define CC_PKA_PKA_L0_PKA_L0_Pos (0UL) /*!< Position of PKA_L0 field. */
+#define CC_PKA_PKA_L0_PKA_L0_Msk (0x1FFFUL << CC_PKA_PKA_L0_PKA_L0_Pos) /*!< Bit mask of PKA_L0 field. */
+
+/* Register: CC_PKA_PKA_L1 */
+/* Description: This register holds the size of the operation. */
+
+/* Bits 12..0 : Size of the operation in bytes. */
+#define CC_PKA_PKA_L1_PKA_L1_Pos (0UL) /*!< Position of PKA_L1 field. */
+#define CC_PKA_PKA_L1_PKA_L1_Msk (0x1FFFUL << CC_PKA_PKA_L1_PKA_L1_Pos) /*!< Bit mask of PKA_L1 field. */
+
+/* Register: CC_PKA_PKA_L2 */
+/* Description: This register holds the size of the operation. */
+
+/* Bits 12..0 : Size of the operation in bytes. */
+#define CC_PKA_PKA_L2_PKA_L2_Pos (0UL) /*!< Position of PKA_L2 field. */
+#define CC_PKA_PKA_L2_PKA_L2_Msk (0x1FFFUL << CC_PKA_PKA_L2_PKA_L2_Pos) /*!< Bit mask of PKA_L2 field. */
+
+/* Register: CC_PKA_PKA_L3 */
+/* Description: This register holds the size of the operation. */
+
+/* Bits 12..0 : Size of the operation in bytes. */
+#define CC_PKA_PKA_L3_PKA_L3_Pos (0UL) /*!< Position of PKA_L3 field. */
+#define CC_PKA_PKA_L3_PKA_L3_Msk (0x1FFFUL << CC_PKA_PKA_L3_PKA_L3_Pos) /*!< Bit mask of PKA_L3 field. */
+
+/* Register: CC_PKA_PKA_L4 */
+/* Description: This register holds the size of the operation. */
+
+/* Bits 12..0 : Size of the operation in bytes. */
+#define CC_PKA_PKA_L4_PKA_L4_Pos (0UL) /*!< Position of PKA_L4 field. */
+#define CC_PKA_PKA_L4_PKA_L4_Msk (0x1FFFUL << CC_PKA_PKA_L4_PKA_L4_Pos) /*!< Bit mask of PKA_L4 field. */
+
+/* Register: CC_PKA_PKA_L5 */
+/* Description: This register holds the size of the operation. */
+
+/* Bits 12..0 : Size of the operation in bytes. */
+#define CC_PKA_PKA_L5_PKA_L5_Pos (0UL) /*!< Position of PKA_L5 field. */
+#define CC_PKA_PKA_L5_PKA_L5_Msk (0x1FFFUL << CC_PKA_PKA_L5_PKA_L5_Pos) /*!< Bit mask of PKA_L5 field. */
+
+/* Register: CC_PKA_PKA_L6 */
+/* Description: This register holds the size of the operation. */
+
+/* Bits 12..0 : Size of the operation in bytes. */
+#define CC_PKA_PKA_L6_PKA_L6_Pos (0UL) /*!< Position of PKA_L6 field. */
+#define CC_PKA_PKA_L6_PKA_L6_Msk (0x1FFFUL << CC_PKA_PKA_L6_PKA_L6_Pos) /*!< Bit mask of PKA_L6 field. */
+
+/* Register: CC_PKA_PKA_L7 */
+/* Description: This register holds the size of the operation. */
+
+/* Bits 12..0 : Size of the operation in bytes. */
+#define CC_PKA_PKA_L7_PKA_L7_Pos (0UL) /*!< Position of PKA_L7 field. */
+#define CC_PKA_PKA_L7_PKA_L7_Msk (0x1FFFUL << CC_PKA_PKA_L7_PKA_L7_Pos) /*!< Bit mask of PKA_L7 field. */
+
+/* Register: CC_PKA_PKA_PIPE_RDY */
+/* Description: This register indicates whether the PKA pipe is ready to receive a new OPCODE. */
+
+/* Bit 0 : Indication whether PKA pipe is ready for new OPCODE. */
+#define CC_PKA_PKA_PIPE_RDY_PKA_PIPE_RDY_Pos (0UL) /*!< Position of PKA_PIPE_RDY field. */
+#define CC_PKA_PKA_PIPE_RDY_PKA_PIPE_RDY_Msk (0x1UL << CC_PKA_PKA_PIPE_RDY_PKA_PIPE_RDY_Pos) /*!< Bit mask of PKA_PIPE_RDY field. */
+
+/* Register: CC_PKA_PKA_DONE */
+/* Description: This register indicates whether PKA operation is completed. */
+
+/* Bit 0 : Indicates if PKA operation is completed, and pipe is empty. */
+#define CC_PKA_PKA_DONE_PKA_DONE_Pos (0UL) /*!< Position of PKA_DONE field. */
+#define CC_PKA_PKA_DONE_PKA_DONE_Msk (0x1UL << CC_PKA_PKA_DONE_PKA_DONE_Pos) /*!< Bit mask of PKA_DONE field. */
+
+/* Register: CC_PKA_PKA_MON_SELECT */
+/* Description: This register defines which PKA FSM monitor is being output. */
+
+/* Bits 3..0 : Defines which PKA FSM monitor is being output. */
+#define CC_PKA_PKA_MON_SELECT_PKA_MON_SELECT_Pos (0UL) /*!< Position of PKA_MON_SELECT field. */
+#define CC_PKA_PKA_MON_SELECT_PKA_MON_SELECT_Msk (0xFUL << CC_PKA_PKA_MON_SELECT_PKA_MON_SELECT_Pos) /*!< Bit mask of PKA_MON_SELECT field. */
+
+/* Register: CC_PKA_PKA_SEP_MONITOR */
+/* Description: This register holds the sep monitor register. */
+
+/* Bits 31..0 : This is the PKA SEP monitor bus register output */
+#define CC_PKA_PKA_SEP_MONITOR_PKA_SEP_MONITOR_Pos (0UL) /*!< Position of PKA_SEP_MONITOR field. */
+#define CC_PKA_PKA_SEP_MONITOR_PKA_SEP_MONITOR_Msk (0xFFFFFFFFUL << CC_PKA_PKA_SEP_MONITOR_PKA_SEP_MONITOR_Pos) /*!< Bit mask of PKA_SEP_MONITOR field. */
+
+/* Register: CC_PKA_PKA_VERSION */
+/* Description: This register holds the PKA version */
+
+/* Bits 31..0 : This is the PKA version */
+#define CC_PKA_PKA_VERSION_PKA_VERSION_Pos (0UL) /*!< Position of PKA_VERSION field. */
+#define CC_PKA_PKA_VERSION_PKA_VERSION_Msk (0xFFFFFFFFUL << CC_PKA_PKA_VERSION_PKA_VERSION_Pos) /*!< Bit mask of PKA_VERSION field. */
+
+/* Register: CC_PKA_PKA_MSB_ADDR */
+/* Description: This register holds the PKA SRAM address offset. */
+
+/* Bits 1..0 : Holds the PKA SRAM address offset (pka_addr_sram = ). */
+#define CC_PKA_PKA_MSB_ADDR_PKA_MSB_ADDR_Pos (0UL) /*!< Position of PKA_MSB_ADDR field. */
+#define CC_PKA_PKA_MSB_ADDR_PKA_MSB_ADDR_Msk (0x3UL << CC_PKA_PKA_MSB_ADDR_PKA_MSB_ADDR_Pos) /*!< Bit mask of PKA_MSB_ADDR field. */
+
+/* Register: CC_PKA_PKA_MON_READ */
+/* Description: PKA monitor bus register output */
+
+/* Bits 31..0 :   */
+#define CC_PKA_PKA_MON_READ_PKA_MON_READ_Pos (0UL) /*!< Position of PKA_MON_READ field. */
+#define CC_PKA_PKA_MON_READ_PKA_MON_READ_Msk (0xFFFFFFFFUL << CC_PKA_PKA_MON_READ_PKA_MON_READ_Pos) /*!< Bit mask of PKA_MON_READ field. */
+
+/* Register: CC_PKA_PKA_SRAM_ADDR */
+/* Description: First address given to PKA SRAM for write transactions. */
+
+/* Bits 31..0 : PKA SRAM write starting address */
+#define CC_PKA_PKA_SRAM_ADDR_PKA_SRAM_ADDR_Pos (0UL) /*!< Position of PKA_SRAM_ADDR field. */
+#define CC_PKA_PKA_SRAM_ADDR_PKA_SRAM_ADDR_Msk (0xFFFFFFFFUL << CC_PKA_PKA_SRAM_ADDR_PKA_SRAM_ADDR_Pos) /*!< Bit mask of PKA_SRAM_ADDR field. */
+
+/* Register: CC_PKA_PKA_SRAM_WDATA */
+/* Description: Write data to PKA SRAM */
+
+/* Bits 31..0 : 32 bit write to PKA SRAM */
+#define CC_PKA_PKA_SRAM_WDATA_PKA_SRAM_WDATA_Pos (0UL) /*!< Position of PKA_SRAM_WDATA field. */
+#define CC_PKA_PKA_SRAM_WDATA_PKA_SRAM_WDATA_Msk (0xFFFFFFFFUL << CC_PKA_PKA_SRAM_WDATA_PKA_SRAM_WDATA_Pos) /*!< Bit mask of PKA_SRAM_WDATA field. */
+
+/* Register: CC_PKA_PKA_SRAM_RDATA */
+/* Description: Read data from PKA SRAM */
+
+/* Bits 31..0 : 32 bit read from PKA SRAM */
+#define CC_PKA_PKA_SRAM_RDATA_PKA_SRAM_RDATA_Pos (0UL) /*!< Position of PKA_SRAM_RDATA field. */
+#define CC_PKA_PKA_SRAM_RDATA_PKA_SRAM_RDATA_Msk (0xFFFFFFFFUL << CC_PKA_PKA_SRAM_RDATA_PKA_SRAM_RDATA_Pos) /*!< Bit mask of PKA_SRAM_RDATA field. */
+
+/* Register: CC_PKA_PKA_SRAM_WR_CLR */
+/* Description: Register for clearing SRAM write buffer */
+
+/* Bits 31..0 : Clear the write buffer. */
+#define CC_PKA_PKA_SRAM_WR_CLR_PKA_SRAM_WR_CLR_Pos (0UL) /*!< Position of PKA_SRAM_WR_CLR field. */
+#define CC_PKA_PKA_SRAM_WR_CLR_PKA_SRAM_WR_CLR_Msk (0xFFFFFFFFUL << CC_PKA_PKA_SRAM_WR_CLR_PKA_SRAM_WR_CLR_Pos) /*!< Bit mask of PKA_SRAM_WR_CLR field. */
+
+/* Register: CC_PKA_PKA_SRAM_RADDR */
+/* Description: first address given to PKA SRAM for read transactions. */
+
+/* Bits 31..0 : PKA SRAM read starting address */
+#define CC_PKA_PKA_SRAM_RADDR_PKA_SRAM_RADDR_Pos (0UL) /*!< Position of PKA_SRAM_RADDR field. */
+#define CC_PKA_PKA_SRAM_RADDR_PKA_SRAM_RADDR_Msk (0xFFFFFFFFUL << CC_PKA_PKA_SRAM_RADDR_PKA_SRAM_RADDR_Pos) /*!< Bit mask of PKA_SRAM_RADDR field. */
+
+/* Register: CC_PKA_PKA_CM_ENABLE */
+/* Description: This register enables/disables the PKA multiplier countermeasure. */
+
+/* Bit 0 : Enable the PKA multiplier countermeasure when set. */
+#define CC_PKA_PKA_CM_ENABLE_PKA_CM_ENABLE_Pos (0UL) /*!< Position of PKA_CM_ENABLE field. */
+#define CC_PKA_PKA_CM_ENABLE_PKA_CM_ENABLE_Msk (0x1UL << CC_PKA_PKA_CM_ENABLE_PKA_CM_ENABLE_Pos) /*!< Bit mask of PKA_CM_ENABLE field. */
+
+/* Register: CC_PKA_PKA_WORD_ACCESS */
+/* Description: This register hold to data write or read from PKA when using special read or write word operation. */
+
+/* Bits 31..0 : 32 bit read/write data. */
+#define CC_PKA_PKA_WORD_ACCESS_PKA_WORD_ACCESS_Pos (0UL) /*!< Position of PKA_WORD_ACCESS field. */
+#define CC_PKA_PKA_WORD_ACCESS_PKA_WORD_ACCESS_Msk (0xFFFFFFFFUL << CC_PKA_PKA_WORD_ACCESS_PKA_WORD_ACCESS_Pos) /*!< Bit mask of PKA_WORD_ACCESS field. */
+
+/* Register: CC_PKA_PKA_SEED_WRITE */
+/* Description: This register gives the HOST interface for loading the PKA RBG seed data. */
+
+/* Bits 7..0 : 8 bits of seed data. */
+#define CC_PKA_PKA_SEED_WRITE_PKA_SEED_DATA_Pos (0UL) /*!< Position of PKA_SEED_DATA field. */
+#define CC_PKA_PKA_SEED_WRITE_PKA_SEED_DATA_Msk (0xFFUL << CC_PKA_PKA_SEED_WRITE_PKA_SEED_DATA_Pos) /*!< Bit mask of PKA_SEED_DATA field. */
+
+/* Register: CC_PKA_PKA_BUFF_ADDR */
+/* Description: This register maps the virtual buffer registers to a physical address in memory. */
+
+/* Bits 11..0 : Contains the physical address in memory to map the buffer registers. */
+#define CC_PKA_PKA_BUFF_ADDR_PKA_BUF_ADDR_Pos (0UL) /*!< Position of PKA_BUF_ADDR field. */
+#define CC_PKA_PKA_BUFF_ADDR_PKA_BUF_ADDR_Msk (0xFFFUL << CC_PKA_PKA_BUFF_ADDR_PKA_BUF_ADDR_Pos) /*!< Bit mask of PKA_BUF_ADDR field. */
+
+
+/* Peripheral: CC_RNG */
+/* Description: CRYPTOCELL RNG engine */
+
+/* Register: CC_RNG_RNG_IMR */
+/* Description: Interrupt mask register. Each bit of this register holds the mask of a single interrupt source. */
+
+/* Bit 5 : See RNG_ISR for explanation on this interrupt. */
+#define CC_RNG_RNG_IMR_RNG_DMA_DONE_MASK_Pos (5UL) /*!< Position of RNG_DMA_DONE_MASK field. */
+#define CC_RNG_RNG_IMR_RNG_DMA_DONE_MASK_Msk (0x1UL << CC_RNG_RNG_IMR_RNG_DMA_DONE_MASK_Pos) /*!< Bit mask of RNG_DMA_DONE_MASK field. */
+#define CC_RNG_RNG_IMR_RNG_DMA_DONE_MASK_Disable (0UL) /*!< Do not mask the RNG DMA completion interrupt i.e. interrupt is generated */
+#define CC_RNG_RNG_IMR_RNG_DMA_DONE_MASK_Enable (1UL) /*!< Mask the RNG DMA completion interrupt i.e. no interrupt is generated */
+
+/* Bit 4 : See RNG_ISR for explanation on this interrupt. */
+#define CC_RNG_RNG_IMR_RNG_WATCHDOG_MASK_Pos (4UL) /*!< Position of RNG_WATCHDOG_MASK field. */
+#define CC_RNG_RNG_IMR_RNG_WATCHDOG_MASK_Msk (0x1UL << CC_RNG_RNG_IMR_RNG_WATCHDOG_MASK_Pos) /*!< Bit mask of RNG_WATCHDOG_MASK field. */
+#define CC_RNG_RNG_IMR_RNG_WATCHDOG_MASK_Disable (0UL) /*!< Do not mask the watchdog interrupt i.e. interrupt is generated */
+#define CC_RNG_RNG_IMR_RNG_WATCHDOG_MASK_Enable (1UL) /*!< Mask the watchdog interrupt i.e. no interrupt is generated */
+
+/* Bit 3 : See RNG_ISR for explanation on this interrupt. */
+#define CC_RNG_RNG_IMR_VN_ERR_MASK_Pos (3UL) /*!< Position of VN_ERR_MASK field. */
+#define CC_RNG_RNG_IMR_VN_ERR_MASK_Msk (0x1UL << CC_RNG_RNG_IMR_VN_ERR_MASK_Pos) /*!< Bit mask of VN_ERR_MASK field. */
+#define CC_RNG_RNG_IMR_VN_ERR_MASK_Disable (0UL) /*!< Do not mask the von-Neumann error interrupt i.e. interrupt is generated */
+#define CC_RNG_RNG_IMR_VN_ERR_MASK_Enable (1UL) /*!< Mask the von-Neumann error interrupt i.e. no interrupt is generated */
+
+/* Bit 2 : See RNG_ISR for explanation on this interrupt. */
+#define CC_RNG_RNG_IMR_CRNGT_ERR_MASK_Pos (2UL) /*!< Position of CRNGT_ERR_MASK field. */
+#define CC_RNG_RNG_IMR_CRNGT_ERR_MASK_Msk (0x1UL << CC_RNG_RNG_IMR_CRNGT_ERR_MASK_Pos) /*!< Bit mask of CRNGT_ERR_MASK field. */
+#define CC_RNG_RNG_IMR_CRNGT_ERR_MASK_Disable (0UL) /*!< Do not mask the CRNGT error interrupt i.e. interrupt is generated */
+#define CC_RNG_RNG_IMR_CRNGT_ERR_MASK_Enable (1UL) /*!< Mask the CRNGT error interrupt i.e. no interrupt is generated */
+
+/* Bit 1 : See RNG_ISR for explanation on this interrupt. */
+#define CC_RNG_RNG_IMR_AUTOCORR_ERR_MASK_Pos (1UL) /*!< Position of AUTOCORR_ERR_MASK field. */
+#define CC_RNG_RNG_IMR_AUTOCORR_ERR_MASK_Msk (0x1UL << CC_RNG_RNG_IMR_AUTOCORR_ERR_MASK_Pos) /*!< Bit mask of AUTOCORR_ERR_MASK field. */
+#define CC_RNG_RNG_IMR_AUTOCORR_ERR_MASK_Disable (0UL) /*!< Do not mask autocorrelation interrupt i.e. interrupt is generated */
+#define CC_RNG_RNG_IMR_AUTOCORR_ERR_MASK_Enable (1UL) /*!< Mask autocorrelation interrupt i.e. no interrupt is generated */
+
+/* Bit 0 : See RNG_ISR for explanation on this interrupt. */
+#define CC_RNG_RNG_IMR_EHR_VALID_MASK_Pos (0UL) /*!< Position of EHR_VALID_MASK field. */
+#define CC_RNG_RNG_IMR_EHR_VALID_MASK_Msk (0x1UL << CC_RNG_RNG_IMR_EHR_VALID_MASK_Pos) /*!< Bit mask of EHR_VALID_MASK field. */
+#define CC_RNG_RNG_IMR_EHR_VALID_MASK_Disable (0UL) /*!< Do not mask EHR interrupt i.e. interrupt is generated */
+#define CC_RNG_RNG_IMR_EHR_VALID_MASK_Enable (1UL) /*!< Mask EHR interrupt i.e. no interrupt is generated */
+
+/* Register: CC_RNG_RNG_ISR */
+/* Description: Interrupt status register. Each bit of this register holds the interrupt
+        status of a single interrupt source. If corresponding RNG_IMR bit is
+        unmasked, an interrupt is generated. */
+
+/* Bit 5 : RNG DMA to SRAM is completed. */
+#define CC_RNG_RNG_ISR_RNG_DMA_DONE_Pos (5UL) /*!< Position of RNG_DMA_DONE field. */
+#define CC_RNG_RNG_ISR_RNG_DMA_DONE_Msk (0x1UL << CC_RNG_RNG_ISR_RNG_DMA_DONE_Pos) /*!< Bit mask of RNG_DMA_DONE field. */
+
+/* Bit 4 : Maximum number of clock cycles per sample have been exceeded. See RNG_WATCHDOG_VAL for more information. */
+#define CC_RNG_RNG_ISR_RNG_WATCHDOG_Pos (4UL) /*!< Position of RNG_WATCHDOG field. */
+#define CC_RNG_RNG_ISR_RNG_WATCHDOG_Msk (0x1UL << CC_RNG_RNG_ISR_RNG_WATCHDOG_Pos) /*!< Bit mask of RNG_WATCHDOG field. */
+
+/* Bit 3 : Von Neumann error. Error in von Neumann occurs if 32 consecutive collected bits are identical, ZERO, or ONE. */
+#define CC_RNG_RNG_ISR_VN_ERR_Pos (3UL) /*!< Position of VN_ERR field. */
+#define CC_RNG_RNG_ISR_VN_ERR_Msk (0x1UL << CC_RNG_RNG_ISR_VN_ERR_Pos) /*!< Bit mask of VN_ERR field. */
+
+/* Bit 2 : CRNGT in the TRNG test failed. Failure occurs when two consecutive blocks of 16 collected bits are equal. */
+#define CC_RNG_RNG_ISR_CRNGT_ERR_Pos (2UL) /*!< Position of CRNGT_ERR field. */
+#define CC_RNG_RNG_ISR_CRNGT_ERR_Msk (0x1UL << CC_RNG_RNG_ISR_CRNGT_ERR_Pos) /*!< Bit mask of CRNGT_ERR field. */
+
+/* Bit 1 : Autocorrelation test failed four times in a row. Once set, TRNG ceases to function until next reset. */
+#define CC_RNG_RNG_ISR_AUTOCORR_ERR_Pos (1UL) /*!< Position of AUTOCORR_ERR field. */
+#define CC_RNG_RNG_ISR_AUTOCORR_ERR_Msk (0x1UL << CC_RNG_RNG_ISR_AUTOCORR_ERR_Pos) /*!< Bit mask of AUTOCORR_ERR field. */
+
+/* Bit 0 : 192-bits have been collected in the TRNG and are ready to be read. */
+#define CC_RNG_RNG_ISR_EHR_VALID_Pos (0UL) /*!< Position of EHR_VALID field. */
+#define CC_RNG_RNG_ISR_EHR_VALID_Msk (0x1UL << CC_RNG_RNG_ISR_EHR_VALID_Pos) /*!< Bit mask of EHR_VALID field. */
+
+/* Register: CC_RNG_RNG_ICR */
+/* Description: Interrupt clear register. Writing a 1 bit into a field in this register
+        will clear the corresponding bit in RNG_ISR. */
+
+/* Bit 5 : Writing value 1'b1 - clears corresponding bit in RNG_ISR */
+#define CC_RNG_RNG_ICR_RNG_DMA_DONE_Pos (5UL) /*!< Position of RNG_DMA_DONE field. */
+#define CC_RNG_RNG_ICR_RNG_DMA_DONE_Msk (0x1UL << CC_RNG_RNG_ICR_RNG_DMA_DONE_Pos) /*!< Bit mask of RNG_DMA_DONE field. */
+
+/* Bit 4 : Writing value 1'b1 - clears corresponding bit in RNG_ISR */
+#define CC_RNG_RNG_ICR_RNG_WATCHDOG_Pos (4UL) /*!< Position of RNG_WATCHDOG field. */
+#define CC_RNG_RNG_ICR_RNG_WATCHDOG_Msk (0x1UL << CC_RNG_RNG_ICR_RNG_WATCHDOG_Pos) /*!< Bit mask of RNG_WATCHDOG field. */
+
+/* Bit 3 : Writing value 1'b1 - clears corresponding bit in RNG_ISR */
+#define CC_RNG_RNG_ICR_VN_ERR_Pos (3UL) /*!< Position of VN_ERR field. */
+#define CC_RNG_RNG_ICR_VN_ERR_Msk (0x1UL << CC_RNG_RNG_ICR_VN_ERR_Pos) /*!< Bit mask of VN_ERR field. */
+
+/* Bit 2 : Writing value 1'b1 - clears corresponding bit in RNG_ISR */
+#define CC_RNG_RNG_ICR_CRNGT_ERR_Pos (2UL) /*!< Position of CRNGT_ERR field. */
+#define CC_RNG_RNG_ICR_CRNGT_ERR_Msk (0x1UL << CC_RNG_RNG_ICR_CRNGT_ERR_Pos) /*!< Bit mask of CRNGT_ERR field. */
+
+/* Bit 1 : Cannot be cleared by SW! Only RNG reset clears this bit. */
+#define CC_RNG_RNG_ICR_AUTOCORR_ERR_Pos (1UL) /*!< Position of AUTOCORR_ERR field. */
+#define CC_RNG_RNG_ICR_AUTOCORR_ERR_Msk (0x1UL << CC_RNG_RNG_ICR_AUTOCORR_ERR_Pos) /*!< Bit mask of AUTOCORR_ERR field. */
+
+/* Bit 0 : Writing value 1'b1 - clears corresponding bit in RNG_ISR */
+#define CC_RNG_RNG_ICR_EHR_VALID_Pos (0UL) /*!< Position of EHR_VALID field. */
+#define CC_RNG_RNG_ICR_EHR_VALID_Msk (0x1UL << CC_RNG_RNG_ICR_EHR_VALID_Pos) /*!< Bit mask of EHR_VALID field. */
+
+/* Register: CC_RNG_TRNG_CONFIG */
+/* Description: This register handles TRNG configuration */
+
+/* Bit 2 : Secure Output Port selection */
+#define CC_RNG_TRNG_CONFIG_SOP_SEL_Pos (2UL) /*!< Position of SOP_SEL field. */
+#define CC_RNG_TRNG_CONFIG_SOP_SEL_Msk (0x1UL << CC_RNG_TRNG_CONFIG_SOP_SEL_Pos) /*!< Bit mask of SOP_SEL field. */
+#define CC_RNG_TRNG_CONFIG_SOP_SEL_PRNG (0UL) /*!< sop_data port reflects PRNG output (RNG_READOUT). */
+#define CC_RNG_TRNG_CONFIG_SOP_SEL_TRNG (1UL) /*!< sop_data port reflects TRNG output (EHR_DATA). */
+
+/* Bits 1..0 : Defines the length of the oscillator ring (= the number of inverters) out of four possible selections. */
+#define CC_RNG_TRNG_CONFIG_RND_SRC_SEL_Pos (0UL) /*!< Position of RND_SRC_SEL field. */
+#define CC_RNG_TRNG_CONFIG_RND_SRC_SEL_Msk (0x3UL << CC_RNG_TRNG_CONFIG_RND_SRC_SEL_Pos) /*!< Bit mask of RND_SRC_SEL field. */
+
+/* Register: CC_RNG_TRNG_VALID */
+/* Description: This register indicates that the TRNG data is valid. */
+
+/* Bit 0 : 1'b1 indicates that collection of bits in the TRNG is completed, and data can be read from the EHR_DATA register. */
+#define CC_RNG_TRNG_VALID_EHR_VALID_Pos (0UL) /*!< Position of EHR_VALID field. */
+#define CC_RNG_TRNG_VALID_EHR_VALID_Msk (0x1UL << CC_RNG_TRNG_VALID_EHR_VALID_Pos) /*!< Bit mask of EHR_VALID field. */
+
+/* Register: CC_RNG_EHR_DATA_0 */
+/* Description: This register contains bits [31:0] of the data collected by the TRNG block. */
+
+/* Bits 31..0 :   */
+#define CC_RNG_EHR_DATA_0_EHR_DATA_Pos (0UL) /*!< Position of EHR_DATA field. */
+#define CC_RNG_EHR_DATA_0_EHR_DATA_Msk (0xFFFFFFFFUL << CC_RNG_EHR_DATA_0_EHR_DATA_Pos) /*!< Bit mask of EHR_DATA field. */
+
+/* Register: CC_RNG_EHR_DATA_1 */
+/* Description: This register contains bits [63:32] of the data collected by the TRNG block. */
+
+/* Bits 31..0 :   */
+#define CC_RNG_EHR_DATA_1_EHR_DATA_Pos (0UL) /*!< Position of EHR_DATA field. */
+#define CC_RNG_EHR_DATA_1_EHR_DATA_Msk (0xFFFFFFFFUL << CC_RNG_EHR_DATA_1_EHR_DATA_Pos) /*!< Bit mask of EHR_DATA field. */
+
+/* Register: CC_RNG_EHR_DATA_2 */
+/* Description: This register contains bits [95:64] of the data collected by the TRNG block. */
+
+/* Bits 31..0 :   */
+#define CC_RNG_EHR_DATA_2_EHR_DATA_Pos (0UL) /*!< Position of EHR_DATA field. */
+#define CC_RNG_EHR_DATA_2_EHR_DATA_Msk (0xFFFFFFFFUL << CC_RNG_EHR_DATA_2_EHR_DATA_Pos) /*!< Bit mask of EHR_DATA field. */
+
+/* Register: CC_RNG_EHR_DATA_3 */
+/* Description: This register contains bits [127:96] of the data collected by the TRNG block. */
+
+/* Bits 31..0 :   */
+#define CC_RNG_EHR_DATA_3_EHR_DATA_Pos (0UL) /*!< Position of EHR_DATA field. */
+#define CC_RNG_EHR_DATA_3_EHR_DATA_Msk (0xFFFFFFFFUL << CC_RNG_EHR_DATA_3_EHR_DATA_Pos) /*!< Bit mask of EHR_DATA field. */
+
+/* Register: CC_RNG_EHR_DATA_4 */
+/* Description: This register contains bits [159:128] of the data collected by the TRNG block. */
+
+/* Bits 31..0 :   */
+#define CC_RNG_EHR_DATA_4_EHR_DATA_Pos (0UL) /*!< Position of EHR_DATA field. */
+#define CC_RNG_EHR_DATA_4_EHR_DATA_Msk (0xFFFFFFFFUL << CC_RNG_EHR_DATA_4_EHR_DATA_Pos) /*!< Bit mask of EHR_DATA field. */
+
+/* Register: CC_RNG_EHR_DATA_5 */
+/* Description: This register contains bits [191:160] of the data collected by the TRNG block. */
+
+/* Bits 31..0 :   */
+#define CC_RNG_EHR_DATA_5_EHR_DATA_Pos (0UL) /*!< Position of EHR_DATA field. */
+#define CC_RNG_EHR_DATA_5_EHR_DATA_Msk (0xFFFFFFFFUL << CC_RNG_EHR_DATA_5_EHR_DATA_Pos) /*!< Bit mask of EHR_DATA field. */
+
+/* Register: CC_RNG_RND_SOURCE_ENABLE */
+/* Description: This register holds the enable signal for the random source. */
+
+/* Bit 0 : Enable signal for the random source. */
+#define CC_RNG_RND_SOURCE_ENABLE_RND_SRC_EN_Pos (0UL) /*!< Position of RND_SRC_EN field. */
+#define CC_RNG_RND_SOURCE_ENABLE_RND_SRC_EN_Msk (0x1UL << CC_RNG_RND_SOURCE_ENABLE_RND_SRC_EN_Pos) /*!< Bit mask of RND_SRC_EN field. */
+#define CC_RNG_RND_SOURCE_ENABLE_RND_SRC_EN_Disabled (0UL) /*!< Signal for random source is disabled */
+#define CC_RNG_RND_SOURCE_ENABLE_RND_SRC_EN_Enabled (1UL) /*!< Signal for random source is enabled */
+
+/* Register: CC_RNG_SAMPLE_CNT1 */
+/* Description: Counts clocks between sampling of random bit. */
+
+/* Bits 31..0 : Sets the number of rng_clk cycles between two consecutive ring oscillator samples. */
+#define CC_RNG_SAMPLE_CNT1_SAMPLE_CNTR1_Pos (0UL) /*!< Position of SAMPLE_CNTR1 field. */
+#define CC_RNG_SAMPLE_CNT1_SAMPLE_CNTR1_Msk (0xFFFFFFFFUL << CC_RNG_SAMPLE_CNT1_SAMPLE_CNTR1_Pos) /*!< Bit mask of SAMPLE_CNTR1 field. */
+
+/* Register: CC_RNG_AUTOCORR_STATISTIC */
+/* Description: Statistics about autocorrelation test activations. */
+
+/* Bits 21..14 : Count each time an autocorrelation test starts. Any write to the
+          register resets the counter. Stops collecting statistics if one
+          of the counters has reached the limit. Count each time an
+          autocorrelation test fails. Any write to the register resets the
+          counter. Stops collecting statistics if one of the counters has
+          reached the limit. */
+#define CC_RNG_AUTOCORR_STATISTIC_AUTOCORR_FAILS_Pos (14UL) /*!< Position of AUTOCORR_FAILS field. */
+#define CC_RNG_AUTOCORR_STATISTIC_AUTOCORR_FAILS_Msk (0xFFUL << CC_RNG_AUTOCORR_STATISTIC_AUTOCORR_FAILS_Pos) /*!< Bit mask of AUTOCORR_FAILS field. */
+
+/* Bits 13..0 : Count each time an autocorrelation test starts. Any write to the
+          register resets the counter. Stops collecting statistics if one
+          of the counters has reached the limit. */
+#define CC_RNG_AUTOCORR_STATISTIC_AUTOCORR_TRYS_Pos (0UL) /*!< Position of AUTOCORR_TRYS field. */
+#define CC_RNG_AUTOCORR_STATISTIC_AUTOCORR_TRYS_Msk (0x3FFFUL << CC_RNG_AUTOCORR_STATISTIC_AUTOCORR_TRYS_Pos) /*!< Bit mask of AUTOCORR_TRYS field. */
+
+/* Register: CC_RNG_TRNG_DEBUG_CONTROL */
+/* Description: Debug register for the TRNG engine */
+
+/* Bit 3 : When this bit is set, the autocorrelation test in the TRNG module is bypassed. */
+#define CC_RNG_TRNG_DEBUG_CONTROL_AUTO_CORRELATE_BYPASS_Pos (3UL) /*!< Position of AUTO_CORRELATE_BYPASS field. */
+#define CC_RNG_TRNG_DEBUG_CONTROL_AUTO_CORRELATE_BYPASS_Msk (0x1UL << CC_RNG_TRNG_DEBUG_CONTROL_AUTO_CORRELATE_BYPASS_Pos) /*!< Bit mask of AUTO_CORRELATE_BYPASS field. */
+
+/* Bit 2 : When this bit is set, the CRNGT test in the TRNG is bypassed. */
+#define CC_RNG_TRNG_DEBUG_CONTROL_TRNG_CRNGT_BYPASS_Pos (2UL) /*!< Position of TRNG_CRNGT_BYPASS field. */
+#define CC_RNG_TRNG_DEBUG_CONTROL_TRNG_CRNGT_BYPASS_Msk (0x1UL << CC_RNG_TRNG_DEBUG_CONTROL_TRNG_CRNGT_BYPASS_Pos) /*!< Bit mask of TRNG_CRNGT_BYPASS field. */
+
+/* Bit 1 : When this bit is set, the Von-Neumann balancer is bypassed (including the 32 consecutive bits test). */
+#define CC_RNG_TRNG_DEBUG_CONTROL_VNC_BYPASS_Pos (1UL) /*!< Position of VNC_BYPASS field. */
+#define CC_RNG_TRNG_DEBUG_CONTROL_VNC_BYPASS_Msk (0x1UL << CC_RNG_TRNG_DEBUG_CONTROL_VNC_BYPASS_Pos) /*!< Bit mask of VNC_BYPASS field. */
+
+/* Register: CC_RNG_RNG_SW_RESET */
+/* Description: Generate SW reset solely to RNG block. */
+
+/* Bit 0 : Any value written (1'b0 or 1'b1) causes a reset cycle to the TRNG block. The reset mechanism takes about four RNG clock cycles until the reset line is de-asserted. */
+#define CC_RNG_RNG_SW_RESET_RNG_SW_RESET_Pos (0UL) /*!< Position of RNG_SW_RESET field. */
+#define CC_RNG_RNG_SW_RESET_RNG_SW_RESET_Msk (0x1UL << CC_RNG_RNG_SW_RESET_RNG_SW_RESET_Pos) /*!< Bit mask of RNG_SW_RESET field. */
+
+/* Register: CC_RNG_RNG_DEBUG_EN_INPUT */
+/* Description: Defines the RNG in debug */
+
+/* Bit 0 : Reflects the rng_debug_enable input port */
+#define CC_RNG_RNG_DEBUG_EN_INPUT_RNG_DEBUG_EN_Pos (0UL) /*!< Position of RNG_DEBUG_EN field. */
+#define CC_RNG_RNG_DEBUG_EN_INPUT_RNG_DEBUG_EN_Msk (0x1UL << CC_RNG_RNG_DEBUG_EN_INPUT_RNG_DEBUG_EN_Pos) /*!< Bit mask of RNG_DEBUG_EN field. */
+
+/* Register: CC_RNG_RNG_BUSY */
+/* Description: RNG busy indication */
+
+/* Bit 2 : Reflects rng_busy output port which Consists of trng_busy and prng_busy. Reflects trng_busy. */
+#define CC_RNG_RNG_BUSY_PRNG_BUSY_Pos (2UL) /*!< Position of PRNG_BUSY field. */
+#define CC_RNG_RNG_BUSY_PRNG_BUSY_Msk (0x1UL << CC_RNG_RNG_BUSY_PRNG_BUSY_Pos) /*!< Bit mask of PRNG_BUSY field. */
+
+/* Bit 1 : Reflects rng_busy output port which Consists of trng_busy and prng_busy. */
+#define CC_RNG_RNG_BUSY_TRNG_BUSY_Pos (1UL) /*!< Position of TRNG_BUSY field. */
+#define CC_RNG_RNG_BUSY_TRNG_BUSY_Msk (0x1UL << CC_RNG_RNG_BUSY_TRNG_BUSY_Pos) /*!< Bit mask of TRNG_BUSY field. */
+
+/* Bit 0 : Reflects rng_busy output port which Consists of trng_busy and prng_busy. */
+#define CC_RNG_RNG_BUSY_RNG_BUSY_Pos (0UL) /*!< Position of RNG_BUSY field. */
+#define CC_RNG_RNG_BUSY_RNG_BUSY_Msk (0x1UL << CC_RNG_RNG_BUSY_RNG_BUSY_Pos) /*!< Bit mask of RNG_BUSY field. */
+
+/* Register: CC_RNG_RST_BITS_COUNTER */
+/* Description: Resets the counter of collected bits in the TRNG */
+
+/* Bit 0 : Writing any value to this address resets the bits counter and trng valid registers. RND_SORCE_ENABLE register must be unset in order for reset to take place. */
+#define CC_RNG_RST_BITS_COUNTER_RST_BITS_COUNTER_Pos (0UL) /*!< Position of RST_BITS_COUNTER field. */
+#define CC_RNG_RST_BITS_COUNTER_RST_BITS_COUNTER_Msk (0x1UL << CC_RNG_RST_BITS_COUNTER_RST_BITS_COUNTER_Pos) /*!< Bit mask of RST_BITS_COUNTER field. */
+
+/* Register: CC_RNG_RNG_VERSION */
+/* Description: This register holds the RNG version */
+
+/* Bit 7 :   */
+#define CC_RNG_RNG_VERSION_RNG_USE_5_SBOXES_Pos (7UL) /*!< Position of RNG_USE_5_SBOXES field. */
+#define CC_RNG_RNG_VERSION_RNG_USE_5_SBOXES_Msk (0x1UL << CC_RNG_RNG_VERSION_RNG_USE_5_SBOXES_Pos) /*!< Bit mask of RNG_USE_5_SBOXES field. */
+#define CC_RNG_RNG_VERSION_RNG_USE_5_SBOXES_Disable (0UL) /*!< 20 SBOX AES */
+#define CC_RNG_RNG_VERSION_RNG_USE_5_SBOXES_Enable (1UL) /*!< 5 SBOX AES */
+
+/* Bit 6 : Asserted if RESEEDING_EXISTS */
+#define CC_RNG_RNG_VERSION_RESEEDING_EXISTS_Pos (6UL) /*!< Position of RESEEDING_EXISTS field. */
+#define CC_RNG_RNG_VERSION_RESEEDING_EXISTS_Msk (0x1UL << CC_RNG_RNG_VERSION_RESEEDING_EXISTS_Pos) /*!< Bit mask of RESEEDING_EXISTS field. */
+
+/* Bit 5 : Asserted if KAT_EXISTS */
+#define CC_RNG_RNG_VERSION_KAT_EXISTS_Pos (5UL) /*!< Position of KAT_EXISTS field. */
+#define CC_RNG_RNG_VERSION_KAT_EXISTS_Msk (0x1UL << CC_RNG_RNG_VERSION_KAT_EXISTS_Pos) /*!< Bit mask of KAT_EXISTS field. */
+
+/* Bit 4 : Asserted if PRNG_EXISTS */
+#define CC_RNG_RNG_VERSION_PRNG_EXISTS_Pos (4UL) /*!< Position of PRNG_EXISTS field. */
+#define CC_RNG_RNG_VERSION_PRNG_EXISTS_Msk (0x1UL << CC_RNG_RNG_VERSION_PRNG_EXISTS_Pos) /*!< Bit mask of PRNG_EXISTS field. */
+
+/* Bit 3 :   */
+#define CC_RNG_RNG_VERSION_TRNG_TESTS_BYPASS_EN_Pos (3UL) /*!< Position of TRNG_TESTS_BYPASS_EN field. */
+#define CC_RNG_RNG_VERSION_TRNG_TESTS_BYPASS_EN_Msk (0x1UL << CC_RNG_RNG_VERSION_TRNG_TESTS_BYPASS_EN_Pos) /*!< Bit mask of TRNG_TESTS_BYPASS_EN field. */
+#define CC_RNG_RNG_VERSION_TRNG_TESTS_BYPASS_EN_Disabled (0UL) /*!< TRNG tests bypass not enabled */
+#define CC_RNG_RNG_VERSION_TRNG_TESTS_BYPASS_EN_Enabled (1UL) /*!< TRNG tests bypass enabled */
+
+/* Bit 2 : Asserted if AUTOCORR_EXISTS */
+#define CC_RNG_RNG_VERSION_AUTOCORR_EXISTS_Pos (2UL) /*!< Position of AUTOCORR_EXISTS field. */
+#define CC_RNG_RNG_VERSION_AUTOCORR_EXISTS_Msk (0x1UL << CC_RNG_RNG_VERSION_AUTOCORR_EXISTS_Pos) /*!< Bit mask of AUTOCORR_EXISTS field. */
+
+/* Bit 1 : Asserted if CRNGT_EXISTS */
+#define CC_RNG_RNG_VERSION_CRNGT_EXISTS_Pos (1UL) /*!< Position of CRNGT_EXISTS field. */
+#define CC_RNG_RNG_VERSION_CRNGT_EXISTS_Msk (0x1UL << CC_RNG_RNG_VERSION_CRNGT_EXISTS_Pos) /*!< Bit mask of CRNGT_EXISTS field. */
+
+/* Bit 0 :   */
+#define CC_RNG_RNG_VERSION_EHR_WIDTH_Pos (0UL) /*!< Position of EHR_WIDTH field. */
+#define CC_RNG_RNG_VERSION_EHR_WIDTH_Msk (0x1UL << CC_RNG_RNG_VERSION_EHR_WIDTH_Pos) /*!< Bit mask of EHR_WIDTH field. */
+#define CC_RNG_RNG_VERSION_EHR_WIDTH_128Bits (0UL) /*!< 128 bits EHR width */
+#define CC_RNG_RNG_VERSION_EHR_WIDTH_192Bits (1UL) /*!< 192 bits EHR width */
+
+/* Register: CC_RNG_RNG_CLK_ENABLE */
+/* Description: Writing to this register enables/disables the RNG clock. */
+
+/* Bit 0 :   */
+#define CC_RNG_RNG_CLK_ENABLE_EN_Pos (0UL) /*!< Position of EN field. */
+#define CC_RNG_RNG_CLK_ENABLE_EN_Msk (0x1UL << CC_RNG_RNG_CLK_ENABLE_EN_Pos) /*!< Bit mask of EN field. */
+#define CC_RNG_RNG_CLK_ENABLE_EN_Disable (0UL) /*!< Disable RNG clock */
+#define CC_RNG_RNG_CLK_ENABLE_EN_Enable (1UL) /*!< Enable RNG clock */
+
+/* Register: CC_RNG_RNG_DMA_ENABLE */
+/* Description: Writing to this register enables/disables the RNG DMA */
+
+/* Bit 0 :   */
+#define CC_RNG_RNG_DMA_ENABLE_EN_Pos (0UL) /*!< Position of EN field. */
+#define CC_RNG_RNG_DMA_ENABLE_EN_Msk (0x1UL << CC_RNG_RNG_DMA_ENABLE_EN_Pos) /*!< Bit mask of EN field. */
+#define CC_RNG_RNG_DMA_ENABLE_EN_Disable (0UL) /*!< Disable RNG DMA to SRAM */
+#define CC_RNG_RNG_DMA_ENABLE_EN_Enable (1UL) /*!< Enable RNG DMA to SRAM. */
+
+/* Register: CC_RNG_RNG_DMA_SRC_MASK */
+/* Description: This register defines which ring-oscillator length should be used when using the RNG DMA. */
+
+/* Bit 3 : Enable or disable SRC_SEL3. */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL3_Pos (3UL) /*!< Position of EN_SRC_SEL3 field. */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL3_Msk (0x1UL << CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL3_Pos) /*!< Bit mask of EN_SRC_SEL3 field. */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL3_Disable (0UL) /*!< Disable SRC_SEL3 */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL3_Enable (1UL) /*!< Enable SRC_SEL3 */
+
+/* Bit 2 : Enable or disable SRC_SEL2. */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL2_Pos (2UL) /*!< Position of EN_SRC_SEL2 field. */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL2_Msk (0x1UL << CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL2_Pos) /*!< Bit mask of EN_SRC_SEL2 field. */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL2_Disable (0UL) /*!< Disable SRC_SEL2 */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL2_Enable (1UL) /*!< Enable SRC_SEL2 */
+
+/* Bit 1 : Enable or disable SRC_SEL1. */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL1_Pos (1UL) /*!< Position of EN_SRC_SEL1 field. */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL1_Msk (0x1UL << CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL1_Pos) /*!< Bit mask of EN_SRC_SEL1 field. */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL1_Disable (0UL) /*!< Disable SRC_SEL1 */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL1_Enable (1UL) /*!< Enable SRC_SEL1 */
+
+/* Bit 0 : Enable or disable SRC_SEL0. */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL0_Pos (0UL) /*!< Position of EN_SRC_SEL0 field. */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL0_Msk (0x1UL << CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL0_Pos) /*!< Bit mask of EN_SRC_SEL0 field. */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL0_Disable (0UL) /*!< Disable SRC_SEL0 */
+#define CC_RNG_RNG_DMA_SRC_MASK_EN_SRC_SEL0_Enable (1UL) /*!< Enable SRC_SEL0 */
+
+/* Register: CC_RNG_RNG_DMA_SRAM_ADDR */
+/* Description: This register defines the start address of the DMA for the TRNG data. */
+
+/* Bits 10..0 : Start address of the DMA for the TRNG data. */
+#define CC_RNG_RNG_DMA_SRAM_ADDR_RNG_SRAM_DMA_ADDR_Pos (0UL) /*!< Position of RNG_SRAM_DMA_ADDR field. */
+#define CC_RNG_RNG_DMA_SRAM_ADDR_RNG_SRAM_DMA_ADDR_Msk (0x7FFUL << CC_RNG_RNG_DMA_SRAM_ADDR_RNG_SRAM_DMA_ADDR_Pos) /*!< Bit mask of RNG_SRAM_DMA_ADDR field. */
+
+/* Register: CC_RNG_RNG_DMA_SAMPLES_NUM */
+/* Description: This register defines the number of 192-bits samples that the DMA collects per RNG configuration. */
+
+/* Bits 7..0 : Defines the number of 192-bits samples that the DMA collects per RNG configuration. */
+#define CC_RNG_RNG_DMA_SAMPLES_NUM_RNG_SAMPLES_NUM_Pos (0UL) /*!< Position of RNG_SAMPLES_NUM field. */
+#define CC_RNG_RNG_DMA_SAMPLES_NUM_RNG_SAMPLES_NUM_Msk (0xFFUL << CC_RNG_RNG_DMA_SAMPLES_NUM_RNG_SAMPLES_NUM_Pos) /*!< Bit mask of RNG_SAMPLES_NUM field. */
+
+/* Register: CC_RNG_RNG_WATCHDOG_VAL */
+/* Description: This register defines the maximum number of clock cycles per TRNG collection of 192-bits samples. If the number of cycles for a collection exceeds this threshold, TRNG signals an interrupt. */
+
+/* Bits 31..0 : Defines the maximum number of clock cycles per TRNG collection of 192-bits samples. If the number of cycles for a collection exceeds this threshold, TRNG signals an interrupt. */
+#define CC_RNG_RNG_WATCHDOG_VAL_RNG_WATCHDOG_VAL_Pos (0UL) /*!< Position of RNG_WATCHDOG_VAL field. */
+#define CC_RNG_RNG_WATCHDOG_VAL_RNG_WATCHDOG_VAL_Msk (0xFFFFFFFFUL << CC_RNG_RNG_WATCHDOG_VAL_RNG_WATCHDOG_VAL_Pos) /*!< Bit mask of RNG_WATCHDOG_VAL field. */
+
+/* Register: CC_RNG_RNG_DMA_STATUS */
+/* Description: This register holds the RNG DMA status. */
+
+/* Bits 10..3 : Number of samples already collected in the current ring oscillator length. */
+#define CC_RNG_RNG_DMA_STATUS_NUM_OF_SAMPLES_Pos (3UL) /*!< Position of NUM_OF_SAMPLES field. */
+#define CC_RNG_RNG_DMA_STATUS_NUM_OF_SAMPLES_Msk (0xFFUL << CC_RNG_RNG_DMA_STATUS_NUM_OF_SAMPLES_Pos) /*!< Bit mask of NUM_OF_SAMPLES field. */
+
+/* Bits 2..1 : The active ring oscillator length used by DMA. */
+#define CC_RNG_RNG_DMA_STATUS_DMA_SRC_SEL_Pos (1UL) /*!< Position of DMA_SRC_SEL field. */
+#define CC_RNG_RNG_DMA_STATUS_DMA_SRC_SEL_Msk (0x3UL << CC_RNG_RNG_DMA_STATUS_DMA_SRC_SEL_Pos) /*!< Bit mask of DMA_SRC_SEL field. */
+
+/* Bit 0 : Indicates whether DMA is busy. */
+#define CC_RNG_RNG_DMA_STATUS_RNG_DMA_BUSY_Pos (0UL) /*!< Position of RNG_DMA_BUSY field. */
+#define CC_RNG_RNG_DMA_STATUS_RNG_DMA_BUSY_Msk (0x1UL << CC_RNG_RNG_DMA_STATUS_RNG_DMA_BUSY_Pos) /*!< Bit mask of RNG_DMA_BUSY field. */
 
 
 /* Peripheral: CLOCK */
@@ -317,6 +2769,7 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bit 0 : Active clock source */
 #define CLOCK_HFCLKSTAT_SRC_Pos (0UL) /*!< Position of SRC field. */
 #define CLOCK_HFCLKSTAT_SRC_Msk (0x1UL << CLOCK_HFCLKSTAT_SRC_Pos) /*!< Bit mask of SRC field. */
+#define CLOCK_HFCLKSTAT_SRC_HFINT (0UL) /*!< HFINT - 64 MHz on-chip oscillator */
 #define CLOCK_HFCLKSTAT_SRC_HFXO (1UL) /*!< HFXO - 64 MHz clock derived from external 32 MHz crystal oscillator */
 
 /* Register: CLOCK_LFCLKRUN */
@@ -343,6 +2796,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #define CLOCK_LFCLKSTAT_SRC_RFU (0UL) /*!< Reserved for future use */
 #define CLOCK_LFCLKSTAT_SRC_LFRC (1UL) /*!< 32.768 kHz RC oscillator */
 #define CLOCK_LFCLKSTAT_SRC_LFXO (2UL) /*!< 32.768 kHz crystal oscillator */
+#define CLOCK_LFCLKSTAT_SRC_LFSYNT (3UL) /*!< 32.768 kHz synthesized from HFCLK */
 
 /* Register: CLOCK_LFCLKSRCCOPY */
 /* Description: Copy of LFCLKSRC register, set after LFCLKSTART task has been triggered */
@@ -353,6 +2807,26 @@ POSSIBILITY OF SUCH DAMAGE.
 #define CLOCK_LFCLKSRCCOPY_SRC_RFU (0UL) /*!< Reserved for future use */
 #define CLOCK_LFCLKSRCCOPY_SRC_LFRC (1UL) /*!< 32.768 kHz RC oscillator */
 #define CLOCK_LFCLKSRCCOPY_SRC_LFXO (2UL) /*!< 32.768 kHz crystal oscillator */
+#define CLOCK_LFCLKSRCCOPY_SRC_LFSYNT (3UL) /*!< 32.768 kHz synthesized from HFCLK */
+
+/* Register: CLOCK_HFCLKCURRFREQ */
+/* Description: Current frequency of HFCLK */
+
+/* Bits 7..0 : Current high frequency clock (HCLK) frequency */
+#define CLOCK_HFCLKCURRFREQ_HFCLKCURRFREQ_Pos (0UL) /*!< Position of HFCLKCURRFREQ field. */
+#define CLOCK_HFCLKCURRFREQ_HFCLKCURRFREQ_Msk (0xFFUL << CLOCK_HFCLKCURRFREQ_HFCLKCURRFREQ_Pos) /*!< Bit mask of HFCLKCURRFREQ field. */
+#define CLOCK_HFCLKCURRFREQ_HFCLKCURRFREQ_64M (0UL) /*!< 64 MHz (default frequency) */
+#define CLOCK_HFCLKCURRFREQ_HFCLKCURRFREQ_32M (1UL) /*!< 32 MHz */
+#define CLOCK_HFCLKCURRFREQ_HFCLKCURRFREQ_16M (2UL) /*!< 16 MHz */
+
+/* Register: CLOCK_HFCLKSRC */
+/* Description: Clock source for the HFCLK oscillator, and configuration of XTAL oscillator. This register shall only be written while no oscillation is present on XC1. Failing to do so may cause unexpected behavior. */
+
+/* Bit 0 : Select which HFCLK source is started by the START task */
+#define CLOCK_HFCLKSRC_SRC_Pos (0UL) /*!< Position of SRC field. */
+#define CLOCK_HFCLKSRC_SRC_Msk (0x1UL << CLOCK_HFCLKSRC_SRC_Pos) /*!< Bit mask of SRC field. */
+#define CLOCK_HFCLKSRC_SRC_HFINT (0UL) /*!< HFCLKSTART task starts HFINT oscillator */
+#define CLOCK_HFCLKSRC_SRC_HFXO (1UL) /*!< HFCLKSTART task starts HFXO oscillator */
 
 /* Register: CLOCK_LFCLKSRC */
 /* Description: Clock source for the LFCLK. LFCLKSTART task starts starts a clock source selected with this register. */
@@ -363,10 +2837,49 @@ POSSIBILITY OF SUCH DAMAGE.
 #define CLOCK_LFCLKSRC_SRC_RFU (0UL) /*!< Reserved for future use (equals selecting LFRC) */
 #define CLOCK_LFCLKSRC_SRC_LFRC (1UL) /*!< 32.768 kHz RC oscillator */
 #define CLOCK_LFCLKSRC_SRC_LFXO (2UL) /*!< 32.768 kHz crystal oscillator */
+#define CLOCK_LFCLKSRC_SRC_LFSYNT (3UL) /*!< 32.768 kHz synthesized from HFCLK */
+
+/* Register: CLOCK_HFCLKCTRL */
+/* Description: HFCLK frequency configuration */
+
+/* Bits 1..0 : High frequency clock HCLK */
+#define CLOCK_HFCLKCTRL_HCLK_Pos (0UL) /*!< Position of HCLK field. */
+#define CLOCK_HFCLKCTRL_HCLK_Msk (0x3UL << CLOCK_HFCLKCTRL_HCLK_Pos) /*!< Bit mask of HCLK field. */
+#define CLOCK_HFCLKCTRL_HCLK_default (0UL) /*!< Default frequency */
+#define CLOCK_HFCLKCTRL_HCLK_32M (1UL) /*!< 32 MHz */
+#define CLOCK_HFCLKCTRL_HCLK_16M (2UL) /*!< 16 MHz */
 
 
 /* Peripheral: CRYPTOCELL */
 /* Description: ARM TrustZone CryptoCell register interface */
+
+/* Register: CRYPTOCELL_TASKZEROPENALTY2 */
+/* Description: CRYPTOCELL PcgcSlave: Set the penalty to zero for power/clock pair 2 */
+
+/* Bit 0 :   */
+#define CRYPTOCELL_TASKZEROPENALTY2_TASKZEROPENALTY2_Pos (0UL) /*!< Position of TASKZEROPENALTY2 field. */
+#define CRYPTOCELL_TASKZEROPENALTY2_TASKZEROPENALTY2_Msk (0x1UL << CRYPTOCELL_TASKZEROPENALTY2_TASKZEROPENALTY2_Pos) /*!< Bit mask of TASKZEROPENALTY2 field. */
+
+/* Register: CRYPTOCELL_TASKFULLPENALTY2 */
+/* Description: CRYPTOCELL PcgcSlave: Set the penalty to full for power/clock pair 2 */
+
+/* Bit 0 :   */
+#define CRYPTOCELL_TASKFULLPENALTY2_TASKFULLPENALTY2_Pos (0UL) /*!< Position of TASKFULLPENALTY2 field. */
+#define CRYPTOCELL_TASKFULLPENALTY2_TASKFULLPENALTY2_Msk (0x1UL << CRYPTOCELL_TASKFULLPENALTY2_TASKFULLPENALTY2_Pos) /*!< Bit mask of TASKFULLPENALTY2 field. */
+
+/* Register: CRYPTOCELL_TASKZEROPENALTY1 */
+/* Description: CRYPTOCELL PcgcSlave: Set the penalty to zero for power/clock pair 1 */
+
+/* Bit 0 :   */
+#define CRYPTOCELL_TASKZEROPENALTY1_TASKZEROPENALTY1_Pos (0UL) /*!< Position of TASKZEROPENALTY1 field. */
+#define CRYPTOCELL_TASKZEROPENALTY1_TASKZEROPENALTY1_Msk (0x1UL << CRYPTOCELL_TASKZEROPENALTY1_TASKZEROPENALTY1_Pos) /*!< Bit mask of TASKZEROPENALTY1 field. */
+
+/* Register: CRYPTOCELL_TASKFULLPENALTY1 */
+/* Description: CRYPTOCELL PcgcSlave: Set the penalty to full for power/clock pair 1 */
+
+/* Bit 0 :   */
+#define CRYPTOCELL_TASKFULLPENALTY1_TASKFULLPENALTY1_Pos (0UL) /*!< Position of TASKFULLPENALTY1 field. */
+#define CRYPTOCELL_TASKFULLPENALTY1_TASKFULLPENALTY1_Msk (0x1UL << CRYPTOCELL_TASKFULLPENALTY1_TASKFULLPENALTY1_Pos) /*!< Bit mask of TASKFULLPENALTY1 field. */
 
 /* Register: CRYPTOCELL_ENABLE */
 /* Description: Enable CRYPTOCELL subsystem */
@@ -376,6 +2889,68 @@ POSSIBILITY OF SUCH DAMAGE.
 #define CRYPTOCELL_ENABLE_ENABLE_Msk (0x1UL << CRYPTOCELL_ENABLE_ENABLE_Pos) /*!< Bit mask of ENABLE field. */
 #define CRYPTOCELL_ENABLE_ENABLE_Disabled (0UL) /*!< CRYPTOCELL subsystem disabled */
 #define CRYPTOCELL_ENABLE_ENABLE_Enabled (1UL) /*!< CRYPTOCELL subsystem enabled. */
+
+/* Register: CRYPTOCELL_RESET */
+/* Description: Perform an external reset of the CRYPTOCELL subsystem. */
+
+/* Bit 0 : Reset CRYPTOCELL subsystem */
+#define CRYPTOCELL_RESET_RESET_Pos (0UL) /*!< Position of RESET field. */
+#define CRYPTOCELL_RESET_RESET_Msk (0x1UL << CRYPTOCELL_RESET_RESET_Pos) /*!< Bit mask of RESET field. */
+#define CRYPTOCELL_RESET_RESET_Disabled (0UL) /*!< CRYPTOCELL subsystem normal operation */
+#define CRYPTOCELL_RESET_RESET_Enabled (1UL) /*!< Perform CRYPTOCELL subsystem reset */
+
+/* Register: CRYPTOCELL_IRQ_STATUS */
+/* Description: Holds the interrupt status from the CRYPTOCELL subsystems. */
+
+/* Bit 0 : A read will return the current status of the CRYPTOCELL interrupt signal */
+#define CRYPTOCELL_IRQ_STATUS_IRQ_STATUS_Pos (0UL) /*!< Position of IRQ_STATUS field. */
+#define CRYPTOCELL_IRQ_STATUS_IRQ_STATUS_Msk (0x1UL << CRYPTOCELL_IRQ_STATUS_IRQ_STATUS_Pos) /*!< Bit mask of IRQ_STATUS field. */
+
+/* Register: CRYPTOCELL_TSEL */
+/* Description: Timing select (TSEL) settings for CRYPTOCELL dedicated PKA and RNG SRAM blocks. */
+
+/* Bits 5..4 : Control timing for RNG SRAM block */
+#define CRYPTOCELL_TSEL_RNGSRAM_Pos (4UL) /*!< Position of RNGSRAM field. */
+#define CRYPTOCELL_TSEL_RNGSRAM_Msk (0x3UL << CRYPTOCELL_TSEL_RNGSRAM_Pos) /*!< Bit mask of RNGSRAM field. */
+
+/* Bits 1..0 : Control timing for PKA SRAM block */
+#define CRYPTOCELL_TSEL_PKASRAM_Pos (0UL) /*!< Position of PKASRAM field. */
+#define CRYPTOCELL_TSEL_PKASRAM_Msk (0x3UL << CRYPTOCELL_TSEL_PKASRAM_Pos) /*!< Bit mask of PKASRAM field. */
+
+/* Register: CRYPTOCELL_PENALTYRG1 */
+/* Description: CRYPTOCELL PcgcSlave: Penalty reg power/clock pair 1 */
+
+/* Bits 1..0 :   */
+#define CRYPTOCELL_PENALTYRG1_PENALTYRG1_Pos (0UL) /*!< Position of PENALTYRG1 field. */
+#define CRYPTOCELL_PENALTYRG1_PENALTYRG1_Msk (0x3UL << CRYPTOCELL_PENALTYRG1_PENALTYRG1_Pos) /*!< Bit mask of PENALTYRG1 field. */
+
+/* Register: CRYPTOCELL_PENALTYRG2 */
+/* Description: CRYPTOCELL PcgcSlave: Penalty reg power/clock pair 2 */
+
+/* Bits 1..0 :   */
+#define CRYPTOCELL_PENALTYRG2_PENALTYRG2_Pos (0UL) /*!< Position of PENALTYRG2 field. */
+#define CRYPTOCELL_PENALTYRG2_PENALTYRG2_Msk (0x3UL << CRYPTOCELL_PENALTYRG2_PENALTYRG2_Pos) /*!< Bit mask of PENALTYRG2 field. */
+
+/* Register: CRYPTOCELL_FORCEOVERRIDE0 */
+/* Description: CRYPTOCELL (and CC310KmuInterface, if present) PcgcSlave: Override power/clock pair 0 */
+
+/* Bits 31..0 :   */
+#define CRYPTOCELL_FORCEOVERRIDE0_FORCEOVERRIDE0_Pos (0UL) /*!< Position of FORCEOVERRIDE0 field. */
+#define CRYPTOCELL_FORCEOVERRIDE0_FORCEOVERRIDE0_Msk (0xFFFFFFFFUL << CRYPTOCELL_FORCEOVERRIDE0_FORCEOVERRIDE0_Pos) /*!< Bit mask of FORCEOVERRIDE0 field. */
+
+/* Register: CRYPTOCELL_FORCEOVERRIDE1 */
+/* Description: CRYPTOCELL PcgcSlave: Override power/clock pair 1 */
+
+/* Bits 31..0 :   */
+#define CRYPTOCELL_FORCEOVERRIDE1_FORCEOVERRIDE1_Pos (0UL) /*!< Position of FORCEOVERRIDE1 field. */
+#define CRYPTOCELL_FORCEOVERRIDE1_FORCEOVERRIDE1_Msk (0xFFFFFFFFUL << CRYPTOCELL_FORCEOVERRIDE1_FORCEOVERRIDE1_Pos) /*!< Bit mask of FORCEOVERRIDE1 field. */
+
+/* Register: CRYPTOCELL_FORCEOVERRIDE2 */
+/* Description: CRYPTOCELL PcgcSlave: Override power/clock pair 2 */
+
+/* Bits 31..0 :   */
+#define CRYPTOCELL_FORCEOVERRIDE2_FORCEOVERRIDE2_Pos (0UL) /*!< Position of FORCEOVERRIDE2 field. */
+#define CRYPTOCELL_FORCEOVERRIDE2_FORCEOVERRIDE2_Msk (0xFFFFFFFFUL << CRYPTOCELL_FORCEOVERRIDE2_FORCEOVERRIDE2_Pos) /*!< Bit mask of FORCEOVERRIDE2 field. */
 
 
 /* Peripheral: CTRLAPPERI */
@@ -428,6 +3003,177 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 31..0 : The ERASEALL sequence will be initiated if value of KEY fields are non-zero and KEY fields match on both CPU and debugger side */
 #define CTRLAPPERI_ERASEPROTECT_DISABLE_KEY_Pos (0UL) /*!< Position of KEY field. */
 #define CTRLAPPERI_ERASEPROTECT_DISABLE_KEY_Msk (0xFFFFFFFFUL << CTRLAPPERI_ERASEPROTECT_DISABLE_KEY_Pos) /*!< Bit mask of KEY field. */
+
+
+/* Peripheral: DCNF */
+/* Description: Domain Configuration Management 0 */
+
+/* Register: DCNF_CPUID */
+/* Description: CPU number in the system */
+
+/* Bits 7..0 : CPU number in the system */
+#define DCNF_CPUID_CPUID_Pos (0UL) /*!< Position of CPUID field. */
+#define DCNF_CPUID_CPUID_Msk (0xFFUL << DCNF_CPUID_CPUID_Pos) /*!< Bit mask of CPUID field. */
+
+/* Register: DCNF_EXTPERI0_PROTECT */
+/* Description: Description collection: Control access for  Master connected to AMLI master port EXTPERI[n] */
+
+/* Bit 7 : Control access to slave  7 of master EXTPERI[n]. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE7_Pos (7UL) /*!< Position of SLAVE7 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE7_Msk (0x1UL << DCNF_EXTPERI0_PROTECT_SLAVE7_Pos) /*!< Bit mask of SLAVE7 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE7_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTPERI0_PROTECT_SLAVE7_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 6 : Control access to slave  6 of master EXTPERI[n]. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE6_Pos (6UL) /*!< Position of SLAVE6 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE6_Msk (0x1UL << DCNF_EXTPERI0_PROTECT_SLAVE6_Pos) /*!< Bit mask of SLAVE6 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE6_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTPERI0_PROTECT_SLAVE6_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 5 : Control access to slave  5 of master EXTPERI[n]. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE5_Pos (5UL) /*!< Position of SLAVE5 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE5_Msk (0x1UL << DCNF_EXTPERI0_PROTECT_SLAVE5_Pos) /*!< Bit mask of SLAVE5 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE5_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTPERI0_PROTECT_SLAVE5_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 4 : Control access to slave  4 of master EXTPERI[n]. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE4_Pos (4UL) /*!< Position of SLAVE4 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE4_Msk (0x1UL << DCNF_EXTPERI0_PROTECT_SLAVE4_Pos) /*!< Bit mask of SLAVE4 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE4_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTPERI0_PROTECT_SLAVE4_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 3 : Control access to slave  3 of master EXTPERI[n]. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE3_Pos (3UL) /*!< Position of SLAVE3 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE3_Msk (0x1UL << DCNF_EXTPERI0_PROTECT_SLAVE3_Pos) /*!< Bit mask of SLAVE3 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE3_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTPERI0_PROTECT_SLAVE3_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 2 : Control access to slave  2 of master EXTPERI[n]. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE2_Pos (2UL) /*!< Position of SLAVE2 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE2_Msk (0x1UL << DCNF_EXTPERI0_PROTECT_SLAVE2_Pos) /*!< Bit mask of SLAVE2 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE2_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTPERI0_PROTECT_SLAVE2_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 1 : Control access to slave  1 of master EXTPERI[n]. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE1_Pos (1UL) /*!< Position of SLAVE1 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE1_Msk (0x1UL << DCNF_EXTPERI0_PROTECT_SLAVE1_Pos) /*!< Bit mask of SLAVE1 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE1_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTPERI0_PROTECT_SLAVE1_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 0 : Control access to slave  0 of master EXTPERI[n]. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE0_Pos (0UL) /*!< Position of SLAVE0 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE0_Msk (0x1UL << DCNF_EXTPERI0_PROTECT_SLAVE0_Pos) /*!< Bit mask of SLAVE0 field. */
+#define DCNF_EXTPERI0_PROTECT_SLAVE0_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTPERI0_PROTECT_SLAVE0_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Register: DCNF_EXTRAM_PROTECT */
+/* Description: Description collection: Control access from  Master connected to AMLI master port EXTRAM[n] */
+
+/* Bit 7 : Control access to slave  7 of master EXTRAM[n]. */
+#define DCNF_EXTRAM_PROTECT_SLAVE7_Pos (7UL) /*!< Position of SLAVE7 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE7_Msk (0x1UL << DCNF_EXTRAM_PROTECT_SLAVE7_Pos) /*!< Bit mask of SLAVE7 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE7_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTRAM_PROTECT_SLAVE7_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 6 : Control access to slave  6 of master EXTRAM[n]. */
+#define DCNF_EXTRAM_PROTECT_SLAVE6_Pos (6UL) /*!< Position of SLAVE6 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE6_Msk (0x1UL << DCNF_EXTRAM_PROTECT_SLAVE6_Pos) /*!< Bit mask of SLAVE6 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE6_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTRAM_PROTECT_SLAVE6_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 5 : Control access to slave  5 of master EXTRAM[n]. */
+#define DCNF_EXTRAM_PROTECT_SLAVE5_Pos (5UL) /*!< Position of SLAVE5 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE5_Msk (0x1UL << DCNF_EXTRAM_PROTECT_SLAVE5_Pos) /*!< Bit mask of SLAVE5 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE5_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTRAM_PROTECT_SLAVE5_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 4 : Control access to slave  4 of master EXTRAM[n]. */
+#define DCNF_EXTRAM_PROTECT_SLAVE4_Pos (4UL) /*!< Position of SLAVE4 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE4_Msk (0x1UL << DCNF_EXTRAM_PROTECT_SLAVE4_Pos) /*!< Bit mask of SLAVE4 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE4_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTRAM_PROTECT_SLAVE4_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 3 : Control access to slave  3 of master EXTRAM[n]. */
+#define DCNF_EXTRAM_PROTECT_SLAVE3_Pos (3UL) /*!< Position of SLAVE3 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE3_Msk (0x1UL << DCNF_EXTRAM_PROTECT_SLAVE3_Pos) /*!< Bit mask of SLAVE3 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE3_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTRAM_PROTECT_SLAVE3_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 2 : Control access to slave  2 of master EXTRAM[n]. */
+#define DCNF_EXTRAM_PROTECT_SLAVE2_Pos (2UL) /*!< Position of SLAVE2 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE2_Msk (0x1UL << DCNF_EXTRAM_PROTECT_SLAVE2_Pos) /*!< Bit mask of SLAVE2 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE2_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTRAM_PROTECT_SLAVE2_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 1 : Control access to slave  1 of master EXTRAM[n]. */
+#define DCNF_EXTRAM_PROTECT_SLAVE1_Pos (1UL) /*!< Position of SLAVE1 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE1_Msk (0x1UL << DCNF_EXTRAM_PROTECT_SLAVE1_Pos) /*!< Bit mask of SLAVE1 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE1_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTRAM_PROTECT_SLAVE1_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 0 : Control access to slave  0 of master EXTRAM[n]. */
+#define DCNF_EXTRAM_PROTECT_SLAVE0_Pos (0UL) /*!< Position of SLAVE0 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE0_Msk (0x1UL << DCNF_EXTRAM_PROTECT_SLAVE0_Pos) /*!< Bit mask of SLAVE0 field. */
+#define DCNF_EXTRAM_PROTECT_SLAVE0_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTRAM_PROTECT_SLAVE0_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Register: DCNF_EXTCODE_PROTECT */
+/* Description: Description cluster: Control access from  Master connected to AMLI master port EXTCODE[n] */
+
+/* Bit 7 : Control access to slave  7 of master EXTCODE[n]. */
+#define DCNF_EXTCODE_PROTECT_SLAVE7_Pos (7UL) /*!< Position of SLAVE7 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE7_Msk (0x1UL << DCNF_EXTCODE_PROTECT_SLAVE7_Pos) /*!< Bit mask of SLAVE7 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE7_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTCODE_PROTECT_SLAVE7_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 6 : Control access to slave  6 of master EXTCODE[n]. */
+#define DCNF_EXTCODE_PROTECT_SLAVE6_Pos (6UL) /*!< Position of SLAVE6 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE6_Msk (0x1UL << DCNF_EXTCODE_PROTECT_SLAVE6_Pos) /*!< Bit mask of SLAVE6 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE6_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTCODE_PROTECT_SLAVE6_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 5 : Control access to slave  5 of master EXTCODE[n]. */
+#define DCNF_EXTCODE_PROTECT_SLAVE5_Pos (5UL) /*!< Position of SLAVE5 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE5_Msk (0x1UL << DCNF_EXTCODE_PROTECT_SLAVE5_Pos) /*!< Bit mask of SLAVE5 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE5_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTCODE_PROTECT_SLAVE5_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 4 : Control access to slave  4 of master EXTCODE[n]. */
+#define DCNF_EXTCODE_PROTECT_SLAVE4_Pos (4UL) /*!< Position of SLAVE4 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE4_Msk (0x1UL << DCNF_EXTCODE_PROTECT_SLAVE4_Pos) /*!< Bit mask of SLAVE4 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE4_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTCODE_PROTECT_SLAVE4_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 3 : Control access to slave  3 of master EXTCODE[n]. */
+#define DCNF_EXTCODE_PROTECT_SLAVE3_Pos (3UL) /*!< Position of SLAVE3 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE3_Msk (0x1UL << DCNF_EXTCODE_PROTECT_SLAVE3_Pos) /*!< Bit mask of SLAVE3 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE3_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTCODE_PROTECT_SLAVE3_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 2 : Control access to slave  2 of master EXTCODE[n]. */
+#define DCNF_EXTCODE_PROTECT_SLAVE2_Pos (2UL) /*!< Position of SLAVE2 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE2_Msk (0x1UL << DCNF_EXTCODE_PROTECT_SLAVE2_Pos) /*!< Bit mask of SLAVE2 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE2_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTCODE_PROTECT_SLAVE2_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 1 : Control access to slave  1 of master EXTCODE[n]. */
+#define DCNF_EXTCODE_PROTECT_SLAVE1_Pos (1UL) /*!< Position of SLAVE1 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE1_Msk (0x1UL << DCNF_EXTCODE_PROTECT_SLAVE1_Pos) /*!< Bit mask of SLAVE1 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE1_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTCODE_PROTECT_SLAVE1_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Bit 0 : Control access to slave  0 of master EXTCODE[n]. */
+#define DCNF_EXTCODE_PROTECT_SLAVE0_Pos (0UL) /*!< Position of SLAVE0 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE0_Msk (0x1UL << DCNF_EXTCODE_PROTECT_SLAVE0_Pos) /*!< Bit mask of SLAVE0 field. */
+#define DCNF_EXTCODE_PROTECT_SLAVE0_Allowed (0UL) /*!< Access to slave is possible */
+#define DCNF_EXTCODE_PROTECT_SLAVE0_Blocked (1UL) /*!< Access to slave is blocked */
+
+/* Register: DCNF_TRIM_AMLI_CLOCK_DELAY */
+/* Description: Trim value for AMLI clock delay */
+
+/* Bits 5..0 : Trim value for AMLI clock delay. */
+#define DCNF_TRIM_AMLI_CLOCK_DELAY_TRIM_AMLI_CLOCK_DELAY_Pos (0UL) /*!< Position of TRIM_AMLI_CLOCK_DELAY field. */
+#define DCNF_TRIM_AMLI_CLOCK_DELAY_TRIM_AMLI_CLOCK_DELAY_Msk (0x3FUL << DCNF_TRIM_AMLI_CLOCK_DELAY_TRIM_AMLI_CLOCK_DELAY_Pos) /*!< Bit mask of TRIM_AMLI_CLOCK_DELAY field. */
 
 
 /* Peripheral: DPPIC */
@@ -1283,6 +4029,510 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Peripheral: FICR */
 /* Description: Factory Information Configuration Registers */
 
+/* Register: FICR_CHIPCONF00 */
+/* Description: Miscellaneous analog configuration. Will be set during production test. */
+
+/* Bits 22..19 : Bandgap-reference trim code */
+#define FICR_CHIPCONF00_BGREF_Pos (19UL) /*!< Position of BGREF field. */
+#define FICR_CHIPCONF00_BGREF_Msk (0xFUL << FICR_CHIPCONF00_BGREF_Pos) /*!< Bit mask of BGREF field. */
+
+/* Bits 18..13 : 32.768 kHz RC-oscillator trim code */
+#define FICR_CHIPCONF00_RC32KITRIM_Pos (13UL) /*!< Position of RC32KITRIM field. */
+#define FICR_CHIPCONF00_RC32KITRIM_Msk (0x3FUL << FICR_CHIPCONF00_RC32KITRIM_Pos) /*!< Bit mask of RC32KITRIM field. */
+
+/* Bits 11..7 : HFCLK(APPPLL) ring oscillator trim codes. Previous name: HFROSCTRIM. */
+#define FICR_CHIPCONF00_PLL_CALIB_ROSC_Pos (7UL) /*!< Position of PLL_CALIB_ROSC field. */
+#define FICR_CHIPCONF00_PLL_CALIB_ROSC_Msk (0x1FUL << FICR_CHIPCONF00_PLL_CALIB_ROSC_Pos) /*!< Bit mask of PLL_CALIB_ROSC field. */
+
+/* Bit 2 : Enable clock gate in clock purifier. Should always be 1. */
+#define FICR_CHIPCONF00_CKPUREEN_Pos (2UL) /*!< Position of CKPUREEN field. */
+#define FICR_CHIPCONF00_CKPUREEN_Msk (0x1UL << FICR_CHIPCONF00_CKPUREEN_Pos) /*!< Bit mask of CKPUREEN field. */
+
+/* Register: FICR_CHIPCONF01 */
+/* Description: Miscellaneous analog configuration. Will be set during production test. */
+
+/* Bit 24 : Select active output buffer of XOSC32M */
+#define FICR_CHIPCONF01_XOSC32M_SEL_FULLSWING_BUF_Pos (24UL) /*!< Position of XOSC32M_SEL_FULLSWING_BUF field. */
+#define FICR_CHIPCONF01_XOSC32M_SEL_FULLSWING_BUF_Msk (0x1UL << FICR_CHIPCONF01_XOSC32M_SEL_FULLSWING_BUF_Pos) /*!< Bit mask of XOSC32M_SEL_FULLSWING_BUF field. */
+#define FICR_CHIPCONF01_XOSC32M_SEL_FULLSWING_BUF_0 (0UL) /*!< Select sinewave output buffer of XOSC32M */
+#define FICR_CHIPCONF01_XOSC32M_SEL_FULLSWING_BUF_1 (1UL) /*!< Select CMOS output buffer of XOSC32M */
+
+/* Bits 23..22 : Spare control signals */
+#define FICR_CHIPCONF01_XOSC32M_RESERVED_Pos (22UL) /*!< Position of XOSC32M_RESERVED field. */
+#define FICR_CHIPCONF01_XOSC32M_RESERVED_Msk (0x3UL << FICR_CHIPCONF01_XOSC32M_RESERVED_Pos) /*!< Bit mask of XOSC32M_RESERVED field. */
+
+/* Bits 14..13 : 32kHz RC oscillator calibration length */
+#define FICR_CHIPCONF01_RCOSC32KICALLENGTH_Pos (13UL) /*!< Position of RCOSC32KICALLENGTH field. */
+#define FICR_CHIPCONF01_RCOSC32KICALLENGTH_Msk (0x3UL << FICR_CHIPCONF01_RCOSC32KICALLENGTH_Pos) /*!< Bit mask of RCOSC32KICALLENGTH field. */
+
+/* Bits 7..1 : Trim values for Rams Bit 7 RM Bit 6 RWM Bit 5 WM Bits 4:1 BTrim */
+#define FICR_CHIPCONF01_SRAMRESETVAL_Pos (1UL) /*!< Position of SRAMRESETVAL field. */
+#define FICR_CHIPCONF01_SRAMRESETVAL_Msk (0x7FUL << FICR_CHIPCONF01_SRAMRESETVAL_Pos) /*!< Bit mask of SRAMRESETVAL field. */
+
+/* Bit 0 : Enable XOSC32M kick-start for reduced start-up delay. */
+#define FICR_CHIPCONF01_HFQSTRT_Pos (0UL) /*!< Position of HFQSTRT field. */
+#define FICR_CHIPCONF01_HFQSTRT_Msk (0x1UL << FICR_CHIPCONF01_HFQSTRT_Pos) /*!< Bit mask of HFQSTRT field. */
+
+/* Register: FICR_CHIPCONF02 */
+/* Description: Miscellaneous analog configuration. Will be set during production test. */
+
+/* Bits 19..16 : wait-states (excluding the cache controller) for I-Code flash access, D-Code has one more wait-state. */
+#define FICR_CHIPCONF02_WS_Pos (16UL) /*!< Position of WS field. */
+#define FICR_CHIPCONF02_WS_Msk (0xFUL << FICR_CHIPCONF02_WS_Pos) /*!< Bit mask of WS field. */
+#define FICR_CHIPCONF02_WS_1WS (1UL) /*!< 1 wait-state in total for I-Code (2 for D-Code) */
+#define FICR_CHIPCONF02_WS_2WS (2UL) /*!< 2 wait-state in total for I-Code (3 for D-Code) */
+#define FICR_CHIPCONF02_WS_3WS (3UL) /*!< 3 wait-state in total for I-Code (4 for D-Code) */
+#define FICR_CHIPCONF02_WS_4WS (4UL) /*!< 4 wait-state in total for I-Code (5 for D-Code) */
+
+/* Bits 15..11 : number of cycles before Information Configuration Registers can be read */
+#define FICR_CHIPCONF02_IFCREADDELAY_Pos (11UL) /*!< Position of IFCREADDELAY field. */
+#define FICR_CHIPCONF02_IFCREADDELAY_Msk (0x1FUL << FICR_CHIPCONF02_IFCREADDELAY_Pos) /*!< Bit mask of IFCREADDELAY field. */
+
+/* Bits 7..0 : Number of successful FLASHPWRUPn read cycles when powering up flash. After chip power up, the NVMC controller reads FLASHPWRUPn for 7 us. */
+#define FICR_CHIPCONF02_FLASHPWRUPCNT_Pos (0UL) /*!< Position of FLASHPWRUPCNT field. */
+#define FICR_CHIPCONF02_FLASHPWRUPCNT_Msk (0xFFUL << FICR_CHIPCONF02_FLASHPWRUPCNT_Pos) /*!< Bit mask of FLASHPWRUPCNT field. */
+
+/* Register: FICR_CHIPCONF03 */
+/* Description: Miscellaneous analog configuration. Will be set during production test. */
+
+/* Bit 24 : Disable synchronizer on calibration clock request from Rc32KiGenerator */
+#define FICR_CHIPCONF03_RC31KI_CLOCK_SYNC_DISABLE_Pos (24UL) /*!< Position of RC31KI_CLOCK_SYNC_DISABLE field. */
+#define FICR_CHIPCONF03_RC31KI_CLOCK_SYNC_DISABLE_Msk (0x1UL << FICR_CHIPCONF03_RC31KI_CLOCK_SYNC_DISABLE_Pos) /*!< Bit mask of RC31KI_CLOCK_SYNC_DISABLE field. */
+
+/* Bits 23..16 : Disable glitchfilter on powerUp to: 0: XOSC32M used by clock system B-G (both POWER_UP and STANDBY lines) 1: Rosc/Xosc/Synth used in clock system A 2: PLL used in system B (64M) 3: PLL used in system C (96M) 4: PLL used in system D (176/128M) 5: PLL used in system E (MCPLL) 6: PLL used in system F (192M) 7: PLL used in system G (12M) */
+#define FICR_CHIPCONF03_CLOCKREQ_FILTER_DISABLE_Pos (16UL) /*!< Position of CLOCKREQ_FILTER_DISABLE field. */
+#define FICR_CHIPCONF03_CLOCKREQ_FILTER_DISABLE_Msk (0xFFUL << FICR_CHIPCONF03_CLOCKREQ_FILTER_DISABLE_Pos) /*!< Bit mask of CLOCKREQ_FILTER_DISABLE field. */
+
+/* Bits 15..11 : Internal oscillator calibration word 0: lowest frequency 15: default frequency 31: highest frequency */
+#define FICR_CHIPCONF03_POWER_VCORE_CALIB_VCO_Pos (11UL) /*!< Position of POWER_VCORE_CALIB_VCO field. */
+#define FICR_CHIPCONF03_POWER_VCORE_CALIB_VCO_Msk (0x1FUL << FICR_CHIPCONF03_POWER_VCORE_CALIB_VCO_Pos) /*!< Bit mask of POWER_VCORE_CALIB_VCO field. */
+
+/* Bits 9..8 : Spare digital signals */
+#define FICR_CHIPCONF03_POWER_VCORE_CTRL_Pos (8UL) /*!< Position of POWER_VCORE_CTRL field. */
+#define FICR_CHIPCONF03_POWER_VCORE_CTRL_Msk (0x3UL << FICR_CHIPCONF03_POWER_VCORE_CTRL_Pos) /*!< Bit mask of POWER_VCORE_CTRL field. */
+
+/* Bits 7..4 : Adjusts current in reference 0: minimum current 5: default 15: maximum current */
+#define FICR_CHIPCONF03_ULP_ICTRL_Pos (4UL) /*!< Position of ULP_ICTRL field. */
+#define FICR_CHIPCONF03_ULP_ICTRL_Msk (0xFUL << FICR_CHIPCONF03_ULP_ICTRL_Pos) /*!< Bit mask of ULP_ICTRL field. */
+
+/* Bits 1..0 : Switched resistor control */
+#define FICR_CHIPCONF03_ULP_RESCTRL_Pos (0UL) /*!< Position of ULP_RESCTRL field. */
+#define FICR_CHIPCONF03_ULP_RESCTRL_Msk (0x3UL << FICR_CHIPCONF03_ULP_RESCTRL_Pos) /*!< Bit mask of ULP_RESCTRL field. */
+#define FICR_CHIPCONF03_ULP_RESCTRL_00 (0UL) /*!< switched with internal oscillator */
+#define FICR_CHIPCONF03_ULP_RESCTRL_01 (1UL) /*!< switched with CLK2K input */
+#define FICR_CHIPCONF03_ULP_RESCTRL_10 (2UL) /*!< force always-on */
+#define FICR_CHIPCONF03_ULP_RESCTRL_11 (3UL) /*!< force off (PWRUPs must be 0 otherwise default) */
+
+/* Register: FICR_CHIPCONF04 */
+/* Description: Miscellaneous analog configuration. Will be set during production test. */
+
+/* Bits 29..20 : Sets the threshold value of power regulator (default value for REGULATORS-&gt;THRESHOLDREG2) */
+#define FICR_CHIPCONF04_THRESHOLDREG2_Pos (20UL) /*!< Position of THRESHOLDREG2 field. */
+#define FICR_CHIPCONF04_THRESHOLDREG2_Msk (0x3FFUL << FICR_CHIPCONF04_THRESHOLDREG2_Pos) /*!< Bit mask of THRESHOLDREG2 field. */
+
+/* Bits 17..8 : Sets the threshold value of power regulator (default value for REGULATORS-&gt;THRESHOLDREG1) */
+#define FICR_CHIPCONF04_THRESHOLDREG1_Pos (8UL) /*!< Position of THRESHOLDREG1 field. */
+#define FICR_CHIPCONF04_THRESHOLDREG1_Msk (0x3FFUL << FICR_CHIPCONF04_THRESHOLDREG1_Pos) /*!< Bit mask of THRESHOLDREG1 field. */
+
+/* Bits 7..6 : 32kHz ULP RC oscillator calibration length */
+#define FICR_CHIPCONF04_RCOSC32KIULPCALLENGTH_Pos (6UL) /*!< Position of RCOSC32KIULPCALLENGTH field. */
+#define FICR_CHIPCONF04_RCOSC32KIULPCALLENGTH_Msk (0x3UL << FICR_CHIPCONF04_RCOSC32KIULPCALLENGTH_Pos) /*!< Bit mask of RCOSC32KIULPCALLENGTH field. */
+
+/* Bits 5..0 : 32.678 kHz ULP RC oscillator trim code */
+#define FICR_CHIPCONF04_RCOSC32KIULPTRIM_Pos (0UL) /*!< Position of RCOSC32KIULPTRIM field. */
+#define FICR_CHIPCONF04_RCOSC32KIULPTRIM_Msk (0x3FUL << FICR_CHIPCONF04_RCOSC32KIULPTRIM_Pos) /*!< Bit mask of RCOSC32KIULPTRIM field. */
+
+/* Register: FICR_CHIPCONF05 */
+/* Description: Miscellaneous analog configuration. Will be set during production test. */
+
+/* Bits 30..28 : VREG DVDD Output voltage calibration */
+#define FICR_CHIPCONF05_VREG_DVDD_TRIM_Pos (28UL) /*!< Position of VREG_DVDD_TRIM field. */
+#define FICR_CHIPCONF05_VREG_DVDD_TRIM_Msk (0x7UL << FICR_CHIPCONF05_VREG_DVDD_TRIM_Pos) /*!< Bit mask of VREG_DVDD_TRIM field. */
+#define FICR_CHIPCONF05_VREG_DVDD_TRIM_0 (0UL) /*!< default voltage */
+
+/* Bit 27 : AVDD1V3 LDO mode selection. */
+#define FICR_CHIPCONF05_ULP_AVDD_RAIL2RAIL_DIS_Pos (27UL) /*!< Position of ULP_AVDD_RAIL2RAIL_DIS field. */
+#define FICR_CHIPCONF05_ULP_AVDD_RAIL2RAIL_DIS_Msk (0x1UL << FICR_CHIPCONF05_ULP_AVDD_RAIL2RAIL_DIS_Pos) /*!< Bit mask of ULP_AVDD_RAIL2RAIL_DIS field. */
+#define FICR_CHIPCONF05_ULP_AVDD_RAIL2RAIL_DIS_rail2rail (0UL) /*!< Rail2rail input stage in LDO */
+#define FICR_CHIPCONF05_ULP_AVDD_RAIL2RAIL_DIS_default (1UL) /*!< NMOS only input stage in LDO */
+
+/* Bit 26 : DVDD0V9 LDO mode selection. */
+#define FICR_CHIPCONF05_ULP_DVDD_RAIL2RAIL_DIS_Pos (26UL) /*!< Position of ULP_DVDD_RAIL2RAIL_DIS field. */
+#define FICR_CHIPCONF05_ULP_DVDD_RAIL2RAIL_DIS_Msk (0x1UL << FICR_CHIPCONF05_ULP_DVDD_RAIL2RAIL_DIS_Pos) /*!< Bit mask of ULP_DVDD_RAIL2RAIL_DIS field. */
+#define FICR_CHIPCONF05_ULP_DVDD_RAIL2RAIL_DIS_rail2rail (0UL) /*!< Rail2rail input stage in LDO */
+#define FICR_CHIPCONF05_ULP_DVDD_RAIL2RAIL_DIS_default (1UL) /*!< NMOS only input stage in LDO */
+
+/* Bit 24 : Enable or disable the feature */
+#define FICR_CHIPCONF05_VREG_DVDD_HIGH_Pos (24UL) /*!< Position of VREG_DVDD_HIGH field. */
+#define FICR_CHIPCONF05_VREG_DVDD_HIGH_Msk (0x1UL << FICR_CHIPCONF05_VREG_DVDD_HIGH_Pos) /*!< Bit mask of VREG_DVDD_HIGH field. */
+#define FICR_CHIPCONF05_VREG_DVDD_HIGH_Disabled (0UL) /*!< Nominal output levels of VREG_DVDD LDO */
+#define FICR_CHIPCONF05_VREG_DVDD_HIGH_Enabled (1UL) /*!< Increased output levels of VREG_DVDD LDO */
+
+/* Bits 23..21 : VREG AVDD Output voltage calibration */
+#define FICR_CHIPCONF05_VREG_AVDD_TRIM_Pos (21UL) /*!< Position of VREG_AVDD_TRIM field. */
+#define FICR_CHIPCONF05_VREG_AVDD_TRIM_Msk (0x7UL << FICR_CHIPCONF05_VREG_AVDD_TRIM_Pos) /*!< Bit mask of VREG_AVDD_TRIM field. */
+#define FICR_CHIPCONF05_VREG_AVDD_TRIM_0 (0UL) /*!< default voltage */
+
+/* Bits 17..16 : BUCK_DVDD Output voltage selection. */
+#define FICR_CHIPCONF05_BUCK_DVDD_VOLTAGE_Pos (16UL) /*!< Position of BUCK_DVDD_VOLTAGE field. */
+#define FICR_CHIPCONF05_BUCK_DVDD_VOLTAGE_Msk (0x3UL << FICR_CHIPCONF05_BUCK_DVDD_VOLTAGE_Pos) /*!< Bit mask of BUCK_DVDD_VOLTAGE field. */
+#define FICR_CHIPCONF05_BUCK_DVDD_VOLTAGE_1V00 (0UL) /*!< 1.00 V */
+#define FICR_CHIPCONF05_BUCK_DVDD_VOLTAGE_1V09 (1UL) /*!< 1.09 V */
+#define FICR_CHIPCONF05_BUCK_DVDD_VOLTAGE_1V17 (2UL) /*!< 1.17 V */
+#define FICR_CHIPCONF05_BUCK_DVDD_VOLTAGE_1V26 (3UL) /*!< 1.26 V */
+
+/* Bits 15..14 : BUCK DVDD Input clock selection. */
+#define FICR_CHIPCONF05_BUCK_DVDD_CKSEL_Pos (14UL) /*!< Position of BUCK_DVDD_CKSEL field. */
+#define FICR_CHIPCONF05_BUCK_DVDD_CKSEL_Msk (0x3UL << FICR_CHIPCONF05_BUCK_DVDD_CKSEL_Pos) /*!< Bit mask of BUCK_DVDD_CKSEL field. */
+#define FICR_CHIPCONF05_BUCK_DVDD_CKSEL_00 (0UL) /*!< normal external clock */
+#define FICR_CHIPCONF05_BUCK_DVDD_CKSEL_01 (1UL) /*!< inverted external clock */
+#define FICR_CHIPCONF05_BUCK_DVDD_CKSEL_10 (2UL) /*!< normal internal clock */
+#define FICR_CHIPCONF05_BUCK_DVDD_CKSEL_11 (3UL) /*!< inverted internal clock */
+
+/* Bits 13..9 : BUCK DVDD output voltage calibration */
+#define FICR_CHIPCONF05_BUCK_DVDD_CAL_Pos (9UL) /*!< Position of BUCK_DVDD_CAL field. */
+#define FICR_CHIPCONF05_BUCK_DVDD_CAL_Msk (0x1FUL << FICR_CHIPCONF05_BUCK_DVDD_CAL_Pos) /*!< Bit mask of BUCK_DVDD_CAL field. */
+
+/* Bits 8..7 : Output voltage selection. */
+#define FICR_CHIPCONF05_BUCK_AVDD_VOLTAGE_Pos (7UL) /*!< Position of BUCK_AVDD_VOLTAGE field. */
+#define FICR_CHIPCONF05_BUCK_AVDD_VOLTAGE_Msk (0x3UL << FICR_CHIPCONF05_BUCK_AVDD_VOLTAGE_Pos) /*!< Bit mask of BUCK_AVDD_VOLTAGE field. */
+#define FICR_CHIPCONF05_BUCK_AVDD_VOLTAGE_1V00 (0UL) /*!< 1.00 V */
+#define FICR_CHIPCONF05_BUCK_AVDD_VOLTAGE_1V09 (1UL) /*!< 1.09 V */
+#define FICR_CHIPCONF05_BUCK_AVDD_VOLTAGE_1V17 (2UL) /*!< 1.17 V */
+#define FICR_CHIPCONF05_BUCK_AVDD_VOLTAGE_1V26 (3UL) /*!< 1.26 V */
+
+/* Bits 6..5 : BUCK AVDD Input clock selection. */
+#define FICR_CHIPCONF05_BUCK_AVDD_CKSEL_Pos (5UL) /*!< Position of BUCK_AVDD_CKSEL field. */
+#define FICR_CHIPCONF05_BUCK_AVDD_CKSEL_Msk (0x3UL << FICR_CHIPCONF05_BUCK_AVDD_CKSEL_Pos) /*!< Bit mask of BUCK_AVDD_CKSEL field. */
+#define FICR_CHIPCONF05_BUCK_AVDD_CKSEL_00 (0UL) /*!< normal external clock */
+#define FICR_CHIPCONF05_BUCK_AVDD_CKSEL_01 (1UL) /*!< inverted external clock */
+#define FICR_CHIPCONF05_BUCK_AVDD_CKSEL_10 (2UL) /*!< normal internal clock */
+#define FICR_CHIPCONF05_BUCK_AVDD_CKSEL_11 (3UL) /*!< inverted internal clock */
+
+/* Bits 4..0 : BUCK AVDD output voltage calibration */
+#define FICR_CHIPCONF05_BUCK_AVDD_CAL_Pos (0UL) /*!< Position of BUCK_AVDD_CAL field. */
+#define FICR_CHIPCONF05_BUCK_AVDD_CAL_Msk (0x1FUL << FICR_CHIPCONF05_BUCK_AVDD_CAL_Pos) /*!< Bit mask of BUCK_AVDD_CAL field. */
+
+/* Register: FICR_CHIPCONF06 */
+/* Description: Miscellaneous analog configuration. Will be set during production test. */
+
+/* Bits 31..28 : Adjusts temperature gradient of reference (to compensate for modelling inaccuracy) 0: most negative gradient 4: default 15: most positive gradient */
+#define FICR_CHIPCONF06_ULP_TEMPGRAD_Pos (28UL) /*!< Position of ULP_TEMPGRAD field. */
+#define FICR_CHIPCONF06_ULP_TEMPGRAD_Msk (0xFUL << FICR_CHIPCONF06_ULP_TEMPGRAD_Pos) /*!< Bit mask of ULP_TEMPGRAD field. */
+
+/* Bits 27..24 : Pre-driver speed control 0: Minimum driver speed, low efficiency, low noise 7: Default 7: Maximum driver speed, high efficiency, high noise 8 - 15: reserved for future use (MSB not implemented so these codes map to 0000-0111) */
+#define FICR_CHIPCONF06_BUCK_AVDD_DROUTSEL_Pos (24UL) /*!< Position of BUCK_AVDD_DROUTSEL field. */
+#define FICR_CHIPCONF06_BUCK_AVDD_DROUTSEL_Msk (0xFUL << FICR_CHIPCONF06_BUCK_AVDD_DROUTSEL_Pos) /*!< Bit mask of BUCK_AVDD_DROUTSEL field. */
+
+/* Bits 23..20 : Pre-driver speed control 0: Minimum driver speed, low efficiency, low noise 7: Default 7: Maximum driver speed, high efficiency, high noise 8 - 15: reserved for future use (MSB not implemented so these codes map to 0000-0111) */
+#define FICR_CHIPCONF06_BUCK_DVDD_DROUTSEL_Pos (20UL) /*!< Position of BUCK_DVDD_DROUTSEL field. */
+#define FICR_CHIPCONF06_BUCK_DVDD_DROUTSEL_Msk (0xFUL << FICR_CHIPCONF06_BUCK_DVDD_DROUTSEL_Pos) /*!< Bit mask of BUCK_DVDD_DROUTSEL field. */
+
+/* Bit 15 : Configuration of default behavior of buck converters */
+#define FICR_CHIPCONF06_DCDCEN2_Pos (15UL) /*!< Position of DCDCEN2 field. */
+#define FICR_CHIPCONF06_DCDCEN2_Msk (0x1UL << FICR_CHIPCONF06_DCDCEN2_Pos) /*!< Bit mask of DCDCEN2 field. */
+#define FICR_CHIPCONF06_DCDCEN2_disabled (0UL) /*!< DCDC2 disabled when POWER.DCDCEN == 1 */
+#define FICR_CHIPCONF06_DCDCEN2_enabled (1UL) /*!< DCDC2 enabled when POWER.DCDCEN == 1 */
+
+/* Bit 14 : Configuration of default behavior of buck converters */
+#define FICR_CHIPCONF06_DCDCEN1_Pos (14UL) /*!< Position of DCDCEN1 field. */
+#define FICR_CHIPCONF06_DCDCEN1_Msk (0x1UL << FICR_CHIPCONF06_DCDCEN1_Pos) /*!< Bit mask of DCDCEN1 field. */
+#define FICR_CHIPCONF06_DCDCEN1_disabled (0UL) /*!< DCDC1 disabled when POWER.DCDCEN == 1 */
+#define FICR_CHIPCONF06_DCDCEN1_enabled (1UL) /*!< DCDC1 enabled when POWER.DCDCEN == 1 */
+
+/* Bit 8 : Disable Ignore Ready Signal from Analog part */
+#define FICR_CHIPCONF06_DISABLE_IGNORE_ANA_READY_SIGNALS_Pos (8UL) /*!< Position of DISABLE_IGNORE_ANA_READY_SIGNALS field. */
+#define FICR_CHIPCONF06_DISABLE_IGNORE_ANA_READY_SIGNALS_Msk (0x1UL << FICR_CHIPCONF06_DISABLE_IGNORE_ANA_READY_SIGNALS_Pos) /*!< Bit mask of DISABLE_IGNORE_ANA_READY_SIGNALS field. */
+#define FICR_CHIPCONF06_DISABLE_IGNORE_ANA_READY_SIGNALS_0 (0UL) /*!< Power regulator control does not wait for analog ready signals from POWER_VCORE, but uses a counter instead. The PLL will try to start even if POWER_VCORE is not ready (backdoor) */
+#define FICR_CHIPCONF06_DISABLE_IGNORE_ANA_READY_SIGNALS_1 (1UL) /*!< Power regulator control waits for analog ready signals from POWER_VCORE. The PLL will also wait until POWER_VCORE is ready before it starts up (normal mode) */
+
+/* Bit 7 : Disable Regulator to Force Clock */
+#define FICR_CHIPCONF06_DISABLE_REGULATOR_CK_FORCE_Pos (7UL) /*!< Position of DISABLE_REGULATOR_CK_FORCE field. */
+#define FICR_CHIPCONF06_DISABLE_REGULATOR_CK_FORCE_Msk (0x1UL << FICR_CHIPCONF06_DISABLE_REGULATOR_CK_FORCE_Pos) /*!< Bit mask of DISABLE_REGULATOR_CK_FORCE field. */
+#define FICR_CHIPCONF06_DISABLE_REGULATOR_CK_FORCE_0 (0UL) /*!< Power regulator control requests clock constantly (backdoor) */
+#define FICR_CHIPCONF06_DISABLE_REGULATOR_CK_FORCE_1 (1UL) /*!< Power regulator control requests clock automatically when it needs it (normal mode) */
+
+/* Bits 6..5 : VREG ULP DVDD reference selection */
+#define FICR_CHIPCONF06_VREG_ULP_DVDD_SELREF_Pos (5UL) /*!< Position of VREG_ULP_DVDD_SELREF field. */
+#define FICR_CHIPCONF06_VREG_ULP_DVDD_SELREF_Msk (0x3UL << FICR_CHIPCONF06_VREG_ULP_DVDD_SELREF_Pos) /*!< Bit mask of VREG_ULP_DVDD_SELREF field. */
+#define FICR_CHIPCONF06_VREG_ULP_DVDD_SELREF_00 (0UL) /*!< 0.75V ratio of AVDD1V3 output */
+#define FICR_CHIPCONF06_VREG_ULP_DVDD_SELREF_01 (1UL) /*!< 0.75V reference */
+#define FICR_CHIPCONF06_VREG_ULP_DVDD_SELREF_10 (2UL) /*!< AVDD1V3 as reference */
+#define FICR_CHIPCONF06_VREG_ULP_DVDD_SELREF_11 (3UL) /*!< RFU */
+
+/* Bits 4..0 : VREG ULP AVDD Output voltage calibration */
+#define FICR_CHIPCONF06_VREG_ULP_AVDD_TRIM_Pos (0UL) /*!< Position of VREG_ULP_AVDD_TRIM field. */
+#define FICR_CHIPCONF06_VREG_ULP_AVDD_TRIM_Msk (0x1FUL << FICR_CHIPCONF06_VREG_ULP_AVDD_TRIM_Pos) /*!< Bit mask of VREG_ULP_AVDD_TRIM field. */
+#define FICR_CHIPCONF06_VREG_ULP_AVDD_TRIM_0 (0UL) /*!< min voltage */
+#define FICR_CHIPCONF06_VREG_ULP_AVDD_TRIM_15 (15UL) /*!< typical voltage */
+#define FICR_CHIPCONF06_VREG_ULP_AVDD_TRIM_31 (31UL) /*!< max voltage */
+
+/* Register: FICR_CHIPCONF07 */
+/* Description: Miscellaneous analog configuration. Will be set during production test. */
+
+/* Bit 4 : Program charge-pump current Charge pump current */
+#define FICR_CHIPCONF07_BBPLLICHPUMP_Pos (4UL) /*!< Position of BBPLLICHPUMP field. */
+#define FICR_CHIPCONF07_BBPLLICHPUMP_Msk (0x1UL << FICR_CHIPCONF07_BBPLLICHPUMP_Pos) /*!< Bit mask of BBPLLICHPUMP field. */
+
+/* Bits 3..0 : Control the behavior of the PFD Internal PFD delay */
+#define FICR_CHIPCONF07_BBPLLCTRL_Pos (0UL) /*!< Position of BBPLLCTRL field. */
+#define FICR_CHIPCONF07_BBPLLCTRL_Msk (0xFUL << FICR_CHIPCONF07_BBPLLCTRL_Pos) /*!< Bit mask of BBPLLCTRL field. */
+
+/* Register: FICR_CHIPCONF08 */
+/* Description: Miscellaneous analog configuration. Will be set during production test. */
+
+/* Bits 29..24 : Trim value for the APP PLL VCO at 192MHz */
+#define FICR_CHIPCONF08_VCOTRIM192MHZ_Pos (24UL) /*!< Position of VCOTRIM192MHZ field. */
+#define FICR_CHIPCONF08_VCOTRIM192MHZ_Msk (0x3FUL << FICR_CHIPCONF08_VCOTRIM192MHZ_Pos) /*!< Bit mask of VCOTRIM192MHZ field. */
+
+/* Bits 23..18 : Trim value for the APP PLL VCO at 176MHz */
+#define FICR_CHIPCONF08_VCOTRIM176MHZ_Pos (18UL) /*!< Position of VCOTRIM176MHZ field. */
+#define FICR_CHIPCONF08_VCOTRIM176MHZ_Msk (0x3FUL << FICR_CHIPCONF08_VCOTRIM176MHZ_Pos) /*!< Bit mask of VCOTRIM176MHZ field. */
+
+/* Bits 17..12 : Trim value for the APP PLL VCO at 160MHz */
+#define FICR_CHIPCONF08_VCOTRIM160MHZ_Pos (12UL) /*!< Position of VCOTRIM160MHZ field. */
+#define FICR_CHIPCONF08_VCOTRIM160MHZ_Msk (0x3FUL << FICR_CHIPCONF08_VCOTRIM160MHZ_Pos) /*!< Bit mask of VCOTRIM160MHZ field. */
+
+/* Bits 11..6 : Trim value for the APP PLL VCO at 144MHz */
+#define FICR_CHIPCONF08_VCOTRIM144MHZ_Pos (6UL) /*!< Position of VCOTRIM144MHZ field. */
+#define FICR_CHIPCONF08_VCOTRIM144MHZ_Msk (0x3FUL << FICR_CHIPCONF08_VCOTRIM144MHZ_Pos) /*!< Bit mask of VCOTRIM144MHZ field. */
+
+/* Bits 5..0 : Trim value for the APP PLL VCO at 128MHz */
+#define FICR_CHIPCONF08_VCOTRIM128MHZ_Pos (0UL) /*!< Position of VCOTRIM128MHZ field. */
+#define FICR_CHIPCONF08_VCOTRIM128MHZ_Msk (0x3FUL << FICR_CHIPCONF08_VCOTRIM128MHZ_Pos) /*!< Bit mask of VCOTRIM128MHZ field. */
+
+/* Register: FICR_CHIPCONF09 */
+/* Description: Miscellaneous analog configuration. Will be set during production test. */
+
+/* Bits 24..20 : Trim value for the TXCO LDO */
+#define FICR_CHIPCONF09_TXCO_LDO_TRIM_Pos (20UL) /*!< Position of TXCO_LDO_TRIM field. */
+#define FICR_CHIPCONF09_TXCO_LDO_TRIM_Msk (0x1FUL << FICR_CHIPCONF09_TXCO_LDO_TRIM_Pos) /*!< Bit mask of TXCO_LDO_TRIM field. */
+
+/* Bits 19..15 : Trim value for the IOIF LDO */
+#define FICR_CHIPCONF09_IOIF_LDO_TRIM_Pos (15UL) /*!< Position of IOIF_LDO_TRIM field. */
+#define FICR_CHIPCONF09_IOIF_LDO_TRIM_Msk (0x1FUL << FICR_CHIPCONF09_IOIF_LDO_TRIM_Pos) /*!< Bit mask of IOIF_LDO_TRIM field. */
+
+/* Bits 14..10 : Trim value for the RFFE LDO */
+#define FICR_CHIPCONF09_RFFE_LDO_TRIM_Pos (10UL) /*!< Position of RFFE_LDO_TRIM field. */
+#define FICR_CHIPCONF09_RFFE_LDO_TRIM_Msk (0x1FUL << FICR_CHIPCONF09_RFFE_LDO_TRIM_Pos) /*!< Bit mask of RFFE_LDO_TRIM field. */
+
+/* Bit 9 : Signal to enable constant current bias to XOSC32K_CORE 0: Amplitude regulator controls pierce inverter bias (default) 1: Enables constant current to bias XOSC32K_CORE. Amplitude regulator is turned off */
+#define FICR_CHIPCONF09_XOSC32K_CONST_CURR_Pos (9UL) /*!< Position of XOSC32K_CONST_CURR field. */
+#define FICR_CHIPCONF09_XOSC32K_CONST_CURR_Msk (0x1UL << FICR_CHIPCONF09_XOSC32K_CONST_CURR_Pos) /*!< Bit mask of XOSC32K_CONST_CURR field. */
+
+/* Bits 8..5 : Signal to increase constant current bias to XOSC32K_CORE 0: lowest current 7: highest current */
+#define FICR_CHIPCONF09_XOSC32K_CONST_CURR_TRIM_Pos (5UL) /*!< Position of XOSC32K_CONST_CURR_TRIM field. */
+#define FICR_CHIPCONF09_XOSC32K_CONST_CURR_TRIM_Msk (0xFUL << FICR_CHIPCONF09_XOSC32K_CONST_CURR_TRIM_Pos) /*!< Bit mask of XOSC32K_CONST_CURR_TRIM field. */
+
+/* Bits 4..3 : Signal to enable and select on-chip capacitors */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_Pos (3UL) /*!< Position of XOSC32K_INT_CAP field. */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_Msk (0x3UL << FICR_CHIPCONF09_XOSC32K_INT_CAP_Pos) /*!< Bit mask of XOSC32K_INT_CAP field. */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_00 (0UL) /*!< Use external load capacitors (default) */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_01 (1UL) /*!< 6pF internal load capacitance */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_10 (2UL) /*!< 7pF internal load capacitance */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_11 (3UL) /*!< 9pF internal load capacitance */
+
+/* Bits 2..0 : Signal to trim on-chip capacitors */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_TRIM_Pos (0UL) /*!< Position of XOSC32K_INT_CAP_TRIM field. */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_TRIM_Msk (0x7UL << FICR_CHIPCONF09_XOSC32K_INT_CAP_TRIM_Pos) /*!< Bit mask of XOSC32K_INT_CAP_TRIM field. */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_TRIM_000 (0UL) /*!< Default (0.00) */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_TRIM_001 (1UL) /*!< +0.125 */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_TRIM_010 (2UL) /*!< +0.25 */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_TRIM_011 (3UL) /*!< Do not use (+0.125) */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_TRIM_100 (4UL) /*!< Do not use (0.00) */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_TRIM_101 (5UL) /*!< Do not use (+0.125) */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_TRIM_110 (6UL) /*!< -0.25 */
+#define FICR_CHIPCONF09_XOSC32K_INT_CAP_TRIM_111 (7UL) /*!< -0.125 */
+
+/* Register: FICR_FLASHPWRUP0 */
+/* Description: Power-up pattern for flash */
+
+/* Bits 31..0 : Power-up pattern for flash */
+#define FICR_FLASHPWRUP0_FLASHPWRUP0_Pos (0UL) /*!< Position of FLASHPWRUP0 field. */
+#define FICR_FLASHPWRUP0_FLASHPWRUP0_Msk (0xFFFFFFFFUL << FICR_FLASHPWRUP0_FLASHPWRUP0_Pos) /*!< Bit mask of FLASHPWRUP0 field. */
+
+/* Register: FICR_FLASHPWRUP1 */
+/* Description: Power-up pattern for flash */
+
+/* Bits 31..0 : Power-up pattern for flash */
+#define FICR_FLASHPWRUP1_FLASHPWRUP1_Pos (0UL) /*!< Position of FLASHPWRUP1 field. */
+#define FICR_FLASHPWRUP1_FLASHPWRUP1_Msk (0xFFFFFFFFUL << FICR_FLASHPWRUP1_FLASHPWRUP1_Pos) /*!< Bit mask of FLASHPWRUP1 field. */
+
+/* Register: FICR_FLASHPWRUP2 */
+/* Description: Power-up pattern for flash */
+
+/* Bits 31..0 : Power-up pattern for flash */
+#define FICR_FLASHPWRUP2_FLASHPWRUP2_Pos (0UL) /*!< Position of FLASHPWRUP2 field. */
+#define FICR_FLASHPWRUP2_FLASHPWRUP2_Msk (0xFFFFFFFFUL << FICR_FLASHPWRUP2_FLASHPWRUP2_Pos) /*!< Bit mask of FLASHPWRUP2 field. */
+
+/* Register: FICR_FLASHPWRUP3 */
+/* Description: Power-up pattern for flash */
+
+/* Bits 31..0 : Power-up pattern for flash */
+#define FICR_FLASHPWRUP3_FLASHPWRUP3_Pos (0UL) /*!< Position of FLASHPWRUP3 field. */
+#define FICR_FLASHPWRUP3_FLASHPWRUP3_Msk (0xFFFFFFFFUL << FICR_FLASHPWRUP3_FLASHPWRUP3_Pos) /*!< Bit mask of FLASHPWRUP3 field. */
+
+/* Register: FICR_TESTSTATUS */
+/* Description: Code memory test status. Will be set during production test. */
+
+/* Bits 31..0 : Code memory test status. Will be set during production test. */
+#define FICR_TESTSTATUS_TESTSTATUS_Pos (0UL) /*!< Position of TESTSTATUS field. */
+#define FICR_TESTSTATUS_TESTSTATUS_Msk (0xFFFFFFFFUL << FICR_TESTSTATUS_TESTSTATUS_Pos) /*!< Bit mask of TESTSTATUS field. */
+
+/* Register: FICR_CPTEST0 */
+/* Description: Result from Circuit Probe test */
+
+/* Bits 31..0 : Result from Circuit Probe test */
+#define FICR_CPTEST0_CP1_Pos (0UL) /*!< Position of CP1 field. */
+#define FICR_CPTEST0_CP1_Msk (0xFFFFFFFFUL << FICR_CPTEST0_CP1_Pos) /*!< Bit mask of CP1 field. */
+
+/* Register: FICR_CPTEST00 */
+/* Description: Result from Circuit Probe test */
+
+/* Bits 31..0 : Result from Circuit Probe test */
+#define FICR_CPTEST00_CP1_Pos (0UL) /*!< Position of CP1 field. */
+#define FICR_CPTEST00_CP1_Msk (0xFFFFFFFFUL << FICR_CPTEST00_CP1_Pos) /*!< Bit mask of CP1 field. */
+
+/* Register: FICR_CPTEST1 */
+/* Description: Result from Circuit Probe test */
+
+/* Bits 31..24 : 4th ascii byte of Lot ID character */
+#define FICR_CPTEST1_LOTID4_Pos (24UL) /*!< Position of LOTID4 field. */
+#define FICR_CPTEST1_LOTID4_Msk (0xFFUL << FICR_CPTEST1_LOTID4_Pos) /*!< Bit mask of LOTID4 field. */
+
+/* Bits 23..16 : 3rd ascii byte of Lot ID character */
+#define FICR_CPTEST1_LOTID3_Pos (16UL) /*!< Position of LOTID3 field. */
+#define FICR_CPTEST1_LOTID3_Msk (0xFFUL << FICR_CPTEST1_LOTID3_Pos) /*!< Bit mask of LOTID3 field. */
+
+/* Bits 15..8 : 2nd ascii byte of Lot ID character */
+#define FICR_CPTEST1_LOTID2_Pos (8UL) /*!< Position of LOTID2 field. */
+#define FICR_CPTEST1_LOTID2_Msk (0xFFUL << FICR_CPTEST1_LOTID2_Pos) /*!< Bit mask of LOTID2 field. */
+
+/* Bits 7..0 : 1st ascii byte of Lot ID character */
+#define FICR_CPTEST1_LOTID1_Pos (0UL) /*!< Position of LOTID1 field. */
+#define FICR_CPTEST1_LOTID1_Msk (0xFFUL << FICR_CPTEST1_LOTID1_Pos) /*!< Bit mask of LOTID1 field. */
+
+/* Register: FICR_CPTEST2 */
+/* Description: Result from Circuit Probe test */
+
+/* Bits 31..24 : Device X-coordinate, always &gt;=0, offset so that the leftmost value on wafer is 0 */
+#define FICR_CPTEST2_XCOORD_Pos (24UL) /*!< Position of XCOORD field. */
+#define FICR_CPTEST2_XCOORD_Msk (0xFFUL << FICR_CPTEST2_XCOORD_Pos) /*!< Bit mask of XCOORD field. */
+
+/* Bits 23..16 : Wafer number, 1 byte integer */
+#define FICR_CPTEST2_WAFER_Pos (16UL) /*!< Position of WAFER field. */
+#define FICR_CPTEST2_WAFER_Msk (0xFFUL << FICR_CPTEST2_WAFER_Pos) /*!< Bit mask of WAFER field. */
+
+/* Bits 15..8 : 6th ascii byte of Lot ID character */
+#define FICR_CPTEST2_LOTID6_Pos (8UL) /*!< Position of LOTID6 field. */
+#define FICR_CPTEST2_LOTID6_Msk (0xFFUL << FICR_CPTEST2_LOTID6_Pos) /*!< Bit mask of LOTID6 field. */
+
+/* Bits 7..0 : 5th ascii byte of Lot ID character */
+#define FICR_CPTEST2_LOTID5_Pos (0UL) /*!< Position of LOTID5 field. */
+#define FICR_CPTEST2_LOTID5_Msk (0xFFUL << FICR_CPTEST2_LOTID5_Pos) /*!< Bit mask of LOTID5 field. */
+
+/* Register: FICR_CPTEST3 */
+/* Description: Result from Circuit Probe test */
+
+/* Bits 31..24 : Data Retention (DR) flag */
+#define FICR_CPTEST3_DR3_Pos (24UL) /*!< Position of DR3 field. */
+#define FICR_CPTEST3_DR3_Msk (0xFFUL << FICR_CPTEST3_DR3_Pos) /*!< Bit mask of DR3 field. */
+
+/* Bits 23..16 : Data Retention (DR) flag */
+#define FICR_CPTEST3_DR2_Pos (16UL) /*!< Position of DR2 field. */
+#define FICR_CPTEST3_DR2_Msk (0xFFUL << FICR_CPTEST3_DR2_Pos) /*!< Bit mask of DR2 field. */
+
+/* Bits 15..8 : Data Retention (DR) flag */
+#define FICR_CPTEST3_DR1_Pos (8UL) /*!< Position of DR1 field. */
+#define FICR_CPTEST3_DR1_Msk (0xFFUL << FICR_CPTEST3_DR1_Pos) /*!< Bit mask of DR1 field. */
+
+/* Bits 7..0 : Device Y-coordinate, always &gt;=0, offset so that the bottom value on wafer is 0 */
+#define FICR_CPTEST3_YCOORD_Pos (0UL) /*!< Position of YCOORD field. */
+#define FICR_CPTEST3_YCOORD_Msk (0xFFUL << FICR_CPTEST3_YCOORD_Pos) /*!< Bit mask of YCOORD field. */
+
+/* Register: FICR_CPTEST4 */
+/* Description: Result from Circuit Probe test */
+
+/* Bits 7..0 : Data Retention (DR) flag */
+#define FICR_CPTEST4_DR4_Pos (0UL) /*!< Position of DR4 field. */
+#define FICR_CPTEST4_DR4_Msk (0xFFUL << FICR_CPTEST4_DR4_Pos) /*!< Bit mask of DR4 field. */
+
+/* Register: FICR_CPTEST5 */
+/* Description: Result from Circuit Probe test, flash repair information */
+
+/* Bits 31..0 : flash repair information */
+#define FICR_CPTEST5_CPTEST5_Pos (0UL) /*!< Position of CPTEST5 field. */
+#define FICR_CPTEST5_CPTEST5_Msk (0xFFFFFFFFUL << FICR_CPTEST5_CPTEST5_Pos) /*!< Bit mask of CPTEST5 field. */
+
+/* Register: FICR_CPTEST6 */
+/* Description: Result from Circuit Probe test, flash repair information */
+
+/* Bits 31..0 : flash repair information */
+#define FICR_CPTEST6_CPTEST6_Pos (0UL) /*!< Position of CPTEST6 field. */
+#define FICR_CPTEST6_CPTEST6_Msk (0xFFFFFFFFUL << FICR_CPTEST6_CPTEST6_Pos) /*!< Bit mask of CPTEST6 field. */
+
+/* Register: FICR_CPTEST7 */
+/* Description: Result from Circuit Probe test, flash repair information */
+
+/* Bits 31..0 : flash repair information */
+#define FICR_CPTEST7_CPTEST7_Pos (0UL) /*!< Position of CPTEST7 field. */
+#define FICR_CPTEST7_CPTEST7_Msk (0xFFFFFFFFUL << FICR_CPTEST7_CPTEST7_Pos) /*!< Bit mask of CPTEST7 field. */
+
+/* Register: FICR_CPTEST8 */
+/* Description: Result from Circuit Probe test, flash repair information */
+
+/* Bits 31..0 : flash repair information */
+#define FICR_CPTEST8_CPTEST8_Pos (0UL) /*!< Position of CPTEST8 field. */
+#define FICR_CPTEST8_CPTEST8_Msk (0xFFFFFFFFUL << FICR_CPTEST8_CPTEST8_Pos) /*!< Bit mask of CPTEST8 field. */
+
+/* Register: FICR_SOCINFO_PARTNO */
+/* Description: Part number of the device. Will be updated in production test. */
+
+/* Bits 31..0 : Part number of the device */
+#define FICR_SOCINFO_PARTNO_PARTNO_Pos (0UL) /*!< Position of PARTNO field. */
+#define FICR_SOCINFO_PARTNO_PARTNO_Msk (0xFFFFFFFFUL << FICR_SOCINFO_PARTNO_PARTNO_Pos) /*!< Bit mask of PARTNO field. */
+
+/* Register: FICR_SOCINFO_HWREVISION */
+/* Description: Hardware Revision of the device. Will be updated in production test. */
+
+/* Bits 31..0 : Hardware Revision of the device. */
+#define FICR_SOCINFO_HWREVISION_HWREVISION_Pos (0UL) /*!< Position of HWREVISION field. */
+#define FICR_SOCINFO_HWREVISION_HWREVISION_Msk (0xFFFFFFFFUL << FICR_SOCINFO_HWREVISION_HWREVISION_Pos) /*!< Bit mask of HWREVISION field. */
+
+/* Register: FICR_SOCINFO_PRODUCTIONREVISION */
+/* Description: Production revision of the device. Will be updated in production test. */
+
+/* Bits 31..0 : Production revision of the device */
+#define FICR_SOCINFO_PRODUCTIONREVISION_PRODUCTIONREVISION_Pos (0UL) /*!< Position of PRODUCTIONREVISION field. */
+#define FICR_SOCINFO_PRODUCTIONREVISION_PRODUCTIONREVISION_Msk (0xFFFFFFFFUL << FICR_SOCINFO_PRODUCTIONREVISION_PRODUCTIONREVISION_Pos) /*!< Bit mask of PRODUCTIONREVISION field. */
+#define FICR_SOCINFO_PRODUCTIONREVISION_PRODUCTIONREVISION_Die (0x0000000UL) /*!< Device is an physical DIE */
+
+/* Register: FICR_SIPINFO_PARTNO */
+/* Description: SIP part number */
+
+/* Bits 31..0 :   */
+#define FICR_SIPINFO_PARTNO_PARTNO_Pos (0UL) /*!< Position of PARTNO field. */
+#define FICR_SIPINFO_PARTNO_PARTNO_Msk (0xFFFFFFFFUL << FICR_SIPINFO_PARTNO_PARTNO_Pos) /*!< Bit mask of PARTNO field. */
+#define FICR_SIPINFO_PARTNO_PARTNO_9160 (0x00009160UL) /*!< Device is an nRF9160 sip */
+
+/* Register: FICR_SIPINFO_PMICVERSION */
+/* Description: PMIC version */
+
+/* Bits 31..0 : PMIC version, incremental code */
+#define FICR_SIPINFO_PMICVERSION_PMICVERSION_Pos (0UL) /*!< Position of PMICVERSION field. */
+#define FICR_SIPINFO_PMICVERSION_PMICVERSION_Msk (0xFFFFFFFFUL << FICR_SIPINFO_PMICVERSION_PMICVERSION_Pos) /*!< Bit mask of PMICVERSION field. */
+
+/* Register: FICR_INFO_CONFIGID */
+/* Description: Configuration identifier */
+
+/* Bits 31..16 : Deprecated field -  Identification number for the FW that is pre-loaded into the chip */
+#define FICR_INFO_CONFIGID_FWID_Pos (16UL) /*!< Position of FWID field. */
+#define FICR_INFO_CONFIGID_FWID_Msk (0xFFFFUL << FICR_INFO_CONFIGID_FWID_Pos) /*!< Bit mask of FWID field. */
+
+/* Bits 15..0 : Identification number for the HW */
+#define FICR_INFO_CONFIGID_HWID_Pos (0UL) /*!< Position of HWID field. */
+#define FICR_INFO_CONFIGID_HWID_Msk (0xFFFFUL << FICR_INFO_CONFIGID_HWID_Pos) /*!< Bit mask of HWID field. */
+
 /* Register: FICR_INFO_DEVICEID */
 /* Description: Description collection: Device identifier */
 
@@ -1314,6 +4564,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #define FICR_INFO_PACKAGE_PACKAGE_Pos (0UL) /*!< Position of PACKAGE field. */
 #define FICR_INFO_PACKAGE_PACKAGE_Msk (0xFFFFFFFFUL << FICR_INFO_PACKAGE_PACKAGE_Pos) /*!< Bit mask of PACKAGE field. */
 #define FICR_INFO_PACKAGE_PACKAGE_CC (0x2000UL) /*!< CCxx - 236 ball wlCSP */
+#define FICR_INFO_PACKAGE_PACKAGE_CD (0x2001UL) /*!< CCxx - 236 wlCSP. VSS connected */
 
 /* Register: FICR_INFO_RAM */
 /* Description: RAM variant */
@@ -1368,6 +4619,15 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 31..0 : Data */
 #define FICR_TRIMCNF_DATA_Data_Pos (0UL) /*!< Position of Data field. */
 #define FICR_TRIMCNF_DATA_Data_Msk (0xFFFFFFFFUL << FICR_TRIMCNF_DATA_Data_Pos) /*!< Bit mask of Data field. */
+
+/* Register: FICR_PRODTEST */
+/* Description: Description collection: Production test signature n */
+
+/* Bits 31..0 : Production test signature n A majority vote is done by HW for each bit over all three PRODTEST fields in order to read the valid value */
+#define FICR_PRODTEST_PRODTEST_Pos (0UL) /*!< Position of PRODTEST field. */
+#define FICR_PRODTEST_PRODTEST_Msk (0xFFFFFFFFUL << FICR_PRODTEST_PRODTEST_Pos) /*!< Bit mask of PRODTEST field. */
+#define FICR_PRODTEST_PRODTEST_Done (0xAACCF0C0UL) /*!< Production tests done DFT mode blocked */
+#define FICR_PRODTEST_PRODTEST_NotDone (0xFFFFFFFFUL) /*!< Production tests not done DFT mode open */
 
 /* Register: FICR_TRNG90B_BYTES */
 /* Description: Amount of bytes for the required entropy bits */
@@ -1424,6 +4684,52 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 31..0 : Sample count for ring oscillator 4 */
 #define FICR_TRNG90B_ROSC4_ROSC4_Pos (0UL) /*!< Position of ROSC4 field. */
 #define FICR_TRNG90B_ROSC4_ROSC4_Msk (0xFFFFFFFFUL << FICR_TRNG90B_ROSC4_ROSC4_Pos) /*!< Bit mask of ROSC4 field. */
+
+
+/* Peripheral: PCGCSLAVE */
+/* Description: PCGCSlave 0 */
+
+/* Register: PCGCSLAVE_TRIGZEROPENALTY */
+/* Description: Trigger zero penalty */
+
+/* Bit 0 : TRIGGER */
+#define PCGCSLAVE_TRIGZEROPENALTY_TRIGGER_Pos (0UL) /*!< Position of TRIGGER field. */
+#define PCGCSLAVE_TRIGZEROPENALTY_TRIGGER_Msk (0x1UL << PCGCSLAVE_TRIGZEROPENALTY_TRIGGER_Pos) /*!< Bit mask of TRIGGER field. */
+#define PCGCSLAVE_TRIGZEROPENALTY_TRIGGER_Enable (1UL) /*!< Trigger zero penalty */
+
+/* Register: PCGCSLAVE_TRIGFULLPENALTY */
+/* Description: Trigger full penalty */
+
+/* Bit 0 : TRIGGER */
+#define PCGCSLAVE_TRIGFULLPENALTY_TRIGGER_Pos (0UL) /*!< Position of TRIGGER field. */
+#define PCGCSLAVE_TRIGFULLPENALTY_TRIGGER_Msk (0x1UL << PCGCSLAVE_TRIGFULLPENALTY_TRIGGER_Pos) /*!< Bit mask of TRIGGER field. */
+#define PCGCSLAVE_TRIGFULLPENALTY_TRIGGER_Enable (1UL) /*!< Trigger full penalty */
+
+/* Register: PCGCSLAVE_PENALTY */
+/* Description: Description collection: Penalty level for power/clock pair n */
+
+/* Bits 7..0 : Penalty level */
+#define PCGCSLAVE_PENALTY_PENALTY_Pos (0UL) /*!< Position of PENALTY field. */
+#define PCGCSLAVE_PENALTY_PENALTY_Msk (0xFFUL << PCGCSLAVE_PENALTY_PENALTY_Pos) /*!< Bit mask of PENALTY field. */
+
+/* Register: PCGCSLAVE_FORCEOVERRIDE */
+/* Description: Description collection: Force override of power/clock pair n */
+
+/* Bit 15 : DOFORCEPOWERPRE */
+#define PCGCSLAVE_FORCEOVERRIDE_DOFORCEPOWERPRE_Pos (15UL) /*!< Position of DOFORCEPOWERPRE field. */
+#define PCGCSLAVE_FORCEOVERRIDE_DOFORCEPOWERPRE_Msk (0x1UL << PCGCSLAVE_FORCEOVERRIDE_DOFORCEPOWERPRE_Pos) /*!< Bit mask of DOFORCEPOWERPRE field. */
+
+/* Bits 9..8 : POWERFORCINGPRE */
+#define PCGCSLAVE_FORCEOVERRIDE_POWERFORCINGPRE_Pos (8UL) /*!< Position of POWERFORCINGPRE field. */
+#define PCGCSLAVE_FORCEOVERRIDE_POWERFORCINGPRE_Msk (0x3UL << PCGCSLAVE_FORCEOVERRIDE_POWERFORCINGPRE_Pos) /*!< Bit mask of POWERFORCINGPRE field. */
+
+/* Bit 7 : DOFORCECLOCKPRE */
+#define PCGCSLAVE_FORCEOVERRIDE_DOFORCECLOCKPRE_Pos (7UL) /*!< Position of DOFORCECLOCKPRE field. */
+#define PCGCSLAVE_FORCEOVERRIDE_DOFORCECLOCKPRE_Msk (0x1UL << PCGCSLAVE_FORCEOVERRIDE_DOFORCECLOCKPRE_Pos) /*!< Bit mask of DOFORCECLOCKPRE field. */
+
+/* Bits 3..0 : CLOCKFORCINGPRE */
+#define PCGCSLAVE_FORCEOVERRIDE_CLOCKFORCINGPRE_Pos (0UL) /*!< Position of CLOCKFORCINGPRE field. */
+#define PCGCSLAVE_FORCEOVERRIDE_CLOCKFORCINGPRE_Msk (0xFUL << PCGCSLAVE_FORCEOVERRIDE_CLOCKFORCINGPRE_Pos) /*!< Bit mask of CLOCKFORCINGPRE field. */
 
 
 /* Peripheral: GPIOTE */
@@ -1535,6 +4841,63 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 3..0 : Channel that event PORT will publish to. */
 #define GPIOTE_PUBLISH_PORT_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define GPIOTE_PUBLISH_PORT_CHIDX_Msk (0xFUL << GPIOTE_PUBLISH_PORT_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: GPIOTE_INTEN */
+/* Description: Enable or disable interrupt */
+
+/* Bit 31 : Enable or disable interrupt for event PORT */
+#define GPIOTE_INTEN_PORT_Pos (31UL) /*!< Position of PORT field. */
+#define GPIOTE_INTEN_PORT_Msk (0x1UL << GPIOTE_INTEN_PORT_Pos) /*!< Bit mask of PORT field. */
+#define GPIOTE_INTEN_PORT_Disabled (0UL) /*!< Disable */
+#define GPIOTE_INTEN_PORT_Enabled (1UL) /*!< Enable */
+
+/* Bit 7 : Enable or disable interrupt for event IN[7] */
+#define GPIOTE_INTEN_IN7_Pos (7UL) /*!< Position of IN7 field. */
+#define GPIOTE_INTEN_IN7_Msk (0x1UL << GPIOTE_INTEN_IN7_Pos) /*!< Bit mask of IN7 field. */
+#define GPIOTE_INTEN_IN7_Disabled (0UL) /*!< Disable */
+#define GPIOTE_INTEN_IN7_Enabled (1UL) /*!< Enable */
+
+/* Bit 6 : Enable or disable interrupt for event IN[6] */
+#define GPIOTE_INTEN_IN6_Pos (6UL) /*!< Position of IN6 field. */
+#define GPIOTE_INTEN_IN6_Msk (0x1UL << GPIOTE_INTEN_IN6_Pos) /*!< Bit mask of IN6 field. */
+#define GPIOTE_INTEN_IN6_Disabled (0UL) /*!< Disable */
+#define GPIOTE_INTEN_IN6_Enabled (1UL) /*!< Enable */
+
+/* Bit 5 : Enable or disable interrupt for event IN[5] */
+#define GPIOTE_INTEN_IN5_Pos (5UL) /*!< Position of IN5 field. */
+#define GPIOTE_INTEN_IN5_Msk (0x1UL << GPIOTE_INTEN_IN5_Pos) /*!< Bit mask of IN5 field. */
+#define GPIOTE_INTEN_IN5_Disabled (0UL) /*!< Disable */
+#define GPIOTE_INTEN_IN5_Enabled (1UL) /*!< Enable */
+
+/* Bit 4 : Enable or disable interrupt for event IN[4] */
+#define GPIOTE_INTEN_IN4_Pos (4UL) /*!< Position of IN4 field. */
+#define GPIOTE_INTEN_IN4_Msk (0x1UL << GPIOTE_INTEN_IN4_Pos) /*!< Bit mask of IN4 field. */
+#define GPIOTE_INTEN_IN4_Disabled (0UL) /*!< Disable */
+#define GPIOTE_INTEN_IN4_Enabled (1UL) /*!< Enable */
+
+/* Bit 3 : Enable or disable interrupt for event IN[3] */
+#define GPIOTE_INTEN_IN3_Pos (3UL) /*!< Position of IN3 field. */
+#define GPIOTE_INTEN_IN3_Msk (0x1UL << GPIOTE_INTEN_IN3_Pos) /*!< Bit mask of IN3 field. */
+#define GPIOTE_INTEN_IN3_Disabled (0UL) /*!< Disable */
+#define GPIOTE_INTEN_IN3_Enabled (1UL) /*!< Enable */
+
+/* Bit 2 : Enable or disable interrupt for event IN[2] */
+#define GPIOTE_INTEN_IN2_Pos (2UL) /*!< Position of IN2 field. */
+#define GPIOTE_INTEN_IN2_Msk (0x1UL << GPIOTE_INTEN_IN2_Pos) /*!< Bit mask of IN2 field. */
+#define GPIOTE_INTEN_IN2_Disabled (0UL) /*!< Disable */
+#define GPIOTE_INTEN_IN2_Enabled (1UL) /*!< Enable */
+
+/* Bit 1 : Enable or disable interrupt for event IN[1] */
+#define GPIOTE_INTEN_IN1_Pos (1UL) /*!< Position of IN1 field. */
+#define GPIOTE_INTEN_IN1_Msk (0x1UL << GPIOTE_INTEN_IN1_Pos) /*!< Bit mask of IN1 field. */
+#define GPIOTE_INTEN_IN1_Disabled (0UL) /*!< Disable */
+#define GPIOTE_INTEN_IN1_Enabled (1UL) /*!< Enable */
+
+/* Bit 0 : Enable or disable interrupt for event IN[0] */
+#define GPIOTE_INTEN_IN0_Pos (0UL) /*!< Position of IN0 field. */
+#define GPIOTE_INTEN_IN0_Msk (0x1UL << GPIOTE_INTEN_IN0_Pos) /*!< Bit mask of IN0 field. */
+#define GPIOTE_INTEN_IN0_Disabled (0UL) /*!< Disable */
+#define GPIOTE_INTEN_IN0_Enabled (1UL) /*!< Enable */
 
 /* Register: GPIOTE_INTENSET */
 /* Description: Enable interrupt */
@@ -1696,6 +5059,24 @@ POSSIBILITY OF SUCH DAMAGE.
 #define GPIOTE_CONFIG_MODE_Event (1UL) /*!< Event mode */
 #define GPIOTE_CONFIG_MODE_Task (3UL) /*!< Task mode */
 
+/* Register: GPIOTE_DEBOUNCE */
+/* Description: Description collection: Debounce mode for GPIOTE channel n */
+
+/* Bit 0 : Mode */
+#define GPIOTE_DEBOUNCE_MODE_Pos (0UL) /*!< Position of MODE field. */
+#define GPIOTE_DEBOUNCE_MODE_Msk (0x1UL << GPIOTE_DEBOUNCE_MODE_Pos) /*!< Bit mask of MODE field. */
+#define GPIOTE_DEBOUNCE_MODE_Mode0 (0UL) /*!< Mode 0: nRF52 debounce method */
+#define GPIOTE_DEBOUNCE_MODE_Mode1 (1UL) /*!< Mode 1: nRF51 legacy debounce method */
+
+/* Register: GPIOTE_POWER */
+/* Description: Peripheral power control */
+
+/* Bit 0 : Peripheral power control. The peripheral and its registers will be reset to its initial state by switching the peripheral off and then back on again. */
+#define GPIOTE_POWER_POWER_Pos (0UL) /*!< Position of POWER field. */
+#define GPIOTE_POWER_POWER_Msk (0x1UL << GPIOTE_POWER_POWER_Pos) /*!< Bit mask of POWER field. */
+#define GPIOTE_POWER_POWER_Disabled (0UL) /*!< Peripheral is powered off */
+#define GPIOTE_POWER_POWER_Enabled (1UL) /*!< Peripheral is powered on */
+
 
 /* Peripheral: I2S */
 /* Description: Inter-IC Sound 0 */
@@ -1715,6 +5096,38 @@ POSSIBILITY OF SUCH DAMAGE.
 #define I2S_TASKS_STOP_TASKS_STOP_Pos (0UL) /*!< Position of TASKS_STOP field. */
 #define I2S_TASKS_STOP_TASKS_STOP_Msk (0x1UL << I2S_TASKS_STOP_TASKS_STOP_Pos) /*!< Bit mask of TASKS_STOP field. */
 #define I2S_TASKS_STOP_TASKS_STOP_Trigger (1UL) /*!< Trigger task */
+
+/* Register: I2S_TASKS_DMA_START_TX */
+/* Description: Equivalent to ID_DMA_CHANNEL_PERIPHERAL_TASK_TRIG_START_TX. */
+
+/* Bit 0 : Equivalent to ID_DMA_CHANNEL_PERIPHERAL_TASK_TRIG_START_TX. */
+#define I2S_TASKS_DMA_START_TX_TASKS_DMA_START_TX_Pos (0UL) /*!< Position of TASKS_DMA_START_TX field. */
+#define I2S_TASKS_DMA_START_TX_TASKS_DMA_START_TX_Msk (0x1UL << I2S_TASKS_DMA_START_TX_TASKS_DMA_START_TX_Pos) /*!< Bit mask of TASKS_DMA_START_TX field. */
+#define I2S_TASKS_DMA_START_TX_TASKS_DMA_START_TX_Trigger (1UL) /*!< Trigger task */
+
+/* Register: I2S_TASKS_DMA_START_RX */
+/* Description: Equivalent to ID_DMA_CHANNEL_PERIPHERAL_TASK_TRIG_START_RX. */
+
+/* Bit 0 : Equivalent to ID_DMA_CHANNEL_PERIPHERAL_TASK_TRIG_START_RX. */
+#define I2S_TASKS_DMA_START_RX_TASKS_DMA_START_RX_Pos (0UL) /*!< Position of TASKS_DMA_START_RX field. */
+#define I2S_TASKS_DMA_START_RX_TASKS_DMA_START_RX_Msk (0x1UL << I2S_TASKS_DMA_START_RX_TASKS_DMA_START_RX_Pos) /*!< Bit mask of TASKS_DMA_START_RX field. */
+#define I2S_TASKS_DMA_START_RX_TASKS_DMA_START_RX_Trigger (1UL) /*!< Trigger task */
+
+/* Register: I2S_TASKS_DMA_STOP_TX */
+/* Description: Equivalent to ID_DMA_CHANNEL_PERIPHERAL_TASK_TRIG_STOP_TX. */
+
+/* Bit 0 : Equivalent to ID_DMA_CHANNEL_PERIPHERAL_TASK_TRIG_STOP_TX. */
+#define I2S_TASKS_DMA_STOP_TX_TASKS_DMA_STOP_TX_Pos (0UL) /*!< Position of TASKS_DMA_STOP_TX field. */
+#define I2S_TASKS_DMA_STOP_TX_TASKS_DMA_STOP_TX_Msk (0x1UL << I2S_TASKS_DMA_STOP_TX_TASKS_DMA_STOP_TX_Pos) /*!< Bit mask of TASKS_DMA_STOP_TX field. */
+#define I2S_TASKS_DMA_STOP_TX_TASKS_DMA_STOP_TX_Trigger (1UL) /*!< Trigger task */
+
+/* Register: I2S_TASKS_DMA_STOP_RX */
+/* Description: Equivalent to ID_DMA_CHANNEL_PERIPHERAL_TASK_TRIG_STOP_RX. */
+
+/* Bit 0 : Equivalent to ID_DMA_CHANNEL_PERIPHERAL_TASK_TRIG_STOP_RX. */
+#define I2S_TASKS_DMA_STOP_RX_TASKS_DMA_STOP_RX_Pos (0UL) /*!< Position of TASKS_DMA_STOP_RX field. */
+#define I2S_TASKS_DMA_STOP_RX_TASKS_DMA_STOP_RX_Msk (0x1UL << I2S_TASKS_DMA_STOP_RX_TASKS_DMA_STOP_RX_Pos) /*!< Bit mask of TASKS_DMA_STOP_RX field. */
+#define I2S_TASKS_DMA_STOP_RX_TASKS_DMA_STOP_RX_Trigger (1UL) /*!< Trigger task */
 
 /* Register: I2S_SUBSCRIBE_START */
 /* Description: Subscribe configuration for task START */
@@ -1742,36 +5155,137 @@ POSSIBILITY OF SUCH DAMAGE.
 #define I2S_SUBSCRIBE_STOP_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define I2S_SUBSCRIBE_STOP_CHIDX_Msk (0xFUL << I2S_SUBSCRIBE_STOP_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
+/* Register: I2S_SUBSCRIBE_DMA_START_TX */
+/* Description: Subscribe configuration for task DMA_START_TX */
+
+/* Bit 31 :   */
+#define I2S_SUBSCRIBE_DMA_START_TX_EN_Pos (31UL) /*!< Position of EN field. */
+#define I2S_SUBSCRIBE_DMA_START_TX_EN_Msk (0x1UL << I2S_SUBSCRIBE_DMA_START_TX_EN_Pos) /*!< Bit mask of EN field. */
+#define I2S_SUBSCRIBE_DMA_START_TX_EN_Disabled (0UL) /*!< Disable subscription */
+#define I2S_SUBSCRIBE_DMA_START_TX_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 3..0 : Channel that task DMA_START_TX will subscribe to */
+#define I2S_SUBSCRIBE_DMA_START_TX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define I2S_SUBSCRIBE_DMA_START_TX_CHIDX_Msk (0xFUL << I2S_SUBSCRIBE_DMA_START_TX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: I2S_SUBSCRIBE_DMA_START_RX */
+/* Description: Subscribe configuration for task DMA_START_RX */
+
+/* Bit 31 :   */
+#define I2S_SUBSCRIBE_DMA_START_RX_EN_Pos (31UL) /*!< Position of EN field. */
+#define I2S_SUBSCRIBE_DMA_START_RX_EN_Msk (0x1UL << I2S_SUBSCRIBE_DMA_START_RX_EN_Pos) /*!< Bit mask of EN field. */
+#define I2S_SUBSCRIBE_DMA_START_RX_EN_Disabled (0UL) /*!< Disable subscription */
+#define I2S_SUBSCRIBE_DMA_START_RX_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 3..0 : Channel that task DMA_START_RX will subscribe to */
+#define I2S_SUBSCRIBE_DMA_START_RX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define I2S_SUBSCRIBE_DMA_START_RX_CHIDX_Msk (0xFUL << I2S_SUBSCRIBE_DMA_START_RX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: I2S_SUBSCRIBE_DMA_STOP_TX */
+/* Description: Subscribe configuration for task DMA_STOP_TX */
+
+/* Bit 31 :   */
+#define I2S_SUBSCRIBE_DMA_STOP_TX_EN_Pos (31UL) /*!< Position of EN field. */
+#define I2S_SUBSCRIBE_DMA_STOP_TX_EN_Msk (0x1UL << I2S_SUBSCRIBE_DMA_STOP_TX_EN_Pos) /*!< Bit mask of EN field. */
+#define I2S_SUBSCRIBE_DMA_STOP_TX_EN_Disabled (0UL) /*!< Disable subscription */
+#define I2S_SUBSCRIBE_DMA_STOP_TX_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 3..0 : Channel that task DMA_STOP_TX will subscribe to */
+#define I2S_SUBSCRIBE_DMA_STOP_TX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define I2S_SUBSCRIBE_DMA_STOP_TX_CHIDX_Msk (0xFUL << I2S_SUBSCRIBE_DMA_STOP_TX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: I2S_SUBSCRIBE_DMA_STOP_RX */
+/* Description: Subscribe configuration for task DMA_STOP_RX */
+
+/* Bit 31 :   */
+#define I2S_SUBSCRIBE_DMA_STOP_RX_EN_Pos (31UL) /*!< Position of EN field. */
+#define I2S_SUBSCRIBE_DMA_STOP_RX_EN_Msk (0x1UL << I2S_SUBSCRIBE_DMA_STOP_RX_EN_Pos) /*!< Bit mask of EN field. */
+#define I2S_SUBSCRIBE_DMA_STOP_RX_EN_Disabled (0UL) /*!< Disable subscription */
+#define I2S_SUBSCRIBE_DMA_STOP_RX_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 3..0 : Channel that task DMA_STOP_RX will subscribe to */
+#define I2S_SUBSCRIBE_DMA_STOP_RX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define I2S_SUBSCRIBE_DMA_STOP_RX_CHIDX_Msk (0xFUL << I2S_SUBSCRIBE_DMA_STOP_RX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: I2S_EVENTS_DMA_END_TX */
+/* Description: Equivalent to eventDmaEndTx */
+
+/* Bit 0 : Equivalent to eventDmaEndTx */
+#define I2S_EVENTS_DMA_END_TX_EVENTS_DMA_END_TX_Pos (0UL) /*!< Position of EVENTS_DMA_END_TX field. */
+#define I2S_EVENTS_DMA_END_TX_EVENTS_DMA_END_TX_Msk (0x1UL << I2S_EVENTS_DMA_END_TX_EVENTS_DMA_END_TX_Pos) /*!< Bit mask of EVENTS_DMA_END_TX field. */
+#define I2S_EVENTS_DMA_END_TX_EVENTS_DMA_END_TX_NotGenerated (0UL) /*!< Event not generated */
+#define I2S_EVENTS_DMA_END_TX_EVENTS_DMA_END_TX_Generated (1UL) /*!< Event generated */
+
 /* Register: I2S_EVENTS_RXPTRUPD */
 /* Description: The RXD.PTR register has been copied to internal double-buffers.
-      When the I2S module is started and RX is enabled, this event will be generated for every RXTXD.MAXCNT words that are received on the SDIN pin. */
+      When the I2S module is started and RX is enabled, this event will be generated for every RXTXD.MAXCNT words that are received on the SDIN pin. Equivalent to eventDmaReadyRx. */
 
 /* Bit 0 : The RXD.PTR register has been copied to internal double-buffers.
-      When the I2S module is started and RX is enabled, this event will be generated for every RXTXD.MAXCNT words that are received on the SDIN pin. */
+      When the I2S module is started and RX is enabled, this event will be generated for every RXTXD.MAXCNT words that are received on the SDIN pin. Equivalent to eventDmaReadyRx. */
 #define I2S_EVENTS_RXPTRUPD_EVENTS_RXPTRUPD_Pos (0UL) /*!< Position of EVENTS_RXPTRUPD field. */
 #define I2S_EVENTS_RXPTRUPD_EVENTS_RXPTRUPD_Msk (0x1UL << I2S_EVENTS_RXPTRUPD_EVENTS_RXPTRUPD_Pos) /*!< Bit mask of EVENTS_RXPTRUPD field. */
 #define I2S_EVENTS_RXPTRUPD_EVENTS_RXPTRUPD_NotGenerated (0UL) /*!< Event not generated */
 #define I2S_EVENTS_RXPTRUPD_EVENTS_RXPTRUPD_Generated (1UL) /*!< Event generated */
 
 /* Register: I2S_EVENTS_STOPPED */
-/* Description: I2S transfer stopped. */
+/* Description: I2S transfer stopped. There are no requirements to how graceful the I2S module shall be stopped. The reason for this is that we are talking about streaming audio data here, and thus loosing some data is not critical. Graceful stopping of stream can easily be done in FW. Equivalent to eventStopped */
 
-/* Bit 0 : I2S transfer stopped. */
+/* Bit 0 : I2S transfer stopped. There are no requirements to how graceful the I2S module shall be stopped. The reason for this is that we are talking about streaming audio data here, and thus loosing some data is not critical. Graceful stopping of stream can easily be done in FW. Equivalent to eventStopped */
 #define I2S_EVENTS_STOPPED_EVENTS_STOPPED_Pos (0UL) /*!< Position of EVENTS_STOPPED field. */
 #define I2S_EVENTS_STOPPED_EVENTS_STOPPED_Msk (0x1UL << I2S_EVENTS_STOPPED_EVENTS_STOPPED_Pos) /*!< Bit mask of EVENTS_STOPPED field. */
 #define I2S_EVENTS_STOPPED_EVENTS_STOPPED_NotGenerated (0UL) /*!< Event not generated */
 #define I2S_EVENTS_STOPPED_EVENTS_STOPPED_Generated (1UL) /*!< Event generated */
 
+/* Register: I2S_EVENTS_ERROR_TX */
+/* Description: DMA read from memory failed. Equivalent to eventUnderflowTx */
+
+/* Bit 0 : DMA read from memory failed. Equivalent to eventUnderflowTx */
+#define I2S_EVENTS_ERROR_TX_EVENTS_ERROR_TX_Pos (0UL) /*!< Position of EVENTS_ERROR_TX field. */
+#define I2S_EVENTS_ERROR_TX_EVENTS_ERROR_TX_Msk (0x1UL << I2S_EVENTS_ERROR_TX_EVENTS_ERROR_TX_Pos) /*!< Bit mask of EVENTS_ERROR_TX field. */
+#define I2S_EVENTS_ERROR_TX_EVENTS_ERROR_TX_NotGenerated (0UL) /*!< Event not generated */
+#define I2S_EVENTS_ERROR_TX_EVENTS_ERROR_TX_Generated (1UL) /*!< Event generated */
+
+/* Register: I2S_EVENTS_ERROR_RX */
+/* Description: DMA write to memory failed. Equivalent to eventOverflowRx */
+
+/* Bit 0 : DMA write to memory failed. Equivalent to eventOverflowRx */
+#define I2S_EVENTS_ERROR_RX_EVENTS_ERROR_RX_Pos (0UL) /*!< Position of EVENTS_ERROR_RX field. */
+#define I2S_EVENTS_ERROR_RX_EVENTS_ERROR_RX_Msk (0x1UL << I2S_EVENTS_ERROR_RX_EVENTS_ERROR_RX_Pos) /*!< Bit mask of EVENTS_ERROR_RX field. */
+#define I2S_EVENTS_ERROR_RX_EVENTS_ERROR_RX_NotGenerated (0UL) /*!< Event not generated */
+#define I2S_EVENTS_ERROR_RX_EVENTS_ERROR_RX_Generated (1UL) /*!< Event generated */
+
 /* Register: I2S_EVENTS_TXPTRUPD */
 /* Description: The TDX.PTR register has been copied to internal double-buffers.
-      When the I2S module is started and TX is enabled, this event will be generated for every RXTXD.MAXCNT words that are sent on the SDOUT pin. */
+      When the I2S module is started and TX is enabled, this event will be generated for every RXTXD.MAXCNT words that are sent on the SDOUT pin. Equivalent to eventDmaReadyTx. */
 
 /* Bit 0 : The TDX.PTR register has been copied to internal double-buffers.
-      When the I2S module is started and TX is enabled, this event will be generated for every RXTXD.MAXCNT words that are sent on the SDOUT pin. */
+      When the I2S module is started and TX is enabled, this event will be generated for every RXTXD.MAXCNT words that are sent on the SDOUT pin. Equivalent to eventDmaReadyTx. */
 #define I2S_EVENTS_TXPTRUPD_EVENTS_TXPTRUPD_Pos (0UL) /*!< Position of EVENTS_TXPTRUPD field. */
 #define I2S_EVENTS_TXPTRUPD_EVENTS_TXPTRUPD_Msk (0x1UL << I2S_EVENTS_TXPTRUPD_EVENTS_TXPTRUPD_Pos) /*!< Bit mask of EVENTS_TXPTRUPD field. */
 #define I2S_EVENTS_TXPTRUPD_EVENTS_TXPTRUPD_NotGenerated (0UL) /*!< Event not generated */
 #define I2S_EVENTS_TXPTRUPD_EVENTS_TXPTRUPD_Generated (1UL) /*!< Event generated */
+
+/* Register: I2S_EVENTS_DMA_END_RX */
+/* Description: DMA write to memory failed. Equivalent to eventDmaEndRx */
+
+/* Bit 0 : DMA write to memory failed. Equivalent to eventDmaEndRx */
+#define I2S_EVENTS_DMA_END_RX_EVENTS_DMA_END_RX_Pos (0UL) /*!< Position of EVENTS_DMA_END_RX field. */
+#define I2S_EVENTS_DMA_END_RX_EVENTS_DMA_END_RX_Msk (0x1UL << I2S_EVENTS_DMA_END_RX_EVENTS_DMA_END_RX_Pos) /*!< Bit mask of EVENTS_DMA_END_RX field. */
+#define I2S_EVENTS_DMA_END_RX_EVENTS_DMA_END_RX_NotGenerated (0UL) /*!< Event not generated */
+#define I2S_EVENTS_DMA_END_RX_EVENTS_DMA_END_RX_Generated (1UL) /*!< Event generated */
+
+/* Register: I2S_PUBLISH_DMA_END_TX */
+/* Description: Publish configuration for event DMA_END_TX */
+
+/* Bit 31 :   */
+#define I2S_PUBLISH_DMA_END_TX_EN_Pos (31UL) /*!< Position of EN field. */
+#define I2S_PUBLISH_DMA_END_TX_EN_Msk (0x1UL << I2S_PUBLISH_DMA_END_TX_EN_Pos) /*!< Bit mask of EN field. */
+#define I2S_PUBLISH_DMA_END_TX_EN_Disabled (0UL) /*!< Disable publishing */
+#define I2S_PUBLISH_DMA_END_TX_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event DMA_END_TX will publish to. */
+#define I2S_PUBLISH_DMA_END_TX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define I2S_PUBLISH_DMA_END_TX_CHIDX_Msk (0xFUL << I2S_PUBLISH_DMA_END_TX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
 /* Register: I2S_PUBLISH_RXPTRUPD */
 /* Description: Publish configuration for event RXPTRUPD */
@@ -1799,6 +5313,32 @@ POSSIBILITY OF SUCH DAMAGE.
 #define I2S_PUBLISH_STOPPED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define I2S_PUBLISH_STOPPED_CHIDX_Msk (0xFUL << I2S_PUBLISH_STOPPED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
+/* Register: I2S_PUBLISH_ERROR_TX */
+/* Description: Publish configuration for event ERROR_TX */
+
+/* Bit 31 :   */
+#define I2S_PUBLISH_ERROR_TX_EN_Pos (31UL) /*!< Position of EN field. */
+#define I2S_PUBLISH_ERROR_TX_EN_Msk (0x1UL << I2S_PUBLISH_ERROR_TX_EN_Pos) /*!< Bit mask of EN field. */
+#define I2S_PUBLISH_ERROR_TX_EN_Disabled (0UL) /*!< Disable publishing */
+#define I2S_PUBLISH_ERROR_TX_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event ERROR_TX will publish to. */
+#define I2S_PUBLISH_ERROR_TX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define I2S_PUBLISH_ERROR_TX_CHIDX_Msk (0xFUL << I2S_PUBLISH_ERROR_TX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: I2S_PUBLISH_ERROR_RX */
+/* Description: Publish configuration for event ERROR_RX */
+
+/* Bit 31 :   */
+#define I2S_PUBLISH_ERROR_RX_EN_Pos (31UL) /*!< Position of EN field. */
+#define I2S_PUBLISH_ERROR_RX_EN_Msk (0x1UL << I2S_PUBLISH_ERROR_RX_EN_Pos) /*!< Bit mask of EN field. */
+#define I2S_PUBLISH_ERROR_RX_EN_Disabled (0UL) /*!< Disable publishing */
+#define I2S_PUBLISH_ERROR_RX_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event ERROR_RX will publish to. */
+#define I2S_PUBLISH_ERROR_RX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define I2S_PUBLISH_ERROR_RX_CHIDX_Msk (0xFUL << I2S_PUBLISH_ERROR_RX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
 /* Register: I2S_PUBLISH_TXPTRUPD */
 /* Description: Publish configuration for event TXPTRUPD */
 
@@ -1812,14 +5352,45 @@ POSSIBILITY OF SUCH DAMAGE.
 #define I2S_PUBLISH_TXPTRUPD_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define I2S_PUBLISH_TXPTRUPD_CHIDX_Msk (0xFUL << I2S_PUBLISH_TXPTRUPD_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
+/* Register: I2S_PUBLISH_DMA_END_RX */
+/* Description: Publish configuration for event DMA_END_RX */
+
+/* Bit 31 :   */
+#define I2S_PUBLISH_DMA_END_RX_EN_Pos (31UL) /*!< Position of EN field. */
+#define I2S_PUBLISH_DMA_END_RX_EN_Msk (0x1UL << I2S_PUBLISH_DMA_END_RX_EN_Pos) /*!< Bit mask of EN field. */
+#define I2S_PUBLISH_DMA_END_RX_EN_Disabled (0UL) /*!< Disable publishing */
+#define I2S_PUBLISH_DMA_END_RX_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event DMA_END_RX will publish to. */
+#define I2S_PUBLISH_DMA_END_RX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define I2S_PUBLISH_DMA_END_RX_CHIDX_Msk (0xFUL << I2S_PUBLISH_DMA_END_RX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
 /* Register: I2S_INTEN */
 /* Description: Enable or disable interrupt */
+
+/* Bit 6 : Enable or disable interrupt for event DMA_END_RX */
+#define I2S_INTEN_DMA_END_RX_Pos (6UL) /*!< Position of DMA_END_RX field. */
+#define I2S_INTEN_DMA_END_RX_Msk (0x1UL << I2S_INTEN_DMA_END_RX_Pos) /*!< Bit mask of DMA_END_RX field. */
+#define I2S_INTEN_DMA_END_RX_Disabled (0UL) /*!< Disable */
+#define I2S_INTEN_DMA_END_RX_Enabled (1UL) /*!< Enable */
 
 /* Bit 5 : Enable or disable interrupt for event TXPTRUPD */
 #define I2S_INTEN_TXPTRUPD_Pos (5UL) /*!< Position of TXPTRUPD field. */
 #define I2S_INTEN_TXPTRUPD_Msk (0x1UL << I2S_INTEN_TXPTRUPD_Pos) /*!< Bit mask of TXPTRUPD field. */
 #define I2S_INTEN_TXPTRUPD_Disabled (0UL) /*!< Disable */
 #define I2S_INTEN_TXPTRUPD_Enabled (1UL) /*!< Enable */
+
+/* Bit 4 : Enable or disable interrupt for event ERROR_RX */
+#define I2S_INTEN_ERROR_RX_Pos (4UL) /*!< Position of ERROR_RX field. */
+#define I2S_INTEN_ERROR_RX_Msk (0x1UL << I2S_INTEN_ERROR_RX_Pos) /*!< Bit mask of ERROR_RX field. */
+#define I2S_INTEN_ERROR_RX_Disabled (0UL) /*!< Disable */
+#define I2S_INTEN_ERROR_RX_Enabled (1UL) /*!< Enable */
+
+/* Bit 3 : Enable or disable interrupt for event ERROR_TX */
+#define I2S_INTEN_ERROR_TX_Pos (3UL) /*!< Position of ERROR_TX field. */
+#define I2S_INTEN_ERROR_TX_Msk (0x1UL << I2S_INTEN_ERROR_TX_Pos) /*!< Bit mask of ERROR_TX field. */
+#define I2S_INTEN_ERROR_TX_Disabled (0UL) /*!< Disable */
+#define I2S_INTEN_ERROR_TX_Enabled (1UL) /*!< Enable */
 
 /* Bit 2 : Enable or disable interrupt for event STOPPED */
 #define I2S_INTEN_STOPPED_Pos (2UL) /*!< Position of STOPPED field. */
@@ -1833,8 +5404,21 @@ POSSIBILITY OF SUCH DAMAGE.
 #define I2S_INTEN_RXPTRUPD_Disabled (0UL) /*!< Disable */
 #define I2S_INTEN_RXPTRUPD_Enabled (1UL) /*!< Enable */
 
+/* Bit 0 : Enable or disable interrupt for event DMA_END_TX */
+#define I2S_INTEN_DMA_END_TX_Pos (0UL) /*!< Position of DMA_END_TX field. */
+#define I2S_INTEN_DMA_END_TX_Msk (0x1UL << I2S_INTEN_DMA_END_TX_Pos) /*!< Bit mask of DMA_END_TX field. */
+#define I2S_INTEN_DMA_END_TX_Disabled (0UL) /*!< Disable */
+#define I2S_INTEN_DMA_END_TX_Enabled (1UL) /*!< Enable */
+
 /* Register: I2S_INTENSET */
 /* Description: Enable interrupt */
+
+/* Bit 6 : Write '1' to enable interrupt for event DMA_END_RX */
+#define I2S_INTENSET_DMA_END_RX_Pos (6UL) /*!< Position of DMA_END_RX field. */
+#define I2S_INTENSET_DMA_END_RX_Msk (0x1UL << I2S_INTENSET_DMA_END_RX_Pos) /*!< Bit mask of DMA_END_RX field. */
+#define I2S_INTENSET_DMA_END_RX_Disabled (0UL) /*!< Read: Disabled */
+#define I2S_INTENSET_DMA_END_RX_Enabled (1UL) /*!< Read: Enabled */
+#define I2S_INTENSET_DMA_END_RX_Set (1UL) /*!< Enable */
 
 /* Bit 5 : Write '1' to enable interrupt for event TXPTRUPD */
 #define I2S_INTENSET_TXPTRUPD_Pos (5UL) /*!< Position of TXPTRUPD field. */
@@ -1842,6 +5426,20 @@ POSSIBILITY OF SUCH DAMAGE.
 #define I2S_INTENSET_TXPTRUPD_Disabled (0UL) /*!< Read: Disabled */
 #define I2S_INTENSET_TXPTRUPD_Enabled (1UL) /*!< Read: Enabled */
 #define I2S_INTENSET_TXPTRUPD_Set (1UL) /*!< Enable */
+
+/* Bit 4 : Write '1' to enable interrupt for event ERROR_RX */
+#define I2S_INTENSET_ERROR_RX_Pos (4UL) /*!< Position of ERROR_RX field. */
+#define I2S_INTENSET_ERROR_RX_Msk (0x1UL << I2S_INTENSET_ERROR_RX_Pos) /*!< Bit mask of ERROR_RX field. */
+#define I2S_INTENSET_ERROR_RX_Disabled (0UL) /*!< Read: Disabled */
+#define I2S_INTENSET_ERROR_RX_Enabled (1UL) /*!< Read: Enabled */
+#define I2S_INTENSET_ERROR_RX_Set (1UL) /*!< Enable */
+
+/* Bit 3 : Write '1' to enable interrupt for event ERROR_TX */
+#define I2S_INTENSET_ERROR_TX_Pos (3UL) /*!< Position of ERROR_TX field. */
+#define I2S_INTENSET_ERROR_TX_Msk (0x1UL << I2S_INTENSET_ERROR_TX_Pos) /*!< Bit mask of ERROR_TX field. */
+#define I2S_INTENSET_ERROR_TX_Disabled (0UL) /*!< Read: Disabled */
+#define I2S_INTENSET_ERROR_TX_Enabled (1UL) /*!< Read: Enabled */
+#define I2S_INTENSET_ERROR_TX_Set (1UL) /*!< Enable */
 
 /* Bit 2 : Write '1' to enable interrupt for event STOPPED */
 #define I2S_INTENSET_STOPPED_Pos (2UL) /*!< Position of STOPPED field. */
@@ -1857,8 +5455,22 @@ POSSIBILITY OF SUCH DAMAGE.
 #define I2S_INTENSET_RXPTRUPD_Enabled (1UL) /*!< Read: Enabled */
 #define I2S_INTENSET_RXPTRUPD_Set (1UL) /*!< Enable */
 
+/* Bit 0 : Write '1' to enable interrupt for event DMA_END_TX */
+#define I2S_INTENSET_DMA_END_TX_Pos (0UL) /*!< Position of DMA_END_TX field. */
+#define I2S_INTENSET_DMA_END_TX_Msk (0x1UL << I2S_INTENSET_DMA_END_TX_Pos) /*!< Bit mask of DMA_END_TX field. */
+#define I2S_INTENSET_DMA_END_TX_Disabled (0UL) /*!< Read: Disabled */
+#define I2S_INTENSET_DMA_END_TX_Enabled (1UL) /*!< Read: Enabled */
+#define I2S_INTENSET_DMA_END_TX_Set (1UL) /*!< Enable */
+
 /* Register: I2S_INTENCLR */
 /* Description: Disable interrupt */
+
+/* Bit 6 : Write '1' to disable interrupt for event DMA_END_RX */
+#define I2S_INTENCLR_DMA_END_RX_Pos (6UL) /*!< Position of DMA_END_RX field. */
+#define I2S_INTENCLR_DMA_END_RX_Msk (0x1UL << I2S_INTENCLR_DMA_END_RX_Pos) /*!< Bit mask of DMA_END_RX field. */
+#define I2S_INTENCLR_DMA_END_RX_Disabled (0UL) /*!< Read: Disabled */
+#define I2S_INTENCLR_DMA_END_RX_Enabled (1UL) /*!< Read: Enabled */
+#define I2S_INTENCLR_DMA_END_RX_Clear (1UL) /*!< Disable */
 
 /* Bit 5 : Write '1' to disable interrupt for event TXPTRUPD */
 #define I2S_INTENCLR_TXPTRUPD_Pos (5UL) /*!< Position of TXPTRUPD field. */
@@ -1866,6 +5478,20 @@ POSSIBILITY OF SUCH DAMAGE.
 #define I2S_INTENCLR_TXPTRUPD_Disabled (0UL) /*!< Read: Disabled */
 #define I2S_INTENCLR_TXPTRUPD_Enabled (1UL) /*!< Read: Enabled */
 #define I2S_INTENCLR_TXPTRUPD_Clear (1UL) /*!< Disable */
+
+/* Bit 4 : Write '1' to disable interrupt for event ERROR_RX */
+#define I2S_INTENCLR_ERROR_RX_Pos (4UL) /*!< Position of ERROR_RX field. */
+#define I2S_INTENCLR_ERROR_RX_Msk (0x1UL << I2S_INTENCLR_ERROR_RX_Pos) /*!< Bit mask of ERROR_RX field. */
+#define I2S_INTENCLR_ERROR_RX_Disabled (0UL) /*!< Read: Disabled */
+#define I2S_INTENCLR_ERROR_RX_Enabled (1UL) /*!< Read: Enabled */
+#define I2S_INTENCLR_ERROR_RX_Clear (1UL) /*!< Disable */
+
+/* Bit 3 : Write '1' to disable interrupt for event ERROR_TX */
+#define I2S_INTENCLR_ERROR_TX_Pos (3UL) /*!< Position of ERROR_TX field. */
+#define I2S_INTENCLR_ERROR_TX_Msk (0x1UL << I2S_INTENCLR_ERROR_TX_Pos) /*!< Bit mask of ERROR_TX field. */
+#define I2S_INTENCLR_ERROR_TX_Disabled (0UL) /*!< Read: Disabled */
+#define I2S_INTENCLR_ERROR_TX_Enabled (1UL) /*!< Read: Enabled */
+#define I2S_INTENCLR_ERROR_TX_Clear (1UL) /*!< Disable */
 
 /* Bit 2 : Write '1' to disable interrupt for event STOPPED */
 #define I2S_INTENCLR_STOPPED_Pos (2UL) /*!< Position of STOPPED field. */
@@ -1880,6 +5506,13 @@ POSSIBILITY OF SUCH DAMAGE.
 #define I2S_INTENCLR_RXPTRUPD_Disabled (0UL) /*!< Read: Disabled */
 #define I2S_INTENCLR_RXPTRUPD_Enabled (1UL) /*!< Read: Enabled */
 #define I2S_INTENCLR_RXPTRUPD_Clear (1UL) /*!< Disable */
+
+/* Bit 0 : Write '1' to disable interrupt for event DMA_END_TX */
+#define I2S_INTENCLR_DMA_END_TX_Pos (0UL) /*!< Position of DMA_END_TX field. */
+#define I2S_INTENCLR_DMA_END_TX_Msk (0x1UL << I2S_INTENCLR_DMA_END_TX_Pos) /*!< Bit mask of DMA_END_TX field. */
+#define I2S_INTENCLR_DMA_END_TX_Disabled (0UL) /*!< Read: Disabled */
+#define I2S_INTENCLR_DMA_END_TX_Enabled (1UL) /*!< Read: Enabled */
+#define I2S_INTENCLR_DMA_END_TX_Clear (1UL) /*!< Disable */
 
 /* Register: I2S_ENABLE */
 /* Description: Enable I2S module. */
@@ -1929,7 +5562,7 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Register: I2S_CONFIG_MCKFREQ */
 /* Description: Master clock generator frequency. */
 
-/* Bits 31..0 : Master clock generator frequency. */
+/* Bits 31..0 : Master clock generator frequency. Only bits [31:12] are implemented. Remaining bits will always read as 0. */
 #define I2S_CONFIG_MCKFREQ_MCKFREQ_Pos (0UL) /*!< Position of MCKFREQ field. */
 #define I2S_CONFIG_MCKFREQ_MCKFREQ_Msk (0xFFFFFFFFUL << I2S_CONFIG_MCKFREQ_MCKFREQ_Pos) /*!< Bit mask of MCKFREQ field. */
 #define I2S_CONFIG_MCKFREQ_MCKFREQ_32MDIV125 (0x020C0000UL) /*!< 32 MHz / 125 = 0.256 MHz */
@@ -2021,6 +5654,13 @@ POSSIBILITY OF SUCH DAMAGE.
 #define I2S_RXTXD_MAXCNT_MAXCNT_Pos (0UL) /*!< Position of MAXCNT field. */
 #define I2S_RXTXD_MAXCNT_MAXCNT_Msk (0x3FFFUL << I2S_RXTXD_MAXCNT_MAXCNT_Pos) /*!< Bit mask of MAXCNT field. */
 
+/* Register: I2S_RXTXD_AMOUNT */
+/* Description: Number of 32 bit words sent and received since the previous END event. Nice to have only. TBD. */
+
+/* Bits 13..0 : Number of 32 bit words sent and received since the previous END event. */
+#define I2S_RXTXD_AMOUNT_AMOUNT_Pos (0UL) /*!< Position of AMOUNT field. */
+#define I2S_RXTXD_AMOUNT_AMOUNT_Msk (0x3FFFUL << I2S_RXTXD_AMOUNT_AMOUNT_Pos) /*!< Bit mask of AMOUNT field. */
+
 /* Register: I2S_PSEL_MCK */
 /* Description: Pin select for MCK signal. */
 
@@ -2085,6 +5725,24 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 4..0 : Pin number */
 #define I2S_PSEL_SDOUT_PIN_Pos (0UL) /*!< Position of PIN field. */
 #define I2S_PSEL_SDOUT_PIN_Msk (0x1FUL << I2S_PSEL_SDOUT_PIN_Pos) /*!< Bit mask of PIN field. */
+
+/* Register: I2S_DMA_ENABLE_RX */
+/* Description: Equivalent to ID_DMA_CHANNEL_PERIPHERAL_ENABLE_RX. */
+
+/* Bit 0 :   */
+#define I2S_DMA_ENABLE_RX_ENABLE_Pos (0UL) /*!< Position of ENABLE field. */
+#define I2S_DMA_ENABLE_RX_ENABLE_Msk (0x1UL << I2S_DMA_ENABLE_RX_ENABLE_Pos) /*!< Bit mask of ENABLE field. */
+#define I2S_DMA_ENABLE_RX_ENABLE_Disabled (0UL) /*!< Disable */
+#define I2S_DMA_ENABLE_RX_ENABLE_Enabled (1UL) /*!< Enable */
+
+/* Register: I2S_DMA_ENABLE_TX */
+/* Description: Equivalent to ID_DMA_CHANNEL_PERIPHERAL_ENABLE_TX. */
+
+/* Bit 0 :   */
+#define I2S_DMA_ENABLE_TX_ENABLE_Pos (0UL) /*!< Position of ENABLE field. */
+#define I2S_DMA_ENABLE_TX_ENABLE_Msk (0x1UL << I2S_DMA_ENABLE_TX_ENABLE_Pos) /*!< Bit mask of ENABLE field. */
+#define I2S_DMA_ENABLE_TX_ENABLE_Disabled (0UL) /*!< Disable */
+#define I2S_DMA_ENABLE_TX_ENABLE_Enabled (1UL) /*!< Enable */
 
 
 /* Peripheral: IPC */
@@ -2614,6 +6272,218 @@ POSSIBILITY OF SUCH DAMAGE.
 #define KMU_SELECTKEYSLOT_ID_Msk (0xFFUL << KMU_SELECTKEYSLOT_ID_Pos) /*!< Bit mask of ID field. */
 
 
+/* Peripheral: MAGPIO */
+/* Description: MAGPIO Port */
+
+/* Register: MAGPIO_OUT */
+/* Description: Write MAGPIO port */
+
+/* Bit 2 : Pin 2 */
+#define MAGPIO_OUT_PIN2_Pos (2UL) /*!< Position of PIN2 field. */
+#define MAGPIO_OUT_PIN2_Msk (0x1UL << MAGPIO_OUT_PIN2_Pos) /*!< Bit mask of PIN2 field. */
+#define MAGPIO_OUT_PIN2_Low (0UL) /*!< Pin driver is low */
+#define MAGPIO_OUT_PIN2_High (1UL) /*!< Pin driver is high */
+
+/* Bit 1 : Pin 1 */
+#define MAGPIO_OUT_PIN1_Pos (1UL) /*!< Position of PIN1 field. */
+#define MAGPIO_OUT_PIN1_Msk (0x1UL << MAGPIO_OUT_PIN1_Pos) /*!< Bit mask of PIN1 field. */
+#define MAGPIO_OUT_PIN1_Low (0UL) /*!< Pin driver is low */
+#define MAGPIO_OUT_PIN1_High (1UL) /*!< Pin driver is high */
+
+/* Bit 0 : Pin 0 */
+#define MAGPIO_OUT_PIN0_Pos (0UL) /*!< Position of PIN0 field. */
+#define MAGPIO_OUT_PIN0_Msk (0x1UL << MAGPIO_OUT_PIN0_Pos) /*!< Bit mask of PIN0 field. */
+#define MAGPIO_OUT_PIN0_Low (0UL) /*!< Pin driver is low */
+#define MAGPIO_OUT_PIN0_High (1UL) /*!< Pin driver is high */
+
+/* Register: MAGPIO_OUTSET */
+/* Description: Set individual bits in GPIO port */
+
+/* Bit 2 : Pin 2 */
+#define MAGPIO_OUTSET_PIN2_Pos (2UL) /*!< Position of PIN2 field. */
+#define MAGPIO_OUTSET_PIN2_Msk (0x1UL << MAGPIO_OUTSET_PIN2_Pos) /*!< Bit mask of PIN2 field. */
+#define MAGPIO_OUTSET_PIN2_Low (0UL) /*!< Read: pin driver is low */
+#define MAGPIO_OUTSET_PIN2_High (1UL) /*!< Read: pin driver is high */
+#define MAGPIO_OUTSET_PIN2_Set (1UL) /*!< Write: writing a '1' sets the pin high; writing a '0' has no effect */
+
+/* Bit 1 : Pin 1 */
+#define MAGPIO_OUTSET_PIN1_Pos (1UL) /*!< Position of PIN1 field. */
+#define MAGPIO_OUTSET_PIN1_Msk (0x1UL << MAGPIO_OUTSET_PIN1_Pos) /*!< Bit mask of PIN1 field. */
+#define MAGPIO_OUTSET_PIN1_Low (0UL) /*!< Read: pin driver is low */
+#define MAGPIO_OUTSET_PIN1_High (1UL) /*!< Read: pin driver is high */
+#define MAGPIO_OUTSET_PIN1_Set (1UL) /*!< Write: writing a '1' sets the pin high; writing a '0' has no effect */
+
+/* Bit 0 : Pin 0 */
+#define MAGPIO_OUTSET_PIN0_Pos (0UL) /*!< Position of PIN0 field. */
+#define MAGPIO_OUTSET_PIN0_Msk (0x1UL << MAGPIO_OUTSET_PIN0_Pos) /*!< Bit mask of PIN0 field. */
+#define MAGPIO_OUTSET_PIN0_Low (0UL) /*!< Read: pin driver is low */
+#define MAGPIO_OUTSET_PIN0_High (1UL) /*!< Read: pin driver is high */
+#define MAGPIO_OUTSET_PIN0_Set (1UL) /*!< Write: writing a '1' sets the pin high; writing a '0' has no effect */
+
+/* Register: MAGPIO_OUTCLR */
+/* Description: Clear individual bits in GPIO port */
+
+/* Bit 2 : Pin 2 */
+#define MAGPIO_OUTCLR_PIN2_Pos (2UL) /*!< Position of PIN2 field. */
+#define MAGPIO_OUTCLR_PIN2_Msk (0x1UL << MAGPIO_OUTCLR_PIN2_Pos) /*!< Bit mask of PIN2 field. */
+#define MAGPIO_OUTCLR_PIN2_Low (0UL) /*!< Read: pin driver is low */
+#define MAGPIO_OUTCLR_PIN2_High (1UL) /*!< Read: pin driver is high */
+#define MAGPIO_OUTCLR_PIN2_Clear (1UL) /*!< Write: writing a '1' sets the pin low; writing a '0' has no effect */
+
+/* Bit 1 : Pin 1 */
+#define MAGPIO_OUTCLR_PIN1_Pos (1UL) /*!< Position of PIN1 field. */
+#define MAGPIO_OUTCLR_PIN1_Msk (0x1UL << MAGPIO_OUTCLR_PIN1_Pos) /*!< Bit mask of PIN1 field. */
+#define MAGPIO_OUTCLR_PIN1_Low (0UL) /*!< Read: pin driver is low */
+#define MAGPIO_OUTCLR_PIN1_High (1UL) /*!< Read: pin driver is high */
+#define MAGPIO_OUTCLR_PIN1_Clear (1UL) /*!< Write: writing a '1' sets the pin low; writing a '0' has no effect */
+
+/* Bit 0 : Pin 0 */
+#define MAGPIO_OUTCLR_PIN0_Pos (0UL) /*!< Position of PIN0 field. */
+#define MAGPIO_OUTCLR_PIN0_Msk (0x1UL << MAGPIO_OUTCLR_PIN0_Pos) /*!< Bit mask of PIN0 field. */
+#define MAGPIO_OUTCLR_PIN0_Low (0UL) /*!< Read: pin driver is low */
+#define MAGPIO_OUTCLR_PIN0_High (1UL) /*!< Read: pin driver is high */
+#define MAGPIO_OUTCLR_PIN0_Clear (1UL) /*!< Write: writing a '1' sets the pin low; writing a '0' has no effect */
+
+/* Register: MAGPIO_IN */
+/* Description: Read GPIO port */
+
+/* Bit 2 : Pin 2 */
+#define MAGPIO_IN_PIN2_Pos (2UL) /*!< Position of PIN2 field. */
+#define MAGPIO_IN_PIN2_Msk (0x1UL << MAGPIO_IN_PIN2_Pos) /*!< Bit mask of PIN2 field. */
+#define MAGPIO_IN_PIN2_Low (0UL) /*!< Pin input is low */
+#define MAGPIO_IN_PIN2_High (1UL) /*!< Pin input is high */
+
+/* Bit 1 : Pin 1 */
+#define MAGPIO_IN_PIN1_Pos (1UL) /*!< Position of PIN1 field. */
+#define MAGPIO_IN_PIN1_Msk (0x1UL << MAGPIO_IN_PIN1_Pos) /*!< Bit mask of PIN1 field. */
+#define MAGPIO_IN_PIN1_Low (0UL) /*!< Pin input is low */
+#define MAGPIO_IN_PIN1_High (1UL) /*!< Pin input is high */
+
+/* Bit 0 : Pin 0 */
+#define MAGPIO_IN_PIN0_Pos (0UL) /*!< Position of PIN0 field. */
+#define MAGPIO_IN_PIN0_Msk (0x1UL << MAGPIO_IN_PIN0_Pos) /*!< Bit mask of PIN0 field. */
+#define MAGPIO_IN_PIN0_Low (0UL) /*!< Pin input is low */
+#define MAGPIO_IN_PIN0_High (1UL) /*!< Pin input is high */
+
+/* Register: MAGPIO_DIR */
+/* Description: Direction of GPIO pins */
+
+/* Bit 2 : Pin 2 */
+#define MAGPIO_DIR_PIN2_Pos (2UL) /*!< Position of PIN2 field. */
+#define MAGPIO_DIR_PIN2_Msk (0x1UL << MAGPIO_DIR_PIN2_Pos) /*!< Bit mask of PIN2 field. */
+#define MAGPIO_DIR_PIN2_Input (0UL) /*!< Pin set as input */
+#define MAGPIO_DIR_PIN2_Output (1UL) /*!< Pin set as output */
+
+/* Bit 1 : Pin 1 */
+#define MAGPIO_DIR_PIN1_Pos (1UL) /*!< Position of PIN1 field. */
+#define MAGPIO_DIR_PIN1_Msk (0x1UL << MAGPIO_DIR_PIN1_Pos) /*!< Bit mask of PIN1 field. */
+#define MAGPIO_DIR_PIN1_Input (0UL) /*!< Pin set as input */
+#define MAGPIO_DIR_PIN1_Output (1UL) /*!< Pin set as output */
+
+/* Bit 0 : Pin 0 */
+#define MAGPIO_DIR_PIN0_Pos (0UL) /*!< Position of PIN0 field. */
+#define MAGPIO_DIR_PIN0_Msk (0x1UL << MAGPIO_DIR_PIN0_Pos) /*!< Bit mask of PIN0 field. */
+#define MAGPIO_DIR_PIN0_Input (0UL) /*!< Pin set as input */
+#define MAGPIO_DIR_PIN0_Output (1UL) /*!< Pin set as output */
+
+/* Register: MAGPIO_DIRSET */
+/* Description: DIR set register */
+
+/* Bit 2 : Set as output pin 2 */
+#define MAGPIO_DIRSET_PIN2_Pos (2UL) /*!< Position of PIN2 field. */
+#define MAGPIO_DIRSET_PIN2_Msk (0x1UL << MAGPIO_DIRSET_PIN2_Pos) /*!< Bit mask of PIN2 field. */
+#define MAGPIO_DIRSET_PIN2_Input (0UL) /*!< Read: pin set as input */
+#define MAGPIO_DIRSET_PIN2_Output (1UL) /*!< Read: pin set as output */
+#define MAGPIO_DIRSET_PIN2_Set (1UL) /*!< Write: writing a '1' sets pin to output; writing a '0' has no effect */
+
+/* Bit 1 : Set as output pin 1 */
+#define MAGPIO_DIRSET_PIN1_Pos (1UL) /*!< Position of PIN1 field. */
+#define MAGPIO_DIRSET_PIN1_Msk (0x1UL << MAGPIO_DIRSET_PIN1_Pos) /*!< Bit mask of PIN1 field. */
+#define MAGPIO_DIRSET_PIN1_Input (0UL) /*!< Read: pin set as input */
+#define MAGPIO_DIRSET_PIN1_Output (1UL) /*!< Read: pin set as output */
+#define MAGPIO_DIRSET_PIN1_Set (1UL) /*!< Write: writing a '1' sets pin to output; writing a '0' has no effect */
+
+/* Bit 0 : Set as output pin 0 */
+#define MAGPIO_DIRSET_PIN0_Pos (0UL) /*!< Position of PIN0 field. */
+#define MAGPIO_DIRSET_PIN0_Msk (0x1UL << MAGPIO_DIRSET_PIN0_Pos) /*!< Bit mask of PIN0 field. */
+#define MAGPIO_DIRSET_PIN0_Input (0UL) /*!< Read: pin set as input */
+#define MAGPIO_DIRSET_PIN0_Output (1UL) /*!< Read: pin set as output */
+#define MAGPIO_DIRSET_PIN0_Set (1UL) /*!< Write: writing a '1' sets pin to output; writing a '0' has no effect */
+
+/* Register: MAGPIO_DIRCLR */
+/* Description: DIR clear register */
+
+/* Bit 2 : Set as input pin 2 */
+#define MAGPIO_DIRCLR_PIN2_Pos (2UL) /*!< Position of PIN2 field. */
+#define MAGPIO_DIRCLR_PIN2_Msk (0x1UL << MAGPIO_DIRCLR_PIN2_Pos) /*!< Bit mask of PIN2 field. */
+#define MAGPIO_DIRCLR_PIN2_Input (0UL) /*!< Read: pin set as input */
+#define MAGPIO_DIRCLR_PIN2_Output (1UL) /*!< Read: pin set as output */
+#define MAGPIO_DIRCLR_PIN2_Clear (1UL) /*!< Write: writing a '1' sets pin to input; writing a '0' has no effect */
+
+/* Bit 1 : Set as input pin 1 */
+#define MAGPIO_DIRCLR_PIN1_Pos (1UL) /*!< Position of PIN1 field. */
+#define MAGPIO_DIRCLR_PIN1_Msk (0x1UL << MAGPIO_DIRCLR_PIN1_Pos) /*!< Bit mask of PIN1 field. */
+#define MAGPIO_DIRCLR_PIN1_Input (0UL) /*!< Read: pin set as input */
+#define MAGPIO_DIRCLR_PIN1_Output (1UL) /*!< Read: pin set as output */
+#define MAGPIO_DIRCLR_PIN1_Clear (1UL) /*!< Write: writing a '1' sets pin to input; writing a '0' has no effect */
+
+/* Bit 0 : Set as input pin 0 */
+#define MAGPIO_DIRCLR_PIN0_Pos (0UL) /*!< Position of PIN0 field. */
+#define MAGPIO_DIRCLR_PIN0_Msk (0x1UL << MAGPIO_DIRCLR_PIN0_Pos) /*!< Bit mask of PIN0 field. */
+#define MAGPIO_DIRCLR_PIN0_Input (0UL) /*!< Read: pin set as input */
+#define MAGPIO_DIRCLR_PIN0_Output (1UL) /*!< Read: pin set as output */
+#define MAGPIO_DIRCLR_PIN0_Clear (1UL) /*!< Write: writing a '1' sets pin to input; writing a '0' has no effect */
+
+/* Register: MAGPIO_PIN_OUT */
+/* Description: Description cluster: Pin n direct access output register */
+
+/* Bit 0 : Direct access */
+#define MAGPIO_PIN_OUT_OUT_Pos (0UL) /*!< Position of OUT field. */
+#define MAGPIO_PIN_OUT_OUT_Msk (0x1UL << MAGPIO_PIN_OUT_OUT_Pos) /*!< Bit mask of OUT field. */
+
+/* Register: MAGPIO_PIN_IN */
+/* Description: Description cluster: Pin n direct access input register */
+
+/* Bit 0 : Direct access */
+#define MAGPIO_PIN_IN_IN_Pos (0UL) /*!< Position of IN field. */
+#define MAGPIO_PIN_IN_IN_Msk (0x1UL << MAGPIO_PIN_IN_IN_Pos) /*!< Bit mask of IN field. */
+
+/* Register: MAGPIO_PIN_CNF */
+/* Description: Description collection: Configuration of GPIO pins */
+
+/* Bits 3..2 : Pull configuration */
+#define MAGPIO_PIN_CNF_PULL_Pos (2UL) /*!< Position of PULL field. */
+#define MAGPIO_PIN_CNF_PULL_Msk (0x3UL << MAGPIO_PIN_CNF_PULL_Pos) /*!< Bit mask of PULL field. */
+#define MAGPIO_PIN_CNF_PULL_Disabled (0UL) /*!< No pull */
+#define MAGPIO_PIN_CNF_PULL_Pulldown (1UL) /*!< Pull down on pin */
+#define MAGPIO_PIN_CNF_PULL_Pullup (3UL) /*!< Pull up on pin */
+
+/* Bit 1 : Connect or disconnect input buffer */
+#define MAGPIO_PIN_CNF_INPUT_Pos (1UL) /*!< Position of INPUT field. */
+#define MAGPIO_PIN_CNF_INPUT_Msk (0x1UL << MAGPIO_PIN_CNF_INPUT_Pos) /*!< Bit mask of INPUT field. */
+#define MAGPIO_PIN_CNF_INPUT_Connect (0UL) /*!< Connect input buffer */
+#define MAGPIO_PIN_CNF_INPUT_Disconnect (1UL) /*!< Disconnect input buffer */
+
+/* Bit 0 : Pin direction. Same physical register as DIR register */
+#define MAGPIO_PIN_CNF_DIR_Pos (0UL) /*!< Position of DIR field. */
+#define MAGPIO_PIN_CNF_DIR_Msk (0x1UL << MAGPIO_PIN_CNF_DIR_Pos) /*!< Bit mask of DIR field. */
+#define MAGPIO_PIN_CNF_DIR_Input (0UL) /*!< Configure pin as an input pin */
+#define MAGPIO_PIN_CNF_DIR_Output (1UL) /*!< Configure pin as an output pin */
+
+
+/* Peripheral: MUTEX */
+/* Description: MUTEX */
+
+/* Register: MUTEX_MUTEX_GPMUTEX */
+/* Description: Description cluster: General purpose mutex register */
+
+/* Bit 0 : General Purpose register for MUTEX n */
+#define MUTEX_MUTEX_GPMUTEX_GPMUTEX_Pos (0UL) /*!< Position of GPMUTEX field. */
+#define MUTEX_MUTEX_GPMUTEX_GPMUTEX_Msk (0x1UL << MUTEX_MUTEX_GPMUTEX_GPMUTEX_Pos) /*!< Bit mask of GPMUTEX field. */
+#define MUTEX_MUTEX_GPMUTEX_GPMUTEX_Unlocked (0UL) /*!< Mutex n is in unlocked state */
+#define MUTEX_MUTEX_GPMUTEX_GPMUTEX_Locked (1UL) /*!< Mutex n is in locked state */
+
+
 /* Peripheral: NVMC */
 /* Description: Non-volatile memory controller 0 */
 
@@ -2661,6 +6531,17 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 6..0 : Duration of the partial erase in milliseconds */
 #define NVMC_ERASEPAGEPARTIALCFG_DURATION_Pos (0UL) /*!< Position of DURATION field. */
 #define NVMC_ERASEPAGEPARTIALCFG_DURATION_Msk (0x7FUL << NVMC_ERASEPAGEPARTIALCFG_DURATION_Pos) /*!< Bit mask of DURATION field. */
+
+/* Register: NVMC_WAITSTATENUM */
+/* Description: Register to set the number of wait-state for flash access. To update the WAITSTATENUM field, the ACCESSCODE must be correct. */
+
+/* Bits 31..16 : Access code for modifying this register */
+#define NVMC_WAITSTATENUM_ACCESSCODE_Pos (16UL) /*!< Position of ACCESSCODE field. */
+#define NVMC_WAITSTATENUM_ACCESSCODE_Msk (0xFFFFUL << NVMC_WAITSTATENUM_ACCESSCODE_Pos) /*!< Bit mask of ACCESSCODE field. */
+
+/* Bits 3..0 : Flash wait-states */
+#define NVMC_WAITSTATENUM_WAITSTATENUM_Pos (0UL) /*!< Position of WAITSTATENUM field. */
+#define NVMC_WAITSTATENUM_WAITSTATENUM_Msk (0xFUL << NVMC_WAITSTATENUM_WAITSTATENUM_Pos) /*!< Bit mask of WAITSTATENUM field. */
 
 /* Register: NVMC_ICACHECNF */
 /* Description: I-code cache configuration register */
@@ -2713,6 +6594,523 @@ POSSIBILITY OF SUCH DAMAGE.
 #define NVMC_WRITEUICRNS_SET_Pos (0UL) /*!< Position of SET field. */
 #define NVMC_WRITEUICRNS_SET_Msk (0x1UL << NVMC_WRITEUICRNS_SET_Pos) /*!< Bit mask of SET field. */
 #define NVMC_WRITEUICRNS_SET_Set (1UL) /*!< Set value */
+
+/* Register: NVMC_TESTMODE */
+/* Description: Register for entering test mode. Refer to the flash IP test documentation for more details. */
+
+/* Bits 15..0 : Register for entering test mode. Refer to the flash IP test documentation for more details. This register does not return the same value as written. */
+#define NVMC_TESTMODE_TESTMODE_Pos (0UL) /*!< Position of TESTMODE field. */
+#define NVMC_TESTMODE_TESTMODE_Msk (0xFFFFUL << NVMC_TESTMODE_TESTMODE_Pos) /*!< Bit mask of TESTMODE field. */
+#define NVMC_TESTMODE_TESTMODE_NORMAL (0UL) /*!< Read: Not in test mode */
+#define NVMC_TESTMODE_TESTMODE_TESTMODE1 (1UL) /*!< Read: In test mode 1 */
+#define NVMC_TESTMODE_TESTMODE_TESTMODE2 (2UL) /*!< Read: In test mode 2 */
+#define NVMC_TESTMODE_TESTMODE_TESTMODE3 (4UL) /*!< Read: In test mode 3 */
+#define NVMC_TESTMODE_TESTMODE_SetNORMAL (0UL) /*!< Write: Sets normal mode */
+#define NVMC_TESTMODE_TESTMODE_SetTESTMODE2 (0xABCDUL) /*!< Write: Sets test mode 2 */
+#define NVMC_TESTMODE_TESTMODE_SetTESTMODE1 (0xBCDEUL) /*!< Write: Sets test mode 1 */
+#define NVMC_TESTMODE_TESTMODE_SetTESTMODE3 (0xCDEFUL) /*!< Write: Sets test mode 3 */
+
+/* Register: NVMC_LVEN */
+/* Description: Low voltage mode */
+
+/* Bits 31..0 :   */
+#define NVMC_LVEN_LVEN_Pos (0UL) /*!< Position of LVEN field. */
+#define NVMC_LVEN_LVEN_Msk (0xFFFFFFFFUL << NVMC_LVEN_LVEN_Pos) /*!< Bit mask of LVEN field. */
+#define NVMC_LVEN_LVEN_Auto (0UL) /*!< Automatic mode */
+#define NVMC_LVEN_LVEN_Enable (0x6005EA5EUL) /*!< Enable low voltage mode */
+
+/* Register: NVMC_TESTMASSERASE */
+/* Description: Self-timed mass-erase operation */
+
+/* Bits 1..0 : Self-timed mass-erase operation */
+#define NVMC_TESTMASSERASE_TESTMASSERASE_Pos (0UL) /*!< Position of TESTMASSERASE field. */
+#define NVMC_TESTMASSERASE_TESTMASSERASE_Msk (0x3UL << NVMC_TESTMASSERASE_TESTMASSERASE_Pos) /*!< Bit mask of TESTMASSERASE field. */
+#define NVMC_TESTMASSERASE_TESTMASSERASE_NOOPERATION0 (0UL) /*!< No operation */
+#define NVMC_TESTMASSERASE_TESTMASSERASE_NOOPERATION1 (1UL) /*!< No operation */
+#define NVMC_TESTMASSERASE_TESTMASSERASE_MAIN (2UL) /*!< Erase only the main block */
+#define NVMC_TESTMASSERASE_TESTMASSERASE_EVERYTHING (3UL) /*!< Erase everything (all information pages and main block) */
+
+/* Register: NVMC_TESTTC */
+/* Description: Observe the TC output from the flash macro */
+
+/* Bits 12..0 : TC output */
+#define NVMC_TESTTC_TC_Pos (0UL) /*!< Position of TC field. */
+#define NVMC_TESTTC_TC_Msk (0x1FFFUL << NVMC_TESTTC_TC_Pos) /*!< Bit mask of TC field. */
+
+/* Register: NVMC_TESTDATA128 */
+/* Description: Description collection: Direct flash test data word n */
+
+/* Bits 31..0 : Returns data out from flash when reading. Sets flash data in when writing. */
+#define NVMC_TESTDATA128_TESTDATA_Pos (0UL) /*!< Position of TESTDATA field. */
+#define NVMC_TESTDATA128_TESTDATA_Msk (0xFFFFFFFFUL << NVMC_TESTDATA128_TESTDATA_Pos) /*!< Bit mask of TESTDATA field. */
+
+/* Register: NVMC_TESTDATA128INC */
+/* Description: Description collection: Direct flash test data word n. Post-increments TESTCONTROLADDR. */
+
+/* Bits 31..0 : Returns data out from flash when reading. Use TESTDATA128[3:0] registers to set the compared data. Post-increments TESTCONTROLADDR. If TESTCONTROLLINES.SE is high, the read starts by pulsing the SE line low for Tnws. If TESTCONTROLLINES.SE is low, SE remains low for the whole access. */
+#define NVMC_TESTDATA128INC_TESTDATA_Pos (0UL) /*!< Position of TESTDATA field. */
+#define NVMC_TESTDATA128INC_TESTDATA_Msk (0xFFFFFFFFUL << NVMC_TESTDATA128INC_TESTDATA_Pos) /*!< Bit mask of TESTDATA field. */
+
+/* Register: NVMC_TESTCMPINC */
+/* Description: Reads and compares last flash row to TESTDATA128 content. Post-increments TESTCONTROLADDR. */
+
+/* Bit 1 : Reads and compares last flash row (latched lines) to TESTDATA128 content. Post-increments TESTCONTROLADDR. If TESTCONTROLLINES.SE is high, the read starts by pulsing the SE line low for Tnws. If TESTCONTROLLINES.SE is low, SE remains low for the whole access. */
+#define NVMC_TESTCMPINC_LATCHED_Pos (1UL) /*!< Position of LATCHED field. */
+#define NVMC_TESTCMPINC_LATCHED_Msk (0x1UL << NVMC_TESTCMPINC_LATCHED_Pos) /*!< Bit mask of LATCHED field. */
+#define NVMC_TESTCMPINC_LATCHED_Equal (0UL) /*!< Latched TESTDATA128 content and flash row read are equal */
+#define NVMC_TESTCMPINC_LATCHED_NotEqual (1UL) /*!< Latched TESTDATA128 content and flash row read are different */
+
+/* Bit 0 : Reads and compares last flash row (direct lines) to TESTDATA128 content. Post-increments TESTCONTROLADDR. If TESTCONTROLLINES.SE is high, the read starts by pulsing the SE line low for Tnws. If TESTCONTROLLINES.SE is low, SE remains low for the whole access. */
+#define NVMC_TESTCMPINC_DIRECT_Pos (0UL) /*!< Position of DIRECT field. */
+#define NVMC_TESTCMPINC_DIRECT_Msk (0x1UL << NVMC_TESTCMPINC_DIRECT_Pos) /*!< Bit mask of DIRECT field. */
+#define NVMC_TESTCMPINC_DIRECT_Equal (0UL) /*!< Direct TESTDATA128 content and flash row read are equal */
+#define NVMC_TESTCMPINC_DIRECT_NotEqual (1UL) /*!< Direct TESTDATA128 content and flash row read are different */
+
+/* Register: NVMC_TESTNCMPINC */
+/* Description: Reads and compares last flash row to complement of TESTDATA128 content. Post-increments TESTCONTROLADDR. */
+
+/* Bit 1 : Reads and compares last flash row (latched lines) to the complement of TESTDATA128 content (all bits inverted). Post-increments TESTCONTROLADDR. If TESTCONTROLLINES.SE is high, the read starts by pulsing the SE line low for Tnws. If TESTCONTROLLINES.SE is low, SE remains low for the whole access. */
+#define NVMC_TESTNCMPINC_LATCHED_Pos (1UL) /*!< Position of LATCHED field. */
+#define NVMC_TESTNCMPINC_LATCHED_Msk (0x1UL << NVMC_TESTNCMPINC_LATCHED_Pos) /*!< Bit mask of LATCHED field. */
+#define NVMC_TESTNCMPINC_LATCHED_Complement (0UL) /*!< Latched TESTDATA128 content and flash row read are each other's complements */
+#define NVMC_TESTNCMPINC_LATCHED_NotComplement (1UL) /*!< Latched TESTDATA128 content and flash row read are not each other's complements */
+
+/* Bit 0 : Reads and compares last flash row (direct lines) to the complement of TESTDATA128 content (all bits inverted). Post-increments TESTCONTROLADDR. If TESTCONTROLLINES.SE is high, the read starts by pulsing the SE line low for Tnws. If TESTCONTROLLINES.SE is low, SE remains low for the whole access. */
+#define NVMC_TESTNCMPINC_DIRECT_Pos (0UL) /*!< Position of DIRECT field. */
+#define NVMC_TESTNCMPINC_DIRECT_Msk (0x1UL << NVMC_TESTNCMPINC_DIRECT_Pos) /*!< Bit mask of DIRECT field. */
+#define NVMC_TESTNCMPINC_DIRECT_Complement (0UL) /*!< Direct TESTDATA128 content and flash row read are each other's complements */
+#define NVMC_TESTNCMPINC_DIRECT_NotComplement (1UL) /*!< Direct TESTDATA128 content and flash row read are not each other's complements */
+
+/* Register: NVMC_TESTCONTROLLINES */
+/* Description: Direct flash test, control lines. Refer to the flash IP test documentation for more details. */
+
+/* Bit 31 : Control the TMR signal */
+#define NVMC_TESTCONTROLLINES_TMR_Pos (31UL) /*!< Position of TMR field. */
+#define NVMC_TESTCONTROLLINES_TMR_Msk (0x1UL << NVMC_TESTCONTROLLINES_TMR_Pos) /*!< Bit mask of TMR field. */
+
+/* Bit 30 : Control the NVSTR signal */
+#define NVMC_TESTCONTROLLINES_NVSTR_Pos (30UL) /*!< Position of NVSTR field. */
+#define NVMC_TESTCONTROLLINES_NVSTR_Msk (0x1UL << NVMC_TESTCONTROLLINES_NVSTR_Pos) /*!< Bit mask of NVSTR field. */
+
+/* Bit 29 : Control the PROG signal */
+#define NVMC_TESTCONTROLLINES_PROG_Pos (29UL) /*!< Position of PROG field. */
+#define NVMC_TESTCONTROLLINES_PROG_Msk (0x1UL << NVMC_TESTCONTROLLINES_PROG_Pos) /*!< Bit mask of PROG field. */
+
+/* Bit 28 : Control the MAS1 signal */
+#define NVMC_TESTCONTROLLINES_MAS1_Pos (28UL) /*!< Position of MAS1 field. */
+#define NVMC_TESTCONTROLLINES_MAS1_Msk (0x1UL << NVMC_TESTCONTROLLINES_MAS1_Pos) /*!< Bit mask of MAS1 field. */
+
+/* Bit 27 : Control the ERASE signal */
+#define NVMC_TESTCONTROLLINES_ERASE_Pos (27UL) /*!< Position of ERASE field. */
+#define NVMC_TESTCONTROLLINES_ERASE_Msk (0x1UL << NVMC_TESTCONTROLLINES_ERASE_Pos) /*!< Bit mask of ERASE field. */
+
+/* Bit 26 : Control the IFREN signal */
+#define NVMC_TESTCONTROLLINES_IFREN_Pos (26UL) /*!< Position of IFREN field. */
+#define NVMC_TESTCONTROLLINES_IFREN_Msk (0x1UL << NVMC_TESTCONTROLLINES_IFREN_Pos) /*!< Bit mask of IFREN field. */
+
+/* Bit 25 : Control the SE signal. This signal is delayed by hardware by Tas, so that it can be written simultaneously to XE and YE. */
+#define NVMC_TESTCONTROLLINES_SE_Pos (25UL) /*!< Position of SE field. */
+#define NVMC_TESTCONTROLLINES_SE_Msk (0x1UL << NVMC_TESTCONTROLLINES_SE_Pos) /*!< Bit mask of SE field. */
+
+/* Bit 24 : Control the YE signal */
+#define NVMC_TESTCONTROLLINES_YE_Pos (24UL) /*!< Position of YE field. */
+#define NVMC_TESTCONTROLLINES_YE_Msk (0x1UL << NVMC_TESTCONTROLLINES_YE_Pos) /*!< Bit mask of YE field. */
+
+/* Bit 23 : Control the XE signal */
+#define NVMC_TESTCONTROLLINES_XE_Pos (23UL) /*!< Position of XE field. */
+#define NVMC_TESTCONTROLLINES_XE_Msk (0x1UL << NVMC_TESTCONTROLLINES_XE_Pos) /*!< Bit mask of XE field. */
+
+/* Bit 22 : Control the PV signal */
+#define NVMC_TESTCONTROLLINES_PV_Pos (22UL) /*!< Position of PV field. */
+#define NVMC_TESTCONTROLLINES_PV_Msk (0x1UL << NVMC_TESTCONTROLLINES_PV_Pos) /*!< Bit mask of PV field. */
+
+/* Bit 21 : Control the EV signal */
+#define NVMC_TESTCONTROLLINES_EV_Pos (21UL) /*!< Position of EV field. */
+#define NVMC_TESTCONTROLLINES_EV_Msk (0x1UL << NVMC_TESTCONTROLLINES_EV_Pos) /*!< Bit mask of EV field. */
+
+/* Bit 20 : Control the IFREN1 signal */
+#define NVMC_TESTCONTROLLINES_IFREN1_Pos (20UL) /*!< Position of IFREN1 field. */
+#define NVMC_TESTCONTROLLINES_IFREN1_Msk (0x1UL << NVMC_TESTCONTROLLINES_IFREN1_Pos) /*!< Bit mask of IFREN1 field. */
+
+/* Bits 19..18 : Control the REDEN signal */
+#define NVMC_TESTCONTROLLINES_REDEN_Pos (18UL) /*!< Position of REDEN field. */
+#define NVMC_TESTCONTROLLINES_REDEN_Msk (0x3UL << NVMC_TESTCONTROLLINES_REDEN_Pos) /*!< Bit mask of REDEN field. */
+
+/* Bit 17 : Control the PDM25 signal */
+#define NVMC_TESTCONTROLLINES_PDM25_Pos (17UL) /*!< Position of PDM25 field. */
+#define NVMC_TESTCONTROLLINES_PDM25_Msk (0x1UL << NVMC_TESTCONTROLLINES_PDM25_Pos) /*!< Bit mask of PDM25 field. */
+
+/* Register: NVMC_TESTCONTROLADDR */
+/* Description: Direct flash test control, address lines */
+
+/* Bits 15..5 : Control the XADDR signal */
+#define NVMC_TESTCONTROLADDR_XADDR_Pos (5UL) /*!< Position of XADDR field. */
+#define NVMC_TESTCONTROLADDR_XADDR_Msk (0x7FFUL << NVMC_TESTCONTROLADDR_XADDR_Pos) /*!< Bit mask of XADDR field. */
+
+/* Bits 4..0 : Control the YADDR signal */
+#define NVMC_TESTCONTROLADDR_YADDR_Pos (0UL) /*!< Position of YADDR field. */
+#define NVMC_TESTCONTROLADDR_YADDR_Msk (0x1FUL << NVMC_TESTCONTROLADDR_YADDR_Pos) /*!< Bit mask of YADDR field. */
+
+/* Register: NVMC_TESTCOUNTERRELOAD */
+/* Description: Counter reload value, used when counting from SE or YE rising edge to latching of data */
+
+/* Bits 11..0 : Counter reload value, in MCU bus cycles, used when counting from SE or YE rising edge to latching of data. Value of 0 has no effect (counter will not latch). */
+#define NVMC_TESTCOUNTERRELOAD_RELOAD_Pos (0UL) /*!< Position of RELOAD field. */
+#define NVMC_TESTCOUNTERRELOAD_RELOAD_Msk (0xFFFUL << NVMC_TESTCOUNTERRELOAD_RELOAD_Pos) /*!< Bit mask of RELOAD field. */
+
+/* Register: NVMC_TESTCOUNTERRUNNING */
+/* Description: Returns the state (counting or not) of the counter */
+
+/* Bit 0 : Returns the state of the counter */
+#define NVMC_TESTCOUNTERRUNNING_RUNNING_Pos (0UL) /*!< Position of RUNNING field. */
+#define NVMC_TESTCOUNTERRUNNING_RUNNING_Msk (0x1UL << NVMC_TESTCOUNTERRUNNING_RUNNING_Pos) /*!< Bit mask of RUNNING field. */
+#define NVMC_TESTCOUNTERRUNNING_RUNNING_NotRunning (0UL) /*!< Counter is not running */
+#define NVMC_TESTCOUNTERRUNNING_RUNNING_Running (1UL) /*!< Counter is running */
+
+/* Register: NVMC_TESTCONFIG */
+/* Description: Mode of operation of the counter */
+
+/* Bit 3 : Disables the automatic increment or decrement of the address */
+#define NVMC_TESTCONFIG_AUTOINCEN_Pos (3UL) /*!< Position of AUTOINCEN field. */
+#define NVMC_TESTCONFIG_AUTOINCEN_Msk (0x1UL << NVMC_TESTCONFIG_AUTOINCEN_Pos) /*!< Bit mask of AUTOINCEN field. */
+#define NVMC_TESTCONFIG_AUTOINCEN_Enable (0UL) /*!< Automatic increment/decrement of the address is enabled */
+#define NVMC_TESTCONFIG_AUTOINCEN_Disable (1UL) /*!< Automatic increment/decrement of the address is disabled */
+
+/* Bit 2 : Controls the automatic increment or decrement of the address */
+#define NVMC_TESTCONFIG_AUTOINC_Pos (2UL) /*!< Position of AUTOINC field. */
+#define NVMC_TESTCONFIG_AUTOINC_Msk (0x1UL << NVMC_TESTCONFIG_AUTOINC_Pos) /*!< Bit mask of AUTOINC field. */
+#define NVMC_TESTCONFIG_AUTOINC_Increment (0UL) /*!< Address is automatically incremented */
+#define NVMC_TESTCONFIG_AUTOINC_Decrement (1UL) /*!< Address is automatically decremented */
+
+/* Bit 1 : Defines the starting point of the counter */
+#define NVMC_TESTCONFIG_START_Pos (1UL) /*!< Position of START field. */
+#define NVMC_TESTCONFIG_START_Msk (0x1UL << NVMC_TESTCONFIG_START_Pos) /*!< Bit mask of START field. */
+#define NVMC_TESTCONFIG_START_SE (0UL) /*!< Counter starts on SE rising edge */
+#define NVMC_TESTCONFIG_START_YE (1UL) /*!< Counter starts on YE rising edge */
+
+/* Bit 0 : Returns the state of the counter */
+#define NVMC_TESTCONFIG_ENABLE_Pos (0UL) /*!< Position of ENABLE field. */
+#define NVMC_TESTCONFIG_ENABLE_Msk (0x1UL << NVMC_TESTCONFIG_ENABLE_Pos) /*!< Bit mask of ENABLE field. */
+#define NVMC_TESTCONFIG_ENABLE_Disabled (0UL) /*!< Counter is disabled */
+#define NVMC_TESTCONFIG_ENABLE_Enabled (1UL) /*!< Counter is enabled */
+
+/* Register: NVMC_TESTTMVPPANAEN */
+/* Description: Controls analog signals for flash measurements */
+
+/* Bit 4 : Enable the VPPDIV pad. Needs to be set when measuring VPPDIV on GPIO26 (P0.20), and when applying high-voltage on VPP pad. */
+#define NVMC_TESTTMVPPANAEN_VPPDIVEN_Pos (4UL) /*!< Position of VPPDIVEN field. */
+#define NVMC_TESTTMVPPANAEN_VPPDIVEN_Msk (0x1UL << NVMC_TESTTMVPPANAEN_VPPDIVEN_Pos) /*!< Bit mask of VPPDIVEN field. */
+#define NVMC_TESTTMVPPANAEN_VPPDIVEN_Disabled (0UL) /*!< VPPDIV pad disabled */
+#define NVMC_TESTTMVPPANAEN_VPPDIVEN_Enabled (1UL) /*!< VPPDIV pad enabled */
+
+/* Bits 3..0 : Analog enable for TM measurement. Needs to be set when measuring TM[3:0] pins. */
+#define NVMC_TESTTMVPPANAEN_TMANAEN_Pos (0UL) /*!< Position of TMANAEN field. */
+#define NVMC_TESTTMVPPANAEN_TMANAEN_Msk (0xFUL << NVMC_TESTTMVPPANAEN_TMANAEN_Pos) /*!< Bit mask of TMANAEN field. */
+#define NVMC_TESTTMVPPANAEN_TMANAEN_Disabled (0x0UL) /*!< All pads disabled */
+#define NVMC_TESTTMVPPANAEN_TMANAEN_Enabled (0xFUL) /*!< All pads enabled */
+
+/* Register: NVMC_FORCEONNVM */
+/* Description: Force on all NVM supplies. Also see the internal section in the NVMC chapter. */
+
+/* Bit 0 : Force on all NVM supplies. Also see the internal section in the NVMC chapter. */
+#define NVMC_FORCEONNVM_FORCEONNVM_Pos (0UL) /*!< Position of FORCEONNVM field. */
+#define NVMC_FORCEONNVM_FORCEONNVM_Msk (0x1UL << NVMC_FORCEONNVM_FORCEONNVM_Pos) /*!< Bit mask of FORCEONNVM field. */
+#define NVMC_FORCEONNVM_FORCEONNVM_DoNotForceOn (0UL) /*!< Do not force on NVM supply */
+#define NVMC_FORCEONNVM_FORCEONNVM_ForceOn (1UL) /*!< Force on NVM supply */
+
+/* Register: NVMC_FORCEOFFNVM */
+/* Description: Force off NVM supply. Also see the internal section in the NVMC chapter. */
+
+/* Bits 31..8 : KEY */
+#define NVMC_FORCEOFFNVM_KEY_Pos (8UL) /*!< Position of KEY field. */
+#define NVMC_FORCEOFFNVM_KEY_Msk (0xFFFFFFUL << NVMC_FORCEOFFNVM_KEY_Pos) /*!< Bit mask of KEY field. */
+#define NVMC_FORCEOFFNVM_KEY_EnableWrite (0xACCE55UL) /*!< Must be written in order to write to bits 0-7. Any other value will ignore writes to this register. Read as zero. */
+
+/* Bit 1 : Force off NVM supply 1. Also see the internal section in the NVMC chapter. */
+#define NVMC_FORCEOFFNVM_FORCEOFFNVM1_Pos (1UL) /*!< Position of FORCEOFFNVM1 field. */
+#define NVMC_FORCEOFFNVM_FORCEOFFNVM1_Msk (0x1UL << NVMC_FORCEOFFNVM_FORCEOFFNVM1_Pos) /*!< Bit mask of FORCEOFFNVM1 field. */
+#define NVMC_FORCEOFFNVM_FORCEOFFNVM1_DoNotForceOff (0UL) /*!< Do not force off supply */
+#define NVMC_FORCEOFFNVM_FORCEOFFNVM1_ForceOff (1UL) /*!< Force off supply */
+
+/* Bit 0 : Force off NVM supply 0. Also see the internal section in the NVMC chapter. */
+#define NVMC_FORCEOFFNVM_FORCEOFFNVM0_Pos (0UL) /*!< Position of FORCEOFFNVM0 field. */
+#define NVMC_FORCEOFFNVM_FORCEOFFNVM0_Msk (0x1UL << NVMC_FORCEOFFNVM_FORCEOFFNVM0_Pos) /*!< Bit mask of FORCEOFFNVM0 field. */
+#define NVMC_FORCEOFFNVM_FORCEOFFNVM0_DoNotForceOff (0UL) /*!< Do not force off supply */
+#define NVMC_FORCEOFFNVM_FORCEOFFNVM0_ForceOff (1UL) /*!< Force off supply */
+
+
+/* Peripheral: OSCILLATORS */
+/* Description: Oscillators control 0 */
+
+/* Register: OSCILLATORS_ATECLOCK */
+/* Description: Analog test bus control for clock modules */
+
+/* Bits 4..3 : BBPLL test bus control */
+#define OSCILLATORS_ATECLOCK_BBPLL_Pos (3UL) /*!< Position of BBPLL field. */
+#define OSCILLATORS_ATECLOCK_BBPLL_Msk (0x3UL << OSCILLATORS_ATECLOCK_BBPLL_Pos) /*!< Bit mask of BBPLL field. */
+#define OSCILLATORS_ATECLOCK_BBPLL_Disconnected (0UL) /*!< ATB0 in high impedance */
+#define OSCILLATORS_ATECLOCK_BBPLL_VTUNE (1UL) /*!< Tune voltage VTUNE on ATB0 */
+#define OSCILLATORS_ATECLOCK_BBPLL_OSCPLLVHF (2UL) /*!< OSC_PLL_VHF_0V9 on ATB0 */
+#define OSCILLATORS_ATECLOCK_BBPLL_Forbidden (3UL) /*!< Forbidden */
+
+/* Bits 2..1 : Configure connection of PLL to analog test bus */
+#define OSCILLATORS_ATECLOCK_PLL_Pos (1UL) /*!< Position of PLL field. */
+#define OSCILLATORS_ATECLOCK_PLL_Msk (0x3UL << OSCILLATORS_ATECLOCK_PLL_Pos) /*!< Bit mask of PLL field. */
+#define OSCILLATORS_ATECLOCK_PLL_Disconnected (0UL) /*!< Disconnect */
+#define OSCILLATORS_ATECLOCK_PLL_VC (1UL) /*!< Connect loop filter voltage to ATB0 */
+#define OSCILLATORS_ATECLOCK_PLL_Osc32MDiv (2UL) /*!< Connect 32 MHz divided clock to ATB1 */
+#define OSCILLATORS_ATECLOCK_PLL_Both (3UL) /*!< Connect both VC and Osc32MDiv */
+
+/* Register: OSCILLATORS_BYPASS32KI */
+/* Description: Enable or disable bypass of LFCLK crystal oscillator with external clock source */
+
+/* Bit 0 : Enable or disable bypass of LFCLK crystal oscillator with external clock source */
+#define OSCILLATORS_BYPASS32KI_BYPASS_Pos (0UL) /*!< Position of BYPASS field. */
+#define OSCILLATORS_BYPASS32KI_BYPASS_Msk (0x1UL << OSCILLATORS_BYPASS32KI_BYPASS_Pos) /*!< Bit mask of BYPASS field. */
+#define OSCILLATORS_BYPASS32KI_BYPASS_Disabled (0UL) /*!< Disable (use with Xtal or low-swing external source) */
+#define OSCILLATORS_BYPASS32KI_BYPASS_Enabled (1UL) /*!< Enable (use with rail-to-rail external source) */
+
+/* Register: OSCILLATORS_POWERDOWN32KI */
+/* Description: Enable/Disable forced power-down of LFXO */
+
+/* Bit 0 : Enable/Disable forced power-down of LFXO */
+#define OSCILLATORS_POWERDOWN32KI_POWERDOWN32KI_Pos (0UL) /*!< Position of POWERDOWN32KI field. */
+#define OSCILLATORS_POWERDOWN32KI_POWERDOWN32KI_Msk (0x1UL << OSCILLATORS_POWERDOWN32KI_POWERDOWN32KI_Pos) /*!< Bit mask of POWERDOWN32KI field. */
+#define OSCILLATORS_POWERDOWN32KI_POWERDOWN32KI_DisableForcedOFF (0UL) /*!< LFXO can be enabled if requested */
+#define OSCILLATORS_POWERDOWN32KI_POWERDOWN32KI_EnableForcedOFF (1UL) /*!< LFXO cannot be enabled when requested */
+
+/* Register: OSCILLATORS_XOSC32MQSTRT */
+/* Description: TBD */
+
+/* Bit 0 : XOSC32M kick-start for reduced start-up delay. Reset value is loaded from FICR at start-up. */
+#define OSCILLATORS_XOSC32MQSTRT_XOSC32MQSTRT_Pos (0UL) /*!< Position of XOSC32MQSTRT field. */
+#define OSCILLATORS_XOSC32MQSTRT_XOSC32MQSTRT_Msk (0x1UL << OSCILLATORS_XOSC32MQSTRT_XOSC32MQSTRT_Pos) /*!< Bit mask of XOSC32MQSTRT field. */
+#define OSCILLATORS_XOSC32MQSTRT_XOSC32MQSTRT_Disabled (0UL) /*!< XOSC32M kick-start disabled */
+#define OSCILLATORS_XOSC32MQSTRT_XOSC32MQSTRT_Enabled (1UL) /*!< XOSC32M kick-start enabled */
+
+/* Register: OSCILLATORS_XOSC32MBYPASS */
+/* Description: Enable or disable bypass of HFCLK crystal oscillator with external clock source */
+
+/* Bit 0 : Enable or disable bypass of HFCLK crystal oscillator with external clock source */
+#define OSCILLATORS_XOSC32MBYPASS_BYPASS_Pos (0UL) /*!< Position of BYPASS field. */
+#define OSCILLATORS_XOSC32MBYPASS_BYPASS_Msk (0x1UL << OSCILLATORS_XOSC32MBYPASS_BYPASS_Pos) /*!< Bit mask of BYPASS field. */
+#define OSCILLATORS_XOSC32MBYPASS_BYPASS_Disabled (0UL) /*!< Disable */
+#define OSCILLATORS_XOSC32MBYPASS_BYPASS_Enabled (1UL) /*!< Enable */
+
+/* Register: OSCILLATORS_XOSC32MCTRL */
+/* Description: Fixed pierce current DAC control signals */
+
+/* Bits 5..0 : Pierce current DAC control signals */
+#define OSCILLATORS_XOSC32MCTRL_XOSC32MCTRL_Pos (0UL) /*!< Position of XOSC32MCTRL field. */
+#define OSCILLATORS_XOSC32MCTRL_XOSC32MCTRL_Msk (0x3FUL << OSCILLATORS_XOSC32MCTRL_XOSC32MCTRL_Pos) /*!< Bit mask of XOSC32MCTRL field. */
+#define OSCILLATORS_XOSC32MCTRL_XOSC32MCTRL_0x00 (0UL) /*!< DAC pierce current off. Pierce current set by AREG. */
+#define OSCILLATORS_XOSC32MCTRL_XOSC32MCTRL_0x01 (1UL) /*!< Minimum DAC pierce current */
+#define OSCILLATORS_XOSC32MCTRL_XOSC32MCTRL_0x0f (15UL) /*!< Maximum DAC pierce current */
+
+/* Register: OSCILLATORS_XOSC32M_RESERVED */
+/* Description: Spare control signals */
+
+/* Bits 1..0 : Spare control signals */
+#define OSCILLATORS_XOSC32M_RESERVED_RFU_Pos (0UL) /*!< Position of RFU field. */
+#define OSCILLATORS_XOSC32M_RESERVED_RFU_Msk (0x3UL << OSCILLATORS_XOSC32M_RESERVED_RFU_Pos) /*!< Bit mask of RFU field. */
+
+/* Register: OSCILLATORS_APPPLL_BYPASS */
+/* Description: APP PLL bypass control */
+
+/* Bit 0 : Enable or disable bypass of APPPLL by the input clock */
+#define OSCILLATORS_APPPLL_BYPASS_BYPASS_Pos (0UL) /*!< Position of BYPASS field. */
+#define OSCILLATORS_APPPLL_BYPASS_BYPASS_Msk (0x1UL << OSCILLATORS_APPPLL_BYPASS_BYPASS_Pos) /*!< Bit mask of BYPASS field. */
+#define OSCILLATORS_APPPLL_BYPASS_BYPASS_Disabled (0UL) /*!< Disable */
+#define OSCILLATORS_APPPLL_BYPASS_BYPASS_Enabled (1UL) /*!< Enable */
+
+/* Register: OSCILLATORS_APPPLL_PROGCHPUMP */
+/* Description: Program charge-pump current of APP PLL */
+
+/* Bit 0 : Adjust the charge pump current of APPPLL */
+#define OSCILLATORS_APPPLL_PROGCHPUMP_PROGCHPUMP_Pos (0UL) /*!< Position of PROGCHPUMP field. */
+#define OSCILLATORS_APPPLL_PROGCHPUMP_PROGCHPUMP_Msk (0x1UL << OSCILLATORS_APPPLL_PROGCHPUMP_PROGCHPUMP_Pos) /*!< Bit mask of PROGCHPUMP field. */
+#define OSCILLATORS_APPPLL_PROGCHPUMP_PROGCHPUMP_4uA (0UL) /*!< 4 uA (default) */
+#define OSCILLATORS_APPPLL_PROGCHPUMP_PROGCHPUMP_8uA (1UL) /*!< 8 uA */
+
+/* Register: OSCILLATORS_APPPLL_MUTE */
+/* Description: Mute the APP PLL */
+
+/* Bit 0 : Mute output clockL */
+#define OSCILLATORS_APPPLL_MUTE_MUTE_Pos (0UL) /*!< Position of MUTE field. */
+#define OSCILLATORS_APPPLL_MUTE_MUTE_Msk (0x1UL << OSCILLATORS_APPPLL_MUTE_MUTE_Pos) /*!< Bit mask of MUTE field. */
+#define OSCILLATORS_APPPLL_MUTE_MUTE_Disabled (0UL) /*!< Disable (default) */
+#define OSCILLATORS_APPPLL_MUTE_MUTE_Enabled (1UL) /*!< Enable */
+
+/* Register: OSCILLATORS_BBPLL_BYPASS */
+/* Description: BB PLL bypass control */
+
+/* Bit 0 : Enable or disable bypass of BBPLL by the input clock */
+#define OSCILLATORS_BBPLL_BYPASS_BYPASS_Pos (0UL) /*!< Position of BYPASS field. */
+#define OSCILLATORS_BBPLL_BYPASS_BYPASS_Msk (0x1UL << OSCILLATORS_BBPLL_BYPASS_BYPASS_Pos) /*!< Bit mask of BYPASS field. */
+#define OSCILLATORS_BBPLL_BYPASS_BYPASS_Disabled (0UL) /*!< Disable */
+#define OSCILLATORS_BBPLL_BYPASS_BYPASS_Enabled (1UL) /*!< Enable */
+
+/* Register: OSCILLATORS_BBPLL_MUTE */
+/* Description: Mute the BB PLL */
+
+/* Bit 0 : Mute output clock */
+#define OSCILLATORS_BBPLL_MUTE_MUTE_Pos (0UL) /*!< Position of MUTE field. */
+#define OSCILLATORS_BBPLL_MUTE_MUTE_Msk (0x1UL << OSCILLATORS_BBPLL_MUTE_MUTE_Pos) /*!< Bit mask of MUTE field. */
+#define OSCILLATORS_BBPLL_MUTE_MUTE_Disabled (0UL) /*!< Disable */
+#define OSCILLATORS_BBPLL_MUTE_MUTE_Enabled (1UL) /*!< Enable */
+
+/* Register: OSCILLATORS_BBPLL_BYPASSFROMGPIO */
+/* Description: Selects GPIO as source for bypass when the BBPLL is in bypass mode */
+
+/* Bit 0 : Enable or disable GPIO as source for bypass when the BBPLL is in bypass mode */
+#define OSCILLATORS_BBPLL_BYPASSFROMGPIO_BYPASSFROMGPIO_Pos (0UL) /*!< Position of BYPASSFROMGPIO field. */
+#define OSCILLATORS_BBPLL_BYPASSFROMGPIO_BYPASSFROMGPIO_Msk (0x1UL << OSCILLATORS_BBPLL_BYPASSFROMGPIO_BYPASSFROMGPIO_Pos) /*!< Bit mask of BYPASSFROMGPIO field. */
+#define OSCILLATORS_BBPLL_BYPASSFROMGPIO_BYPASSFROMGPIO_Disabled (0UL) /*!< Disable */
+#define OSCILLATORS_BBPLL_BYPASSFROMGPIO_BYPASSFROMGPIO_Enabled (1UL) /*!< Enable */
+
+/* Register: OSCILLATORS_BBPLL_CTRL */
+/* Description: Control the behavior of the PFD */
+
+/* Bits 3..0 : Adjust internal PFD delay (reset value loaded from FICR at startup) */
+#define OSCILLATORS_BBPLL_CTRL_CTRL_Pos (0UL) /*!< Position of CTRL field. */
+#define OSCILLATORS_BBPLL_CTRL_CTRL_Msk (0xFUL << OSCILLATORS_BBPLL_CTRL_CTRL_Pos) /*!< Bit mask of CTRL field. */
+
+/* Register: OSCILLATORS_BBPLL_VCOTRIM */
+/* Description: VCO trim value for the BB PLL */
+
+/* Bits 5..0 : VCO trim value for the BB PLL */
+#define OSCILLATORS_BBPLL_VCOTRIM_VCOTRIM_Pos (0UL) /*!< Position of VCOTRIM field. */
+#define OSCILLATORS_BBPLL_VCOTRIM_VCOTRIM_Msk (0x3FUL << OSCILLATORS_BBPLL_VCOTRIM_VCOTRIM_Pos) /*!< Bit mask of VCOTRIM field. */
+
+/* Register: OSCILLATORS_BBPLL_VCOTRIMOVERRIDE */
+/* Description: Control overriding of the VCO trim values */
+
+/* Bit 0 : VCO trim value for the BB PLL */
+#define OSCILLATORS_BBPLL_VCOTRIMOVERRIDE_VCOTRIMOVEERIDE_Pos (0UL) /*!< Position of VCOTRIMOVEERIDE field. */
+#define OSCILLATORS_BBPLL_VCOTRIMOVERRIDE_VCOTRIMOVEERIDE_Msk (0x1UL << OSCILLATORS_BBPLL_VCOTRIMOVERRIDE_VCOTRIMOVEERIDE_Pos) /*!< Bit mask of VCOTRIMOVEERIDE field. */
+#define OSCILLATORS_BBPLL_VCOTRIMOVERRIDE_VCOTRIMOVEERIDE_Disabled (0UL) /*!< VCO trim values are coming from FICR */
+#define OSCILLATORS_BBPLL_VCOTRIMOVERRIDE_VCOTRIMOVEERIDE_Enabled (1UL) /*!< VCO trim values are coming from the VCOTRIM register */
+
+/* Register: OSCILLATORS_BBPLL_ICHPUMP */
+/* Description: Program charge-pump current */
+
+/* Bit 0 : Adjust charge-pump current (reset value loaded from FICR at startup) */
+#define OSCILLATORS_BBPLL_ICHPUMP_ICHPUMP_Pos (0UL) /*!< Position of ICHPUMP field. */
+#define OSCILLATORS_BBPLL_ICHPUMP_ICHPUMP_Msk (0x1UL << OSCILLATORS_BBPLL_ICHPUMP_ICHPUMP_Pos) /*!< Bit mask of ICHPUMP field. */
+#define OSCILLATORS_BBPLL_ICHPUMP_ICHPUMP_4uA (0UL) /*!< 4 uA */
+#define OSCILLATORS_BBPLL_ICHPUMP_ICHPUMP_8uA (1UL) /*!< 8 uA */
+
+/* Register: OSCILLATORS_XOSC32K_INTCAPTRIM */
+/* Description: Signal to trim on-chip capacitors to achieve +/-15  percent accuracy */
+
+/* Bits 2..0 : Signal to trim on-chip capacitors */
+#define OSCILLATORS_XOSC32K_INTCAPTRIM_INTCAPTRIM_Pos (0UL) /*!< Position of INTCAPTRIM field. */
+#define OSCILLATORS_XOSC32K_INTCAPTRIM_INTCAPTRIM_Msk (0x7UL << OSCILLATORS_XOSC32K_INTCAPTRIM_INTCAPTRIM_Pos) /*!< Bit mask of INTCAPTRIM field. */
+#define OSCILLATORS_XOSC32K_INTCAPTRIM_INTCAPTRIM_000 (0UL) /*!< Default (0.00) */
+#define OSCILLATORS_XOSC32K_INTCAPTRIM_INTCAPTRIM_001 (1UL) /*!< +0.125 */
+#define OSCILLATORS_XOSC32K_INTCAPTRIM_INTCAPTRIM_010 (2UL) /*!< +0.25 */
+#define OSCILLATORS_XOSC32K_INTCAPTRIM_INTCAPTRIM_011 (3UL) /*!< Do not use (+0.125) */
+#define OSCILLATORS_XOSC32K_INTCAPTRIM_INTCAPTRIM_100 (4UL) /*!< Do not use (0.00) */
+#define OSCILLATORS_XOSC32K_INTCAPTRIM_INTCAPTRIM_101 (5UL) /*!< Do not use (+0.125) */
+#define OSCILLATORS_XOSC32K_INTCAPTRIM_INTCAPTRIM_110 (6UL) /*!< -0.25 */
+#define OSCILLATORS_XOSC32K_INTCAPTRIM_INTCAPTRIM_111 (7UL) /*!< -0.125 */
+
+/* Register: OSCILLATORS_XOSC32K_INTCAP */
+/* Description: Signal to enable and select on-chip capacitors */
+
+/* Bits 1..0 : Signal to enable and select on-chip capacitors */
+#define OSCILLATORS_XOSC32K_INTCAP_INTCAP_Pos (0UL) /*!< Position of INTCAP field. */
+#define OSCILLATORS_XOSC32K_INTCAP_INTCAP_Msk (0x3UL << OSCILLATORS_XOSC32K_INTCAP_INTCAP_Pos) /*!< Bit mask of INTCAP field. */
+#define OSCILLATORS_XOSC32K_INTCAP_INTCAP_00 (0UL) /*!< Use external load capacitors */
+#define OSCILLATORS_XOSC32K_INTCAP_INTCAP_01 (1UL) /*!< 6 pF internal load capacitance */
+#define OSCILLATORS_XOSC32K_INTCAP_INTCAP_10 (2UL) /*!< 7 pF internal load capacitance (default) */
+#define OSCILLATORS_XOSC32K_INTCAP_INTCAP_11 (3UL) /*!< 9 pF internal load capacitance */
+
+/* Register: OSCILLATORS_XOSC32K_CONSTCURRTRIM */
+/* Description: Signal to increase constant current bias to XOSC32K_CORE. Only usable when constant current bias is enabled */
+
+/* Bits 3..0 : Signal to increase constant current bias to XOSC32K_CORE. 0: lowest current. 7: highest current. */
+#define OSCILLATORS_XOSC32K_CONSTCURRTRIM_CONSTCURRTRIM_Pos (0UL) /*!< Position of CONSTCURRTRIM field. */
+#define OSCILLATORS_XOSC32K_CONSTCURRTRIM_CONSTCURRTRIM_Msk (0xFUL << OSCILLATORS_XOSC32K_CONSTCURRTRIM_CONSTCURRTRIM_Pos) /*!< Bit mask of CONSTCURRTRIM field. */
+
+/* Register: OSCILLATORS_XOSC32K_CONSTCURR */
+/* Description: Signal to enable constant current bias to XOSC32K_CORE */
+
+/* Bit 0 : Signal to enable constant current bias to XOSC32K_CORE. 0: Amplitude regulator controls pierce inverter bias (default). 1: Enables constant current to bias XOSC32K_CORE. Amplitude regulator is turned off. */
+#define OSCILLATORS_XOSC32K_CONSTCURR_CONSTCURR_Pos (0UL) /*!< Position of CONSTCURR field. */
+#define OSCILLATORS_XOSC32K_CONSTCURR_CONSTCURR_Msk (0x1UL << OSCILLATORS_XOSC32K_CONSTCURR_CONSTCURR_Pos) /*!< Bit mask of CONSTCURR field. */
+
+/* Register: OSCILLATORS_XOSC32K_AREGHIGHCURR */
+/* Description: Signal to increase current in amplitude regulator feedback */
+
+/* Bit 0 : Signal to enable constant current bias to XOSC32K_CORE 0: Normal current (default) 1: Increased current in amplitude regulator feedback */
+#define OSCILLATORS_XOSC32K_AREGHIGHCURR_AREGHIGHCURR_Pos (0UL) /*!< Position of AREGHIGHCURR field. */
+#define OSCILLATORS_XOSC32K_AREGHIGHCURR_AREGHIGHCURR_Msk (0x1UL << OSCILLATORS_XOSC32K_AREGHIGHCURR_AREGHIGHCURR_Pos) /*!< Bit mask of AREGHIGHCURR field. */
+
+/* Register: OSCILLATORS_XOSC32K_MUTE */
+/* Description: Mute the XOSC32K */
+
+/* Bit 0 : Mute output clockL */
+#define OSCILLATORS_XOSC32K_MUTE_MUTE_Pos (0UL) /*!< Position of MUTE field. */
+#define OSCILLATORS_XOSC32K_MUTE_MUTE_Msk (0x1UL << OSCILLATORS_XOSC32K_MUTE_MUTE_Pos) /*!< Bit mask of MUTE field. */
+#define OSCILLATORS_XOSC32K_MUTE_MUTE_Disabled (0UL) /*!< Disable (default) */
+#define OSCILLATORS_XOSC32K_MUTE_MUTE_Enabled (1UL) /*!< Enable */
+
+/* Register: OSCILLATORS_XOSC32K_EXTBIAS */
+/* Description: Select between internal bias generator in XOSC32K_CORE and external bias generator */
+
+/* Bit 0 : Select between internal bias generator in XOSC32K_CORE and external bias generator */
+#define OSCILLATORS_XOSC32K_EXTBIAS_EXTBIAS_Pos (0UL) /*!< Position of EXTBIAS field. */
+#define OSCILLATORS_XOSC32K_EXTBIAS_EXTBIAS_Msk (0x1UL << OSCILLATORS_XOSC32K_EXTBIAS_EXTBIAS_Pos) /*!< Bit mask of EXTBIAS field. */
+#define OSCILLATORS_XOSC32K_EXTBIAS_EXTBIAS_Disabled (0UL) /*!< Use internal bias generator in XOSC32K_CORE (default) */
+#define OSCILLATORS_XOSC32K_EXTBIAS_EXTBIAS_Enabled (1UL) /*!< Use external bias generator, and disable internal bias generator of XOSC32K_CORE */
+
+/* Register: OSCILLATORS_XOSC32M_AREGCURRCMP */
+/* Description: Signal to enable low noise operation monitor */
+
+/* Bit 0 : Signal to enable low noise operation monitor */
+#define OSCILLATORS_XOSC32M_AREGCURRCMP_AREGCURRCMP_Pos (0UL) /*!< Position of AREGCURRCMP field. */
+#define OSCILLATORS_XOSC32M_AREGCURRCMP_AREGCURRCMP_Msk (0x1UL << OSCILLATORS_XOSC32M_AREGCURRCMP_AREGCURRCMP_Pos) /*!< Bit mask of AREGCURRCMP field. */
+#define OSCILLATORS_XOSC32M_AREGCURRCMP_AREGCURRCMP_0 (0UL) /*!< Low noise operation monitor disabled (default) */
+#define OSCILLATORS_XOSC32M_AREGCURRCMP_AREGCURRCMP_1 (1UL) /*!< Low noise operation monitor enabled */
+
+/* Register: OSCILLATORS_XOSC32M_AREGCURRCMPOUT */
+/* Description: Output from low noise operation monitor */
+
+/* Bit 0 : Output from low noise operation monitor */
+#define OSCILLATORS_XOSC32M_AREGCURRCMPOUT_AREGCURRCMPOUT_Pos (0UL) /*!< Position of AREGCURRCMPOUT field. */
+#define OSCILLATORS_XOSC32M_AREGCURRCMPOUT_AREGCURRCMPOUT_Msk (0x1UL << OSCILLATORS_XOSC32M_AREGCURRCMPOUT_AREGCURRCMPOUT_Pos) /*!< Bit mask of AREGCURRCMPOUT field. */
+#define OSCILLATORS_XOSC32M_AREGCURRCMPOUT_AREGCURRCMPOUT_0 (0UL) /*!< DAC current sufficient to drive crystal, XOSC32M in low noise operation */
+#define OSCILLATORS_XOSC32M_AREGCURRCMPOUT_AREGCURRCMPOUT_1 (1UL) /*!< DAC current insufficient to drive crystal, XOSC32M in high noise operation */
+
+/* Register: OSCILLATORS_XOSC32M_PKD */
+/* Description: Peak detector */
+
+/* Bit 0 : Signal to enable peak detector */
+#define OSCILLATORS_XOSC32M_PKD_PKD_Pos (0UL) /*!< Position of PKD field. */
+#define OSCILLATORS_XOSC32M_PKD_PKD_Msk (0x1UL << OSCILLATORS_XOSC32M_PKD_PKD_Pos) /*!< Bit mask of PKD field. */
+#define OSCILLATORS_XOSC32M_PKD_PKD_0 (0UL) /*!< Peak detector disabled (default) */
+#define OSCILLATORS_XOSC32M_PKD_PKD_1 (1UL) /*!< Peak detector enabled */
+
+/* Register: OSCILLATORS_XOSC32M_PKDRST */
+/* Description: Peak detector reset */
+
+/* Bit 0 : Signal to hold peak detector in reset */
+#define OSCILLATORS_XOSC32M_PKDRST_PKDRST_Pos (0UL) /*!< Position of PKDRST field. */
+#define OSCILLATORS_XOSC32M_PKDRST_PKDRST_Msk (0x1UL << OSCILLATORS_XOSC32M_PKDRST_PKDRST_Pos) /*!< Bit mask of PKDRST field. */
+#define OSCILLATORS_XOSC32M_PKDRST_PKDRST_0 (0UL) /*!< Normal operation */
+#define OSCILLATORS_XOSC32M_PKDRST_PKDRST_1 (1UL) /*!< Peak detector held in reset */
+
+/* Register: OSCILLATORS_XOSC32M_PKDOUT */
+/* Description: Peak detector output */
+
+/* Bits 1..0 : Peak detector output. MSB is output from 1 Vpp detection, LSB is output from 0.5 Vpp detection */
+#define OSCILLATORS_XOSC32M_PKDOUT_PKDOUT_Pos (0UL) /*!< Position of PKDOUT field. */
+#define OSCILLATORS_XOSC32M_PKDOUT_PKDOUT_Msk (0x3UL << OSCILLATORS_XOSC32M_PKDOUT_PKDOUT_Pos) /*!< Bit mask of PKDOUT field. */
+#define OSCILLATORS_XOSC32M_PKDOUT_PKDOUT_Low (0UL) /*!< Amplitude below 0.5 Vpp */
+#define OSCILLATORS_XOSC32M_PKDOUT_PKDOUT_OK (1UL) /*!< Amplitude OK (above 0.5 Vpp and below 1 Vpp) */
+#define OSCILLATORS_XOSC32M_PKDOUT_PKDOUT_Invalid (2UL) /*!< Not valid (Indicated amplitude above 1 Vpp and below 0.5 Vpp) */
+#define OSCILLATORS_XOSC32M_PKDOUT_PKDOUT_High (3UL) /*!< Amplitude too high (above 0.5 Vpp and 1 Vpp) */
 
 
 /* Peripheral: GPIO */
@@ -4424,8 +8822,28 @@ POSSIBILITY OF SUCH DAMAGE.
 #define GPIO_DETECTMODE_SEC_DETECTMODE_Default (0UL) /*!< DETECT directly connected to PIN DETECT signals */
 #define GPIO_DETECTMODE_SEC_DETECTMODE_LDETECT (1UL) /*!< Use the latched LDETECT behavior */
 
+/* Register: GPIO_PIN_OUT */
+/* Description: Description cluster: Pin n direct access output register */
+
+/* Bit 0 : Direct access */
+#define GPIO_PIN_OUT_OUT_Pos (0UL) /*!< Position of OUT field. */
+#define GPIO_PIN_OUT_OUT_Msk (0x1UL << GPIO_PIN_OUT_OUT_Pos) /*!< Bit mask of OUT field. */
+
+/* Register: GPIO_PIN_IN */
+/* Description: Description cluster: Pin n direct access input register */
+
+/* Bit 0 : Direct access */
+#define GPIO_PIN_IN_IN_Pos (0UL) /*!< Position of IN field. */
+#define GPIO_PIN_IN_IN_Msk (0x1UL << GPIO_PIN_IN_IN_Pos) /*!< Bit mask of IN field. */
+
 /* Register: GPIO_PIN_CNF */
 /* Description: Description collection: Configuration of GPIO pins */
+
+/* Bit 24 : Override of analog mux enable signals for pads with analog functionality */
+#define GPIO_PIN_CNF_ANAEN_Pos (24UL) /*!< Position of ANAEN field. */
+#define GPIO_PIN_CNF_ANAEN_Msk (0x1UL << GPIO_PIN_CNF_ANAEN_Pos) /*!< Bit mask of ANAEN field. */
+#define GPIO_PIN_CNF_ANAEN_Disabled (0x0UL) /*!< Override of analog mux is disabled */
+#define GPIO_PIN_CNF_ANAEN_AE0 (0x1UL) /*!< Enable analog signal 0 (analog test bus) */
 
 /* Bits 17..16 : Pin sensing mechanism */
 #define GPIO_PIN_CNF_SENSE_Pos (16UL) /*!< Position of SENSE field. */
@@ -4464,6 +8882,594 @@ POSSIBILITY OF SUCH DAMAGE.
 #define GPIO_PIN_CNF_DIR_Msk (0x1UL << GPIO_PIN_CNF_DIR_Pos) /*!< Bit mask of DIR field. */
 #define GPIO_PIN_CNF_DIR_Input (0UL) /*!< Configure pin as an input pin */
 #define GPIO_PIN_CNF_DIR_Output (1UL) /*!< Configure pin as an output pin */
+
+
+/* Peripheral: PAMLI */
+/* Description: Peripheral AHB Multi-Layer Interface 0 */
+
+/* Register: PAMLI_RAMPRI_SERIO */
+/* Description: Description collection: AHB bus master priority register for SerIOBoxn */
+
+/* Bits 31..28 : Priority register for RAM AHB slave 7 */
+#define PAMLI_RAMPRI_SERIO_RAM7_Pos (28UL) /*!< Position of RAM7 field. */
+#define PAMLI_RAMPRI_SERIO_RAM7_Msk (0xFUL << PAMLI_RAMPRI_SERIO_RAM7_Pos) /*!< Bit mask of RAM7 field. */
+#define PAMLI_RAMPRI_SERIO_RAM7_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_RAMPRI_SERIO_RAM7_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_RAMPRI_SERIO_RAM7_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_RAMPRI_SERIO_RAM7_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_RAMPRI_SERIO_RAM7_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_RAMPRI_SERIO_RAM7_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_RAMPRI_SERIO_RAM7_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_RAMPRI_SERIO_RAM7_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 27..24 : Priority register for RAM AHB slave 6 */
+#define PAMLI_RAMPRI_SERIO_RAM6_Pos (24UL) /*!< Position of RAM6 field. */
+#define PAMLI_RAMPRI_SERIO_RAM6_Msk (0xFUL << PAMLI_RAMPRI_SERIO_RAM6_Pos) /*!< Bit mask of RAM6 field. */
+#define PAMLI_RAMPRI_SERIO_RAM6_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_RAMPRI_SERIO_RAM6_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_RAMPRI_SERIO_RAM6_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_RAMPRI_SERIO_RAM6_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_RAMPRI_SERIO_RAM6_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_RAMPRI_SERIO_RAM6_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_RAMPRI_SERIO_RAM6_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_RAMPRI_SERIO_RAM6_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 23..20 : Priority register for RAM AHB slave 5 */
+#define PAMLI_RAMPRI_SERIO_RAM5_Pos (20UL) /*!< Position of RAM5 field. */
+#define PAMLI_RAMPRI_SERIO_RAM5_Msk (0xFUL << PAMLI_RAMPRI_SERIO_RAM5_Pos) /*!< Bit mask of RAM5 field. */
+#define PAMLI_RAMPRI_SERIO_RAM5_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_RAMPRI_SERIO_RAM5_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_RAMPRI_SERIO_RAM5_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_RAMPRI_SERIO_RAM5_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_RAMPRI_SERIO_RAM5_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_RAMPRI_SERIO_RAM5_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_RAMPRI_SERIO_RAM5_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_RAMPRI_SERIO_RAM5_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 19..16 : Priority register for RAM AHB slave 4 */
+#define PAMLI_RAMPRI_SERIO_RAM4_Pos (16UL) /*!< Position of RAM4 field. */
+#define PAMLI_RAMPRI_SERIO_RAM4_Msk (0xFUL << PAMLI_RAMPRI_SERIO_RAM4_Pos) /*!< Bit mask of RAM4 field. */
+#define PAMLI_RAMPRI_SERIO_RAM4_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_RAMPRI_SERIO_RAM4_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_RAMPRI_SERIO_RAM4_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_RAMPRI_SERIO_RAM4_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_RAMPRI_SERIO_RAM4_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_RAMPRI_SERIO_RAM4_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_RAMPRI_SERIO_RAM4_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_RAMPRI_SERIO_RAM4_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 15..12 : Priority register for RAM AHB slave 3 */
+#define PAMLI_RAMPRI_SERIO_RAM3_Pos (12UL) /*!< Position of RAM3 field. */
+#define PAMLI_RAMPRI_SERIO_RAM3_Msk (0xFUL << PAMLI_RAMPRI_SERIO_RAM3_Pos) /*!< Bit mask of RAM3 field. */
+#define PAMLI_RAMPRI_SERIO_RAM3_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_RAMPRI_SERIO_RAM3_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_RAMPRI_SERIO_RAM3_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_RAMPRI_SERIO_RAM3_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_RAMPRI_SERIO_RAM3_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_RAMPRI_SERIO_RAM3_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_RAMPRI_SERIO_RAM3_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_RAMPRI_SERIO_RAM3_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 11..8 : Priority register for RAM AHB slave 2 */
+#define PAMLI_RAMPRI_SERIO_RAM2_Pos (8UL) /*!< Position of RAM2 field. */
+#define PAMLI_RAMPRI_SERIO_RAM2_Msk (0xFUL << PAMLI_RAMPRI_SERIO_RAM2_Pos) /*!< Bit mask of RAM2 field. */
+#define PAMLI_RAMPRI_SERIO_RAM2_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_RAMPRI_SERIO_RAM2_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_RAMPRI_SERIO_RAM2_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_RAMPRI_SERIO_RAM2_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_RAMPRI_SERIO_RAM2_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_RAMPRI_SERIO_RAM2_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_RAMPRI_SERIO_RAM2_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_RAMPRI_SERIO_RAM2_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 7..4 : Priority register for RAM AHB slave 1 */
+#define PAMLI_RAMPRI_SERIO_RAM1_Pos (4UL) /*!< Position of RAM1 field. */
+#define PAMLI_RAMPRI_SERIO_RAM1_Msk (0xFUL << PAMLI_RAMPRI_SERIO_RAM1_Pos) /*!< Bit mask of RAM1 field. */
+#define PAMLI_RAMPRI_SERIO_RAM1_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_RAMPRI_SERIO_RAM1_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_RAMPRI_SERIO_RAM1_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_RAMPRI_SERIO_RAM1_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_RAMPRI_SERIO_RAM1_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_RAMPRI_SERIO_RAM1_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_RAMPRI_SERIO_RAM1_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_RAMPRI_SERIO_RAM1_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 3..0 : Priority register for RAM AHB slave 0 */
+#define PAMLI_RAMPRI_SERIO_RAM0_Pos (0UL) /*!< Position of RAM0 field. */
+#define PAMLI_RAMPRI_SERIO_RAM0_Msk (0xFUL << PAMLI_RAMPRI_SERIO_RAM0_Pos) /*!< Bit mask of RAM0 field. */
+#define PAMLI_RAMPRI_SERIO_RAM0_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_RAMPRI_SERIO_RAM0_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_RAMPRI_SERIO_RAM0_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_RAMPRI_SERIO_RAM0_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_RAMPRI_SERIO_RAM0_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_RAMPRI_SERIO_RAM0_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_RAMPRI_SERIO_RAM0_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_RAMPRI_SERIO_RAM0_Pri7 (7UL) /*!< Priority 7 */
+
+/* Register: PAMLI_I2S */
+/* Description: AHB bus master priority register for I2S */
+
+/* Bits 31..28 : Priority register for RAM AHB slave 7 */
+#define PAMLI_I2S_RAM7_Pos (28UL) /*!< Position of RAM7 field. */
+#define PAMLI_I2S_RAM7_Msk (0xFUL << PAMLI_I2S_RAM7_Pos) /*!< Bit mask of RAM7 field. */
+#define PAMLI_I2S_RAM7_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_I2S_RAM7_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_I2S_RAM7_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_I2S_RAM7_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_I2S_RAM7_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_I2S_RAM7_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_I2S_RAM7_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_I2S_RAM7_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 27..24 : Priority register for RAM AHB slave 6 */
+#define PAMLI_I2S_RAM6_Pos (24UL) /*!< Position of RAM6 field. */
+#define PAMLI_I2S_RAM6_Msk (0xFUL << PAMLI_I2S_RAM6_Pos) /*!< Bit mask of RAM6 field. */
+#define PAMLI_I2S_RAM6_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_I2S_RAM6_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_I2S_RAM6_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_I2S_RAM6_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_I2S_RAM6_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_I2S_RAM6_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_I2S_RAM6_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_I2S_RAM6_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 23..20 : Priority register for RAM AHB slave 5 */
+#define PAMLI_I2S_RAM5_Pos (20UL) /*!< Position of RAM5 field. */
+#define PAMLI_I2S_RAM5_Msk (0xFUL << PAMLI_I2S_RAM5_Pos) /*!< Bit mask of RAM5 field. */
+#define PAMLI_I2S_RAM5_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_I2S_RAM5_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_I2S_RAM5_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_I2S_RAM5_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_I2S_RAM5_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_I2S_RAM5_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_I2S_RAM5_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_I2S_RAM5_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 19..16 : Priority register for RAM AHB slave 4 */
+#define PAMLI_I2S_RAM4_Pos (16UL) /*!< Position of RAM4 field. */
+#define PAMLI_I2S_RAM4_Msk (0xFUL << PAMLI_I2S_RAM4_Pos) /*!< Bit mask of RAM4 field. */
+#define PAMLI_I2S_RAM4_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_I2S_RAM4_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_I2S_RAM4_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_I2S_RAM4_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_I2S_RAM4_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_I2S_RAM4_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_I2S_RAM4_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_I2S_RAM4_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 15..12 : Priority register for RAM AHB slave 3 */
+#define PAMLI_I2S_RAM3_Pos (12UL) /*!< Position of RAM3 field. */
+#define PAMLI_I2S_RAM3_Msk (0xFUL << PAMLI_I2S_RAM3_Pos) /*!< Bit mask of RAM3 field. */
+#define PAMLI_I2S_RAM3_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_I2S_RAM3_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_I2S_RAM3_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_I2S_RAM3_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_I2S_RAM3_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_I2S_RAM3_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_I2S_RAM3_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_I2S_RAM3_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 11..8 : Priority register for RAM AHB slave 2 */
+#define PAMLI_I2S_RAM2_Pos (8UL) /*!< Position of RAM2 field. */
+#define PAMLI_I2S_RAM2_Msk (0xFUL << PAMLI_I2S_RAM2_Pos) /*!< Bit mask of RAM2 field. */
+#define PAMLI_I2S_RAM2_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_I2S_RAM2_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_I2S_RAM2_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_I2S_RAM2_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_I2S_RAM2_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_I2S_RAM2_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_I2S_RAM2_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_I2S_RAM2_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 7..4 : Priority register for RAM AHB slave 1 */
+#define PAMLI_I2S_RAM1_Pos (4UL) /*!< Position of RAM1 field. */
+#define PAMLI_I2S_RAM1_Msk (0xFUL << PAMLI_I2S_RAM1_Pos) /*!< Bit mask of RAM1 field. */
+#define PAMLI_I2S_RAM1_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_I2S_RAM1_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_I2S_RAM1_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_I2S_RAM1_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_I2S_RAM1_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_I2S_RAM1_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_I2S_RAM1_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_I2S_RAM1_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 3..0 : Priority register for RAM AHB slave 0 */
+#define PAMLI_I2S_RAM0_Pos (0UL) /*!< Position of RAM0 field. */
+#define PAMLI_I2S_RAM0_Msk (0xFUL << PAMLI_I2S_RAM0_Pos) /*!< Bit mask of RAM0 field. */
+#define PAMLI_I2S_RAM0_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_I2S_RAM0_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_I2S_RAM0_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_I2S_RAM0_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_I2S_RAM0_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_I2S_RAM0_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_I2S_RAM0_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_I2S_RAM0_Pri7 (7UL) /*!< Priority 7 */
+
+/* Register: PAMLI_PDM */
+/* Description: AHB bus master priority register for PDM */
+
+/* Bits 31..28 : Priority register for RAM AHB slave 7 */
+#define PAMLI_PDM_RAM7_Pos (28UL) /*!< Position of RAM7 field. */
+#define PAMLI_PDM_RAM7_Msk (0xFUL << PAMLI_PDM_RAM7_Pos) /*!< Bit mask of RAM7 field. */
+#define PAMLI_PDM_RAM7_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PDM_RAM7_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PDM_RAM7_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PDM_RAM7_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PDM_RAM7_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PDM_RAM7_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PDM_RAM7_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PDM_RAM7_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 27..24 : Priority register for RAM AHB slave 6 */
+#define PAMLI_PDM_RAM6_Pos (24UL) /*!< Position of RAM6 field. */
+#define PAMLI_PDM_RAM6_Msk (0xFUL << PAMLI_PDM_RAM6_Pos) /*!< Bit mask of RAM6 field. */
+#define PAMLI_PDM_RAM6_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PDM_RAM6_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PDM_RAM6_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PDM_RAM6_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PDM_RAM6_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PDM_RAM6_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PDM_RAM6_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PDM_RAM6_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 23..20 : Priority register for RAM AHB slave 5 */
+#define PAMLI_PDM_RAM5_Pos (20UL) /*!< Position of RAM5 field. */
+#define PAMLI_PDM_RAM5_Msk (0xFUL << PAMLI_PDM_RAM5_Pos) /*!< Bit mask of RAM5 field. */
+#define PAMLI_PDM_RAM5_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PDM_RAM5_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PDM_RAM5_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PDM_RAM5_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PDM_RAM5_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PDM_RAM5_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PDM_RAM5_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PDM_RAM5_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 19..16 : Priority register for RAM AHB slave 4 */
+#define PAMLI_PDM_RAM4_Pos (16UL) /*!< Position of RAM4 field. */
+#define PAMLI_PDM_RAM4_Msk (0xFUL << PAMLI_PDM_RAM4_Pos) /*!< Bit mask of RAM4 field. */
+#define PAMLI_PDM_RAM4_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PDM_RAM4_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PDM_RAM4_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PDM_RAM4_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PDM_RAM4_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PDM_RAM4_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PDM_RAM4_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PDM_RAM4_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 15..12 : Priority register for RAM AHB slave 3 */
+#define PAMLI_PDM_RAM3_Pos (12UL) /*!< Position of RAM3 field. */
+#define PAMLI_PDM_RAM3_Msk (0xFUL << PAMLI_PDM_RAM3_Pos) /*!< Bit mask of RAM3 field. */
+#define PAMLI_PDM_RAM3_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PDM_RAM3_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PDM_RAM3_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PDM_RAM3_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PDM_RAM3_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PDM_RAM3_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PDM_RAM3_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PDM_RAM3_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 11..8 : Priority register for RAM AHB slave 2 */
+#define PAMLI_PDM_RAM2_Pos (8UL) /*!< Position of RAM2 field. */
+#define PAMLI_PDM_RAM2_Msk (0xFUL << PAMLI_PDM_RAM2_Pos) /*!< Bit mask of RAM2 field. */
+#define PAMLI_PDM_RAM2_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PDM_RAM2_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PDM_RAM2_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PDM_RAM2_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PDM_RAM2_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PDM_RAM2_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PDM_RAM2_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PDM_RAM2_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 7..4 : Priority register for RAM AHB slave 1 */
+#define PAMLI_PDM_RAM1_Pos (4UL) /*!< Position of RAM1 field. */
+#define PAMLI_PDM_RAM1_Msk (0xFUL << PAMLI_PDM_RAM1_Pos) /*!< Bit mask of RAM1 field. */
+#define PAMLI_PDM_RAM1_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PDM_RAM1_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PDM_RAM1_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PDM_RAM1_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PDM_RAM1_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PDM_RAM1_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PDM_RAM1_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PDM_RAM1_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 3..0 : Priority register for RAM AHB slave 0 */
+#define PAMLI_PDM_RAM0_Pos (0UL) /*!< Position of RAM0 field. */
+#define PAMLI_PDM_RAM0_Msk (0xFUL << PAMLI_PDM_RAM0_Pos) /*!< Bit mask of RAM0 field. */
+#define PAMLI_PDM_RAM0_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PDM_RAM0_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PDM_RAM0_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PDM_RAM0_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PDM_RAM0_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PDM_RAM0_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PDM_RAM0_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PDM_RAM0_Pri7 (7UL) /*!< Priority 7 */
+
+/* Register: PAMLI_PWM */
+/* Description: Description collection: AHB bus master priority register for PWMn */
+
+/* Bits 31..28 : Priority register for RAM AHB slave 7 */
+#define PAMLI_PWM_RAM7_Pos (28UL) /*!< Position of RAM7 field. */
+#define PAMLI_PWM_RAM7_Msk (0xFUL << PAMLI_PWM_RAM7_Pos) /*!< Bit mask of RAM7 field. */
+#define PAMLI_PWM_RAM7_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PWM_RAM7_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PWM_RAM7_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PWM_RAM7_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PWM_RAM7_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PWM_RAM7_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PWM_RAM7_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PWM_RAM7_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 27..24 : Priority register for RAM AHB slave 6 */
+#define PAMLI_PWM_RAM6_Pos (24UL) /*!< Position of RAM6 field. */
+#define PAMLI_PWM_RAM6_Msk (0xFUL << PAMLI_PWM_RAM6_Pos) /*!< Bit mask of RAM6 field. */
+#define PAMLI_PWM_RAM6_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PWM_RAM6_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PWM_RAM6_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PWM_RAM6_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PWM_RAM6_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PWM_RAM6_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PWM_RAM6_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PWM_RAM6_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 23..20 : Priority register for RAM AHB slave 5 */
+#define PAMLI_PWM_RAM5_Pos (20UL) /*!< Position of RAM5 field. */
+#define PAMLI_PWM_RAM5_Msk (0xFUL << PAMLI_PWM_RAM5_Pos) /*!< Bit mask of RAM5 field. */
+#define PAMLI_PWM_RAM5_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PWM_RAM5_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PWM_RAM5_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PWM_RAM5_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PWM_RAM5_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PWM_RAM5_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PWM_RAM5_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PWM_RAM5_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 19..16 : Priority register for RAM AHB slave 4 */
+#define PAMLI_PWM_RAM4_Pos (16UL) /*!< Position of RAM4 field. */
+#define PAMLI_PWM_RAM4_Msk (0xFUL << PAMLI_PWM_RAM4_Pos) /*!< Bit mask of RAM4 field. */
+#define PAMLI_PWM_RAM4_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PWM_RAM4_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PWM_RAM4_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PWM_RAM4_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PWM_RAM4_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PWM_RAM4_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PWM_RAM4_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PWM_RAM4_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 15..12 : Priority register for RAM AHB slave 3 */
+#define PAMLI_PWM_RAM3_Pos (12UL) /*!< Position of RAM3 field. */
+#define PAMLI_PWM_RAM3_Msk (0xFUL << PAMLI_PWM_RAM3_Pos) /*!< Bit mask of RAM3 field. */
+#define PAMLI_PWM_RAM3_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PWM_RAM3_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PWM_RAM3_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PWM_RAM3_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PWM_RAM3_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PWM_RAM3_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PWM_RAM3_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PWM_RAM3_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 11..8 : Priority register for RAM AHB slave 2 */
+#define PAMLI_PWM_RAM2_Pos (8UL) /*!< Position of RAM2 field. */
+#define PAMLI_PWM_RAM2_Msk (0xFUL << PAMLI_PWM_RAM2_Pos) /*!< Bit mask of RAM2 field. */
+#define PAMLI_PWM_RAM2_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PWM_RAM2_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PWM_RAM2_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PWM_RAM2_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PWM_RAM2_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PWM_RAM2_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PWM_RAM2_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PWM_RAM2_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 7..4 : Priority register for RAM AHB slave 1 */
+#define PAMLI_PWM_RAM1_Pos (4UL) /*!< Position of RAM1 field. */
+#define PAMLI_PWM_RAM1_Msk (0xFUL << PAMLI_PWM_RAM1_Pos) /*!< Bit mask of RAM1 field. */
+#define PAMLI_PWM_RAM1_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PWM_RAM1_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PWM_RAM1_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PWM_RAM1_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PWM_RAM1_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PWM_RAM1_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PWM_RAM1_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PWM_RAM1_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 3..0 : Priority register for RAM AHB slave 0 */
+#define PAMLI_PWM_RAM0_Pos (0UL) /*!< Position of RAM0 field. */
+#define PAMLI_PWM_RAM0_Msk (0xFUL << PAMLI_PWM_RAM0_Pos) /*!< Bit mask of RAM0 field. */
+#define PAMLI_PWM_RAM0_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_PWM_RAM0_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_PWM_RAM0_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_PWM_RAM0_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_PWM_RAM0_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_PWM_RAM0_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_PWM_RAM0_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_PWM_RAM0_Pri7 (7UL) /*!< Priority 7 */
+
+/* Register: PAMLI_SAADC */
+/* Description: AHB bus master priority register for SAADC */
+
+/* Bits 31..28 : Priority register for RAM AHB slave 7 */
+#define PAMLI_SAADC_RAM7_Pos (28UL) /*!< Position of RAM7 field. */
+#define PAMLI_SAADC_RAM7_Msk (0xFUL << PAMLI_SAADC_RAM7_Pos) /*!< Bit mask of RAM7 field. */
+#define PAMLI_SAADC_RAM7_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_SAADC_RAM7_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_SAADC_RAM7_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_SAADC_RAM7_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_SAADC_RAM7_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_SAADC_RAM7_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_SAADC_RAM7_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_SAADC_RAM7_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 27..24 : Priority register for RAM AHB slave 6 */
+#define PAMLI_SAADC_RAM6_Pos (24UL) /*!< Position of RAM6 field. */
+#define PAMLI_SAADC_RAM6_Msk (0xFUL << PAMLI_SAADC_RAM6_Pos) /*!< Bit mask of RAM6 field. */
+#define PAMLI_SAADC_RAM6_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_SAADC_RAM6_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_SAADC_RAM6_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_SAADC_RAM6_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_SAADC_RAM6_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_SAADC_RAM6_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_SAADC_RAM6_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_SAADC_RAM6_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 23..20 : Priority register for RAM AHB slave 5 */
+#define PAMLI_SAADC_RAM5_Pos (20UL) /*!< Position of RAM5 field. */
+#define PAMLI_SAADC_RAM5_Msk (0xFUL << PAMLI_SAADC_RAM5_Pos) /*!< Bit mask of RAM5 field. */
+#define PAMLI_SAADC_RAM5_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_SAADC_RAM5_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_SAADC_RAM5_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_SAADC_RAM5_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_SAADC_RAM5_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_SAADC_RAM5_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_SAADC_RAM5_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_SAADC_RAM5_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 19..16 : Priority register for RAM AHB slave 4 */
+#define PAMLI_SAADC_RAM4_Pos (16UL) /*!< Position of RAM4 field. */
+#define PAMLI_SAADC_RAM4_Msk (0xFUL << PAMLI_SAADC_RAM4_Pos) /*!< Bit mask of RAM4 field. */
+#define PAMLI_SAADC_RAM4_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_SAADC_RAM4_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_SAADC_RAM4_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_SAADC_RAM4_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_SAADC_RAM4_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_SAADC_RAM4_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_SAADC_RAM4_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_SAADC_RAM4_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 15..12 : Priority register for RAM AHB slave 3 */
+#define PAMLI_SAADC_RAM3_Pos (12UL) /*!< Position of RAM3 field. */
+#define PAMLI_SAADC_RAM3_Msk (0xFUL << PAMLI_SAADC_RAM3_Pos) /*!< Bit mask of RAM3 field. */
+#define PAMLI_SAADC_RAM3_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_SAADC_RAM3_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_SAADC_RAM3_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_SAADC_RAM3_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_SAADC_RAM3_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_SAADC_RAM3_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_SAADC_RAM3_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_SAADC_RAM3_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 11..8 : Priority register for RAM AHB slave 2 */
+#define PAMLI_SAADC_RAM2_Pos (8UL) /*!< Position of RAM2 field. */
+#define PAMLI_SAADC_RAM2_Msk (0xFUL << PAMLI_SAADC_RAM2_Pos) /*!< Bit mask of RAM2 field. */
+#define PAMLI_SAADC_RAM2_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_SAADC_RAM2_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_SAADC_RAM2_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_SAADC_RAM2_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_SAADC_RAM2_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_SAADC_RAM2_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_SAADC_RAM2_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_SAADC_RAM2_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 7..4 : Priority register for RAM AHB slave 1 */
+#define PAMLI_SAADC_RAM1_Pos (4UL) /*!< Position of RAM1 field. */
+#define PAMLI_SAADC_RAM1_Msk (0xFUL << PAMLI_SAADC_RAM1_Pos) /*!< Bit mask of RAM1 field. */
+#define PAMLI_SAADC_RAM1_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_SAADC_RAM1_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_SAADC_RAM1_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_SAADC_RAM1_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_SAADC_RAM1_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_SAADC_RAM1_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_SAADC_RAM1_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_SAADC_RAM1_Pri7 (7UL) /*!< Priority 7 */
+
+/* Bits 3..0 : Priority register for RAM AHB slave 0 */
+#define PAMLI_SAADC_RAM0_Pos (0UL) /*!< Position of RAM0 field. */
+#define PAMLI_SAADC_RAM0_Msk (0xFUL << PAMLI_SAADC_RAM0_Pos) /*!< Bit mask of RAM0 field. */
+#define PAMLI_SAADC_RAM0_Pri0 (0UL) /*!< Priority 0 */
+#define PAMLI_SAADC_RAM0_Pri1 (1UL) /*!< Priority 1 */
+#define PAMLI_SAADC_RAM0_Pri2 (2UL) /*!< Priority 2 */
+#define PAMLI_SAADC_RAM0_Pri3 (3UL) /*!< Priority 3 */
+#define PAMLI_SAADC_RAM0_Pri4 (4UL) /*!< Priority 4 */
+#define PAMLI_SAADC_RAM0_Pri5 (5UL) /*!< Priority 5 */
+#define PAMLI_SAADC_RAM0_Pri6 (6UL) /*!< Priority 6 */
+#define PAMLI_SAADC_RAM0_Pri7 (7UL) /*!< Priority 7 */
+
+
+/* Peripheral: PCGCMASTER */
+/* Description: PCGC Master 0 */
+
+/* Register: PCGCMASTER_SETPWRCONTHRESHOLDBASE */
+/* Description: Description collection: Set power consumption threshold base for power source / regulator n */
+
+/* Bits 3..0 : SETPWRCONTHRESHOLDBASE */
+#define PCGCMASTER_SETPWRCONTHRESHOLDBASE_SETPWRCONTHRESHOLDBASE_Pos (0UL) /*!< Position of SETPWRCONTHRESHOLDBASE field. */
+#define PCGCMASTER_SETPWRCONTHRESHOLDBASE_SETPWRCONTHRESHOLDBASE_Msk (0xFUL << PCGCMASTER_SETPWRCONTHRESHOLDBASE_SETPWRCONTHRESHOLDBASE_Pos) /*!< Bit mask of SETPWRCONTHRESHOLDBASE field. */
+
+/* Register: PCGCMASTER_SETPOWERCONSUMPTIONBASE */
+/* Description: Description collection: Set power consumption base for power/clock pair n */
+
+/* Bits 3..0 : POWERREQUIREMENT */
+#define PCGCMASTER_SETPOWERCONSUMPTIONBASE_POWERREQUIREMENT_Pos (0UL) /*!< Position of POWERREQUIREMENT field. */
+#define PCGCMASTER_SETPOWERCONSUMPTIONBASE_POWERREQUIREMENT_Msk (0xFUL << PCGCMASTER_SETPOWERCONSUMPTIONBASE_POWERREQUIREMENT_Pos) /*!< Bit mask of POWERREQUIREMENT field. */
+
+/* Register: PCGCMASTER_UNLOCKBACKDOORS */
+/* Description: Unlock backdoors */
+
+/* Bits 15..0 : Write: 0x00009375 to lock/unlock backdoors Read:  0x00000001 if backdoors is enabled Read:  0x00000000 if backdoors is disabled */
+#define PCGCMASTER_UNLOCKBACKDOORS_UNLOCKBACKDOORS_Pos (0UL) /*!< Position of UNLOCKBACKDOORS field. */
+#define PCGCMASTER_UNLOCKBACKDOORS_UNLOCKBACKDOORS_Msk (0xFFFFUL << PCGCMASTER_UNLOCKBACKDOORS_UNLOCKBACKDOORS_Pos) /*!< Bit mask of UNLOCKBACKDOORS field. */
+
+/* Register: PCGCMASTER_ENABLEPOWERREGFORCE */
+/* Description: Enable power reg force */
+
+/* Bits 2..0 : ENABLEPOWERREGFORCE */
+#define PCGCMASTER_ENABLEPOWERREGFORCE_ENABLEPOWERREGFORCE_Pos (0UL) /*!< Position of ENABLEPOWERREGFORCE field. */
+#define PCGCMASTER_ENABLEPOWERREGFORCE_ENABLEPOWERREGFORCE_Msk (0x7UL << PCGCMASTER_ENABLEPOWERREGFORCE_ENABLEPOWERREGFORCE_Pos) /*!< Bit mask of ENABLEPOWERREGFORCE field. */
+
+/* Register: PCGCMASTER_POWERREGFORCE */
+/* Description: Force reg */
+
+/* Bits 2..0 : POWERREGFORCEREG */
+#define PCGCMASTER_POWERREGFORCE_POWERREGFORCEREG_Pos (0UL) /*!< Position of POWERREGFORCEREG field. */
+#define PCGCMASTER_POWERREGFORCE_POWERREGFORCEREG_Msk (0x7UL << PCGCMASTER_POWERREGFORCE_POWERREGFORCEREG_Pos) /*!< Bit mask of POWERREGFORCEREG field. */
+
+/* Register: PCGCMASTER_MASTERFORCEREG */
+/* Description: Force reg */
+
+/* Bit 7 : POWERONFORCEPRE */
+#define PCGCMASTER_MASTERFORCEREG_POWERONFORCEPRE_Pos (7UL) /*!< Position of POWERONFORCEPRE field. */
+#define PCGCMASTER_MASTERFORCEREG_POWERONFORCEPRE_Msk (0x1UL << PCGCMASTER_MASTERFORCEREG_POWERONFORCEPRE_Pos) /*!< Bit mask of POWERONFORCEPRE field. */
+
+/* Bit 6 : ENABLEPOWERONFORCE */
+#define PCGCMASTER_MASTERFORCEREG_ENABLEPOWERONFORCE_Pos (6UL) /*!< Position of ENABLEPOWERONFORCE field. */
+#define PCGCMASTER_MASTERFORCEREG_ENABLEPOWERONFORCE_Msk (0x1UL << PCGCMASTER_MASTERFORCEREG_ENABLEPOWERONFORCE_Pos) /*!< Bit mask of ENABLEPOWERONFORCE field. */
+
+/* Bit 5 : VALUEARSTFORCEPRE */
+#define PCGCMASTER_MASTERFORCEREG_VALUEARSTFORCEPRE_Pos (5UL) /*!< Position of VALUEARSTFORCEPRE field. */
+#define PCGCMASTER_MASTERFORCEREG_VALUEARSTFORCEPRE_Msk (0x1UL << PCGCMASTER_MASTERFORCEREG_VALUEARSTFORCEPRE_Pos) /*!< Bit mask of VALUEARSTFORCEPRE field. */
+
+/* Bit 4 : ENABLEARSTFORCE */
+#define PCGCMASTER_MASTERFORCEREG_ENABLEARSTFORCE_Pos (4UL) /*!< Position of ENABLEARSTFORCE field. */
+#define PCGCMASTER_MASTERFORCEREG_ENABLEARSTFORCE_Msk (0x1UL << PCGCMASTER_MASTERFORCEREG_ENABLEARSTFORCE_Pos) /*!< Bit mask of ENABLEARSTFORCE field. */
+
+/* Bit 3 : ISOLATIONFORCEPRE */
+#define PCGCMASTER_MASTERFORCEREG_ISOLATIONFORCEPRE_Pos (3UL) /*!< Position of ISOLATIONFORCEPRE field. */
+#define PCGCMASTER_MASTERFORCEREG_ISOLATIONFORCEPRE_Msk (0x1UL << PCGCMASTER_MASTERFORCEREG_ISOLATIONFORCEPRE_Pos) /*!< Bit mask of ISOLATIONFORCEPRE field. */
+
+/* Bit 2 : ENABLEISOLATIONFORCE */
+#define PCGCMASTER_MASTERFORCEREG_ENABLEISOLATIONFORCE_Pos (2UL) /*!< Position of ENABLEISOLATIONFORCE field. */
+#define PCGCMASTER_MASTERFORCEREG_ENABLEISOLATIONFORCE_Msk (0x1UL << PCGCMASTER_MASTERFORCEREG_ENABLEISOLATIONFORCE_Pos) /*!< Bit mask of ENABLEISOLATIONFORCE field. */
+
+/* Bit 1 : PSWITCHFORCEPRE */
+#define PCGCMASTER_MASTERFORCEREG_PSWITCHFORCEPRE_Pos (1UL) /*!< Position of PSWITCHFORCEPRE field. */
+#define PCGCMASTER_MASTERFORCEREG_PSWITCHFORCEPRE_Msk (0x1UL << PCGCMASTER_MASTERFORCEREG_PSWITCHFORCEPRE_Pos) /*!< Bit mask of PSWITCHFORCEPRE field. */
+
+/* Bit 0 : ENABLEPSWITCHFORCE */
+#define PCGCMASTER_MASTERFORCEREG_ENABLEPSWITCHFORCE_Pos (0UL) /*!< Position of ENABLEPSWITCHFORCE field. */
+#define PCGCMASTER_MASTERFORCEREG_ENABLEPSWITCHFORCE_Msk (0x1UL << PCGCMASTER_MASTERFORCEREG_ENABLEPSWITCHFORCE_Pos) /*!< Bit mask of ENABLEPSWITCHFORCE field. */
+
+/* Register: PCGCMASTER_CLOCKFORCEREG */
+/* Description: Description collection: Force clock n */
+
+/* Bits 4..2 : CLOCKSOURCEFORCING */
+#define PCGCMASTER_CLOCKFORCEREG_CLOCKSOURCEFORCING_Pos (2UL) /*!< Position of CLOCKSOURCEFORCING field. */
+#define PCGCMASTER_CLOCKFORCEREG_CLOCKSOURCEFORCING_Msk (0x7UL << PCGCMASTER_CLOCKFORCEREG_CLOCKSOURCEFORCING_Pos) /*!< Bit mask of CLOCKSOURCEFORCING field. */
+
+/* Bit 1 : CLOCKFORCING */
+#define PCGCMASTER_CLOCKFORCEREG_CLOCKFORCING_Pos (1UL) /*!< Position of CLOCKFORCING field. */
+#define PCGCMASTER_CLOCKFORCEREG_CLOCKFORCING_Msk (0x1UL << PCGCMASTER_CLOCKFORCEREG_CLOCKFORCING_Pos) /*!< Bit mask of CLOCKFORCING field. */
+
+/* Bit 0 : Enable clock forcing */
+#define PCGCMASTER_CLOCKFORCEREG_ENABLE_Pos (0UL) /*!< Position of ENABLE field. */
+#define PCGCMASTER_CLOCKFORCEREG_ENABLE_Msk (0x1UL << PCGCMASTER_CLOCKFORCEREG_ENABLE_Pos) /*!< Bit mask of ENABLE field. */
 
 
 /* Peripheral: PDM */
@@ -4538,6 +9544,15 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PDM_EVENTS_END_EVENTS_END_NotGenerated (0UL) /*!< Event not generated */
 #define PDM_EVENTS_END_EVENTS_END_Generated (1UL) /*!< Event generated */
 
+/* Register: PDM_EVENTS_OVERRUN */
+/* Description: PDM samples lost due to DMA destination not available */
+
+/* Bit 0 : PDM samples lost due to DMA destination not available */
+#define PDM_EVENTS_OVERRUN_EVENTS_OVERRUN_Pos (0UL) /*!< Position of EVENTS_OVERRUN field. */
+#define PDM_EVENTS_OVERRUN_EVENTS_OVERRUN_Msk (0x1UL << PDM_EVENTS_OVERRUN_EVENTS_OVERRUN_Pos) /*!< Bit mask of EVENTS_OVERRUN field. */
+#define PDM_EVENTS_OVERRUN_EVENTS_OVERRUN_NotGenerated (0UL) /*!< Event not generated */
+#define PDM_EVENTS_OVERRUN_EVENTS_OVERRUN_Generated (1UL) /*!< Event generated */
+
 /* Register: PDM_PUBLISH_STARTED */
 /* Description: Publish configuration for event STARTED */
 
@@ -4577,8 +9592,27 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PDM_PUBLISH_END_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define PDM_PUBLISH_END_CHIDX_Msk (0xFUL << PDM_PUBLISH_END_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
+/* Register: PDM_PUBLISH_OVERRUN */
+/* Description: Publish configuration for event OVERRUN */
+
+/* Bit 31 :   */
+#define PDM_PUBLISH_OVERRUN_EN_Pos (31UL) /*!< Position of EN field. */
+#define PDM_PUBLISH_OVERRUN_EN_Msk (0x1UL << PDM_PUBLISH_OVERRUN_EN_Pos) /*!< Bit mask of EN field. */
+#define PDM_PUBLISH_OVERRUN_EN_Disabled (0UL) /*!< Disable publishing */
+#define PDM_PUBLISH_OVERRUN_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event OVERRUN will publish to. */
+#define PDM_PUBLISH_OVERRUN_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define PDM_PUBLISH_OVERRUN_CHIDX_Msk (0xFUL << PDM_PUBLISH_OVERRUN_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
 /* Register: PDM_INTEN */
 /* Description: Enable or disable interrupt */
+
+/* Bit 3 : Enable or disable interrupt for event OVERRUN */
+#define PDM_INTEN_OVERRUN_Pos (3UL) /*!< Position of OVERRUN field. */
+#define PDM_INTEN_OVERRUN_Msk (0x1UL << PDM_INTEN_OVERRUN_Pos) /*!< Bit mask of OVERRUN field. */
+#define PDM_INTEN_OVERRUN_Disabled (0UL) /*!< Disable */
+#define PDM_INTEN_OVERRUN_Enabled (1UL) /*!< Enable */
 
 /* Bit 2 : Enable or disable interrupt for event END */
 #define PDM_INTEN_END_Pos (2UL) /*!< Position of END field. */
@@ -4600,6 +9634,13 @@ POSSIBILITY OF SUCH DAMAGE.
 
 /* Register: PDM_INTENSET */
 /* Description: Enable interrupt */
+
+/* Bit 3 : Write '1' to enable interrupt for event OVERRUN */
+#define PDM_INTENSET_OVERRUN_Pos (3UL) /*!< Position of OVERRUN field. */
+#define PDM_INTENSET_OVERRUN_Msk (0x1UL << PDM_INTENSET_OVERRUN_Pos) /*!< Bit mask of OVERRUN field. */
+#define PDM_INTENSET_OVERRUN_Disabled (0UL) /*!< Read: Disabled */
+#define PDM_INTENSET_OVERRUN_Enabled (1UL) /*!< Read: Enabled */
+#define PDM_INTENSET_OVERRUN_Set (1UL) /*!< Enable */
 
 /* Bit 2 : Write '1' to enable interrupt for event END */
 #define PDM_INTENSET_END_Pos (2UL) /*!< Position of END field. */
@@ -4624,6 +9665,13 @@ POSSIBILITY OF SUCH DAMAGE.
 
 /* Register: PDM_INTENCLR */
 /* Description: Disable interrupt */
+
+/* Bit 3 : Write '1' to disable interrupt for event OVERRUN */
+#define PDM_INTENCLR_OVERRUN_Pos (3UL) /*!< Position of OVERRUN field. */
+#define PDM_INTENCLR_OVERRUN_Msk (0x1UL << PDM_INTENCLR_OVERRUN_Pos) /*!< Bit mask of OVERRUN field. */
+#define PDM_INTENCLR_OVERRUN_Disabled (0UL) /*!< Read: Disabled */
+#define PDM_INTENCLR_OVERRUN_Enabled (1UL) /*!< Read: Enabled */
+#define PDM_INTENCLR_OVERRUN_Clear (1UL) /*!< Disable */
 
 /* Bit 2 : Write '1' to disable interrupt for event END */
 #define PDM_INTENCLR_END_Pos (2UL) /*!< Position of END field. */
@@ -4662,7 +9710,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PDM_PDMCLKCTRL_FREQ_Pos (0UL) /*!< Position of FREQ field. */
 #define PDM_PDMCLKCTRL_FREQ_Msk (0xFFFFFFFFUL << PDM_PDMCLKCTRL_FREQ_Pos) /*!< Bit mask of FREQ field. */
 #define PDM_PDMCLKCTRL_FREQ_1000K (0x08000000UL) /*!< PDM_CLK = 32 MHz / 32 = 1.000 MHz */
-#define PDM_PDMCLKCTRL_FREQ_Default (0x08400000UL) /*!< PDM_CLK = 32 MHz / 31 = 1.032 MHz. Nominal clock for RATIO=Ratio64. */
+#define PDM_PDMCLKCTRL_FREQ_Default (0x08400000UL) /*!< PDM_CLK = 32 MHz / 31 = 1.032 MHz. Nominal clock for RATIO=Ratio64. Assumes a 20 bit Baud Rate Generator (BRG) dividing the 32 MHz clock. Output of BRG is connected to PDM_CLK, the filter source clock requires twice that rate, a frequency doubler is built in the module to provide 2.048 MHz, which implies a filter clockdiv ratio hardcoded at x2 to the IP. */
 #define PDM_PDMCLKCTRL_FREQ_1067K (0x08800000UL) /*!< PDM_CLK = 32 MHz / 30 = 1.067 MHz */
 #define PDM_PDMCLKCTRL_FREQ_1231K (0x09800000UL) /*!< PDM_CLK = 32 MHz / 26 = 1.231 MHz */
 #define PDM_PDMCLKCTRL_FREQ_1280K (0x0A000000UL) /*!< PDM_CLK = 32 MHz / 25 = 1.280 MHz. Nominal clock for RATIO=Ratio80. */
@@ -4677,16 +9725,39 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PDM_MODE_EDGE_LeftFalling (0UL) /*!< Left (or mono) is sampled on falling edge of PDM_CLK */
 #define PDM_MODE_EDGE_LeftRising (1UL) /*!< Left (or mono) is sampled on rising edge of PDM_CLK */
 
-/* Bit 0 : Mono or stereo operation */
+/* Bit 0 : Mono or stereo operation Mono also disables the gated clock to the right filter bank */
 #define PDM_MODE_OPERATION_Pos (0UL) /*!< Position of OPERATION field. */
 #define PDM_MODE_OPERATION_Msk (0x1UL << PDM_MODE_OPERATION_Pos) /*!< Bit mask of OPERATION field. */
 #define PDM_MODE_OPERATION_Stereo (0UL) /*!< Sample and store one pair (Left + Right) of 16bit samples per RAM word R=[31:16]; L=[15:0] */
 #define PDM_MODE_OPERATION_Mono (1UL) /*!< Sample and store two successive Left samples (16 bit each) per RAM word L1=[31:16]; L0=[15:0] */
 
+/* Register: PDM_FDBYPASS */
+/* Description: Bypass the frequency doubler in the PDM clock generation */
+
+/* Bit 0 : Bypass the frequency doubler in the PDM clock generation, and revert to a simple divider structure. */
+#define PDM_FDBYPASS_BYPASS_Pos (0UL) /*!< Position of BYPASS field. */
+#define PDM_FDBYPASS_BYPASS_Msk (0x1UL << PDM_FDBYPASS_BYPASS_Pos) /*!< Bit mask of BYPASS field. */
+#define PDM_FDBYPASS_BYPASS_DoublerActive (0UL) /*!< PDMCLKCTRL determines directly the PDM_CLK frequency. A doubler is used to provide twice that clock to the filters. This allows better accuracy on PDM_CLK. */
+#define PDM_FDBYPASS_BYPASS_DividerActive (1UL) /*!< PDMCLKCTRL determines the clock provided to the filters, PDM_CLK is generated by dividing that clock by two. This results in less accuracy on PDM_CLK. */
+
+/* Register: PDM_RXDLDATA */
+/* Description: Left sample from filter output */
+
+/* Bits 15..0 : Left sample from filter output */
+#define PDM_RXDLDATA_RXDLDATA_Pos (0UL) /*!< Position of RXDLDATA field. */
+#define PDM_RXDLDATA_RXDLDATA_Msk (0xFFFFUL << PDM_RXDLDATA_RXDLDATA_Pos) /*!< Bit mask of RXDLDATA field. */
+
+/* Register: PDM_RXDRDATA */
+/* Description: Right sample from filter output */
+
+/* Bits 15..0 : Right sample from filter output */
+#define PDM_RXDRDATA_RXDRDATA_Pos (0UL) /*!< Position of RXDRDATA field. */
+#define PDM_RXDRDATA_RXDRDATA_Msk (0xFFFFUL << PDM_RXDRDATA_RXDRDATA_Pos) /*!< Bit mask of RXDRDATA field. */
+
 /* Register: PDM_GAINL */
 /* Description: Left output gain adjustment */
 
-/* Bits 6..0 : Left output gain adjustment, in 0.5 dB steps, around the default module gain (see electrical parameters) 0x00    -20 dB gain adjust 0x01  -19.5 dB gain adjust (...) 0x27   -0.5 dB gain adjust 0x28      0 dB gain adjust 0x29   +0.5 dB gain adjust (...) 0x4F  +19.5 dB gain adjust 0x50    +20 dB gain adjust */
+/* Bits 6..0 : Left output gain adjustment, in 0.5 dB steps, around the default module gain (see electrical parameters) 0x00    -20 dB gain adjust 0x01  -19.5 dB gain adjust (...) 0x27   -0.5 dB gain adjust 0x28      0 dB gain adjust 0x29   +0.5 dB gain adjust (...) 0x4F  +19.5 dB gain adjust 0x50    +20 dB gain adjust 0x51    +20 dB gain adjust 0x52    +20 dB gain adjust (...) */
 #define PDM_GAINL_GAINL_Pos (0UL) /*!< Position of GAINL field. */
 #define PDM_GAINL_GAINL_Msk (0x7FUL << PDM_GAINL_GAINL_Pos) /*!< Bit mask of GAINL field. */
 #define PDM_GAINL_GAINL_MinGain (0x00UL) /*!< -20dB gain adjustment (minimum) */
@@ -4711,6 +9782,77 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PDM_RATIO_RATIO_Msk (0x1UL << PDM_RATIO_RATIO_Pos) /*!< Bit mask of RATIO field. */
 #define PDM_RATIO_RATIO_Ratio64 (0UL) /*!< Ratio of 64 */
 #define PDM_RATIO_RATIO_Ratio80 (1UL) /*!< Ratio of 80 */
+
+/* Register: PDM_FILTER_HPPOLE */
+/* Description: Settings for the high-pass filter */
+
+/* Bits 3..0 : Settings for the high-pass filter -3dB gain pole, assuming filter source clock of 2.048 MHz */
+#define PDM_FILTER_HPPOLE_HPPOLE_Pos (0UL) /*!< Position of HPPOLE field. */
+#define PDM_FILTER_HPPOLE_HPPOLE_Msk (0xFUL << PDM_FILTER_HPPOLE_HPPOLE_Pos) /*!< Bit mask of HPPOLE field. */
+#define PDM_FILTER_HPPOLE_HPPOLE_p134k (1UL) /*!< 134010 Hz */
+#define PDM_FILTER_HPPOLE_HPPOLE_p73k (2UL) /*!< 73037 Hz */
+#define PDM_FILTER_HPPOLE_HPPOLE_p38k (3UL) /*!< 38436 Hz */
+#define PDM_FILTER_HPPOLE_HPPOLE_p19k (4UL) /*!< 19767 Hz */
+#define PDM_FILTER_HPPOLE_HPPOLE_p10k (5UL) /*!< 10031 Hz */
+#define PDM_FILTER_HPPOLE_HPPOLE_p5k (6UL) /*!< 5054 Hz */
+#define PDM_FILTER_HPPOLE_HPPOLE_p2k5 (7UL) /*!< 2537 Hz */
+#define PDM_FILTER_HPPOLE_HPPOLE_p1k2 (8UL) /*!< 1271 Hz */
+#define PDM_FILTER_HPPOLE_HPPOLE_p640 (9UL) /*!< 636 Hz */
+#define PDM_FILTER_HPPOLE_HPPOLE_p320 (10UL) /*!< 318 Hz */
+#define PDM_FILTER_HPPOLE_HPPOLE_p160 (11UL) /*!< 159 Hz */
+#define PDM_FILTER_HPPOLE_HPPOLE_p80 (12UL) /*!< 80 Hz */
+#define PDM_FILTER_HPPOLE_HPPOLE_p40 (13UL) /*!< 40 Hz */
+#define PDM_FILTER_HPPOLE_HPPOLE_p20 (14UL) /*!< 20 Hz */
+#define PDM_FILTER_HPPOLE_HPPOLE_p10 (15UL) /*!< 10 Hz */
+
+/* Register: PDM_FILTER_HPDISABLE */
+/* Description: High pass filter disable */
+
+/* Bit 0 : High pass filter disable */
+#define PDM_FILTER_HPDISABLE_DISABLE_Pos (0UL) /*!< Position of DISABLE field. */
+#define PDM_FILTER_HPDISABLE_DISABLE_Msk (0x1UL << PDM_FILTER_HPDISABLE_DISABLE_Pos) /*!< Bit mask of DISABLE field. */
+#define PDM_FILTER_HPDISABLE_DISABLE_Enable (0UL) /*!< High pass filter enabled */
+#define PDM_FILTER_HPDISABLE_DISABLE_Disable (1UL) /*!< High pass filter disabled */
+
+/* Register: PDM_FILTER_SOFTMUTE */
+/* Description: Soft mute function */
+
+/* Bit 0 : Soft mute function */
+#define PDM_FILTER_SOFTMUTE_ENABLE_Pos (0UL) /*!< Position of ENABLE field. */
+#define PDM_FILTER_SOFTMUTE_ENABLE_Msk (0x1UL << PDM_FILTER_SOFTMUTE_ENABLE_Pos) /*!< Bit mask of ENABLE field. */
+#define PDM_FILTER_SOFTMUTE_ENABLE_Disabled (0UL) /*!< Disable soft mute function */
+#define PDM_FILTER_SOFTMUTE_ENABLE_Enabled (1UL) /*!< Enable soft mute function */
+
+/* Register: PDM_FILTER_SOFTCYCLES */
+/* Description: Soft mute settings */
+
+/* Bits 2..0 : Soft mute settings: amount of cycles for transition */
+#define PDM_FILTER_SOFTCYCLES_DISABLE_Pos (0UL) /*!< Position of DISABLE field. */
+#define PDM_FILTER_SOFTCYCLES_DISABLE_Msk (0x7UL << PDM_FILTER_SOFTCYCLES_DISABLE_Pos) /*!< Bit mask of DISABLE field. */
+#define PDM_FILTER_SOFTCYCLES_DISABLE_s16 (0UL) /*!< 16 filter source clock cycles */
+#define PDM_FILTER_SOFTCYCLES_DISABLE_s32 (1UL) /*!< 32 filter source clock cycles */
+#define PDM_FILTER_SOFTCYCLES_DISABLE_s48 (2UL) /*!< 48 filter source clock cycles */
+#define PDM_FILTER_SOFTCYCLES_DISABLE_s64 (3UL) /*!< 64 filter source clock cycles */
+#define PDM_FILTER_SOFTCYCLES_DISABLE_s80 (4UL) /*!< 80 filter source clock cycles */
+#define PDM_FILTER_SOFTCYCLES_DISABLE_s96 (5UL) /*!< 96 filter source clock cycles */
+#define PDM_FILTER_SOFTCYCLES_DISABLE_s112 (6UL) /*!< 112 filter source clock cycles */
+#define PDM_FILTER_SOFTCYCLES_DISABLE_s128 (7UL) /*!< 128 filter source clock cycles */
+
+/* Register: PDM_FILTER_SAMPLEDELAY */
+/* Description: Input Data Sampling with Number of PDM_CLK Clock Cycle Delay */
+
+/* Bit 0 : Input Data Sampling with Number of PDM_CLK Clock Cycle Delay */
+#define PDM_FILTER_SAMPLEDELAY_DELAY_Pos (0UL) /*!< Position of DELAY field. */
+#define PDM_FILTER_SAMPLEDELAY_DELAY_Msk (0x1UL << PDM_FILTER_SAMPLEDELAY_DELAY_Pos) /*!< Bit mask of DELAY field. */
+#define PDM_FILTER_SAMPLEDELAY_DELAY_x2 (0UL) /*!< 2x cycles */
+#define PDM_FILTER_SAMPLEDELAY_DELAY_x4 (1UL) /*!< 4x cycles */
+
+/* Register: PDM_PHASE */
+/* Description: Selection of delay on the clock line (to avoid potential setup&amp;hold timing violation on input data) */
+
+/* Bits 3..0 : To avoid potential setup&amp;hold timing violation on input data, this register provides selection between 14 phase delay registers (15 taps), which each provide an additional 31.25ns delay of pdmClockToPad relative to pdmClockToFilter. */
+#define PDM_PHASE_PHASE_Pos (0UL) /*!< Position of PHASE field. */
+#define PDM_PHASE_PHASE_Msk (0xFUL << PDM_PHASE_PHASE_Pos) /*!< Bit mask of PHASE field. */
 
 /* Register: PDM_PSEL_CLK */
 /* Description: Pin number configuration for PDM CLK signal */
@@ -4738,6 +9880,13 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PDM_PSEL_DIN_PIN_Pos (0UL) /*!< Position of PIN field. */
 #define PDM_PSEL_DIN_PIN_Msk (0x1FUL << PDM_PSEL_DIN_PIN_Pos) /*!< Bit mask of PIN field. */
 
+/* Register: PDM_TSEL */
+/* Description: Trim value for ramTSEL[1:0] on the RamBist interface */
+
+/* Bits 1..0 : Trim value for ramTSEL[1:0] on the RamBist interface */
+#define PDM_TSEL_RAMTSEL_Pos (0UL) /*!< Position of RAMTSEL field. */
+#define PDM_TSEL_RAMTSEL_Msk (0x3UL << PDM_TSEL_RAMTSEL_Pos) /*!< Bit mask of RAMTSEL field. */
+
 /* Register: PDM_SAMPLE_PTR */
 /* Description: RAM address pointer to write samples to with EasyDMA */
 
@@ -4752,25 +9901,116 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PDM_SAMPLE_MAXCNT_BUFFSIZE_Pos (0UL) /*!< Position of BUFFSIZE field. */
 #define PDM_SAMPLE_MAXCNT_BUFFSIZE_Msk (0x7FFFUL << PDM_SAMPLE_MAXCNT_BUFFSIZE_Pos) /*!< Bit mask of BUFFSIZE field. */
 
+/* Register: PDM_SAMPLE_AMOUNT */
+/* Description: Number of samples transferred into Data RAM since last START task */
+
+/* Bits 14..0 : Number of samples transferred into Data RAM since last START task */
+#define PDM_SAMPLE_AMOUNT_AMOUNT_Pos (0UL) /*!< Position of AMOUNT field. */
+#define PDM_SAMPLE_AMOUNT_AMOUNT_Msk (0x7FFFUL << PDM_SAMPLE_AMOUNT_AMOUNT_Pos) /*!< Bit mask of AMOUNT field. */
+
 
 /* Peripheral: POWER */
 /* Description: Power control 0 */
 
-/* Register: POWER_TASKS_CONSTLAT */
-/* Description: Enable constant latency mode. */
+/* Register: POWER_TASKS_IOIFLDOREQSTART */
+/* Description: Start requesting IO interface 1V8 LDO (IOIFLDO) */
 
-/* Bit 0 : Enable constant latency mode. */
+/* Bit 0 : Start requesting IO interface 1V8 LDO (IOIFLDO) */
+#define POWER_TASKS_IOIFLDOREQSTART_TASKS_IOIFLDOREQSTART_Pos (0UL) /*!< Position of TASKS_IOIFLDOREQSTART field. */
+#define POWER_TASKS_IOIFLDOREQSTART_TASKS_IOIFLDOREQSTART_Msk (0x1UL << POWER_TASKS_IOIFLDOREQSTART_TASKS_IOIFLDOREQSTART_Pos) /*!< Bit mask of TASKS_IOIFLDOREQSTART field. */
+#define POWER_TASKS_IOIFLDOREQSTART_TASKS_IOIFLDOREQSTART_Trigger (1UL) /*!< Trigger task */
+
+/* Register: POWER_TASKS_IOIFLDOREQSTOP */
+/* Description: Stop requesting IO interface 1V8 LDO (IOIFLDO) */
+
+/* Bit 0 : Stop requesting IO interface 1V8 LDO (IOIFLDO) */
+#define POWER_TASKS_IOIFLDOREQSTOP_TASKS_IOIFLDOREQSTOP_Pos (0UL) /*!< Position of TASKS_IOIFLDOREQSTOP field. */
+#define POWER_TASKS_IOIFLDOREQSTOP_TASKS_IOIFLDOREQSTOP_Msk (0x1UL << POWER_TASKS_IOIFLDOREQSTOP_TASKS_IOIFLDOREQSTOP_Pos) /*!< Bit mask of TASKS_IOIFLDOREQSTOP field. */
+#define POWER_TASKS_IOIFLDOREQSTOP_TASKS_IOIFLDOREQSTOP_Trigger (1UL) /*!< Trigger task */
+
+/* Register: POWER_TASKS_PWMREQSTART */
+/* Description: Request forcing PWM mode in external DC/DC voltage regulator. (Drives FPWM_DCDC pin high or low depending on a setting in UICR). */
+
+/* Bit 0 : Request forcing PWM mode in external DC/DC voltage regulator. (Drives FPWM_DCDC pin high or low depending on a setting in UICR). */
+#define POWER_TASKS_PWMREQSTART_TASKS_PWMREQSTART_Pos (0UL) /*!< Position of TASKS_PWMREQSTART field. */
+#define POWER_TASKS_PWMREQSTART_TASKS_PWMREQSTART_Msk (0x1UL << POWER_TASKS_PWMREQSTART_TASKS_PWMREQSTART_Pos) /*!< Bit mask of TASKS_PWMREQSTART field. */
+#define POWER_TASKS_PWMREQSTART_TASKS_PWMREQSTART_Trigger (1UL) /*!< Trigger task */
+
+/* Register: POWER_TASKS_PWMREQSTOP */
+/* Description: Stop requesting forcing PWM mode in external DC/DC voltage regulator */
+
+/* Bit 0 : Stop requesting forcing PWM mode in external DC/DC voltage regulator */
+#define POWER_TASKS_PWMREQSTOP_TASKS_PWMREQSTOP_Pos (0UL) /*!< Position of TASKS_PWMREQSTOP field. */
+#define POWER_TASKS_PWMREQSTOP_TASKS_PWMREQSTOP_Msk (0x1UL << POWER_TASKS_PWMREQSTOP_TASKS_PWMREQSTOP_Pos) /*!< Bit mask of TASKS_PWMREQSTOP field. */
+#define POWER_TASKS_PWMREQSTOP_TASKS_PWMREQSTOP_Trigger (1UL) /*!< Trigger task */
+
+/* Register: POWER_TASKS_CONSTLAT */
+/* Description: Enable constant latency mode. When going to sleep: CPU is clock gated, but regulators, oscillators and clock tree are kept on. */
+
+/* Bit 0 : Enable constant latency mode. When going to sleep: CPU is clock gated, but regulators, oscillators and clock tree are kept on. */
 #define POWER_TASKS_CONSTLAT_TASKS_CONSTLAT_Pos (0UL) /*!< Position of TASKS_CONSTLAT field. */
 #define POWER_TASKS_CONSTLAT_TASKS_CONSTLAT_Msk (0x1UL << POWER_TASKS_CONSTLAT_TASKS_CONSTLAT_Pos) /*!< Bit mask of TASKS_CONSTLAT field. */
 #define POWER_TASKS_CONSTLAT_TASKS_CONSTLAT_Trigger (1UL) /*!< Trigger task */
 
 /* Register: POWER_TASKS_LOWPWR */
-/* Description: Enable low power mode (variable latency) */
+/* Description: Enable low power mode (variable latency) When going to sleep: Oscillators are switched off (if nothing else is requesting clocks). Regulators are switched off (if nothing else is requesting power). */
 
-/* Bit 0 : Enable low power mode (variable latency) */
+/* Bit 0 : Enable low power mode (variable latency) When going to sleep: Oscillators are switched off (if nothing else is requesting clocks). Regulators are switched off (if nothing else is requesting power). */
 #define POWER_TASKS_LOWPWR_TASKS_LOWPWR_Pos (0UL) /*!< Position of TASKS_LOWPWR field. */
 #define POWER_TASKS_LOWPWR_TASKS_LOWPWR_Msk (0x1UL << POWER_TASKS_LOWPWR_TASKS_LOWPWR_Pos) /*!< Bit mask of TASKS_LOWPWR field. */
 #define POWER_TASKS_LOWPWR_TASKS_LOWPWR_Trigger (1UL) /*!< Trigger task */
+
+/* Register: POWER_SUBSCRIBE_IOIFLDOREQSTART */
+/* Description: Subscribe configuration for task IOIFLDOREQSTART */
+
+/* Bit 31 :   */
+#define POWER_SUBSCRIBE_IOIFLDOREQSTART_EN_Pos (31UL) /*!< Position of EN field. */
+#define POWER_SUBSCRIBE_IOIFLDOREQSTART_EN_Msk (0x1UL << POWER_SUBSCRIBE_IOIFLDOREQSTART_EN_Pos) /*!< Bit mask of EN field. */
+#define POWER_SUBSCRIBE_IOIFLDOREQSTART_EN_Disabled (0UL) /*!< Disable subscription */
+#define POWER_SUBSCRIBE_IOIFLDOREQSTART_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 3..0 : Channel that task IOIFLDOREQSTART will subscribe to */
+#define POWER_SUBSCRIBE_IOIFLDOREQSTART_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define POWER_SUBSCRIBE_IOIFLDOREQSTART_CHIDX_Msk (0xFUL << POWER_SUBSCRIBE_IOIFLDOREQSTART_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: POWER_SUBSCRIBE_IOIFLDOREQSTOP */
+/* Description: Subscribe configuration for task IOIFLDOREQSTOP */
+
+/* Bit 31 :   */
+#define POWER_SUBSCRIBE_IOIFLDOREQSTOP_EN_Pos (31UL) /*!< Position of EN field. */
+#define POWER_SUBSCRIBE_IOIFLDOREQSTOP_EN_Msk (0x1UL << POWER_SUBSCRIBE_IOIFLDOREQSTOP_EN_Pos) /*!< Bit mask of EN field. */
+#define POWER_SUBSCRIBE_IOIFLDOREQSTOP_EN_Disabled (0UL) /*!< Disable subscription */
+#define POWER_SUBSCRIBE_IOIFLDOREQSTOP_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 3..0 : Channel that task IOIFLDOREQSTOP will subscribe to */
+#define POWER_SUBSCRIBE_IOIFLDOREQSTOP_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define POWER_SUBSCRIBE_IOIFLDOREQSTOP_CHIDX_Msk (0xFUL << POWER_SUBSCRIBE_IOIFLDOREQSTOP_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: POWER_SUBSCRIBE_PWMREQSTART */
+/* Description: Subscribe configuration for task PWMREQSTART */
+
+/* Bit 31 :   */
+#define POWER_SUBSCRIBE_PWMREQSTART_EN_Pos (31UL) /*!< Position of EN field. */
+#define POWER_SUBSCRIBE_PWMREQSTART_EN_Msk (0x1UL << POWER_SUBSCRIBE_PWMREQSTART_EN_Pos) /*!< Bit mask of EN field. */
+#define POWER_SUBSCRIBE_PWMREQSTART_EN_Disabled (0UL) /*!< Disable subscription */
+#define POWER_SUBSCRIBE_PWMREQSTART_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 3..0 : Channel that task PWMREQSTART will subscribe to */
+#define POWER_SUBSCRIBE_PWMREQSTART_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define POWER_SUBSCRIBE_PWMREQSTART_CHIDX_Msk (0xFUL << POWER_SUBSCRIBE_PWMREQSTART_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: POWER_SUBSCRIBE_PWMREQSTOP */
+/* Description: Subscribe configuration for task PWMREQSTOP */
+
+/* Bit 31 :   */
+#define POWER_SUBSCRIBE_PWMREQSTOP_EN_Pos (31UL) /*!< Position of EN field. */
+#define POWER_SUBSCRIBE_PWMREQSTOP_EN_Msk (0x1UL << POWER_SUBSCRIBE_PWMREQSTOP_EN_Pos) /*!< Bit mask of EN field. */
+#define POWER_SUBSCRIBE_PWMREQSTOP_EN_Disabled (0UL) /*!< Disable subscription */
+#define POWER_SUBSCRIBE_PWMREQSTOP_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 3..0 : Channel that task PWMREQSTOP will subscribe to */
+#define POWER_SUBSCRIBE_PWMREQSTOP_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define POWER_SUBSCRIBE_PWMREQSTOP_CHIDX_Msk (0xFUL << POWER_SUBSCRIBE_PWMREQSTOP_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
 /* Register: POWER_SUBSCRIBE_CONSTLAT */
 /* Description: Subscribe configuration for task CONSTLAT */
@@ -4807,6 +10047,15 @@ POSSIBILITY OF SUCH DAMAGE.
 #define POWER_EVENTS_POFWARN_EVENTS_POFWARN_NotGenerated (0UL) /*!< Event not generated */
 #define POWER_EVENTS_POFWARN_EVENTS_POFWARN_Generated (1UL) /*!< Event generated */
 
+/* Register: POWER_EVENTS_IOIFLDOSTARTED */
+/* Description: IO interface 1V8 LDO (IOIFLDO) has become ready */
+
+/* Bit 0 : IO interface 1V8 LDO (IOIFLDO) has become ready */
+#define POWER_EVENTS_IOIFLDOSTARTED_EVENTS_IOIFLDOSTARTED_Pos (0UL) /*!< Position of EVENTS_IOIFLDOSTARTED field. */
+#define POWER_EVENTS_IOIFLDOSTARTED_EVENTS_IOIFLDOSTARTED_Msk (0x1UL << POWER_EVENTS_IOIFLDOSTARTED_EVENTS_IOIFLDOSTARTED_Pos) /*!< Bit mask of EVENTS_IOIFLDOSTARTED field. */
+#define POWER_EVENTS_IOIFLDOSTARTED_EVENTS_IOIFLDOSTARTED_NotGenerated (0UL) /*!< Event not generated */
+#define POWER_EVENTS_IOIFLDOSTARTED_EVENTS_IOIFLDOSTARTED_Generated (1UL) /*!< Event generated */
+
 /* Register: POWER_EVENTS_SLEEPENTER */
 /* Description: CPU entered WFI/WFE sleep */
 
@@ -4837,6 +10086,19 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 3..0 : Channel that event POFWARN will publish to. */
 #define POWER_PUBLISH_POFWARN_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define POWER_PUBLISH_POFWARN_CHIDX_Msk (0xFUL << POWER_PUBLISH_POFWARN_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: POWER_PUBLISH_IOIFLDOSTARTED */
+/* Description: Publish configuration for event IOIFLDOSTARTED */
+
+/* Bit 31 :   */
+#define POWER_PUBLISH_IOIFLDOSTARTED_EN_Pos (31UL) /*!< Position of EN field. */
+#define POWER_PUBLISH_IOIFLDOSTARTED_EN_Msk (0x1UL << POWER_PUBLISH_IOIFLDOSTARTED_EN_Pos) /*!< Bit mask of EN field. */
+#define POWER_PUBLISH_IOIFLDOSTARTED_EN_Disabled (0UL) /*!< Disable publishing */
+#define POWER_PUBLISH_IOIFLDOSTARTED_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event IOIFLDOSTARTED will publish to. */
+#define POWER_PUBLISH_IOIFLDOSTARTED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define POWER_PUBLISH_IOIFLDOSTARTED_CHIDX_Msk (0xFUL << POWER_PUBLISH_IOIFLDOSTARTED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
 /* Register: POWER_PUBLISH_SLEEPENTER */
 /* Description: Publish configuration for event SLEEPENTER */
@@ -4879,6 +10141,12 @@ POSSIBILITY OF SUCH DAMAGE.
 #define POWER_INTEN_SLEEPENTER_Disabled (0UL) /*!< Disable */
 #define POWER_INTEN_SLEEPENTER_Enabled (1UL) /*!< Enable */
 
+/* Bit 4 : Enable or disable interrupt for event IOIFLDOSTARTED */
+#define POWER_INTEN_IOIFLDOSTARTED_Pos (4UL) /*!< Position of IOIFLDOSTARTED field. */
+#define POWER_INTEN_IOIFLDOSTARTED_Msk (0x1UL << POWER_INTEN_IOIFLDOSTARTED_Pos) /*!< Bit mask of IOIFLDOSTARTED field. */
+#define POWER_INTEN_IOIFLDOSTARTED_Disabled (0UL) /*!< Disable */
+#define POWER_INTEN_IOIFLDOSTARTED_Enabled (1UL) /*!< Enable */
+
 /* Bit 2 : Enable or disable interrupt for event POFWARN */
 #define POWER_INTEN_POFWARN_Pos (2UL) /*!< Position of POFWARN field. */
 #define POWER_INTEN_POFWARN_Msk (0x1UL << POWER_INTEN_POFWARN_Pos) /*!< Bit mask of POFWARN field. */
@@ -4901,6 +10169,13 @@ POSSIBILITY OF SUCH DAMAGE.
 #define POWER_INTENSET_SLEEPENTER_Disabled (0UL) /*!< Read: Disabled */
 #define POWER_INTENSET_SLEEPENTER_Enabled (1UL) /*!< Read: Enabled */
 #define POWER_INTENSET_SLEEPENTER_Set (1UL) /*!< Enable */
+
+/* Bit 4 : Write '1' to enable interrupt for event IOIFLDOSTARTED */
+#define POWER_INTENSET_IOIFLDOSTARTED_Pos (4UL) /*!< Position of IOIFLDOSTARTED field. */
+#define POWER_INTENSET_IOIFLDOSTARTED_Msk (0x1UL << POWER_INTENSET_IOIFLDOSTARTED_Pos) /*!< Bit mask of IOIFLDOSTARTED field. */
+#define POWER_INTENSET_IOIFLDOSTARTED_Disabled (0UL) /*!< Read: Disabled */
+#define POWER_INTENSET_IOIFLDOSTARTED_Enabled (1UL) /*!< Read: Enabled */
+#define POWER_INTENSET_IOIFLDOSTARTED_Set (1UL) /*!< Enable */
 
 /* Bit 2 : Write '1' to enable interrupt for event POFWARN */
 #define POWER_INTENSET_POFWARN_Pos (2UL) /*!< Position of POFWARN field. */
@@ -4925,6 +10200,13 @@ POSSIBILITY OF SUCH DAMAGE.
 #define POWER_INTENCLR_SLEEPENTER_Disabled (0UL) /*!< Read: Disabled */
 #define POWER_INTENCLR_SLEEPENTER_Enabled (1UL) /*!< Read: Enabled */
 #define POWER_INTENCLR_SLEEPENTER_Clear (1UL) /*!< Disable */
+
+/* Bit 4 : Write '1' to disable interrupt for event IOIFLDOSTARTED */
+#define POWER_INTENCLR_IOIFLDOSTARTED_Pos (4UL) /*!< Position of IOIFLDOSTARTED field. */
+#define POWER_INTENCLR_IOIFLDOSTARTED_Msk (0x1UL << POWER_INTENCLR_IOIFLDOSTARTED_Pos) /*!< Bit mask of IOIFLDOSTARTED field. */
+#define POWER_INTENCLR_IOIFLDOSTARTED_Disabled (0UL) /*!< Read: Disabled */
+#define POWER_INTENCLR_IOIFLDOSTARTED_Enabled (1UL) /*!< Read: Enabled */
+#define POWER_INTENCLR_IOIFLDOSTARTED_Clear (1UL) /*!< Disable */
 
 /* Bit 2 : Write '1' to disable interrupt for event POFWARN */
 #define POWER_INTENCLR_POFWARN_Pos (2UL) /*!< Position of POFWARN field. */
@@ -4994,9 +10276,44 @@ POSSIBILITY OF SUCH DAMAGE.
 #define POWER_GPREGRET_GPREGRET_Pos (0UL) /*!< Position of GPREGRET field. */
 #define POWER_GPREGRET_GPREGRET_Msk (0xFFUL << POWER_GPREGRET_GPREGRET_Pos) /*!< Bit mask of GPREGRET field. */
 
+/* Register: POWER_LTEMODEM_STARTN */
+/* Description: Start LTE modem. Toggling STARTN from 1 to 0 initiates startup of the LTE modem. Important: Toggling STARTN back from 0 to 1 while modem is running will cause a modem malfunction. Toggling STARTN from 0 to 1 must only be done in the very end of the modem stop procedure. (Ideally the modem needs to be shut off from SW using LTE modem API). */
+
+/* Bit 0 : CPU start */
+#define POWER_LTEMODEM_STARTN_STARTN_Pos (0UL) /*!< Position of STARTN field. */
+#define POWER_LTEMODEM_STARTN_STARTN_Msk (0x1UL << POWER_LTEMODEM_STARTN_STARTN_Pos) /*!< Bit mask of STARTN field. */
+#define POWER_LTEMODEM_STARTN_STARTN_Start (0UL) /*!< Start LTE modem */
+#define POWER_LTEMODEM_STARTN_STARTN_Hold (1UL) /*!< Hold LTE modem disabled */
+
+/* Register: POWER_LTEMODEM_FORCEOFF */
+/* Description: Force off power and clock in LTE modem */
+
+/* Bit 0 : Force off power and clock */
+#define POWER_LTEMODEM_FORCEOFF_FORCEOFF_Pos (0UL) /*!< Position of FORCEOFF field. */
+#define POWER_LTEMODEM_FORCEOFF_FORCEOFF_Msk (0x1UL << POWER_LTEMODEM_FORCEOFF_FORCEOFF_Pos) /*!< Bit mask of FORCEOFF field. */
+#define POWER_LTEMODEM_FORCEOFF_FORCEOFF_Release (0UL) /*!< Release force off signal */
+#define POWER_LTEMODEM_FORCEOFF_FORCEOFF_Hold (1UL) /*!< Hold force off signal */
+
+/* Register: POWER_LTEMODEM_FORCEON */
+/* Description: Force on LTE modem */
+
+/* Bit 0 : Forces on power and clock in LTE modem */
+#define POWER_LTEMODEM_FORCEON_FORCEON_Pos (0UL) /*!< Position of FORCEON field. */
+#define POWER_LTEMODEM_FORCEON_FORCEON_Msk (0x1UL << POWER_LTEMODEM_FORCEON_FORCEON_Pos) /*!< Bit mask of FORCEON field. */
+#define POWER_LTEMODEM_FORCEON_FORCEON_Release (0UL) /*!< Release force on signal */
+#define POWER_LTEMODEM_FORCEON_FORCEON_Hold (1UL) /*!< Hold force on signal */
+
 
 /* Peripheral: PWM */
 /* Description: Pulse width modulation unit 0 */
+
+/* Register: PWM_TASKS_START */
+/* Description: Starts PWM pulse generation with the last loaded values */
+
+/* Bit 0 : Starts PWM pulse generation with the last loaded values */
+#define PWM_TASKS_START_TASKS_START_Pos (0UL) /*!< Position of TASKS_START field. */
+#define PWM_TASKS_START_TASKS_START_Msk (0x1UL << PWM_TASKS_START_TASKS_START_Pos) /*!< Bit mask of TASKS_START field. */
+#define PWM_TASKS_START_TASKS_START_Trigger (1UL) /*!< Trigger task */
 
 /* Register: PWM_TASKS_STOP */
 /* Description: Stops PWM pulse generation on all channels at the end of current PWM period, and stops sequence playback */
@@ -5007,9 +10324,9 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PWM_TASKS_STOP_TASKS_STOP_Trigger (1UL) /*!< Trigger task */
 
 /* Register: PWM_TASKS_SEQSTART */
-/* Description: Description collection: Loads the first PWM value on all enabled channels from sequence n, and starts playing that sequence at the rate defined in SEQ[n]REFRESH and/or DECODER.MODE. Causes PWM generation to start if not running. */
+/* Description: Description collection: Loads the first PWM value on all enabled channels from sequence n, and starts playing that sequence at the rate defined in SEQ[n]REFRESH and/or DECODER.MODE. Causes PWM generation to start if not running. Triggering a SEQSTART[n] task while a sequence is already playing back will gracefully (i.e. glitch-free) abort that sequence at the earliest opportunity and start sequence n. */
 
-/* Bit 0 : Loads the first PWM value on all enabled channels from sequence n, and starts playing that sequence at the rate defined in SEQ[n]REFRESH and/or DECODER.MODE. Causes PWM generation to start if not running. */
+/* Bit 0 : Loads the first PWM value on all enabled channels from sequence n, and starts playing that sequence at the rate defined in SEQ[n]REFRESH and/or DECODER.MODE. Causes PWM generation to start if not running. Triggering a SEQSTART[n] task while a sequence is already playing back will gracefully (i.e. glitch-free) abort that sequence at the earliest opportunity and start sequence n. */
 #define PWM_TASKS_SEQSTART_TASKS_SEQSTART_Pos (0UL) /*!< Position of TASKS_SEQSTART field. */
 #define PWM_TASKS_SEQSTART_TASKS_SEQSTART_Msk (0x1UL << PWM_TASKS_SEQSTART_TASKS_SEQSTART_Pos) /*!< Bit mask of TASKS_SEQSTART field. */
 #define PWM_TASKS_SEQSTART_TASKS_SEQSTART_Trigger (1UL) /*!< Trigger task */
@@ -5021,6 +10338,27 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PWM_TASKS_NEXTSTEP_TASKS_NEXTSTEP_Pos (0UL) /*!< Position of TASKS_NEXTSTEP field. */
 #define PWM_TASKS_NEXTSTEP_TASKS_NEXTSTEP_Msk (0x1UL << PWM_TASKS_NEXTSTEP_TASKS_NEXTSTEP_Pos) /*!< Bit mask of TASKS_NEXTSTEP field. */
 #define PWM_TASKS_NEXTSTEP_TASKS_NEXTSTEP_Trigger (1UL) /*!< Trigger task */
+
+/* Register: PWM_TASKS_SEQABORT */
+/* Description: (Gracefully) aborts the playback of the current sequence or the current end delay */
+
+/* Bit 0 : (Gracefully) aborts the playback of the current sequence or the current end delay */
+#define PWM_TASKS_SEQABORT_TASKS_SEQABORT_Pos (0UL) /*!< Position of TASKS_SEQABORT field. */
+#define PWM_TASKS_SEQABORT_TASKS_SEQABORT_Msk (0x1UL << PWM_TASKS_SEQABORT_TASKS_SEQABORT_Pos) /*!< Bit mask of TASKS_SEQABORT field. */
+#define PWM_TASKS_SEQABORT_TASKS_SEQABORT_Trigger (1UL) /*!< Trigger task */
+
+/* Register: PWM_SUBSCRIBE_START */
+/* Description: Subscribe configuration for task START */
+
+/* Bit 31 :   */
+#define PWM_SUBSCRIBE_START_EN_Pos (31UL) /*!< Position of EN field. */
+#define PWM_SUBSCRIBE_START_EN_Msk (0x1UL << PWM_SUBSCRIBE_START_EN_Pos) /*!< Bit mask of EN field. */
+#define PWM_SUBSCRIBE_START_EN_Disabled (0UL) /*!< Disable subscription */
+#define PWM_SUBSCRIBE_START_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 3..0 : Channel that task START will subscribe to */
+#define PWM_SUBSCRIBE_START_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define PWM_SUBSCRIBE_START_CHIDX_Msk (0xFUL << PWM_SUBSCRIBE_START_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
 /* Register: PWM_SUBSCRIBE_STOP */
 /* Description: Subscribe configuration for task STOP */
@@ -5060,6 +10398,28 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 3..0 : Channel that task NEXTSTEP will subscribe to */
 #define PWM_SUBSCRIBE_NEXTSTEP_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define PWM_SUBSCRIBE_NEXTSTEP_CHIDX_Msk (0xFUL << PWM_SUBSCRIBE_NEXTSTEP_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: PWM_SUBSCRIBE_SEQABORT */
+/* Description: Subscribe configuration for task SEQABORT */
+
+/* Bit 31 :   */
+#define PWM_SUBSCRIBE_SEQABORT_EN_Pos (31UL) /*!< Position of EN field. */
+#define PWM_SUBSCRIBE_SEQABORT_EN_Msk (0x1UL << PWM_SUBSCRIBE_SEQABORT_EN_Pos) /*!< Bit mask of EN field. */
+#define PWM_SUBSCRIBE_SEQABORT_EN_Disabled (0UL) /*!< Disable subscription */
+#define PWM_SUBSCRIBE_SEQABORT_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 3..0 : Channel that task SEQABORT will subscribe to */
+#define PWM_SUBSCRIBE_SEQABORT_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define PWM_SUBSCRIBE_SEQABORT_CHIDX_Msk (0xFUL << PWM_SUBSCRIBE_SEQABORT_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: PWM_EVENTS_STARTED */
+/* Description: Response to START task, emitted when the PWM pulse generation starts */
+
+/* Bit 0 : Response to START task, emitted when the PWM pulse generation starts */
+#define PWM_EVENTS_STARTED_EVENTS_STARTED_Pos (0UL) /*!< Position of EVENTS_STARTED field. */
+#define PWM_EVENTS_STARTED_EVENTS_STARTED_Msk (0x1UL << PWM_EVENTS_STARTED_EVENTS_STARTED_Pos) /*!< Bit mask of EVENTS_STARTED field. */
+#define PWM_EVENTS_STARTED_EVENTS_STARTED_NotGenerated (0UL) /*!< Event not generated */
+#define PWM_EVENTS_STARTED_EVENTS_STARTED_Generated (1UL) /*!< Event generated */
 
 /* Register: PWM_EVENTS_STOPPED */
 /* Description: Response to STOP task, emitted when PWM pulses are no longer generated */
@@ -5105,6 +10465,46 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PWM_EVENTS_LOOPSDONE_EVENTS_LOOPSDONE_Msk (0x1UL << PWM_EVENTS_LOOPSDONE_EVENTS_LOOPSDONE_Pos) /*!< Bit mask of EVENTS_LOOPSDONE field. */
 #define PWM_EVENTS_LOOPSDONE_EVENTS_LOOPSDONE_NotGenerated (0UL) /*!< Event not generated */
 #define PWM_EVENTS_LOOPSDONE_EVENTS_LOOPSDONE_Generated (1UL) /*!< Event generated */
+
+/* Register: PWM_EVENTS_RAMUNDERFLOW */
+/* Description: Emitted when retrieving from RAM does not complete in time for the PWM module */
+
+/* Bit 0 : Emitted when retrieving from RAM does not complete in time for the PWM module */
+#define PWM_EVENTS_RAMUNDERFLOW_EVENTS_RAMUNDERFLOW_Pos (0UL) /*!< Position of EVENTS_RAMUNDERFLOW field. */
+#define PWM_EVENTS_RAMUNDERFLOW_EVENTS_RAMUNDERFLOW_Msk (0x1UL << PWM_EVENTS_RAMUNDERFLOW_EVENTS_RAMUNDERFLOW_Pos) /*!< Bit mask of EVENTS_RAMUNDERFLOW field. */
+#define PWM_EVENTS_RAMUNDERFLOW_EVENTS_RAMUNDERFLOW_NotGenerated (0UL) /*!< Event not generated */
+#define PWM_EVENTS_RAMUNDERFLOW_EVENTS_RAMUNDERFLOW_Generated (1UL) /*!< Event generated */
+
+/* Register: PWM_EVENTS_DMAREADY */
+/* Description: Description collection: Emitted when EasyDMA has retrieved the .PTR and .CNT registers for sequence n (they can be prepared for the next sequence) */
+
+/* Bit 0 : Emitted when EasyDMA has retrieved the .PTR and .CNT registers for sequence n (they can be prepared for the next sequence) */
+#define PWM_EVENTS_DMAREADY_EVENTS_DMAREADY_Pos (0UL) /*!< Position of EVENTS_DMAREADY field. */
+#define PWM_EVENTS_DMAREADY_EVENTS_DMAREADY_Msk (0x1UL << PWM_EVENTS_DMAREADY_EVENTS_DMAREADY_Pos) /*!< Bit mask of EVENTS_DMAREADY field. */
+#define PWM_EVENTS_DMAREADY_EVENTS_DMAREADY_NotGenerated (0UL) /*!< Event not generated */
+#define PWM_EVENTS_DMAREADY_EVENTS_DMAREADY_Generated (1UL) /*!< Event generated */
+
+/* Register: PWM_EVENTS_DMAEND */
+/* Description: Description collection: Emitted when EasyDMA has completed retrieving the values of sequence n from RAM buffer */
+
+/* Bit 0 : Emitted when EasyDMA has completed retrieving the values of sequence n from RAM buffer */
+#define PWM_EVENTS_DMAEND_EVENTS_DMAEND_Pos (0UL) /*!< Position of EVENTS_DMAEND field. */
+#define PWM_EVENTS_DMAEND_EVENTS_DMAEND_Msk (0x1UL << PWM_EVENTS_DMAEND_EVENTS_DMAEND_Pos) /*!< Bit mask of EVENTS_DMAEND field. */
+#define PWM_EVENTS_DMAEND_EVENTS_DMAEND_NotGenerated (0UL) /*!< Event not generated */
+#define PWM_EVENTS_DMAEND_EVENTS_DMAEND_Generated (1UL) /*!< Event generated */
+
+/* Register: PWM_PUBLISH_STARTED */
+/* Description: Publish configuration for event STARTED */
+
+/* Bit 31 :   */
+#define PWM_PUBLISH_STARTED_EN_Pos (31UL) /*!< Position of EN field. */
+#define PWM_PUBLISH_STARTED_EN_Msk (0x1UL << PWM_PUBLISH_STARTED_EN_Pos) /*!< Bit mask of EN field. */
+#define PWM_PUBLISH_STARTED_EN_Disabled (0UL) /*!< Disable publishing */
+#define PWM_PUBLISH_STARTED_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event STARTED will publish to. */
+#define PWM_PUBLISH_STARTED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define PWM_PUBLISH_STARTED_CHIDX_Msk (0xFUL << PWM_PUBLISH_STARTED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
 /* Register: PWM_PUBLISH_STOPPED */
 /* Description: Publish configuration for event STOPPED */
@@ -5171,8 +10571,53 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PWM_PUBLISH_LOOPSDONE_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define PWM_PUBLISH_LOOPSDONE_CHIDX_Msk (0xFUL << PWM_PUBLISH_LOOPSDONE_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
+/* Register: PWM_PUBLISH_RAMUNDERFLOW */
+/* Description: Publish configuration for event RAMUNDERFLOW */
+
+/* Bit 31 :   */
+#define PWM_PUBLISH_RAMUNDERFLOW_EN_Pos (31UL) /*!< Position of EN field. */
+#define PWM_PUBLISH_RAMUNDERFLOW_EN_Msk (0x1UL << PWM_PUBLISH_RAMUNDERFLOW_EN_Pos) /*!< Bit mask of EN field. */
+#define PWM_PUBLISH_RAMUNDERFLOW_EN_Disabled (0UL) /*!< Disable publishing */
+#define PWM_PUBLISH_RAMUNDERFLOW_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event RAMUNDERFLOW will publish to. */
+#define PWM_PUBLISH_RAMUNDERFLOW_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define PWM_PUBLISH_RAMUNDERFLOW_CHIDX_Msk (0xFUL << PWM_PUBLISH_RAMUNDERFLOW_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: PWM_PUBLISH_DMAREADY */
+/* Description: Description collection: Publish configuration for event DMAREADY[n] */
+
+/* Bit 31 :   */
+#define PWM_PUBLISH_DMAREADY_EN_Pos (31UL) /*!< Position of EN field. */
+#define PWM_PUBLISH_DMAREADY_EN_Msk (0x1UL << PWM_PUBLISH_DMAREADY_EN_Pos) /*!< Bit mask of EN field. */
+#define PWM_PUBLISH_DMAREADY_EN_Disabled (0UL) /*!< Disable publishing */
+#define PWM_PUBLISH_DMAREADY_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event DMAREADY[n] will publish to. */
+#define PWM_PUBLISH_DMAREADY_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define PWM_PUBLISH_DMAREADY_CHIDX_Msk (0xFUL << PWM_PUBLISH_DMAREADY_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: PWM_PUBLISH_DMAEND */
+/* Description: Description collection: Publish configuration for event DMAEND[n] */
+
+/* Bit 31 :   */
+#define PWM_PUBLISH_DMAEND_EN_Pos (31UL) /*!< Position of EN field. */
+#define PWM_PUBLISH_DMAEND_EN_Msk (0x1UL << PWM_PUBLISH_DMAEND_EN_Pos) /*!< Bit mask of EN field. */
+#define PWM_PUBLISH_DMAEND_EN_Disabled (0UL) /*!< Disable publishing */
+#define PWM_PUBLISH_DMAEND_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event DMAEND[n] will publish to. */
+#define PWM_PUBLISH_DMAEND_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define PWM_PUBLISH_DMAEND_CHIDX_Msk (0xFUL << PWM_PUBLISH_DMAEND_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
 /* Register: PWM_SHORTS */
 /* Description: Shortcuts between local events and tasks */
+
+/* Bit 5 : Shortcut between event RAMUNDERFLOW and task STOP */
+#define PWM_SHORTS_RAMUNDERFLOW_STOP_Pos (5UL) /*!< Position of RAMUNDERFLOW_STOP field. */
+#define PWM_SHORTS_RAMUNDERFLOW_STOP_Msk (0x1UL << PWM_SHORTS_RAMUNDERFLOW_STOP_Pos) /*!< Bit mask of RAMUNDERFLOW_STOP field. */
+#define PWM_SHORTS_RAMUNDERFLOW_STOP_Disabled (0UL) /*!< Disable shortcut */
+#define PWM_SHORTS_RAMUNDERFLOW_STOP_Enabled (1UL) /*!< Enable shortcut */
 
 /* Bit 4 : Shortcut between event LOOPSDONE and task STOP */
 #define PWM_SHORTS_LOOPSDONE_STOP_Pos (4UL) /*!< Position of LOOPSDONE_STOP field. */
@@ -5206,6 +10651,36 @@ POSSIBILITY OF SUCH DAMAGE.
 
 /* Register: PWM_INTEN */
 /* Description: Enable or disable interrupt */
+
+/* Bit 12 : Enable or disable interrupt for event DMAEND[1] */
+#define PWM_INTEN_DMAEND1_Pos (12UL) /*!< Position of DMAEND1 field. */
+#define PWM_INTEN_DMAEND1_Msk (0x1UL << PWM_INTEN_DMAEND1_Pos) /*!< Bit mask of DMAEND1 field. */
+#define PWM_INTEN_DMAEND1_Disabled (0UL) /*!< Disable */
+#define PWM_INTEN_DMAEND1_Enabled (1UL) /*!< Enable */
+
+/* Bit 11 : Enable or disable interrupt for event DMAEND[0] */
+#define PWM_INTEN_DMAEND0_Pos (11UL) /*!< Position of DMAEND0 field. */
+#define PWM_INTEN_DMAEND0_Msk (0x1UL << PWM_INTEN_DMAEND0_Pos) /*!< Bit mask of DMAEND0 field. */
+#define PWM_INTEN_DMAEND0_Disabled (0UL) /*!< Disable */
+#define PWM_INTEN_DMAEND0_Enabled (1UL) /*!< Enable */
+
+/* Bit 10 : Enable or disable interrupt for event DMAREADY[1] */
+#define PWM_INTEN_DMAREADY1_Pos (10UL) /*!< Position of DMAREADY1 field. */
+#define PWM_INTEN_DMAREADY1_Msk (0x1UL << PWM_INTEN_DMAREADY1_Pos) /*!< Bit mask of DMAREADY1 field. */
+#define PWM_INTEN_DMAREADY1_Disabled (0UL) /*!< Disable */
+#define PWM_INTEN_DMAREADY1_Enabled (1UL) /*!< Enable */
+
+/* Bit 9 : Enable or disable interrupt for event DMAREADY[0] */
+#define PWM_INTEN_DMAREADY0_Pos (9UL) /*!< Position of DMAREADY0 field. */
+#define PWM_INTEN_DMAREADY0_Msk (0x1UL << PWM_INTEN_DMAREADY0_Pos) /*!< Bit mask of DMAREADY0 field. */
+#define PWM_INTEN_DMAREADY0_Disabled (0UL) /*!< Disable */
+#define PWM_INTEN_DMAREADY0_Enabled (1UL) /*!< Enable */
+
+/* Bit 8 : Enable or disable interrupt for event RAMUNDERFLOW */
+#define PWM_INTEN_RAMUNDERFLOW_Pos (8UL) /*!< Position of RAMUNDERFLOW field. */
+#define PWM_INTEN_RAMUNDERFLOW_Msk (0x1UL << PWM_INTEN_RAMUNDERFLOW_Pos) /*!< Bit mask of RAMUNDERFLOW field. */
+#define PWM_INTEN_RAMUNDERFLOW_Disabled (0UL) /*!< Disable */
+#define PWM_INTEN_RAMUNDERFLOW_Enabled (1UL) /*!< Enable */
 
 /* Bit 7 : Enable or disable interrupt for event LOOPSDONE */
 #define PWM_INTEN_LOOPSDONE_Pos (7UL) /*!< Position of LOOPSDONE field. */
@@ -5249,8 +10724,49 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PWM_INTEN_STOPPED_Disabled (0UL) /*!< Disable */
 #define PWM_INTEN_STOPPED_Enabled (1UL) /*!< Enable */
 
+/* Bit 0 : Enable or disable interrupt for event STARTED */
+#define PWM_INTEN_STARTED_Pos (0UL) /*!< Position of STARTED field. */
+#define PWM_INTEN_STARTED_Msk (0x1UL << PWM_INTEN_STARTED_Pos) /*!< Bit mask of STARTED field. */
+#define PWM_INTEN_STARTED_Disabled (0UL) /*!< Disable */
+#define PWM_INTEN_STARTED_Enabled (1UL) /*!< Enable */
+
 /* Register: PWM_INTENSET */
 /* Description: Enable interrupt */
+
+/* Bit 12 : Write '1' to enable interrupt for event DMAEND[1] */
+#define PWM_INTENSET_DMAEND1_Pos (12UL) /*!< Position of DMAEND1 field. */
+#define PWM_INTENSET_DMAEND1_Msk (0x1UL << PWM_INTENSET_DMAEND1_Pos) /*!< Bit mask of DMAEND1 field. */
+#define PWM_INTENSET_DMAEND1_Disabled (0UL) /*!< Read: Disabled */
+#define PWM_INTENSET_DMAEND1_Enabled (1UL) /*!< Read: Enabled */
+#define PWM_INTENSET_DMAEND1_Set (1UL) /*!< Enable */
+
+/* Bit 11 : Write '1' to enable interrupt for event DMAEND[0] */
+#define PWM_INTENSET_DMAEND0_Pos (11UL) /*!< Position of DMAEND0 field. */
+#define PWM_INTENSET_DMAEND0_Msk (0x1UL << PWM_INTENSET_DMAEND0_Pos) /*!< Bit mask of DMAEND0 field. */
+#define PWM_INTENSET_DMAEND0_Disabled (0UL) /*!< Read: Disabled */
+#define PWM_INTENSET_DMAEND0_Enabled (1UL) /*!< Read: Enabled */
+#define PWM_INTENSET_DMAEND0_Set (1UL) /*!< Enable */
+
+/* Bit 10 : Write '1' to enable interrupt for event DMAREADY[1] */
+#define PWM_INTENSET_DMAREADY1_Pos (10UL) /*!< Position of DMAREADY1 field. */
+#define PWM_INTENSET_DMAREADY1_Msk (0x1UL << PWM_INTENSET_DMAREADY1_Pos) /*!< Bit mask of DMAREADY1 field. */
+#define PWM_INTENSET_DMAREADY1_Disabled (0UL) /*!< Read: Disabled */
+#define PWM_INTENSET_DMAREADY1_Enabled (1UL) /*!< Read: Enabled */
+#define PWM_INTENSET_DMAREADY1_Set (1UL) /*!< Enable */
+
+/* Bit 9 : Write '1' to enable interrupt for event DMAREADY[0] */
+#define PWM_INTENSET_DMAREADY0_Pos (9UL) /*!< Position of DMAREADY0 field. */
+#define PWM_INTENSET_DMAREADY0_Msk (0x1UL << PWM_INTENSET_DMAREADY0_Pos) /*!< Bit mask of DMAREADY0 field. */
+#define PWM_INTENSET_DMAREADY0_Disabled (0UL) /*!< Read: Disabled */
+#define PWM_INTENSET_DMAREADY0_Enabled (1UL) /*!< Read: Enabled */
+#define PWM_INTENSET_DMAREADY0_Set (1UL) /*!< Enable */
+
+/* Bit 8 : Write '1' to enable interrupt for event RAMUNDERFLOW */
+#define PWM_INTENSET_RAMUNDERFLOW_Pos (8UL) /*!< Position of RAMUNDERFLOW field. */
+#define PWM_INTENSET_RAMUNDERFLOW_Msk (0x1UL << PWM_INTENSET_RAMUNDERFLOW_Pos) /*!< Bit mask of RAMUNDERFLOW field. */
+#define PWM_INTENSET_RAMUNDERFLOW_Disabled (0UL) /*!< Read: Disabled */
+#define PWM_INTENSET_RAMUNDERFLOW_Enabled (1UL) /*!< Read: Enabled */
+#define PWM_INTENSET_RAMUNDERFLOW_Set (1UL) /*!< Enable */
 
 /* Bit 7 : Write '1' to enable interrupt for event LOOPSDONE */
 #define PWM_INTENSET_LOOPSDONE_Pos (7UL) /*!< Position of LOOPSDONE field. */
@@ -5301,8 +10817,50 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PWM_INTENSET_STOPPED_Enabled (1UL) /*!< Read: Enabled */
 #define PWM_INTENSET_STOPPED_Set (1UL) /*!< Enable */
 
+/* Bit 0 : Write '1' to enable interrupt for event STARTED */
+#define PWM_INTENSET_STARTED_Pos (0UL) /*!< Position of STARTED field. */
+#define PWM_INTENSET_STARTED_Msk (0x1UL << PWM_INTENSET_STARTED_Pos) /*!< Bit mask of STARTED field. */
+#define PWM_INTENSET_STARTED_Disabled (0UL) /*!< Read: Disabled */
+#define PWM_INTENSET_STARTED_Enabled (1UL) /*!< Read: Enabled */
+#define PWM_INTENSET_STARTED_Set (1UL) /*!< Enable */
+
 /* Register: PWM_INTENCLR */
 /* Description: Disable interrupt */
+
+/* Bit 12 : Write '1' to disable interrupt for event DMAEND[1] */
+#define PWM_INTENCLR_DMAEND1_Pos (12UL) /*!< Position of DMAEND1 field. */
+#define PWM_INTENCLR_DMAEND1_Msk (0x1UL << PWM_INTENCLR_DMAEND1_Pos) /*!< Bit mask of DMAEND1 field. */
+#define PWM_INTENCLR_DMAEND1_Disabled (0UL) /*!< Read: Disabled */
+#define PWM_INTENCLR_DMAEND1_Enabled (1UL) /*!< Read: Enabled */
+#define PWM_INTENCLR_DMAEND1_Clear (1UL) /*!< Disable */
+
+/* Bit 11 : Write '1' to disable interrupt for event DMAEND[0] */
+#define PWM_INTENCLR_DMAEND0_Pos (11UL) /*!< Position of DMAEND0 field. */
+#define PWM_INTENCLR_DMAEND0_Msk (0x1UL << PWM_INTENCLR_DMAEND0_Pos) /*!< Bit mask of DMAEND0 field. */
+#define PWM_INTENCLR_DMAEND0_Disabled (0UL) /*!< Read: Disabled */
+#define PWM_INTENCLR_DMAEND0_Enabled (1UL) /*!< Read: Enabled */
+#define PWM_INTENCLR_DMAEND0_Clear (1UL) /*!< Disable */
+
+/* Bit 10 : Write '1' to disable interrupt for event DMAREADY[1] */
+#define PWM_INTENCLR_DMAREADY1_Pos (10UL) /*!< Position of DMAREADY1 field. */
+#define PWM_INTENCLR_DMAREADY1_Msk (0x1UL << PWM_INTENCLR_DMAREADY1_Pos) /*!< Bit mask of DMAREADY1 field. */
+#define PWM_INTENCLR_DMAREADY1_Disabled (0UL) /*!< Read: Disabled */
+#define PWM_INTENCLR_DMAREADY1_Enabled (1UL) /*!< Read: Enabled */
+#define PWM_INTENCLR_DMAREADY1_Clear (1UL) /*!< Disable */
+
+/* Bit 9 : Write '1' to disable interrupt for event DMAREADY[0] */
+#define PWM_INTENCLR_DMAREADY0_Pos (9UL) /*!< Position of DMAREADY0 field. */
+#define PWM_INTENCLR_DMAREADY0_Msk (0x1UL << PWM_INTENCLR_DMAREADY0_Pos) /*!< Bit mask of DMAREADY0 field. */
+#define PWM_INTENCLR_DMAREADY0_Disabled (0UL) /*!< Read: Disabled */
+#define PWM_INTENCLR_DMAREADY0_Enabled (1UL) /*!< Read: Enabled */
+#define PWM_INTENCLR_DMAREADY0_Clear (1UL) /*!< Disable */
+
+/* Bit 8 : Write '1' to disable interrupt for event RAMUNDERFLOW */
+#define PWM_INTENCLR_RAMUNDERFLOW_Pos (8UL) /*!< Position of RAMUNDERFLOW field. */
+#define PWM_INTENCLR_RAMUNDERFLOW_Msk (0x1UL << PWM_INTENCLR_RAMUNDERFLOW_Pos) /*!< Bit mask of RAMUNDERFLOW field. */
+#define PWM_INTENCLR_RAMUNDERFLOW_Disabled (0UL) /*!< Read: Disabled */
+#define PWM_INTENCLR_RAMUNDERFLOW_Enabled (1UL) /*!< Read: Enabled */
+#define PWM_INTENCLR_RAMUNDERFLOW_Clear (1UL) /*!< Disable */
 
 /* Bit 7 : Write '1' to disable interrupt for event LOOPSDONE */
 #define PWM_INTENCLR_LOOPSDONE_Pos (7UL) /*!< Position of LOOPSDONE field. */
@@ -5352,6 +10910,13 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PWM_INTENCLR_STOPPED_Disabled (0UL) /*!< Read: Disabled */
 #define PWM_INTENCLR_STOPPED_Enabled (1UL) /*!< Read: Enabled */
 #define PWM_INTENCLR_STOPPED_Clear (1UL) /*!< Disable */
+
+/* Bit 0 : Write '1' to disable interrupt for event STARTED */
+#define PWM_INTENCLR_STARTED_Pos (0UL) /*!< Position of STARTED field. */
+#define PWM_INTENCLR_STARTED_Msk (0x1UL << PWM_INTENCLR_STARTED_Pos) /*!< Bit mask of STARTED field. */
+#define PWM_INTENCLR_STARTED_Disabled (0UL) /*!< Read: Disabled */
+#define PWM_INTENCLR_STARTED_Enabled (1UL) /*!< Read: Enabled */
+#define PWM_INTENCLR_STARTED_Clear (1UL) /*!< Disable */
 
 /* Register: PWM_ENABLE */
 /* Description: PWM module enable register */
@@ -5462,8 +11027,117 @@ POSSIBILITY OF SUCH DAMAGE.
 #define PWM_PSEL_OUT_PIN_Msk (0x1FUL << PWM_PSEL_OUT_PIN_Pos) /*!< Bit mask of PIN field. */
 
 
+/* Peripheral: RAMBISTHUB */
+/* Description: RAM BIST Hub */
+
+/* Register: RAMBISTHUB_RUN */
+/* Description: RUN BIST */
+
+/* Bit 0 : RUN BIST */
+#define RAMBISTHUB_RUN_RUN_Pos (0UL) /*!< Position of RUN field. */
+#define RAMBISTHUB_RUN_RUN_Msk (0x1UL << RAMBISTHUB_RUN_RUN_Pos) /*!< Bit mask of RUN field. */
+#define RAMBISTHUB_RUN_RUN_Clear (0UL) /*!< Clear the task */
+#define RAMBISTHUB_RUN_RUN_Set (1UL) /*!< Run the task */
+
+/* Register: RAMBISTHUB_SLEEP */
+/* Description: BIST SLEEP EVENT */
+
+/* Bit 0 : BIST SLEEP EVENT */
+#define RAMBISTHUB_SLEEP_SLEEP_Pos (0UL) /*!< Position of SLEEP field. */
+#define RAMBISTHUB_SLEEP_SLEEP_Msk (0x1UL << RAMBISTHUB_SLEEP_SLEEP_Pos) /*!< Bit mask of SLEEP field. */
+#define RAMBISTHUB_SLEEP_SLEEP_NoEventDetected (0UL) /*!< No event detected. Write zero to clear the event. */
+#define RAMBISTHUB_SLEEP_SLEEP_EventDetected (1UL) /*!< Event detected */
+
+/* Register: RAMBISTHUB_FINISHED */
+/* Description: BIST FINISHED EVENT */
+
+/* Bit 0 : BIST FINISHED EVENT */
+#define RAMBISTHUB_FINISHED_FINISHED_Pos (0UL) /*!< Position of FINISHED field. */
+#define RAMBISTHUB_FINISHED_FINISHED_Msk (0x1UL << RAMBISTHUB_FINISHED_FINISHED_Pos) /*!< Bit mask of FINISHED field. */
+#define RAMBISTHUB_FINISHED_FINISHED_NoEventDetected (0UL) /*!< No event detected. Write zero to clear the event. */
+#define RAMBISTHUB_FINISHED_FINISHED_EventDetected (1UL) /*!< Event detected */
+
+/* Register: RAMBISTHUB_HUBENABLE */
+/* Description: RAM BIST Hub enable */
+
+/* Bit 0 : RAM BIST Hub enable */
+#define RAMBISTHUB_HUBENABLE_HUBENABLE_Pos (0UL) /*!< Position of HUBENABLE field. */
+#define RAMBISTHUB_HUBENABLE_HUBENABLE_Msk (0x1UL << RAMBISTHUB_HUBENABLE_HUBENABLE_Pos) /*!< Bit mask of HUBENABLE field. */
+#define RAMBISTHUB_HUBENABLE_HUBENABLE_Disabled (0UL) /*!< RAM BIST Hub disabled */
+#define RAMBISTHUB_HUBENABLE_HUBENABLE_Enabled (1UL) /*!< RAM BIST Hub enabled */
+
+/* Register: RAMBISTHUB_SELECTBIST */
+/* Description: Select bits for the individual BISTs to run */
+
+/* Bit 2 : Select and enable BIST2 */
+#define RAMBISTHUB_SELECTBIST_SELECTBIST2_Pos (2UL) /*!< Position of SELECTBIST2 field. */
+#define RAMBISTHUB_SELECTBIST_SELECTBIST2_Msk (0x1UL << RAMBISTHUB_SELECTBIST_SELECTBIST2_Pos) /*!< Bit mask of SELECTBIST2 field. */
+#define RAMBISTHUB_SELECTBIST_SELECTBIST2_Disabled (0UL) /*!< BIST2 disabled */
+#define RAMBISTHUB_SELECTBIST_SELECTBIST2_Enabled (1UL) /*!< BIST2 enabled */
+
+/* Bit 1 : Select and enable BIST1 */
+#define RAMBISTHUB_SELECTBIST_SELECTBIST1_Pos (1UL) /*!< Position of SELECTBIST1 field. */
+#define RAMBISTHUB_SELECTBIST_SELECTBIST1_Msk (0x1UL << RAMBISTHUB_SELECTBIST_SELECTBIST1_Pos) /*!< Bit mask of SELECTBIST1 field. */
+#define RAMBISTHUB_SELECTBIST_SELECTBIST1_Disabled (0UL) /*!< BIST1 disabled */
+#define RAMBISTHUB_SELECTBIST_SELECTBIST1_Enabled (1UL) /*!< BIST1 enabled */
+
+/* Bit 0 : Select and enable BIST0 */
+#define RAMBISTHUB_SELECTBIST_SELECTBIST0_Pos (0UL) /*!< Position of SELECTBIST0 field. */
+#define RAMBISTHUB_SELECTBIST_SELECTBIST0_Msk (0x1UL << RAMBISTHUB_SELECTBIST_SELECTBIST0_Pos) /*!< Bit mask of SELECTBIST0 field. */
+#define RAMBISTHUB_SELECTBIST_SELECTBIST0_Disabled (0UL) /*!< BIST0 disabled */
+#define RAMBISTHUB_SELECTBIST_SELECTBIST0_Enabled (1UL) /*!< BIST0 enabled */
+
+/* Register: RAMBISTHUB_BISTSTATUS */
+/* Description: BIST status */
+
+/* Bit 2 : Status of BIST2. Write to clear. */
+#define RAMBISTHUB_BISTSTATUS_BISTSTATUS2_Pos (2UL) /*!< Position of BISTSTATUS2 field. */
+#define RAMBISTHUB_BISTSTATUS_BISTSTATUS2_Msk (0x1UL << RAMBISTHUB_BISTSTATUS_BISTSTATUS2_Pos) /*!< Bit mask of BISTSTATUS2 field. */
+#define RAMBISTHUB_BISTSTATUS_BISTSTATUS2_NotPassed (0UL) /*!< Read: BIST2 not passed */
+#define RAMBISTHUB_BISTSTATUS_BISTSTATUS2_Passed (1UL) /*!< Read: BIST2 passed. Write zero to clear. */
+
+/* Bit 1 : Status of BIST1. Write to clear. */
+#define RAMBISTHUB_BISTSTATUS_BISTSTATUS1_Pos (1UL) /*!< Position of BISTSTATUS1 field. */
+#define RAMBISTHUB_BISTSTATUS_BISTSTATUS1_Msk (0x1UL << RAMBISTHUB_BISTSTATUS_BISTSTATUS1_Pos) /*!< Bit mask of BISTSTATUS1 field. */
+#define RAMBISTHUB_BISTSTATUS_BISTSTATUS1_NotPassed (0UL) /*!< Read: BIST1 not passed */
+#define RAMBISTHUB_BISTSTATUS_BISTSTATUS1_Passed (1UL) /*!< Read: BIST1 passed. Write zero to clear. */
+
+/* Bit 0 : Status of BIST0. Write to clear. */
+#define RAMBISTHUB_BISTSTATUS_BISTSTATUS0_Pos (0UL) /*!< Position of BISTSTATUS0 field. */
+#define RAMBISTHUB_BISTSTATUS_BISTSTATUS0_Msk (0x1UL << RAMBISTHUB_BISTSTATUS_BISTSTATUS0_Pos) /*!< Bit mask of BISTSTATUS0 field. */
+#define RAMBISTHUB_BISTSTATUS_BISTSTATUS0_NotPassed (0UL) /*!< Read: BIST0 not passed */
+#define RAMBISTHUB_BISTSTATUS_BISTSTATUS0_Passed (1UL) /*!< Read: BIST0 passed. Write zero to clear. */
+
+/* Register: RAMBISTHUB_TESTTYPE */
+/* Description: RAM BIST test type */
+
+/* Bit 0 : RAM BIST Hub enable */
+#define RAMBISTHUB_TESTTYPE_TESTTYPE_Pos (0UL) /*!< Position of TESTTYPE field. */
+#define RAMBISTHUB_TESTTYPE_TESTTYPE_Msk (0x1UL << RAMBISTHUB_TESTTYPE_TESTTYPE_Pos) /*!< Bit mask of TESTTYPE field. */
+#define RAMBISTHUB_TESTTYPE_TESTTYPE_BIST (0UL) /*!< Non-retention BIST */
+#define RAMBISTHUB_TESTTYPE_TESTTYPE_RetentionBIST (1UL) /*!< Retention BIST */
+
+/* Register: RAMBISTHUB_FORCEONRETENTION */
+/* Description: Power request override to force RAM retention on */
+
+/* Bit 0 : Power request override to force RAM retention on */
+#define RAMBISTHUB_FORCEONRETENTION_FORCEONRETENTION_Pos (0UL) /*!< Position of FORCEONRETENTION field. */
+#define RAMBISTHUB_FORCEONRETENTION_FORCEONRETENTION_Msk (0x1UL << RAMBISTHUB_FORCEONRETENTION_FORCEONRETENTION_Pos) /*!< Bit mask of FORCEONRETENTION field. */
+#define RAMBISTHUB_FORCEONRETENTION_FORCEONRETENTION_Disabled (0UL) /*!< Power request override disabled */
+#define RAMBISTHUB_FORCEONRETENTION_FORCEONRETENTION_Enabled (1UL) /*!< Power request override enabled */
+
+
 /* Peripheral: REGULATORS */
 /* Description: Voltage regulators control 0 */
+
+/* Register: REGULATORS_DISABLEHPBOR */
+/* Description: Enable or disable HPBOR */
+
+/* Bit 0 : Enable or disable HPBOR */
+#define REGULATORS_DISABLEHPBOR_DISABLE_Pos (0UL) /*!< Position of DISABLE field. */
+#define REGULATORS_DISABLEHPBOR_DISABLE_Msk (0x1UL << REGULATORS_DISABLEHPBOR_DISABLE_Pos) /*!< Bit mask of DISABLE field. */
+#define REGULATORS_DISABLEHPBOR_DISABLE_Enabled (0UL) /*!< Enable HPBOR */
+#define REGULATORS_DISABLEHPBOR_DISABLE_Disabled (1UL) /*!< Disable HPBOR */
 
 /* Register: REGULATORS_SYSTEMOFF */
 /* Description: System OFF register */
@@ -5473,6 +11147,26 @@ POSSIBILITY OF SUCH DAMAGE.
 #define REGULATORS_SYSTEMOFF_SYSTEMOFF_Msk (0x1UL << REGULATORS_SYSTEMOFF_SYSTEMOFF_Pos) /*!< Bit mask of SYSTEMOFF field. */
 #define REGULATORS_SYSTEMOFF_SYSTEMOFF_Enable (1UL) /*!< Enable System OFF mode */
 
+/* Register: REGULATORS_EXTPOFCON */
+/* Description: External power failure warning configuration */
+
+/* Bit 0 : Enable or disable external power failure warning */
+#define REGULATORS_EXTPOFCON_POF_Pos (0UL) /*!< Position of POF field. */
+#define REGULATORS_EXTPOFCON_POF_Msk (0x1UL << REGULATORS_EXTPOFCON_POF_Pos) /*!< Bit mask of POF field. */
+#define REGULATORS_EXTPOFCON_POF_Disabled (0UL) /*!< Disable */
+#define REGULATORS_EXTPOFCON_POF_Enabled (1UL) /*!< Enable */
+
+/* Register: REGULATORS_FORCEOFFNVM */
+/* Description: Force off NVM supply. See also the internal section in the NVMC chapter. */
+
+/* Bits 31..0 : Force off NVM supply. See also the internal section in the NVMC chapter. */
+#define REGULATORS_FORCEOFFNVM_FORCEOFFNVM_Pos (0UL) /*!< Position of FORCEOFFNVM field. */
+#define REGULATORS_FORCEOFFNVM_FORCEOFFNVM_Msk (0xFFFFFFFFUL << REGULATORS_FORCEOFFNVM_FORCEOFFNVM_Pos) /*!< Bit mask of FORCEOFFNVM field. */
+#define REGULATORS_FORCEOFFNVM_FORCEOFFNVM_DoNotForceOff (0UL) /*!< Read: Do not force off NVM supply */
+#define REGULATORS_FORCEOFFNVM_FORCEOFFNVM_ForceOff (1UL) /*!< Read: Force off NVM supply */
+#define REGULATORS_FORCEOFFNVM_FORCEOFFNVM_DisableForceOff (0UL) /*!< Write: Do not force off NVM supply */
+#define REGULATORS_FORCEOFFNVM_FORCEOFFNVM_EnableForceOff (0xBADCA81EUL) /*!< Write: Force off NVM supply */
+
 /* Register: REGULATORS_DCDCEN */
 /* Description: Enable DC/DC mode of the main voltage regulator. */
 
@@ -5481,6 +11175,530 @@ POSSIBILITY OF SUCH DAMAGE.
 #define REGULATORS_DCDCEN_DCDCEN_Msk (0x1UL << REGULATORS_DCDCEN_DCDCEN_Pos) /*!< Bit mask of DCDCEN field. */
 #define REGULATORS_DCDCEN_DCDCEN_Disabled (0UL) /*!< DC/DC mode is disabled */
 #define REGULATORS_DCDCEN_DCDCEN_Enabled (1UL) /*!< DC/DC mode is enabled */
+
+/* Register: REGULATORS_DCDCEN1 */
+/* Description: DC/DC enable register for REG1 (DVDD_0V9) */
+
+/* Bit 0 : Enable or disable DC/DC mode */
+#define REGULATORS_DCDCEN1_DCDCEN1_Pos (0UL) /*!< Position of DCDCEN1 field. */
+#define REGULATORS_DCDCEN1_DCDCEN1_Msk (0x1UL << REGULATORS_DCDCEN1_DCDCEN1_Pos) /*!< Bit mask of DCDCEN1 field. */
+#define REGULATORS_DCDCEN1_DCDCEN1_Disabled (0UL) /*!< Disable */
+#define REGULATORS_DCDCEN1_DCDCEN1_Enabled (1UL) /*!< Enable */
+
+/* Register: REGULATORS_DCDCEN2 */
+/* Description: DC/DC enable register for REG2 (AVDD_1V3) */
+
+/* Bit 0 : Enable or disable DC/DC mode */
+#define REGULATORS_DCDCEN2_DCDCEN2_Pos (0UL) /*!< Position of DCDCEN2 field. */
+#define REGULATORS_DCDCEN2_DCDCEN2_Msk (0x1UL << REGULATORS_DCDCEN2_DCDCEN2_Pos) /*!< Bit mask of DCDCEN2 field. */
+#define REGULATORS_DCDCEN2_DCDCEN2_Disabled (0UL) /*!< Disable */
+#define REGULATORS_DCDCEN2_DCDCEN2_Enabled (1UL) /*!< Enable */
+
+/* Register: REGULATORS_ATEPOWER */
+/* Description: Analog test bus control for power modules */
+
+/* Bit 12 : Enable or disable overvoltage clamp on analog test bus */
+#define REGULATORS_ATEPOWER_MCPLLWATBCLAMP_Pos (12UL) /*!< Position of MCPLLWATBCLAMP field. */
+#define REGULATORS_ATEPOWER_MCPLLWATBCLAMP_Msk (0x1UL << REGULATORS_ATEPOWER_MCPLLWATBCLAMP_Pos) /*!< Bit mask of MCPLLWATBCLAMP field. */
+#define REGULATORS_ATEPOWER_MCPLLWATBCLAMP_Disabled (0UL) /*!< Disable */
+#define REGULATORS_ATEPOWER_MCPLLWATBCLAMP_Enabled (1UL) /*!< Enable */
+
+/* Bit 11 : Connect or disconnect scaled (x 1/3) output voltage of the TCXO LDO to ATB0 */
+#define REGULATORS_ATEPOWER_ATETCXOLDO_Pos (11UL) /*!< Position of ATETCXOLDO field. */
+#define REGULATORS_ATEPOWER_ATETCXOLDO_Msk (0x1UL << REGULATORS_ATEPOWER_ATETCXOLDO_Pos) /*!< Bit mask of ATETCXOLDO field. */
+#define REGULATORS_ATEPOWER_ATETCXOLDO_Disconnected (0UL) /*!< Disconnected - high impedance towards ATB0 */
+#define REGULATORS_ATEPOWER_ATETCXOLDO_Connected (1UL) /*!< Scaled output voltage (x 1/3) connected to ATB0 */
+
+/* Bit 10 : Connect or disconnect scaled (x 1/3) output voltage of the IOIF LDO to ATB0 */
+#define REGULATORS_ATEPOWER_ATEIOIFLDO_Pos (10UL) /*!< Position of ATEIOIFLDO field. */
+#define REGULATORS_ATEPOWER_ATEIOIFLDO_Msk (0x1UL << REGULATORS_ATEPOWER_ATEIOIFLDO_Pos) /*!< Bit mask of ATEIOIFLDO field. */
+#define REGULATORS_ATEPOWER_ATEIOIFLDO_Disconnected (0UL) /*!< Disconnected - high impedance towards ATB0 */
+#define REGULATORS_ATEPOWER_ATEIOIFLDO_Connected (1UL) /*!< Scaled output voltage (x 1/3) connected to ATB0 */
+
+/* Bit 9 : Connect or disconnect scaled (x 1/3) output voltage of the RFFE LDO to ATB0 */
+#define REGULATORS_ATEPOWER_ATERFFELDO_Pos (9UL) /*!< Position of ATERFFELDO field. */
+#define REGULATORS_ATEPOWER_ATERFFELDO_Msk (0x1UL << REGULATORS_ATEPOWER_ATERFFELDO_Pos) /*!< Bit mask of ATERFFELDO field. */
+#define REGULATORS_ATEPOWER_ATERFFELDO_Disconnected (0UL) /*!< Disconnected - high impedance towards ATB0 */
+#define REGULATORS_ATEPOWER_ATERFFELDO_Connected (1UL) /*!< Scaled output voltage (x 1/3) connected to ATB0 */
+
+/* Bit 8 : Connect or disconnect reference generator for flash to analog test bus */
+#define REGULATORS_ATEPOWER_VREFNVM_Pos (8UL) /*!< Position of VREFNVM field. */
+#define REGULATORS_ATEPOWER_VREFNVM_Msk (0x1UL << REGULATORS_ATEPOWER_VREFNVM_Pos) /*!< Bit mask of VREFNVM field. */
+#define REGULATORS_ATEPOWER_VREFNVM_Disconnected (0UL) /*!< Disconnect */
+#define REGULATORS_ATEPOWER_VREFNVM_Connected (1UL) /*!< Connect 0.9 V downscaled reference voltage to ATB0 */
+
+/* Bits 6..5 : Configure connection of master bias generator to analog test bus */
+#define REGULATORS_ATEPOWER_MBIAS_Pos (5UL) /*!< Position of MBIAS field. */
+#define REGULATORS_ATEPOWER_MBIAS_Msk (0x3UL << REGULATORS_ATEPOWER_MBIAS_Pos) /*!< Bit mask of MBIAS field. */
+#define REGULATORS_ATEPOWER_MBIAS_Disconnected (0UL) /*!< Disconnect */
+#define REGULATORS_ATEPOWER_MBIAS_VBG (1UL) /*!< Connect 0.9 V bandgap voltage to ATB0 */
+#define REGULATORS_ATEPOWER_MBIAS_IBPSR10U (2UL) /*!< Connect 10 uA IBPSR current to ATB1 */
+#define REGULATORS_ATEPOWER_MBIAS_Both (3UL) /*!< Connect both VBG to ATB0 and IBPSR10U to ATB1 */
+
+/* Bit 4 : Connect or disconnect AVSS to analog test bus */
+#define REGULATORS_ATEPOWER_AVSS_Pos (4UL) /*!< Position of AVSS field. */
+#define REGULATORS_ATEPOWER_AVSS_Msk (0x1UL << REGULATORS_ATEPOWER_AVSS_Pos) /*!< Bit mask of AVSS field. */
+#define REGULATORS_ATEPOWER_AVSS_Disconnected (0UL) /*!< Disconnect */
+#define REGULATORS_ATEPOWER_AVSS_Connected (1UL) /*!< Connect to ATB1 */
+
+/* Bit 3 : Connect or disconnect DVDD_0V9 to analog test bus */
+#define REGULATORS_ATEPOWER_DVDD0V9_Pos (3UL) /*!< Position of DVDD0V9 field. */
+#define REGULATORS_ATEPOWER_DVDD0V9_Msk (0x1UL << REGULATORS_ATEPOWER_DVDD0V9_Pos) /*!< Bit mask of DVDD0V9 field. */
+#define REGULATORS_ATEPOWER_DVDD0V9_Disconnected (0UL) /*!< Disconnect */
+#define REGULATORS_ATEPOWER_DVDD0V9_Connected (1UL) /*!< Connect to ATB0 */
+
+/* Bit 2 : Connect or disconnect AVDD_1V3 to analog test bus */
+#define REGULATORS_ATEPOWER_AVDD1V3_Pos (2UL) /*!< Position of AVDD1V3 field. */
+#define REGULATORS_ATEPOWER_AVDD1V3_Msk (0x1UL << REGULATORS_ATEPOWER_AVDD1V3_Pos) /*!< Bit mask of AVDD1V3 field. */
+#define REGULATORS_ATEPOWER_AVDD1V3_Disconnected (0UL) /*!< Disconnect */
+#define REGULATORS_ATEPOWER_AVDD1V3_Connected (1UL) /*!< Connect to ATB0 */
+
+/* Bit 1 : Enable or disable overvoltage clamp on analog test bus */
+#define REGULATORS_ATEPOWER_OVCLAMP_Pos (1UL) /*!< Position of OVCLAMP field. */
+#define REGULATORS_ATEPOWER_OVCLAMP_Msk (0x1UL << REGULATORS_ATEPOWER_OVCLAMP_Pos) /*!< Bit mask of OVCLAMP field. */
+#define REGULATORS_ATEPOWER_OVCLAMP_Disabled (0UL) /*!< Disable */
+#define REGULATORS_ATEPOWER_OVCLAMP_Enabled (1UL) /*!< Enable */
+
+/* Bit 0 : Enable or disable power-down clamp on analog test bus */
+#define REGULATORS_ATEPOWER_PDCLAMP_Pos (0UL) /*!< Position of PDCLAMP field. */
+#define REGULATORS_ATEPOWER_PDCLAMP_Msk (0x1UL << REGULATORS_ATEPOWER_PDCLAMP_Pos) /*!< Bit mask of PDCLAMP field. */
+#define REGULATORS_ATEPOWER_PDCLAMP_Disabled (0UL) /*!< Disable */
+#define REGULATORS_ATEPOWER_PDCLAMP_Enabled (1UL) /*!< Enable */
+
+/* Register: REGULATORS_DCDCCONFREG1 */
+/* Description: Configuration register for REG1 DC/DC regulator (DVDD_0V9) */
+
+/* Bits 12..9 : Pre-driver speed control 0: Minimum driver speed, low efficiency, low noise 7: Maximum driver speed, high efficiency, high noise 8 - 15: reserved for future use (MSB not implemented so these codes map to 0000-0111) */
+#define REGULATORS_DCDCCONFREG1_BUCK_DROUTSEL_Pos (9UL) /*!< Position of BUCK_DROUTSEL field. */
+#define REGULATORS_DCDCCONFREG1_BUCK_DROUTSEL_Msk (0xFUL << REGULATORS_DCDCCONFREG1_BUCK_DROUTSEL_Pos) /*!< Bit mask of BUCK_DROUTSEL field. */
+
+/* Bits 8..7 : Input clock selection */
+#define REGULATORS_DCDCCONFREG1_BUCK_CKSEL_Pos (7UL) /*!< Position of BUCK_CKSEL field. */
+#define REGULATORS_DCDCCONFREG1_BUCK_CKSEL_Msk (0x3UL << REGULATORS_DCDCCONFREG1_BUCK_CKSEL_Pos) /*!< Bit mask of BUCK_CKSEL field. */
+#define REGULATORS_DCDCCONFREG1_BUCK_CKSEL_NORMAL (0UL) /*!< Normal clock */
+#define REGULATORS_DCDCCONFREG1_BUCK_CKSEL_INVERTED (1UL) /*!< Inverted clock */
+
+/* Bits 6..5 : Output voltage selection */
+#define REGULATORS_DCDCCONFREG1_BUCK_VOLTAGE_Pos (5UL) /*!< Position of BUCK_VOLTAGE field. */
+#define REGULATORS_DCDCCONFREG1_BUCK_VOLTAGE_Msk (0x3UL << REGULATORS_DCDCCONFREG1_BUCK_VOLTAGE_Pos) /*!< Bit mask of BUCK_VOLTAGE field. */
+#define REGULATORS_DCDCCONFREG1_BUCK_VOLTAGE_1V00 (0UL) /*!< 1.00 V */
+#define REGULATORS_DCDCCONFREG1_BUCK_VOLTAGE_1V09 (1UL) /*!< 1.09 V */
+#define REGULATORS_DCDCCONFREG1_BUCK_VOLTAGE_1V17 (2UL) /*!< 1.17 V */
+#define REGULATORS_DCDCCONFREG1_BUCK_VOLTAGE_1V26 (3UL) /*!< 1.26 V */
+
+/* Bits 4..0 : Output voltage calibration. 0: Minimum output voltage level. 31: Maximum output voltage level. */
+#define REGULATORS_DCDCCONFREG1_BUCK_CAL_Pos (0UL) /*!< Position of BUCK_CAL field. */
+#define REGULATORS_DCDCCONFREG1_BUCK_CAL_Msk (0x1FUL << REGULATORS_DCDCCONFREG1_BUCK_CAL_Pos) /*!< Bit mask of BUCK_CAL field. */
+
+/* Register: REGULATORS_DCDCCONFREG2 */
+/* Description: Configuration register for REG2 DC/DC regulator (AVDD_1V3) */
+
+/* Bits 12..9 : Pre-driver speed control. 0: Minimum driver speed, low efficiency, low noise. 7: Maximum driver speed, high efficiency, high noise. 8 - 15: reserved for future use (MSB not implemented so these codes map to 0000-0111). */
+#define REGULATORS_DCDCCONFREG2_BUCK_DROUTSEL_Pos (9UL) /*!< Position of BUCK_DROUTSEL field. */
+#define REGULATORS_DCDCCONFREG2_BUCK_DROUTSEL_Msk (0xFUL << REGULATORS_DCDCCONFREG2_BUCK_DROUTSEL_Pos) /*!< Bit mask of BUCK_DROUTSEL field. */
+
+/* Bits 8..7 : Input clock selection */
+#define REGULATORS_DCDCCONFREG2_BUCK_CKSEL_Pos (7UL) /*!< Position of BUCK_CKSEL field. */
+#define REGULATORS_DCDCCONFREG2_BUCK_CKSEL_Msk (0x3UL << REGULATORS_DCDCCONFREG2_BUCK_CKSEL_Pos) /*!< Bit mask of BUCK_CKSEL field. */
+#define REGULATORS_DCDCCONFREG2_BUCK_CKSEL_NORMAL (0UL) /*!< Normal clock */
+#define REGULATORS_DCDCCONFREG2_BUCK_CKSEL_INVERTED (1UL) /*!< Inverted clock */
+
+/* Bits 6..5 : Output voltage selection */
+#define REGULATORS_DCDCCONFREG2_BUCK_VOLTAGE_Pos (5UL) /*!< Position of BUCK_VOLTAGE field. */
+#define REGULATORS_DCDCCONFREG2_BUCK_VOLTAGE_Msk (0x3UL << REGULATORS_DCDCCONFREG2_BUCK_VOLTAGE_Pos) /*!< Bit mask of BUCK_VOLTAGE field. */
+#define REGULATORS_DCDCCONFREG2_BUCK_VOLTAGE_1V00 (0UL) /*!< 1.00 V */
+#define REGULATORS_DCDCCONFREG2_BUCK_VOLTAGE_1V09 (1UL) /*!< 1.09 V */
+#define REGULATORS_DCDCCONFREG2_BUCK_VOLTAGE_1V17 (2UL) /*!< 1.17 V */
+#define REGULATORS_DCDCCONFREG2_BUCK_VOLTAGE_1V26 (3UL) /*!< 1.26 V */
+
+/* Bits 4..0 : Output voltage calibration. 0: Minimum output voltage level. 31: Maximum output voltage level. */
+#define REGULATORS_DCDCCONFREG2_BUCK_CAL_Pos (0UL) /*!< Position of BUCK_CAL field. */
+#define REGULATORS_DCDCCONFREG2_BUCK_CAL_Msk (0x1FUL << REGULATORS_DCDCCONFREG2_BUCK_CAL_Pos) /*!< Bit mask of BUCK_CAL field. */
+
+/* Register: REGULATORS_POWER_VCORE_CONF */
+/* Description: POWER_VCORE registers */
+
+/* Bits 7..6 : Spare digital signals */
+#define REGULATORS_POWER_VCORE_CONF_POWER_VCORE_CTRL_Pos (6UL) /*!< Position of POWER_VCORE_CTRL field. */
+#define REGULATORS_POWER_VCORE_CONF_POWER_VCORE_CTRL_Msk (0x3UL << REGULATORS_POWER_VCORE_CONF_POWER_VCORE_CTRL_Pos) /*!< Bit mask of POWER_VCORE_CTRL field. */
+
+/* Bits 4..0 : Internal oscillator calibration word. 0: lowest frequency. 15: default frequency. 31: highest frequency. */
+#define REGULATORS_POWER_VCORE_CONF_POWER_VCORE_CALIB_VCO_Pos (0UL) /*!< Position of POWER_VCORE_CALIB_VCO field. */
+#define REGULATORS_POWER_VCORE_CONF_POWER_VCORE_CALIB_VCO_Msk (0x1FUL << REGULATORS_POWER_VCORE_CONF_POWER_VCORE_CALIB_VCO_Pos) /*!< Bit mask of POWER_VCORE_CALIB_VCO field. */
+
+/* Register: REGULATORS_FORCEMODEREG1 */
+/* Description: A backdoor register for manual selection of REG1 regulator mode (DVDD_0V9) */
+
+/* Bits 6..0 : Force regulator power mode */
+#define REGULATORS_FORCEMODEREG1_FORCEMODE_Pos (0UL) /*!< Position of FORCEMODE field. */
+#define REGULATORS_FORCEMODEREG1_FORCEMODE_Msk (0x7FUL << REGULATORS_FORCEMODEREG1_FORCEMODE_Pos) /*!< Bit mask of FORCEMODE field. */
+#define REGULATORS_FORCEMODEREG1_FORCEMODE_EXT (0UL) /*!< Force external (DVDD_0V9 supplied externally) */
+#define REGULATORS_FORCEMODEREG1_FORCEMODE_ULP (1UL) /*!< Force ULP mode */
+#define REGULATORS_FORCEMODEREG1_FORCEMODE_LDO (2UL) /*!< Force LDO mode */
+#define REGULATORS_FORCEMODEREG1_FORCEMODE_DCDC (3UL) /*!< Force DC/DC mode */
+#define REGULATORS_FORCEMODEREG1_FORCEMODE_DCDC_REFRESH (4UL) /*!< Force DC/DC refresh mode */
+
+/* Register: REGULATORS_THRESHOLDREG1 */
+/* Description: Set threshold value of REG1 DC/DC regulator */
+
+/* Bits 9..0 : Sets the threshold value of power regulator. Note: The reset value comes from FICR (see FICR chapter for details). */
+#define REGULATORS_THRESHOLDREG1_THRESHOLD_Pos (0UL) /*!< Position of THRESHOLD field. */
+#define REGULATORS_THRESHOLDREG1_THRESHOLD_Msk (0x3FFUL << REGULATORS_THRESHOLDREG1_THRESHOLD_Pos) /*!< Bit mask of THRESHOLD field. */
+
+/* Register: REGULATORS_ENFORCEMODEREG1 */
+/* Description: Enable forcing of power mode in REG1 voltage regulator */
+
+/* Bit 0 : Enable forcing of power mode in voltage regulator */
+#define REGULATORS_ENFORCEMODEREG1_ENFORCEMODE_Pos (0UL) /*!< Position of ENFORCEMODE field. */
+#define REGULATORS_ENFORCEMODEREG1_ENFORCEMODE_Msk (0x1UL << REGULATORS_ENFORCEMODEREG1_ENFORCEMODE_Pos) /*!< Bit mask of ENFORCEMODE field. */
+#define REGULATORS_ENFORCEMODEREG1_ENFORCEMODE_Disabled (0UL) /*!< Regulator mode forcing off */
+#define REGULATORS_ENFORCEMODEREG1_ENFORCEMODE_Enabled (1UL) /*!< Regulator forced on in a power mode given by FORCEREGMODE1 */
+
+/* Register: REGULATORS_IGNOREDAPCMODE */
+/* Description: Ignore DAPCP power mode */
+
+/* Bit 0 : Ignore power request from debugger */
+#define REGULATORS_IGNOREDAPCMODE_IGNOREDAPCMODE_Pos (0UL) /*!< Position of IGNOREDAPCMODE field. */
+#define REGULATORS_IGNOREDAPCMODE_IGNOREDAPCMODE_Msk (0x1UL << REGULATORS_IGNOREDAPCMODE_IGNOREDAPCMODE_Pos) /*!< Bit mask of IGNOREDAPCMODE field. */
+#define REGULATORS_IGNOREDAPCMODE_IGNOREDAPCMODE_DoNotIgnore (0UL) /*!< Do not ignore power request form debugger */
+#define REGULATORS_IGNOREDAPCMODE_IGNOREDAPCMODE_Ignore (1UL) /*!< Ignore power request from debugger */
+
+/* Register: REGULATORS_CURRENTMODEREG1 */
+/* Description: Currently used power mode of the REG1 voltage regulator */
+
+/* Bits 6..0 : Currently used mode of the voltage regulator */
+#define REGULATORS_CURRENTMODEREG1_CURRENTMODE_Pos (0UL) /*!< Position of CURRENTMODE field. */
+#define REGULATORS_CURRENTMODEREG1_CURRENTMODE_Msk (0x7FUL << REGULATORS_CURRENTMODEREG1_CURRENTMODE_Pos) /*!< Bit mask of CURRENTMODE field. */
+#define REGULATORS_CURRENTMODEREG1_CURRENTMODE_EXT (0UL) /*!< Externally supplied DVDD_0V9 */
+#define REGULATORS_CURRENTMODEREG1_CURRENTMODE_DCDC (2UL) /*!< DC/DC mode */
+#define REGULATORS_CURRENTMODEREG1_CURRENTMODE_DCDC_REFRESH (3UL) /*!< DC/DC refresh mode */
+#define REGULATORS_CURRENTMODEREG1_CURRENTMODE_LDO (4UL) /*!< LDO mode */
+#define REGULATORS_CURRENTMODEREG1_CURRENTMODE_LDO_DCDC (6UL) /*!< Swithching between LDO and DC/DC (in any direction). Intermediate state when both regulators are on. */
+#define REGULATORS_CURRENTMODEREG1_CURRENTMODE_LDO_DCDC_REFRESH (7UL) /*!< Swithching between LDO and DC/DC refresh (in any direction). Intermediate state when both regulators are on. */
+#define REGULATORS_CURRENTMODEREG1_CURRENTMODE_ULP (8UL) /*!< ULP mode */
+#define REGULATORS_CURRENTMODEREG1_CURRENTMODE_DCDC_ULP (10UL) /*!< Swithching from DC/DC to ULP. Intermediate state when both regulators are on. */
+#define REGULATORS_CURRENTMODEREG1_CURRENTMODE_DCDC_REFRESH_ULP (11UL) /*!< Swithching from DC/DC refresh to ULP. Intermediate state when both regulators are on */
+#define REGULATORS_CURRENTMODEREG1_CURRENTMODE_ULP_LDO (12UL) /*!< Swithching between ULP and LDO (in any direction). Intermediate state when both regulators are on. */
+
+/* Register: REGULATORS_FORCEMODEREG2 */
+/* Description: A backdoor register for manual selection of REG2 regulator mode (DVDD_1V3) */
+
+/* Bits 6..0 : Force regulator power mode */
+#define REGULATORS_FORCEMODEREG2_FORCEMODE_Pos (0UL) /*!< Position of FORCEMODE field. */
+#define REGULATORS_FORCEMODEREG2_FORCEMODE_Msk (0x7FUL << REGULATORS_FORCEMODEREG2_FORCEMODE_Pos) /*!< Bit mask of FORCEMODE field. */
+#define REGULATORS_FORCEMODEREG2_FORCEMODE_EXT (0UL) /*!< Force external (AVDD_1V3 supplied externally) */
+#define REGULATORS_FORCEMODEREG2_FORCEMODE_ULP (1UL) /*!< Force ULP mode */
+#define REGULATORS_FORCEMODEREG2_FORCEMODE_LDO (2UL) /*!< Force LDO mode */
+#define REGULATORS_FORCEMODEREG2_FORCEMODE_DCDC (3UL) /*!< Force DC/DC mode */
+#define REGULATORS_FORCEMODEREG2_FORCEMODE_DCDC_REFRESH (4UL) /*!< Force DC/DC refresh mode */
+
+/* Register: REGULATORS_THRESHOLDREG2 */
+/* Description: Set threshold value of REG2 DC/DC regulator */
+
+/* Bits 9..0 : Sets the threshold value of power regulator. Note: The reset value comes from FICR (see FICR chapter for details). */
+#define REGULATORS_THRESHOLDREG2_THRESHOLD_Pos (0UL) /*!< Position of THRESHOLD field. */
+#define REGULATORS_THRESHOLDREG2_THRESHOLD_Msk (0x3FFUL << REGULATORS_THRESHOLDREG2_THRESHOLD_Pos) /*!< Bit mask of THRESHOLD field. */
+
+/* Register: REGULATORS_ENFORCEMODEREG2 */
+/* Description: Enable forcing of power mode in REG2 voltage regulator */
+
+/* Bit 0 : Enable forcing of power mode in voltage regulator */
+#define REGULATORS_ENFORCEMODEREG2_ENFORCEMODE_Pos (0UL) /*!< Position of ENFORCEMODE field. */
+#define REGULATORS_ENFORCEMODEREG2_ENFORCEMODE_Msk (0x1UL << REGULATORS_ENFORCEMODEREG2_ENFORCEMODE_Pos) /*!< Bit mask of ENFORCEMODE field. */
+#define REGULATORS_ENFORCEMODEREG2_ENFORCEMODE_Disabled (0UL) /*!< Regulator mode forcing off */
+#define REGULATORS_ENFORCEMODEREG2_ENFORCEMODE_Enabled (1UL) /*!< Regulator forced on in a power mode given by FORCEREGMODE2 */
+
+/* Register: REGULATORS_DISABLEHSLIMITREG2 */
+/* Description: Disable HSLIMIT for REG2 DC/DC regulator */
+
+/* Bit 0 : Enable or disable HSLIMIT for DC/DC regulator */
+#define REGULATORS_DISABLEHSLIMITREG2_DISABLE_Pos (0UL) /*!< Position of DISABLE field. */
+#define REGULATORS_DISABLEHSLIMITREG2_DISABLE_Msk (0x1UL << REGULATORS_DISABLEHSLIMITREG2_DISABLE_Pos) /*!< Bit mask of DISABLE field. */
+#define REGULATORS_DISABLEHSLIMITREG2_DISABLE_Enabled (0UL) /*!< Enable HSLIMIT */
+#define REGULATORS_DISABLEHSLIMITREG2_DISABLE_Disabled (1UL) /*!< Disable HSLIMIT */
+
+/* Register: REGULATORS_CURRENTMODEREG2 */
+/* Description: Currently used power mode of the REG2 voltage regulator */
+
+/* Bits 6..0 : Currently used mode of the voltage regulator */
+#define REGULATORS_CURRENTMODEREG2_CURRENTMODE_Pos (0UL) /*!< Position of CURRENTMODE field. */
+#define REGULATORS_CURRENTMODEREG2_CURRENTMODE_Msk (0x7FUL << REGULATORS_CURRENTMODEREG2_CURRENTMODE_Pos) /*!< Bit mask of CURRENTMODE field. */
+#define REGULATORS_CURRENTMODEREG2_CURRENTMODE_EXT (0UL) /*!< Externally supplied AVDD_1V3 */
+#define REGULATORS_CURRENTMODEREG2_CURRENTMODE_DCDC (2UL) /*!< DC/DC mode */
+#define REGULATORS_CURRENTMODEREG2_CURRENTMODE_DCDC_REFRESH (3UL) /*!< DC/DC refresh mode */
+#define REGULATORS_CURRENTMODEREG2_CURRENTMODE_LDO (4UL) /*!< LDO mode */
+#define REGULATORS_CURRENTMODEREG2_CURRENTMODE_LDO_DCDC (6UL) /*!< Swithching between LDO and DC/DC (in any direction). Intermediate state when both regulators are on. */
+#define REGULATORS_CURRENTMODEREG2_CURRENTMODE_LDO_DCDC_REFRESH (7UL) /*!< Swithching between LDO and DC/DC refresh (in any direction). Intermediate state when both regulators are on. */
+#define REGULATORS_CURRENTMODEREG2_CURRENTMODE_ULP (8UL) /*!< ULP mode */
+#define REGULATORS_CURRENTMODEREG2_CURRENTMODE_DCDC_ULP (10UL) /*!< Swithching from DC/DC to ULP. Intermediate state when both regulators are on. */
+#define REGULATORS_CURRENTMODEREG2_CURRENTMODE_DCDC_REFRESH_ULP (11UL) /*!< Swithching from DC/DC refresh to ULP. Intermediate state when both regulators are on. */
+#define REGULATORS_CURRENTMODEREG2_CURRENTMODE_ULP_LDO (12UL) /*!< Swithching between ULP and LDO (in any direction). Intermediate state when both regulators are on. */
+
+/* Register: REGULATORS_DISABLEHSLIMITREG1 */
+/* Description: Disable HSLIMIT for REG1 DC/DC regulator */
+
+/* Bit 0 : Enable or disable HSLIMIT for DC/DC regulator */
+#define REGULATORS_DISABLEHSLIMITREG1_DISABLE_Pos (0UL) /*!< Position of DISABLE field. */
+#define REGULATORS_DISABLEHSLIMITREG1_DISABLE_Msk (0x1UL << REGULATORS_DISABLEHSLIMITREG1_DISABLE_Pos) /*!< Bit mask of DISABLE field. */
+#define REGULATORS_DISABLEHSLIMITREG1_DISABLE_Enabled (0UL) /*!< Enable HSLIMIT */
+#define REGULATORS_DISABLEHSLIMITREG1_DISABLE_Disabled (1UL) /*!< Disable HSLIMIT */
+
+/* Register: REGULATORS_LDOCONFREG1 */
+/* Description: Configuration register for REG1 LDO regulator (DVDD_0V9) */
+
+/* Bits 2..0 : Output voltage calibration */
+#define REGULATORS_LDOCONFREG1_VREGTRIM_Pos (0UL) /*!< Position of VREGTRIM field. */
+#define REGULATORS_LDOCONFREG1_VREGTRIM_Msk (0x7UL << REGULATORS_LDOCONFREG1_VREGTRIM_Pos) /*!< Bit mask of VREGTRIM field. */
+#define REGULATORS_LDOCONFREG1_VREGTRIM_000 (0UL) /*!< 1.082 V */
+#define REGULATORS_LDOCONFREG1_VREGTRIM_001 (1UL) /*!< 1.108 V */
+#define REGULATORS_LDOCONFREG1_VREGTRIM_010 (2UL) /*!< 1.136 V */
+#define REGULATORS_LDOCONFREG1_VREGTRIM_011 (3UL) /*!< 1.163 V */
+#define REGULATORS_LDOCONFREG1_VREGTRIM_100 (4UL) /*!< 0.980 V */
+#define REGULATORS_LDOCONFREG1_VREGTRIM_101 (5UL) /*!< 1.003 V */
+#define REGULATORS_LDOCONFREG1_VREGTRIM_110 (6UL) /*!< 1.029 V */
+#define REGULATORS_LDOCONFREG1_VREGTRIM_111 (7UL) /*!< 1.054 V */
+
+/* Register: REGULATORS_LDOTESTLOADREG1 */
+/* Description: Test load setting for REG1 LDO regulator (DVDD_0V9) */
+
+/* Bits 2..0 : Output load configuration (for test purposes) */
+#define REGULATORS_LDOTESTLOADREG1_VREGLOAD_Pos (0UL) /*!< Position of VREGLOAD field. */
+#define REGULATORS_LDOTESTLOADREG1_VREGLOAD_Msk (0x7UL << REGULATORS_LDOTESTLOADREG1_VREGLOAD_Pos) /*!< Bit mask of VREGLOAD field. */
+#define REGULATORS_LDOTESTLOADREG1_VREGLOAD_Normal (0UL) /*!< Normal operation (default) */
+#define REGULATORS_LDOTESTLOADREG1_VREGLOAD_1mA (1UL) /*!< 1 mA test load */
+#define REGULATORS_LDOTESTLOADREG1_VREGLOAD_50mA (2UL) /*!< 50 mA test load */
+#define REGULATORS_LDOTESTLOADREG1_VREGLOAD_150mA (3UL) /*!< 150 mA test load */
+
+/* Register: REGULATORS_LDOCONFREG2 */
+/* Description: Configuration register for REG2 LDO regulator (AVDD_1V3) */
+
+/* Bits 2..0 : Output voltage calibration */
+#define REGULATORS_LDOCONFREG2_VREGTRIM_Pos (0UL) /*!< Position of VREGTRIM field. */
+#define REGULATORS_LDOCONFREG2_VREGTRIM_Msk (0x7UL << REGULATORS_LDOCONFREG2_VREGTRIM_Pos) /*!< Bit mask of VREGTRIM field. */
+#define REGULATORS_LDOCONFREG2_VREGTRIM_000 (0UL) /*!< 1.255 V */
+#define REGULATORS_LDOCONFREG2_VREGTRIM_001 (1UL) /*!< 1.289 V */
+#define REGULATORS_LDOCONFREG2_VREGTRIM_010 (2UL) /*!< 1.324 V */
+#define REGULATORS_LDOCONFREG2_VREGTRIM_011 (3UL) /*!< 1.357 V */
+#define REGULATORS_LDOCONFREG2_VREGTRIM_100 (4UL) /*!< 0.117 V */
+#define REGULATORS_LDOCONFREG2_VREGTRIM_101 (5UL) /*!< 1.150 V */
+#define REGULATORS_LDOCONFREG2_VREGTRIM_110 (6UL) /*!< 1.185 V */
+#define REGULATORS_LDOCONFREG2_VREGTRIM_111 (7UL) /*!< 1.219 V */
+
+/* Register: REGULATORS_LDOTESTLOADREG2 */
+/* Description: Test load setting for REG2 LDO regulator (AVDD_1V3) */
+
+/* Bits 2..0 : Output load configuration (for test purposes) */
+#define REGULATORS_LDOTESTLOADREG2_VREGLOAD_Pos (0UL) /*!< Position of VREGLOAD field. */
+#define REGULATORS_LDOTESTLOADREG2_VREGLOAD_Msk (0x7UL << REGULATORS_LDOTESTLOADREG2_VREGLOAD_Pos) /*!< Bit mask of VREGLOAD field. */
+#define REGULATORS_LDOTESTLOADREG2_VREGLOAD_Normal (0UL) /*!< Normal operation (default) */
+#define REGULATORS_LDOTESTLOADREG2_VREGLOAD_1mA (1UL) /*!< 1 mA test load */
+#define REGULATORS_LDOTESTLOADREG2_VREGLOAD_50mA (2UL) /*!< 50 mA test load */
+#define REGULATORS_LDOTESTLOADREG2_VREGLOAD_150mA (3UL) /*!< 150 mA test load */
+
+/* Register: REGULATORS_ULPCONFREG1 */
+/* Description: Configuration register for REG1 ULP regulator (DVDD_0V9) */
+
+/* Bits 6..5 : Select reference */
+#define REGULATORS_ULPCONFREG1_ULPSELREF_Pos (5UL) /*!< Position of ULPSELREF field. */
+#define REGULATORS_ULPCONFREG1_ULPSELREF_Msk (0x3UL << REGULATORS_ULPCONFREG1_ULPSELREF_Pos) /*!< Bit mask of ULPSELREF field. */
+#define REGULATORS_ULPCONFREG1_ULPSELREF_00 (0UL) /*!< 0.75 V ratio of AVDD1V3 output */
+#define REGULATORS_ULPCONFREG1_ULPSELREF_01 (1UL) /*!< 0.75 V reference */
+#define REGULATORS_ULPCONFREG1_ULPSELREF_10 (2UL) /*!< AVDD1V3 as reference */
+#define REGULATORS_ULPCONFREG1_ULPSELREF_11 (3UL) /*!< RFU */
+
+/* Register: REGULATORS_ULPCONFREG2 */
+/* Description: Configuration register for REG2 ULP regulator (AVDD_1V3) */
+
+/* Bits 4..0 : Output voltage calibration. 0: minimum voltage. 31: maximum voltage. */
+#define REGULATORS_ULPCONFREG2_ULPTRIM_Pos (0UL) /*!< Position of ULPTRIM field. */
+#define REGULATORS_ULPCONFREG2_ULPTRIM_Msk (0x1FUL << REGULATORS_ULPCONFREG2_ULPTRIM_Pos) /*!< Bit mask of ULPTRIM field. */
+
+/* Register: REGULATORS_VREG_HIGH_REG1 */
+/* Description: Increase voltage to AVDD_1V3 levels for REG1 LDO regulator (DVDD_0V9) */
+
+/* Bit 0 : Enable or disable the feature */
+#define REGULATORS_VREG_HIGH_REG1_ENABLE_Pos (0UL) /*!< Position of ENABLE field. */
+#define REGULATORS_VREG_HIGH_REG1_ENABLE_Msk (0x1UL << REGULATORS_VREG_HIGH_REG1_ENABLE_Pos) /*!< Bit mask of ENABLE field. */
+#define REGULATORS_VREG_HIGH_REG1_ENABLE_Disabled (0UL) /*!< Nominal output levels of REG1 LDO */
+#define REGULATORS_VREG_HIGH_REG1_ENABLE_Enabled (1UL) /*!< Increased output levels of REG1 LDO */
+
+/* Register: REGULATORS_ULP_CTRL */
+/* Description: Reference curent and switched resistor control for ULP regulators */
+
+/* Bits 6..5 : Switched resistor control */
+#define REGULATORS_ULP_CTRL_ULPRESCTRL_Pos (5UL) /*!< Position of ULPRESCTRL field. */
+#define REGULATORS_ULP_CTRL_ULPRESCTRL_Msk (0x3UL << REGULATORS_ULP_CTRL_ULPRESCTRL_Pos) /*!< Bit mask of ULPRESCTRL field. */
+#define REGULATORS_ULP_CTRL_ULPRESCTRL_00 (0UL) /*!< Switched with internal oscillator */
+#define REGULATORS_ULP_CTRL_ULPRESCTRL_01 (1UL) /*!< Switched with CLK2K input */
+#define REGULATORS_ULP_CTRL_ULPRESCTRL_10 (2UL) /*!< Force always-on */
+#define REGULATORS_ULP_CTRL_ULPRESCTRL_11 (3UL) /*!< Force off (PWRUPs must be 0 otherwise default) */
+
+/* Bits 3..0 : Adjusts current in reference. 0: minimum current. 7: default. 15: maximum current. */
+#define REGULATORS_ULP_CTRL_ULPICTRL_Pos (0UL) /*!< Position of ULPICTRL field. */
+#define REGULATORS_ULP_CTRL_ULPICTRL_Msk (0xFUL << REGULATORS_ULP_CTRL_ULPICTRL_Pos) /*!< Bit mask of ULPICTRL field. */
+
+/* Register: REGULATORS_RFFELDOCONFREG */
+/* Description: Configuration register for RF front-end 1V8 LDO (RFFELDO) */
+
+/* Bits 4..0 : Reference voltage trim value (encoding: two's complement). 0x0F: Maximum level. 0x00: Default level. 0x10: Minimum level. */
+#define REGULATORS_RFFELDOCONFREG_LDOTRIM_Pos (0UL) /*!< Position of LDOTRIM field. */
+#define REGULATORS_RFFELDOCONFREG_LDOTRIM_Msk (0x1FUL << REGULATORS_RFFELDOCONFREG_LDOTRIM_Pos) /*!< Bit mask of LDOTRIM field. */
+
+/* Register: REGULATORS_RFFELDOTEST */
+/* Description: Test features register for RF front-end 1V8 LDO (RFFELDO) */
+
+/* Bits 6..5 : Timer setting for the TRANS state using normal/slow mode */
+#define REGULATORS_RFFELDOTEST_TIMER_Pos (5UL) /*!< Position of TIMER field. */
+#define REGULATORS_RFFELDOTEST_TIMER_Msk (0x3UL << REGULATORS_RFFELDOTEST_TIMER_Pos) /*!< Bit mask of TIMER field. */
+#define REGULATORS_RFFELDOTEST_TIMER_0 (0UL) /*!< 12.5/25 us */
+#define REGULATORS_RFFELDOTEST_TIMER_1 (1UL) /*!< 25/50 us */
+#define REGULATORS_RFFELDOTEST_TIMER_2 (2UL) /*!< 50/100 us */
+#define REGULATORS_RFFELDOTEST_TIMER_3 (3UL) /*!< 100/200 us */
+
+/* Bit 4 : Control load current for test purposes, when enabled. The feature can also be used for fast discharge of decoupling capacitor at LDO power-down. */
+#define REGULATORS_RFFELDOTEST_MANUALLOAD_Pos (4UL) /*!< Position of MANUALLOAD field. */
+#define REGULATORS_RFFELDOTEST_MANUALLOAD_Msk (0x1UL << REGULATORS_RFFELDOTEST_MANUALLOAD_Pos) /*!< Bit mask of MANUALLOAD field. */
+#define REGULATORS_RFFELDOTEST_MANUALLOAD_Disabled (0UL) /*!< Load current disabled - normal operation */
+#define REGULATORS_RFFELDOTEST_MANUALLOAD_Enabled (1UL) /*!< Load current enabled - 12 mA test load (discharge current) */
+
+/* Bit 3 : Enable manual control of load */
+#define REGULATORS_RFFELDOTEST_ENABLEMANUALLOAD_Pos (3UL) /*!< Position of ENABLEMANUALLOAD field. */
+#define REGULATORS_RFFELDOTEST_ENABLEMANUALLOAD_Msk (0x1UL << REGULATORS_RFFELDOTEST_ENABLEMANUALLOAD_Pos) /*!< Bit mask of ENABLEMANUALLOAD field. */
+#define REGULATORS_RFFELDOTEST_ENABLEMANUALLOAD_Disabled (0UL) /*!< Manual control of load disabled */
+#define REGULATORS_RFFELDOTEST_ENABLEMANUALLOAD_Enabled (1UL) /*!< Manual control of load enabled */
+
+/* Bit 2 : Slow-start control, when enabled */
+#define REGULATORS_RFFELDOTEST_MANUALSLOWSTART_Pos (2UL) /*!< Position of MANUALSLOWSTART field. */
+#define REGULATORS_RFFELDOTEST_MANUALSLOWSTART_Msk (0x1UL << REGULATORS_RFFELDOTEST_MANUALSLOWSTART_Pos) /*!< Bit mask of MANUALSLOWSTART field. */
+#define REGULATORS_RFFELDOTEST_MANUALSLOWSTART_Disabled (0UL) /*!< Normal pass device, high current limit */
+#define REGULATORS_RFFELDOTEST_MANUALSLOWSTART_Enabled (1UL) /*!< Reduced pass device witdh, low current limit */
+
+/* Bit 1 : Enable manual control of slow-start */
+#define REGULATORS_RFFELDOTEST_ENABLEMANUALSLOWSTART_Pos (1UL) /*!< Position of ENABLEMANUALSLOWSTART field. */
+#define REGULATORS_RFFELDOTEST_ENABLEMANUALSLOWSTART_Msk (0x1UL << REGULATORS_RFFELDOTEST_ENABLEMANUALSLOWSTART_Pos) /*!< Bit mask of ENABLEMANUALSLOWSTART field. */
+#define REGULATORS_RFFELDOTEST_ENABLEMANUALSLOWSTART_Disabled (0UL) /*!< Manual control of slow-start disabled */
+#define REGULATORS_RFFELDOTEST_ENABLEMANUALSLOWSTART_Enabled (1UL) /*!< Manual control of slow-start enabled */
+
+/* Bit 0 : Enable bypass of the LDO */
+#define REGULATORS_RFFELDOTEST_BYPASS_Pos (0UL) /*!< Position of BYPASS field. */
+#define REGULATORS_RFFELDOTEST_BYPASS_Msk (0x1UL << REGULATORS_RFFELDOTEST_BYPASS_Pos) /*!< Bit mask of BYPASS field. */
+#define REGULATORS_RFFELDOTEST_BYPASS_Disabled (0UL) /*!< Bypass disabled - normal operation */
+#define REGULATORS_RFFELDOTEST_BYPASS_Enabled (1UL) /*!< Bypass enabled - pass device shorted to ground and most of LDO is powered down */
+
+/* Register: REGULATORS_IOIFLDOCONFREG */
+/* Description: Configuration register for IO Interface 1V8 LDO (IOIFLDO) */
+
+/* Bits 4..0 : Reference voltage trim value (encoding: two's complement). 0x0F: Maximum level. 0x00: Default level. 0x10: Minimum level. */
+#define REGULATORS_IOIFLDOCONFREG_LDOTRIM_Pos (0UL) /*!< Position of LDOTRIM field. */
+#define REGULATORS_IOIFLDOCONFREG_LDOTRIM_Msk (0x1FUL << REGULATORS_IOIFLDOCONFREG_LDOTRIM_Pos) /*!< Bit mask of LDOTRIM field. */
+
+/* Register: REGULATORS_IOIFLDOTEST */
+/* Description: Test features register for IO interface 1V8 LDO (IOIFLDO) */
+
+/* Bits 6..5 : Timer setting for the TRANS state using normal/slow mode */
+#define REGULATORS_IOIFLDOTEST_TIMER_Pos (5UL) /*!< Position of TIMER field. */
+#define REGULATORS_IOIFLDOTEST_TIMER_Msk (0x3UL << REGULATORS_IOIFLDOTEST_TIMER_Pos) /*!< Bit mask of TIMER field. */
+#define REGULATORS_IOIFLDOTEST_TIMER_0 (0UL) /*!< 12.5/25 us */
+#define REGULATORS_IOIFLDOTEST_TIMER_1 (1UL) /*!< 25/50 us */
+#define REGULATORS_IOIFLDOTEST_TIMER_2 (2UL) /*!< 50/100 us */
+#define REGULATORS_IOIFLDOTEST_TIMER_3 (3UL) /*!< 100/200 us */
+
+/* Bit 4 : Control load current for test purposes, when enabled. The feature can also be used for fast discharge of decoupling capacitor at LDO power-down. */
+#define REGULATORS_IOIFLDOTEST_MANUALLOAD_Pos (4UL) /*!< Position of MANUALLOAD field. */
+#define REGULATORS_IOIFLDOTEST_MANUALLOAD_Msk (0x1UL << REGULATORS_IOIFLDOTEST_MANUALLOAD_Pos) /*!< Bit mask of MANUALLOAD field. */
+#define REGULATORS_IOIFLDOTEST_MANUALLOAD_Disabled (0UL) /*!< Load current disabled - normal operation */
+#define REGULATORS_IOIFLDOTEST_MANUALLOAD_Enabled (1UL) /*!< Load current enabled - 12 mA test load (discharge current) */
+
+/* Bit 3 : Enable manual control of load */
+#define REGULATORS_IOIFLDOTEST_ENABLEMANUALLOAD_Pos (3UL) /*!< Position of ENABLEMANUALLOAD field. */
+#define REGULATORS_IOIFLDOTEST_ENABLEMANUALLOAD_Msk (0x1UL << REGULATORS_IOIFLDOTEST_ENABLEMANUALLOAD_Pos) /*!< Bit mask of ENABLEMANUALLOAD field. */
+#define REGULATORS_IOIFLDOTEST_ENABLEMANUALLOAD_Disabled (0UL) /*!< Manual control of load disabled */
+#define REGULATORS_IOIFLDOTEST_ENABLEMANUALLOAD_Enabled (1UL) /*!< Manual control of load enabled */
+
+/* Bit 2 : Slow-start control, when enabled */
+#define REGULATORS_IOIFLDOTEST_MANUALSLOWSTART_Pos (2UL) /*!< Position of MANUALSLOWSTART field. */
+#define REGULATORS_IOIFLDOTEST_MANUALSLOWSTART_Msk (0x1UL << REGULATORS_IOIFLDOTEST_MANUALSLOWSTART_Pos) /*!< Bit mask of MANUALSLOWSTART field. */
+#define REGULATORS_IOIFLDOTEST_MANUALSLOWSTART_Disabled (0UL) /*!< Normal pass device, high current limit */
+#define REGULATORS_IOIFLDOTEST_MANUALSLOWSTART_Enabled (1UL) /*!< Reduced pass device witdh, low current limit */
+
+/* Bit 1 : Enable manual control of slow-start */
+#define REGULATORS_IOIFLDOTEST_ENABLEMANUALSLOWSTART_Pos (1UL) /*!< Position of ENABLEMANUALSLOWSTART field. */
+#define REGULATORS_IOIFLDOTEST_ENABLEMANUALSLOWSTART_Msk (0x1UL << REGULATORS_IOIFLDOTEST_ENABLEMANUALSLOWSTART_Pos) /*!< Bit mask of ENABLEMANUALSLOWSTART field. */
+#define REGULATORS_IOIFLDOTEST_ENABLEMANUALSLOWSTART_Disabled (0UL) /*!< Manual control of slow-start disabled */
+#define REGULATORS_IOIFLDOTEST_ENABLEMANUALSLOWSTART_Enabled (1UL) /*!< Manual control of slow-start enabled */
+
+/* Bit 0 : Enable bypass of the LDO */
+#define REGULATORS_IOIFLDOTEST_BYPASS_Pos (0UL) /*!< Position of BYPASS field. */
+#define REGULATORS_IOIFLDOTEST_BYPASS_Msk (0x1UL << REGULATORS_IOIFLDOTEST_BYPASS_Pos) /*!< Bit mask of BYPASS field. */
+#define REGULATORS_IOIFLDOTEST_BYPASS_Disabled (0UL) /*!< Bypass disabled - normal operation */
+#define REGULATORS_IOIFLDOTEST_BYPASS_Enabled (1UL) /*!< Bypass enabled - pass device shorted to ground and most of LDO is powered down */
+
+/* Register: REGULATORS_TCXOLDOCONFREG */
+/* Description: Configuration register for TCXO 1V8 LDO (TCXOLDO) */
+
+/* Bits 4..0 : Reference voltage trim value (encoding: two's complement). 0x0F: Maximum level. 0x00: Default level. 0x10: Minimum level. */
+#define REGULATORS_TCXOLDOCONFREG_LDOTRIM_Pos (0UL) /*!< Position of LDOTRIM field. */
+#define REGULATORS_TCXOLDOCONFREG_LDOTRIM_Msk (0x1FUL << REGULATORS_TCXOLDOCONFREG_LDOTRIM_Pos) /*!< Bit mask of LDOTRIM field. */
+
+/* Register: REGULATORS_TCXOLDOTEST */
+/* Description: Test features register for TCXO 1V8 LDO (TCXOLDO) */
+
+/* Bit 4 : Control load current for test purposes, when enabled. The feature can also be used for fast discharge of decoupling capacitor at LDO power-down. */
+#define REGULATORS_TCXOLDOTEST_MANUALLOAD_Pos (4UL) /*!< Position of MANUALLOAD field. */
+#define REGULATORS_TCXOLDOTEST_MANUALLOAD_Msk (0x1UL << REGULATORS_TCXOLDOTEST_MANUALLOAD_Pos) /*!< Bit mask of MANUALLOAD field. */
+#define REGULATORS_TCXOLDOTEST_MANUALLOAD_Disabled (0UL) /*!< Load current disabled - normal operation */
+#define REGULATORS_TCXOLDOTEST_MANUALLOAD_Enabled (1UL) /*!< Load current enabled - 12 mA test load (discharge current) */
+
+/* Bit 3 : Enable manual control of load */
+#define REGULATORS_TCXOLDOTEST_ENABLEMANUALLOAD_Pos (3UL) /*!< Position of ENABLEMANUALLOAD field. */
+#define REGULATORS_TCXOLDOTEST_ENABLEMANUALLOAD_Msk (0x1UL << REGULATORS_TCXOLDOTEST_ENABLEMANUALLOAD_Pos) /*!< Bit mask of ENABLEMANUALLOAD field. */
+#define REGULATORS_TCXOLDOTEST_ENABLEMANUALLOAD_Disabled (0UL) /*!< Manual control of load disabled */
+#define REGULATORS_TCXOLDOTEST_ENABLEMANUALLOAD_Enabled (1UL) /*!< Manual control of load enabled */
+
+/* Bit 2 : Slow-start control, when enabled */
+#define REGULATORS_TCXOLDOTEST_MANUALSLOWSTART_Pos (2UL) /*!< Position of MANUALSLOWSTART field. */
+#define REGULATORS_TCXOLDOTEST_MANUALSLOWSTART_Msk (0x1UL << REGULATORS_TCXOLDOTEST_MANUALSLOWSTART_Pos) /*!< Bit mask of MANUALSLOWSTART field. */
+#define REGULATORS_TCXOLDOTEST_MANUALSLOWSTART_Disabled (0UL) /*!< Normal pass device, high current limit */
+#define REGULATORS_TCXOLDOTEST_MANUALSLOWSTART_Enabled (1UL) /*!< Reduced pass device witdh, low current limit */
+
+/* Bit 1 : Enable manual control of slow-start */
+#define REGULATORS_TCXOLDOTEST_ENABLEMANUALSLOWSTART_Pos (1UL) /*!< Position of ENABLEMANUALSLOWSTART field. */
+#define REGULATORS_TCXOLDOTEST_ENABLEMANUALSLOWSTART_Msk (0x1UL << REGULATORS_TCXOLDOTEST_ENABLEMANUALSLOWSTART_Pos) /*!< Bit mask of ENABLEMANUALSLOWSTART field. */
+#define REGULATORS_TCXOLDOTEST_ENABLEMANUALSLOWSTART_Disabled (0UL) /*!< Manual control of slow-start disabled */
+#define REGULATORS_TCXOLDOTEST_ENABLEMANUALSLOWSTART_Enabled (1UL) /*!< Manual control of slow-start enabled */
+
+/* Bit 0 : Enable bypass of the LDO */
+#define REGULATORS_TCXOLDOTEST_BYPASS_Pos (0UL) /*!< Position of BYPASS field. */
+#define REGULATORS_TCXOLDOTEST_BYPASS_Msk (0x1UL << REGULATORS_TCXOLDOTEST_BYPASS_Pos) /*!< Bit mask of BYPASS field. */
+#define REGULATORS_TCXOLDOTEST_BYPASS_Disabled (0UL) /*!< Bypass disabled - normal operation */
+#define REGULATORS_TCXOLDOTEST_BYPASS_Enabled (1UL) /*!< Bypass enabled - pass device shorted to ground and most of LDO is powered down */
+
+/* Register: REGULATORS_DISABLEPACSYSTEMOFFACK */
+/* Description: Enable or disable System OFF ack from PAD retention control */
+
+/* Bit 0 : Enable or disable System OFF ack from PAD retention control */
+#define REGULATORS_DISABLEPACSYSTEMOFFACK_DISABLE_Pos (0UL) /*!< Position of DISABLE field. */
+#define REGULATORS_DISABLEPACSYSTEMOFFACK_DISABLE_Msk (0x1UL << REGULATORS_DISABLEPACSYSTEMOFFACK_DISABLE_Pos) /*!< Bit mask of DISABLE field. */
+#define REGULATORS_DISABLEPACSYSTEMOFFACK_DISABLE_Enabled (0UL) /*!< Enable ack */
+#define REGULATORS_DISABLEPACSYSTEMOFFACK_DISABLE_Disabled (1UL) /*!< Disable ack */
+
+/* Register: REGULATORS_DISABLESRAMSYSTEMOFFACK */
+/* Description: Enable or disable System OFF ack from SRAM */
+
+/* Bit 0 : Enable or disable System OFF ack from SRAM */
+#define REGULATORS_DISABLESRAMSYSTEMOFFACK_DISABLE_Pos (0UL) /*!< Position of DISABLE field. */
+#define REGULATORS_DISABLESRAMSYSTEMOFFACK_DISABLE_Msk (0x1UL << REGULATORS_DISABLESRAMSYSTEMOFFACK_DISABLE_Pos) /*!< Bit mask of DISABLE field. */
+#define REGULATORS_DISABLESRAMSYSTEMOFFACK_DISABLE_Enabled (0UL) /*!< Enable ack */
+#define REGULATORS_DISABLESRAMSYSTEMOFFACK_DISABLE_Disabled (1UL) /*!< Disable ack */
+
+/* Register: REGULATORS_DISABLENVMSYSTEMOFFACK */
+/* Description: Enable or disable System OFF ack from NVM */
+
+/* Bit 0 : Enable or disable System OFF ack from NVM */
+#define REGULATORS_DISABLENVMSYSTEMOFFACK_DISABLE_Pos (0UL) /*!< Position of DISABLE field. */
+#define REGULATORS_DISABLENVMSYSTEMOFFACK_DISABLE_Msk (0x1UL << REGULATORS_DISABLENVMSYSTEMOFFACK_DISABLE_Pos) /*!< Bit mask of DISABLE field. */
+#define REGULATORS_DISABLENVMSYSTEMOFFACK_DISABLE_Enabled (0UL) /*!< Enable ack */
+#define REGULATORS_DISABLENVMSYSTEMOFFACK_DISABLE_Disabled (1UL) /*!< Disable ack */
 
 
 /* Peripheral: RTC */
@@ -5635,6 +11853,45 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 3..0 : Channel that event COMPARE[n] will publish to. */
 #define RTC_PUBLISH_COMPARE_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RTC_PUBLISH_COMPARE_CHIDX_Msk (0xFUL << RTC_PUBLISH_COMPARE_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: RTC_INTEN */
+/* Description: Enable or disable interrupt */
+
+/* Bit 19 : Enable or disable interrupt for event COMPARE[3] */
+#define RTC_INTEN_COMPARE3_Pos (19UL) /*!< Position of COMPARE3 field. */
+#define RTC_INTEN_COMPARE3_Msk (0x1UL << RTC_INTEN_COMPARE3_Pos) /*!< Bit mask of COMPARE3 field. */
+#define RTC_INTEN_COMPARE3_Disabled (0UL) /*!< Disable */
+#define RTC_INTEN_COMPARE3_Enabled (1UL) /*!< Enable */
+
+/* Bit 18 : Enable or disable interrupt for event COMPARE[2] */
+#define RTC_INTEN_COMPARE2_Pos (18UL) /*!< Position of COMPARE2 field. */
+#define RTC_INTEN_COMPARE2_Msk (0x1UL << RTC_INTEN_COMPARE2_Pos) /*!< Bit mask of COMPARE2 field. */
+#define RTC_INTEN_COMPARE2_Disabled (0UL) /*!< Disable */
+#define RTC_INTEN_COMPARE2_Enabled (1UL) /*!< Enable */
+
+/* Bit 17 : Enable or disable interrupt for event COMPARE[1] */
+#define RTC_INTEN_COMPARE1_Pos (17UL) /*!< Position of COMPARE1 field. */
+#define RTC_INTEN_COMPARE1_Msk (0x1UL << RTC_INTEN_COMPARE1_Pos) /*!< Bit mask of COMPARE1 field. */
+#define RTC_INTEN_COMPARE1_Disabled (0UL) /*!< Disable */
+#define RTC_INTEN_COMPARE1_Enabled (1UL) /*!< Enable */
+
+/* Bit 16 : Enable or disable interrupt for event COMPARE[0] */
+#define RTC_INTEN_COMPARE0_Pos (16UL) /*!< Position of COMPARE0 field. */
+#define RTC_INTEN_COMPARE0_Msk (0x1UL << RTC_INTEN_COMPARE0_Pos) /*!< Bit mask of COMPARE0 field. */
+#define RTC_INTEN_COMPARE0_Disabled (0UL) /*!< Disable */
+#define RTC_INTEN_COMPARE0_Enabled (1UL) /*!< Enable */
+
+/* Bit 1 : Enable or disable interrupt for event OVRFLW */
+#define RTC_INTEN_OVRFLW_Pos (1UL) /*!< Position of OVRFLW field. */
+#define RTC_INTEN_OVRFLW_Msk (0x1UL << RTC_INTEN_OVRFLW_Pos) /*!< Bit mask of OVRFLW field. */
+#define RTC_INTEN_OVRFLW_Disabled (0UL) /*!< Disable */
+#define RTC_INTEN_OVRFLW_Enabled (1UL) /*!< Enable */
+
+/* Bit 0 : Enable or disable interrupt for event TICK */
+#define RTC_INTEN_TICK_Pos (0UL) /*!< Position of TICK field. */
+#define RTC_INTEN_TICK_Msk (0x1UL << RTC_INTEN_TICK_Pos) /*!< Bit mask of TICK field. */
+#define RTC_INTEN_TICK_Disabled (0UL) /*!< Disable */
+#define RTC_INTEN_TICK_Enabled (1UL) /*!< Enable */
 
 /* Register: RTC_INTENSET */
 /* Description: Enable interrupt */
@@ -5912,6 +12169,14 @@ POSSIBILITY OF SUCH DAMAGE.
 #define SAADC_TASKS_CALIBRATEOFFSET_TASKS_CALIBRATEOFFSET_Msk (0x1UL << SAADC_TASKS_CALIBRATEOFFSET_TASKS_CALIBRATEOFFSET_Pos) /*!< Bit mask of TASKS_CALIBRATEOFFSET field. */
 #define SAADC_TASKS_CALIBRATEOFFSET_TASKS_CALIBRATEOFFSET_Trigger (1UL) /*!< Trigger task */
 
+/* Register: SAADC_TASKS_CALIBRATEGAIN */
+/* Description: Starts gain auto-calibration */
+
+/* Bit 0 : Starts gain auto-calibration */
+#define SAADC_TASKS_CALIBRATEGAIN_TASKS_CALIBRATEGAIN_Pos (0UL) /*!< Position of TASKS_CALIBRATEGAIN field. */
+#define SAADC_TASKS_CALIBRATEGAIN_TASKS_CALIBRATEGAIN_Msk (0x1UL << SAADC_TASKS_CALIBRATEGAIN_TASKS_CALIBRATEGAIN_Pos) /*!< Bit mask of TASKS_CALIBRATEGAIN field. */
+#define SAADC_TASKS_CALIBRATEGAIN_TASKS_CALIBRATEGAIN_Trigger (1UL) /*!< Trigger task */
+
 /* Register: SAADC_SUBSCRIBE_START */
 /* Description: Subscribe configuration for task START */
 
@@ -5964,6 +12229,19 @@ POSSIBILITY OF SUCH DAMAGE.
 #define SAADC_SUBSCRIBE_CALIBRATEOFFSET_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define SAADC_SUBSCRIBE_CALIBRATEOFFSET_CHIDX_Msk (0xFUL << SAADC_SUBSCRIBE_CALIBRATEOFFSET_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
+/* Register: SAADC_SUBSCRIBE_CALIBRATEGAIN */
+/* Description: Subscribe configuration for task CALIBRATEGAIN */
+
+/* Bit 31 :   */
+#define SAADC_SUBSCRIBE_CALIBRATEGAIN_EN_Pos (31UL) /*!< Position of EN field. */
+#define SAADC_SUBSCRIBE_CALIBRATEGAIN_EN_Msk (0x1UL << SAADC_SUBSCRIBE_CALIBRATEGAIN_EN_Pos) /*!< Bit mask of EN field. */
+#define SAADC_SUBSCRIBE_CALIBRATEGAIN_EN_Disabled (0UL) /*!< Disable subscription */
+#define SAADC_SUBSCRIBE_CALIBRATEGAIN_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 3..0 : Channel that task CALIBRATEGAIN will subscribe to */
+#define SAADC_SUBSCRIBE_CALIBRATEGAIN_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define SAADC_SUBSCRIBE_CALIBRATEGAIN_CHIDX_Msk (0xFUL << SAADC_SUBSCRIBE_CALIBRATEGAIN_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
 /* Register: SAADC_EVENTS_STARTED */
 /* Description: The ADC has started */
 
@@ -5992,9 +12270,9 @@ POSSIBILITY OF SUCH DAMAGE.
 #define SAADC_EVENTS_DONE_EVENTS_DONE_Generated (1UL) /*!< Event generated */
 
 /* Register: SAADC_EVENTS_RESULTDONE */
-/* Description: A result is ready to get transferred to RAM. */
+/* Description: A result is ready to get transferred to RAM. Result is available in REGRESULT register */
 
-/* Bit 0 : A result is ready to get transferred to RAM. */
+/* Bit 0 : A result is ready to get transferred to RAM. Result is available in REGRESULT register */
 #define SAADC_EVENTS_RESULTDONE_EVENTS_RESULTDONE_Pos (0UL) /*!< Position of EVENTS_RESULTDONE field. */
 #define SAADC_EVENTS_RESULTDONE_EVENTS_RESULTDONE_Msk (0x1UL << SAADC_EVENTS_RESULTDONE_EVENTS_RESULTDONE_Pos) /*!< Bit mask of EVENTS_RESULTDONE field. */
 #define SAADC_EVENTS_RESULTDONE_EVENTS_RESULTDONE_NotGenerated (0UL) /*!< Event not generated */
@@ -6139,6 +12417,21 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 3..0 : Channel that event CH[n].LIMITL will publish to. */
 #define SAADC_PUBLISH_CH_LIMITL_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define SAADC_PUBLISH_CH_LIMITL_CHIDX_Msk (0xFUL << SAADC_PUBLISH_CH_LIMITL_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: SAADC_SHORTS */
+/* Description: Shortcuts between local events and tasks */
+
+/* Bit 1 : Shortcut between event END and task START */
+#define SAADC_SHORTS_END_START_Pos (1UL) /*!< Position of END_START field. */
+#define SAADC_SHORTS_END_START_Msk (0x1UL << SAADC_SHORTS_END_START_Pos) /*!< Bit mask of END_START field. */
+#define SAADC_SHORTS_END_START_Disabled (0UL) /*!< Disable shortcut */
+#define SAADC_SHORTS_END_START_Enabled (1UL) /*!< Enable shortcut */
+
+/* Bit 0 : Shortcut between event DONE and task SAMPLE */
+#define SAADC_SHORTS_DONE_SAMPLE_Pos (0UL) /*!< Position of DONE_SAMPLE field. */
+#define SAADC_SHORTS_DONE_SAMPLE_Msk (0x1UL << SAADC_SHORTS_DONE_SAMPLE_Pos) /*!< Bit mask of DONE_SAMPLE field. */
+#define SAADC_SHORTS_DONE_SAMPLE_Disabled (0UL) /*!< Disable shortcut */
+#define SAADC_SHORTS_DONE_SAMPLE_Enabled (1UL) /*!< Enable shortcut */
 
 /* Register: SAADC_INTEN */
 /* Description: Enable or disable interrupt */
@@ -6623,6 +12916,13 @@ POSSIBILITY OF SUCH DAMAGE.
 #define SAADC_CH_PSELP_PSELP_AnalogInput6 (7UL) /*!< AIN6 */
 #define SAADC_CH_PSELP_PSELP_AnalogInput7 (8UL) /*!< AIN7 */
 #define SAADC_CH_PSELP_PSELP_VDDGPIO (9UL) /*!< VDD_GPIO */
+#define SAADC_CH_PSELP_PSELP_ATB0 (0xAUL) /*!< ATB0 */
+#define SAADC_CH_PSELP_PSELP_ATB1 (0xBUL) /*!< ATB1 */
+#define SAADC_CH_PSELP_PSELP_ATB2 (0xCUL) /*!< ATB2 */
+#define SAADC_CH_PSELP_PSELP_ATB3 (0xDUL) /*!< ATB3 */
+#define SAADC_CH_PSELP_PSELP_AVDD1V3 (0xEUL) /*!< AVDD1V3 */
+#define SAADC_CH_PSELP_PSELP_DVDD0V9 (0xFUL) /*!< DVDD0V9 */
+#define SAADC_CH_PSELP_PSELP_SELREF (0x10UL) /*!< Selected reference */
 
 /* Register: SAADC_CH_PSELN */
 /* Description: Description cluster: Input negative pin selection for CH[n] */
@@ -6640,6 +12940,13 @@ POSSIBILITY OF SUCH DAMAGE.
 #define SAADC_CH_PSELN_PSELN_AnalogInput6 (7UL) /*!< AIN6 */
 #define SAADC_CH_PSELN_PSELN_AnalogInput7 (8UL) /*!< AIN7 */
 #define SAADC_CH_PSELN_PSELN_VDD_GPIO (9UL) /*!< VDD_GPIO */
+#define SAADC_CH_PSELN_PSELN_ATB0 (0xAUL) /*!< ATB0 */
+#define SAADC_CH_PSELN_PSELN_ATB1 (0xBUL) /*!< ATB1 */
+#define SAADC_CH_PSELN_PSELN_ATB2 (0xCUL) /*!< ATB2 */
+#define SAADC_CH_PSELN_PSELN_ATB3 (0xDUL) /*!< ATB3 */
+#define SAADC_CH_PSELN_PSELN_AVDD1V3 (0xEUL) /*!< AVDD1V3 */
+#define SAADC_CH_PSELN_PSELN_DVDD0V9 (0xFUL) /*!< DVDD0V9 */
+#define SAADC_CH_PSELN_PSELN_SELREF (0x10UL) /*!< Selected reference */
 
 /* Register: SAADC_CH_CONFIG */
 /* Description: Description cluster: Input configuration for CH[n] */
@@ -6665,12 +12972,18 @@ POSSIBILITY OF SUCH DAMAGE.
 #define SAADC_CH_CONFIG_TACQ_15us (3UL) /*!< 15 us */
 #define SAADC_CH_CONFIG_TACQ_20us (4UL) /*!< 20 us */
 #define SAADC_CH_CONFIG_TACQ_40us (5UL) /*!< 40 us */
+#define SAADC_CH_CONFIG_TACQ_1us (6UL) /*!< 1 us */
+#define SAADC_CH_CONFIG_TACQ_2us (7UL) /*!< 2 us */
 
-/* Bit 12 : Reference control */
+/* Bits 14..12 : Reference control */
 #define SAADC_CH_CONFIG_REFSEL_Pos (12UL) /*!< Position of REFSEL field. */
-#define SAADC_CH_CONFIG_REFSEL_Msk (0x1UL << SAADC_CH_CONFIG_REFSEL_Pos) /*!< Bit mask of REFSEL field. */
+#define SAADC_CH_CONFIG_REFSEL_Msk (0x7UL << SAADC_CH_CONFIG_REFSEL_Pos) /*!< Bit mask of REFSEL field. */
 #define SAADC_CH_CONFIG_REFSEL_Internal (0UL) /*!< Internal reference (0.6 V) */
 #define SAADC_CH_CONFIG_REFSEL_VDD1_4 (1UL) /*!< VDD_GPIO/4 as reference */
+#define SAADC_CH_CONFIG_REFSEL_PADCIN1_4 (2UL) /*!< PADC_IN/4 as reference */
+#define SAADC_CH_CONFIG_REFSEL_ATB0 (3UL) /*!< ATB0 as reference */
+#define SAADC_CH_CONFIG_REFSEL_ATB1 (4UL) /*!< ATB1 as reference */
+#define SAADC_CH_CONFIG_REFSEL_MBIAS (5UL) /*!< MBIAS as reference */
 
 /* Bits 10..8 : Gain control */
 #define SAADC_CH_CONFIG_GAIN_Pos (8UL) /*!< Position of GAIN field. */
@@ -6711,6 +13024,13 @@ POSSIBILITY OF SUCH DAMAGE.
 #define SAADC_CH_LIMIT_LOW_Pos (0UL) /*!< Position of LOW field. */
 #define SAADC_CH_LIMIT_LOW_Msk (0xFFFFUL << SAADC_CH_LIMIT_LOW_Pos) /*!< Bit mask of LOW field. */
 
+/* Register: SAADC_REGRESULT */
+/* Description: Last conversion result */
+
+/* Bits 31..0 : Result of the previous ADC conversion */
+#define SAADC_REGRESULT_REGRESULT_Pos (0UL) /*!< Position of REGRESULT field. */
+#define SAADC_REGRESULT_REGRESULT_Msk (0xFFFFFFFFUL << SAADC_REGRESULT_REGRESULT_Pos) /*!< Bit mask of REGRESULT field. */
+
 /* Register: SAADC_RESOLUTION */
 /* Description: Resolution configuration */
 
@@ -6721,6 +13041,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #define SAADC_RESOLUTION_VAL_10bit (1UL) /*!< 10 bit */
 #define SAADC_RESOLUTION_VAL_12bit (2UL) /*!< 12 bit */
 #define SAADC_RESOLUTION_VAL_14bit (3UL) /*!< 14 bit */
+#define SAADC_RESOLUTION_VAL_16bit (4UL) /*!< 16 bit */
 
 /* Register: SAADC_OVERSAMPLE */
 /* Description: Oversampling configuration. OVERSAMPLE should not be combined with SCAN. The RESOLUTION is applied before averaging, thus for high OVERSAMPLE a higher RESOLUTION should be used. */
@@ -6737,6 +13058,10 @@ POSSIBILITY OF SUCH DAMAGE.
 #define SAADC_OVERSAMPLE_OVERSAMPLE_Over64x (6UL) /*!< Oversample 64x */
 #define SAADC_OVERSAMPLE_OVERSAMPLE_Over128x (7UL) /*!< Oversample 128x */
 #define SAADC_OVERSAMPLE_OVERSAMPLE_Over256x (8UL) /*!< Oversample 256x */
+#define SAADC_OVERSAMPLE_OVERSAMPLE_Over512x (9UL) /*!< Oversample 512x */
+#define SAADC_OVERSAMPLE_OVERSAMPLE_Over1024x (10UL) /*!< Oversample 1024x */
+#define SAADC_OVERSAMPLE_OVERSAMPLE_Over2048x (11UL) /*!< Oversample 2048x */
+#define SAADC_OVERSAMPLE_OVERSAMPLE_Over4096x (12UL) /*!< Oversample 4096x */
 
 /* Register: SAADC_SAMPLERATE */
 /* Description: Controls normal or continuous sample rate */
@@ -6771,6 +13096,56 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 14..0 : Number of buffer words transferred since last START. This register can be read after an END or STOPPED event. */
 #define SAADC_RESULT_AMOUNT_AMOUNT_Pos (0UL) /*!< Position of AMOUNT field. */
 #define SAADC_RESULT_AMOUNT_AMOUNT_Msk (0x7FFFUL << SAADC_RESULT_AMOUNT_AMOUNT_Pos) /*!< Bit mask of AMOUNT field. */
+
+/* Register: SAADC_TESTCTRL */
+/* Description: Control signals used during test of ADC */
+
+/* Bit 24 : Will enable the input mux in the ADC, so the resistor strings can be connected even when the analog core is powered down */
+#define SAADC_TESTCTRL_ENINMUX_Pos (24UL) /*!< Position of ENINMUX field. */
+#define SAADC_TESTCTRL_ENINMUX_Msk (0x1UL << SAADC_TESTCTRL_ENINMUX_Pos) /*!< Bit mask of ENINMUX field. */
+
+/* Bits 21..20 : Analog testbus control */
+#define SAADC_TESTCTRL_ATB_Pos (20UL) /*!< Position of ATB field. */
+#define SAADC_TESTCTRL_ATB_Msk (0x3UL << SAADC_TESTCTRL_ATB_Pos) /*!< Bit mask of ATB field. */
+#define SAADC_TESTCTRL_ATB_Disabled (0UL) /*!< ATB disabled */
+#define SAADC_TESTCTRL_ATB_VREF (1UL) /*!< Internal reference on ATB0, buffered reference on ATB1 */
+
+/* Bits 16..12 : Test bus for ADC core, see design description for coding */
+#define SAADC_TESTCTRL_TST_Pos (12UL) /*!< Position of TST field. */
+#define SAADC_TESTCTRL_TST_Msk (0x1FUL << SAADC_TESTCTRL_TST_Pos) /*!< Bit mask of TST field. */
+
+/* Bit 8 : Short input. Used to measure offset of ADC. */
+#define SAADC_TESTCTRL_SHORT_Pos (8UL) /*!< Position of SHORT field. */
+#define SAADC_TESTCTRL_SHORT_Msk (0x1UL << SAADC_TESTCTRL_SHORT_Pos) /*!< Bit mask of SHORT field. */
+
+/* Bit 4 : Swap positive and negative input */
+#define SAADC_TESTCTRL_SWITCH_Pos (4UL) /*!< Position of SWITCH field. */
+#define SAADC_TESTCTRL_SWITCH_Msk (0x1UL << SAADC_TESTCTRL_SWITCH_Pos) /*!< Bit mask of SWITCH field. */
+
+/* Bits 1..0 : Current control, 0 = normal current, higher is higher current */
+#define SAADC_TESTCTRL_ICTRL_Pos (0UL) /*!< Position of ICTRL field. */
+#define SAADC_TESTCTRL_ICTRL_Msk (0x3UL << SAADC_TESTCTRL_ICTRL_Pos) /*!< Bit mask of ICTRL field. */
+
+/* Register: SAADC_CALOFFSET */
+/* Description: Calibration control for offset error */
+
+/* Bits 5..0 : Sign-magnitude coding */
+#define SAADC_CALOFFSET_CALOFFSET_Pos (0UL) /*!< Position of CALOFFSET field. */
+#define SAADC_CALOFFSET_CALOFFSET_Msk (0x3FUL << SAADC_CALOFFSET_CALOFFSET_Pos) /*!< Bit mask of CALOFFSET field. */
+
+/* Register: SAADC_CALGAIN */
+/* Description: Calibration control for gain error */
+
+/* Bits 6..0 : Offset binary coding */
+#define SAADC_CALGAIN_CALGAIN_Pos (0UL) /*!< Position of CALGAIN field. */
+#define SAADC_CALGAIN_CALGAIN_Msk (0x7FUL << SAADC_CALGAIN_CALGAIN_Pos) /*!< Bit mask of CALGAIN field. */
+
+/* Register: SAADC_CALVREF */
+/* Description: Calibration control for reference voltage */
+
+/* Bits 6..0 : Offset binary coding */
+#define SAADC_CALVREF_CALVREF_Pos (0UL) /*!< Position of CALVREF field. */
+#define SAADC_CALVREF_CALVREF_Msk (0x7FUL << SAADC_CALVREF_CALVREF_Pos) /*!< Bit mask of CALVREF field. */
 
 
 /* Peripheral: SPIM */
@@ -6979,6 +13354,39 @@ POSSIBILITY OF SUCH DAMAGE.
 #define SPIM_SHORTS_END_START_Disabled (0UL) /*!< Disable shortcut */
 #define SPIM_SHORTS_END_START_Enabled (1UL) /*!< Enable shortcut */
 
+/* Register: SPIM_INTEN */
+/* Description: Enable or disable interrupt */
+
+/* Bit 19 : Enable or disable interrupt for event STARTED */
+#define SPIM_INTEN_STARTED_Pos (19UL) /*!< Position of STARTED field. */
+#define SPIM_INTEN_STARTED_Msk (0x1UL << SPIM_INTEN_STARTED_Pos) /*!< Bit mask of STARTED field. */
+#define SPIM_INTEN_STARTED_Disabled (0UL) /*!< Disable */
+#define SPIM_INTEN_STARTED_Enabled (1UL) /*!< Enable */
+
+/* Bit 8 : Enable or disable interrupt for event ENDTX */
+#define SPIM_INTEN_ENDTX_Pos (8UL) /*!< Position of ENDTX field. */
+#define SPIM_INTEN_ENDTX_Msk (0x1UL << SPIM_INTEN_ENDTX_Pos) /*!< Bit mask of ENDTX field. */
+#define SPIM_INTEN_ENDTX_Disabled (0UL) /*!< Disable */
+#define SPIM_INTEN_ENDTX_Enabled (1UL) /*!< Enable */
+
+/* Bit 6 : Enable or disable interrupt for event END */
+#define SPIM_INTEN_END_Pos (6UL) /*!< Position of END field. */
+#define SPIM_INTEN_END_Msk (0x1UL << SPIM_INTEN_END_Pos) /*!< Bit mask of END field. */
+#define SPIM_INTEN_END_Disabled (0UL) /*!< Disable */
+#define SPIM_INTEN_END_Enabled (1UL) /*!< Enable */
+
+/* Bit 4 : Enable or disable interrupt for event ENDRX */
+#define SPIM_INTEN_ENDRX_Pos (4UL) /*!< Position of ENDRX field. */
+#define SPIM_INTEN_ENDRX_Msk (0x1UL << SPIM_INTEN_ENDRX_Pos) /*!< Bit mask of ENDRX field. */
+#define SPIM_INTEN_ENDRX_Disabled (0UL) /*!< Disable */
+#define SPIM_INTEN_ENDRX_Enabled (1UL) /*!< Enable */
+
+/* Bit 1 : Enable or disable interrupt for event STOPPED */
+#define SPIM_INTEN_STOPPED_Pos (1UL) /*!< Position of STOPPED field. */
+#define SPIM_INTEN_STOPPED_Msk (0x1UL << SPIM_INTEN_STOPPED_Pos) /*!< Bit mask of STOPPED field. */
+#define SPIM_INTEN_STOPPED_Disabled (0UL) /*!< Disable */
+#define SPIM_INTEN_STOPPED_Enabled (1UL) /*!< Enable */
+
 /* Register: SPIM_INTENSET */
 /* Description: Enable interrupt */
 
@@ -7102,6 +13510,20 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 4..0 : Pin number */
 #define SPIM_PSEL_MISO_PIN_Pos (0UL) /*!< Position of PIN field. */
 #define SPIM_PSEL_MISO_PIN_Msk (0x1FUL << SPIM_PSEL_MISO_PIN_Pos) /*!< Bit mask of PIN field. */
+
+/* Register: SPIM_RXDDATA */
+/* Description: RXD register */
+
+/* Bits 7..0 : RX data received. Double buffered. */
+#define SPIM_RXDDATA_RXD_Pos (0UL) /*!< Position of RXD field. */
+#define SPIM_RXDDATA_RXD_Msk (0xFFUL << SPIM_RXDDATA_RXD_Pos) /*!< Bit mask of RXD field. */
+
+/* Register: SPIM_TXDDATA */
+/* Description: TXD register */
+
+/* Bits 7..0 : TX data to send. Double buffered. */
+#define SPIM_TXDDATA_TXD_Pos (0UL) /*!< Position of TXD field. */
+#define SPIM_TXDDATA_TXD_Msk (0xFFUL << SPIM_TXDDATA_TXD_Pos) /*!< Bit mask of TXD field. */
 
 /* Register: SPIM_FREQUENCY */
 /* Description: SPI frequency. Accuracy depends on the HFCLK source selected. */
@@ -7325,6 +13747,27 @@ POSSIBILITY OF SUCH DAMAGE.
 #define SPIS_SHORTS_END_ACQUIRE_Msk (0x1UL << SPIS_SHORTS_END_ACQUIRE_Pos) /*!< Bit mask of END_ACQUIRE field. */
 #define SPIS_SHORTS_END_ACQUIRE_Disabled (0UL) /*!< Disable shortcut */
 #define SPIS_SHORTS_END_ACQUIRE_Enabled (1UL) /*!< Enable shortcut */
+
+/* Register: SPIS_INTEN */
+/* Description: Enable or disable interrupt */
+
+/* Bit 10 : Enable or disable interrupt for event ACQUIRED */
+#define SPIS_INTEN_ACQUIRED_Pos (10UL) /*!< Position of ACQUIRED field. */
+#define SPIS_INTEN_ACQUIRED_Msk (0x1UL << SPIS_INTEN_ACQUIRED_Pos) /*!< Bit mask of ACQUIRED field. */
+#define SPIS_INTEN_ACQUIRED_Disabled (0UL) /*!< Disable */
+#define SPIS_INTEN_ACQUIRED_Enabled (1UL) /*!< Enable */
+
+/* Bit 4 : Enable or disable interrupt for event ENDRX */
+#define SPIS_INTEN_ENDRX_Pos (4UL) /*!< Position of ENDRX field. */
+#define SPIS_INTEN_ENDRX_Msk (0x1UL << SPIS_INTEN_ENDRX_Pos) /*!< Bit mask of ENDRX field. */
+#define SPIS_INTEN_ENDRX_Disabled (0UL) /*!< Disable */
+#define SPIS_INTEN_ENDRX_Enabled (1UL) /*!< Enable */
+
+/* Bit 1 : Enable or disable interrupt for event END */
+#define SPIS_INTEN_END_Pos (1UL) /*!< Position of END field. */
+#define SPIS_INTEN_END_Msk (0x1UL << SPIS_INTEN_END_Pos) /*!< Bit mask of END field. */
+#define SPIS_INTEN_END_Disabled (0UL) /*!< Disable */
+#define SPIS_INTEN_END_Enabled (1UL) /*!< Enable */
 
 /* Register: SPIS_INTENSET */
 /* Description: Enable interrupt */
@@ -8684,6 +15127,15 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TIMER_CC_CC_Pos (0UL) /*!< Position of CC field. */
 #define TIMER_CC_CC_Msk (0xFFFFFFFFUL << TIMER_CC_CC_Pos) /*!< Bit mask of CC field. */
 
+/* Register: TIMER_POWER */
+/* Description: Peripheral power control */
+
+/* Bit 0 : Peripheral power control. The peripheral and its registers will be reset to its initial state by switching the peripheral off and then back on again. */
+#define TIMER_POWER_POWER_Pos (0UL) /*!< Position of POWER field. */
+#define TIMER_POWER_POWER_Msk (0x1UL << TIMER_POWER_POWER_Pos) /*!< Bit mask of POWER field. */
+#define TIMER_POWER_POWER_Disabled (0UL) /*!< Peripheral is powered off */
+#define TIMER_POWER_POWER_Enabled (1UL) /*!< Peripheral is powered on */
+
 
 /* Peripheral: TWIM */
 /* Description: I2C compatible Two-Wire Master Interface with EasyDMA 0 */
@@ -8802,6 +15254,24 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TWIM_EVENTS_STOPPED_EVENTS_STOPPED_NotGenerated (0UL) /*!< Event not generated */
 #define TWIM_EVENTS_STOPPED_EVENTS_STOPPED_Generated (1UL) /*!< Event generated */
 
+/* Register: TWIM_EVENTS_ENDRX */
+/* Description: End of RXD buffer access by EasyDMA */
+
+/* Bit 0 : End of RXD buffer access by EasyDMA */
+#define TWIM_EVENTS_ENDRX_EVENTS_ENDRX_Pos (0UL) /*!< Position of EVENTS_ENDRX field. */
+#define TWIM_EVENTS_ENDRX_EVENTS_ENDRX_Msk (0x1UL << TWIM_EVENTS_ENDRX_EVENTS_ENDRX_Pos) /*!< Bit mask of EVENTS_ENDRX field. */
+#define TWIM_EVENTS_ENDRX_EVENTS_ENDRX_NotGenerated (0UL) /*!< Event not generated */
+#define TWIM_EVENTS_ENDRX_EVENTS_ENDRX_Generated (1UL) /*!< Event generated */
+
+/* Register: TWIM_EVENTS_ENDTX */
+/* Description: END of TXD buffer access by EasyDMA */
+
+/* Bit 0 : END of TXD buffer access by EasyDMA */
+#define TWIM_EVENTS_ENDTX_EVENTS_ENDTX_Pos (0UL) /*!< Position of EVENTS_ENDTX field. */
+#define TWIM_EVENTS_ENDTX_EVENTS_ENDTX_Msk (0x1UL << TWIM_EVENTS_ENDTX_EVENTS_ENDTX_Pos) /*!< Bit mask of EVENTS_ENDTX field. */
+#define TWIM_EVENTS_ENDTX_EVENTS_ENDTX_NotGenerated (0UL) /*!< Event not generated */
+#define TWIM_EVENTS_ENDTX_EVENTS_ENDTX_Generated (1UL) /*!< Event generated */
+
 /* Register: TWIM_EVENTS_ERROR */
 /* Description: TWI error */
 
@@ -8810,6 +15280,15 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TWIM_EVENTS_ERROR_EVENTS_ERROR_Msk (0x1UL << TWIM_EVENTS_ERROR_EVENTS_ERROR_Pos) /*!< Bit mask of EVENTS_ERROR field. */
 #define TWIM_EVENTS_ERROR_EVENTS_ERROR_NotGenerated (0UL) /*!< Event not generated */
 #define TWIM_EVENTS_ERROR_EVENTS_ERROR_Generated (1UL) /*!< Event generated */
+
+/* Register: TWIM_EVENTS_BB */
+/* Description: TWI byte boundary, generated before each byte that is sent or received */
+
+/* Bit 0 : TWI byte boundary, generated before each byte that is sent or received */
+#define TWIM_EVENTS_BB_EVENTS_BB_Pos (0UL) /*!< Position of EVENTS_BB field. */
+#define TWIM_EVENTS_BB_EVENTS_BB_Msk (0x1UL << TWIM_EVENTS_BB_EVENTS_BB_Pos) /*!< Bit mask of EVENTS_BB field. */
+#define TWIM_EVENTS_BB_EVENTS_BB_NotGenerated (0UL) /*!< Event not generated */
+#define TWIM_EVENTS_BB_EVENTS_BB_Generated (1UL) /*!< Event generated */
 
 /* Register: TWIM_EVENTS_SUSPENDED */
 /* Description: SUSPEND task has been issued, TWI traffic is now suspended. */
@@ -8869,6 +15348,32 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TWIM_PUBLISH_STOPPED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define TWIM_PUBLISH_STOPPED_CHIDX_Msk (0xFUL << TWIM_PUBLISH_STOPPED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
+/* Register: TWIM_PUBLISH_ENDRX */
+/* Description: Publish configuration for event ENDRX */
+
+/* Bit 31 :   */
+#define TWIM_PUBLISH_ENDRX_EN_Pos (31UL) /*!< Position of EN field. */
+#define TWIM_PUBLISH_ENDRX_EN_Msk (0x1UL << TWIM_PUBLISH_ENDRX_EN_Pos) /*!< Bit mask of EN field. */
+#define TWIM_PUBLISH_ENDRX_EN_Disabled (0UL) /*!< Disable publishing */
+#define TWIM_PUBLISH_ENDRX_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event ENDRX will publish to. */
+#define TWIM_PUBLISH_ENDRX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define TWIM_PUBLISH_ENDRX_CHIDX_Msk (0xFUL << TWIM_PUBLISH_ENDRX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: TWIM_PUBLISH_ENDTX */
+/* Description: Publish configuration for event ENDTX */
+
+/* Bit 31 :   */
+#define TWIM_PUBLISH_ENDTX_EN_Pos (31UL) /*!< Position of EN field. */
+#define TWIM_PUBLISH_ENDTX_EN_Msk (0x1UL << TWIM_PUBLISH_ENDTX_EN_Pos) /*!< Bit mask of EN field. */
+#define TWIM_PUBLISH_ENDTX_EN_Disabled (0UL) /*!< Disable publishing */
+#define TWIM_PUBLISH_ENDTX_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event ENDTX will publish to. */
+#define TWIM_PUBLISH_ENDTX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define TWIM_PUBLISH_ENDTX_CHIDX_Msk (0xFUL << TWIM_PUBLISH_ENDTX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
 /* Register: TWIM_PUBLISH_ERROR */
 /* Description: Publish configuration for event ERROR */
 
@@ -8881,6 +15386,19 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 3..0 : Channel that event ERROR will publish to. */
 #define TWIM_PUBLISH_ERROR_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define TWIM_PUBLISH_ERROR_CHIDX_Msk (0xFUL << TWIM_PUBLISH_ERROR_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: TWIM_PUBLISH_BB */
+/* Description: Publish configuration for event BB */
+
+/* Bit 31 :   */
+#define TWIM_PUBLISH_BB_EN_Pos (31UL) /*!< Position of EN field. */
+#define TWIM_PUBLISH_BB_EN_Msk (0x1UL << TWIM_PUBLISH_BB_EN_Pos) /*!< Bit mask of EN field. */
+#define TWIM_PUBLISH_BB_EN_Disabled (0UL) /*!< Disable publishing */
+#define TWIM_PUBLISH_BB_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event BB will publish to. */
+#define TWIM_PUBLISH_BB_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define TWIM_PUBLISH_BB_CHIDX_Msk (0xFUL << TWIM_PUBLISH_BB_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
 /* Register: TWIM_PUBLISH_SUSPENDED */
 /* Description: Publish configuration for event SUSPENDED */
@@ -9019,11 +15537,29 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TWIM_INTEN_SUSPENDED_Disabled (0UL) /*!< Disable */
 #define TWIM_INTEN_SUSPENDED_Enabled (1UL) /*!< Enable */
 
+/* Bit 14 : Enable or disable interrupt for event BB */
+#define TWIM_INTEN_BB_Pos (14UL) /*!< Position of BB field. */
+#define TWIM_INTEN_BB_Msk (0x1UL << TWIM_INTEN_BB_Pos) /*!< Bit mask of BB field. */
+#define TWIM_INTEN_BB_Disabled (0UL) /*!< Disable */
+#define TWIM_INTEN_BB_Enabled (1UL) /*!< Enable */
+
 /* Bit 9 : Enable or disable interrupt for event ERROR */
 #define TWIM_INTEN_ERROR_Pos (9UL) /*!< Position of ERROR field. */
 #define TWIM_INTEN_ERROR_Msk (0x1UL << TWIM_INTEN_ERROR_Pos) /*!< Bit mask of ERROR field. */
 #define TWIM_INTEN_ERROR_Disabled (0UL) /*!< Disable */
 #define TWIM_INTEN_ERROR_Enabled (1UL) /*!< Enable */
+
+/* Bit 8 : Enable or disable interrupt for event ENDTX */
+#define TWIM_INTEN_ENDTX_Pos (8UL) /*!< Position of ENDTX field. */
+#define TWIM_INTEN_ENDTX_Msk (0x1UL << TWIM_INTEN_ENDTX_Pos) /*!< Bit mask of ENDTX field. */
+#define TWIM_INTEN_ENDTX_Disabled (0UL) /*!< Disable */
+#define TWIM_INTEN_ENDTX_Enabled (1UL) /*!< Enable */
+
+/* Bit 4 : Enable or disable interrupt for event ENDRX */
+#define TWIM_INTEN_ENDRX_Pos (4UL) /*!< Position of ENDRX field. */
+#define TWIM_INTEN_ENDRX_Msk (0x1UL << TWIM_INTEN_ENDRX_Pos) /*!< Bit mask of ENDRX field. */
+#define TWIM_INTEN_ENDRX_Disabled (0UL) /*!< Disable */
+#define TWIM_INTEN_ENDRX_Enabled (1UL) /*!< Enable */
 
 /* Bit 1 : Enable or disable interrupt for event STOPPED */
 #define TWIM_INTEN_STOPPED_Pos (1UL) /*!< Position of STOPPED field. */
@@ -9069,12 +15605,33 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TWIM_INTENSET_SUSPENDED_Enabled (1UL) /*!< Read: Enabled */
 #define TWIM_INTENSET_SUSPENDED_Set (1UL) /*!< Enable */
 
+/* Bit 14 : Write '1' to enable interrupt for event BB */
+#define TWIM_INTENSET_BB_Pos (14UL) /*!< Position of BB field. */
+#define TWIM_INTENSET_BB_Msk (0x1UL << TWIM_INTENSET_BB_Pos) /*!< Bit mask of BB field. */
+#define TWIM_INTENSET_BB_Disabled (0UL) /*!< Read: Disabled */
+#define TWIM_INTENSET_BB_Enabled (1UL) /*!< Read: Enabled */
+#define TWIM_INTENSET_BB_Set (1UL) /*!< Enable */
+
 /* Bit 9 : Write '1' to enable interrupt for event ERROR */
 #define TWIM_INTENSET_ERROR_Pos (9UL) /*!< Position of ERROR field. */
 #define TWIM_INTENSET_ERROR_Msk (0x1UL << TWIM_INTENSET_ERROR_Pos) /*!< Bit mask of ERROR field. */
 #define TWIM_INTENSET_ERROR_Disabled (0UL) /*!< Read: Disabled */
 #define TWIM_INTENSET_ERROR_Enabled (1UL) /*!< Read: Enabled */
 #define TWIM_INTENSET_ERROR_Set (1UL) /*!< Enable */
+
+/* Bit 8 : Write '1' to enable interrupt for event ENDTX */
+#define TWIM_INTENSET_ENDTX_Pos (8UL) /*!< Position of ENDTX field. */
+#define TWIM_INTENSET_ENDTX_Msk (0x1UL << TWIM_INTENSET_ENDTX_Pos) /*!< Bit mask of ENDTX field. */
+#define TWIM_INTENSET_ENDTX_Disabled (0UL) /*!< Read: Disabled */
+#define TWIM_INTENSET_ENDTX_Enabled (1UL) /*!< Read: Enabled */
+#define TWIM_INTENSET_ENDTX_Set (1UL) /*!< Enable */
+
+/* Bit 4 : Write '1' to enable interrupt for event ENDRX */
+#define TWIM_INTENSET_ENDRX_Pos (4UL) /*!< Position of ENDRX field. */
+#define TWIM_INTENSET_ENDRX_Msk (0x1UL << TWIM_INTENSET_ENDRX_Pos) /*!< Bit mask of ENDRX field. */
+#define TWIM_INTENSET_ENDRX_Disabled (0UL) /*!< Read: Disabled */
+#define TWIM_INTENSET_ENDRX_Enabled (1UL) /*!< Read: Enabled */
+#define TWIM_INTENSET_ENDRX_Set (1UL) /*!< Enable */
 
 /* Bit 1 : Write '1' to enable interrupt for event STOPPED */
 #define TWIM_INTENSET_STOPPED_Pos (1UL) /*!< Position of STOPPED field. */
@@ -9121,12 +15678,33 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TWIM_INTENCLR_SUSPENDED_Enabled (1UL) /*!< Read: Enabled */
 #define TWIM_INTENCLR_SUSPENDED_Clear (1UL) /*!< Disable */
 
+/* Bit 14 : Write '1' to disable interrupt for event BB */
+#define TWIM_INTENCLR_BB_Pos (14UL) /*!< Position of BB field. */
+#define TWIM_INTENCLR_BB_Msk (0x1UL << TWIM_INTENCLR_BB_Pos) /*!< Bit mask of BB field. */
+#define TWIM_INTENCLR_BB_Disabled (0UL) /*!< Read: Disabled */
+#define TWIM_INTENCLR_BB_Enabled (1UL) /*!< Read: Enabled */
+#define TWIM_INTENCLR_BB_Clear (1UL) /*!< Disable */
+
 /* Bit 9 : Write '1' to disable interrupt for event ERROR */
 #define TWIM_INTENCLR_ERROR_Pos (9UL) /*!< Position of ERROR field. */
 #define TWIM_INTENCLR_ERROR_Msk (0x1UL << TWIM_INTENCLR_ERROR_Pos) /*!< Bit mask of ERROR field. */
 #define TWIM_INTENCLR_ERROR_Disabled (0UL) /*!< Read: Disabled */
 #define TWIM_INTENCLR_ERROR_Enabled (1UL) /*!< Read: Enabled */
 #define TWIM_INTENCLR_ERROR_Clear (1UL) /*!< Disable */
+
+/* Bit 8 : Write '1' to disable interrupt for event ENDTX */
+#define TWIM_INTENCLR_ENDTX_Pos (8UL) /*!< Position of ENDTX field. */
+#define TWIM_INTENCLR_ENDTX_Msk (0x1UL << TWIM_INTENCLR_ENDTX_Pos) /*!< Bit mask of ENDTX field. */
+#define TWIM_INTENCLR_ENDTX_Disabled (0UL) /*!< Read: Disabled */
+#define TWIM_INTENCLR_ENDTX_Enabled (1UL) /*!< Read: Enabled */
+#define TWIM_INTENCLR_ENDTX_Clear (1UL) /*!< Disable */
+
+/* Bit 4 : Write '1' to disable interrupt for event ENDRX */
+#define TWIM_INTENCLR_ENDRX_Pos (4UL) /*!< Position of ENDRX field. */
+#define TWIM_INTENCLR_ENDRX_Msk (0x1UL << TWIM_INTENCLR_ENDRX_Pos) /*!< Bit mask of ENDRX field. */
+#define TWIM_INTENCLR_ENDRX_Disabled (0UL) /*!< Read: Disabled */
+#define TWIM_INTENCLR_ENDRX_Enabled (1UL) /*!< Read: Enabled */
+#define TWIM_INTENCLR_ENDRX_Clear (1UL) /*!< Disable */
 
 /* Bit 1 : Write '1' to disable interrupt for event STOPPED */
 #define TWIM_INTENCLR_STOPPED_Pos (1UL) /*!< Position of STOPPED field. */
@@ -9164,6 +15742,14 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TWIM_ENABLE_ENABLE_Msk (0xFUL << TWIM_ENABLE_ENABLE_Pos) /*!< Bit mask of ENABLE field. */
 #define TWIM_ENABLE_ENABLE_Disabled (0UL) /*!< Disable TWIM */
 #define TWIM_ENABLE_ENABLE_Enabled (6UL) /*!< Enable TWIM */
+
+/* Register: TWIM_CONFIG */
+/* Description: Configuration register */
+
+/* Bits 2..1 : Internal read-only status information */
+#define TWIM_CONFIG_RG_Pos (1UL) /*!< Position of RG field. */
+#define TWIM_CONFIG_RG_Msk (0x3UL << TWIM_CONFIG_RG_Pos) /*!< Bit mask of RG field. */
+#define TWIM_CONFIG_RG_K100 (1UL) /*!< 100 kbit/s */
 
 /* Register: TWIM_PSEL_SCL */
 /* Description: Pin select for SCL signal */
@@ -9395,6 +15981,24 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TWIS_EVENTS_ERROR_EVENTS_ERROR_NotGenerated (0UL) /*!< Event not generated */
 #define TWIS_EVENTS_ERROR_EVENTS_ERROR_Generated (1UL) /*!< Event generated */
 
+/* Register: TWIS_EVENTS_NACKTX */
+/* Description: NACK on TX */
+
+/* Bit 0 : NACK on TX */
+#define TWIS_EVENTS_NACKTX_EVENTS_NACKTX_Pos (0UL) /*!< Position of EVENTS_NACKTX field. */
+#define TWIS_EVENTS_NACKTX_EVENTS_NACKTX_Msk (0x1UL << TWIS_EVENTS_NACKTX_EVENTS_NACKTX_Pos) /*!< Bit mask of EVENTS_NACKTX field. */
+#define TWIS_EVENTS_NACKTX_EVENTS_NACKTX_NotGenerated (0UL) /*!< Event not generated */
+#define TWIS_EVENTS_NACKTX_EVENTS_NACKTX_Generated (1UL) /*!< Event generated */
+
+/* Register: TWIS_EVENTS_BB */
+/* Description: TWI byte boundary, generated before each byte that is sent or received */
+
+/* Bit 0 : TWI byte boundary, generated before each byte that is sent or received */
+#define TWIS_EVENTS_BB_EVENTS_BB_Pos (0UL) /*!< Position of EVENTS_BB field. */
+#define TWIS_EVENTS_BB_EVENTS_BB_Msk (0x1UL << TWIS_EVENTS_BB_EVENTS_BB_Pos) /*!< Bit mask of EVENTS_BB field. */
+#define TWIS_EVENTS_BB_EVENTS_BB_NotGenerated (0UL) /*!< Event not generated */
+#define TWIS_EVENTS_BB_EVENTS_BB_Generated (1UL) /*!< Event generated */
+
 /* Register: TWIS_EVENTS_RXSTARTED */
 /* Description: Receive sequence started */
 
@@ -9431,6 +16035,24 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TWIS_EVENTS_READ_EVENTS_READ_NotGenerated (0UL) /*!< Event not generated */
 #define TWIS_EVENTS_READ_EVENTS_READ_Generated (1UL) /*!< Event generated */
 
+/* Register: TWIS_EVENTS_CSSTARTED */
+/* Description: TWI started stretching the clock */
+
+/* Bit 0 : TWI started stretching the clock */
+#define TWIS_EVENTS_CSSTARTED_EVENTS_CSSTARTED_Pos (0UL) /*!< Position of EVENTS_CSSTARTED field. */
+#define TWIS_EVENTS_CSSTARTED_EVENTS_CSSTARTED_Msk (0x1UL << TWIS_EVENTS_CSSTARTED_EVENTS_CSSTARTED_Pos) /*!< Bit mask of EVENTS_CSSTARTED field. */
+#define TWIS_EVENTS_CSSTARTED_EVENTS_CSSTARTED_NotGenerated (0UL) /*!< Event not generated */
+#define TWIS_EVENTS_CSSTARTED_EVENTS_CSSTARTED_Generated (1UL) /*!< Event generated */
+
+/* Register: TWIS_EVENTS_CSSTOPPED */
+/* Description: TWI stopped stretching the clock */
+
+/* Bit 0 : TWI stopped stretching the clock */
+#define TWIS_EVENTS_CSSTOPPED_EVENTS_CSSTOPPED_Pos (0UL) /*!< Position of EVENTS_CSSTOPPED field. */
+#define TWIS_EVENTS_CSSTOPPED_EVENTS_CSSTOPPED_Msk (0x1UL << TWIS_EVENTS_CSSTOPPED_EVENTS_CSSTOPPED_Pos) /*!< Bit mask of EVENTS_CSSTOPPED field. */
+#define TWIS_EVENTS_CSSTOPPED_EVENTS_CSSTOPPED_NotGenerated (0UL) /*!< Event not generated */
+#define TWIS_EVENTS_CSSTOPPED_EVENTS_CSSTOPPED_Generated (1UL) /*!< Event generated */
+
 /* Register: TWIS_PUBLISH_STOPPED */
 /* Description: Publish configuration for event STOPPED */
 
@@ -9456,6 +16078,32 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 3..0 : Channel that event ERROR will publish to. */
 #define TWIS_PUBLISH_ERROR_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define TWIS_PUBLISH_ERROR_CHIDX_Msk (0xFUL << TWIS_PUBLISH_ERROR_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: TWIS_PUBLISH_NACKTX */
+/* Description: Publish configuration for event NACKTX */
+
+/* Bit 31 :   */
+#define TWIS_PUBLISH_NACKTX_EN_Pos (31UL) /*!< Position of EN field. */
+#define TWIS_PUBLISH_NACKTX_EN_Msk (0x1UL << TWIS_PUBLISH_NACKTX_EN_Pos) /*!< Bit mask of EN field. */
+#define TWIS_PUBLISH_NACKTX_EN_Disabled (0UL) /*!< Disable publishing */
+#define TWIS_PUBLISH_NACKTX_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event NACKTX will publish to. */
+#define TWIS_PUBLISH_NACKTX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define TWIS_PUBLISH_NACKTX_CHIDX_Msk (0xFUL << TWIS_PUBLISH_NACKTX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: TWIS_PUBLISH_BB */
+/* Description: Publish configuration for event BB */
+
+/* Bit 31 :   */
+#define TWIS_PUBLISH_BB_EN_Pos (31UL) /*!< Position of EN field. */
+#define TWIS_PUBLISH_BB_EN_Msk (0x1UL << TWIS_PUBLISH_BB_EN_Pos) /*!< Bit mask of EN field. */
+#define TWIS_PUBLISH_BB_EN_Disabled (0UL) /*!< Disable publishing */
+#define TWIS_PUBLISH_BB_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event BB will publish to. */
+#define TWIS_PUBLISH_BB_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define TWIS_PUBLISH_BB_CHIDX_Msk (0xFUL << TWIS_PUBLISH_BB_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
 /* Register: TWIS_PUBLISH_RXSTARTED */
 /* Description: Publish configuration for event RXSTARTED */
@@ -9509,8 +16157,46 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TWIS_PUBLISH_READ_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define TWIS_PUBLISH_READ_CHIDX_Msk (0xFUL << TWIS_PUBLISH_READ_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
+/* Register: TWIS_PUBLISH_CSSTARTED */
+/* Description: Publish configuration for event CSSTARTED */
+
+/* Bit 31 :   */
+#define TWIS_PUBLISH_CSSTARTED_EN_Pos (31UL) /*!< Position of EN field. */
+#define TWIS_PUBLISH_CSSTARTED_EN_Msk (0x1UL << TWIS_PUBLISH_CSSTARTED_EN_Pos) /*!< Bit mask of EN field. */
+#define TWIS_PUBLISH_CSSTARTED_EN_Disabled (0UL) /*!< Disable publishing */
+#define TWIS_PUBLISH_CSSTARTED_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event CSSTARTED will publish to. */
+#define TWIS_PUBLISH_CSSTARTED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define TWIS_PUBLISH_CSSTARTED_CHIDX_Msk (0xFUL << TWIS_PUBLISH_CSSTARTED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: TWIS_PUBLISH_CSSTOPPED */
+/* Description: Publish configuration for event CSSTOPPED */
+
+/* Bit 31 :   */
+#define TWIS_PUBLISH_CSSTOPPED_EN_Pos (31UL) /*!< Position of EN field. */
+#define TWIS_PUBLISH_CSSTOPPED_EN_Msk (0x1UL << TWIS_PUBLISH_CSSTOPPED_EN_Pos) /*!< Bit mask of EN field. */
+#define TWIS_PUBLISH_CSSTOPPED_EN_Disabled (0UL) /*!< Disable publishing */
+#define TWIS_PUBLISH_CSSTOPPED_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event CSSTOPPED will publish to. */
+#define TWIS_PUBLISH_CSSTOPPED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define TWIS_PUBLISH_CSSTOPPED_CHIDX_Msk (0xFUL << TWIS_PUBLISH_CSSTOPPED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
 /* Register: TWIS_SHORTS */
 /* Description: Shortcuts between local events and tasks */
+
+/* Bit 16 : Shortcut between event READ and task PREPARETX */
+#define TWIS_SHORTS_READ_PREPARETX_Pos (16UL) /*!< Position of READ_PREPARETX field. */
+#define TWIS_SHORTS_READ_PREPARETX_Msk (0x1UL << TWIS_SHORTS_READ_PREPARETX_Pos) /*!< Bit mask of READ_PREPARETX field. */
+#define TWIS_SHORTS_READ_PREPARETX_Disabled (0UL) /*!< Disable shortcut */
+#define TWIS_SHORTS_READ_PREPARETX_Enabled (1UL) /*!< Enable shortcut */
+
+/* Bit 15 : Shortcut between event WRITE and task PREPARERX */
+#define TWIS_SHORTS_WRITE_PREPARERX_Pos (15UL) /*!< Position of WRITE_PREPARERX field. */
+#define TWIS_SHORTS_WRITE_PREPARERX_Msk (0x1UL << TWIS_SHORTS_WRITE_PREPARERX_Pos) /*!< Bit mask of WRITE_PREPARERX field. */
+#define TWIS_SHORTS_WRITE_PREPARERX_Disabled (0UL) /*!< Disable shortcut */
+#define TWIS_SHORTS_WRITE_PREPARERX_Enabled (1UL) /*!< Enable shortcut */
 
 /* Bit 14 : Shortcut between event READ and task SUSPEND */
 #define TWIS_SHORTS_READ_SUSPEND_Pos (14UL) /*!< Position of READ_SUSPEND field. */
@@ -9526,6 +16212,18 @@ POSSIBILITY OF SUCH DAMAGE.
 
 /* Register: TWIS_INTEN */
 /* Description: Enable or disable interrupt */
+
+/* Bit 28 : Enable or disable interrupt for event CSSTOPPED */
+#define TWIS_INTEN_CSSTOPPED_Pos (28UL) /*!< Position of CSSTOPPED field. */
+#define TWIS_INTEN_CSSTOPPED_Msk (0x1UL << TWIS_INTEN_CSSTOPPED_Pos) /*!< Bit mask of CSSTOPPED field. */
+#define TWIS_INTEN_CSSTOPPED_Disabled (0UL) /*!< Disable */
+#define TWIS_INTEN_CSSTOPPED_Enabled (1UL) /*!< Enable */
+
+/* Bit 27 : Enable or disable interrupt for event CSSTARTED */
+#define TWIS_INTEN_CSSTARTED_Pos (27UL) /*!< Position of CSSTARTED field. */
+#define TWIS_INTEN_CSSTARTED_Msk (0x1UL << TWIS_INTEN_CSSTARTED_Pos) /*!< Bit mask of CSSTARTED field. */
+#define TWIS_INTEN_CSSTARTED_Disabled (0UL) /*!< Disable */
+#define TWIS_INTEN_CSSTARTED_Enabled (1UL) /*!< Enable */
 
 /* Bit 26 : Enable or disable interrupt for event READ */
 #define TWIS_INTEN_READ_Pos (26UL) /*!< Position of READ field. */
@@ -9551,6 +16249,18 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TWIS_INTEN_RXSTARTED_Disabled (0UL) /*!< Disable */
 #define TWIS_INTEN_RXSTARTED_Enabled (1UL) /*!< Enable */
 
+/* Bit 14 : Enable or disable interrupt for event BB */
+#define TWIS_INTEN_BB_Pos (14UL) /*!< Position of BB field. */
+#define TWIS_INTEN_BB_Msk (0x1UL << TWIS_INTEN_BB_Pos) /*!< Bit mask of BB field. */
+#define TWIS_INTEN_BB_Disabled (0UL) /*!< Disable */
+#define TWIS_INTEN_BB_Enabled (1UL) /*!< Enable */
+
+/* Bit 13 : Enable or disable interrupt for event NACKTX */
+#define TWIS_INTEN_NACKTX_Pos (13UL) /*!< Position of NACKTX field. */
+#define TWIS_INTEN_NACKTX_Msk (0x1UL << TWIS_INTEN_NACKTX_Pos) /*!< Bit mask of NACKTX field. */
+#define TWIS_INTEN_NACKTX_Disabled (0UL) /*!< Disable */
+#define TWIS_INTEN_NACKTX_Enabled (1UL) /*!< Enable */
+
 /* Bit 9 : Enable or disable interrupt for event ERROR */
 #define TWIS_INTEN_ERROR_Pos (9UL) /*!< Position of ERROR field. */
 #define TWIS_INTEN_ERROR_Msk (0x1UL << TWIS_INTEN_ERROR_Pos) /*!< Bit mask of ERROR field. */
@@ -9565,6 +16275,20 @@ POSSIBILITY OF SUCH DAMAGE.
 
 /* Register: TWIS_INTENSET */
 /* Description: Enable interrupt */
+
+/* Bit 28 : Write '1' to enable interrupt for event CSSTOPPED */
+#define TWIS_INTENSET_CSSTOPPED_Pos (28UL) /*!< Position of CSSTOPPED field. */
+#define TWIS_INTENSET_CSSTOPPED_Msk (0x1UL << TWIS_INTENSET_CSSTOPPED_Pos) /*!< Bit mask of CSSTOPPED field. */
+#define TWIS_INTENSET_CSSTOPPED_Disabled (0UL) /*!< Read: Disabled */
+#define TWIS_INTENSET_CSSTOPPED_Enabled (1UL) /*!< Read: Enabled */
+#define TWIS_INTENSET_CSSTOPPED_Set (1UL) /*!< Enable */
+
+/* Bit 27 : Write '1' to enable interrupt for event CSSTARTED */
+#define TWIS_INTENSET_CSSTARTED_Pos (27UL) /*!< Position of CSSTARTED field. */
+#define TWIS_INTENSET_CSSTARTED_Msk (0x1UL << TWIS_INTENSET_CSSTARTED_Pos) /*!< Bit mask of CSSTARTED field. */
+#define TWIS_INTENSET_CSSTARTED_Disabled (0UL) /*!< Read: Disabled */
+#define TWIS_INTENSET_CSSTARTED_Enabled (1UL) /*!< Read: Enabled */
+#define TWIS_INTENSET_CSSTARTED_Set (1UL) /*!< Enable */
 
 /* Bit 26 : Write '1' to enable interrupt for event READ */
 #define TWIS_INTENSET_READ_Pos (26UL) /*!< Position of READ field. */
@@ -9594,6 +16318,20 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TWIS_INTENSET_RXSTARTED_Enabled (1UL) /*!< Read: Enabled */
 #define TWIS_INTENSET_RXSTARTED_Set (1UL) /*!< Enable */
 
+/* Bit 14 : Write '1' to enable interrupt for event BB */
+#define TWIS_INTENSET_BB_Pos (14UL) /*!< Position of BB field. */
+#define TWIS_INTENSET_BB_Msk (0x1UL << TWIS_INTENSET_BB_Pos) /*!< Bit mask of BB field. */
+#define TWIS_INTENSET_BB_Disabled (0UL) /*!< Read: Disabled */
+#define TWIS_INTENSET_BB_Enabled (1UL) /*!< Read: Enabled */
+#define TWIS_INTENSET_BB_Set (1UL) /*!< Enable */
+
+/* Bit 13 : Write '1' to enable interrupt for event NACKTX */
+#define TWIS_INTENSET_NACKTX_Pos (13UL) /*!< Position of NACKTX field. */
+#define TWIS_INTENSET_NACKTX_Msk (0x1UL << TWIS_INTENSET_NACKTX_Pos) /*!< Bit mask of NACKTX field. */
+#define TWIS_INTENSET_NACKTX_Disabled (0UL) /*!< Read: Disabled */
+#define TWIS_INTENSET_NACKTX_Enabled (1UL) /*!< Read: Enabled */
+#define TWIS_INTENSET_NACKTX_Set (1UL) /*!< Enable */
+
 /* Bit 9 : Write '1' to enable interrupt for event ERROR */
 #define TWIS_INTENSET_ERROR_Pos (9UL) /*!< Position of ERROR field. */
 #define TWIS_INTENSET_ERROR_Msk (0x1UL << TWIS_INTENSET_ERROR_Pos) /*!< Bit mask of ERROR field. */
@@ -9610,6 +16348,20 @@ POSSIBILITY OF SUCH DAMAGE.
 
 /* Register: TWIS_INTENCLR */
 /* Description: Disable interrupt */
+
+/* Bit 28 : Write '1' to disable interrupt for event CSSTOPPED */
+#define TWIS_INTENCLR_CSSTOPPED_Pos (28UL) /*!< Position of CSSTOPPED field. */
+#define TWIS_INTENCLR_CSSTOPPED_Msk (0x1UL << TWIS_INTENCLR_CSSTOPPED_Pos) /*!< Bit mask of CSSTOPPED field. */
+#define TWIS_INTENCLR_CSSTOPPED_Disabled (0UL) /*!< Read: Disabled */
+#define TWIS_INTENCLR_CSSTOPPED_Enabled (1UL) /*!< Read: Enabled */
+#define TWIS_INTENCLR_CSSTOPPED_Clear (1UL) /*!< Disable */
+
+/* Bit 27 : Write '1' to disable interrupt for event CSSTARTED */
+#define TWIS_INTENCLR_CSSTARTED_Pos (27UL) /*!< Position of CSSTARTED field. */
+#define TWIS_INTENCLR_CSSTARTED_Msk (0x1UL << TWIS_INTENCLR_CSSTARTED_Pos) /*!< Bit mask of CSSTARTED field. */
+#define TWIS_INTENCLR_CSSTARTED_Disabled (0UL) /*!< Read: Disabled */
+#define TWIS_INTENCLR_CSSTARTED_Enabled (1UL) /*!< Read: Enabled */
+#define TWIS_INTENCLR_CSSTARTED_Clear (1UL) /*!< Disable */
 
 /* Bit 26 : Write '1' to disable interrupt for event READ */
 #define TWIS_INTENCLR_READ_Pos (26UL) /*!< Position of READ field. */
@@ -9638,6 +16390,20 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TWIS_INTENCLR_RXSTARTED_Disabled (0UL) /*!< Read: Disabled */
 #define TWIS_INTENCLR_RXSTARTED_Enabled (1UL) /*!< Read: Enabled */
 #define TWIS_INTENCLR_RXSTARTED_Clear (1UL) /*!< Disable */
+
+/* Bit 14 : Write '1' to disable interrupt for event BB */
+#define TWIS_INTENCLR_BB_Pos (14UL) /*!< Position of BB field. */
+#define TWIS_INTENCLR_BB_Msk (0x1UL << TWIS_INTENCLR_BB_Pos) /*!< Bit mask of BB field. */
+#define TWIS_INTENCLR_BB_Disabled (0UL) /*!< Read: Disabled */
+#define TWIS_INTENCLR_BB_Enabled (1UL) /*!< Read: Enabled */
+#define TWIS_INTENCLR_BB_Clear (1UL) /*!< Disable */
+
+/* Bit 13 : Write '1' to disable interrupt for event NACKTX */
+#define TWIS_INTENCLR_NACKTX_Pos (13UL) /*!< Position of NACKTX field. */
+#define TWIS_INTENCLR_NACKTX_Msk (0x1UL << TWIS_INTENCLR_NACKTX_Pos) /*!< Bit mask of NACKTX field. */
+#define TWIS_INTENCLR_NACKTX_Disabled (0UL) /*!< Read: Disabled */
+#define TWIS_INTENCLR_NACKTX_Enabled (1UL) /*!< Read: Enabled */
+#define TWIS_INTENCLR_NACKTX_Clear (1UL) /*!< Disable */
 
 /* Bit 9 : Write '1' to disable interrupt for event ERROR */
 #define TWIS_INTENCLR_ERROR_Pos (9UL) /*!< Position of ERROR field. */
@@ -9680,6 +16446,25 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bit 0 : Which of the addresses in {ADDRESS} matched the incoming address */
 #define TWIS_MATCH_MATCH_Pos (0UL) /*!< Position of MATCH field. */
 #define TWIS_MATCH_MATCH_Msk (0x1UL << TWIS_MATCH_MATCH_Pos) /*!< Bit mask of MATCH field. */
+
+/* Register: TWIS_PINSTATUS */
+/* Description: Returns state of signals reflecting the SDA and SCL line status. All fields will return a '0' if DEBUGENABLE is not Enabled. */
+
+/* Bit 3 : State of SDAO register in dataHandler */
+#define TWIS_PINSTATUS_SDAO_Pos (3UL) /*!< Position of SDAO field. */
+#define TWIS_PINSTATUS_SDAO_Msk (0x1UL << TWIS_PINSTATUS_SDAO_Pos) /*!< Bit mask of SDAO field. */
+
+/* Bit 2 : State of SCLO register in dataHandler */
+#define TWIS_PINSTATUS_SCLO_Pos (2UL) /*!< Position of SCLO field. */
+#define TWIS_PINSTATUS_SCLO_Msk (0x1UL << TWIS_PINSTATUS_SCLO_Pos) /*!< Bit mask of SCLO field. */
+
+/* Bit 1 : State of SDA line, signal taken after the filer but without synchronizing to the 16 MHz clock */
+#define TWIS_PINSTATUS_SDAIFILTERED_Pos (1UL) /*!< Position of SDAIFILTERED field. */
+#define TWIS_PINSTATUS_SDAIFILTERED_Msk (0x1UL << TWIS_PINSTATUS_SDAIFILTERED_Pos) /*!< Bit mask of SDAIFILTERED field. */
+
+/* Bit 0 : State of SCL line, signal taken after the filer but without synchronizing to the 16 MHz clock */
+#define TWIS_PINSTATUS_SCLIFILTERED_Pos (0UL) /*!< Position of SCLIFILTERED field. */
+#define TWIS_PINSTATUS_SCLIFILTERED_Msk (0x1UL << TWIS_PINSTATUS_SCLIFILTERED_Pos) /*!< Bit mask of SCLIFILTERED field. */
 
 /* Register: TWIS_ENABLE */
 /* Description: Enable TWIS */
@@ -9798,6 +16583,25 @@ POSSIBILITY OF SUCH DAMAGE.
 #define TWIS_CONFIG_ADDRESS0_Disabled (0UL) /*!< Disabled */
 #define TWIS_CONFIG_ADDRESS0_Enabled (1UL) /*!< Enabled */
 
+/* Register: TWIS_INPUTMODE */
+/* Description: Input mode */
+
+/* Bits 1..0 : Input mode */
+#define TWIS_INPUTMODE_INPUTMODE_Pos (0UL) /*!< Position of INPUTMODE field. */
+#define TWIS_INPUTMODE_INPUTMODE_Msk (0x3UL << TWIS_INPUTMODE_INPUTMODE_Pos) /*!< Bit mask of INPUTMODE field. */
+#define TWIS_INPUTMODE_INPUTMODE_Analog (0UL) /*!< Analog filtering */
+#define TWIS_INPUTMODE_INPUTMODE_Digital (1UL) /*!< Digital filtering */
+#define TWIS_INPUTMODE_INPUTMODE_Disabled (2UL) /*!< No filtering */
+
+/* Register: TWIS_DEBUGENABLE */
+/* Description: Enable TWIS debug features (PINSTATUS register) */
+
+/* Bit 0 : Enable or disable TWIS */
+#define TWIS_DEBUGENABLE_ENABLE_Pos (0UL) /*!< Position of ENABLE field. */
+#define TWIS_DEBUGENABLE_ENABLE_Msk (0x1UL << TWIS_DEBUGENABLE_ENABLE_Pos) /*!< Bit mask of ENABLE field. */
+#define TWIS_DEBUGENABLE_ENABLE_Disabled (0UL) /*!< Disable TWIS */
+#define TWIS_DEBUGENABLE_ENABLE_Enabled (1UL) /*!< Enable TWIS debug features */
+
 /* Register: TWIS_ORC */
 /* Description: Over-read character. Character sent out in case of an over-read of the transmit buffer. */
 
@@ -9840,6 +16644,22 @@ POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_TASKS_STOPTX_TASKS_STOPTX_Pos (0UL) /*!< Position of TASKS_STOPTX field. */
 #define UARTE_TASKS_STOPTX_TASKS_STOPTX_Msk (0x1UL << UARTE_TASKS_STOPTX_TASKS_STOPTX_Pos) /*!< Bit mask of TASKS_STOPTX field. */
 #define UARTE_TASKS_STOPTX_TASKS_STOPTX_Trigger (1UL) /*!< Trigger task */
+
+/* Register: UARTE_TASKS_SUSPEND */
+/* Description: Suspend UART transaction */
+
+/* Bit 0 : Suspend UART transaction */
+#define UARTE_TASKS_SUSPEND_TASKS_SUSPEND_Pos (0UL) /*!< Position of TASKS_SUSPEND field. */
+#define UARTE_TASKS_SUSPEND_TASKS_SUSPEND_Msk (0x1UL << UARTE_TASKS_SUSPEND_TASKS_SUSPEND_Pos) /*!< Bit mask of TASKS_SUSPEND field. */
+#define UARTE_TASKS_SUSPEND_TASKS_SUSPEND_Trigger (1UL) /*!< Trigger task */
+
+/* Register: UARTE_TASKS_RESUME */
+/* Description: Resume UART transaction */
+
+/* Bit 0 : Resume UART transaction */
+#define UARTE_TASKS_RESUME_TASKS_RESUME_Pos (0UL) /*!< Position of TASKS_RESUME field. */
+#define UARTE_TASKS_RESUME_TASKS_RESUME_Msk (0x1UL << UARTE_TASKS_RESUME_TASKS_RESUME_Pos) /*!< Bit mask of TASKS_RESUME field. */
+#define UARTE_TASKS_RESUME_TASKS_RESUME_Trigger (1UL) /*!< Trigger task */
 
 /* Register: UARTE_TASKS_FLUSHRX */
 /* Description: Flush RX FIFO into RX buffer */
@@ -9900,6 +16720,32 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 3..0 : Channel that task STOPTX will subscribe to */
 #define UARTE_SUBSCRIBE_STOPTX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define UARTE_SUBSCRIBE_STOPTX_CHIDX_Msk (0xFUL << UARTE_SUBSCRIBE_STOPTX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: UARTE_SUBSCRIBE_SUSPEND */
+/* Description: Subscribe configuration for task SUSPEND */
+
+/* Bit 31 :   */
+#define UARTE_SUBSCRIBE_SUSPEND_EN_Pos (31UL) /*!< Position of EN field. */
+#define UARTE_SUBSCRIBE_SUSPEND_EN_Msk (0x1UL << UARTE_SUBSCRIBE_SUSPEND_EN_Pos) /*!< Bit mask of EN field. */
+#define UARTE_SUBSCRIBE_SUSPEND_EN_Disabled (0UL) /*!< Disable subscription */
+#define UARTE_SUBSCRIBE_SUSPEND_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 3..0 : Channel that task SUSPEND will subscribe to */
+#define UARTE_SUBSCRIBE_SUSPEND_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define UARTE_SUBSCRIBE_SUSPEND_CHIDX_Msk (0xFUL << UARTE_SUBSCRIBE_SUSPEND_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: UARTE_SUBSCRIBE_RESUME */
+/* Description: Subscribe configuration for task RESUME */
+
+/* Bit 31 :   */
+#define UARTE_SUBSCRIBE_RESUME_EN_Pos (31UL) /*!< Position of EN field. */
+#define UARTE_SUBSCRIBE_RESUME_EN_Msk (0x1UL << UARTE_SUBSCRIBE_RESUME_EN_Pos) /*!< Bit mask of EN field. */
+#define UARTE_SUBSCRIBE_RESUME_EN_Disabled (0UL) /*!< Disable subscription */
+#define UARTE_SUBSCRIBE_RESUME_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 3..0 : Channel that task RESUME will subscribe to */
+#define UARTE_SUBSCRIBE_RESUME_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define UARTE_SUBSCRIBE_RESUME_CHIDX_Msk (0xFUL << UARTE_SUBSCRIBE_RESUME_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
 /* Register: UARTE_SUBSCRIBE_FLUSHRX */
 /* Description: Subscribe configuration for task FLUSHRX */
@@ -10003,6 +16849,15 @@ POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_EVENTS_TXSTARTED_EVENTS_TXSTARTED_Msk (0x1UL << UARTE_EVENTS_TXSTARTED_EVENTS_TXSTARTED_Pos) /*!< Bit mask of EVENTS_TXSTARTED field. */
 #define UARTE_EVENTS_TXSTARTED_EVENTS_TXSTARTED_NotGenerated (0UL) /*!< Event not generated */
 #define UARTE_EVENTS_TXSTARTED_EVENTS_TXSTARTED_Generated (1UL) /*!< Event generated */
+
+/* Register: UARTE_EVENTS_RTS */
+/* Description: RX FIFO has only room for four more bytes before it overflows */
+
+/* Bit 0 : RX FIFO has only room for four more bytes before it overflows */
+#define UARTE_EVENTS_RTS_EVENTS_RTS_Pos (0UL) /*!< Position of EVENTS_RTS field. */
+#define UARTE_EVENTS_RTS_EVENTS_RTS_Msk (0x1UL << UARTE_EVENTS_RTS_EVENTS_RTS_Pos) /*!< Bit mask of EVENTS_RTS field. */
+#define UARTE_EVENTS_RTS_EVENTS_RTS_NotGenerated (0UL) /*!< Event not generated */
+#define UARTE_EVENTS_RTS_EVENTS_RTS_Generated (1UL) /*!< Event generated */
 
 /* Register: UARTE_EVENTS_TXSTOPPED */
 /* Description: Transmitter stopped */
@@ -10143,6 +16998,19 @@ POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_PUBLISH_TXSTARTED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define UARTE_PUBLISH_TXSTARTED_CHIDX_Msk (0xFUL << UARTE_PUBLISH_TXSTARTED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
+/* Register: UARTE_PUBLISH_RTS */
+/* Description: Publish configuration for event RTS */
+
+/* Bit 31 :   */
+#define UARTE_PUBLISH_RTS_EN_Pos (31UL) /*!< Position of EN field. */
+#define UARTE_PUBLISH_RTS_EN_Msk (0x1UL << UARTE_PUBLISH_RTS_EN_Pos) /*!< Bit mask of EN field. */
+#define UARTE_PUBLISH_RTS_EN_Disabled (0UL) /*!< Disable publishing */
+#define UARTE_PUBLISH_RTS_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 3..0 : Channel that event RTS will publish to. */
+#define UARTE_PUBLISH_RTS_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define UARTE_PUBLISH_RTS_CHIDX_Msk (0xFUL << UARTE_PUBLISH_RTS_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
 /* Register: UARTE_PUBLISH_TXSTOPPED */
 /* Description: Publish configuration for event TXSTOPPED */
 
@@ -10171,6 +17039,18 @@ POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_SHORTS_ENDRX_STARTRX_Disabled (0UL) /*!< Disable shortcut */
 #define UARTE_SHORTS_ENDRX_STARTRX_Enabled (1UL) /*!< Enable shortcut */
 
+/* Bit 4 : Shortcut between event NCTS and task STOPRX */
+#define UARTE_SHORTS_NCTS_STOPRX_Pos (4UL) /*!< Position of NCTS_STOPRX field. */
+#define UARTE_SHORTS_NCTS_STOPRX_Msk (0x1UL << UARTE_SHORTS_NCTS_STOPRX_Pos) /*!< Bit mask of NCTS_STOPRX field. */
+#define UARTE_SHORTS_NCTS_STOPRX_Disabled (0UL) /*!< Disable shortcut */
+#define UARTE_SHORTS_NCTS_STOPRX_Enabled (1UL) /*!< Enable shortcut */
+
+/* Bit 3 : Shortcut between event CTS and task STARTRX */
+#define UARTE_SHORTS_CTS_STARTRX_Pos (3UL) /*!< Position of CTS_STARTRX field. */
+#define UARTE_SHORTS_CTS_STARTRX_Msk (0x1UL << UARTE_SHORTS_CTS_STARTRX_Pos) /*!< Bit mask of CTS_STARTRX field. */
+#define UARTE_SHORTS_CTS_STARTRX_Disabled (0UL) /*!< Disable shortcut */
+#define UARTE_SHORTS_CTS_STARTRX_Enabled (1UL) /*!< Enable shortcut */
+
 /* Register: UARTE_INTEN */
 /* Description: Enable or disable interrupt */
 
@@ -10179,6 +17059,12 @@ POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_INTEN_TXSTOPPED_Msk (0x1UL << UARTE_INTEN_TXSTOPPED_Pos) /*!< Bit mask of TXSTOPPED field. */
 #define UARTE_INTEN_TXSTOPPED_Disabled (0UL) /*!< Disable */
 #define UARTE_INTEN_TXSTOPPED_Enabled (1UL) /*!< Enable */
+
+/* Bit 21 : Enable or disable interrupt for event RTS */
+#define UARTE_INTEN_RTS_Pos (21UL) /*!< Position of RTS field. */
+#define UARTE_INTEN_RTS_Msk (0x1UL << UARTE_INTEN_RTS_Pos) /*!< Bit mask of RTS field. */
+#define UARTE_INTEN_RTS_Disabled (0UL) /*!< Disable */
+#define UARTE_INTEN_RTS_Enabled (1UL) /*!< Enable */
 
 /* Bit 20 : Enable or disable interrupt for event TXSTARTED */
 #define UARTE_INTEN_TXSTARTED_Pos (20UL) /*!< Position of TXSTARTED field. */
@@ -10249,6 +17135,13 @@ POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_INTENSET_TXSTOPPED_Disabled (0UL) /*!< Read: Disabled */
 #define UARTE_INTENSET_TXSTOPPED_Enabled (1UL) /*!< Read: Enabled */
 #define UARTE_INTENSET_TXSTOPPED_Set (1UL) /*!< Enable */
+
+/* Bit 21 : Write '1' to enable interrupt for event RTS */
+#define UARTE_INTENSET_RTS_Pos (21UL) /*!< Position of RTS field. */
+#define UARTE_INTENSET_RTS_Msk (0x1UL << UARTE_INTENSET_RTS_Pos) /*!< Bit mask of RTS field. */
+#define UARTE_INTENSET_RTS_Disabled (0UL) /*!< Read: Disabled */
+#define UARTE_INTENSET_RTS_Enabled (1UL) /*!< Read: Enabled */
+#define UARTE_INTENSET_RTS_Set (1UL) /*!< Enable */
 
 /* Bit 20 : Write '1' to enable interrupt for event TXSTARTED */
 #define UARTE_INTENSET_TXSTARTED_Pos (20UL) /*!< Position of TXSTARTED field. */
@@ -10329,6 +17222,13 @@ POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_INTENCLR_TXSTOPPED_Disabled (0UL) /*!< Read: Disabled */
 #define UARTE_INTENCLR_TXSTOPPED_Enabled (1UL) /*!< Read: Enabled */
 #define UARTE_INTENCLR_TXSTOPPED_Clear (1UL) /*!< Disable */
+
+/* Bit 21 : Write '1' to disable interrupt for event RTS */
+#define UARTE_INTENCLR_RTS_Pos (21UL) /*!< Position of RTS field. */
+#define UARTE_INTENCLR_RTS_Msk (0x1UL << UARTE_INTENCLR_RTS_Pos) /*!< Bit mask of RTS field. */
+#define UARTE_INTENCLR_RTS_Disabled (0UL) /*!< Read: Disabled */
+#define UARTE_INTENCLR_RTS_Enabled (1UL) /*!< Read: Enabled */
+#define UARTE_INTENCLR_RTS_Clear (1UL) /*!< Disable */
 
 /* Bit 20 : Write '1' to disable interrupt for event TXSTARTED */
 #define UARTE_INTENCLR_TXSTARTED_Pos (20UL) /*!< Position of TXSTARTED field. */
@@ -10584,7 +17484,9 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Description: Access port protection */
 
 /* Bits 31..0 : Blocks debugger read/write access to all CPU registers and
-          memory mapped addresses */
+          memory mapped addresses except for the control access port
+          registers.
+	  Between reset and automatic readout, the system is protected */
 #define UICR_APPROTECT_PALL_Pos (0UL) /*!< Position of PALL field. */
 #define UICR_APPROTECT_PALL_Msk (0xFFFFFFFFUL << UICR_APPROTECT_PALL_Pos) /*!< Bit mask of PALL field. */
 #define UICR_APPROTECT_PALL_Protected (0x00000000UL) /*!< Protected */
@@ -10596,6 +17498,16 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 5..0 : Pierce current DAC control signals */
 #define UICR_XOSC32M_CTRL_Pos (0UL) /*!< Position of CTRL field. */
 #define UICR_XOSC32M_CTRL_Msk (0x3FUL << UICR_XOSC32M_CTRL_Pos) /*!< Bit mask of CTRL field. */
+#define UICR_XOSC32M_CTRL_0x00 (0UL) /*!< DAC Pierce current off. Pierce current set by AREG. */
+#define UICR_XOSC32M_CTRL_0x01 (1UL) /*!< Minimum DAC Pierce current */
+#define UICR_XOSC32M_CTRL_0x0f (15UL) /*!< Maximum DAC Pierce current */
+
+/* Register: UICR_HFCLKCTRL */
+/* Description: CPU frequency control */
+
+/* Bits 7..0 : Setting default frequency of CPU clock - see CLOCK/HFCLKCTRL */
+#define UICR_HFCLKCTRL_HCLK_Pos (0UL) /*!< Position of HCLK field. */
+#define UICR_HFCLKCTRL_HCLK_Msk (0xFFUL << UICR_HFCLKCTRL_HCLK_Pos) /*!< Bit mask of HCLK field. */
 
 /* Register: UICR_HFXOSRC */
 /* Description: HFXO clock source selection */
@@ -10615,11 +17527,29 @@ POSSIBILITY OF SUCH DAMAGE.
 #define UICR_HFXOCNT_HFXOCNT_MinDebounceTime (0UL) /*!< Min debounce time = (0*64 us + 0.5 us) */
 #define UICR_HFXOCNT_HFXOCNT_MaxDebounceTime (255UL) /*!< Max debounce time = (255*64 us + 0.5 us) */
 
+/* Register: UICR_APPNVMCPOFGUARD */
+/* Description: Enable blocking NVM WRITE and aborting NVM ERASE for Application NVM in POFWARN condition . */
+
+/* Bit 0 : Enable blocking NVM WRITE and aborting NVM ERASE in POFWARN condition */
+#define UICR_APPNVMCPOFGUARD_NVMCPOFGUARDEN_Pos (0UL) /*!< Position of NVMCPOFGUARDEN field. */
+#define UICR_APPNVMCPOFGUARD_NVMCPOFGUARDEN_Msk (0x1UL << UICR_APPNVMCPOFGUARD_NVMCPOFGUARDEN_Pos) /*!< Bit mask of NVMCPOFGUARDEN field. */
+#define UICR_APPNVMCPOFGUARD_NVMCPOFGUARDEN_Disabled (0UL) /*!< NVM WRITE and NVM ERASE are not blocked in POFWARN condition */
+#define UICR_APPNVMCPOFGUARD_NVMCPOFGUARDEN_Enabled (1UL) /*!< NVM WRITE and NVM ERASE are blocked in POFWARN condition */
+
+/* Register: UICR_PMICCONF */
+/* Description: Polarity of PMIC polarity configuration signals. */
+
+/* Bit 0 : Polarity of PMIC_FPWM signal. */
+#define UICR_PMICCONF_PMICFPWMPOL_Pos (0UL) /*!< Position of PMICFPWMPOL field. */
+#define UICR_PMICCONF_PMICFPWMPOL_Msk (0x1UL << UICR_PMICCONF_PMICFPWMPOL_Pos) /*!< Bit mask of PMICFPWMPOL field. */
+#define UICR_PMICCONF_PMICFPWMPOL_ActiveLow (0UL) /*!< PMIC_FPWM output signal is active-low */
+#define UICR_PMICCONF_PMICFPWMPOL_ActiveHigh (1UL) /*!< PMIC_FPWM output signal is active-high */
+
 /* Register: UICR_SECUREAPPROTECT */
 /* Description: Secure access port protection */
 
 /* Bits 31..0 : Blocks debugger read/write access to all secure CPU registers and secure
-          memory mapped addresses */
+          memory mapped addresses Between reset and automatic readout, the system is protected */
 #define UICR_SECUREAPPROTECT_PALL_Pos (0UL) /*!< Position of PALL field. */
 #define UICR_SECUREAPPROTECT_PALL_Msk (0xFFFFFFFFUL << UICR_SECUREAPPROTECT_PALL_Pos) /*!< Bit mask of PALL field. */
 #define UICR_SECUREAPPROTECT_PALL_Protected (0x00000000UL) /*!< Protected */
@@ -10628,7 +17558,7 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Register: UICR_ERASEPROTECT */
 /* Description: Erase protection */
 
-/* Bits 31..0 : Blocks NVMC ERASEALL and CTRLAP ERASEALL functionality */
+/* Bits 31..0 : Blocks NVMC ERASEALL and CTRLAP ERASEALL functionality Between reset and automatic readout, the system is protected */
 #define UICR_ERASEPROTECT_PALL_Pos (0UL) /*!< Position of PALL field. */
 #define UICR_ERASEPROTECT_PALL_Msk (0xFFFFFFFFUL << UICR_ERASEPROTECT_PALL_Pos) /*!< Bit mask of PALL field. */
 #define UICR_ERASEPROTECT_PALL_Protected (0x00000000UL) /*!< Protected */
@@ -10830,6 +17760,36 @@ POSSIBILITY OF SUCH DAMAGE.
 #define VMC_RAM_POWERCLR_S0POWER_Msk (0x1UL << VMC_RAM_POWERCLR_S0POWER_Pos) /*!< Bit mask of S0POWER field. */
 #define VMC_RAM_POWERCLR_S0POWER_Off (1UL) /*!< Off */
 
+/* Register: VMC_SRAMTRIM */
+/* Description: Backdoor trim values for SRAM */
+
+/* Bits 6..4 : Read and Write Margin Adjustment */
+#define VMC_SRAMTRIM_RWM_RM_WM_Pos (4UL) /*!< Position of RWM_RM_WM field. */
+#define VMC_SRAMTRIM_RWM_RM_WM_Msk (0x7UL << VMC_SRAMTRIM_RWM_RM_WM_Pos) /*!< Bit mask of RWM_RM_WM field. */
+#define VMC_SRAMTRIM_RWM_RM_WM_S1RS1W (0UL) /*!< Slowest Read, Slowest Write */
+#define VMC_SRAMTRIM_RWM_RM_WM_S1RSW (1UL) /*!< Slowest Read, Slow Write */
+#define VMC_SRAMTRIM_RWM_RM_WM_SRS1W (2UL) /*!< Slow Read, Slowest Write */
+#define VMC_SRAMTRIM_RWM_RM_WM_SRSW (3UL) /*!< Slow Read, Slow Write */
+#define VMC_SRAMTRIM_RWM_RM_WM_NRNW (4UL) /*!< Normal Read, Normal Write */
+#define VMC_SRAMTRIM_RWM_RM_WM_NRFW (5UL) /*!< Normal Read, Fast Write */
+#define VMC_SRAMTRIM_RWM_RM_WM_FRNW (6UL) /*!< Fast Read, Normal Write */
+#define VMC_SRAMTRIM_RWM_RM_WM_FRFW (7UL) /*!< Fast Read, Fast Write */
+
+/* Bits 3..0 : Source Bias Trim Adjustment for retention */
+#define VMC_SRAMTRIM_BTRIM_Pos (0UL) /*!< Position of BTRIM field. */
+#define VMC_SRAMTRIM_BTRIM_Msk (0xFUL << VMC_SRAMTRIM_BTRIM_Pos) /*!< Bit mask of BTRIM field. */
+
+/* Register: VMC_RamSSNonRetTSel */
+/* Description: Timing control values for TSMC RAMs */
+
+/* Bits 4..2 : Write cycle timing selection */
+#define VMC_RamSSNonRetTSel_WTSEL_Pos (2UL) /*!< Position of WTSEL field. */
+#define VMC_RamSSNonRetTSel_WTSEL_Msk (0x7UL << VMC_RamSSNonRetTSel_WTSEL_Pos) /*!< Bit mask of WTSEL field. */
+
+/* Bits 1..0 : Read cycle timing selection */
+#define VMC_RamSSNonRetTSel_RTSEL_Pos (0UL) /*!< Position of RTSEL field. */
+#define VMC_RamSSNonRetTSel_RTSEL_Msk (0x3UL << VMC_RamSSNonRetTSel_RTSEL_Pos) /*!< Bit mask of RTSEL field. */
+
 
 /* Peripheral: WDT */
 /* Description: Watchdog Timer 0 */
@@ -10841,6 +17801,14 @@ POSSIBILITY OF SUCH DAMAGE.
 #define WDT_TASKS_START_TASKS_START_Pos (0UL) /*!< Position of TASKS_START field. */
 #define WDT_TASKS_START_TASKS_START_Msk (0x1UL << WDT_TASKS_START_TASKS_START_Pos) /*!< Bit mask of TASKS_START field. */
 #define WDT_TASKS_START_TASKS_START_Trigger (1UL) /*!< Trigger task */
+
+/* Register: WDT_TASKS_STOP */
+/* Description: Stop the watchdog timer. Only available in timer mode. */
+
+/* Bit 0 : Stop the watchdog timer. Only available in timer mode. */
+#define WDT_TASKS_STOP_TASKS_STOP_Pos (0UL) /*!< Position of TASKS_STOP field. */
+#define WDT_TASKS_STOP_TASKS_STOP_Msk (0x1UL << WDT_TASKS_STOP_TASKS_STOP_Pos) /*!< Bit mask of TASKS_STOP field. */
+#define WDT_TASKS_STOP_TASKS_STOP_Trigger (1UL) /*!< Trigger task */
 
 /* Register: WDT_SUBSCRIBE_START */
 /* Description: Subscribe configuration for task START */
@@ -10854,6 +17822,19 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Bits 3..0 : Channel that task START will subscribe to */
 #define WDT_SUBSCRIBE_START_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define WDT_SUBSCRIBE_START_CHIDX_Msk (0xFUL << WDT_SUBSCRIBE_START_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: WDT_SUBSCRIBE_STOP */
+/* Description: Subscribe configuration for task STOP */
+
+/* Bit 31 :   */
+#define WDT_SUBSCRIBE_STOP_EN_Pos (31UL) /*!< Position of EN field. */
+#define WDT_SUBSCRIBE_STOP_EN_Msk (0x1UL << WDT_SUBSCRIBE_STOP_EN_Pos) /*!< Bit mask of EN field. */
+#define WDT_SUBSCRIBE_STOP_EN_Disabled (0UL) /*!< Disable subscription */
+#define WDT_SUBSCRIBE_STOP_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 3..0 : Channel that task STOP will subscribe to */
+#define WDT_SUBSCRIBE_STOP_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define WDT_SUBSCRIBE_STOP_CHIDX_Msk (0xFUL << WDT_SUBSCRIBE_STOP_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
 /* Register: WDT_EVENTS_TIMEOUT */
 /* Description: Watchdog timeout */
@@ -10899,6 +17880,12 @@ POSSIBILITY OF SUCH DAMAGE.
 
 /* Register: WDT_RUNSTATUS */
 /* Description: Run status */
+
+/* Bit 1 : Indicates whether or not the timer is running */
+#define WDT_RUNSTATUS_RUNSTATUSTIMER_Pos (1UL) /*!< Position of RUNSTATUSTIMER field. */
+#define WDT_RUNSTATUS_RUNSTATUSTIMER_Msk (0x1UL << WDT_RUNSTATUS_RUNSTATUSTIMER_Pos) /*!< Bit mask of RUNSTATUSTIMER field. */
+#define WDT_RUNSTATUS_RUNSTATUSTIMER_NotRunning (0UL) /*!< Timer not running */
+#define WDT_RUNSTATUS_RUNSTATUSTIMER_Running (1UL) /*!< Timer is running */
 
 /* Bit 0 : Indicates whether or not the watchdog is running */
 #define WDT_RUNSTATUS_RUNSTATUSWDT_Pos (0UL) /*!< Position of RUNSTATUSWDT field. */
@@ -10956,6 +17943,13 @@ POSSIBILITY OF SUCH DAMAGE.
 #define WDT_REQSTATUS_RR0_Msk (0x1UL << WDT_REQSTATUS_RR0_Pos) /*!< Bit mask of RR0 field. */
 #define WDT_REQSTATUS_RR0_DisabledOrRequested (0UL) /*!< RR[0] register is not enabled, or are already requesting reload */
 #define WDT_REQSTATUS_RR0_EnabledAndUnrequested (1UL) /*!< RR[0] register is enabled, and are not yet requesting reload */
+
+/* Register: WDT_RCNT */
+/* Description: Reload count */
+
+/* Bits 1..0 : Reload count, number of times the watchdog has been reloaded (kicked) */
+#define WDT_RCNT_RCNT_Pos (0UL) /*!< Position of RCNT field. */
+#define WDT_RCNT_RCNT_Msk (0x3UL << WDT_RCNT_RCNT_Pos) /*!< Bit mask of RCNT field. */
 
 /* Register: WDT_CRV */
 /* Description: Counter reload value */
@@ -11018,17 +18012,42 @@ POSSIBILITY OF SUCH DAMAGE.
 /* Register: WDT_CONFIG */
 /* Description: Configuration register */
 
+/* Bit 5 : Enable or disable possibility to reload the watchdog counter between TIMEOUT and watchdog reset */
+#define WDT_CONFIG_RELOAD_Pos (5UL) /*!< Position of RELOAD field. */
+#define WDT_CONFIG_RELOAD_Msk (0x1UL << WDT_CONFIG_RELOAD_Pos) /*!< Bit mask of RELOAD field. */
+#define WDT_CONFIG_RELOAD_Disabled (0UL) /*!< Disable */
+#define WDT_CONFIG_RELOAD_Enabled (1UL) /*!< Enable */
+
+/* Bit 4 : Watchdog operation mode */
+#define WDT_CONFIG_MODE_Pos (4UL) /*!< Position of MODE field. */
+#define WDT_CONFIG_MODE_Msk (0x1UL << WDT_CONFIG_MODE_Pos) /*!< Bit mask of MODE field. */
+#define WDT_CONFIG_MODE_Watchdog (0UL) /*!< Use the watchdog timer as a watchdog */
+#define WDT_CONFIG_MODE_Timer (1UL) /*!< Use the watchdog timer as a timer */
+
 /* Bit 3 : Configure the watchdog to either be paused, or kept running, while the CPU is halted by the debugger */
 #define WDT_CONFIG_HALT_Pos (3UL) /*!< Position of HALT field. */
 #define WDT_CONFIG_HALT_Msk (0x1UL << WDT_CONFIG_HALT_Pos) /*!< Bit mask of HALT field. */
 #define WDT_CONFIG_HALT_Pause (0UL) /*!< Pause watchdog while the CPU is halted by the debugger */
 #define WDT_CONFIG_HALT_Run (1UL) /*!< Keep the watchdog running while the CPU is halted by the debugger */
 
+/* Bit 1 : Enable or disable override of system OFF mode */
+#define WDT_CONFIG_OFF_Pos (1UL) /*!< Position of OFF field. */
+#define WDT_CONFIG_OFF_Msk (0x1UL << WDT_CONFIG_OFF_Pos) /*!< Bit mask of OFF field. */
+#define WDT_CONFIG_OFF_Disabled (0UL) /*!< No impact on system OFF mode */
+#define WDT_CONFIG_OFF_Enabled (1UL) /*!< Prevent system OFF mode when watchdog is running */
+
 /* Bit 0 : Configure the watchdog to either be paused, or kept running, while the CPU is sleeping */
 #define WDT_CONFIG_SLEEP_Pos (0UL) /*!< Position of SLEEP field. */
 #define WDT_CONFIG_SLEEP_Msk (0x1UL << WDT_CONFIG_SLEEP_Pos) /*!< Bit mask of SLEEP field. */
 #define WDT_CONFIG_SLEEP_Pause (0UL) /*!< Pause watchdog while the CPU is sleeping */
 #define WDT_CONFIG_SLEEP_Run (1UL) /*!< Keep the watchdog running while the CPU is sleeping */
+
+/* Register: WDT_RRKEY */
+/* Description: Reload request key */
+
+/* Bits 31..0 : Reload request key */
+#define WDT_RRKEY_RRKEY_Pos (0UL) /*!< Position of RRKEY field. */
+#define WDT_RRKEY_RRKEY_Msk (0xFFFFFFFFUL << WDT_RRKEY_RRKEY_Pos) /*!< Bit mask of RRKEY field. */
 
 /* Register: WDT_RR */
 /* Description: Description collection: Reload request n */
