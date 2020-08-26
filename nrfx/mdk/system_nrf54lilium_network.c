@@ -44,7 +44,7 @@ NOTICE: This file has been modified by Nordic Semiconductor ASA.
 
 void SystemCoreClockUpdate(void)
 {
-    SystemCoreClock = __SYSTEM_CLOCK >> (NRF_CLOCK_NS->HFCLKCTRL & (CLOCK_HFCLKCTRL_HCLK_Msk));
+    SystemCoreClock = __SYSTEM_CLOCK;
 }
 
 void SystemInit(void)

@@ -44,61 +44,54 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /*lint ++flb "Enter library region */
 
-#if defined(_WIN32)
-    /* Do not include nrf specific files when building for PC host */
-#elif defined(__unix)
-    /* Do not include nrf specific files when building for PC host */
-#elif defined(__APPLE__)
-    /* Do not include nrf specific files when building for PC host */
+#if defined (NRF5001_XXAA)
+    #include "nrf5001_peripherals.h"
+#elif defined(NRF5002_XXAA)
+    #include "nrf5002_peripherals.h"
+
+#elif defined (NRF51422_XXAA) || defined (NRF51422_XXAB) || defined (NRF51422_XXAC)
+    #include "nrf51422_peripherals.h"
+#elif defined (NRF51801_XXAB)
+    #include "nrf51801_peripherals.h"
+#elif defined (NRF51802_XXAA)
+    #include "nrf51802_peripherals.h"
+#elif defined (NRF51822_XXAA) || defined (NRF51822_XXAB) || defined (NRF51822_XXAC)
+    #include "nrf51822_peripherals.h"
+#elif defined (NRF51824_XXAA)
+    #include "nrf51824_peripherals.h"
+
+#elif defined(NRF51)
+    #include "nrf51_peripherals.h"
+
+#elif defined(NRF52805_XXAA)
+    #include "nrf52805_peripherals.h"
+#elif defined(NRF52810_XXAA)
+    #include "nrf52810_peripherals.h"
+#elif defined(NRF52811_XXAA)
+    #include "nrf52811_peripherals.h"
+#elif defined(NRF52820_XXAA)
+    #include "nrf52820_peripherals.h"
+#elif defined(NRF52832_XXAA) || defined(NRF52832_XXAB)
+    #include "nrf52832_peripherals.h"
+#elif defined(NRF52833_XXAA)
+    #include "nrf52833_peripherals.h"
+#elif defined(NRF52840_XXAA)
+    #include "nrf52840_peripherals.h"
+
+#elif defined (NRF5340_XXAA_APPLICATION)
+    #include "nrf5340_application_peripherals.h"
+#elif defined (NRF5340_XXAA_NETWORK)
+    #include "nrf5340_network_peripherals.h"
+
+#elif defined (NRF9160_XXAA)
+    #include "nrf9160_peripherals.h"
+#elif defined (NRF9160_XXAA_MODEM)
+    #include "nrf9160_modem_peripherals.h"
+
+#elif defined (HALTIUM_XXAA)
 #else
-
-    #if defined (NRF5001_XXAA)
-        #include "nrf5001_peripherals.h"
-
-    #elif defined (NRF51422_XXAA) || defined (NRF51422_XXAB) || defined (NRF51422_XXAC)
-        #include "nrf51422_peripherals.h"
-    #elif defined (NRF51801_XXAB)
-        #include "nrf51801_peripherals.h"
-    #elif defined (NRF51802_XXAA)
-        #include "nrf51802_peripherals.h"
-    #elif defined (NRF51822_XXAA) || defined (NRF51822_XXAB) || defined (NRF51822_XXAC)
-        #include "nrf51822_peripherals.h"
-    #elif defined (NRF51824_XXAA)
-        #include "nrf51824_peripherals.h"
-
-    #elif defined(NRF51)
-        #include "nrf51_peripherals.h"
-
-    #elif defined(NRF52805_XXAA)
-        #include "nrf52805_peripherals.h"
-    #elif defined(NRF52810_XXAA)
-        #include "nrf52810_peripherals.h"
-    #elif defined(NRF52811_XXAA)
-        #include "nrf52811_peripherals.h"
-    #elif defined(NRF52820_XXAA)
-        #include "nrf52820_peripherals.h"
-    #elif defined(NRF52832_XXAA) || defined(NRF52832_XXAB)
-        #include "nrf52832_peripherals.h"
-    #elif defined(NRF52833_XXAA)
-        #include "nrf52833_peripherals.h"
-    #elif defined(NRF52840_XXAA)
-        #include "nrf52840_peripherals.h"
-        
-    #elif defined (NRF5340_XXAA_APPLICATION)
-        #include "nrf5340_application_peripherals.h"
-    #elif defined (NRF5340_XXAA_NETWORK)
-        #include "nrf5340_network_peripherals.h"
-        
-    #elif defined (NRF9160_XXAA)
-        #include "nrf9160_peripherals.h"
-    #elif defined (NRF9160_XXAA_MODEM)
-        #include "nrf9160_modem_peripherals.h"
-
-    #elif defined (HALTIUM_XXAA)
-    #else
-        #error "Device must be defined. See nrf.h."
-    #endif
-#endif    
+    #error "Device must be defined. See nrf.h."
+#endif
 
 /*lint --flb "Leave library region" */
 

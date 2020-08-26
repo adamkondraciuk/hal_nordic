@@ -562,16 +562,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
                     <value>0x2000</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>CH</name>
-                    <description>CHxx - 7x8 WLCSP 56 balls</description>
-                    <value>0x2001</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>CI</name>
-                    <description>CIxx - 7x8 WLCSP 56 balls</description>
-                    <value>0x2002</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
                     <name>QC</name>
                     <description>QCxx - 32-pin QFN</description>
                     <value>0x2003</value>
@@ -1293,6 +1283,48 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             </field>
           </fields>
         </register>
+        <register>
+          <name>RCNFMODE6</name>
+          <description>Mode-specific RADIO configuration register for RADIO mode m=6</description>
+          <addressOffset>0x328</addressOffset>
+          <access>read-only</access>
+          <resetValue>0xFFFFFFFF</resetValue>
+          <fields>
+            <field>
+              <name>TIFSDELTA</name>
+              <description>tIfsDelta (default value for RADIO-&amp;gt;QOVERRIDE2.TIFSDELTA)</description>
+              <lsb>0</lsb>
+              <msb>7</msb>
+            </field>
+            <field>
+              <name>TDELTAPWRDNPA</name>
+              <description>tDeltaPwrdnPa (default value for RADIO-&amp;gt;QOVERRIDE21.TDELTAPWRDNPA)</description>
+              <lsb>8</lsb>
+              <msb>15</msb>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>RCNFMODE15</name>
+          <description>Mode-specific RADIO configuration register for RADIO mode m=15</description>
+          <addressOffset>0x32C</addressOffset>
+          <access>read-only</access>
+          <resetValue>0xFFFFFFFF</resetValue>
+          <fields>
+            <field>
+              <name>TIFSDELTA</name>
+              <description>tIfsDelta (default value for RADIO-&amp;gt;QOVERRIDE2.TIFSDELTA)</description>
+              <lsb>0</lsb>
+              <msb>7</msb>
+            </field>
+            <field>
+              <name>TDELTAPWRDNPA</name>
+              <description>tDeltaPwrdnPa (default value for RADIO-&amp;gt;QOVERRIDE21.TDELTAPWRDNPA)</description>
+              <lsb>8</lsb>
+              <msb>15</msb>
+            </field>
+          </fields>
+        </register>
         <cluster>
           <name>TEMP</name>
           <description>Registers storing factory TEMP module linearization coefficients</description>
@@ -1304,7 +1336,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Slope definition A0</description>
             <addressOffset>0x000</addressOffset>
             <access>read-only</access>
-            <resetValue>0x00000320</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>A</name>
@@ -1319,7 +1351,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Slope definition A1</description>
             <addressOffset>0x004</addressOffset>
             <access>read-only</access>
-            <resetValue>0x00000343</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>A</name>
@@ -1334,7 +1366,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Slope definition A2</description>
             <addressOffset>0x008</addressOffset>
             <access>read-only</access>
-            <resetValue>0x0000035D</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>A</name>
@@ -1349,7 +1381,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Slope definition A3</description>
             <addressOffset>0x00C</addressOffset>
             <access>read-only</access>
-            <resetValue>0x00000400</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>A</name>
@@ -1364,7 +1396,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Slope definition A4</description>
             <addressOffset>0x010</addressOffset>
             <access>read-only</access>
-            <resetValue>0x00000452</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>A</name>
@@ -1379,7 +1411,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Slope definition A5</description>
             <addressOffset>0x014</addressOffset>
             <access>read-only</access>
-            <resetValue>0x0000037B</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>A</name>
@@ -1394,7 +1426,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Y-intercept B0</description>
             <addressOffset>0x018</addressOffset>
             <access>read-only</access>
-            <resetValue>0x00003FCC</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>B</name>
@@ -1409,7 +1441,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Y-intercept B1</description>
             <addressOffset>0x01C</addressOffset>
             <access>read-only</access>
-            <resetValue>0x00003F98</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>B</name>
@@ -1424,7 +1456,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Y-intercept B2</description>
             <addressOffset>0x020</addressOffset>
             <access>read-only</access>
-            <resetValue>0x00003F98</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>B</name>
@@ -1439,7 +1471,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Y-intercept B3</description>
             <addressOffset>0x024</addressOffset>
             <access>read-only</access>
-            <resetValue>0x00000012</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>B</name>
@@ -1454,7 +1486,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Y-intercept B4</description>
             <addressOffset>0x028</addressOffset>
             <access>read-only</access>
-            <resetValue>0x0000004D</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>B</name>
@@ -1469,7 +1501,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Y-intercept B5</description>
             <addressOffset>0x02C</addressOffset>
             <access>read-only</access>
-            <resetValue>0x00003E10</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>B</name>
@@ -1484,7 +1516,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Segment end T0</description>
             <addressOffset>0x030</addressOffset>
             <access>read-only</access>
-            <resetValue>0x000000E2</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>T</name>
@@ -1499,7 +1531,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Segment end T1</description>
             <addressOffset>0x034</addressOffset>
             <access>read-only</access>
-            <resetValue>0x00000000</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>T</name>
@@ -1514,7 +1546,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Segment end T2</description>
             <addressOffset>0x038</addressOffset>
             <access>read-only</access>
-            <resetValue>0x00000014</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>T</name>
@@ -1529,7 +1561,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Segment end T3</description>
             <addressOffset>0x03C</addressOffset>
             <access>read-only</access>
-            <resetValue>0x00000019</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>T</name>
@@ -1544,7 +1576,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <description>Segment end T4</description>
             <addressOffset>0x040</addressOffset>
             <access>read-only</access>
-            <resetValue>0x00000050</resetValue>
+            <resetValue>0xFFFFFFFF</resetValue>
             <fields>
               <field>
                 <name>T</name>
@@ -15602,12 +15634,12 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LR125kbit</name>
-                  <description>Frame is received at 125kbps</description>
+                  <description>Frame is received at 125 kbps</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LR500kbit</name>
-                  <description>Frame is received at 500kbps</description>
+                  <description>Frame is received at 500 kbps</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -17085,7 +17117,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
           <description>Fs config (ana+dig)</description>
           <addressOffset>0x584</addressOffset>
           <access>read-write</access>
-          <resetValue>0x00091B08</resetValue>
+          <resetValue>0x0009160A</resetValue>
           <fields>
             <field>
               <name>SSEL</name>
@@ -19531,12 +19563,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
                 <msb>4</msb>
               </field>
               <field>
-                <name>PORT</name>
-                <description>Port number</description>
-                <lsb>8</lsb>
-                <msb>9</msb>
-              </field>
-              <field>
                 <name>CONNECT</name>
                 <description>Connection</description>
                 <lsb>31</lsb>
@@ -19568,12 +19594,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
                 <description>Pin number</description>
                 <lsb>0</lsb>
                 <msb>4</msb>
-              </field>
-              <field>
-                <name>PORT</name>
-                <description>Port number</description>
-                <lsb>8</lsb>
-                <msb>9</msb>
               </field>
               <field>
                 <name>CONNECT</name>
@@ -20378,12 +20398,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
                 <description>Pin number</description>
                 <lsb>0</lsb>
                 <msb>4</msb>
-              </field>
-              <field>
-                <name>PORT</name>
-                <description>Port number</description>
-                <lsb>5</lsb>
-                <msb>5</msb>
               </field>
               <field>
                 <name>CONNECT</name>
@@ -41946,7 +41960,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
     </peripheral>
     <peripheral>
       <name>EGU0</name>
-      <description>Event Generator Unit 0</description>
+      <description>Event generator unit 0</description>
       <baseAddress>0x40014000</baseAddress>
       <headerStructName>EGU</headerStructName>
       <addressBlock>
@@ -43219,7 +43233,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
     </peripheral>
     <peripheral derivedFrom="EGU0">
       <name>EGU1</name>
-      <description>Event Generator Unit 1</description>
+      <description>Event generator unit 1</description>
       <baseAddress>0x40015000</baseAddress>
       <interrupt>
         <name>SWI1_EGU1</name>

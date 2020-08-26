@@ -56,8 +56,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "haltium_cellularrf.h"
 #include "haltium_flpr.h"
 #include "haltium_isimcore.h"
-#include "haltium_network.h"
 #include "haltium_ppr.h"
+#include "haltium_radio.h"
 #include "haltium_secure.h"
 #include "haltium_sysctrl.h"
 

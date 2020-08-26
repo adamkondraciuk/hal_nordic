@@ -18324,13 +18324,13 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
         </register>
         <register>
           <name>EVENTS_SYNC</name>
-          <description>Initial sync detected</description>
+          <description>Preamble indicator.</description>
           <addressOffset>0x168</addressOffset>
           <access>read-write</access>
           <fields>
             <field>
               <name>EVENTS_SYNC</name>
-              <description>Initial sync detected</description>
+              <description>Preamble indicator.</description>
               <lsb>0</lsb>
               <msb>0</msb>
               <enumeratedValues>

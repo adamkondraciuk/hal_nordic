@@ -63,7 +63,7 @@ NRF_STATIC_INLINE void nrf_ipcmap_source_config_set(NRF_IPCMAP_Type * p_reg,
     NRFX_ASSERT(domain <= 0xF);
     /* TODO: When MDK adds a define for number of channels, replace magic number below
      *       and in other functions. */
-    NRFX_ASSERT(index < 352);
+    NRFX_ASSERT(index < 16);
 
     p_reg->CHANNEL[index].SOURCE =
         ((source << IPCMAP_CHANNEL_SOURCE_SOURCE_Pos) & IPCMAP_CHANNEL_SOURCE_SOURCE_Msk)
@@ -76,7 +76,7 @@ NRF_STATIC_INLINE void nrf_ipcmap_sink_config_set(NRF_IPCMAP_Type * p_reg,
                                                   uint8_t           domain)
 {
     NRFX_ASSERT(domain <= 0xF);
-    NRFX_ASSERT(index < 352);
+    NRFX_ASSERT(index < 16);
 
     p_reg->CHANNEL[index].SINK =
         ((sink   << IPCMAP_CHANNEL_SINK_SINK_Pos)   & IPCMAP_CHANNEL_SINK_SINK_Msk)
@@ -87,7 +87,7 @@ NRF_STATIC_INLINE void nrf_ipcmap_source_enable_set(NRF_IPCMAP_Type * p_reg,
                                                     uint16_t          index,
                                                     bool              enable)
 {
-    NRFX_ASSERT(index < 352);
+    NRFX_ASSERT(index < 16);
     p_reg->CHANNEL[index].SOURCE = (p_reg->CHANNEL[index].SOURCE & 
             (~IPCMAP_CHANNEL_SOURCE_ENABLE_Msk)) | (enable << IPCMAP_CHANNEL_SOURCE_ENABLE_Pos);
 }

@@ -76,21 +76,15 @@ typedef enum {
   MVDMA_IRQn                             = 3,        /*!< 3 MVDMA                                                              */
   RAMC00_IRQn                            = 4,        /*!< 4 RAMC00                                                             */
   ROMC00_IRQn                            = 5,        /*!< 5 ROMC00                                                             */
-  GENERIC1_IRQn                          = 6,        /*!< 6 GENERIC1                                                           */
-  GENERIC2_IRQn                          = 10,       /*!< 10 GENERIC2                                                          */
-  GENERIC3_IRQn                          = 11,       /*!< 11 GENERIC3                                                          */
+  CRACEN_IRQn                            = 6,        /*!< 6 CRACEN                                                             */
   ABB_IRQn                               = 12,       /*!< 12 ABB                                                               */
   HSFLL_IRQn                             = 13,       /*!< 13 HSFLL                                                             */
-  LRC0_IRQn                              = 14,       /*!< 14 LRC0                                                              */
-  GENERIC6_IRQn                          = 15,       /*!< 15 GENERIC6                                                          */
+  LRCCONF0_IRQn                          = 14,       /*!< 14 LRCCONF0                                                          */
   SPU1_IRQn                              = 16,       /*!< 16 SPU1                                                              */
   WDT0_IRQn                              = 20,       /*!< 20 WDT0                                                              */
   WDT1_IRQn                              = 21,       /*!< 21 WDT1                                                              */
   TAMPC_IRQn                             = 22,       /*!< 22 TAMPC                                                             */
-  GENERIC7_IRQn                          = 28,       /*!< 28 GENERIC7                                                          */
-  GENERIC8_IRQn                          = 29,       /*!< 29 GENERIC8                                                          */
-  LRC1_IRQn                              = 30,       /*!< 30 LRC1                                                              */
-  GENERIC10_IRQn                         = 31,       /*!< 31 GENERIC10                                                         */
+  LRCCONF1_IRQn                          = 30,       /*!< 30 LRCCONF1                                                          */
   IPCT0_IRQn                             = 64,       /*!< 64 IPCT0                                                             */
   IPCT1_IRQn                             = 65,       /*!< 65 IPCT1                                                             */
   BELLBOARD0_IRQn                        = 96,       /*!< 96 BELLBOARD0                                                        */
@@ -103,16 +97,17 @@ typedef enum {
   GPIOTE11_IRQn                          = 107,      /*!< 107 GPIOTE11                                                         */
   GSPU0_IRQn                             = 128,      /*!< 128 GSPU0                                                            */
   GMPC0_IRQn                             = 129,      /*!< 129 GMPC0                                                            */
+  USBHS_IRQn                             = 134,      /*!< 134 USBHS                                                            */
   GSPU1_IRQn                             = 144,      /*!< 144 GSPU1                                                            */
   GMPC1_IRQn                             = 145,      /*!< 145 GMPC1                                                            */
   GSPU2_IRQn                             = 192,      /*!< 192 GSPU2                                                            */
   GMPC2_IRQn                             = 193,      /*!< 193 GMPC2                                                            */
   GSPU3_IRQn                             = 208,      /*!< 208 GSPU3                                                            */
   GIPCT00_IRQn                           = 209,      /*!< 209 GIPCT00                                                          */
-  GGENERIC55_IRQn                        = 211,      /*!< 211 GGENERIC55                                                       */
-  GGENERIC56_IRQn                        = 212,      /*!< 212 GGENERIC56                                                       */
-  GGENERIC57_IRQn                        = 213,      /*!< 213 GGENERIC57                                                       */
-  GGENERIC58_IRQn                        = 214,      /*!< 214 GGENERIC58                                                       */
+  I3C0_IRQn                              = 211,      /*!< 211 I3C0                                                             */
+  I3C1_IRQn                              = 212,      /*!< 212 I3C1                                                             */
+  I3C2_IRQn                              = 213,      /*!< 213 I3C2                                                             */
+  I3C3_IRQn                              = 214,      /*!< 214 I3C3                                                             */
   GSPU4_IRQn                             = 224,      /*!< 224 GSPU4                                                            */
   GTIMER0_IRQn                           = 226,      /*!< 226 GTIMER0                                                          */
   GTIMER1_IRQn                           = 227,      /*!< 227 GTIMER1                                                          */
@@ -210,6 +205,8 @@ typedef enum {
   #pragma warning 586
 #elif defined (__CSMC__)
   /* anonymous unions are enabled by default */
+#elif defined (_CEVA)
+  /* anonymous unions are enabled by default */
 #else
   #warning Unsupported compiler type
 #endif
@@ -218,17 +215,17 @@ typedef enum {
 /* ================                                  Peripheral Address Map                                  ================ */
 /* =========================================================================================================================== */
 
-#define NRF_SECURE_ETM_NS_BASE            0x00410000UL
-#define NRF_SECURE_CTI_NS_BASE            0x00420000UL
+#define NRF_SECURE_CRACENCORE_NS_BASE     0x41800000UL
 #define NRF_SECURE_GSPU14_S_BASE          0xBF000000UL
 #define NRF_SECURE_CTRLAP_S_BASE          0xBF002000UL
-#define NRF_SECURE_GGENERIC0_S_BASE       0xBF004000UL
+#define NRF_SECURE_PCGCS2_S_BASE          0xBF004000UL
 #define NRF_SECURE_GHSFLL2_S_BASE         0xBF005000UL
-#define NRF_SECURE_GLRC2_S_BASE           0xBF006000UL
-#define NRF_SECURE_GGENERIC61_S_BASE      0xBF007000UL
+#define NRF_SECURE_LRCCONF2_S_BASE        0xBF006000UL
+#define NRF_SECURE_PCGCM4_S_BASE          0xBF007000UL
 #define NRF_SECURE_GMPC4_S_BASE           0xBF008000UL
-#define NRF_SECURE_GMEMCONF2_S_BASE       0xBF009000UL
-#define NRF_SECURE_GENERIC11_S_BASE       0xE0042000UL
+#define NRF_SECURE_MEMCONF1_S_BASE        0xBF009000UL
+#define NRF_SECURE_ETM_NS_BASE            0xE0041000UL
+#define NRF_SECURE_CTI_NS_BASE            0xE0042000UL
 #define NRF_SECURE_CPUC_S_BASE            0xE0080000UL
 #define NRF_SECURE_CACHE0_S_BASE          0xE0082000UL
 #define NRF_SECURE_CACHE1_S_BASE          0xE0083000UL
@@ -245,19 +242,19 @@ typedef enum {
 #define NRF_SECURE_RAMC00_S_BASE          0x51004000UL
 #define NRF_SECURE_ROMC00_NS_BASE         0x41005000UL
 #define NRF_SECURE_ROMC00_S_BASE          0x51005000UL
-#define NRF_SECURE_GENERIC1_NS_BASE       0x41006000UL
-#define NRF_SECURE_GENERIC1_S_BASE        0x51006000UL
-#define NRF_SECURE_GENERIC2_S_BASE        0x5100A000UL
-#define NRF_SECURE_GENERIC3_S_BASE        0x5100B000UL
+#define NRF_SECURE_CRACEN_NS_BASE         0x41006000UL
+#define NRF_SECURE_CRACEN_S_BASE          0x51006000UL
+#define NRF_SECURE_PCGCS0_S_BASE          0x5100A000UL
+#define NRF_SECURE_PCGCM0_S_BASE          0x5100B000UL
 #define NRF_SECURE_ABB_S_BASE             0x5100C000UL
 #define NRF_SECURE_HSFLL_S_BASE           0x5100D000UL
-#define NRF_SECURE_LRC0_S_BASE            0x5100E000UL
-#define NRF_SECURE_GENERIC6_S_BASE        0x5100F000UL
+#define NRF_SECURE_LRCCONF0_S_BASE        0x5100E000UL
+#define NRF_SECURE_PCGCM1_S_BASE          0x5100F000UL
 #define NRF_SECURE_SPU1_S_BASE            0x51010000UL
 #define NRF_SECURE_CPUCONF_NS_BASE        0x41011000UL
 #define NRF_SECURE_CPUCONF_S_BASE         0x51011000UL
-#define NRF_SECURE_MEMCONF_NS_BASE        0x41012000UL
-#define NRF_SECURE_MEMCONF_S_BASE         0x51012000UL
+#define NRF_SECURE_MEMCONF0_NS_BASE       0x41012000UL
+#define NRF_SECURE_MEMCONF0_S_BASE        0x51012000UL
 #define NRF_SECURE_WDT0_NS_BASE           0x41014000UL
 #define NRF_SECURE_WDT0_S_BASE            0x51014000UL
 #define NRF_SECURE_WDT1_NS_BASE           0x41015000UL
@@ -265,10 +262,10 @@ typedef enum {
 #define NRF_SECURE_TAMPC_S_BASE           0x51016000UL
 #define NRF_SECURE_MUTEX_NS_BASE          0x41017000UL
 #define NRF_SECURE_MUTEX_S_BASE           0x51017000UL
-#define NRF_SECURE_GENERIC7_S_BASE        0x5101C000UL
-#define NRF_SECURE_GENERIC8_S_BASE        0x5101D000UL
-#define NRF_SECURE_LRC1_S_BASE            0x5101E000UL
-#define NRF_SECURE_GENERIC10_S_BASE       0x5101F000UL
+#define NRF_SECURE_PCGCS1_S_BASE          0x5101C000UL
+#define NRF_SECURE_PCGCM2_S_BASE          0x5101D000UL
+#define NRF_SECURE_LRCCONF1_S_BASE        0x5101E000UL
+#define NRF_SECURE_PCGCM3_S_BASE          0x5101F000UL
 #define NRF_SECURE_IPCT_NS_BASE           0x41013000UL
 #define NRF_SECURE_IPCT_S_BASE            0x51013000UL
 #define NRF_SECURE_BELLBOARD_NS_BASE      0x4F099000UL
@@ -298,17 +295,17 @@ typedef enum {
 /* ================                                  Peripheral Declaration                                  ================ */
 /* =========================================================================================================================== */
 
-#define NRF_SECURE_ETM_NS                 ((NRF_ETM_Type*)                      NRF_SECURE_ETM_NS_BASE)
-#define NRF_SECURE_CTI_NS                 ((NRF_CTI_Type*)                      NRF_SECURE_CTI_NS_BASE)
+#define NRF_SECURE_CRACENCORE_NS          ((NRF_CRACENCORE_Type*)               NRF_SECURE_CRACENCORE_NS_BASE)
 #define NRF_SECURE_GSPU14_S               ((NRF_SPU_Type*)                      NRF_SECURE_GSPU14_S_BASE)
 #define NRF_SECURE_CTRLAP_S               ((NRF_CTRLAPPERI_Type*)               NRF_SECURE_CTRLAP_S_BASE)
-#define NRF_SECURE_GGENERIC0_S            ((NRF_GENERIC_Type*)                  NRF_SECURE_GGENERIC0_S_BASE)
+#define NRF_SECURE_PCGCS2_S               ((NRF_PCGCSLAVE_Type*)                NRF_SECURE_PCGCS2_S_BASE)
 #define NRF_SECURE_GHSFLL2_S              ((NRF_HSFLL_Type*)                    NRF_SECURE_GHSFLL2_S_BASE)
-#define NRF_SECURE_GLRC2_S                ((NRF_LRC_Type*)                      NRF_SECURE_GLRC2_S_BASE)
-#define NRF_SECURE_GGENERIC61_S           ((NRF_GENERIC_Type*)                  NRF_SECURE_GGENERIC61_S_BASE)
+#define NRF_SECURE_LRCCONF2_S             ((NRF_LRCCONF_Type*)                  NRF_SECURE_LRCCONF2_S_BASE)
+#define NRF_SECURE_PCGCM4_S               ((NRF_PCGCMASTER_Type*)               NRF_SECURE_PCGCM4_S_BASE)
 #define NRF_SECURE_GMPC4_S                ((NRF_MPC_Type*)                      NRF_SECURE_GMPC4_S_BASE)
-#define NRF_SECURE_GMEMCONF2_S            ((NRF_MEMCONF_Type*)                  NRF_SECURE_GMEMCONF2_S_BASE)
-#define NRF_SECURE_GENERIC11_S            ((NRF_GENERIC_Type*)                  NRF_SECURE_GENERIC11_S_BASE)
+#define NRF_SECURE_MEMCONF1_S             ((NRF_MEMCONF_Type*)                  NRF_SECURE_MEMCONF1_S_BASE)
+#define NRF_SECURE_ETM_NS                 ((NRF_ETM_Type*)                      NRF_SECURE_ETM_NS_BASE)
+#define NRF_SECURE_CTI_NS                 ((NRF_CTI_Type*)                      NRF_SECURE_CTI_NS_BASE)
 #define NRF_SECURE_CPUC_S                 ((NRF_CM33SS_Type*)                   NRF_SECURE_CPUC_S_BASE)
 #define NRF_SECURE_CACHE0_S               ((NRF_CACHE_Type*)                    NRF_SECURE_CACHE0_S_BASE)
 #define NRF_SECURE_CACHE1_S               ((NRF_CACHE_Type*)                    NRF_SECURE_CACHE1_S_BASE)
@@ -325,19 +322,19 @@ typedef enum {
 #define NRF_SECURE_RAMC00_S               ((NRF_RAMC_Type*)                     NRF_SECURE_RAMC00_S_BASE)
 #define NRF_SECURE_ROMC00_NS              ((NRF_RAMC_Type*)                     NRF_SECURE_ROMC00_NS_BASE)
 #define NRF_SECURE_ROMC00_S               ((NRF_RAMC_Type*)                     NRF_SECURE_ROMC00_S_BASE)
-#define NRF_SECURE_GENERIC1_NS            ((NRF_GENERIC_Type*)                  NRF_SECURE_GENERIC1_NS_BASE)
-#define NRF_SECURE_GENERIC1_S             ((NRF_GENERIC_Type*)                  NRF_SECURE_GENERIC1_S_BASE)
-#define NRF_SECURE_GENERIC2_S             ((NRF_GENERIC_Type*)                  NRF_SECURE_GENERIC2_S_BASE)
-#define NRF_SECURE_GENERIC3_S             ((NRF_GENERIC_Type*)                  NRF_SECURE_GENERIC3_S_BASE)
+#define NRF_SECURE_CRACEN_NS              ((NRF_CRACEN_Type*)                   NRF_SECURE_CRACEN_NS_BASE)
+#define NRF_SECURE_CRACEN_S               ((NRF_CRACEN_Type*)                   NRF_SECURE_CRACEN_S_BASE)
+#define NRF_SECURE_PCGCS0_S               ((NRF_PCGCSLAVE_Type*)                NRF_SECURE_PCGCS0_S_BASE)
+#define NRF_SECURE_PCGCM0_S               ((NRF_PCGCMASTER_Type*)               NRF_SECURE_PCGCM0_S_BASE)
 #define NRF_SECURE_ABB_S                  ((NRF_ABB_Type*)                      NRF_SECURE_ABB_S_BASE)
 #define NRF_SECURE_HSFLL_S                ((NRF_HSFLL_Type*)                    NRF_SECURE_HSFLL_S_BASE)
-#define NRF_SECURE_LRC0_S                 ((NRF_LRC_Type*)                      NRF_SECURE_LRC0_S_BASE)
-#define NRF_SECURE_GENERIC6_S             ((NRF_GENERIC_Type*)                  NRF_SECURE_GENERIC6_S_BASE)
+#define NRF_SECURE_LRCCONF0_S             ((NRF_LRCCONF_Type*)                  NRF_SECURE_LRCCONF0_S_BASE)
+#define NRF_SECURE_PCGCM1_S               ((NRF_PCGCMASTER_Type*)               NRF_SECURE_PCGCM1_S_BASE)
 #define NRF_SECURE_SPU1_S                 ((NRF_SPU_Type*)                      NRF_SECURE_SPU1_S_BASE)
 #define NRF_SECURE_CPUCONF_NS             ((NRF_CPUCONF_Type*)                  NRF_SECURE_CPUCONF_NS_BASE)
 #define NRF_SECURE_CPUCONF_S              ((NRF_CPUCONF_Type*)                  NRF_SECURE_CPUCONF_S_BASE)
-#define NRF_SECURE_MEMCONF_NS             ((NRF_MEMCONF_Type*)                  NRF_SECURE_MEMCONF_NS_BASE)
-#define NRF_SECURE_MEMCONF_S              ((NRF_MEMCONF_Type*)                  NRF_SECURE_MEMCONF_S_BASE)
+#define NRF_SECURE_MEMCONF0_NS            ((NRF_MEMCONF_Type*)                  NRF_SECURE_MEMCONF0_NS_BASE)
+#define NRF_SECURE_MEMCONF0_S             ((NRF_MEMCONF_Type*)                  NRF_SECURE_MEMCONF0_S_BASE)
 #define NRF_SECURE_WDT0_NS                ((NRF_WDT_Type*)                      NRF_SECURE_WDT0_NS_BASE)
 #define NRF_SECURE_WDT0_S                 ((NRF_WDT_Type*)                      NRF_SECURE_WDT0_S_BASE)
 #define NRF_SECURE_WDT1_NS                ((NRF_WDT_Type*)                      NRF_SECURE_WDT1_NS_BASE)
@@ -345,10 +342,10 @@ typedef enum {
 #define NRF_SECURE_TAMPC_S                ((NRF_TAMPC_Type*)                    NRF_SECURE_TAMPC_S_BASE)
 #define NRF_SECURE_MUTEX_NS               ((NRF_MUTEX_Type*)                    NRF_SECURE_MUTEX_NS_BASE)
 #define NRF_SECURE_MUTEX_S                ((NRF_MUTEX_Type*)                    NRF_SECURE_MUTEX_S_BASE)
-#define NRF_SECURE_GENERIC7_S             ((NRF_GENERIC_Type*)                  NRF_SECURE_GENERIC7_S_BASE)
-#define NRF_SECURE_GENERIC8_S             ((NRF_GENERIC_Type*)                  NRF_SECURE_GENERIC8_S_BASE)
-#define NRF_SECURE_LRC1_S                 ((NRF_LRC_Type*)                      NRF_SECURE_LRC1_S_BASE)
-#define NRF_SECURE_GENERIC10_S            ((NRF_GENERIC_Type*)                  NRF_SECURE_GENERIC10_S_BASE)
+#define NRF_SECURE_PCGCS1_S               ((NRF_PCGCSLAVE_Type*)                NRF_SECURE_PCGCS1_S_BASE)
+#define NRF_SECURE_PCGCM2_S               ((NRF_PCGCMASTER_Type*)               NRF_SECURE_PCGCM2_S_BASE)
+#define NRF_SECURE_LRCCONF1_S             ((NRF_LRCCONF_Type*)                  NRF_SECURE_LRCCONF1_S_BASE)
+#define NRF_SECURE_PCGCM3_S               ((NRF_PCGCMASTER_Type*)               NRF_SECURE_PCGCM3_S_BASE)
 #define NRF_SECURE_IPCT_NS                ((NRF_IPCT_Type*)                     NRF_SECURE_IPCT_NS_BASE)
 #define NRF_SECURE_IPCT_S                 ((NRF_IPCT_Type*)                     NRF_SECURE_IPCT_S_BASE)
 #define NRF_SECURE_BELLBOARD_NS           ((NRF_BELLBOARD_Type*)                NRF_SECURE_BELLBOARD_NS_BASE)
@@ -379,31 +376,32 @@ typedef enum {
 /* =========================================================================================================================== */
 
 #ifdef NRF_NONSECURE                                 /*!< Remap NRF_X_NS instances to NRF_X symbol for ease of use.            */
+  #define NRF_SECURE_CRACENCORE                   NRF_SECURE_CRACENCORE_NS
   #define NRF_SECURE_ETM                          NRF_SECURE_ETM_NS
   #define NRF_SECURE_CTI                          NRF_SECURE_CTI_NS
   #define NRF_SECURE_MVDMA                        NRF_SECURE_MVDMA_NS
   #define NRF_SECURE_RAMC00                       NRF_SECURE_RAMC00_NS
   #define NRF_SECURE_ROMC00                       NRF_SECURE_ROMC00_NS
-  #define NRF_SECURE_GENERIC1                     NRF_SECURE_GENERIC1_NS
+  #define NRF_SECURE_CRACEN                       NRF_SECURE_CRACEN_NS
   #define NRF_SECURE_CPUCONF                      NRF_SECURE_CPUCONF_NS
-  #define NRF_SECURE_MEMCONF                      NRF_SECURE_MEMCONF_NS
+  #define NRF_SECURE_MEMCONF0                     NRF_SECURE_MEMCONF0_NS
   #define NRF_SECURE_WDT0                         NRF_SECURE_WDT0_NS
   #define NRF_SECURE_WDT1                         NRF_SECURE_WDT1_NS
   #define NRF_SECURE_MUTEX                        NRF_SECURE_MUTEX_NS
   #define NRF_SECURE_IPCT                         NRF_SECURE_IPCT_NS
   #define NRF_SECURE_BELLBOARD                    NRF_SECURE_BELLBOARD_NS
 #else                                                /*!< Remap NRF_X_S instances to NRF_X symbol for ease of use.             */
-  #define NRF_SECURE_ETM                          NRF_SECURE_ETM_NS
-  #define NRF_SECURE_CTI                          NRF_SECURE_CTI_NS
+  #define NRF_SECURE_CRACENCORE                   NRF_SECURE_CRACENCORE_NS
   #define NRF_SECURE_GSPU14                       NRF_SECURE_GSPU14_S
   #define NRF_SECURE_CTRLAP                       NRF_SECURE_CTRLAP_S
-  #define NRF_SECURE_GGENERIC0                    NRF_SECURE_GGENERIC0_S
+  #define NRF_SECURE_PCGCS2                       NRF_SECURE_PCGCS2_S
   #define NRF_SECURE_GHSFLL2                      NRF_SECURE_GHSFLL2_S
-  #define NRF_SECURE_GLRC2                        NRF_SECURE_GLRC2_S
-  #define NRF_SECURE_GGENERIC61                   NRF_SECURE_GGENERIC61_S
+  #define NRF_SECURE_LRCCONF2                     NRF_SECURE_LRCCONF2_S
+  #define NRF_SECURE_PCGCM4                       NRF_SECURE_PCGCM4_S
   #define NRF_SECURE_GMPC4                        NRF_SECURE_GMPC4_S
-  #define NRF_SECURE_GMEMCONF2                    NRF_SECURE_GMEMCONF2_S
-  #define NRF_SECURE_GENERIC11                    NRF_SECURE_GENERIC11_S
+  #define NRF_SECURE_MEMCONF1                     NRF_SECURE_MEMCONF1_S
+  #define NRF_SECURE_ETM                          NRF_SECURE_ETM_NS
+  #define NRF_SECURE_CTI                          NRF_SECURE_CTI_NS
   #define NRF_SECURE_CPUC                         NRF_SECURE_CPUC_S
   #define NRF_SECURE_CACHE0                       NRF_SECURE_CACHE0_S
   #define NRF_SECURE_CACHE1                       NRF_SECURE_CACHE1_S
@@ -417,24 +415,24 @@ typedef enum {
   #define NRF_SECURE_MVDMA                        NRF_SECURE_MVDMA_S
   #define NRF_SECURE_RAMC00                       NRF_SECURE_RAMC00_S
   #define NRF_SECURE_ROMC00                       NRF_SECURE_ROMC00_S
-  #define NRF_SECURE_GENERIC1                     NRF_SECURE_GENERIC1_S
-  #define NRF_SECURE_GENERIC2                     NRF_SECURE_GENERIC2_S
-  #define NRF_SECURE_GENERIC3                     NRF_SECURE_GENERIC3_S
+  #define NRF_SECURE_CRACEN                       NRF_SECURE_CRACEN_S
+  #define NRF_SECURE_PCGCS0                       NRF_SECURE_PCGCS0_S
+  #define NRF_SECURE_PCGCM0                       NRF_SECURE_PCGCM0_S
   #define NRF_SECURE_ABB                          NRF_SECURE_ABB_S
   #define NRF_SECURE_HSFLL                        NRF_SECURE_HSFLL_S
-  #define NRF_SECURE_LRC0                         NRF_SECURE_LRC0_S
-  #define NRF_SECURE_GENERIC6                     NRF_SECURE_GENERIC6_S
+  #define NRF_SECURE_LRCCONF0                     NRF_SECURE_LRCCONF0_S
+  #define NRF_SECURE_PCGCM1                       NRF_SECURE_PCGCM1_S
   #define NRF_SECURE_SPU1                         NRF_SECURE_SPU1_S
   #define NRF_SECURE_CPUCONF                      NRF_SECURE_CPUCONF_S
-  #define NRF_SECURE_MEMCONF                      NRF_SECURE_MEMCONF_S
+  #define NRF_SECURE_MEMCONF0                     NRF_SECURE_MEMCONF0_S
   #define NRF_SECURE_WDT0                         NRF_SECURE_WDT0_S
   #define NRF_SECURE_WDT1                         NRF_SECURE_WDT1_S
   #define NRF_SECURE_TAMPC                        NRF_SECURE_TAMPC_S
   #define NRF_SECURE_MUTEX                        NRF_SECURE_MUTEX_S
-  #define NRF_SECURE_GENERIC7                     NRF_SECURE_GENERIC7_S
-  #define NRF_SECURE_GENERIC8                     NRF_SECURE_GENERIC8_S
-  #define NRF_SECURE_LRC1                         NRF_SECURE_LRC1_S
-  #define NRF_SECURE_GENERIC10                    NRF_SECURE_GENERIC10_S
+  #define NRF_SECURE_PCGCS1                       NRF_SECURE_PCGCS1_S
+  #define NRF_SECURE_PCGCM2                       NRF_SECURE_PCGCM2_S
+  #define NRF_SECURE_LRCCONF1                     NRF_SECURE_LRCCONF1_S
+  #define NRF_SECURE_PCGCM3                       NRF_SECURE_PCGCM3_S
   #define NRF_SECURE_IPCT                         NRF_SECURE_IPCT_S
   #define NRF_SECURE_BELLBOARD                    NRF_SECURE_BELLBOARD_S
   #define NRF_SECURE_GSPU0                        NRF_SECURE_GSPU0_S
@@ -464,17 +462,17 @@ typedef enum {
 /* =========================================================================================================================== */
 
 #ifdef NRF_SECURE                                    /*!< Remap NRF_DOMAIN instances to NRF_X symbol for ease of use.          */
-  #define NRF_ETM                                 NRF_SECURE_ETM
-  #define NRF_CTI                                 NRF_SECURE_CTI
+  #define NRF_CRACENCORE                          NRF_SECURE_CRACENCORE
   #define NRF_GSPU14                              NRF_SECURE_GSPU14
   #define NRF_CTRLAP                              NRF_SECURE_CTRLAP
-  #define NRF_GGENERIC0                           NRF_SECURE_GGENERIC0
+  #define NRF_PCGCS2                              NRF_SECURE_PCGCS2
   #define NRF_GHSFLL2                             NRF_SECURE_GHSFLL2
-  #define NRF_GLRC2                               NRF_SECURE_GLRC2
-  #define NRF_GGENERIC61                          NRF_SECURE_GGENERIC61
+  #define NRF_LRCCONF2                            NRF_SECURE_LRCCONF2
+  #define NRF_PCGCM4                              NRF_SECURE_PCGCM4
   #define NRF_GMPC4                               NRF_SECURE_GMPC4
-  #define NRF_GMEMCONF2                           NRF_SECURE_GMEMCONF2
-  #define NRF_GENERIC11                           NRF_SECURE_GENERIC11
+  #define NRF_MEMCONF1                            NRF_SECURE_MEMCONF1
+  #define NRF_ETM                                 NRF_SECURE_ETM
+  #define NRF_CTI                                 NRF_SECURE_CTI
   #define NRF_CPUC                                NRF_SECURE_CPUC
   #define NRF_CACHE0                              NRF_SECURE_CACHE0
   #define NRF_CACHE1                              NRF_SECURE_CACHE1
@@ -488,24 +486,24 @@ typedef enum {
   #define NRF_MVDMA                               NRF_SECURE_MVDMA
   #define NRF_RAMC00                              NRF_SECURE_RAMC00
   #define NRF_ROMC00                              NRF_SECURE_ROMC00
-  #define NRF_GENERIC1                            NRF_SECURE_GENERIC1
-  #define NRF_GENERIC2                            NRF_SECURE_GENERIC2
-  #define NRF_GENERIC3                            NRF_SECURE_GENERIC3
+  #define NRF_CRACEN                              NRF_SECURE_CRACEN
+  #define NRF_PCGCS0                              NRF_SECURE_PCGCS0
+  #define NRF_PCGCM0                              NRF_SECURE_PCGCM0
   #define NRF_ABB                                 NRF_SECURE_ABB
   #define NRF_HSFLL                               NRF_SECURE_HSFLL
-  #define NRF_LRC0                                NRF_SECURE_LRC0
-  #define NRF_GENERIC6                            NRF_SECURE_GENERIC6
+  #define NRF_LRCCONF0                            NRF_SECURE_LRCCONF0
+  #define NRF_PCGCM1                              NRF_SECURE_PCGCM1
   #define NRF_SPU1                                NRF_SECURE_SPU1
   #define NRF_CPUCONF                             NRF_SECURE_CPUCONF
-  #define NRF_MEMCONF                             NRF_SECURE_MEMCONF
+  #define NRF_MEMCONF0                            NRF_SECURE_MEMCONF0
   #define NRF_WDT0                                NRF_SECURE_WDT0
   #define NRF_WDT1                                NRF_SECURE_WDT1
   #define NRF_TAMPC                               NRF_SECURE_TAMPC
   #define NRF_MUTEX                               NRF_SECURE_MUTEX
-  #define NRF_GENERIC7                            NRF_SECURE_GENERIC7
-  #define NRF_GENERIC8                            NRF_SECURE_GENERIC8
-  #define NRF_LRC1                                NRF_SECURE_LRC1
-  #define NRF_GENERIC10                           NRF_SECURE_GENERIC10
+  #define NRF_PCGCS1                              NRF_SECURE_PCGCS1
+  #define NRF_PCGCM2                              NRF_SECURE_PCGCM2
+  #define NRF_LRCCONF1                            NRF_SECURE_LRCCONF1
+  #define NRF_PCGCM3                              NRF_SECURE_PCGCM3
   #define NRF_IPCT                                NRF_SECURE_IPCT
   #define NRF_BELLBOARD                           NRF_SECURE_BELLBOARD
   #define NRF_GSPU0                               NRF_SECURE_GSPU0
@@ -545,6 +543,8 @@ typedef enum {
 #elif defined (__TASKING__)
   #pragma warning restore
 #elif defined (__CSMC__)
+  /* anonymous unions are enabled by default */
+#elif defined (_CEVA)
   /* anonymous unions are enabled by default */
 #endif
 

@@ -67,6 +67,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   #pragma warning 586
 #elif defined (__CSMC__)
   /* anonymous unions are enabled by default */
+#elif defined (_CEVA)
+  /* anonymous unions are enabled by default */
 #else
   #warning Unsupported compiler type
 #endif
@@ -75,9 +77,13 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* ================                                  Peripheral Address Map                                  ================ */
 /* =========================================================================================================================== */
 
+#define NRF_USBHSCORE0_NS_BASE            0x2F700000UL
+#define NRF_I3CCORE0_NS_BASE              0x2FBE0000UL
+#define NRF_I3CCORE1_NS_BASE              0x2FBE1000UL
+#define NRF_I3CCORE2_NS_BASE              0x2FBE2000UL
+#define NRF_I3CCORE3_NS_BASE              0x2FBE3000UL
 #define NRF_EASYVDMA_NS_BASE              0x5F9E0000UL
-#define NRF_GGENERIC59_NS_BASE            0xBF001000UL
-#define NRF_GGENERIC59_S_BASE             0xBF001000UL
+#define NRF_TDDCONF_S_BASE                0xBF001000UL
 #define NRF_GGENERIC60_NS_BASE            0xBF003000UL
 #define NRF_GGENERIC60_S_BASE             0xBF003000UL
 #define NRF_TSGEN_NS_BASE                 0xBF041000UL
@@ -99,17 +105,19 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define NRF_GPIOTE0_S_BASE                0x5F934000UL
 #define NRF_GPIOTE1_NS_BASE               0x4F935000UL
 #define NRF_GPIOTE1_S_BASE                0x5F935000UL
+#define NRF_USBHS_NS_BASE                 0x4F086000UL
+#define NRF_USBHS_S_BASE                  0x5F086000UL
 #define NRF_GIPCT0_NS_BASE                0x4F8D1000UL
 #define NRF_GIPCT0_S_BASE                 0x5F8D1000UL
 #define NRF_GMUTEX0_NS_BASE               0x4F8D2000UL
-#define NRF_GGENERIC55_NS_BASE            0x4F8D3000UL
-#define NRF_GGENERIC55_S_BASE             0x5F8D3000UL
-#define NRF_GGENERIC56_NS_BASE            0x4F8D4000UL
-#define NRF_GGENERIC56_S_BASE             0x5F8D4000UL
-#define NRF_GGENERIC57_NS_BASE            0x4F8D5000UL
-#define NRF_GGENERIC57_S_BASE             0x5F8D5000UL
-#define NRF_GGENERIC58_NS_BASE            0x4F8D6000UL
-#define NRF_GGENERIC58_S_BASE             0x5F8D6000UL
+#define NRF_I3C0_NS_BASE                  0x4F8D3000UL
+#define NRF_I3C0_S_BASE                   0x5F8D3000UL
+#define NRF_I3C1_NS_BASE                  0x4F8D4000UL
+#define NRF_I3C1_S_BASE                   0x5F8D4000UL
+#define NRF_I3C2_NS_BASE                  0x4F8D5000UL
+#define NRF_I3C2_S_BASE                   0x5F8D5000UL
+#define NRF_I3C3_NS_BASE                  0x4F8D6000UL
+#define NRF_I3C3_S_BASE                   0x5F8D6000UL
 #define NRF_GDPPIC0_NS_BASE               0x4F8E1000UL
 #define NRF_GDPPIC0_S_BASE                0x5F8E1000UL
 #define NRF_GTIMER0_NS_BASE               0x4F8E2000UL
@@ -324,9 +332,13 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* ================                                  Peripheral Declaration                                  ================ */
 /* =========================================================================================================================== */
 
+#define NRF_USBHSCORE0_NS                 ((NRF_USBHSCORE_Type*)                NRF_USBHSCORE0_NS_BASE)
+#define NRF_I3CCORE0_NS                   ((NRF_I3CCORE_Type*)                  NRF_I3CCORE0_NS_BASE)
+#define NRF_I3CCORE1_NS                   ((NRF_I3CCORE_Type*)                  NRF_I3CCORE1_NS_BASE)
+#define NRF_I3CCORE2_NS                   ((NRF_I3CCORE_Type*)                  NRF_I3CCORE2_NS_BASE)
+#define NRF_I3CCORE3_NS                   ((NRF_I3CCORE_Type*)                  NRF_I3CCORE3_NS_BASE)
 #define NRF_EASYVDMA_NS                   ((NRF_EASYVDMA_Type*)                 NRF_EASYVDMA_NS_BASE)
-#define NRF_GGENERIC59_NS                 ((NRF_GENERIC_Type*)                  NRF_GGENERIC59_NS_BASE)
-#define NRF_GGENERIC59_S                  ((NRF_GENERIC_Type*)                  NRF_GGENERIC59_S_BASE)
+#define NRF_TDDCONF_S                     ((NRF_TDDCONF_Type*)                  NRF_TDDCONF_S_BASE)
 #define NRF_GGENERIC60_NS                 ((NRF_GENERIC_Type*)                  NRF_GGENERIC60_NS_BASE)
 #define NRF_GGENERIC60_S                  ((NRF_GENERIC_Type*)                  NRF_GGENERIC60_S_BASE)
 #define NRF_TSGEN_NS                      ((NRF_GENERIC_Type*)                  NRF_TSGEN_NS_BASE)
@@ -348,17 +360,19 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define NRF_GPIOTE0_S                     ((NRF_GPIOTE_Type*)                   NRF_GPIOTE0_S_BASE)
 #define NRF_GPIOTE1_NS                    ((NRF_GPIOTE_Type*)                   NRF_GPIOTE1_NS_BASE)
 #define NRF_GPIOTE1_S                     ((NRF_GPIOTE_Type*)                   NRF_GPIOTE1_S_BASE)
+#define NRF_USBHS_NS                      ((NRF_USBHS_Type*)                    NRF_USBHS_NS_BASE)
+#define NRF_USBHS_S                       ((NRF_USBHS_Type*)                    NRF_USBHS_S_BASE)
 #define NRF_GIPCT0_NS                     ((NRF_IPCT_Type*)                     NRF_GIPCT0_NS_BASE)
 #define NRF_GIPCT0_S                      ((NRF_IPCT_Type*)                     NRF_GIPCT0_S_BASE)
 #define NRF_GMUTEX0_NS                    ((NRF_MUTEX_Type*)                    NRF_GMUTEX0_NS_BASE)
-#define NRF_GGENERIC55_NS                 ((NRF_GENERIC_Type*)                  NRF_GGENERIC55_NS_BASE)
-#define NRF_GGENERIC55_S                  ((NRF_GENERIC_Type*)                  NRF_GGENERIC55_S_BASE)
-#define NRF_GGENERIC56_NS                 ((NRF_GENERIC_Type*)                  NRF_GGENERIC56_NS_BASE)
-#define NRF_GGENERIC56_S                  ((NRF_GENERIC_Type*)                  NRF_GGENERIC56_S_BASE)
-#define NRF_GGENERIC57_NS                 ((NRF_GENERIC_Type*)                  NRF_GGENERIC57_NS_BASE)
-#define NRF_GGENERIC57_S                  ((NRF_GENERIC_Type*)                  NRF_GGENERIC57_S_BASE)
-#define NRF_GGENERIC58_NS                 ((NRF_GENERIC_Type*)                  NRF_GGENERIC58_NS_BASE)
-#define NRF_GGENERIC58_S                  ((NRF_GENERIC_Type*)                  NRF_GGENERIC58_S_BASE)
+#define NRF_I3C0_NS                       ((NRF_I3C_Type*)                      NRF_I3C0_NS_BASE)
+#define NRF_I3C0_S                        ((NRF_I3C_Type*)                      NRF_I3C0_S_BASE)
+#define NRF_I3C1_NS                       ((NRF_I3C_Type*)                      NRF_I3C1_NS_BASE)
+#define NRF_I3C1_S                        ((NRF_I3C_Type*)                      NRF_I3C1_S_BASE)
+#define NRF_I3C2_NS                       ((NRF_I3C_Type*)                      NRF_I3C2_NS_BASE)
+#define NRF_I3C2_S                        ((NRF_I3C_Type*)                      NRF_I3C2_S_BASE)
+#define NRF_I3C3_NS                       ((NRF_I3C_Type*)                      NRF_I3C3_NS_BASE)
+#define NRF_I3C3_S                        ((NRF_I3C_Type*)                      NRF_I3C3_S_BASE)
 #define NRF_GDPPIC0_NS                    ((NRF_DPPIC_Type*)                    NRF_GDPPIC0_NS_BASE)
 #define NRF_GDPPIC0_S                     ((NRF_DPPIC_Type*)                    NRF_GDPPIC0_S_BASE)
 #define NRF_GTIMER0_NS                    ((NRF_TIMER_Type*)                    NRF_GTIMER0_NS_BASE)
@@ -574,8 +588,12 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* =========================================================================================================================== */
 
 #ifdef NRF_NONSECURE                                 /*!< Remap NRF_X_NS instances to NRF_X symbol for ease of use.            */
+  #define NRF_USBHSCORE0                          NRF_USBHSCORE0_NS
+  #define NRF_I3CCORE0                            NRF_I3CCORE0_NS
+  #define NRF_I3CCORE1                            NRF_I3CCORE1_NS
+  #define NRF_I3CCORE2                            NRF_I3CCORE2_NS
+  #define NRF_I3CCORE3                            NRF_I3CCORE3_NS
   #define NRF_EASYVDMA                            NRF_EASYVDMA_NS
-  #define NRF_GGENERIC59                          NRF_GGENERIC59_NS
   #define NRF_GGENERIC60                          NRF_GGENERIC60_NS
   #define NRF_TSGEN                               NRF_TSGEN_NS
   #define NRF_STM                                 NRF_STM_NS
@@ -594,12 +612,13 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   #define NRF_ATBFUNNEL3                          NRF_ATBFUNNEL3_NS
   #define NRF_GPIOTE0                             NRF_GPIOTE0_NS
   #define NRF_GPIOTE1                             NRF_GPIOTE1_NS
+  #define NRF_USBHS                               NRF_USBHS_NS
   #define NRF_GIPCT0                              NRF_GIPCT0_NS
   #define NRF_GMUTEX0                             NRF_GMUTEX0_NS
-  #define NRF_GGENERIC55                          NRF_GGENERIC55_NS
-  #define NRF_GGENERIC56                          NRF_GGENERIC56_NS
-  #define NRF_GGENERIC57                          NRF_GGENERIC57_NS
-  #define NRF_GGENERIC58                          NRF_GGENERIC58_NS
+  #define NRF_I3C0                                NRF_I3C0_NS
+  #define NRF_I3C1                                NRF_I3C1_NS
+  #define NRF_I3C2                                NRF_I3C2_NS
+  #define NRF_I3C3                                NRF_I3C3_NS
   #define NRF_GDPPIC0                             NRF_GDPPIC0_NS
   #define NRF_GTIMER0                             NRF_GTIMER0_NS
   #define NRF_GTIMER1                             NRF_GTIMER1_NS
@@ -706,8 +725,13 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   #define NRF_TWIS8                               NRF_TWIS8_NS
   #define NRF_UARTE8                              NRF_UARTE8_NS
 #else                                                /*!< Remap NRF_X_S instances to NRF_X symbol for ease of use.             */
+  #define NRF_USBHSCORE0                          NRF_USBHSCORE0_NS
+  #define NRF_I3CCORE0                            NRF_I3CCORE0_NS
+  #define NRF_I3CCORE1                            NRF_I3CCORE1_NS
+  #define NRF_I3CCORE2                            NRF_I3CCORE2_NS
+  #define NRF_I3CCORE3                            NRF_I3CCORE3_NS
   #define NRF_EASYVDMA                            NRF_EASYVDMA_NS
-  #define NRF_GGENERIC59                          NRF_GGENERIC59_S
+  #define NRF_TDDCONF                             NRF_TDDCONF_S
   #define NRF_GGENERIC60                          NRF_GGENERIC60_S
   #define NRF_TSGEN                               NRF_TSGEN_NS
   #define NRF_STM                                 NRF_STM_NS
@@ -726,12 +750,13 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   #define NRF_ATBFUNNEL3                          NRF_ATBFUNNEL3_NS
   #define NRF_GPIOTE0                             NRF_GPIOTE0_S
   #define NRF_GPIOTE1                             NRF_GPIOTE1_S
+  #define NRF_USBHS                               NRF_USBHS_S
   #define NRF_GIPCT0                              NRF_GIPCT0_S
   #define NRF_GMUTEX0                             NRF_GMUTEX0_NS
-  #define NRF_GGENERIC55                          NRF_GGENERIC55_S
-  #define NRF_GGENERIC56                          NRF_GGENERIC56_S
-  #define NRF_GGENERIC57                          NRF_GGENERIC57_S
-  #define NRF_GGENERIC58                          NRF_GGENERIC58_S
+  #define NRF_I3C0                                NRF_I3C0_S
+  #define NRF_I3C1                                NRF_I3C1_S
+  #define NRF_I3C2                                NRF_I3C2_S
+  #define NRF_I3C3                                NRF_I3C3_S
   #define NRF_GDPPIC0                             NRF_GDPPIC0_S
   #define NRF_GTIMER0                             NRF_GTIMER0_S
   #define NRF_GTIMER1                             NRF_GTIMER1_S
@@ -854,6 +879,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #elif defined (__TASKING__)
   #pragma warning restore
 #elif defined (__CSMC__)
+  /* anonymous unions are enabled by default */
+#elif defined (_CEVA)
   /* anonymous unions are enabled by default */
 #endif
 

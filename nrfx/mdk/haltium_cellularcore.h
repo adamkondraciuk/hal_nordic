@@ -72,7 +72,7 @@ typedef enum {
 /* ============================================== Processor Specific Interrupts ============================================== */
   SPU0_IRQn                              = 0,        /*!< 0 SPU0                                                               */
   HSFLL_IRQn                             = 1,        /*!< 1 HSFLL                                                              */
-  LRC0_IRQn                              = 2,        /*!< 2 LRC0                                                               */
+  LRCCONF0_IRQn                          = 2,        /*!< 2 LRCCONF0                                                           */
   MPC_IRQn                               = 3,        /*!< 3 MPC                                                                */
   GENERIC2_IRQn                          = 4,        /*!< 4 GENERIC2                                                           */
   MVDMA_IRQn                             = 5,        /*!< 5 MVDMA                                                              */
@@ -80,25 +80,17 @@ typedef enum {
   AESLTE_IRQn                            = 8,        /*!< 8 AESLTE                                                             */
   SNOW_IRQn                              = 9,        /*!< 9 SNOW                                                               */
   ZUC_IRQn                               = 10,       /*!< 10 ZUC                                                               */
-  GENERIC3_IRQn                          = 12,       /*!< 12 GENERIC3                                                          */
-  GENERIC4_IRQn                          = 13,       /*!< 13 GENERIC4                                                          */
   SPU1_IRQn                              = 16,       /*!< 16 SPU1                                                              */
-  LRC1_IRQn                              = 17,       /*!< 17 LRC1                                                              */
+  LRCCONF1_IRQn                          = 17,       /*!< 17 LRCCONF1                                                          */
   WDT0_IRQn                              = 21,       /*!< 21 WDT0                                                              */
   WDT1_IRQn                              = 22,       /*!< 22 WDT1                                                              */
   RTC_IRQn                               = 23,       /*!< 23 RTC                                                               */
-  GENERIC6_IRQn                          = 24,       /*!< 24 GENERIC6                                                          */
-  GENERIC7_IRQn                          = 25,       /*!< 25 GENERIC7                                                          */
   SPU2_IRQn                              = 32,       /*!< 32 SPU2                                                              */
-  LRC2_IRQn                              = 33,       /*!< 33 LRC2                                                              */
+  LRCCONF2_IRQn                          = 33,       /*!< 33 LRCCONF2                                                          */
   MCPLL_IRQn                             = 35,       /*!< 35 MCPLL                                                             */
   LFCLKCALIBMEAS_IRQn                    = 37,       /*!< 37 LFCLKCALIBMEAS                                                    */
-  GENERIC9_IRQn                          = 40,       /*!< 40 GENERIC9                                                          */
-  GENERIC10_IRQn                         = 41,       /*!< 41 GENERIC10                                                         */
   SPU3_IRQn                              = 48,       /*!< 48 SPU3                                                              */
-  LRC3_IRQn                              = 49,       /*!< 49 LRC3                                                              */
-  GENERIC12_IRQn                         = 53,       /*!< 53 GENERIC12                                                         */
-  GENERIC13_IRQn                         = 54,       /*!< 54 GENERIC13                                                         */
+  LRCCONF3_IRQn                          = 49,       /*!< 49 LRCCONF3                                                          */
   IPCT0_IRQn                             = 64,       /*!< 64 IPCT0                                                             */
   IPCT1_IRQn                             = 65,       /*!< 65 IPCT1                                                             */
   IPCT2_IRQn                             = 66,       /*!< 66 IPCT2                                                             */
@@ -117,11 +109,12 @@ typedef enum {
   GPIOTE01_IRQn                          = 105,      /*!< 105 GPIOTE01                                                         */
   GPIOTE10_IRQn                          = 106,      /*!< 106 GPIOTE10                                                         */
   GPIOTE11_IRQn                          = 107,      /*!< 107 GPIOTE11                                                         */
+  USBHS_IRQn                             = 134,      /*!< 134 USBHS                                                            */
   GIPCT00_IRQn                           = 209,      /*!< 209 GIPCT00                                                          */
-  GGENERIC55_IRQn                        = 211,      /*!< 211 GGENERIC55                                                       */
-  GGENERIC56_IRQn                        = 212,      /*!< 212 GGENERIC56                                                       */
-  GGENERIC57_IRQn                        = 213,      /*!< 213 GGENERIC57                                                       */
-  GGENERIC58_IRQn                        = 214,      /*!< 214 GGENERIC58                                                       */
+  I3C0_IRQn                              = 211,      /*!< 211 I3C0                                                             */
+  I3C1_IRQn                              = 212,      /*!< 212 I3C1                                                             */
+  I3C2_IRQn                              = 213,      /*!< 213 I3C2                                                             */
+  I3C3_IRQn                              = 214,      /*!< 214 I3C3                                                             */
   GTIMER0_IRQn                           = 226,      /*!< 226 GTIMER0                                                          */
   GTIMER1_IRQn                           = 227,      /*!< 227 GTIMER1                                                          */
   PWM0_IRQn                              = 228,      /*!< 228 PWM0                                                             */
@@ -208,6 +201,8 @@ typedef enum {
   #pragma warning 586
 #elif defined (__CSMC__)
   /* anonymous unions are enabled by default */
+#elif defined (_CEVA)
+  /* anonymous unions are enabled by default */
 #else
   #warning Unsupported compiler type
 #endif
@@ -216,9 +211,8 @@ typedef enum {
 /* ================                                  Peripheral Address Map                                  ================ */
 /* =========================================================================================================================== */
 
-#define NRF_CELLULARCORE_ETM_NS_BASE      0x00410000UL
-#define NRF_CELLULARCORE_CTI_NS_BASE      0x00420000UL
-#define NRF_CELLULARCORE_GENERIC14_S_BASE 0xE0042000UL
+#define NRF_CELLULARCORE_ETM_NS_BASE      0xE0041000UL
+#define NRF_CELLULARCORE_CTI_NS_BASE      0xE0042000UL
 #define NRF_CELLULARCORE_CPUC_S_BASE      0xE0080000UL
 #define NRF_CELLULARCORE_CACHE0_S_BASE    0xE0082000UL
 #define NRF_CELLULARCORE_CACHE1_S_BASE    0xE0083000UL
@@ -228,7 +222,7 @@ typedef enum {
 #define NRF_CELLULARCORE_CACHE1INFO_S_BASE 0xE0F0C000UL
 #define NRF_CELLULARCORE_SPU0_S_BASE      0x54000000UL
 #define NRF_CELLULARCORE_HSFLL_S_BASE     0x54001000UL
-#define NRF_CELLULARCORE_LRC0_S_BASE      0x54002000UL
+#define NRF_CELLULARCORE_LRCCONF0_S_BASE  0x54002000UL
 #define NRF_CELLULARCORE_MPC_S_BASE       0x54003000UL
 #define NRF_CELLULARCORE_GENERIC2_S_BASE  0x54004000UL
 #define NRF_CELLULARCORE_MVDMA_NS_BASE    0x44005000UL
@@ -243,10 +237,10 @@ typedef enum {
 #define NRF_CELLULARCORE_ZUC_S_BASE       0x5400A000UL
 #define NRF_CELLULARCORE_TRACEDELAYREG_NS_BASE 0x4400B000UL
 #define NRF_CELLULARCORE_TRACEDELAYREG_S_BASE 0x5400B000UL
-#define NRF_CELLULARCORE_GENERIC3_S_BASE  0x5400C000UL
-#define NRF_CELLULARCORE_GENERIC4_S_BASE  0x5400D000UL
+#define NRF_CELLULARCORE_PCGCS0_S_BASE    0x5400C000UL
+#define NRF_CELLULARCORE_PCGCM0_S_BASE    0x5400D000UL
 #define NRF_CELLULARCORE_SPU1_S_BASE      0x54010000UL
-#define NRF_CELLULARCORE_LRC1_S_BASE      0x54011000UL
+#define NRF_CELLULARCORE_LRCCONF1_S_BASE  0x54011000UL
 #define NRF_CELLULARCORE_CPUCONF_NS_BASE  0x44012000UL
 #define NRF_CELLULARCORE_CPUCONF_S_BASE   0x54012000UL
 #define NRF_CELLULARCORE_MEMCONF_NS_BASE  0x44013000UL
@@ -257,10 +251,10 @@ typedef enum {
 #define NRF_CELLULARCORE_WDT1_S_BASE      0x54016000UL
 #define NRF_CELLULARCORE_RTC_NS_BASE      0x44017000UL
 #define NRF_CELLULARCORE_RTC_S_BASE       0x54017000UL
-#define NRF_CELLULARCORE_GENERIC6_S_BASE  0x54018000UL
-#define NRF_CELLULARCORE_GENERIC7_S_BASE  0x54019000UL
+#define NRF_CELLULARCORE_PCGCS1_S_BASE    0x54018000UL
+#define NRF_CELLULARCORE_PCGCM1_S_BASE    0x54019000UL
 #define NRF_CELLULARCORE_SPU2_S_BASE      0x54020000UL
-#define NRF_CELLULARCORE_LRC2_S_BASE      0x54021000UL
+#define NRF_CELLULARCORE_LRCCONF2_S_BASE  0x54021000UL
 #define NRF_CELLULARCORE_DPPIC0_NS_BASE   0x44022000UL
 #define NRF_CELLULARCORE_DPPIC0_S_BASE    0x54022000UL
 #define NRF_CELLULARCORE_MCPLL_NS_BASE    0x44023000UL
@@ -271,16 +265,16 @@ typedef enum {
 #define NRF_CELLULARCORE_TIMEREVENTSYNCH_S_BASE 0x54026000UL
 #define NRF_CELLULARCORE_TIMEMARKMUX0_NS_BASE 0x44027000UL
 #define NRF_CELLULARCORE_TIMEMARKMUX0_S_BASE 0x54027000UL
-#define NRF_CELLULARCORE_GENERIC9_S_BASE  0x54028000UL
-#define NRF_CELLULARCORE_GENERIC10_S_BASE 0x54029000UL
+#define NRF_CELLULARCORE_PCGCS2_S_BASE    0x54028000UL
+#define NRF_CELLULARCORE_PCGCM2_S_BASE    0x54029000UL
 #define NRF_CELLULARCORE_SPU3_S_BASE      0x54030000UL
-#define NRF_CELLULARCORE_LRC3_S_BASE      0x54031000UL
+#define NRF_CELLULARCORE_LRCCONF3_S_BASE  0x54031000UL
 #define NRF_CELLULARCORE_DPPIC1_NS_BASE   0x44032000UL
 #define NRF_CELLULARCORE_DPPIC1_S_BASE    0x54032000UL
 #define NRF_CELLULARCORE_TIMEMARKMUX1_NS_BASE 0x44034000UL
 #define NRF_CELLULARCORE_TIMEMARKMUX1_S_BASE 0x54034000UL
-#define NRF_CELLULARCORE_GENERIC12_S_BASE 0x54035000UL
-#define NRF_CELLULARCORE_GENERIC13_S_BASE 0x54036000UL
+#define NRF_CELLULARCORE_PCGCS3_S_BASE    0x54035000UL
+#define NRF_CELLULARCORE_PCGCM3_S_BASE    0x54036000UL
 #define NRF_CELLULARCORE_IPCT_NS_BASE     0x44014000UL
 #define NRF_CELLULARCORE_IPCT_S_BASE      0x54014000UL
 #define NRF_CELLULARCORE_SYSTEMTIMER_NS_BASE 0x44007000UL
@@ -298,7 +292,6 @@ typedef enum {
 
 #define NRF_CELLULARCORE_ETM_NS           ((NRF_ETM_Type*)                      NRF_CELLULARCORE_ETM_NS_BASE)
 #define NRF_CELLULARCORE_CTI_NS           ((NRF_CTI_Type*)                      NRF_CELLULARCORE_CTI_NS_BASE)
-#define NRF_CELLULARCORE_GENERIC14_S      ((NRF_GENERIC_Type*)                  NRF_CELLULARCORE_GENERIC14_S_BASE)
 #define NRF_CELLULARCORE_CPUC_S           ((NRF_CM33SS_Type*)                   NRF_CELLULARCORE_CPUC_S_BASE)
 #define NRF_CELLULARCORE_CACHE0_S         ((NRF_CACHE_Type*)                    NRF_CELLULARCORE_CACHE0_S_BASE)
 #define NRF_CELLULARCORE_CACHE1_S         ((NRF_CACHE_Type*)                    NRF_CELLULARCORE_CACHE1_S_BASE)
@@ -308,7 +301,7 @@ typedef enum {
 #define NRF_CELLULARCORE_CACHE1INFO_S     ((NRF_CACHEINFO_Type*)                NRF_CELLULARCORE_CACHE1INFO_S_BASE)
 #define NRF_CELLULARCORE_SPU0_S           ((NRF_SPU_Type*)                      NRF_CELLULARCORE_SPU0_S_BASE)
 #define NRF_CELLULARCORE_HSFLL_S          ((NRF_HSFLL_Type*)                    NRF_CELLULARCORE_HSFLL_S_BASE)
-#define NRF_CELLULARCORE_LRC0_S           ((NRF_LRC_Type*)                      NRF_CELLULARCORE_LRC0_S_BASE)
+#define NRF_CELLULARCORE_LRCCONF0_S       ((NRF_LRCCONF_Type*)                  NRF_CELLULARCORE_LRCCONF0_S_BASE)
 #define NRF_CELLULARCORE_MPC_S            ((NRF_MPC_Type*)                      NRF_CELLULARCORE_MPC_S_BASE)
 #define NRF_CELLULARCORE_GENERIC2_S       ((NRF_GENERIC_Type*)                  NRF_CELLULARCORE_GENERIC2_S_BASE)
 #define NRF_CELLULARCORE_MVDMA_NS         ((NRF_MVDMA_Type*)                    NRF_CELLULARCORE_MVDMA_NS_BASE)
@@ -323,10 +316,10 @@ typedef enum {
 #define NRF_CELLULARCORE_ZUC_S            ((NRF_ZUC_Type*)                      NRF_CELLULARCORE_ZUC_S_BASE)
 #define NRF_CELLULARCORE_TRACEDELAYREG_NS ((NRF_TRACEDELAYREG_Type*)            NRF_CELLULARCORE_TRACEDELAYREG_NS_BASE)
 #define NRF_CELLULARCORE_TRACEDELAYREG_S  ((NRF_TRACEDELAYREG_Type*)            NRF_CELLULARCORE_TRACEDELAYREG_S_BASE)
-#define NRF_CELLULARCORE_GENERIC3_S       ((NRF_GENERIC_Type*)                  NRF_CELLULARCORE_GENERIC3_S_BASE)
-#define NRF_CELLULARCORE_GENERIC4_S       ((NRF_GENERIC_Type*)                  NRF_CELLULARCORE_GENERIC4_S_BASE)
+#define NRF_CELLULARCORE_PCGCS0_S         ((NRF_PCGCSLAVE_Type*)                NRF_CELLULARCORE_PCGCS0_S_BASE)
+#define NRF_CELLULARCORE_PCGCM0_S         ((NRF_PCGCMASTER_Type*)               NRF_CELLULARCORE_PCGCM0_S_BASE)
 #define NRF_CELLULARCORE_SPU1_S           ((NRF_SPU_Type*)                      NRF_CELLULARCORE_SPU1_S_BASE)
-#define NRF_CELLULARCORE_LRC1_S           ((NRF_LRC_Type*)                      NRF_CELLULARCORE_LRC1_S_BASE)
+#define NRF_CELLULARCORE_LRCCONF1_S       ((NRF_LRCCONF_Type*)                  NRF_CELLULARCORE_LRCCONF1_S_BASE)
 #define NRF_CELLULARCORE_CPUCONF_NS       ((NRF_CPUCONF_Type*)                  NRF_CELLULARCORE_CPUCONF_NS_BASE)
 #define NRF_CELLULARCORE_CPUCONF_S        ((NRF_CPUCONF_Type*)                  NRF_CELLULARCORE_CPUCONF_S_BASE)
 #define NRF_CELLULARCORE_MEMCONF_NS       ((NRF_MEMCONF_Type*)                  NRF_CELLULARCORE_MEMCONF_NS_BASE)
@@ -337,10 +330,10 @@ typedef enum {
 #define NRF_CELLULARCORE_WDT1_S           ((NRF_WDT_Type*)                      NRF_CELLULARCORE_WDT1_S_BASE)
 #define NRF_CELLULARCORE_RTC_NS           ((NRF_RTC_Type*)                      NRF_CELLULARCORE_RTC_NS_BASE)
 #define NRF_CELLULARCORE_RTC_S            ((NRF_RTC_Type*)                      NRF_CELLULARCORE_RTC_S_BASE)
-#define NRF_CELLULARCORE_GENERIC6_S       ((NRF_GENERIC_Type*)                  NRF_CELLULARCORE_GENERIC6_S_BASE)
-#define NRF_CELLULARCORE_GENERIC7_S       ((NRF_GENERIC_Type*)                  NRF_CELLULARCORE_GENERIC7_S_BASE)
+#define NRF_CELLULARCORE_PCGCS1_S         ((NRF_PCGCSLAVE_Type*)                NRF_CELLULARCORE_PCGCS1_S_BASE)
+#define NRF_CELLULARCORE_PCGCM1_S         ((NRF_PCGCMASTER_Type*)               NRF_CELLULARCORE_PCGCM1_S_BASE)
 #define NRF_CELLULARCORE_SPU2_S           ((NRF_SPU_Type*)                      NRF_CELLULARCORE_SPU2_S_BASE)
-#define NRF_CELLULARCORE_LRC2_S           ((NRF_LRC_Type*)                      NRF_CELLULARCORE_LRC2_S_BASE)
+#define NRF_CELLULARCORE_LRCCONF2_S       ((NRF_LRCCONF_Type*)                  NRF_CELLULARCORE_LRCCONF2_S_BASE)
 #define NRF_CELLULARCORE_DPPIC0_NS        ((NRF_DPPIC_Type*)                    NRF_CELLULARCORE_DPPIC0_NS_BASE)
 #define NRF_CELLULARCORE_DPPIC0_S         ((NRF_DPPIC_Type*)                    NRF_CELLULARCORE_DPPIC0_S_BASE)
 #define NRF_CELLULARCORE_MCPLL_NS         ((NRF_MCPLL_Type*)                    NRF_CELLULARCORE_MCPLL_NS_BASE)
@@ -351,16 +344,16 @@ typedef enum {
 #define NRF_CELLULARCORE_TIMEREVENTSYNCH_S ((NRF_TIMEREVENTSYNCH_Type*)         NRF_CELLULARCORE_TIMEREVENTSYNCH_S_BASE)
 #define NRF_CELLULARCORE_TIMEMARKMUX0_NS  ((NRF_TIMEMARKMUX_Type*)              NRF_CELLULARCORE_TIMEMARKMUX0_NS_BASE)
 #define NRF_CELLULARCORE_TIMEMARKMUX0_S   ((NRF_TIMEMARKMUX_Type*)              NRF_CELLULARCORE_TIMEMARKMUX0_S_BASE)
-#define NRF_CELLULARCORE_GENERIC9_S       ((NRF_GENERIC_Type*)                  NRF_CELLULARCORE_GENERIC9_S_BASE)
-#define NRF_CELLULARCORE_GENERIC10_S      ((NRF_GENERIC_Type*)                  NRF_CELLULARCORE_GENERIC10_S_BASE)
+#define NRF_CELLULARCORE_PCGCS2_S         ((NRF_PCGCSLAVE_Type*)                NRF_CELLULARCORE_PCGCS2_S_BASE)
+#define NRF_CELLULARCORE_PCGCM2_S         ((NRF_PCGCMASTER_Type*)               NRF_CELLULARCORE_PCGCM2_S_BASE)
 #define NRF_CELLULARCORE_SPU3_S           ((NRF_SPU_Type*)                      NRF_CELLULARCORE_SPU3_S_BASE)
-#define NRF_CELLULARCORE_LRC3_S           ((NRF_LRC_Type*)                      NRF_CELLULARCORE_LRC3_S_BASE)
+#define NRF_CELLULARCORE_LRCCONF3_S       ((NRF_LRCCONF_Type*)                  NRF_CELLULARCORE_LRCCONF3_S_BASE)
 #define NRF_CELLULARCORE_DPPIC1_NS        ((NRF_DPPIC_Type*)                    NRF_CELLULARCORE_DPPIC1_NS_BASE)
 #define NRF_CELLULARCORE_DPPIC1_S         ((NRF_DPPIC_Type*)                    NRF_CELLULARCORE_DPPIC1_S_BASE)
 #define NRF_CELLULARCORE_TIMEMARKMUX1_NS  ((NRF_TIMEMARKMUX_Type*)              NRF_CELLULARCORE_TIMEMARKMUX1_NS_BASE)
 #define NRF_CELLULARCORE_TIMEMARKMUX1_S   ((NRF_TIMEMARKMUX_Type*)              NRF_CELLULARCORE_TIMEMARKMUX1_S_BASE)
-#define NRF_CELLULARCORE_GENERIC12_S      ((NRF_GENERIC_Type*)                  NRF_CELLULARCORE_GENERIC12_S_BASE)
-#define NRF_CELLULARCORE_GENERIC13_S      ((NRF_GENERIC_Type*)                  NRF_CELLULARCORE_GENERIC13_S_BASE)
+#define NRF_CELLULARCORE_PCGCS3_S         ((NRF_PCGCSLAVE_Type*)                NRF_CELLULARCORE_PCGCS3_S_BASE)
+#define NRF_CELLULARCORE_PCGCM3_S         ((NRF_PCGCMASTER_Type*)               NRF_CELLULARCORE_PCGCM3_S_BASE)
 #define NRF_CELLULARCORE_IPCT_NS          ((NRF_IPCT_Type*)                     NRF_CELLULARCORE_IPCT_NS_BASE)
 #define NRF_CELLULARCORE_IPCT_S           ((NRF_IPCT_Type*)                     NRF_CELLULARCORE_IPCT_S_BASE)
 #define NRF_CELLULARCORE_SYSTEMTIMER_NS   ((NRF_MODEMTIMER_Type*)               NRF_CELLULARCORE_SYSTEMTIMER_NS_BASE)
@@ -405,7 +398,6 @@ typedef enum {
 #else                                                /*!< Remap NRF_X_S instances to NRF_X symbol for ease of use.             */
   #define NRF_CELLULARCORE_ETM                    NRF_CELLULARCORE_ETM_NS
   #define NRF_CELLULARCORE_CTI                    NRF_CELLULARCORE_CTI_NS
-  #define NRF_CELLULARCORE_GENERIC14              NRF_CELLULARCORE_GENERIC14_S
   #define NRF_CELLULARCORE_CPUC                   NRF_CELLULARCORE_CPUC_S
   #define NRF_CELLULARCORE_CACHE0                 NRF_CELLULARCORE_CACHE0_S
   #define NRF_CELLULARCORE_CACHE1                 NRF_CELLULARCORE_CACHE1_S
@@ -415,7 +407,7 @@ typedef enum {
   #define NRF_CELLULARCORE_CACHE1INFO             NRF_CELLULARCORE_CACHE1INFO_S
   #define NRF_CELLULARCORE_SPU0                   NRF_CELLULARCORE_SPU0_S
   #define NRF_CELLULARCORE_HSFLL                  NRF_CELLULARCORE_HSFLL_S
-  #define NRF_CELLULARCORE_LRC0                   NRF_CELLULARCORE_LRC0_S
+  #define NRF_CELLULARCORE_LRCCONF0               NRF_CELLULARCORE_LRCCONF0_S
   #define NRF_CELLULARCORE_MPC                    NRF_CELLULARCORE_MPC_S
   #define NRF_CELLULARCORE_GENERIC2               NRF_CELLULARCORE_GENERIC2_S
   #define NRF_CELLULARCORE_MVDMA                  NRF_CELLULARCORE_MVDMA_S
@@ -424,32 +416,32 @@ typedef enum {
   #define NRF_CELLULARCORE_SNOW                   NRF_CELLULARCORE_SNOW_S
   #define NRF_CELLULARCORE_ZUC                    NRF_CELLULARCORE_ZUC_S
   #define NRF_CELLULARCORE_TRACEDELAYREG          NRF_CELLULARCORE_TRACEDELAYREG_S
-  #define NRF_CELLULARCORE_GENERIC3               NRF_CELLULARCORE_GENERIC3_S
-  #define NRF_CELLULARCORE_GENERIC4               NRF_CELLULARCORE_GENERIC4_S
+  #define NRF_CELLULARCORE_PCGCS0                 NRF_CELLULARCORE_PCGCS0_S
+  #define NRF_CELLULARCORE_PCGCM0                 NRF_CELLULARCORE_PCGCM0_S
   #define NRF_CELLULARCORE_SPU1                   NRF_CELLULARCORE_SPU1_S
-  #define NRF_CELLULARCORE_LRC1                   NRF_CELLULARCORE_LRC1_S
+  #define NRF_CELLULARCORE_LRCCONF1               NRF_CELLULARCORE_LRCCONF1_S
   #define NRF_CELLULARCORE_CPUCONF                NRF_CELLULARCORE_CPUCONF_S
   #define NRF_CELLULARCORE_MEMCONF                NRF_CELLULARCORE_MEMCONF_S
   #define NRF_CELLULARCORE_WDT0                   NRF_CELLULARCORE_WDT0_S
   #define NRF_CELLULARCORE_WDT1                   NRF_CELLULARCORE_WDT1_S
   #define NRF_CELLULARCORE_RTC                    NRF_CELLULARCORE_RTC_S
-  #define NRF_CELLULARCORE_GENERIC6               NRF_CELLULARCORE_GENERIC6_S
-  #define NRF_CELLULARCORE_GENERIC7               NRF_CELLULARCORE_GENERIC7_S
+  #define NRF_CELLULARCORE_PCGCS1                 NRF_CELLULARCORE_PCGCS1_S
+  #define NRF_CELLULARCORE_PCGCM1                 NRF_CELLULARCORE_PCGCM1_S
   #define NRF_CELLULARCORE_SPU2                   NRF_CELLULARCORE_SPU2_S
-  #define NRF_CELLULARCORE_LRC2                   NRF_CELLULARCORE_LRC2_S
+  #define NRF_CELLULARCORE_LRCCONF2               NRF_CELLULARCORE_LRCCONF2_S
   #define NRF_CELLULARCORE_DPPIC0                 NRF_CELLULARCORE_DPPIC0_S
   #define NRF_CELLULARCORE_MCPLL                  NRF_CELLULARCORE_MCPLL_S
   #define NRF_CELLULARCORE_LFCLKCALIBMEAS         NRF_CELLULARCORE_LFCLKCALIBMEAS_S
   #define NRF_CELLULARCORE_TIMEREVENTSYNCH        NRF_CELLULARCORE_TIMEREVENTSYNCH_S
   #define NRF_CELLULARCORE_TIMEMARKMUX0           NRF_CELLULARCORE_TIMEMARKMUX0_S
-  #define NRF_CELLULARCORE_GENERIC9               NRF_CELLULARCORE_GENERIC9_S
-  #define NRF_CELLULARCORE_GENERIC10              NRF_CELLULARCORE_GENERIC10_S
+  #define NRF_CELLULARCORE_PCGCS2                 NRF_CELLULARCORE_PCGCS2_S
+  #define NRF_CELLULARCORE_PCGCM2                 NRF_CELLULARCORE_PCGCM2_S
   #define NRF_CELLULARCORE_SPU3                   NRF_CELLULARCORE_SPU3_S
-  #define NRF_CELLULARCORE_LRC3                   NRF_CELLULARCORE_LRC3_S
+  #define NRF_CELLULARCORE_LRCCONF3               NRF_CELLULARCORE_LRCCONF3_S
   #define NRF_CELLULARCORE_DPPIC1                 NRF_CELLULARCORE_DPPIC1_S
   #define NRF_CELLULARCORE_TIMEMARKMUX1           NRF_CELLULARCORE_TIMEMARKMUX1_S
-  #define NRF_CELLULARCORE_GENERIC12              NRF_CELLULARCORE_GENERIC12_S
-  #define NRF_CELLULARCORE_GENERIC13              NRF_CELLULARCORE_GENERIC13_S
+  #define NRF_CELLULARCORE_PCGCS3                 NRF_CELLULARCORE_PCGCS3_S
+  #define NRF_CELLULARCORE_PCGCM3                 NRF_CELLULARCORE_PCGCM3_S
   #define NRF_CELLULARCORE_IPCT                   NRF_CELLULARCORE_IPCT_S
   #define NRF_CELLULARCORE_SYSTEMTIMER            NRF_CELLULARCORE_SYSTEMTIMER_S
   #define NRF_CELLULARCORE_LTETIMER               NRF_CELLULARCORE_LTETIMER_S
@@ -464,7 +456,6 @@ typedef enum {
 #ifdef NRF_CELLULARCORE                              /*!< Remap NRF_DOMAIN instances to NRF_X symbol for ease of use.          */
   #define NRF_ETM                                 NRF_CELLULARCORE_ETM
   #define NRF_CTI                                 NRF_CELLULARCORE_CTI
-  #define NRF_GENERIC14                           NRF_CELLULARCORE_GENERIC14
   #define NRF_CPUC                                NRF_CELLULARCORE_CPUC
   #define NRF_CACHE0                              NRF_CELLULARCORE_CACHE0
   #define NRF_CACHE1                              NRF_CELLULARCORE_CACHE1
@@ -474,7 +465,7 @@ typedef enum {
   #define NRF_CACHE1INFO                          NRF_CELLULARCORE_CACHE1INFO
   #define NRF_SPU0                                NRF_CELLULARCORE_SPU0
   #define NRF_HSFLL                               NRF_CELLULARCORE_HSFLL
-  #define NRF_LRC0                                NRF_CELLULARCORE_LRC0
+  #define NRF_LRCCONF0                            NRF_CELLULARCORE_LRCCONF0
   #define NRF_MPC                                 NRF_CELLULARCORE_MPC
   #define NRF_GENERIC2                            NRF_CELLULARCORE_GENERIC2
   #define NRF_MVDMA                               NRF_CELLULARCORE_MVDMA
@@ -483,32 +474,32 @@ typedef enum {
   #define NRF_SNOW                                NRF_CELLULARCORE_SNOW
   #define NRF_ZUC                                 NRF_CELLULARCORE_ZUC
   #define NRF_TRACEDELAYREG                       NRF_CELLULARCORE_TRACEDELAYREG
-  #define NRF_GENERIC3                            NRF_CELLULARCORE_GENERIC3
-  #define NRF_GENERIC4                            NRF_CELLULARCORE_GENERIC4
+  #define NRF_PCGCS0                              NRF_CELLULARCORE_PCGCS0
+  #define NRF_PCGCM0                              NRF_CELLULARCORE_PCGCM0
   #define NRF_SPU1                                NRF_CELLULARCORE_SPU1
-  #define NRF_LRC1                                NRF_CELLULARCORE_LRC1
+  #define NRF_LRCCONF1                            NRF_CELLULARCORE_LRCCONF1
   #define NRF_CPUCONF                             NRF_CELLULARCORE_CPUCONF
   #define NRF_MEMCONF                             NRF_CELLULARCORE_MEMCONF
   #define NRF_WDT0                                NRF_CELLULARCORE_WDT0
   #define NRF_WDT1                                NRF_CELLULARCORE_WDT1
   #define NRF_RTC                                 NRF_CELLULARCORE_RTC
-  #define NRF_GENERIC6                            NRF_CELLULARCORE_GENERIC6
-  #define NRF_GENERIC7                            NRF_CELLULARCORE_GENERIC7
+  #define NRF_PCGCS1                              NRF_CELLULARCORE_PCGCS1
+  #define NRF_PCGCM1                              NRF_CELLULARCORE_PCGCM1
   #define NRF_SPU2                                NRF_CELLULARCORE_SPU2
-  #define NRF_LRC2                                NRF_CELLULARCORE_LRC2
+  #define NRF_LRCCONF2                            NRF_CELLULARCORE_LRCCONF2
   #define NRF_DPPIC0                              NRF_CELLULARCORE_DPPIC0
   #define NRF_MCPLL                               NRF_CELLULARCORE_MCPLL
   #define NRF_LFCLKCALIBMEAS                      NRF_CELLULARCORE_LFCLKCALIBMEAS
   #define NRF_TIMEREVENTSYNCH                     NRF_CELLULARCORE_TIMEREVENTSYNCH
   #define NRF_TIMEMARKMUX0                        NRF_CELLULARCORE_TIMEMARKMUX0
-  #define NRF_GENERIC9                            NRF_CELLULARCORE_GENERIC9
-  #define NRF_GENERIC10                           NRF_CELLULARCORE_GENERIC10
+  #define NRF_PCGCS2                              NRF_CELLULARCORE_PCGCS2
+  #define NRF_PCGCM2                              NRF_CELLULARCORE_PCGCM2
   #define NRF_SPU3                                NRF_CELLULARCORE_SPU3
-  #define NRF_LRC3                                NRF_CELLULARCORE_LRC3
+  #define NRF_LRCCONF3                            NRF_CELLULARCORE_LRCCONF3
   #define NRF_DPPIC1                              NRF_CELLULARCORE_DPPIC1
   #define NRF_TIMEMARKMUX1                        NRF_CELLULARCORE_TIMEMARKMUX1
-  #define NRF_GENERIC12                           NRF_CELLULARCORE_GENERIC12
-  #define NRF_GENERIC13                           NRF_CELLULARCORE_GENERIC13
+  #define NRF_PCGCS3                              NRF_CELLULARCORE_PCGCS3
+  #define NRF_PCGCM3                              NRF_CELLULARCORE_PCGCM3
   #define NRF_IPCT                                NRF_CELLULARCORE_IPCT
   #define NRF_SYSTEMTIMER                         NRF_CELLULARCORE_SYSTEMTIMER
   #define NRF_LTETIMER                            NRF_CELLULARCORE_LTETIMER
@@ -531,6 +522,8 @@ typedef enum {
 #elif defined (__TASKING__)
   #pragma warning restore
 #elif defined (__CSMC__)
+  /* anonymous unions are enabled by default */
+#elif defined (_CEVA)
   /* anonymous unions are enabled by default */
 #endif
 

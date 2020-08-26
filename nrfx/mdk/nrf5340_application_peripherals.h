@@ -51,6 +51,17 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define POWER_PRESENT
 #define POWER_COUNT 1
 
+/* Non-Volatile Memory Controller */
+#define NVMC_PRESENT
+#define NVMC_COUNT 1
+
+/* NVM instruction  and data cache */
+#define CACHE_PRESENT
+#define CACHE_COUNT 1
+
+/* Memory Protection Unit */
+#define MPU_REGION_NUM 8
+
 /* Regulators Peripheral */
 #define REGULATORS_PRESENT
 #define REGULATORS_COUNT 1
@@ -67,17 +78,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #define VMC_FEATURE_RAM_REGISTERS_PRESENT
 #define VMC_FEATURE_RAM_REGISTERS_COUNT 8
-
-/* Non-Volatile Memory Controller */
-#define NVMC_PRESENT
-#define NVMC_COUNT 1
-
-/* NVM instruction  and data cache */
-#define CACHE_PRESENT
-#define CACHE_COUNT 1
-
-/* Memory Protection Unit */
-#define MPU_REGION_NUM 8
 
 /* Floating Point Unit */
 #define FPU_PRESENT
@@ -152,6 +152,10 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define WDT_PRESENT
 #define WDT_COUNT 2
 
+/* Serial Peripheral Interface Master */
+#define SPI_PRESENT
+#define SPI_COUNT 4
+
 /* Serial Peripheral Interface Master with DMA */
 #define SPIM_PRESENT
 #define SPIM_COUNT 5
@@ -195,6 +199,10 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define SPIS2_EASYDMA_MAXCNT_SIZE 16
 #define SPIS3_EASYDMA_MAXCNT_SIZE 16
 
+/* Two Wire Interface Master */
+#define TWI_PRESENT
+#define TWI_COUNT 4
+
 /* Two Wire Interface Master with DMA */
 #define TWIM_PRESENT
 #define TWIM_COUNT 4
@@ -212,6 +220,10 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define TWIS1_EASYDMA_MAXCNT_SIZE 16
 #define TWIS2_EASYDMA_MAXCNT_SIZE 16
 #define TWIS3_EASYDMA_MAXCNT_SIZE 16
+
+/* Universal Asynchronous Receiver-Transmitter */
+#define UART_PRESENT
+#define UART_COUNT 4
 
 /* Universal Asynchronous Receiver-Transmitter with DMA */
 #define UARTE_PRESENT

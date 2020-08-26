@@ -44,16 +44,16 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /* MDK version */
 #define MDK_MAJOR_VERSION   8 
-#define MDK_MINOR_VERSION   34 
-#define MDK_MICRO_VERSION   1 
+#define MDK_MINOR_VERSION   35 
+#define MDK_MICRO_VERSION   0 
 
 /* Define NRF50_SERIES for common use in nRF50 series devices. Only if not previously defined. */
-#if defined (NRF5001_XXAA)
+#if defined (NRF5001_XXAA) ||\
+    defined (NRF5002_XXAA)
     #ifndef NRF50_SERIES
         #define NRF50_SERIES
     #endif
 #endif
-
 
 /* Define NRF51_SERIES for common use in nRF51 series devices. Only if not previously defined. */
 #if defined (NRF51) ||\
@@ -165,182 +165,187 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     #endif
 #endif
 
-#if defined(_WIN32)
-    /* Do not include nrf specific files when building for PC host */
-#elif defined(__unix)
-    /* Do not include nrf specific files when building for PC host */
-#elif defined(__APPLE__)
-    /* Do not include nrf specific files when building for PC host */
+/* Device selection for device includes. */
+#if defined (NRF5001_XXAA)
+    #if !defined(EXCLUDE_HEADER)
+        #include "nrf5001.h"
+    #endif
+    #if !defined(EXCLUDE_BITFIELDS)
+        #include "nrf5001_bitfields.h"
+    #endif
+#elif defined (NRF5002_XXAA)
+    #if !defined(EXCLUDE_HEADER)
+        #include "nrf5002.h"
+    #endif
+    #if !defined(EXCLUDE_BITFIELDS)
+        #include "nrf5002_bitfields.h"
+    #endif
+
+#elif defined (NRF5002_XXAA)
+    #if !defined(EXCLUDE_HEADER)
+        #include "nrf5002.h"
+    #endif
+    #if !defined(EXCLUDE_BITFIELDS)
+        #include "nrf5002_bitfields.h"
+    #endif
+
+#elif defined (NRF51)
+    #if !defined(EXCLUDE_HEADER)
+        #include "nrf51.h"
+    #endif
+    #if !defined(EXCLUDE_BITFIELDS)
+        #include "nrf51_bitfields.h"
+    #endif
+    #if !defined(EXCLUDE_PORTABILITY)
+        #include "nrf51_deprecated.h"
+    #endif
+
+#elif defined (NRF52805_XXAA)
+    #if !defined(EXCLUDE_HEADER)
+        #include "nrf52805.h"
+    #endif
+    #if !defined(EXCLUDE_BITFIELDS)
+        #include "nrf52805_bitfields.h"
+    #endif
+
+    #if !defined(EXCLUDE_PORTABILITY)
+        #include "nrf51_to_nrf52810.h"
+        #include "nrf52_to_nrf52810.h"
+        #include "nrf52810_to_nrf52811.h"
+    #endif
+
+#elif defined (NRF52810_XXAA)
+    #if !defined(EXCLUDE_HEADER)
+        #include "nrf52810.h"
+    #endif
+    #if !defined(EXCLUDE_BITFIELDS)
+        #include "nrf52810_bitfields.h"
+    #endif
+    #if !defined(EXCLUDE_PORTABILITY)
+        #include "nrf51_to_nrf52810.h"
+        #include "nrf52_to_nrf52810.h"
+        #include "nrf52810_name_change.h"
+    #endif
+
+#elif defined (NRF52811_XXAA)
+    #if !defined(EXCLUDE_HEADER)
+        #include "nrf52811.h"
+    #endif
+    #if !defined(EXCLUDE_BITFIELDS)
+        #include "nrf52811_bitfields.h"
+    #endif
+
+    #if !defined(EXCLUDE_PORTABILITY)
+        #include "nrf51_to_nrf52810.h"
+        #include "nrf52_to_nrf52810.h"
+        #include "nrf52810_to_nrf52811.h"
+    #endif
+
+#elif defined (NRF52820_XXAA)
+    #if !defined(EXCLUDE_HEADER)
+        #include "nrf52820.h"
+    #endif
+    #if !defined(EXCLUDE_BITFIELDS)
+        #include "nrf52820_bitfields.h"
+    #endif
+    #if !defined(EXCLUDE_PORTABILITY)
+        #include "nrf51_to_nrf52.h"
+        #include "nrf52_to_nrf52833.h"
+        #include "nrf52833_to_nrf52820.h"
+    #endif
+
+#elif defined (NRF52832_XXAA) || defined (NRF52832_XXAB)
+    #if !defined(EXCLUDE_HEADER)
+        #include "nrf52.h"
+    #endif
+    #if !defined(EXCLUDE_BITFIELDS)
+        #include "nrf52_bitfields.h"
+    #endif
+    #if !defined(EXCLUDE_PORTABILITY)
+        #include "nrf51_to_nrf52.h"
+        #include "nrf52_name_change.h"
+    #endif
+
+#elif defined (NRF52833_XXAA)
+    #if !defined(EXCLUDE_HEADER)
+        #include "nrf52833.h"
+    #endif
+    #if !defined(EXCLUDE_BITFIELDS)
+        #include "nrf52833_bitfields.h"
+    #endif
+    #if !defined(EXCLUDE_PORTABILITY)
+        #include "nrf51_to_nrf52.h"
+        #include "nrf52_to_nrf52833.h"
+    #endif
+
+#elif defined (NRF52840_XXAA)
+    #if !defined(EXCLUDE_HEADER)
+        #include "nrf52840.h"
+    #endif
+    #if !defined(EXCLUDE_BITFIELDS)
+        #include "nrf52840_bitfields.h"
+    #endif
+    #if !defined(EXCLUDE_PORTABILITY)
+        #include "nrf51_to_nrf52840.h"
+        #include "nrf52_to_nrf52840.h"
+    #endif
+
+#elif defined (NRF5340_XXAA)
+    #if defined(NRF_APPLICATION)
+        #if !defined(EXCLUDE_HEADER)
+            #include "nrf5340_application.h"
+        #endif
+        #if !defined(EXCLUDE_BITFIELDS)
+            #include "nrf5340_application_bitfields.h"
+        #endif
+    #elif defined (NRF_NETWORK)
+        #if !defined(EXCLUDE_HEADER)
+            #include "nrf5340_network.h"
+        #endif
+        #if !defined(EXCLUDE_BITFIELDS)
+            #include "nrf5340_network_bitfields.h"
+        #endif
+    #endif
+
+#elif defined (NRF54LILIUM_XXAA)
+    #elif defined (NRF_NETWORK)
+        #if !defined(EXCLUDE_HEADER)
+            #include "nrf54lilium_network.h"
+        #endif
+        #if !defined(EXCLUDE_BITFIELDS)
+            #include "nrf54lilium_network_bitfields.h"
+        #endif
+
+#elif defined (HALTIUM_XXAA)
+    #if !defined(EXCLUDE_HEADER)
+        #include "haltium.h"
+    #endif
+
+#elif defined (NRF9160_XXAA)
+    #if defined(NRF_APPLICATION)
+        #if !defined(EXCLUDE_HEADER)
+            #include "nrf9160.h"
+        #endif
+        #if !defined(EXCLUDE_BITFIELDS)
+            #include "nrf9160_bitfields.h"
+        #endif
+        #if !defined(EXCLUDE_PORTABILITY)
+            #include "nrf9160_name_change.h"
+        #endif
+    #elif defined (NRF_MODEM)
+        #if !defined(EXCLUDE_HEADER)
+            #include "nrf9160_modem.h"
+        #endif
+        #if !defined(EXCLUDE_BITFIELDS)
+            #include "nrf9160_modem_bitfields.h"
+        #endif
+    #endif
+
 #else
+    #error "Device must be defined. See nrf.h."
+#endif /* NRF5001_XXAA, NRF5002_XXAA, NRF51, NRF52805_XXAA, NRF52810_XXAA, NRF52811_XXAA, NRF52832_XXAA, NRF52832_XXAB, NRF52840_XXAA, NRF5340_XXAA_APPLICATION, NRF5340_XXAA_NETWORK, NRF9160_XXAA, NRF9160_XXAA_MODEM*/
 
-    /* Device selection for device includes. */
-    #if defined (NRF5001_XXAA)
-        #if !defined(EXCLUDE_HEADER)
-            #include "nrf5001.h"
-        #endif
-        #if !defined(EXCLUDE_BITFIELDS)
-            #include "nrf5001_bitfields.h"
-        #endif
-
-    #elif defined (NRF51)
-        #if !defined(EXCLUDE_HEADER)
-            #include "nrf51.h"
-        #endif
-        #if !defined(EXCLUDE_BITFIELDS)
-            #include "nrf51_bitfields.h"
-        #endif
-        #if !defined(EXCLUDE_PORTABILITY)
-            #include "nrf51_deprecated.h"
-        #endif
-
-    #elif defined (NRF52805_XXAA)
-        #if !defined(EXCLUDE_HEADER)
-            #include "nrf52805.h"
-        #endif
-        #if !defined(EXCLUDE_BITFIELDS)
-            #include "nrf52805_bitfields.h"
-        #endif
-
-        #if !defined(EXCLUDE_PORTABILITY)
-            #include "nrf51_to_nrf52810.h"
-            #include "nrf52_to_nrf52810.h"
-            #include "nrf52810_to_nrf52811.h"
-        #endif
-        
-    #elif defined (NRF52810_XXAA)
-        #if !defined(EXCLUDE_HEADER)
-            #include "nrf52810.h"
-        #endif
-        #if !defined(EXCLUDE_BITFIELDS)
-            #include "nrf52810_bitfields.h"
-        #endif
-        #if !defined(EXCLUDE_PORTABILITY)
-            #include "nrf51_to_nrf52810.h"
-            #include "nrf52_to_nrf52810.h"
-            #include "nrf52810_name_change.h"
-        #endif
-        
-    #elif defined (NRF52811_XXAA)
-        #if !defined(EXCLUDE_HEADER)
-            #include "nrf52811.h"
-        #endif
-        #if !defined(EXCLUDE_BITFIELDS)
-            #include "nrf52811_bitfields.h"
-        #endif
-        
-        #if !defined(EXCLUDE_PORTABILITY)
-            #include "nrf51_to_nrf52810.h"
-            #include "nrf52_to_nrf52810.h"
-            #include "nrf52810_to_nrf52811.h"
-        #endif
-        
-    #elif defined (NRF52820_XXAA)
-        #if !defined(EXCLUDE_HEADER)
-            #include "nrf52820.h"
-        #endif
-        #if !defined(EXCLUDE_BITFIELDS)
-            #include "nrf52820_bitfields.h"
-        #endif
-        #if !defined(EXCLUDE_PORTABILITY)
-            #include "nrf51_to_nrf52.h"
-            #include "nrf52_to_nrf52833.h"
-            #include "nrf52833_to_nrf52820.h"
-        #endif
-        
-    #elif defined (NRF52832_XXAA) || defined (NRF52832_XXAB)
-        #if !defined(EXCLUDE_HEADER)
-            #include "nrf52.h"
-        #endif
-        #if !defined(EXCLUDE_BITFIELDS)
-            #include "nrf52_bitfields.h"
-        #endif
-        #if !defined(EXCLUDE_PORTABILITY)
-            #include "nrf51_to_nrf52.h"
-            #include "nrf52_name_change.h"
-        #endif
-    
-    #elif defined (NRF52833_XXAA)
-        #if !defined(EXCLUDE_HEADER)
-            #include "nrf52833.h"
-        #endif
-        #if !defined(EXCLUDE_BITFIELDS)
-            #include "nrf52833_bitfields.h"
-        #endif
-        #if !defined(EXCLUDE_PORTABILITY)
-            #include "nrf51_to_nrf52.h"
-            #include "nrf52_to_nrf52833.h"
-        #endif
-
-    #elif defined (NRF52840_XXAA)
-        #if !defined(EXCLUDE_HEADER)
-            #include "nrf52840.h"
-        #endif
-        #if !defined(EXCLUDE_BITFIELDS)
-            #include "nrf52840_bitfields.h"
-        #endif
-        #if !defined(EXCLUDE_PORTABILITY)
-            #include "nrf51_to_nrf52840.h"
-            #include "nrf52_to_nrf52840.h"
-        #endif
-
-    #elif defined (NRF5340_XXAA)
-        #if defined(NRF_APPLICATION)
-            #if !defined(EXCLUDE_HEADER)
-                #include "nrf5340_application.h"
-            #endif
-            #if !defined(EXCLUDE_BITFIELDS)
-                #include "nrf5340_application_bitfields.h"
-            #endif
-        #elif defined (NRF_NETWORK)
-            #if !defined(EXCLUDE_HEADER)
-                #include "nrf5340_network.h"
-            #endif
-            #if !defined(EXCLUDE_BITFIELDS)
-                #include "nrf5340_network_bitfields.h"
-            #endif
-        #endif
-
-    #elif defined (NRF54LILIUM_XXAA)
-        #elif defined (NRF_NETWORK)
-            #if !defined(EXCLUDE_HEADER)
-                #include "nrf54lilium_network.h"
-            #endif
-            #if !defined(EXCLUDE_BITFIELDS)
-                #include "nrf54lilium_network_bitfields.h"
-            #endif
-
-    #elif defined (HALTIUM_XXAA)
-        #if !defined(EXCLUDE_HEADER)
-            #include "haltium.h"
-        #endif
-    
-    #elif defined (NRF9160_XXAA)
-        #if defined(NRF_APPLICATION)
-            #if !defined(EXCLUDE_HEADER)
-                #include "nrf9160.h"
-            #endif
-            #if !defined(EXCLUDE_BITFIELDS)
-                #include "nrf9160_bitfields.h"
-            #endif
-            #if !defined(EXCLUDE_PORTABILITY)
-                #include "nrf9160_name_change.h"
-            #endif
-        #elif defined (NRF_MODEM)
-            #if !defined(EXCLUDE_HEADER)
-                #include "nrf9160_modem.h"
-            #endif
-            #if !defined(EXCLUDE_BITFIELDS)
-                #include "nrf9160_modem_bitfields.h"
-            #endif
-        #endif
-        
-    #else
-        #error "Device must be defined. See nrf.h."
-    #endif /* NRF5001_XXAA, NRF51, NRF52805_XXAA, NRF52810_XXAA, NRF52811_XXAA, NRF52832_XXAA, NRF52832_XXAB, NRF52840_XXAA, NRF5340_XXAA_APPLICATION, NRF5340_XXAA_NETWORK, NRF9160_XXAA, NRF9160_XXAA_MODEM*/
-
-    #include "compiler_abstraction.h"
-
-#endif /* _WIN32 || __unix || __APPLE__ */
+#include "compiler_abstraction.h"
 
 #endif /* NRF_H */
 
