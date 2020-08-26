@@ -72,14 +72,11 @@ typedef enum {
 /* ============================================== Processor Specific Interrupts ============================================== */
   SPU0_IRQn                              = 0,        /*!< 0 SPU0                                                               */
   GENERIC0_IRQn                          = 2,        /*!< 2 GENERIC0                                                           */
-  LRC0_IRQn                              = 3,        /*!< 3 LRC0                                                               */
-  GENERIC2_IRQn                          = 4,        /*!< 4 GENERIC2                                                           */
+  LRCCONF0_IRQn                          = 3,        /*!< 3 LRCCONF0                                                           */
   SPU1_IRQn                              = 16,       /*!< 16 SPU1                                                              */
   MPC_IRQn                               = 17,       /*!< 17 MPC                                                               */
   HSFLL_IRQn                             = 18,       /*!< 18 HSFLL                                                             */
-  LRC1_IRQn                              = 19,       /*!< 19 LRC1                                                              */
-  GENERIC4_IRQn                          = 20,       /*!< 20 GENERIC4                                                          */
-  GENERIC5_IRQn                          = 21,       /*!< 21 GENERIC5                                                          */
+  LRCCONF1_IRQn                          = 19,       /*!< 19 LRCCONF1                                                          */
   SPU2_IRQn                              = 32,       /*!< 32 SPU2                                                              */
   GENERIC6_IRQn                          = 33,       /*!< 33 GENERIC6                                                          */
   GENERIC7_IRQn                          = 34,       /*!< 34 GENERIC7                                                          */
@@ -89,11 +86,12 @@ typedef enum {
   GPIOTE01_IRQn                          = 105,      /*!< 105 GPIOTE01                                                         */
   GPIOTE10_IRQn                          = 106,      /*!< 106 GPIOTE10                                                         */
   GPIOTE11_IRQn                          = 107,      /*!< 107 GPIOTE11                                                         */
+  USBHS_IRQn                             = 134,      /*!< 134 USBHS                                                            */
   GIPCT00_IRQn                           = 209,      /*!< 209 GIPCT00                                                          */
-  GGENERIC55_IRQn                        = 211,      /*!< 211 GGENERIC55                                                       */
-  GGENERIC56_IRQn                        = 212,      /*!< 212 GGENERIC56                                                       */
-  GGENERIC57_IRQn                        = 213,      /*!< 213 GGENERIC57                                                       */
-  GGENERIC58_IRQn                        = 214,      /*!< 214 GGENERIC58                                                       */
+  I3C0_IRQn                              = 211,      /*!< 211 I3C0                                                             */
+  I3C1_IRQn                              = 212,      /*!< 212 I3C1                                                             */
+  I3C2_IRQn                              = 213,      /*!< 213 I3C2                                                             */
+  I3C3_IRQn                              = 214,      /*!< 214 I3C3                                                             */
   GTIMER0_IRQn                           = 226,      /*!< 226 GTIMER0                                                          */
   GTIMER1_IRQn                           = 227,      /*!< 227 GTIMER1                                                          */
   PWM0_IRQn                              = 228,      /*!< 228 PWM0                                                             */
@@ -180,6 +178,8 @@ typedef enum {
   #pragma warning 586
 #elif defined (__CSMC__)
   /* anonymous unions are enabled by default */
+#elif defined (_CEVA)
+  /* anonymous unions are enabled by default */
 #else
   #warning Unsupported compiler type
 #endif
@@ -192,14 +192,14 @@ typedef enum {
 #define NRF_ISIMCORE_CPUCONF_NS_BASE      0x47001000UL
 #define NRF_ISIMCORE_CPUCONF_S_BASE       0x57001000UL
 #define NRF_ISIMCORE_GENERIC0_NS_BASE     0x47002000UL
-#define NRF_ISIMCORE_LRC0_NS_BASE         0x57003000UL
-#define NRF_ISIMCORE_GENERIC2_NS_BASE     0x57004000UL
+#define NRF_ISIMCORE_LRCCONF0_NS_BASE     0x57003000UL
+#define NRF_ISIMCORE_PCGCM0_NS_BASE       0x57004000UL
 #define NRF_ISIMCORE_SPU1_S_BASE          0x57010000UL
 #define NRF_ISIMCORE_MPC_S_BASE           0x57011000UL
 #define NRF_ISIMCORE_HSFLL_S_BASE         0x57012000UL
-#define NRF_ISIMCORE_LRC1_NS_BASE         0x57013000UL
-#define NRF_ISIMCORE_GENERIC4_NS_BASE     0x57014000UL
-#define NRF_ISIMCORE_GENERIC5_NS_BASE     0x57015000UL
+#define NRF_ISIMCORE_LRCCONF1_NS_BASE     0x57013000UL
+#define NRF_ISIMCORE_PCGCM1_NS_BASE       0x57014000UL
+#define NRF_ISIMCORE_PCGCS0_NS_BASE       0x57015000UL
 #define NRF_ISIMCORE_SPU2_S_BASE          0x57020000UL
 #define NRF_ISIMCORE_GENERIC6_NS_BASE     0x47021000UL
 #define NRF_ISIMCORE_GENERIC7_NS_BASE     0x47022000UL
@@ -214,14 +214,14 @@ typedef enum {
 #define NRF_ISIMCORE_CPUCONF_NS           ((NRF_CPUCONF_Type*)                  NRF_ISIMCORE_CPUCONF_NS_BASE)
 #define NRF_ISIMCORE_CPUCONF_S            ((NRF_CPUCONF_Type*)                  NRF_ISIMCORE_CPUCONF_S_BASE)
 #define NRF_ISIMCORE_GENERIC0_NS          ((NRF_GENERIC_Type*)                  NRF_ISIMCORE_GENERIC0_NS_BASE)
-#define NRF_ISIMCORE_LRC0_NS              ((NRF_LRC_Type*)                      NRF_ISIMCORE_LRC0_NS_BASE)
-#define NRF_ISIMCORE_GENERIC2_NS          ((NRF_GENERIC_Type*)                  NRF_ISIMCORE_GENERIC2_NS_BASE)
+#define NRF_ISIMCORE_LRCCONF0_NS          ((NRF_LRCCONF_Type*)                  NRF_ISIMCORE_LRCCONF0_NS_BASE)
+#define NRF_ISIMCORE_PCGCM0_NS            ((NRF_PCGCMASTER_Type*)               NRF_ISIMCORE_PCGCM0_NS_BASE)
 #define NRF_ISIMCORE_SPU1_S               ((NRF_SPU_Type*)                      NRF_ISIMCORE_SPU1_S_BASE)
 #define NRF_ISIMCORE_MPC_S                ((NRF_MPC_Type*)                      NRF_ISIMCORE_MPC_S_BASE)
 #define NRF_ISIMCORE_HSFLL_S              ((NRF_HSFLL_Type*)                    NRF_ISIMCORE_HSFLL_S_BASE)
-#define NRF_ISIMCORE_LRC1_NS              ((NRF_LRC_Type*)                      NRF_ISIMCORE_LRC1_NS_BASE)
-#define NRF_ISIMCORE_GENERIC4_NS          ((NRF_GENERIC_Type*)                  NRF_ISIMCORE_GENERIC4_NS_BASE)
-#define NRF_ISIMCORE_GENERIC5_NS          ((NRF_GENERIC_Type*)                  NRF_ISIMCORE_GENERIC5_NS_BASE)
+#define NRF_ISIMCORE_LRCCONF1_NS          ((NRF_LRCCONF_Type*)                  NRF_ISIMCORE_LRCCONF1_NS_BASE)
+#define NRF_ISIMCORE_PCGCM1_NS            ((NRF_PCGCMASTER_Type*)               NRF_ISIMCORE_PCGCM1_NS_BASE)
+#define NRF_ISIMCORE_PCGCS0_NS            ((NRF_PCGCSLAVE_Type*)                NRF_ISIMCORE_PCGCS0_NS_BASE)
 #define NRF_ISIMCORE_SPU2_S               ((NRF_SPU_Type*)                      NRF_ISIMCORE_SPU2_S_BASE)
 #define NRF_ISIMCORE_GENERIC6_NS          ((NRF_GENERIC_Type*)                  NRF_ISIMCORE_GENERIC6_NS_BASE)
 #define NRF_ISIMCORE_GENERIC7_NS          ((NRF_GENERIC_Type*)                  NRF_ISIMCORE_GENERIC7_NS_BASE)
@@ -235,11 +235,11 @@ typedef enum {
 #ifdef NRF_NONSECURE                                 /*!< Remap NRF_X_NS instances to NRF_X symbol for ease of use.            */
   #define NRF_ISIMCORE_CPUCONF                    NRF_ISIMCORE_CPUCONF_NS
   #define NRF_ISIMCORE_GENERIC0                   NRF_ISIMCORE_GENERIC0_NS
-  #define NRF_ISIMCORE_LRC0                       NRF_ISIMCORE_LRC0_NS
-  #define NRF_ISIMCORE_GENERIC2                   NRF_ISIMCORE_GENERIC2_NS
-  #define NRF_ISIMCORE_LRC1                       NRF_ISIMCORE_LRC1_NS
-  #define NRF_ISIMCORE_GENERIC4                   NRF_ISIMCORE_GENERIC4_NS
-  #define NRF_ISIMCORE_GENERIC5                   NRF_ISIMCORE_GENERIC5_NS
+  #define NRF_ISIMCORE_LRCCONF0                   NRF_ISIMCORE_LRCCONF0_NS
+  #define NRF_ISIMCORE_PCGCM0                     NRF_ISIMCORE_PCGCM0_NS
+  #define NRF_ISIMCORE_LRCCONF1                   NRF_ISIMCORE_LRCCONF1_NS
+  #define NRF_ISIMCORE_PCGCM1                     NRF_ISIMCORE_PCGCM1_NS
+  #define NRF_ISIMCORE_PCGCS0                     NRF_ISIMCORE_PCGCS0_NS
   #define NRF_ISIMCORE_GENERIC6                   NRF_ISIMCORE_GENERIC6_NS
   #define NRF_ISIMCORE_GENERIC7                   NRF_ISIMCORE_GENERIC7_NS
   #define NRF_ISIMCORE_GENERIC8                   NRF_ISIMCORE_GENERIC8_NS
@@ -248,14 +248,14 @@ typedef enum {
   #define NRF_ISIMCORE_SPU0                       NRF_ISIMCORE_SPU0_S
   #define NRF_ISIMCORE_CPUCONF                    NRF_ISIMCORE_CPUCONF_S
   #define NRF_ISIMCORE_GENERIC0                   NRF_ISIMCORE_GENERIC0_NS
-  #define NRF_ISIMCORE_LRC0                       NRF_ISIMCORE_LRC0_NS
-  #define NRF_ISIMCORE_GENERIC2                   NRF_ISIMCORE_GENERIC2_NS
+  #define NRF_ISIMCORE_LRCCONF0                   NRF_ISIMCORE_LRCCONF0_NS
+  #define NRF_ISIMCORE_PCGCM0                     NRF_ISIMCORE_PCGCM0_NS
   #define NRF_ISIMCORE_SPU1                       NRF_ISIMCORE_SPU1_S
   #define NRF_ISIMCORE_MPC                        NRF_ISIMCORE_MPC_S
   #define NRF_ISIMCORE_HSFLL                      NRF_ISIMCORE_HSFLL_S
-  #define NRF_ISIMCORE_LRC1                       NRF_ISIMCORE_LRC1_NS
-  #define NRF_ISIMCORE_GENERIC4                   NRF_ISIMCORE_GENERIC4_NS
-  #define NRF_ISIMCORE_GENERIC5                   NRF_ISIMCORE_GENERIC5_NS
+  #define NRF_ISIMCORE_LRCCONF1                   NRF_ISIMCORE_LRCCONF1_NS
+  #define NRF_ISIMCORE_PCGCM1                     NRF_ISIMCORE_PCGCM1_NS
+  #define NRF_ISIMCORE_PCGCS0                     NRF_ISIMCORE_PCGCS0_NS
   #define NRF_ISIMCORE_SPU2                       NRF_ISIMCORE_SPU2_S
   #define NRF_ISIMCORE_GENERIC6                   NRF_ISIMCORE_GENERIC6_NS
   #define NRF_ISIMCORE_GENERIC7                   NRF_ISIMCORE_GENERIC7_NS
@@ -271,14 +271,14 @@ typedef enum {
   #define NRF_SPU0                                NRF_ISIMCORE_SPU0
   #define NRF_CPUCONF                             NRF_ISIMCORE_CPUCONF
   #define NRF_GENERIC0                            NRF_ISIMCORE_GENERIC0
-  #define NRF_LRC0                                NRF_ISIMCORE_LRC0
-  #define NRF_GENERIC2                            NRF_ISIMCORE_GENERIC2
+  #define NRF_LRCCONF0                            NRF_ISIMCORE_LRCCONF0
+  #define NRF_PCGCM0                              NRF_ISIMCORE_PCGCM0
   #define NRF_SPU1                                NRF_ISIMCORE_SPU1
   #define NRF_MPC                                 NRF_ISIMCORE_MPC
   #define NRF_HSFLL                               NRF_ISIMCORE_HSFLL
-  #define NRF_LRC1                                NRF_ISIMCORE_LRC1
-  #define NRF_GENERIC4                            NRF_ISIMCORE_GENERIC4
-  #define NRF_GENERIC5                            NRF_ISIMCORE_GENERIC5
+  #define NRF_LRCCONF1                            NRF_ISIMCORE_LRCCONF1
+  #define NRF_PCGCM1                              NRF_ISIMCORE_PCGCM1
+  #define NRF_PCGCS0                              NRF_ISIMCORE_PCGCS0
   #define NRF_SPU2                                NRF_ISIMCORE_SPU2
   #define NRF_GENERIC6                            NRF_ISIMCORE_GENERIC6
   #define NRF_GENERIC7                            NRF_ISIMCORE_GENERIC7
@@ -301,6 +301,8 @@ typedef enum {
 #elif defined (__TASKING__)
   #pragma warning restore
 #elif defined (__CSMC__)
+  /* anonymous unions are enabled by default */
+#elif defined (_CEVA)
   /* anonymous unions are enabled by default */
 #endif
 

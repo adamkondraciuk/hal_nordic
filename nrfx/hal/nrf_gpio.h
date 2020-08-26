@@ -482,37 +482,47 @@ NRF_STATIC_INLINE void nrf_gpio_pin_mcu_select(uint32_t pin_number, nrf_gpio_pin
  */
 NRF_STATIC_INLINE bool nrf_gpio_pin_present_check(uint32_t pin_number);
 
+/**
+ * @brief Function for extracting port number and the relative pin number
+ *        from the absolute pin number.
+ *
+ * @param[in,out] p_pin Pointer to the absolute pin number overriden by the pin number
+ *                      that is relative to the port.
+ *
+ * @return Port number.
+*/
+NRF_STATIC_INLINE uint32_t nrf_gpio_pin_port_number_extract(uint32_t * p_pin);
+
 #ifndef NRF_DECLARE_ONLY
 
 /**
  * @brief Function for extracting port and the relative pin number from the absolute pin number.
  *
- * @param[in,out] p_pin Pointer to the absolute pin number overriden by the pin number that is relative to the port.
+ * @param[in,out] p_pin Pointer to the absolute pin number overriden by the pin number
+ *                      that is relative to the port.
  *
  * @return Pointer to port register set.
  */
 NRF_STATIC_INLINE NRF_GPIO_Type * nrf_gpio_pin_port_decode(uint32_t * p_pin)
 {
     NRFX_ASSERT(nrf_gpio_pin_present_check(*p_pin));
-#if (GPIO_COUNT == 1)
-    return NRF_P0;
-#else
-    if (*p_pin < P0_PIN_NUM)
+
+    switch (nrf_gpio_pin_port_number_extract(p_pin))
     {
-        return NRF_P0;
-    }
-    else
-    {
-        *p_pin = *p_pin & 0x1F;
-        return NRF_P1;
-    }
+        default:
+            NRFX_ASSERT(0);
+#if defined(P0_FEATURE_PINS_PRESENT)
+        case 0: return NRF_P0;
 #endif
+#if defined(P1_FEATURE_PINS_PRESENT)
+        case 1: return NRF_P1;
+#endif
+    }
 }
 
 
 NRF_STATIC_INLINE void nrf_gpio_range_cfg_output(uint32_t pin_range_start, uint32_t pin_range_end)
 {
-    /*lint -e{845} // A zero has been given as right argument to operator '|'" */
     for (; pin_range_start <= pin_range_end; pin_range_start++)
     {
         nrf_gpio_cfg_output(pin_range_start);
@@ -524,7 +534,6 @@ NRF_STATIC_INLINE void nrf_gpio_range_cfg_input(uint32_t            pin_range_st
                                                 uint32_t            pin_range_end,
                                                 nrf_gpio_pin_pull_t pull_config)
 {
-    /*lint -e{845} // A zero has been given as right argument to operator '|'" */
     for (; pin_range_start <= pin_range_end; pin_range_start++)
     {
         nrf_gpio_cfg_input(pin_range_start, pull_config);
@@ -589,7 +598,6 @@ NRF_STATIC_INLINE void nrf_gpio_cfg_default(uint32_t pin_number)
 NRF_STATIC_INLINE void nrf_gpio_cfg_watcher(uint32_t pin_number)
 {
     NRF_GPIO_Type * reg = nrf_gpio_pin_port_decode(&pin_number);
-    /*lint -e{845} // A zero has been given as right argument to operator '|'" */
     uint32_t cnf = reg->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
 
     reg->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Connect << GPIO_PIN_CNF_INPUT_Pos);
@@ -599,7 +607,6 @@ NRF_STATIC_INLINE void nrf_gpio_cfg_watcher(uint32_t pin_number)
 NRF_STATIC_INLINE void nrf_gpio_input_disconnect(uint32_t pin_number)
 {
     NRF_GPIO_Type * reg = nrf_gpio_pin_port_decode(&pin_number);
-    /*lint -e{845} // A zero has been given as right argument to operator '|'" */
     uint32_t cnf = reg->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
 
     reg->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Disconnect << GPIO_PIN_CNF_INPUT_Pos);
@@ -624,7 +631,6 @@ NRF_STATIC_INLINE void nrf_gpio_cfg_sense_set(uint32_t             pin_number,
                                               nrf_gpio_pin_sense_t sense_config)
 {
     NRF_GPIO_Type * reg = nrf_gpio_pin_port_decode(&pin_number);
-    /*lint -e{845} // A zero has been given as right argument to operator '|'" */
     uint32_t cnf = reg->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_SENSE_Msk;
 
     reg->PIN_CNF[pin_number] = cnf | (sense_config << GPIO_PIN_CNF_SENSE_Pos);
@@ -902,6 +908,14 @@ NRF_STATIC_INLINE bool nrf_gpio_pin_present_check(uint32_t pin_number)
     pin_number &= 0x1F;
 
     return (mask & (1UL << pin_number)) ? true : false;
+}
+
+NRF_STATIC_INLINE uint32_t nrf_gpio_pin_port_number_extract(uint32_t * p_pin)
+{
+    uint32_t pin_number = *p_pin;
+    *p_pin = pin_number & 0x1F;
+
+    return pin_number >> 5;
 }
 
 #endif // NRF_DECLARE_ONLY

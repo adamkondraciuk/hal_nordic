@@ -56,21 +56,9 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 typedef enum {
 /* ===================================================== Core Interrupts ===================================================== */
-  Reset_IRQn                             = -15,      /*!< -15 Reset Vector, invoked on Power up and warm reset                 */
-  NonMaskableInt_IRQn                    = -14,      /*!< -14 Non maskable Interrupt, cannot be stopped or preempted           */
-  HardFault_IRQn                         = -13,      /*!< -13 Hard Fault, all classes of Fault                                 */
-  MemoryManagement_IRQn                  = -12,      /*!< -12 Memory Management, MPU mismatch, including Access Violation and No
-                                                          Match*/                                                                 
-  BusFault_IRQn                          = -11,      /*!< -11 Bus Fault, Pre-Fetch-, Memory Access Fault, other address/memory
-                                                          related Fault*/                                                         
-  UsageFault_IRQn                        = -10,      /*!< -10 Usage Fault, i.e. Undef Instruction, Illegal State Transition    */
-  SVCall_IRQn                            = -5,       /*!<  -5 System Service Call via SVC instruction                          */
-  DebugMonitor_IRQn                      = -4,       /*!<  -4 Debug Monitor                                                    */
-  PendSV_IRQn                            = -2,       /*!<  -2 Pendable request for system service                              */
-  SysTick_IRQn                           = -1,       /*!<  -1 System Tick Timer                                                */
 /* ============================================== Processor Specific Interrupts ============================================== */
   HSFLL_IRQn                             = 0,        /*!< 0 HSFLL                                                              */
-  LRC0_IRQn                              = 1,        /*!< 1 LRC0                                                               */
+  LRCCONF0_IRQn                          = 1,        /*!< 1 LRCCONF0                                                           */
   MPC_IRQn                               = 2,        /*!< 2 MPC                                                                */
   MVDMA_IRQn                             = 3,        /*!< 3 MVDMA                                                              */
   RAMC00_IRQn                            = 4,        /*!< 4 RAMC00                                                             */
@@ -83,20 +71,18 @@ typedef enum {
   HARQ0_LTEFE2_IRQn                      = 13,       /*!< 13 HARQ0_LTEFE2                                                      */
   HARQ1_LTEFE3_VITERBI0_IRQn             = 14,       /*!< 14 HARQ1_LTEFE3_VITERBI0                                             */
   HARQ2_LTEFE4_VITERBI1_IRQn             = 15,       /*!< 15 HARQ2_LTEFE4_VITERBI1                                             */
-  HARQ3_LRC1_LTEFE5_VITERBI2_IRQn        = 16,       /*!< 16 HARQ3_LRC1_LTEFE5_VITERBI2                                        */
+  HARQ3_LRCCONF1_LTEFE5_VITERBI2_IRQn    = 16,       /*!< 16 HARQ3_LRCCONF1_LTEFE5_VITERBI2                                    */
   HARQ4_LTEFE6_VITERBI3_IRQn             = 17,       /*!< 17 HARQ4_LTEFE6_VITERBI3                                             */
   HARQ5_LTEFE7_IRQn                      = 18,       /*!< 18 HARQ5_LTEFE7                                                      */
   HARQ6_IPCT0_LTEFE8_IRQn                = 19,       /*!< 19 HARQ6_IPCT0_LTEFE8                                                */
   GENERIC4_HARQ7_IPCT1_LTEFE9_IRQn       = 20,       /*!< 20 GENERIC4_HARQ7_IPCT1_LTEFE9                                       */
-  GENERIC5_IPCT2_LTEFE10_IRQn            = 21,       /*!< 21 GENERIC5_IPCT2_LTEFE10                                            */
+  IPCT2_LTEFE10_IRQn                     = 21,       /*!< 21 IPCT2_LTEFE10                                                     */
   LTEFE11_IRQn                           = 22,       /*!< 22 LTEFE11                                                           */
   LTEFE12_IRQn                           = 23,       /*!< 23 LTEFE12                                                           */
   LTEFE13_IRQn                           = 24,       /*!< 24 LTEFE13                                                           */
   LTEFE14_IRQn                           = 25,       /*!< 25 LTEFE14                                                           */
   LTEFE15_IRQn                           = 26,       /*!< 26 LTEFE15                                                           */
   GENERIC6_IRQn                          = 32,       /*!< 32 GENERIC6                                                          */
-  GENERIC7_IRQn                          = 34,       /*!< 34 GENERIC7                                                          */
-  GENERIC8_IRQn                          = 35,       /*!< 35 GENERIC8                                                          */
   GENERIC9_IRQn                          = 36,       /*!< 36 GENERIC9                                                          */
   GENERIC10_IRQn                         = 37,       /*!< 37 GENERIC10                                                         */
   GENERIC11_IRQn                         = 38,       /*!< 38 GENERIC11                                                         */
@@ -108,11 +94,12 @@ typedef enum {
   GPIOTE01_IRQn                          = 105,      /*!< 105 GPIOTE01                                                         */
   GPIOTE10_IRQn                          = 106,      /*!< 106 GPIOTE10                                                         */
   GPIOTE11_IRQn                          = 107,      /*!< 107 GPIOTE11                                                         */
+  USBHS_IRQn                             = 134,      /*!< 134 USBHS                                                            */
   GIPCT00_IRQn                           = 209,      /*!< 209 GIPCT00                                                          */
-  GGENERIC55_IRQn                        = 211,      /*!< 211 GGENERIC55                                                       */
-  GGENERIC56_IRQn                        = 212,      /*!< 212 GGENERIC56                                                       */
-  GGENERIC57_IRQn                        = 213,      /*!< 213 GGENERIC57                                                       */
-  GGENERIC58_IRQn                        = 214,      /*!< 214 GGENERIC58                                                       */
+  I3C0_IRQn                              = 211,      /*!< 211 I3C0                                                             */
+  I3C1_IRQn                              = 212,      /*!< 212 I3C1                                                             */
+  I3C2_IRQn                              = 213,      /*!< 213 I3C2                                                             */
+  I3C3_IRQn                              = 214,      /*!< 214 I3C3                                                             */
   GTIMER0_IRQn                           = 226,      /*!< 226 GTIMER0                                                          */
   GTIMER1_IRQn                           = 227,      /*!< 227 GTIMER1                                                          */
   PWM0_IRQn                              = 228,      /*!< 228 PWM0                                                             */
@@ -162,18 +149,13 @@ typedef enum {
 /* ================                           Processor and Core Peripheral Section                           ================ */
 /* =========================================================================================================================== */
 
-/* =========================== Configuration of the ARM Cortex-M33 Processor and Core Peripherals ============================ */
-#define __CM33_REV                  r0p4             /*!< CM33 Core Revision                                                   */
+/* ============================== Configuration of the CEVA XC5 Processor and Core Peripherals =============================== */
+#define __XC5_REV                   r0p1             /*!< XC5 Core Revision                                                    */
 #define __DSP_PRESENT                  1             /*!< DSP present or not                                                   */
-#define __NVIC_PRIO_BITS               3             /*!< Number of Bits used for Priority Levels                              */
-#define __VTOR_PRESENT                 1             /*!< CPU supports alternate Vector Table address                          */
 #define __MPU_PRESENT                  1             /*!< MPU present                                                          */
 #define __FPU_PRESENT                  1             /*!< FPU present                                                          */
 #define __FPU_DP                       0             /*!< Double Precision FPU                                                 */
-#define __Vendor_SysTickConfig         0             /*!< Vendor SysTick Config implementation is used                         */
-#define __SAU_REGION_PRESENT           0             /*!< SAU present                                                          */
 
-#include "core_cm33.h"                               /*!< ARM Cortex-M33 processor and core peripherals                        */
 #include "system_haltium_cellulardsp.h"              /*!< haltium_cellulardsp System Library                                   */
 
 #endif                                               /*!< NRF_CELLULARDSP                                                      */
@@ -199,6 +181,8 @@ typedef enum {
   #pragma warning 586
 #elif defined (__CSMC__)
   /* anonymous unions are enabled by default */
+#elif defined (_CEVA)
+  /* anonymous unions are enabled by default */
 #else
   #warning Unsupported compiler type
 #endif
@@ -207,11 +191,11 @@ typedef enum {
 /* ================                                  Peripheral Address Map                                  ================ */
 /* =========================================================================================================================== */
 
-#define NRF_CELLULARDSP_LSTM_BASE         0x00004000UL
-#define NRF_CELLULARDSP_ETM_BASE          0x00005000UL
-#define NRF_CELLULARDSP_CTI1_BASE         0x00006000UL
+#define NRF_CELLULARDSP_LSTM_BASE         0xE0004000UL
+#define NRF_CELLULARDSP_ETM_BASE          0xE0005000UL
+#define NRF_CELLULARDSP_CTI1_BASE         0xE0006000UL
 #define NRF_CELLULARDSP_HSFLL_BASE        0x45000000UL
-#define NRF_CELLULARDSP_LRC0_BASE         0x45001000UL
+#define NRF_CELLULARDSP_LRCCONF0_BASE     0x45001000UL
 #define NRF_CELLULARDSP_MPC_BASE          0x45002000UL
 #define NRF_CELLULARDSP_MVDMA_BASE        0x45003000UL
 #define NRF_CELLULARDSP_RAMC00_BASE       0x45004000UL
@@ -225,17 +209,17 @@ typedef enum {
 #define NRF_CELLULARDSP_HARQ_BASE         0x4500D000UL
 #define NRF_CELLULARDSP_VITERBI_BASE      0x4500E000UL
 #define NRF_CELLULARDSP_PPIB0_BASE        0x4500F000UL
-#define NRF_CELLULARDSP_LRC1_BASE         0x45010000UL
+#define NRF_CELLULARDSP_LRCCONF1_BASE     0x45010000UL
 #define NRF_CELLULARDSP_CPUCONF_BASE      0x45011000UL
 #define NRF_CELLULARDSP_MEMCONF_BASE      0x45012000UL
 #define NRF_CELLULARDSP_IPCT_BASE         0x45013000UL
 #define NRF_CELLULARDSP_GENERIC4_BASE     0x45014000UL
-#define NRF_CELLULARDSP_GENERIC5_BASE     0x45015000UL
+#define NRF_CELLULARDSP_PCGCM0_BASE       0x45015000UL
 #define NRF_CELLULARDSP_PPIB1_BASE        0x45016000UL
 #define NRF_CELLULARDSP_GENERIC6_BASE     0x45020000UL
 #define NRF_CELLULARDSP_DPPIC_BASE        0x45021000UL
-#define NRF_CELLULARDSP_GENERIC7_BASE     0x45022000UL
-#define NRF_CELLULARDSP_GENERIC8_BASE     0x45023000UL
+#define NRF_CELLULARDSP_PCGCS0_BASE       0x45022000UL
+#define NRF_CELLULARDSP_PCGCM1_BASE       0x45023000UL
 #define NRF_CELLULARDSP_GENERIC9_BASE     0x45024000UL
 #define NRF_CELLULARDSP_GENERIC10_BASE    0x45025000UL
 #define NRF_CELLULARDSP_GENERIC11_BASE    0x45026000UL
@@ -250,7 +234,7 @@ typedef enum {
 #define NRF_CELLULARDSP_ETM               ((NRF_ETM_Type*)                      NRF_CELLULARDSP_ETM_BASE)
 #define NRF_CELLULARDSP_CTI1              ((NRF_CTI_Type*)                      NRF_CELLULARDSP_CTI1_BASE)
 #define NRF_CELLULARDSP_HSFLL             ((NRF_HSFLL_Type*)                    NRF_CELLULARDSP_HSFLL_BASE)
-#define NRF_CELLULARDSP_LRC0              ((NRF_LRC_Type*)                      NRF_CELLULARDSP_LRC0_BASE)
+#define NRF_CELLULARDSP_LRCCONF0          ((NRF_LRCCONF_Type*)                  NRF_CELLULARDSP_LRCCONF0_BASE)
 #define NRF_CELLULARDSP_MPC               ((NRF_MPC_Type*)                      NRF_CELLULARDSP_MPC_BASE)
 #define NRF_CELLULARDSP_MVDMA             ((NRF_MVDMA_Type*)                    NRF_CELLULARDSP_MVDMA_BASE)
 #define NRF_CELLULARDSP_RAMC00            ((NRF_RAMC_Type*)                     NRF_CELLULARDSP_RAMC00_BASE)
@@ -264,17 +248,17 @@ typedef enum {
 #define NRF_CELLULARDSP_HARQ              ((NRF_HARQ_Type*)                     NRF_CELLULARDSP_HARQ_BASE)
 #define NRF_CELLULARDSP_VITERBI           ((NRF_VITERBI_Type*)                  NRF_CELLULARDSP_VITERBI_BASE)
 #define NRF_CELLULARDSP_PPIB0             ((NRF_PPIB_Type*)                     NRF_CELLULARDSP_PPIB0_BASE)
-#define NRF_CELLULARDSP_LRC1              ((NRF_LRC_Type*)                      NRF_CELLULARDSP_LRC1_BASE)
+#define NRF_CELLULARDSP_LRCCONF1          ((NRF_LRCCONF_Type*)                  NRF_CELLULARDSP_LRCCONF1_BASE)
 #define NRF_CELLULARDSP_CPUCONF           ((NRF_CPUCONF_Type*)                  NRF_CELLULARDSP_CPUCONF_BASE)
 #define NRF_CELLULARDSP_MEMCONF           ((NRF_MEMCONF_Type*)                  NRF_CELLULARDSP_MEMCONF_BASE)
 #define NRF_CELLULARDSP_IPCT              ((NRF_IPCT_Type*)                     NRF_CELLULARDSP_IPCT_BASE)
 #define NRF_CELLULARDSP_GENERIC4          ((NRF_GENERIC_Type*)                  NRF_CELLULARDSP_GENERIC4_BASE)
-#define NRF_CELLULARDSP_GENERIC5          ((NRF_GENERIC_Type*)                  NRF_CELLULARDSP_GENERIC5_BASE)
+#define NRF_CELLULARDSP_PCGCM0            ((NRF_PCGCMASTER_Type*)               NRF_CELLULARDSP_PCGCM0_BASE)
 #define NRF_CELLULARDSP_PPIB1             ((NRF_PPIB_Type*)                     NRF_CELLULARDSP_PPIB1_BASE)
 #define NRF_CELLULARDSP_GENERIC6          ((NRF_GENERIC_Type*)                  NRF_CELLULARDSP_GENERIC6_BASE)
 #define NRF_CELLULARDSP_DPPIC             ((NRF_DPPIC_Type*)                    NRF_CELLULARDSP_DPPIC_BASE)
-#define NRF_CELLULARDSP_GENERIC7          ((NRF_GENERIC_Type*)                  NRF_CELLULARDSP_GENERIC7_BASE)
-#define NRF_CELLULARDSP_GENERIC8          ((NRF_GENERIC_Type*)                  NRF_CELLULARDSP_GENERIC8_BASE)
+#define NRF_CELLULARDSP_PCGCS0            ((NRF_PCGCSLAVE_Type*)                NRF_CELLULARDSP_PCGCS0_BASE)
+#define NRF_CELLULARDSP_PCGCM1            ((NRF_PCGCMASTER_Type*)               NRF_CELLULARDSP_PCGCM1_BASE)
 #define NRF_CELLULARDSP_GENERIC9          ((NRF_GENERIC_Type*)                  NRF_CELLULARDSP_GENERIC9_BASE)
 #define NRF_CELLULARDSP_GENERIC10         ((NRF_GENERIC_Type*)                  NRF_CELLULARDSP_GENERIC10_BASE)
 #define NRF_CELLULARDSP_GENERIC11         ((NRF_GENERIC_Type*)                  NRF_CELLULARDSP_GENERIC11_BASE)
@@ -290,7 +274,7 @@ typedef enum {
   #define NRF_ETM                                 NRF_CELLULARDSP_ETM
   #define NRF_CTI1                                NRF_CELLULARDSP_CTI1
   #define NRF_HSFLL                               NRF_CELLULARDSP_HSFLL
-  #define NRF_LRC0                                NRF_CELLULARDSP_LRC0
+  #define NRF_LRCCONF0                            NRF_CELLULARDSP_LRCCONF0
   #define NRF_MPC                                 NRF_CELLULARDSP_MPC
   #define NRF_MVDMA                               NRF_CELLULARDSP_MVDMA
   #define NRF_RAMC00                              NRF_CELLULARDSP_RAMC00
@@ -304,17 +288,17 @@ typedef enum {
   #define NRF_HARQ                                NRF_CELLULARDSP_HARQ
   #define NRF_VITERBI                             NRF_CELLULARDSP_VITERBI
   #define NRF_PPIB0                               NRF_CELLULARDSP_PPIB0
-  #define NRF_LRC1                                NRF_CELLULARDSP_LRC1
+  #define NRF_LRCCONF1                            NRF_CELLULARDSP_LRCCONF1
   #define NRF_CPUCONF                             NRF_CELLULARDSP_CPUCONF
   #define NRF_MEMCONF                             NRF_CELLULARDSP_MEMCONF
   #define NRF_IPCT                                NRF_CELLULARDSP_IPCT
   #define NRF_GENERIC4                            NRF_CELLULARDSP_GENERIC4
-  #define NRF_GENERIC5                            NRF_CELLULARDSP_GENERIC5
+  #define NRF_PCGCM0                              NRF_CELLULARDSP_PCGCM0
   #define NRF_PPIB1                               NRF_CELLULARDSP_PPIB1
   #define NRF_GENERIC6                            NRF_CELLULARDSP_GENERIC6
   #define NRF_DPPIC                               NRF_CELLULARDSP_DPPIC
-  #define NRF_GENERIC7                            NRF_CELLULARDSP_GENERIC7
-  #define NRF_GENERIC8                            NRF_CELLULARDSP_GENERIC8
+  #define NRF_PCGCS0                              NRF_CELLULARDSP_PCGCS0
+  #define NRF_PCGCM1                              NRF_CELLULARDSP_PCGCM1
   #define NRF_GENERIC9                            NRF_CELLULARDSP_GENERIC9
   #define NRF_GENERIC10                           NRF_CELLULARDSP_GENERIC10
   #define NRF_GENERIC11                           NRF_CELLULARDSP_GENERIC11
@@ -337,6 +321,8 @@ typedef enum {
 #elif defined (__TASKING__)
   #pragma warning restore
 #elif defined (__CSMC__)
+  /* anonymous unions are enabled by default */
+#elif defined (_CEVA)
   /* anonymous unions are enabled by default */
 #endif
 

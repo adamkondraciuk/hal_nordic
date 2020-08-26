@@ -75,17 +75,13 @@ typedef enum {
   GENERIC0_IRQn                          = 2,        /*!< 2 GENERIC0                                                           */
   MVDMA_IRQn                             = 3,        /*!< 3 MVDMA                                                              */
   RAMC00_IRQn                            = 4,        /*!< 4 RAMC00                                                             */
-  GENERIC1_IRQn                          = 11,       /*!< 11 GENERIC1                                                          */
   ABB_IRQn                               = 12,       /*!< 12 ABB                                                               */
   HSFLL_IRQn                             = 13,       /*!< 13 HSFLL                                                             */
-  LRC0_IRQn                              = 14,       /*!< 14 LRC0                                                              */
-  GENERIC4_IRQn                          = 15,       /*!< 15 GENERIC4                                                          */
+  LRCCONF0_IRQn                          = 14,       /*!< 14 LRCCONF0                                                          */
   SPU1_IRQn                              = 16,       /*!< 16 SPU1                                                              */
   WDT0_IRQn                              = 20,       /*!< 20 WDT0                                                              */
   WDT1_IRQn                              = 21,       /*!< 21 WDT1                                                              */
-  GENERIC5_IRQn                          = 29,       /*!< 29 GENERIC5                                                          */
-  LRC1_IRQn                              = 30,       /*!< 30 LRC1                                                              */
-  GENERIC7_IRQn                          = 31,       /*!< 31 GENERIC7                                                          */
+  LRCCONF1_IRQn                          = 30,       /*!< 30 LRCCONF1                                                          */
   IPCT0_IRQn                             = 64,       /*!< 64 IPCT0                                                             */
   IPCT1_IRQn                             = 65,       /*!< 65 IPCT1                                                             */
   BELLBOARD0_IRQn                        = 96,       /*!< 96 BELLBOARD0                                                        */
@@ -96,11 +92,12 @@ typedef enum {
   GPIOTE01_IRQn                          = 105,      /*!< 105 GPIOTE01                                                         */
   GPIOTE10_IRQn                          = 106,      /*!< 106 GPIOTE10                                                         */
   GPIOTE11_IRQn                          = 107,      /*!< 107 GPIOTE11                                                         */
+  USBHS_IRQn                             = 134,      /*!< 134 USBHS                                                            */
   GIPCT00_IRQn                           = 209,      /*!< 209 GIPCT00                                                          */
-  GGENERIC55_IRQn                        = 211,      /*!< 211 GGENERIC55                                                       */
-  GGENERIC56_IRQn                        = 212,      /*!< 212 GGENERIC56                                                       */
-  GGENERIC57_IRQn                        = 213,      /*!< 213 GGENERIC57                                                       */
-  GGENERIC58_IRQn                        = 214,      /*!< 214 GGENERIC58                                                       */
+  I3C0_IRQn                              = 211,      /*!< 211 I3C0                                                             */
+  I3C1_IRQn                              = 212,      /*!< 212 I3C1                                                             */
+  I3C2_IRQn                              = 213,      /*!< 213 I3C2                                                             */
+  I3C3_IRQn                              = 214,      /*!< 214 I3C3                                                             */
   GTIMER0_IRQn                           = 226,      /*!< 226 GTIMER0                                                          */
   GTIMER1_IRQn                           = 227,      /*!< 227 GTIMER1                                                          */
   PWM0_IRQn                              = 228,      /*!< 228 PWM0                                                             */
@@ -187,6 +184,8 @@ typedef enum {
   #pragma warning 586
 #elif defined (__CSMC__)
   /* anonymous unions are enabled by default */
+#elif defined (_CEVA)
+  /* anonymous unions are enabled by default */
 #else
   #warning Unsupported compiler type
 #endif
@@ -195,9 +194,8 @@ typedef enum {
 /* ================                                  Peripheral Address Map                                  ================ */
 /* =========================================================================================================================== */
 
-#define NRF_APPLICATION_ETM_NS_BASE       0x00410000UL
-#define NRF_APPLICATION_CTI_NS_BASE       0x00420000UL
-#define NRF_APPLICATION_GENERIC8_S_BASE   0xE0042000UL
+#define NRF_APPLICATION_ETM_NS_BASE       0xE0041000UL
+#define NRF_APPLICATION_CTI_NS_BASE       0xE0042000UL
 #define NRF_APPLICATION_CPUC_S_BASE       0xE0080000UL
 #define NRF_APPLICATION_CACHE0_S_BASE     0xE0082000UL
 #define NRF_APPLICATION_CACHE1_S_BASE     0xE0083000UL
@@ -212,11 +210,11 @@ typedef enum {
 #define NRF_APPLICATION_MVDMA_S_BASE      0x52003000UL
 #define NRF_APPLICATION_RAMC00_NS_BASE    0x42004000UL
 #define NRF_APPLICATION_RAMC00_S_BASE     0x52004000UL
-#define NRF_APPLICATION_GENERIC1_S_BASE   0x5200B000UL
+#define NRF_APPLICATION_PCGCS0_S_BASE     0x5200B000UL
 #define NRF_APPLICATION_ABB_S_BASE        0x5200C000UL
 #define NRF_APPLICATION_HSFLL_S_BASE      0x5200D000UL
-#define NRF_APPLICATION_LRC0_S_BASE       0x5200E000UL
-#define NRF_APPLICATION_GENERIC4_S_BASE   0x5200F000UL
+#define NRF_APPLICATION_LRCCONF0_S_BASE   0x5200E000UL
+#define NRF_APPLICATION_PCGCM0_S_BASE     0x5200F000UL
 #define NRF_APPLICATION_SPU1_S_BASE       0x52010000UL
 #define NRF_APPLICATION_CPUCONF_NS_BASE   0x42011000UL
 #define NRF_APPLICATION_CPUCONF_S_BASE    0x52011000UL
@@ -226,9 +224,9 @@ typedef enum {
 #define NRF_APPLICATION_WDT0_S_BASE       0x52014000UL
 #define NRF_APPLICATION_WDT1_NS_BASE      0x42015000UL
 #define NRF_APPLICATION_WDT1_S_BASE       0x52015000UL
-#define NRF_APPLICATION_GENERIC5_S_BASE   0x5201D000UL
-#define NRF_APPLICATION_LRC1_S_BASE       0x5201E000UL
-#define NRF_APPLICATION_GENERIC7_S_BASE   0x5201F000UL
+#define NRF_APPLICATION_PCGCS1_S_BASE     0x5201D000UL
+#define NRF_APPLICATION_LRCCONF1_S_BASE   0x5201E000UL
+#define NRF_APPLICATION_PCGCM1_S_BASE     0x5201F000UL
 #define NRF_APPLICATION_IPCT_NS_BASE      0x42013000UL
 #define NRF_APPLICATION_IPCT_S_BASE       0x52013000UL
 #define NRF_APPLICATION_BELLBOARD_NS_BASE 0x4F09A000UL
@@ -240,7 +238,6 @@ typedef enum {
 
 #define NRF_APPLICATION_ETM_NS            ((NRF_ETM_Type*)                      NRF_APPLICATION_ETM_NS_BASE)
 #define NRF_APPLICATION_CTI_NS            ((NRF_CTI_Type*)                      NRF_APPLICATION_CTI_NS_BASE)
-#define NRF_APPLICATION_GENERIC8_S        ((NRF_GENERIC_Type*)                  NRF_APPLICATION_GENERIC8_S_BASE)
 #define NRF_APPLICATION_CPUC_S            ((NRF_CM33SS_Type*)                   NRF_APPLICATION_CPUC_S_BASE)
 #define NRF_APPLICATION_CACHE0_S          ((NRF_CACHE_Type*)                    NRF_APPLICATION_CACHE0_S_BASE)
 #define NRF_APPLICATION_CACHE1_S          ((NRF_CACHE_Type*)                    NRF_APPLICATION_CACHE1_S_BASE)
@@ -255,11 +252,11 @@ typedef enum {
 #define NRF_APPLICATION_MVDMA_S           ((NRF_MVDMA_Type*)                    NRF_APPLICATION_MVDMA_S_BASE)
 #define NRF_APPLICATION_RAMC00_NS         ((NRF_RAMC_Type*)                     NRF_APPLICATION_RAMC00_NS_BASE)
 #define NRF_APPLICATION_RAMC00_S          ((NRF_RAMC_Type*)                     NRF_APPLICATION_RAMC00_S_BASE)
-#define NRF_APPLICATION_GENERIC1_S        ((NRF_GENERIC_Type*)                  NRF_APPLICATION_GENERIC1_S_BASE)
+#define NRF_APPLICATION_PCGCS0_S          ((NRF_PCGCSLAVE_Type*)                NRF_APPLICATION_PCGCS0_S_BASE)
 #define NRF_APPLICATION_ABB_S             ((NRF_ABB_Type*)                      NRF_APPLICATION_ABB_S_BASE)
 #define NRF_APPLICATION_HSFLL_S           ((NRF_HSFLL_Type*)                    NRF_APPLICATION_HSFLL_S_BASE)
-#define NRF_APPLICATION_LRC0_S            ((NRF_LRC_Type*)                      NRF_APPLICATION_LRC0_S_BASE)
-#define NRF_APPLICATION_GENERIC4_S        ((NRF_GENERIC_Type*)                  NRF_APPLICATION_GENERIC4_S_BASE)
+#define NRF_APPLICATION_LRCCONF0_S        ((NRF_LRCCONF_Type*)                  NRF_APPLICATION_LRCCONF0_S_BASE)
+#define NRF_APPLICATION_PCGCM0_S          ((NRF_PCGCMASTER_Type*)               NRF_APPLICATION_PCGCM0_S_BASE)
 #define NRF_APPLICATION_SPU1_S            ((NRF_SPU_Type*)                      NRF_APPLICATION_SPU1_S_BASE)
 #define NRF_APPLICATION_CPUCONF_NS        ((NRF_CPUCONF_Type*)                  NRF_APPLICATION_CPUCONF_NS_BASE)
 #define NRF_APPLICATION_CPUCONF_S         ((NRF_CPUCONF_Type*)                  NRF_APPLICATION_CPUCONF_S_BASE)
@@ -269,9 +266,9 @@ typedef enum {
 #define NRF_APPLICATION_WDT0_S            ((NRF_WDT_Type*)                      NRF_APPLICATION_WDT0_S_BASE)
 #define NRF_APPLICATION_WDT1_NS           ((NRF_WDT_Type*)                      NRF_APPLICATION_WDT1_NS_BASE)
 #define NRF_APPLICATION_WDT1_S            ((NRF_WDT_Type*)                      NRF_APPLICATION_WDT1_S_BASE)
-#define NRF_APPLICATION_GENERIC5_S        ((NRF_GENERIC_Type*)                  NRF_APPLICATION_GENERIC5_S_BASE)
-#define NRF_APPLICATION_LRC1_S            ((NRF_LRC_Type*)                      NRF_APPLICATION_LRC1_S_BASE)
-#define NRF_APPLICATION_GENERIC7_S        ((NRF_GENERIC_Type*)                  NRF_APPLICATION_GENERIC7_S_BASE)
+#define NRF_APPLICATION_PCGCS1_S          ((NRF_PCGCSLAVE_Type*)                NRF_APPLICATION_PCGCS1_S_BASE)
+#define NRF_APPLICATION_LRCCONF1_S        ((NRF_LRCCONF_Type*)                  NRF_APPLICATION_LRCCONF1_S_BASE)
+#define NRF_APPLICATION_PCGCM1_S          ((NRF_PCGCMASTER_Type*)               NRF_APPLICATION_PCGCM1_S_BASE)
 #define NRF_APPLICATION_IPCT_NS           ((NRF_IPCT_Type*)                     NRF_APPLICATION_IPCT_NS_BASE)
 #define NRF_APPLICATION_IPCT_S            ((NRF_IPCT_Type*)                     NRF_APPLICATION_IPCT_S_BASE)
 #define NRF_APPLICATION_BELLBOARD_NS      ((NRF_BELLBOARD_Type*)                NRF_APPLICATION_BELLBOARD_NS_BASE)
@@ -295,7 +292,6 @@ typedef enum {
 #else                                                /*!< Remap NRF_X_S instances to NRF_X symbol for ease of use.             */
   #define NRF_APPLICATION_ETM                     NRF_APPLICATION_ETM_NS
   #define NRF_APPLICATION_CTI                     NRF_APPLICATION_CTI_NS
-  #define NRF_APPLICATION_GENERIC8                NRF_APPLICATION_GENERIC8_S
   #define NRF_APPLICATION_CPUC                    NRF_APPLICATION_CPUC_S
   #define NRF_APPLICATION_CACHE0                  NRF_APPLICATION_CACHE0_S
   #define NRF_APPLICATION_CACHE1                  NRF_APPLICATION_CACHE1_S
@@ -308,19 +304,19 @@ typedef enum {
   #define NRF_APPLICATION_GENERIC0                NRF_APPLICATION_GENERIC0_S
   #define NRF_APPLICATION_MVDMA                   NRF_APPLICATION_MVDMA_S
   #define NRF_APPLICATION_RAMC00                  NRF_APPLICATION_RAMC00_S
-  #define NRF_APPLICATION_GENERIC1                NRF_APPLICATION_GENERIC1_S
+  #define NRF_APPLICATION_PCGCS0                  NRF_APPLICATION_PCGCS0_S
   #define NRF_APPLICATION_ABB                     NRF_APPLICATION_ABB_S
   #define NRF_APPLICATION_HSFLL                   NRF_APPLICATION_HSFLL_S
-  #define NRF_APPLICATION_LRC0                    NRF_APPLICATION_LRC0_S
-  #define NRF_APPLICATION_GENERIC4                NRF_APPLICATION_GENERIC4_S
+  #define NRF_APPLICATION_LRCCONF0                NRF_APPLICATION_LRCCONF0_S
+  #define NRF_APPLICATION_PCGCM0                  NRF_APPLICATION_PCGCM0_S
   #define NRF_APPLICATION_SPU1                    NRF_APPLICATION_SPU1_S
   #define NRF_APPLICATION_CPUCONF                 NRF_APPLICATION_CPUCONF_S
   #define NRF_APPLICATION_MEMCONF                 NRF_APPLICATION_MEMCONF_S
   #define NRF_APPLICATION_WDT0                    NRF_APPLICATION_WDT0_S
   #define NRF_APPLICATION_WDT1                    NRF_APPLICATION_WDT1_S
-  #define NRF_APPLICATION_GENERIC5                NRF_APPLICATION_GENERIC5_S
-  #define NRF_APPLICATION_LRC1                    NRF_APPLICATION_LRC1_S
-  #define NRF_APPLICATION_GENERIC7                NRF_APPLICATION_GENERIC7_S
+  #define NRF_APPLICATION_PCGCS1                  NRF_APPLICATION_PCGCS1_S
+  #define NRF_APPLICATION_LRCCONF1                NRF_APPLICATION_LRCCONF1_S
+  #define NRF_APPLICATION_PCGCM1                  NRF_APPLICATION_PCGCM1_S
   #define NRF_APPLICATION_IPCT                    NRF_APPLICATION_IPCT_S
   #define NRF_APPLICATION_BELLBOARD               NRF_APPLICATION_BELLBOARD_S
 #endif                                               /*!<  NRF_NONSECURE                                                       */
@@ -332,7 +328,6 @@ typedef enum {
 #ifdef NRF_APPLICATION                               /*!< Remap NRF_DOMAIN instances to NRF_X symbol for ease of use.          */
   #define NRF_ETM                                 NRF_APPLICATION_ETM
   #define NRF_CTI                                 NRF_APPLICATION_CTI
-  #define NRF_GENERIC8                            NRF_APPLICATION_GENERIC8
   #define NRF_CPUC                                NRF_APPLICATION_CPUC
   #define NRF_CACHE0                              NRF_APPLICATION_CACHE0
   #define NRF_CACHE1                              NRF_APPLICATION_CACHE1
@@ -345,19 +340,19 @@ typedef enum {
   #define NRF_GENERIC0                            NRF_APPLICATION_GENERIC0
   #define NRF_MVDMA                               NRF_APPLICATION_MVDMA
   #define NRF_RAMC00                              NRF_APPLICATION_RAMC00
-  #define NRF_GENERIC1                            NRF_APPLICATION_GENERIC1
+  #define NRF_PCGCS0                              NRF_APPLICATION_PCGCS0
   #define NRF_ABB                                 NRF_APPLICATION_ABB
   #define NRF_HSFLL                               NRF_APPLICATION_HSFLL
-  #define NRF_LRC0                                NRF_APPLICATION_LRC0
-  #define NRF_GENERIC4                            NRF_APPLICATION_GENERIC4
+  #define NRF_LRCCONF0                            NRF_APPLICATION_LRCCONF0
+  #define NRF_PCGCM0                              NRF_APPLICATION_PCGCM0
   #define NRF_SPU1                                NRF_APPLICATION_SPU1
   #define NRF_CPUCONF                             NRF_APPLICATION_CPUCONF
   #define NRF_MEMCONF                             NRF_APPLICATION_MEMCONF
   #define NRF_WDT0                                NRF_APPLICATION_WDT0
   #define NRF_WDT1                                NRF_APPLICATION_WDT1
-  #define NRF_GENERIC5                            NRF_APPLICATION_GENERIC5
-  #define NRF_LRC1                                NRF_APPLICATION_LRC1
-  #define NRF_GENERIC7                            NRF_APPLICATION_GENERIC7
+  #define NRF_PCGCS1                              NRF_APPLICATION_PCGCS1
+  #define NRF_LRCCONF1                            NRF_APPLICATION_LRCCONF1
+  #define NRF_PCGCM1                              NRF_APPLICATION_PCGCM1
   #define NRF_IPCT                                NRF_APPLICATION_IPCT
   #define NRF_BELLBOARD                           NRF_APPLICATION_BELLBOARD
 #endif                                               /*!< NRF_APPLICATION                                                      */
@@ -377,6 +372,8 @@ typedef enum {
 #elif defined (__TASKING__)
   #pragma warning restore
 #elif defined (__CSMC__)
+  /* anonymous unions are enabled by default */
+#elif defined (_CEVA)
   /* anonymous unions are enabled by default */
 #endif
 

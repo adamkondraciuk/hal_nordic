@@ -125,7 +125,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define AAR_PUBLISH_END_EN_Disabled (0UL) /*!< Disable publishing */
 #define AAR_PUBLISH_END_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event END will publish to. */
+/* Bits 7..0 : DPPI channel that event END will publish to */
 #define AAR_PUBLISH_END_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define AAR_PUBLISH_END_CHIDX_Msk (0xFFUL << AAR_PUBLISH_END_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -138,7 +138,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define AAR_PUBLISH_RESOLVED_EN_Disabled (0UL) /*!< Disable publishing */
 #define AAR_PUBLISH_RESOLVED_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event RESOLVED will publish to. */
+/* Bits 7..0 : DPPI channel that event RESOLVED will publish to */
 #define AAR_PUBLISH_RESOLVED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define AAR_PUBLISH_RESOLVED_CHIDX_Msk (0xFFUL << AAR_PUBLISH_RESOLVED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -151,7 +151,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define AAR_PUBLISH_NOTRESOLVED_EN_Disabled (0UL) /*!< Disable publishing */
 #define AAR_PUBLISH_NOTRESOLVED_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event NOTRESOLVED will publish to. */
+/* Bits 7..0 : DPPI channel that event NOTRESOLVED will publish to */
 #define AAR_PUBLISH_NOTRESOLVED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define AAR_PUBLISH_NOTRESOLVED_CHIDX_Msk (0xFFUL << AAR_PUBLISH_NOTRESOLVED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -267,6 +267,15 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* Bits 31..0 : Pointer to a scratch data area used for temporary storage during resolution. A space of minimum 3 bytes must be reserved. */
 #define AAR_SCRATCHPTR_SCRATCHPTR_Pos (0UL) /*!< Position of SCRATCHPTR field. */
 #define AAR_SCRATCHPTR_SCRATCHPTR_Msk (0xFFFFFFFFUL << AAR_SCRATCHPTR_SCRATCHPTR_Pos) /*!< Bit mask of SCRATCHPTR field. */
+
+/* Register: AAR_POWER */
+/* Description: Peripheral power control */
+
+/* Bit 0 : Peripheral power control. The peripheral and its registers will be reset to its initial state by switching the peripheral off and then back on again. All POWER registers in AAR, CCM and ECB must be disabled to see a reset of any of those functions. */
+#define AAR_POWER_POWER_Pos (0UL) /*!< Position of POWER field. */
+#define AAR_POWER_POWER_Msk (0x1UL << AAR_POWER_POWER_Pos) /*!< Bit mask of POWER field. */
+#define AAR_POWER_POWER_Disabled (0UL) /*!< Peripheral is powered off */
+#define AAR_POWER_POWER_Enabled (1UL) /*!< Peripheral is powered on */
 
 
 /* Peripheral: AMLI */
@@ -859,7 +868,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define CCM_PUBLISH_ENDKSGEN_EN_Disabled (0UL) /*!< Disable publishing */
 #define CCM_PUBLISH_ENDKSGEN_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ENDKSGEN will publish to. */
+/* Bits 7..0 : DPPI channel that event ENDKSGEN will publish to */
 #define CCM_PUBLISH_ENDKSGEN_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define CCM_PUBLISH_ENDKSGEN_CHIDX_Msk (0xFFUL << CCM_PUBLISH_ENDKSGEN_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -872,7 +881,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define CCM_PUBLISH_ENDCRYPT_EN_Disabled (0UL) /*!< Disable publishing */
 #define CCM_PUBLISH_ENDCRYPT_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ENDCRYPT will publish to. */
+/* Bits 7..0 : DPPI channel that event ENDCRYPT will publish to */
 #define CCM_PUBLISH_ENDCRYPT_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define CCM_PUBLISH_ENDCRYPT_CHIDX_Msk (0xFFUL << CCM_PUBLISH_ENDCRYPT_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -885,7 +894,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define CCM_PUBLISH_ERROR_EN_Disabled (0UL) /*!< Disable publishing */
 #define CCM_PUBLISH_ERROR_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ERROR will publish to. */
+/* Bits 7..0 : DPPI channel that event ERROR will publish to */
 #define CCM_PUBLISH_ERROR_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define CCM_PUBLISH_ERROR_CHIDX_Msk (0xFFUL << CCM_PUBLISH_ERROR_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -1035,6 +1044,15 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define CCM_RATEOVERRIDE_RATEOVERRIDE_125Kbps (2UL) /*!< 125 Kbps */
 #define CCM_RATEOVERRIDE_RATEOVERRIDE_500Kbps (3UL) /*!< 500 Kbps */
 
+/* Register: CCM_POWER */
+/* Description: Peripheral power control */
+
+/* Bit 0 : Peripheral power control. The peripheral and its registers will be reset to initial state by switching the peripheral off and then back on again. All POWER registers in AAR, CCM and ECB must be disabled to see a reset of any of those functions. */
+#define CCM_POWER_POWER_Pos (0UL) /*!< Position of POWER field. */
+#define CCM_POWER_POWER_Msk (0x1UL << CCM_POWER_POWER_Pos) /*!< Bit mask of POWER field. */
+#define CCM_POWER_POWER_Disabled (0UL) /*!< Peripheral is powered off */
+#define CCM_POWER_POWER_Enabled (1UL) /*!< Peripheral is powered on */
+
 
 /* Peripheral: CLOCK */
 /* Description: Clock management */
@@ -1180,7 +1198,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define CLOCK_PUBLISH_HFCLKSTARTED_EN_Disabled (0UL) /*!< Disable publishing */
 #define CLOCK_PUBLISH_HFCLKSTARTED_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event HFCLKSTARTED will publish to. */
+/* Bits 7..0 : DPPI channel that event HFCLKSTARTED will publish to */
 #define CLOCK_PUBLISH_HFCLKSTARTED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define CLOCK_PUBLISH_HFCLKSTARTED_CHIDX_Msk (0xFFUL << CLOCK_PUBLISH_HFCLKSTARTED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -1193,7 +1211,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define CLOCK_PUBLISH_LFCLKSTARTED_EN_Disabled (0UL) /*!< Disable publishing */
 #define CLOCK_PUBLISH_LFCLKSTARTED_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event LFCLKSTARTED will publish to. */
+/* Bits 7..0 : DPPI channel that event LFCLKSTARTED will publish to */
 #define CLOCK_PUBLISH_LFCLKSTARTED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define CLOCK_PUBLISH_LFCLKSTARTED_CHIDX_Msk (0xFFUL << CLOCK_PUBLISH_LFCLKSTARTED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -1206,7 +1224,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define CLOCK_PUBLISH_DONE_EN_Disabled (0UL) /*!< Disable publishing */
 #define CLOCK_PUBLISH_DONE_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event DONE will publish to. */
+/* Bits 7..0 : DPPI channel that event DONE will publish to */
 #define CLOCK_PUBLISH_DONE_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define CLOCK_PUBLISH_DONE_CHIDX_Msk (0xFFUL << CLOCK_PUBLISH_DONE_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -1974,7 +1992,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define ECB_PUBLISH_ENDECB_EN_Disabled (0UL) /*!< Disable publishing */
 #define ECB_PUBLISH_ENDECB_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ENDECB will publish to. */
+/* Bits 7..0 : DPPI channel that event ENDECB will publish to */
 #define ECB_PUBLISH_ENDECB_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define ECB_PUBLISH_ENDECB_CHIDX_Msk (0xFFUL << ECB_PUBLISH_ENDECB_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -1987,7 +2005,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define ECB_PUBLISH_ERRORECB_EN_Disabled (0UL) /*!< Disable publishing */
 #define ECB_PUBLISH_ERRORECB_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ERRORECB will publish to. */
+/* Bits 7..0 : DPPI channel that event ERRORECB will publish to */
 #define ECB_PUBLISH_ERRORECB_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define ECB_PUBLISH_ERRORECB_CHIDX_Msk (0xFFUL << ECB_PUBLISH_ERRORECB_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -2032,9 +2050,109 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define ECB_ECBDATAPTR_ECBDATAPTR_Pos (0UL) /*!< Position of ECBDATAPTR field. */
 #define ECB_ECBDATAPTR_ECBDATAPTR_Msk (0xFFFFFFFFUL << ECB_ECBDATAPTR_ECBDATAPTR_Pos) /*!< Bit mask of ECBDATAPTR field. */
 
+/* Register: ECB_POWER */
+/* Description: Peripheral power control */
+
+/* Bit 0 : Peripheral power control. The peripheral and its registers will be reset to its initial state by switching the peripheral off and then back on again. All POWER registers in AAR, CCM and ECB must be disabled to see a reset of any of those functions. */
+#define ECB_POWER_POWER_Pos (0UL) /*!< Position of POWER field. */
+#define ECB_POWER_POWER_Msk (0x1UL << ECB_POWER_POWER_Pos) /*!< Bit mask of POWER field. */
+#define ECB_POWER_POWER_Disabled (0UL) /*!< Peripheral is powered off */
+#define ECB_POWER_POWER_Enabled (1UL) /*!< Peripheral is powered on */
+
 
 /* Peripheral: FICR */
 /* Description: Factory Information Configuration Registers */
+
+/* Register: FICR_CHIPCONF00 */
+/* Description: Unspecified */
+
+/* Bits 29..26 : Master bias bandgap trim */
+#define FICR_CHIPCONF00_BGREFTRIM_Pos (26UL) /*!< Position of BGREFTRIM field. */
+#define FICR_CHIPCONF00_BGREFTRIM_Msk (0xFUL << FICR_CHIPCONF00_BGREFTRIM_Pos) /*!< Bit mask of BGREFTRIM field. */
+
+/* Bits 25..21 : Threshold trim, power on reset */
+#define FICR_CHIPCONF00_RSTVTHTRIM_Pos (21UL) /*!< Position of RSTVTHTRIM field. */
+#define FICR_CHIPCONF00_RSTVTHTRIM_Msk (0x1FUL << FICR_CHIPCONF00_RSTVTHTRIM_Pos) /*!< Bit mask of RSTVTHTRIM field. */
+
+/* Bits 20..15 : RCOSC coarse calibration input */
+#define FICR_CHIPCONF00_RCOSC32KICOARSEIN_Pos (15UL) /*!< Position of RCOSC32KICOARSEIN field. */
+#define FICR_CHIPCONF00_RCOSC32KICOARSEIN_Msk (0x3FUL << FICR_CHIPCONF00_RCOSC32KICOARSEIN_Pos) /*!< Bit mask of RCOSC32KICOARSEIN field. */
+
+/* Bits 14..13 : 32kHz RC oscillator calibration length in number of cycles */
+#define FICR_CHIPCONF00_RCOSC32KICALLENGTH_Pos (13UL) /*!< Position of RCOSC32KICALLENGTH field. */
+#define FICR_CHIPCONF00_RCOSC32KICALLENGTH_Msk (0x3UL << FICR_CHIPCONF00_RCOSC32KICALLENGTH_Pos) /*!< Bit mask of RCOSC32KICALLENGTH field. */
+#define FICR_CHIPCONF00_RCOSC32KICALLENGTH_N64 (0UL) /*!< 64 cycles */
+#define FICR_CHIPCONF00_RCOSC32KICALLENGTH_N128 (1UL) /*!< 128 cycles */
+#define FICR_CHIPCONF00_RCOSC32KICALLENGTH_N256 (2UL) /*!< 256 cycles */
+#define FICR_CHIPCONF00_RCOSC32KICALLENGTH_N512 (3UL) /*!< 512 cycles */
+
+/* Bit 12 : Disable synchronizer on calibration clock request from Rc32kiGenerator. */
+#define FICR_CHIPCONF00_RC32KICLOCKSYNCDISABLE_Pos (12UL) /*!< Position of RC32KICLOCKSYNCDISABLE field. */
+#define FICR_CHIPCONF00_RC32KICLOCKSYNCDISABLE_Msk (0x1UL << FICR_CHIPCONF00_RC32KICLOCKSYNCDISABLE_Pos) /*!< Bit mask of RC32KICLOCKSYNCDISABLE field. */
+
+/* Bit 11 :   */
+#define FICR_CHIPCONF00_DISABLEREGULATORCLOCKFORCING_Pos (11UL) /*!< Position of DISABLEREGULATORCLOCKFORCING field. */
+#define FICR_CHIPCONF00_DISABLEREGULATORCLOCKFORCING_Msk (0x1UL << FICR_CHIPCONF00_DISABLEREGULATORCLOCKFORCING_Pos) /*!< Bit mask of DISABLEREGULATORCLOCKFORCING field. */
+
+/* Bits 10..6 : HFCLK ring oscillator trim codes. Previous name: HFROSCTRIM. */
+#define FICR_CHIPCONF00_PLL_CALIB_ROSC_Pos (6UL) /*!< Position of PLL_CALIB_ROSC field. */
+#define FICR_CHIPCONF00_PLL_CALIB_ROSC_Msk (0x1FUL << FICR_CHIPCONF00_PLL_CALIB_ROSC_Pos) /*!< Bit mask of PLL_CALIB_ROSC field. */
+
+/* Bit 5 : Control the output voltage for LVLP */
+#define FICR_CHIPCONF00_LVLPULPALWAYSHIGH_Pos (5UL) /*!< Position of LVLPULPALWAYSHIGH field. */
+#define FICR_CHIPCONF00_LVLPULPALWAYSHIGH_Msk (0x1UL << FICR_CHIPCONF00_LVLPULPALWAYSHIGH_Pos) /*!< Bit mask of LVLPULPALWAYSHIGH field. */
+
+/* Bits 4..2 : Disable glitch-filter on clock sources powerup and standby lines */
+#define FICR_CHIPCONF00_CLOCKREQFILTERDISABLE_Pos (2UL) /*!< Position of CLOCKREQFILTERDISABLE field. */
+#define FICR_CHIPCONF00_CLOCKREQFILTERDISABLE_Msk (0x7UL << FICR_CHIPCONF00_CLOCKREQFILTERDISABLE_Pos) /*!< Bit mask of CLOCKREQFILTERDISABLE field. */
+#define FICR_CHIPCONF00_CLOCKREQFILTERDISABLE_XOSC32M (0x1UL) /*!< Disable glitch-filter on powerUp- and standby lines to XOSC32M */
+#define FICR_CHIPCONF00_CLOCKREQFILTERDISABLE_32ki (0x2UL) /*!< Disable glitch-filter on powerUp line to Rosc/Xosc/Synth used in clock system A (32ki) */
+#define FICR_CHIPCONF00_CLOCKREQFILTERDISABLE_64M (0x4UL) /*!< Disable glitch-filter on powerUp line to PLL used in clock system B (64M) */
+
+/* Bit 1 : Enable clock gate in clock purifier. Should always be 1. */
+#define FICR_CHIPCONF00_CKPUREEN_Pos (1UL) /*!< Position of CKPUREEN field. */
+#define FICR_CHIPCONF00_CKPUREEN_Msk (0x1UL << FICR_CHIPCONF00_CKPUREEN_Pos) /*!< Bit mask of CKPUREEN field. */
+
+/* Bit 0 : Force LVLP ULP regulators to be always on */
+#define FICR_CHIPCONF00_LVLPULPALWAYSON_Pos (0UL) /*!< Position of LVLPULPALWAYSON field. */
+#define FICR_CHIPCONF00_LVLPULPALWAYSON_Msk (0x1UL << FICR_CHIPCONF00_LVLPULPALWAYSON_Pos) /*!< Bit mask of LVLPULPALWAYSON field. */
+
+/* Register: FICR_CHIPCONF01 */
+/* Description: Unspecified */
+
+/* Bits 30..15 : Control the stay-alive time for VDD2 current comparator */
+#define FICR_CHIPCONF01_VREGMAINICMPTIMER_Pos (15UL) /*!< Position of VREGMAINICMPTIMER field. */
+#define FICR_CHIPCONF01_VREGMAINICMPTIMER_Msk (0xFFFFUL << FICR_CHIPCONF01_VREGMAINICMPTIMER_Pos) /*!< Bit mask of VREGMAINICMPTIMER field. */
+
+/* Bits 14..11 : Control the output voltage for VREGMAIN */
+#define FICR_CHIPCONF01_VREGMAINVOLT_Pos (11UL) /*!< Position of VREGMAINVOLT field. */
+#define FICR_CHIPCONF01_VREGMAINVOLT_Msk (0xFUL << FICR_CHIPCONF01_VREGMAINVOLT_Pos) /*!< Bit mask of VREGMAINVOLT field. */
+
+/* Bits 10..6 : VREGANA ULP output voltage calibration */
+#define FICR_CHIPCONF01_VREGANAULPCAL_Pos (6UL) /*!< Position of VREGANAULPCAL field. */
+#define FICR_CHIPCONF01_VREGANAULPCAL_Msk (0x1FUL << FICR_CHIPCONF01_VREGANAULPCAL_Pos) /*!< Bit mask of VREGANAULPCAL field. */
+#define FICR_CHIPCONF01_VREGANAULPCAL_DEF (0UL) /*!< Default voltage */
+#define FICR_CHIPCONF01_VREGANAULPCAL_MAX (7UL) /*!< Max voltage */
+#define FICR_CHIPCONF01_VREGANAULPCAL_MIN (8UL) /*!< Min voltage */
+
+/* Bits 5..4 : Control the output voltage for VREGRADIO (AVDD_1V3) */
+#define FICR_CHIPCONF01_VREGANAVOUT_Pos (4UL) /*!< Position of VREGANAVOUT field. */
+#define FICR_CHIPCONF01_VREGANAVOUT_Msk (0x3UL << FICR_CHIPCONF01_VREGANAVOUT_Pos) /*!< Bit mask of VREGANAVOUT field. */
+
+/* Bits 3..0 : RST low power voltage reference trim */
+#define FICR_CHIPCONF01_VREFULPTRIM_Pos (0UL) /*!< Position of VREFULPTRIM field. */
+#define FICR_CHIPCONF01_VREFULPTRIM_Msk (0xFUL << FICR_CHIPCONF01_VREFULPTRIM_Pos) /*!< Bit mask of VREFULPTRIM field. */
+
+/* Register: FICR_CHIPCONF02 */
+/* Description: Unspecified */
+
+/* Bits 6..4 : Calibration of current comparator on VREGMAIN */
+#define FICR_CHIPCONF02_VREGMAINULPICMPCAL_Pos (4UL) /*!< Position of VREGMAINULPICMPCAL field. */
+#define FICR_CHIPCONF02_VREGMAINULPICMPCAL_Msk (0x7UL << FICR_CHIPCONF02_VREGMAINULPICMPCAL_Pos) /*!< Bit mask of VREGMAINULPICMPCAL field. */
+
+/* Bits 3..0 : Calibration of ULP regulator on VREGMAIN */
+#define FICR_CHIPCONF02_VREGMAINULPCAL_Pos (0UL) /*!< Position of VREGMAINULPCAL field. */
+#define FICR_CHIPCONF02_VREGMAINULPCAL_Msk (0xFUL << FICR_CHIPCONF02_VREGMAINULPCAL_Pos) /*!< Bit mask of VREGMAINULPCAL field. */
 
 /* Register: FICR_SOCINFO_PARTNO */
 /* Description: Part number of the device. */
@@ -2231,7 +2349,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define GPIOTE_PUBLISH_IN_EN_Disabled (0UL) /*!< Disable publishing */
 #define GPIOTE_PUBLISH_IN_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event IN[n] will publish to. */
+/* Bits 7..0 : DPPI channel that event IN[n] will publish to */
 #define GPIOTE_PUBLISH_IN_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define GPIOTE_PUBLISH_IN_CHIDX_Msk (0xFFUL << GPIOTE_PUBLISH_IN_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -2244,7 +2362,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define GPIOTE_PUBLISH_PORT_EN_Disabled (0UL) /*!< Disable publishing */
 #define GPIOTE_PUBLISH_PORT_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event PORT will publish to. */
+/* Bits 7..0 : DPPI channel that event PORT will publish to */
 #define GPIOTE_PUBLISH_PORT_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define GPIOTE_PUBLISH_PORT_CHIDX_Msk (0xFFUL << GPIOTE_PUBLISH_PORT_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -2256,42 +2374,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define GPIOTE_INTEN_PORT_Msk (0x1UL << GPIOTE_INTEN_PORT_Pos) /*!< Bit mask of PORT field. */
 #define GPIOTE_INTEN_PORT_Disabled (0UL) /*!< Disable */
 #define GPIOTE_INTEN_PORT_Enabled (1UL) /*!< Enable */
-
-/* Bit 7 : Enable or disable interrupt for event IN[7] */
-#define GPIOTE_INTEN_IN7_Pos (7UL) /*!< Position of IN7 field. */
-#define GPIOTE_INTEN_IN7_Msk (0x1UL << GPIOTE_INTEN_IN7_Pos) /*!< Bit mask of IN7 field. */
-#define GPIOTE_INTEN_IN7_Disabled (0UL) /*!< Disable */
-#define GPIOTE_INTEN_IN7_Enabled (1UL) /*!< Enable */
-
-/* Bit 6 : Enable or disable interrupt for event IN[6] */
-#define GPIOTE_INTEN_IN6_Pos (6UL) /*!< Position of IN6 field. */
-#define GPIOTE_INTEN_IN6_Msk (0x1UL << GPIOTE_INTEN_IN6_Pos) /*!< Bit mask of IN6 field. */
-#define GPIOTE_INTEN_IN6_Disabled (0UL) /*!< Disable */
-#define GPIOTE_INTEN_IN6_Enabled (1UL) /*!< Enable */
-
-/* Bit 5 : Enable or disable interrupt for event IN[5] */
-#define GPIOTE_INTEN_IN5_Pos (5UL) /*!< Position of IN5 field. */
-#define GPIOTE_INTEN_IN5_Msk (0x1UL << GPIOTE_INTEN_IN5_Pos) /*!< Bit mask of IN5 field. */
-#define GPIOTE_INTEN_IN5_Disabled (0UL) /*!< Disable */
-#define GPIOTE_INTEN_IN5_Enabled (1UL) /*!< Enable */
-
-/* Bit 4 : Enable or disable interrupt for event IN[4] */
-#define GPIOTE_INTEN_IN4_Pos (4UL) /*!< Position of IN4 field. */
-#define GPIOTE_INTEN_IN4_Msk (0x1UL << GPIOTE_INTEN_IN4_Pos) /*!< Bit mask of IN4 field. */
-#define GPIOTE_INTEN_IN4_Disabled (0UL) /*!< Disable */
-#define GPIOTE_INTEN_IN4_Enabled (1UL) /*!< Enable */
-
-/* Bit 3 : Enable or disable interrupt for event IN[3] */
-#define GPIOTE_INTEN_IN3_Pos (3UL) /*!< Position of IN3 field. */
-#define GPIOTE_INTEN_IN3_Msk (0x1UL << GPIOTE_INTEN_IN3_Pos) /*!< Bit mask of IN3 field. */
-#define GPIOTE_INTEN_IN3_Disabled (0UL) /*!< Disable */
-#define GPIOTE_INTEN_IN3_Enabled (1UL) /*!< Enable */
-
-/* Bit 2 : Enable or disable interrupt for event IN[2] */
-#define GPIOTE_INTEN_IN2_Pos (2UL) /*!< Position of IN2 field. */
-#define GPIOTE_INTEN_IN2_Msk (0x1UL << GPIOTE_INTEN_IN2_Pos) /*!< Bit mask of IN2 field. */
-#define GPIOTE_INTEN_IN2_Disabled (0UL) /*!< Disable */
-#define GPIOTE_INTEN_IN2_Enabled (1UL) /*!< Enable */
 
 /* Bit 1 : Enable or disable interrupt for event IN[1] */
 #define GPIOTE_INTEN_IN1_Pos (1UL) /*!< Position of IN1 field. */
@@ -2314,48 +2396,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define GPIOTE_INTENSET_PORT_Disabled (0UL) /*!< Read: Disabled */
 #define GPIOTE_INTENSET_PORT_Enabled (1UL) /*!< Read: Enabled */
 #define GPIOTE_INTENSET_PORT_Set (1UL) /*!< Enable */
-
-/* Bit 7 : Write '1' to enable interrupt for event IN[7] */
-#define GPIOTE_INTENSET_IN7_Pos (7UL) /*!< Position of IN7 field. */
-#define GPIOTE_INTENSET_IN7_Msk (0x1UL << GPIOTE_INTENSET_IN7_Pos) /*!< Bit mask of IN7 field. */
-#define GPIOTE_INTENSET_IN7_Disabled (0UL) /*!< Read: Disabled */
-#define GPIOTE_INTENSET_IN7_Enabled (1UL) /*!< Read: Enabled */
-#define GPIOTE_INTENSET_IN7_Set (1UL) /*!< Enable */
-
-/* Bit 6 : Write '1' to enable interrupt for event IN[6] */
-#define GPIOTE_INTENSET_IN6_Pos (6UL) /*!< Position of IN6 field. */
-#define GPIOTE_INTENSET_IN6_Msk (0x1UL << GPIOTE_INTENSET_IN6_Pos) /*!< Bit mask of IN6 field. */
-#define GPIOTE_INTENSET_IN6_Disabled (0UL) /*!< Read: Disabled */
-#define GPIOTE_INTENSET_IN6_Enabled (1UL) /*!< Read: Enabled */
-#define GPIOTE_INTENSET_IN6_Set (1UL) /*!< Enable */
-
-/* Bit 5 : Write '1' to enable interrupt for event IN[5] */
-#define GPIOTE_INTENSET_IN5_Pos (5UL) /*!< Position of IN5 field. */
-#define GPIOTE_INTENSET_IN5_Msk (0x1UL << GPIOTE_INTENSET_IN5_Pos) /*!< Bit mask of IN5 field. */
-#define GPIOTE_INTENSET_IN5_Disabled (0UL) /*!< Read: Disabled */
-#define GPIOTE_INTENSET_IN5_Enabled (1UL) /*!< Read: Enabled */
-#define GPIOTE_INTENSET_IN5_Set (1UL) /*!< Enable */
-
-/* Bit 4 : Write '1' to enable interrupt for event IN[4] */
-#define GPIOTE_INTENSET_IN4_Pos (4UL) /*!< Position of IN4 field. */
-#define GPIOTE_INTENSET_IN4_Msk (0x1UL << GPIOTE_INTENSET_IN4_Pos) /*!< Bit mask of IN4 field. */
-#define GPIOTE_INTENSET_IN4_Disabled (0UL) /*!< Read: Disabled */
-#define GPIOTE_INTENSET_IN4_Enabled (1UL) /*!< Read: Enabled */
-#define GPIOTE_INTENSET_IN4_Set (1UL) /*!< Enable */
-
-/* Bit 3 : Write '1' to enable interrupt for event IN[3] */
-#define GPIOTE_INTENSET_IN3_Pos (3UL) /*!< Position of IN3 field. */
-#define GPIOTE_INTENSET_IN3_Msk (0x1UL << GPIOTE_INTENSET_IN3_Pos) /*!< Bit mask of IN3 field. */
-#define GPIOTE_INTENSET_IN3_Disabled (0UL) /*!< Read: Disabled */
-#define GPIOTE_INTENSET_IN3_Enabled (1UL) /*!< Read: Enabled */
-#define GPIOTE_INTENSET_IN3_Set (1UL) /*!< Enable */
-
-/* Bit 2 : Write '1' to enable interrupt for event IN[2] */
-#define GPIOTE_INTENSET_IN2_Pos (2UL) /*!< Position of IN2 field. */
-#define GPIOTE_INTENSET_IN2_Msk (0x1UL << GPIOTE_INTENSET_IN2_Pos) /*!< Bit mask of IN2 field. */
-#define GPIOTE_INTENSET_IN2_Disabled (0UL) /*!< Read: Disabled */
-#define GPIOTE_INTENSET_IN2_Enabled (1UL) /*!< Read: Enabled */
-#define GPIOTE_INTENSET_IN2_Set (1UL) /*!< Enable */
 
 /* Bit 1 : Write '1' to enable interrupt for event IN[1] */
 #define GPIOTE_INTENSET_IN1_Pos (1UL) /*!< Position of IN1 field. */
@@ -2380,48 +2420,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define GPIOTE_INTENCLR_PORT_Disabled (0UL) /*!< Read: Disabled */
 #define GPIOTE_INTENCLR_PORT_Enabled (1UL) /*!< Read: Enabled */
 #define GPIOTE_INTENCLR_PORT_Clear (1UL) /*!< Disable */
-
-/* Bit 7 : Write '1' to disable interrupt for event IN[7] */
-#define GPIOTE_INTENCLR_IN7_Pos (7UL) /*!< Position of IN7 field. */
-#define GPIOTE_INTENCLR_IN7_Msk (0x1UL << GPIOTE_INTENCLR_IN7_Pos) /*!< Bit mask of IN7 field. */
-#define GPIOTE_INTENCLR_IN7_Disabled (0UL) /*!< Read: Disabled */
-#define GPIOTE_INTENCLR_IN7_Enabled (1UL) /*!< Read: Enabled */
-#define GPIOTE_INTENCLR_IN7_Clear (1UL) /*!< Disable */
-
-/* Bit 6 : Write '1' to disable interrupt for event IN[6] */
-#define GPIOTE_INTENCLR_IN6_Pos (6UL) /*!< Position of IN6 field. */
-#define GPIOTE_INTENCLR_IN6_Msk (0x1UL << GPIOTE_INTENCLR_IN6_Pos) /*!< Bit mask of IN6 field. */
-#define GPIOTE_INTENCLR_IN6_Disabled (0UL) /*!< Read: Disabled */
-#define GPIOTE_INTENCLR_IN6_Enabled (1UL) /*!< Read: Enabled */
-#define GPIOTE_INTENCLR_IN6_Clear (1UL) /*!< Disable */
-
-/* Bit 5 : Write '1' to disable interrupt for event IN[5] */
-#define GPIOTE_INTENCLR_IN5_Pos (5UL) /*!< Position of IN5 field. */
-#define GPIOTE_INTENCLR_IN5_Msk (0x1UL << GPIOTE_INTENCLR_IN5_Pos) /*!< Bit mask of IN5 field. */
-#define GPIOTE_INTENCLR_IN5_Disabled (0UL) /*!< Read: Disabled */
-#define GPIOTE_INTENCLR_IN5_Enabled (1UL) /*!< Read: Enabled */
-#define GPIOTE_INTENCLR_IN5_Clear (1UL) /*!< Disable */
-
-/* Bit 4 : Write '1' to disable interrupt for event IN[4] */
-#define GPIOTE_INTENCLR_IN4_Pos (4UL) /*!< Position of IN4 field. */
-#define GPIOTE_INTENCLR_IN4_Msk (0x1UL << GPIOTE_INTENCLR_IN4_Pos) /*!< Bit mask of IN4 field. */
-#define GPIOTE_INTENCLR_IN4_Disabled (0UL) /*!< Read: Disabled */
-#define GPIOTE_INTENCLR_IN4_Enabled (1UL) /*!< Read: Enabled */
-#define GPIOTE_INTENCLR_IN4_Clear (1UL) /*!< Disable */
-
-/* Bit 3 : Write '1' to disable interrupt for event IN[3] */
-#define GPIOTE_INTENCLR_IN3_Pos (3UL) /*!< Position of IN3 field. */
-#define GPIOTE_INTENCLR_IN3_Msk (0x1UL << GPIOTE_INTENCLR_IN3_Pos) /*!< Bit mask of IN3 field. */
-#define GPIOTE_INTENCLR_IN3_Disabled (0UL) /*!< Read: Disabled */
-#define GPIOTE_INTENCLR_IN3_Enabled (1UL) /*!< Read: Enabled */
-#define GPIOTE_INTENCLR_IN3_Clear (1UL) /*!< Disable */
-
-/* Bit 2 : Write '1' to disable interrupt for event IN[2] */
-#define GPIOTE_INTENCLR_IN2_Pos (2UL) /*!< Position of IN2 field. */
-#define GPIOTE_INTENCLR_IN2_Msk (0x1UL << GPIOTE_INTENCLR_IN2_Pos) /*!< Bit mask of IN2 field. */
-#define GPIOTE_INTENCLR_IN2_Disabled (0UL) /*!< Read: Disabled */
-#define GPIOTE_INTENCLR_IN2_Enabled (1UL) /*!< Read: Enabled */
-#define GPIOTE_INTENCLR_IN2_Clear (1UL) /*!< Disable */
 
 /* Bit 1 : Write '1' to disable interrupt for event IN[1] */
 #define GPIOTE_INTENCLR_IN1_Pos (1UL) /*!< Position of IN1 field. */
@@ -2565,29 +2563,30 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* Register: NVMC_CONFIG */
 /* Description: Configuration register */
 
-/* Bits 14..8 : MODE signals of the non-volatile memory macro */
-#define NVMC_CONFIG_MODENVM_Pos (8UL) /*!< Position of MODENVM field. */
+/* Bits 18..12 : MODE signals of the non-volatile memory macro */
+#define NVMC_CONFIG_MODENVM_Pos (12UL) /*!< Position of MODENVM field. */
 #define NVMC_CONFIG_MODENVM_Msk (0x7FUL << NVMC_CONFIG_MODENVM_Pos) /*!< Bit mask of MODENVM field. */
 
-/* Bit 6 : Handling MODE signals of the non-volatile memory macro */
-#define NVMC_CONFIG_MODENVMAUTO_Pos (6UL) /*!< Position of MODENVMAUTO field. */
+/* Bits 9..8 : Page erase configuration */
+#define NVMC_CONFIG_ERASEPAGECONFIG_Pos (8UL) /*!< Position of ERASEPAGECONFIG field. */
+#define NVMC_CONFIG_ERASEPAGECONFIG_Msk (0x3UL << NVMC_CONFIG_ERASEPAGECONFIG_Pos) /*!< Bit mask of ERASEPAGECONFIG field. */
+#define NVMC_CONFIG_ERASEPAGECONFIG_ReProgramErase (0UL) /*!< Erase after re-programming the data read and inverse program */
+#define NVMC_CONFIG_ERASEPAGECONFIG_InverseProgramErase (1UL) /*!< Erase after inverse program */
+#define NVMC_CONFIG_ERASEPAGECONFIG_Erase (2UL) /*!< Just erase (no re-program and inverse program) */
+
+/* Bit 5 : Handling MODE signals of the non-volatile memory macro */
+#define NVMC_CONFIG_MODENVMAUTO_Pos (5UL) /*!< Position of MODENVMAUTO field. */
 #define NVMC_CONFIG_MODENVMAUTO_Msk (0x1UL << NVMC_CONFIG_MODENVMAUTO_Pos) /*!< Bit mask of MODENVMAUTO field. */
-#define NVMC_CONFIG_MODENVMAUTO_Auto (0UL) /*!< Handled by the non-volatile memory controller automatically */
+#define NVMC_CONFIG_MODENVMAUTO_Auto (0UL) /*!< Handled automatically by the non-volatile memory controller */
 #define NVMC_CONFIG_MODENVMAUTO_Manual (1UL) /*!< Set by CONFIG.MODENVM register */
 
-/* Bit 5 : Page erase configuration */
-#define NVMC_CONFIG_ERASEPAGECONFIG_Pos (5UL) /*!< Position of ERASEPAGECONFIG field. */
-#define NVMC_CONFIG_ERASEPAGECONFIG_Msk (0x1UL << NVMC_CONFIG_ERASEPAGECONFIG_Pos) /*!< Bit mask of ERASEPAGECONFIG field. */
-#define NVMC_CONFIG_ERASEPAGECONFIG_InverseProgram (0UL) /*!< With prior inverse program */
-#define NVMC_CONFIG_ERASEPAGECONFIG_NoInverseProgram (1UL) /*!< Without prior inverse program */
+/* Bit 4 : Enable external VPP for write and page erase operations */
+#define NVMC_CONFIG_EXTERTNALVPP_Pos (4UL) /*!< Position of EXTERTNALVPP field. */
+#define NVMC_CONFIG_EXTERTNALVPP_Msk (0x1UL << NVMC_CONFIG_EXTERTNALVPP_Pos) /*!< Bit mask of EXTERTNALVPP field. */
+#define NVMC_CONFIG_EXTERTNALVPP_InternalVpp (0UL) /*!< Use internal charge pump */
+#define NVMC_CONFIG_EXTERTNALVPP_ExternalVpp (1UL) /*!< Use external VPP */
 
-/* Bit 4 : Write configuration */
-#define NVMC_CONFIG_WRITECONFIG_Pos (4UL) /*!< Position of WRITECONFIG field. */
-#define NVMC_CONFIG_WRITECONFIG_Msk (0x1UL << NVMC_CONFIG_WRITECONFIG_Pos) /*!< Bit mask of WRITECONFIG field. */
-#define NVMC_CONFIG_WRITECONFIG_InternalVpp (0UL) /*!< Write using internal charge pump */
-#define NVMC_CONFIG_WRITECONFIG_ExternalVpp (1UL) /*!< Write using external VPP */
-
-/* Bits 1..0 : Program memory access mode. It is strongly recommended to only activate erase and write modes when they are actively used. Enabling write or erase will invalidate the cache and keep it invalidated. */
+/* Bits 1..0 : Program memory access mode. It is strongly recommended to only activate erase and write modes when they are actively used. */
 #define NVMC_CONFIG_WEN_Pos (0UL) /*!< Position of WEN field. */
 #define NVMC_CONFIG_WEN_Msk (0x3UL << NVMC_CONFIG_WEN_Pos) /*!< Bit mask of WEN field. */
 #define NVMC_CONFIG_WEN_Ren (0UL) /*!< Read only access */
@@ -2610,12 +2609,25 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define NVMC_ERASEALL_ERASEALL_NoOperation (0UL) /*!< No operation */
 #define NVMC_ERASEALL_ERASEALL_Erase (1UL) /*!< Start chip erase */
 
+/* Register: NVMC_ERASEUICR */
+/* Description: Register for erasing whole UICR page */
+
+/* Bit 0 : Erase UICR page. The erase must be enabled using CONFIG.WEN before the non-volatile memory can be erased. */
+#define NVMC_ERASEUICR_ERASEUICR_Pos (0UL) /*!< Position of ERASEUICR field. */
+#define NVMC_ERASEUICR_ERASEUICR_Msk (0x1UL << NVMC_ERASEUICR_ERASEUICR_Pos) /*!< Bit mask of ERASEUICR field. */
+#define NVMC_ERASEUICR_ERASEUICR_NoOperation (0UL) /*!< No operation */
+#define NVMC_ERASEUICR_ERASEUICR_Erase (1UL) /*!< Start chip erase */
+
 /* Register: NVMC_WAITSTATENUM */
 /* Description: Register to set the number of wait-state for non-volatile memory access. To update the WAITSTATENUM field, the ACCESSCODE must be correct. */
 
 /* Bits 31..16 : Access code for modifying this register */
 #define NVMC_WAITSTATENUM_ACCESSCODE_Pos (16UL) /*!< Position of ACCESSCODE field. */
 #define NVMC_WAITSTATENUM_ACCESSCODE_Msk (0xFFFFUL << NVMC_WAITSTATENUM_ACCESSCODE_Pos) /*!< Bit mask of ACCESSCODE field. */
+
+/* Bits 7..4 : Wait-states used while cell current test (set by CONFIG.MODENVM register) */
+#define NVMC_WAITSTATENUM_WAITSTATENUMICELL_Pos (4UL) /*!< Position of WAITSTATENUMICELL field. */
+#define NVMC_WAITSTATENUM_WAITSTATENUMICELL_Msk (0xFUL << NVMC_WAITSTATENUM_WAITSTATENUMICELL_Pos) /*!< Bit mask of WAITSTATENUMICELL field. */
 
 /* Bits 3..0 : Non-volatile memory wait-states */
 #define NVMC_WAITSTATENUM_WAITSTATENUM_Pos (0UL) /*!< Position of WAITSTATENUM field. */
@@ -2628,34 +2640,50 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define NVMC_TESTWORD_ADDRESS_Pos (0UL) /*!< Position of ADDRESS field. */
 #define NVMC_TESTWORD_ADDRESS_Msk (0xFFFFFFFFUL << NVMC_TESTWORD_ADDRESS_Pos) /*!< Bit mask of ADDRESS field. */
 
-/* Register: NVMC_ICACHECNF */
-/* Description: I-code cache configuration register */
+/* Register: NVMC_VSELREAD */
+/* Description: Select output voltage of power generator for read mode */
 
-/* Bit 8 : Cache profiling enable */
-#define NVMC_ICACHECNF_CACHEPROFEN_Pos (8UL) /*!< Position of CACHEPROFEN field. */
-#define NVMC_ICACHECNF_CACHEPROFEN_Msk (0x1UL << NVMC_ICACHECNF_CACHEPROFEN_Pos) /*!< Bit mask of CACHEPROFEN field. */
-#define NVMC_ICACHECNF_CACHEPROFEN_Disabled (0UL) /*!< Disable cache profiling */
-#define NVMC_ICACHECNF_CACHEPROFEN_Enabled (1UL) /*!< Enable cache profiling */
+/* Bits 11..8 : Control the VEESEL signal */
+#define NVMC_VSELREAD_VEESEL_Pos (8UL) /*!< Position of VEESEL field. */
+#define NVMC_VSELREAD_VEESEL_Msk (0xFUL << NVMC_VSELREAD_VEESEL_Pos) /*!< Bit mask of VEESEL field. */
 
-/* Bit 0 : Cache enable */
-#define NVMC_ICACHECNF_CACHEEN_Pos (0UL) /*!< Position of CACHEEN field. */
-#define NVMC_ICACHECNF_CACHEEN_Msk (0x1UL << NVMC_ICACHECNF_CACHEEN_Pos) /*!< Bit mask of CACHEEN field. */
-#define NVMC_ICACHECNF_CACHEEN_Disabled (0UL) /*!< Disable cache. Invalidates all cache entries. */
-#define NVMC_ICACHECNF_CACHEEN_Enabled (1UL) /*!< Enable cache */
+/* Bits 7..4 : Control the VPPSEL signal */
+#define NVMC_VSELREAD_VPPSEL_Pos (4UL) /*!< Position of VPPSEL field. */
+#define NVMC_VSELREAD_VPPSEL_Msk (0xFUL << NVMC_VSELREAD_VPPSEL_Pos) /*!< Bit mask of VPPSEL field. */
 
-/* Register: NVMC_IHIT */
-/* Description: I-code cache hit counter */
+/* Bits 3..0 : Control the VWLSEL signal */
+#define NVMC_VSELREAD_VWLSEL_Pos (0UL) /*!< Position of VWLSEL field. */
+#define NVMC_VSELREAD_VWLSEL_Msk (0xFUL << NVMC_VSELREAD_VWLSEL_Pos) /*!< Bit mask of VWLSEL field. */
 
-/* Bits 31..0 : Number of cache hits. Register is writable, but only to '0'. */
-#define NVMC_IHIT_HITS_Pos (0UL) /*!< Position of HITS field. */
-#define NVMC_IHIT_HITS_Msk (0xFFFFFFFFUL << NVMC_IHIT_HITS_Pos) /*!< Bit mask of HITS field. */
+/* Register: NVMC_VSELWRITE */
+/* Description: Select output voltage of power generator for write mode */
 
-/* Register: NVMC_IMISS */
-/* Description: I-code cache miss counter */
+/* Bits 11..8 : Control the VEESEL signal */
+#define NVMC_VSELWRITE_VEESEL_Pos (8UL) /*!< Position of VEESEL field. */
+#define NVMC_VSELWRITE_VEESEL_Msk (0xFUL << NVMC_VSELWRITE_VEESEL_Pos) /*!< Bit mask of VEESEL field. */
 
-/* Bits 31..0 : Number of cache misses. Register is writable, but only to '0'. */
-#define NVMC_IMISS_MISSES_Pos (0UL) /*!< Position of MISSES field. */
-#define NVMC_IMISS_MISSES_Msk (0xFFFFFFFFUL << NVMC_IMISS_MISSES_Pos) /*!< Bit mask of MISSES field. */
+/* Bits 7..4 : Control the VPPSEL signal */
+#define NVMC_VSELWRITE_VPPSEL_Pos (4UL) /*!< Position of VPPSEL field. */
+#define NVMC_VSELWRITE_VPPSEL_Msk (0xFUL << NVMC_VSELWRITE_VPPSEL_Pos) /*!< Bit mask of VPPSEL field. */
+
+/* Bits 3..0 : Control the VWLSEL signal */
+#define NVMC_VSELWRITE_VWLSEL_Pos (0UL) /*!< Position of VWLSEL field. */
+#define NVMC_VSELWRITE_VWLSEL_Msk (0xFUL << NVMC_VSELWRITE_VWLSEL_Pos) /*!< Bit mask of VWLSEL field. */
+
+/* Register: NVMC_VSELERASE */
+/* Description: Select output voltage of power generator for erase mode */
+
+/* Bits 11..8 : Control the VEESEL signal */
+#define NVMC_VSELERASE_VEESEL_Pos (8UL) /*!< Position of VEESEL field. */
+#define NVMC_VSELERASE_VEESEL_Msk (0xFUL << NVMC_VSELERASE_VEESEL_Pos) /*!< Bit mask of VEESEL field. */
+
+/* Bits 7..4 : Control the VPPSEL signal */
+#define NVMC_VSELERASE_VPPSEL_Pos (4UL) /*!< Position of VPPSEL field. */
+#define NVMC_VSELERASE_VPPSEL_Msk (0xFUL << NVMC_VSELERASE_VPPSEL_Pos) /*!< Bit mask of VPPSEL field. */
+
+/* Bits 3..0 : Control the VWLSEL signal */
+#define NVMC_VSELERASE_VWLSEL_Pos (0UL) /*!< Position of VWLSEL field. */
+#define NVMC_VSELERASE_VWLSEL_Msk (0xFUL << NVMC_VSELERASE_VWLSEL_Pos) /*!< Bit mask of VWLSEL field. */
 
 /* Register: NVMC_TESTMODE */
 /* Description: Register for entering test mode. Refer to the MTP IP test documentation for more details. */
@@ -2728,7 +2756,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define NVMC_TESTNCMPINC_DIRECT_NotComplement (1UL) /*!< Direct TESTDATA128 content and MTP row read are not each-other's complement */
 
 /* Register: NVMC_TESTCONTROLLINES */
-/* Description: Direct MTP test, control lines. Refer to the MTP IP test documentation for more details. */
+/* Description: Direct MTP test, control lines. Refer to the MTP IP documentation for more details. */
 
 /* Bit 31 : Control the RSTB signal */
 #define NVMC_TESTCONTROLLINES_RSTB_Pos (31UL) /*!< Position of RSTB field. */
@@ -2741,26 +2769,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* Bits 29..23 : Control the MODE signal */
 #define NVMC_TESTCONTROLLINES_MODE_Pos (23UL) /*!< Position of MODE field. */
 #define NVMC_TESTCONTROLLINES_MODE_Msk (0x7FUL << NVMC_TESTCONTROLLINES_MODE_Pos) /*!< Bit mask of MODE field. */
-
-/* Bits 22..17 : Control the VSEL signal of power generator */
-#define NVMC_TESTCONTROLLINES_VSEL_Pos (17UL) /*!< Position of VSEL field. */
-#define NVMC_TESTCONTROLLINES_VSEL_Msk (0x3FUL << NVMC_TESTCONTROLLINES_VSEL_Pos) /*!< Bit mask of VSEL field. */
-
-/* Bits 16..15 : Control the VTST signal of power generator */
-#define NVMC_TESTCONTROLLINES_VTST_Pos (15UL) /*!< Position of VTST field. */
-#define NVMC_TESTCONTROLLINES_VTST_Msk (0x3UL << NVMC_TESTCONTROLLINES_VTST_Pos) /*!< Bit mask of VTST field. */
-
-/* Bit 14 : Control the RD (read enable) signal of power generator */
-#define NVMC_TESTCONTROLLINES_RD_Pos (14UL) /*!< Position of RD field. */
-#define NVMC_TESTCONTROLLINES_RD_Msk (0x1UL << NVMC_TESTCONTROLLINES_RD_Pos) /*!< Bit mask of RD field. */
-
-/* Bit 13 : Control the PGM (program enable) signal of power generator */
-#define NVMC_TESTCONTROLLINES_PGM_Pos (13UL) /*!< Position of PGM field. */
-#define NVMC_TESTCONTROLLINES_PGM_Msk (0x1UL << NVMC_TESTCONTROLLINES_PGM_Pos) /*!< Bit mask of PGM field. */
-
-/* Bit 12 : Control the ERS (erase enable) signal of power generator */
-#define NVMC_TESTCONTROLLINES_ERS_Pos (12UL) /*!< Position of ERS field. */
-#define NVMC_TESTCONTROLLINES_ERS_Msk (0x1UL << NVMC_TESTCONTROLLINES_ERS_Pos) /*!< Bit mask of ERS field. */
 
 /* Register: NVMC_TESTCONTROLADDR */
 /* Description: Direct MTP test control, address lines */
@@ -2835,6 +2843,41 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define NVMC_TESTMEASVPPEN_MEASEN_Disabled (0x0UL) /*!< MEAS pad disabled */
 #define NVMC_TESTMEASVPPEN_MEASEN_Enabled (0x1UL) /*!< MEAS pad enabled */
 
+/* Register: NVMC_TESTPOWERCONTROL */
+/* Description: Direct test, control lines to the MTP power generator module. Refer to the MTP IP documentation for more details. */
+
+/* Bit 31 : Control the RD (read enable) signal */
+#define NVMC_TESTPOWERCONTROL_RD_Pos (31UL) /*!< Position of RD field. */
+#define NVMC_TESTPOWERCONTROL_RD_Msk (0x1UL << NVMC_TESTPOWERCONTROL_RD_Pos) /*!< Bit mask of RD field. */
+
+/* Bit 30 : Control the PGM (program enable) signal */
+#define NVMC_TESTPOWERCONTROL_PGM_Pos (30UL) /*!< Position of PGM field. */
+#define NVMC_TESTPOWERCONTROL_PGM_Msk (0x1UL << NVMC_TESTPOWERCONTROL_PGM_Pos) /*!< Bit mask of PGM field. */
+
+/* Bit 29 : Control the ERS (erase enable) signal */
+#define NVMC_TESTPOWERCONTROL_ERS_Pos (29UL) /*!< Position of ERS field. */
+#define NVMC_TESTPOWERCONTROL_ERS_Msk (0x1UL << NVMC_TESTPOWERCONTROL_ERS_Pos) /*!< Bit mask of ERS field. */
+
+/* Bit 28 : Enable clock from PCGC to the CLK signal */
+#define NVMC_TESTPOWERCONTROL_CLKEN_Pos (28UL) /*!< Position of CLKEN field. */
+#define NVMC_TESTPOWERCONTROL_CLKEN_Msk (0x1UL << NVMC_TESTPOWERCONTROL_CLKEN_Pos) /*!< Bit mask of CLKEN field. */
+
+/* Bits 27..24 : Control the VMODE signal */
+#define NVMC_TESTPOWERCONTROL_VMODE_Pos (24UL) /*!< Position of VMODE field. */
+#define NVMC_TESTPOWERCONTROL_VMODE_Msk (0xFUL << NVMC_TESTPOWERCONTROL_VMODE_Pos) /*!< Bit mask of VMODE field. */
+
+/* Bits 23..20 : Control the VWLSEL signal */
+#define NVMC_TESTPOWERCONTROL_VWLSEL_Pos (20UL) /*!< Position of VWLSEL field. */
+#define NVMC_TESTPOWERCONTROL_VWLSEL_Msk (0xFUL << NVMC_TESTPOWERCONTROL_VWLSEL_Pos) /*!< Bit mask of VWLSEL field. */
+
+/* Bits 19..16 : Control the VPPSEL signal */
+#define NVMC_TESTPOWERCONTROL_VPPSEL_Pos (16UL) /*!< Position of VPPSEL field. */
+#define NVMC_TESTPOWERCONTROL_VPPSEL_Msk (0xFUL << NVMC_TESTPOWERCONTROL_VPPSEL_Pos) /*!< Bit mask of VPPSEL field. */
+
+/* Bits 15..12 : Control the VEESEL signal */
+#define NVMC_TESTPOWERCONTROL_VEESEL_Pos (12UL) /*!< Position of VEESEL field. */
+#define NVMC_TESTPOWERCONTROL_VEESEL_Msk (0xFUL << NVMC_TESTPOWERCONTROL_VEESEL_Pos) /*!< Bit mask of VEESEL field. */
+
 /* Register: NVMC_FORCEONNVM */
 /* Description: Force on NVM supply */
 
@@ -2854,6 +2897,60 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define NVMC_FORCEOFFNVM_FORCEOFFNVM_ForcedOff (1UL) /*!< Read: NVM supply force off */
 #define NVMC_FORCEOFFNVM_FORCEOFFNVM_DisableForceOff (0UL) /*!< Write: Do not force off NVM supply */
 #define NVMC_FORCEOFFNVM_FORCEOFFNVM_EnableForceOff (0xACCE5500UL) /*!< Write: Force off NVM supply */
+
+
+/* Peripheral: OSCILLATORS */
+/* Description: Oscillator control */
+
+/* Register: OSCILLATORS_BYPASSHFXOSC */
+/* Description: Enable or disable bypass of HFCLK crystal oscillator with external clock source */
+
+/* Bit 0 : Enable or disable bypass of HFCLK crystal oscillator with external clock source */
+#define OSCILLATORS_BYPASSHFXOSC_BYPASS_Pos (0UL) /*!< Position of BYPASS field. */
+#define OSCILLATORS_BYPASSHFXOSC_BYPASS_Msk (0x1UL << OSCILLATORS_BYPASSHFXOSC_BYPASS_Pos) /*!< Bit mask of BYPASS field. */
+#define OSCILLATORS_BYPASSHFXOSC_BYPASS_Disabled (0UL) /*!< Disable (use with crystal or low-swing external source) */
+#define OSCILLATORS_BYPASSHFXOSC_BYPASS_Enabled (1UL) /*!< Enable (use with rail-to-rail external source) */
+
+/* Register: OSCILLATORS_PLL64M_BYPASS */
+/* Description: PLL64M bypass control */
+
+/* Bit 0 : Enable or disable bypass of PLL64M by an external clock source */
+#define OSCILLATORS_PLL64M_BYPASS_BYPASS_Pos (0UL) /*!< Position of BYPASS field. */
+#define OSCILLATORS_PLL64M_BYPASS_BYPASS_Msk (0x1UL << OSCILLATORS_PLL64M_BYPASS_BYPASS_Pos) /*!< Bit mask of BYPASS field. */
+#define OSCILLATORS_PLL64M_BYPASS_BYPASS_Disabled (0UL) /*!< Disable */
+#define OSCILLATORS_PLL64M_BYPASS_BYPASS_Enabled (1UL) /*!< Enable */
+
+/* Register: OSCILLATORS_PLL64M_MUTE */
+/* Description: Mute the PLL64M */
+
+/* Bit 0 : Mute output clock */
+#define OSCILLATORS_PLL64M_MUTE_MUTE_Pos (0UL) /*!< Position of MUTE field. */
+#define OSCILLATORS_PLL64M_MUTE_MUTE_Msk (0x1UL << OSCILLATORS_PLL64M_MUTE_MUTE_Pos) /*!< Bit mask of MUTE field. */
+#define OSCILLATORS_PLL64M_MUTE_MUTE_Disabled (0UL) /*!< Disable */
+#define OSCILLATORS_PLL64M_MUTE_MUTE_Enabled (1UL) /*!< Enable */
+
+/* Register: OSCILLATORS_PLL64M_PROGCHPUMP */
+/* Description: Program charge pump current */
+
+/* Bit 0 : Program charge pump current (only used for debugging) */
+#define OSCILLATORS_PLL64M_PROGCHPUMP_PROGCHPUMP_Pos (0UL) /*!< Position of PROGCHPUMP field. */
+#define OSCILLATORS_PLL64M_PROGCHPUMP_PROGCHPUMP_Msk (0x1UL << OSCILLATORS_PLL64M_PROGCHPUMP_PROGCHPUMP_Pos) /*!< Bit mask of PROGCHPUMP field. */
+
+/* Register: OSCILLATORS_PLL64M_VCOTRIM */
+/* Description: VCO trim value for the 64 MHz PLL */
+
+/* Bits 5..0 : VCO trim value for the 64 MHz PLL */
+#define OSCILLATORS_PLL64M_VCOTRIM_VCOTRIM_Pos (0UL) /*!< Position of VCOTRIM field. */
+#define OSCILLATORS_PLL64M_VCOTRIM_VCOTRIM_Msk (0x3FUL << OSCILLATORS_PLL64M_VCOTRIM_VCOTRIM_Pos) /*!< Bit mask of VCOTRIM field. */
+
+/* Register: OSCILLATORS_PLL64M_VCOTRIMOVERRIDE */
+/* Description: Control overriding of the VCO trim values */
+
+/* Bit 0 : VCO trim value for the 64 MHz PLL */
+#define OSCILLATORS_PLL64M_VCOTRIMOVERRIDE_VCOTRIMOVERRIDE_Pos (0UL) /*!< Position of VCOTRIMOVERRIDE field. */
+#define OSCILLATORS_PLL64M_VCOTRIMOVERRIDE_VCOTRIMOVERRIDE_Msk (0x1UL << OSCILLATORS_PLL64M_VCOTRIMOVERRIDE_VCOTRIMOVERRIDE_Pos) /*!< Bit mask of VCOTRIMOVERRIDE field. */
+#define OSCILLATORS_PLL64M_VCOTRIMOVERRIDE_VCOTRIMOVERRIDE_Disabled (0UL) /*!< VCO trim values are coming from FICR */
+#define OSCILLATORS_PLL64M_VCOTRIMOVERRIDE_VCOTRIMOVERRIDE_Enabled (1UL) /*!< VCO trim values are coming from the VCOTRIM register */
 
 
 /* Peripheral: GPIO */
@@ -4977,7 +5074,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define POWER_PUBLISH_POFWARN_EN_Disabled (0UL) /*!< Disable publishing */
 #define POWER_PUBLISH_POFWARN_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event POFWARN will publish to. */
+/* Bits 7..0 : DPPI channel that event POFWARN will publish to */
 #define POWER_PUBLISH_POFWARN_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define POWER_PUBLISH_POFWARN_CHIDX_Msk (0xFFUL << POWER_PUBLISH_POFWARN_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -4990,7 +5087,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define POWER_PUBLISH_SLEEPENTER_EN_Disabled (0UL) /*!< Disable publishing */
 #define POWER_PUBLISH_SLEEPENTER_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event SLEEPENTER will publish to. */
+/* Bits 7..0 : DPPI channel that event SLEEPENTER will publish to */
 #define POWER_PUBLISH_SLEEPENTER_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define POWER_PUBLISH_SLEEPENTER_CHIDX_Msk (0xFFUL << POWER_PUBLISH_SLEEPENTER_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -5003,7 +5100,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define POWER_PUBLISH_SLEEPEXIT_EN_Disabled (0UL) /*!< Disable publishing */
 #define POWER_PUBLISH_SLEEPEXIT_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event SLEEPEXIT will publish to. */
+/* Bits 7..0 : DPPI channel that event SLEEPEXIT will publish to */
 #define POWER_PUBLISH_SLEEPEXIT_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define POWER_PUBLISH_SLEEPEXIT_CHIDX_Msk (0xFFUL << POWER_PUBLISH_SLEEPEXIT_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -5075,6 +5172,13 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define POWER_INTENCLR_POFWARN_Disabled (0UL) /*!< Read: Disabled */
 #define POWER_INTENCLR_POFWARN_Enabled (1UL) /*!< Read: Enabled */
 #define POWER_INTENCLR_POFWARN_Clear (1UL) /*!< Disable */
+
+/* Register: POWER_GPREGRET */
+/* Description: Description collection: General purpose retention register */
+
+/* Bits 7..0 : General purpose retention register */
+#define POWER_GPREGRET_GPREGRET_Pos (0UL) /*!< Position of GPREGRET field. */
+#define POWER_GPREGRET_GPREGRET_Msk (0xFFUL << POWER_GPREGRET_GPREGRET_Pos) /*!< Bit mask of GPREGRET field. */
 
 
 /* Peripheral: QDEC */
@@ -5239,7 +5343,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define QDEC_PUBLISH_SAMPLERDY_EN_Disabled (0UL) /*!< Disable publishing */
 #define QDEC_PUBLISH_SAMPLERDY_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event SAMPLERDY will publish to. */
+/* Bits 7..0 : DPPI channel that event SAMPLERDY will publish to */
 #define QDEC_PUBLISH_SAMPLERDY_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define QDEC_PUBLISH_SAMPLERDY_CHIDX_Msk (0xFFUL << QDEC_PUBLISH_SAMPLERDY_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -5252,7 +5356,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define QDEC_PUBLISH_REPORTRDY_EN_Disabled (0UL) /*!< Disable publishing */
 #define QDEC_PUBLISH_REPORTRDY_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event REPORTRDY will publish to. */
+/* Bits 7..0 : DPPI channel that event REPORTRDY will publish to */
 #define QDEC_PUBLISH_REPORTRDY_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define QDEC_PUBLISH_REPORTRDY_CHIDX_Msk (0xFFUL << QDEC_PUBLISH_REPORTRDY_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -5265,7 +5369,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define QDEC_PUBLISH_ACCOF_EN_Disabled (0UL) /*!< Disable publishing */
 #define QDEC_PUBLISH_ACCOF_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ACCOF will publish to. */
+/* Bits 7..0 : DPPI channel that event ACCOF will publish to */
 #define QDEC_PUBLISH_ACCOF_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define QDEC_PUBLISH_ACCOF_CHIDX_Msk (0xFFUL << QDEC_PUBLISH_ACCOF_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -5278,7 +5382,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define QDEC_PUBLISH_DBLRDY_EN_Disabled (0UL) /*!< Disable publishing */
 #define QDEC_PUBLISH_DBLRDY_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event DBLRDY will publish to. */
+/* Bits 7..0 : DPPI channel that event DBLRDY will publish to */
 #define QDEC_PUBLISH_DBLRDY_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define QDEC_PUBLISH_DBLRDY_CHIDX_Msk (0xFFUL << QDEC_PUBLISH_DBLRDY_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -5291,7 +5395,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define QDEC_PUBLISH_STOPPED_EN_Disabled (0UL) /*!< Disable publishing */
 #define QDEC_PUBLISH_STOPPED_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event STOPPED will publish to. */
+/* Bits 7..0 : DPPI channel that event STOPPED will publish to */
 #define QDEC_PUBLISH_STOPPED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define QDEC_PUBLISH_STOPPED_CHIDX_Msk (0xFFUL << QDEC_PUBLISH_STOPPED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -5604,6 +5708,15 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define QDEC_ACCDBLREAD_ACCDBLREAD_Pos (0UL) /*!< Position of ACCDBLREAD field. */
 #define QDEC_ACCDBLREAD_ACCDBLREAD_Msk (0xFUL << QDEC_ACCDBLREAD_ACCDBLREAD_Pos) /*!< Bit mask of ACCDBLREAD field. */
 
+/* Register: QDEC_POWER */
+/* Description: Peripheral power control */
+
+/* Bit 0 : Peripheral power control. The peripheral and its registers will be reset to its initial state by switching the peripheral off and then back on again. */
+#define QDEC_POWER_POWER_Pos (0UL) /*!< Position of POWER field. */
+#define QDEC_POWER_POWER_Msk (0x1UL << QDEC_POWER_POWER_Pos) /*!< Bit mask of POWER field. */
+#define QDEC_POWER_POWER_Disabled (0UL) /*!< Peripheral is powered off */
+#define QDEC_POWER_POWER_Enabled (1UL) /*!< Peripheral is powered on */
+
 
 /* Peripheral: RADIO */
 /* Description: 2.4 GHz radio */
@@ -5679,14 +5792,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_TASKS_BCSTOP_TASKS_BCSTOP_Pos (0UL) /*!< Position of TASKS_BCSTOP field. */
 #define RADIO_TASKS_BCSTOP_TASKS_BCSTOP_Msk (0x1UL << RADIO_TASKS_BCSTOP_TASKS_BCSTOP_Pos) /*!< Bit mask of TASKS_BCSTOP field. */
 #define RADIO_TASKS_BCSTOP_TASKS_BCSTOP_Trigger (1UL) /*!< Trigger task */
-
-/* Register: RADIO_TASKS_AAFDCCAL_START */
-/* Description: Start aafdc calib */
-
-/* Bit 0 : Start aafdc calib */
-#define RADIO_TASKS_AAFDCCAL_START_TASKS_AAFDCCAL_START_Pos (0UL) /*!< Position of TASKS_AAFDCCAL_START field. */
-#define RADIO_TASKS_AAFDCCAL_START_TASKS_AAFDCCAL_START_Msk (0x1UL << RADIO_TASKS_AAFDCCAL_START_TASKS_AAFDCCAL_START_Pos) /*!< Bit mask of TASKS_AAFDCCAL_START field. */
-#define RADIO_TASKS_AAFDCCAL_START_TASKS_AAFDCCAL_START_Trigger (1UL) /*!< Trigger task */
 
 /* Register: RADIO_TASKS_CNTP_START */
 /* Description: Start packet counter */
@@ -5924,19 +6029,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* Bits 7..0 : DPPI channel that task BCSTOP will subscribe to */
 #define RADIO_SUBSCRIBE_BCSTOP_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_SUBSCRIBE_BCSTOP_CHIDX_Msk (0xFFUL << RADIO_SUBSCRIBE_BCSTOP_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
-
-/* Register: RADIO_SUBSCRIBE_AAFDCCAL_START */
-/* Description: Subscribe configuration for task AAFDCCAL_START */
-
-/* Bit 31 :   */
-#define RADIO_SUBSCRIBE_AAFDCCAL_START_EN_Pos (31UL) /*!< Position of EN field. */
-#define RADIO_SUBSCRIBE_AAFDCCAL_START_EN_Msk (0x1UL << RADIO_SUBSCRIBE_AAFDCCAL_START_EN_Pos) /*!< Bit mask of EN field. */
-#define RADIO_SUBSCRIBE_AAFDCCAL_START_EN_Disabled (0UL) /*!< Disable subscription */
-#define RADIO_SUBSCRIBE_AAFDCCAL_START_EN_Enabled (1UL) /*!< Enable subscription */
-
-/* Bits 7..0 : DPPI channel that task AAFDCCAL_START will subscribe to */
-#define RADIO_SUBSCRIBE_AAFDCCAL_START_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
-#define RADIO_SUBSCRIBE_AAFDCCAL_START_CHIDX_Msk (0xFFUL << RADIO_SUBSCRIBE_AAFDCCAL_START_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
 /* Register: RADIO_SUBSCRIBE_CNTP_START */
 /* Description: Subscribe configuration for task CNTP_START */
@@ -6331,7 +6423,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_READY_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_READY_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event READY will publish to. */
+/* Bits 7..0 : DPPI channel that event READY will publish to */
 #define RADIO_PUBLISH_READY_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_READY_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_READY_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6344,7 +6436,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_ADDRESS_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_ADDRESS_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ADDRESS will publish to. */
+/* Bits 7..0 : DPPI channel that event ADDRESS will publish to */
 #define RADIO_PUBLISH_ADDRESS_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_ADDRESS_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_ADDRESS_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6357,7 +6449,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_PAYLOAD_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_PAYLOAD_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event PAYLOAD will publish to. */
+/* Bits 7..0 : DPPI channel that event PAYLOAD will publish to */
 #define RADIO_PUBLISH_PAYLOAD_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_PAYLOAD_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_PAYLOAD_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6370,7 +6462,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_END_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_END_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event END will publish to. */
+/* Bits 7..0 : DPPI channel that event END will publish to */
 #define RADIO_PUBLISH_END_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_END_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_END_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6383,7 +6475,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_DISABLED_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_DISABLED_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event DISABLED will publish to. */
+/* Bits 7..0 : DPPI channel that event DISABLED will publish to */
 #define RADIO_PUBLISH_DISABLED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_DISABLED_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_DISABLED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6396,7 +6488,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_DEVMATCH_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_DEVMATCH_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event DEVMATCH will publish to. */
+/* Bits 7..0 : DPPI channel that event DEVMATCH will publish to */
 #define RADIO_PUBLISH_DEVMATCH_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_DEVMATCH_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_DEVMATCH_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6409,7 +6501,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_DEVMISS_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_DEVMISS_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event DEVMISS will publish to. */
+/* Bits 7..0 : DPPI channel that event DEVMISS will publish to */
 #define RADIO_PUBLISH_DEVMISS_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_DEVMISS_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_DEVMISS_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6422,7 +6514,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_RSSIEND_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_RSSIEND_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event RSSIEND will publish to. */
+/* Bits 7..0 : DPPI channel that event RSSIEND will publish to */
 #define RADIO_PUBLISH_RSSIEND_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_RSSIEND_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_RSSIEND_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6435,7 +6527,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_BCMATCH_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_BCMATCH_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event BCMATCH will publish to. */
+/* Bits 7..0 : DPPI channel that event BCMATCH will publish to */
 #define RADIO_PUBLISH_BCMATCH_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_BCMATCH_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_BCMATCH_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6448,7 +6540,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_CTEEND_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_CTEEND_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event CTEEND will publish to. */
+/* Bits 7..0 : DPPI channel that event CTEEND will publish to */
 #define RADIO_PUBLISH_CTEEND_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_CTEEND_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_CTEEND_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6461,7 +6553,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_CRCOK_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_CRCOK_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event CRCOK will publish to. */
+/* Bits 7..0 : DPPI channel that event CRCOK will publish to */
 #define RADIO_PUBLISH_CRCOK_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_CRCOK_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_CRCOK_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6474,7 +6566,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_CRCERROR_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_CRCERROR_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event CRCERROR will publish to. */
+/* Bits 7..0 : DPPI channel that event CRCERROR will publish to */
 #define RADIO_PUBLISH_CRCERROR_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_CRCERROR_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_CRCERROR_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6487,7 +6579,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_TXREADY_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_TXREADY_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event TXREADY will publish to. */
+/* Bits 7..0 : DPPI channel that event TXREADY will publish to */
 #define RADIO_PUBLISH_TXREADY_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_TXREADY_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_TXREADY_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6500,7 +6592,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_RXREADY_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_RXREADY_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event RXREADY will publish to. */
+/* Bits 7..0 : DPPI channel that event RXREADY will publish to */
 #define RADIO_PUBLISH_RXREADY_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_RXREADY_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_RXREADY_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6513,7 +6605,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_MHRMATCH_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_MHRMATCH_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event MHRMATCH will publish to. */
+/* Bits 7..0 : DPPI channel that event MHRMATCH will publish to */
 #define RADIO_PUBLISH_MHRMATCH_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_MHRMATCH_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_MHRMATCH_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6526,7 +6618,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_ACQEND_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_ACQEND_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ACQEND will publish to. */
+/* Bits 7..0 : DPPI channel that event ACQEND will publish to */
 #define RADIO_PUBLISH_ACQEND_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_ACQEND_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_ACQEND_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6539,7 +6631,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_ACQREADY_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_ACQREADY_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ACQREADY will publish to. */
+/* Bits 7..0 : DPPI channel that event ACQREADY will publish to */
 #define RADIO_PUBLISH_ACQREADY_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_ACQREADY_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_ACQREADY_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6552,7 +6644,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_PHYEND_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_PHYEND_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event PHYEND will publish to. */
+/* Bits 7..0 : DPPI channel that event PHYEND will publish to */
 #define RADIO_PUBLISH_PHYEND_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_PHYEND_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_PHYEND_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6565,7 +6657,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_CTEPRESENT_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_CTEPRESENT_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event CTEPRESENT will publish to. */
+/* Bits 7..0 : DPPI channel that event CTEPRESENT will publish to */
 #define RADIO_PUBLISH_CTEPRESENT_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_CTEPRESENT_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_CTEPRESENT_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6578,7 +6670,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_CTEWARNING_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_CTEWARNING_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event CTEWARNING will publish to. */
+/* Bits 7..0 : DPPI channel that event CTEWARNING will publish to */
 #define RADIO_PUBLISH_CTEWARNING_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_CTEWARNING_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_CTEWARNING_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -6591,7 +6683,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PUBLISH_DFEEND_EN_Disabled (0UL) /*!< Disable publishing */
 #define RADIO_PUBLISH_DFEEND_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event DFEEND will publish to. */
+/* Bits 7..0 : DPPI channel that event DFEEND will publish to */
 #define RADIO_PUBLISH_DFEEND_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RADIO_PUBLISH_DFEEND_CHIDX_Msk (0xFFUL << RADIO_PUBLISH_DFEEND_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -9333,8 +9425,353 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_POWER_POWER_Enabled (1UL) /*!< Peripheral is powered on */
 
 
+/* Peripheral: RAMBIST */
+/* Description: The RamBist perform hardware accelerated RAM tests 0 */
+
+/* Register: RAMBIST_STATUS_BIST */
+/* Description: Status of the BIST */
+
+/* Bit 2 : The RamBist is currently waiting for a RUNBIST handshake, see retention test protocol */
+#define RAMBIST_STATUS_BIST_SLEEP_Pos (2UL) /*!< Position of SLEEP field. */
+#define RAMBIST_STATUS_BIST_SLEEP_Msk (0x1UL << RAMBIST_STATUS_BIST_SLEEP_Pos) /*!< Bit mask of SLEEP field. */
+
+/* Bit 1 : The RamBist passed, meaning all the compares in the pattern succeded */
+#define RAMBIST_STATUS_BIST_PASSED_Pos (1UL) /*!< Position of PASSED field. */
+#define RAMBIST_STATUS_BIST_PASSED_Msk (0x1UL << RAMBIST_STATUS_BIST_PASSED_Pos) /*!< Bit mask of PASSED field. */
+
+/* Bit 0 : The RamBist is finished */
+#define RAMBIST_STATUS_BIST_DONE_Pos (0UL) /*!< Position of DONE field. */
+#define RAMBIST_STATUS_BIST_DONE_Msk (0x1UL << RAMBIST_STATUS_BIST_DONE_Pos) /*!< Bit mask of DONE field. */
+
+/* Register: RAMBIST_STATUS_FAULTY */
+/* Description: Which blocks are failing the test */
+
+/* Bits 15..0 : 0 if block has no miscompares, 1 if block has miscompares.
+ Size and indices are equal to CLAMP.BLOCKS */
+#define RAMBIST_STATUS_FAULTY_BLOCKS_Pos (0UL) /*!< Position of BLOCKS field. */
+#define RAMBIST_STATUS_FAULTY_BLOCKS_Msk (0xFFFFUL << RAMBIST_STATUS_FAULTY_BLOCKS_Pos) /*!< Bit mask of BLOCKS field. */
+
+/* Register: RAMBIST_RUN */
+/* Description: Run the BIST engine, must be kept 1 until the BIST is finished */
+
+/* Bit 0 : When 1, the RamBist runs */
+#define RAMBIST_RUN_BIST_Pos (0UL) /*!< Position of BIST field. */
+#define RAMBIST_RUN_BIST_Msk (0x1UL << RAMBIST_RUN_BIST_Pos) /*!< Bit mask of BIST field. */
+
+/* Register: RAMBIST_CONFIG_RAMBIST */
+/* Description: Configuration of the RamBist itself. When none of the fields are set, it runs the standard production test BIST. */
+
+/* Bit 1 : Runs the retention test protocol, does only exists if the connected RAMs require retention test */
+#define RAMBIST_CONFIG_RAMBIST_RETENTION_Pos (1UL) /*!< Position of RETENTION field. */
+#define RAMBIST_CONFIG_RAMBIST_RETENTION_Msk (0x1UL << RAMBIST_CONFIG_RAMBIST_RETENTION_Pos) /*!< Bit mask of RETENTION field. */
+
+/* Bit 0 : Runs a fast subset of the tests, intended for debug only */
+#define RAMBIST_CONFIG_RAMBIST_QUICKMODE_Pos (0UL) /*!< Position of QUICKMODE field. */
+#define RAMBIST_CONFIG_RAMBIST_QUICKMODE_Msk (0x1UL << RAMBIST_CONFIG_RAMBIST_QUICKMODE_Pos) /*!< Bit mask of QUICKMODE field. */
+
+/* Register: RAMBIST_CONFIG_RAM */
+/* Description: Override of the RAM configuration */
+
+/* Bits 6..0 : Depending on the RAM Vendor, this field is different.
+ The reset value is also vendor dependent.
+(Noted as Vendor[width]: [Signal[width]=..].)
+ TSMC0[4:0]: WTSEL[2:0], RTSEL[1:0].
+ TSMC1[1:0]: TSEL[1:0].
+ MobileSemi[6:0]: BTRIM[3:0], WM, RM, RWM. */
+#define RAMBIST_CONFIG_RAM_CONFIG_Pos (0UL) /*!< Position of CONFIG field. */
+#define RAMBIST_CONFIG_RAM_CONFIG_Msk (0x7FUL << RAMBIST_CONFIG_RAM_CONFIG_Pos) /*!< Bit mask of CONFIG field. */
+
+/* Register: RAMBIST_CONFIG_CLAMP */
+/* Description: Clamp/Exclude certain blocks from the test */
+
+/* Bits 15..0 : Bit indexed, if an entry is 1, the block is not receiving stimuli, and excluded from the comparison. Parameterized with the number of RAM macros */
+#define RAMBIST_CONFIG_CLAMP_BLOCKS_Pos (0UL) /*!< Position of BLOCKS field. */
+#define RAMBIST_CONFIG_CLAMP_BLOCKS_Msk (0xFFFFUL << RAMBIST_CONFIG_CLAMP_BLOCKS_Pos) /*!< Bit mask of BLOCKS field. */
+
+
+/* Peripheral: RCOSC32K */
+/* Description: 32.768 kHz RC oscillator */
+
+/* Register: RCOSC32K_TASKS_CAL */
+/* Description: Start calibration of LFRC oscillator */
+
+/* Bit 0 : Start calibration of LFRC oscillator */
+#define RCOSC32K_TASKS_CAL_TASKS_CAL_Pos (0UL) /*!< Position of TASKS_CAL field. */
+#define RCOSC32K_TASKS_CAL_TASKS_CAL_Msk (0x1UL << RCOSC32K_TASKS_CAL_TASKS_CAL_Pos) /*!< Bit mask of TASKS_CAL field. */
+#define RCOSC32K_TASKS_CAL_TASKS_CAL_Trigger (1UL) /*!< Trigger task */
+
+/* Register: RCOSC32K_TASKS_CTSTART */
+/* Description: Deprecated register - Start calibration timer */
+
+/* Bit 0 : Deprecated field -  Start calibration timer */
+#define RCOSC32K_TASKS_CTSTART_TASKS_CTSTART_Pos (0UL) /*!< Position of TASKS_CTSTART field. */
+#define RCOSC32K_TASKS_CTSTART_TASKS_CTSTART_Msk (0x1UL << RCOSC32K_TASKS_CTSTART_TASKS_CTSTART_Pos) /*!< Bit mask of TASKS_CTSTART field. */
+#define RCOSC32K_TASKS_CTSTART_TASKS_CTSTART_Trigger (1UL) /*!< Trigger task */
+
+/* Register: RCOSC32K_TASKS_CTSTOP */
+/* Description: Deprecated register - Stop calibration timer */
+
+/* Bit 0 : Deprecated field -  Stop calibration timer */
+#define RCOSC32K_TASKS_CTSTOP_TASKS_CTSTOP_Pos (0UL) /*!< Position of TASKS_CTSTOP field. */
+#define RCOSC32K_TASKS_CTSTOP_TASKS_CTSTOP_Msk (0x1UL << RCOSC32K_TASKS_CTSTOP_TASKS_CTSTOP_Pos) /*!< Bit mask of TASKS_CTSTOP field. */
+#define RCOSC32K_TASKS_CTSTOP_TASKS_CTSTOP_Trigger (1UL) /*!< Trigger task */
+
+/* Register: RCOSC32K_SUBSCRIBE_CAL */
+/* Description: Subscribe configuration for task CAL */
+
+/* Bit 31 :   */
+#define RCOSC32K_SUBSCRIBE_CAL_EN_Pos (31UL) /*!< Position of EN field. */
+#define RCOSC32K_SUBSCRIBE_CAL_EN_Msk (0x1UL << RCOSC32K_SUBSCRIBE_CAL_EN_Pos) /*!< Bit mask of EN field. */
+#define RCOSC32K_SUBSCRIBE_CAL_EN_Disabled (0UL) /*!< Disable subscription */
+#define RCOSC32K_SUBSCRIBE_CAL_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 7..0 : DPPI channel that task CAL will subscribe to */
+#define RCOSC32K_SUBSCRIBE_CAL_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define RCOSC32K_SUBSCRIBE_CAL_CHIDX_Msk (0xFFUL << RCOSC32K_SUBSCRIBE_CAL_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: RCOSC32K_SUBSCRIBE_CTSTART */
+/* Description: Deprecated register - Subscribe configuration for task CTSTART */
+
+/* Bit 31 :   */
+#define RCOSC32K_SUBSCRIBE_CTSTART_EN_Pos (31UL) /*!< Position of EN field. */
+#define RCOSC32K_SUBSCRIBE_CTSTART_EN_Msk (0x1UL << RCOSC32K_SUBSCRIBE_CTSTART_EN_Pos) /*!< Bit mask of EN field. */
+#define RCOSC32K_SUBSCRIBE_CTSTART_EN_Disabled (0UL) /*!< Disable subscription */
+#define RCOSC32K_SUBSCRIBE_CTSTART_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 7..0 : DPPI channel that task CTSTART will subscribe to */
+#define RCOSC32K_SUBSCRIBE_CTSTART_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define RCOSC32K_SUBSCRIBE_CTSTART_CHIDX_Msk (0xFFUL << RCOSC32K_SUBSCRIBE_CTSTART_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: RCOSC32K_SUBSCRIBE_CTSTOP */
+/* Description: Deprecated register - Subscribe configuration for task CTSTOP */
+
+/* Bit 31 :   */
+#define RCOSC32K_SUBSCRIBE_CTSTOP_EN_Pos (31UL) /*!< Position of EN field. */
+#define RCOSC32K_SUBSCRIBE_CTSTOP_EN_Msk (0x1UL << RCOSC32K_SUBSCRIBE_CTSTOP_EN_Pos) /*!< Bit mask of EN field. */
+#define RCOSC32K_SUBSCRIBE_CTSTOP_EN_Disabled (0UL) /*!< Disable subscription */
+#define RCOSC32K_SUBSCRIBE_CTSTOP_EN_Enabled (1UL) /*!< Enable subscription */
+
+/* Bits 7..0 : DPPI channel that task CTSTOP will subscribe to */
+#define RCOSC32K_SUBSCRIBE_CTSTOP_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define RCOSC32K_SUBSCRIBE_CTSTOP_CHIDX_Msk (0xFFUL << RCOSC32K_SUBSCRIBE_CTSTOP_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: RCOSC32K_EVENTS_CTTO */
+/* Description: Deprecated register - Calibration timer timeout */
+
+/* Bit 0 : Deprecated field -  Calibration timer timeout */
+#define RCOSC32K_EVENTS_CTTO_EVENTS_CTTO_Pos (0UL) /*!< Position of EVENTS_CTTO field. */
+#define RCOSC32K_EVENTS_CTTO_EVENTS_CTTO_Msk (0x1UL << RCOSC32K_EVENTS_CTTO_EVENTS_CTTO_Pos) /*!< Bit mask of EVENTS_CTTO field. */
+#define RCOSC32K_EVENTS_CTTO_EVENTS_CTTO_NotGenerated (0UL) /*!< Event not generated */
+#define RCOSC32K_EVENTS_CTTO_EVENTS_CTTO_Generated (1UL) /*!< Event generated */
+
+/* Register: RCOSC32K_EVENTS_DONE */
+/* Description: Calibration of LFCLK RC oscillator complete event */
+
+/* Bit 0 : Calibration of LFCLK RC oscillator complete event */
+#define RCOSC32K_EVENTS_DONE_EVENTS_DONE_Pos (0UL) /*!< Position of EVENTS_DONE field. */
+#define RCOSC32K_EVENTS_DONE_EVENTS_DONE_Msk (0x1UL << RCOSC32K_EVENTS_DONE_EVENTS_DONE_Pos) /*!< Bit mask of EVENTS_DONE field. */
+#define RCOSC32K_EVENTS_DONE_EVENTS_DONE_NotGenerated (0UL) /*!< Event not generated */
+#define RCOSC32K_EVENTS_DONE_EVENTS_DONE_Generated (1UL) /*!< Event generated */
+
+/* Register: RCOSC32K_EVENTS_CTSTARTED */
+/* Description: Deprecated register - Calibration timer started */
+
+/* Bit 0 : Deprecated field -  Calibration timer started */
+#define RCOSC32K_EVENTS_CTSTARTED_EVENTS_CTSTARTED_Pos (0UL) /*!< Position of EVENTS_CTSTARTED field. */
+#define RCOSC32K_EVENTS_CTSTARTED_EVENTS_CTSTARTED_Msk (0x1UL << RCOSC32K_EVENTS_CTSTARTED_EVENTS_CTSTARTED_Pos) /*!< Bit mask of EVENTS_CTSTARTED field. */
+#define RCOSC32K_EVENTS_CTSTARTED_EVENTS_CTSTARTED_NotGenerated (0UL) /*!< Event not generated */
+#define RCOSC32K_EVENTS_CTSTARTED_EVENTS_CTSTARTED_Generated (1UL) /*!< Event generated */
+
+/* Register: RCOSC32K_EVENTS_CTSTOPPED */
+/* Description: Deprecated register - Calibration timer stopped */
+
+/* Bit 0 : Deprecated field -  Calibration timer stopped */
+#define RCOSC32K_EVENTS_CTSTOPPED_EVENTS_CTSTOPPED_Pos (0UL) /*!< Position of EVENTS_CTSTOPPED field. */
+#define RCOSC32K_EVENTS_CTSTOPPED_EVENTS_CTSTOPPED_Msk (0x1UL << RCOSC32K_EVENTS_CTSTOPPED_EVENTS_CTSTOPPED_Pos) /*!< Bit mask of EVENTS_CTSTOPPED field. */
+#define RCOSC32K_EVENTS_CTSTOPPED_EVENTS_CTSTOPPED_NotGenerated (0UL) /*!< Event not generated */
+#define RCOSC32K_EVENTS_CTSTOPPED_EVENTS_CTSTOPPED_Generated (1UL) /*!< Event generated */
+
+/* Register: RCOSC32K_PUBLISH_CTTO */
+/* Description: Deprecated register - Publish configuration for event CTTO */
+
+/* Bit 31 :   */
+#define RCOSC32K_PUBLISH_CTTO_EN_Pos (31UL) /*!< Position of EN field. */
+#define RCOSC32K_PUBLISH_CTTO_EN_Msk (0x1UL << RCOSC32K_PUBLISH_CTTO_EN_Pos) /*!< Bit mask of EN field. */
+#define RCOSC32K_PUBLISH_CTTO_EN_Disabled (0UL) /*!< Disable publishing */
+#define RCOSC32K_PUBLISH_CTTO_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 7..0 : DPPI channel that event CTTO will publish to */
+#define RCOSC32K_PUBLISH_CTTO_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define RCOSC32K_PUBLISH_CTTO_CHIDX_Msk (0xFFUL << RCOSC32K_PUBLISH_CTTO_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: RCOSC32K_PUBLISH_DONE */
+/* Description: Publish configuration for event DONE */
+
+/* Bit 31 :   */
+#define RCOSC32K_PUBLISH_DONE_EN_Pos (31UL) /*!< Position of EN field. */
+#define RCOSC32K_PUBLISH_DONE_EN_Msk (0x1UL << RCOSC32K_PUBLISH_DONE_EN_Pos) /*!< Bit mask of EN field. */
+#define RCOSC32K_PUBLISH_DONE_EN_Disabled (0UL) /*!< Disable publishing */
+#define RCOSC32K_PUBLISH_DONE_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 7..0 : DPPI channel that event DONE will publish to */
+#define RCOSC32K_PUBLISH_DONE_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define RCOSC32K_PUBLISH_DONE_CHIDX_Msk (0xFFUL << RCOSC32K_PUBLISH_DONE_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: RCOSC32K_PUBLISH_CTSTARTED */
+/* Description: Deprecated register - Publish configuration for event CTSTARTED */
+
+/* Bit 31 :   */
+#define RCOSC32K_PUBLISH_CTSTARTED_EN_Pos (31UL) /*!< Position of EN field. */
+#define RCOSC32K_PUBLISH_CTSTARTED_EN_Msk (0x1UL << RCOSC32K_PUBLISH_CTSTARTED_EN_Pos) /*!< Bit mask of EN field. */
+#define RCOSC32K_PUBLISH_CTSTARTED_EN_Disabled (0UL) /*!< Disable publishing */
+#define RCOSC32K_PUBLISH_CTSTARTED_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 7..0 : DPPI channel that event CTSTARTED will publish to */
+#define RCOSC32K_PUBLISH_CTSTARTED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define RCOSC32K_PUBLISH_CTSTARTED_CHIDX_Msk (0xFFUL << RCOSC32K_PUBLISH_CTSTARTED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: RCOSC32K_PUBLISH_CTSTOPPED */
+/* Description: Deprecated register - Publish configuration for event CTSTOPPED */
+
+/* Bit 31 :   */
+#define RCOSC32K_PUBLISH_CTSTOPPED_EN_Pos (31UL) /*!< Position of EN field. */
+#define RCOSC32K_PUBLISH_CTSTOPPED_EN_Msk (0x1UL << RCOSC32K_PUBLISH_CTSTOPPED_EN_Pos) /*!< Bit mask of EN field. */
+#define RCOSC32K_PUBLISH_CTSTOPPED_EN_Disabled (0UL) /*!< Disable publishing */
+#define RCOSC32K_PUBLISH_CTSTOPPED_EN_Enabled (1UL) /*!< Enable publishing */
+
+/* Bits 7..0 : DPPI channel that event CTSTOPPED will publish to */
+#define RCOSC32K_PUBLISH_CTSTOPPED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
+#define RCOSC32K_PUBLISH_CTSTOPPED_CHIDX_Msk (0xFFUL << RCOSC32K_PUBLISH_CTSTOPPED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
+
+/* Register: RCOSC32K_RCOSC32KIFINE */
+/* Description: Fine calibration read value for 32.768 kHz RC oscillator */
+
+/* Bits 9..0 : Fine calibration read value for 32.768 kHz RC oscillator */
+#define RCOSC32K_RCOSC32KIFINE_RCOSC32KIFINE_Pos (0UL) /*!< Position of RCOSC32KIFINE field. */
+#define RCOSC32K_RCOSC32KIFINE_RCOSC32KIFINE_Msk (0x3FFUL << RCOSC32K_RCOSC32KIFINE_RCOSC32KIFINE_Pos) /*!< Bit mask of RCOSC32KIFINE field. */
+
+/* Register: RCOSC32K_RCOSC32KICOARSE */
+/* Description: Coarse calibration read value for 32.768 kHz RC oscillator */
+
+/* Bits 5..0 : Coarse calibration read value for 32.768 kHz RC oscillator */
+#define RCOSC32K_RCOSC32KICOARSE_RCOSC32KICOARSE_Pos (0UL) /*!< Position of RCOSC32KICOARSE field. */
+#define RCOSC32K_RCOSC32KICOARSE_RCOSC32KICOARSE_Msk (0x3FUL << RCOSC32K_RCOSC32KICOARSE_RCOSC32KICOARSE_Pos) /*!< Bit mask of RCOSC32KICOARSE field. */
+
+/* Register: RCOSC32K_RCOSC32KICALTEST */
+/* Description: 32.768 kHz RC oscillator calibration debug register NOTE: This register should not be written to while the RCOSC source is running. */
+
+/* Bit 1 : Disable calSync auto-calibration */
+#define RCOSC32K_RCOSC32KICALTEST_CALSYNCDISABLE_Pos (1UL) /*!< Position of CALSYNCDISABLE field. */
+#define RCOSC32K_RCOSC32KICALTEST_CALSYNCDISABLE_Msk (0x1UL << RCOSC32K_RCOSC32KICALTEST_CALSYNCDISABLE_Pos) /*!< Bit mask of CALSYNCDISABLE field. */
+#define RCOSC32K_RCOSC32KICALTEST_CALSYNCDISABLE_Enabled (0UL) /*!< calSync auto-calibration enabled */
+#define RCOSC32K_RCOSC32KICALTEST_CALSYNCDISABLE_Disabled (1UL) /*!< calSync auto-calibration disabled */
+
+/* Bit 0 : Enable debug pins: calSync on P0.8 (input); ck32Ki on P0.13 (output); rcosc32KiCalib on P0.19 (output) */
+#define RCOSC32K_RCOSC32KICALTEST_DEBUGPINSEN_Pos (0UL) /*!< Position of DEBUGPINSEN field. */
+#define RCOSC32K_RCOSC32KICALTEST_DEBUGPINSEN_Msk (0x1UL << RCOSC32K_RCOSC32KICALTEST_DEBUGPINSEN_Pos) /*!< Bit mask of DEBUGPINSEN field. */
+#define RCOSC32K_RCOSC32KICALTEST_DEBUGPINSEN_Disabled (0UL) /*!< Pins in normal operation */
+#define RCOSC32K_RCOSC32KICALTEST_DEBUGPINSEN_Enabled (1UL) /*!< Pins mapped for debug */
+
+/* Register: RCOSC32K_CTIV */
+/* Description: Deprecated register - Calibration timer interval NOTE: This register should not be written to while the calibration timer is running. */
+
+/* Bits 6..0 : Calibration timer interval in multiple of 0.25 seconds. Range: 0.25 seconds to 31.75 seconds. */
+#define RCOSC32K_CTIV_CTIV_Pos (0UL) /*!< Position of CTIV field. */
+#define RCOSC32K_CTIV_CTIV_Msk (0x7FUL << RCOSC32K_CTIV_CTIV_Pos) /*!< Bit mask of CTIV field. */
+
+/* Register: RCOSC32K_RCOSC32KICALLENGTH */
+/* Description: 32kHz RC oscillator calibration length This value is read from FICR */
+
+/* Bits 2..0 : 32kHz RC oscillator calibration length in number of cycles */
+#define RCOSC32K_RCOSC32KICALLENGTH_RCOSC32KICALLENGTH_Pos (0UL) /*!< Position of RCOSC32KICALLENGTH field. */
+#define RCOSC32K_RCOSC32KICALLENGTH_RCOSC32KICALLENGTH_Msk (0x7UL << RCOSC32K_RCOSC32KICALLENGTH_RCOSC32KICALLENGTH_Pos) /*!< Bit mask of RCOSC32KICALLENGTH field. */
+#define RCOSC32K_RCOSC32KICALLENGTH_RCOSC32KICALLENGTH_N64 (0UL) /*!< 64 cycles */
+#define RCOSC32K_RCOSC32KICALLENGTH_RCOSC32KICALLENGTH_N128 (1UL) /*!< 128 cycles */
+#define RCOSC32K_RCOSC32KICALLENGTH_RCOSC32KICALLENGTH_N256 (2UL) /*!< 256 cycles */
+#define RCOSC32K_RCOSC32KICALLENGTH_RCOSC32KICALLENGTH_N512 (3UL) /*!< 512 cycles */
+
+/* Register: RCOSC32K_RCOSC32KICOARSEIN */
+/* Description: RCOSC coarse calibration input This value is read from FICR */
+
+/* Bits 5..0 : RCOSC coarse calibration input */
+#define RCOSC32K_RCOSC32KICOARSEIN_RCOSC32KICOARSEIN_Pos (0UL) /*!< Position of RCOSC32KICOARSEIN field. */
+#define RCOSC32K_RCOSC32KICOARSEIN_RCOSC32KICOARSEIN_Msk (0x3FUL << RCOSC32K_RCOSC32KICOARSEIN_RCOSC32KICOARSEIN_Pos) /*!< Bit mask of RCOSC32KICOARSEIN field. */
+
+/* Register: RCOSC32K_RCOSC32KICABD */
+/* Description: Comparator adaptive biasing disable */
+
+/* Bit 0 : Disables comparator adaptive biasing */
+#define RCOSC32K_RCOSC32KICABD_CABD_Pos (0UL) /*!< Position of CABD field. */
+#define RCOSC32K_RCOSC32KICABD_CABD_Msk (0x1UL << RCOSC32K_RCOSC32KICABD_CABD_Pos) /*!< Bit mask of CABD field. */
+#define RCOSC32K_RCOSC32KICABD_CABD_Disabled (0UL) /*!< Disable */
+#define RCOSC32K_RCOSC32KICABD_CABD_Enabled (1UL) /*!< Enable */
+
+/* Register: RCOSC32K_ATECLOCK */
+/* Description: Analog test bus control for clock modules */
+
+/* Bit 0 : Connect or disconnect 32.768 kHz RC oscillator to analog test bus */
+#define RCOSC32K_ATECLOCK_RCOSC32K_Pos (0UL) /*!< Position of RCOSC32K field. */
+#define RCOSC32K_ATECLOCK_RCOSC32K_Msk (0x1UL << RCOSC32K_ATECLOCK_RCOSC32K_Pos) /*!< Bit mask of RCOSC32K field. */
+#define RCOSC32K_ATECLOCK_RCOSC32K_Disconnected (0UL) /*!< Disconnect */
+#define RCOSC32K_ATECLOCK_RCOSC32K_Connected (1UL) /*!< Connect internal regulator output to ATB0 */
+
+/* Register: RCOSC32K_LFRCMODE */
+/* Description: LFRC mode configuration */
+
+/* Bit 0 : Set LFRC mode */
+#define RCOSC32K_LFRCMODE_MODE_Pos (0UL) /*!< Position of MODE field. */
+#define RCOSC32K_LFRCMODE_MODE_Msk (0x1UL << RCOSC32K_LFRCMODE_MODE_Pos) /*!< Bit mask of MODE field. */
+#define RCOSC32K_LFRCMODE_MODE_Normal (0UL) /*!< Normal mode */
+#define RCOSC32K_LFRCMODE_MODE_ULP (1UL) /*!< Deprecated enumerator -  Ultra-low power mode (ULP) */
+
+/* Register: RCOSC32K_LFULP32KICOARSEIN */
+/* Description: Deprecated register - LFULP coarse calibration input This value is read from FICR */
+
+/* Bits 5..0 : LFULP coarse calibration input */
+#define RCOSC32K_LFULP32KICOARSEIN_LFULP32KICOARSE_Pos (0UL) /*!< Position of LFULP32KICOARSE field. */
+#define RCOSC32K_LFULP32KICOARSEIN_LFULP32KICOARSE_Msk (0x3FUL << RCOSC32K_LFULP32KICOARSEIN_LFULP32KICOARSE_Pos) /*!< Bit mask of LFULP32KICOARSE field. */
+
+/* Register: RCOSC32K_LFULP32KICALLENGTH */
+/* Description: Deprecated register - 32kHz LFULP RC oscillator calibration length This value is read from FICR */
+
+/* Bits 2..0 : 32kHz ULP RC oscillator calibration length in number of cycles */
+#define RCOSC32K_LFULP32KICALLENGTH_LFULP32KICALLENGTH_Pos (0UL) /*!< Position of LFULP32KICALLENGTH field. */
+#define RCOSC32K_LFULP32KICALLENGTH_LFULP32KICALLENGTH_Msk (0x7UL << RCOSC32K_LFULP32KICALLENGTH_LFULP32KICALLENGTH_Pos) /*!< Bit mask of LFULP32KICALLENGTH field. */
+#define RCOSC32K_LFULP32KICALLENGTH_LFULP32KICALLENGTH_N64 (0UL) /*!< 64 cycles */
+#define RCOSC32K_LFULP32KICALLENGTH_LFULP32KICALLENGTH_N128 (1UL) /*!< 128 cycles */
+#define RCOSC32K_LFULP32KICALLENGTH_LFULP32KICALLENGTH_N256 (2UL) /*!< 256 cycles */
+#define RCOSC32K_LFULP32KICALLENGTH_LFULP32KICALLENGTH_N512 (3UL) /*!< 512 cycles */
+
+/* Register: RCOSC32K_DISABLERCOSC32KIPOWERUPCONTROL */
+/* Description: Backdoor for disabling Rcosc32KiPowerUpControl module in Rcosc32KiGenerator. */
+
+/* Bit 0 : Disable Rcosc32KiPowerUpControl. */
+#define RCOSC32K_DISABLERCOSC32KIPOWERUPCONTROL_Disable_Pos (0UL) /*!< Position of Disable field. */
+#define RCOSC32K_DISABLERCOSC32KIPOWERUPCONTROL_Disable_Msk (0x1UL << RCOSC32K_DISABLERCOSC32KIPOWERUPCONTROL_Disable_Pos) /*!< Bit mask of Disable field. */
+#define RCOSC32K_DISABLERCOSC32KIPOWERUPCONTROL_Disable_Enabled (0UL) /*!< Rcosc32KiPowerUpControl is enabled. */
+#define RCOSC32K_DISABLERCOSC32KIPOWERUPCONTROL_Disable_Disabled (1UL) /*!< Rcosc32KiPowerUpControl is disabled. */
+
+
 /* Peripheral: REGULATORS */
 /* Description: Regulator control */
+
+/* Register: REGULATORS_MAINREGSTATUS */
+/* Description: Main supply status */
+
+/* Bit 0 : VREGUSB status */
+#define REGULATORS_MAINREGSTATUS_VREGUSB_Pos (0UL) /*!< Position of VREGUSB field. */
+#define REGULATORS_MAINREGSTATUS_VREGUSB_Msk (0x1UL << REGULATORS_MAINREGSTATUS_VREGUSB_Pos) /*!< Bit mask of VREGUSB field. */
+#define REGULATORS_MAINREGSTATUS_VREGUSB_Inactive (0UL) /*!< Voltage supplied on VDD. */
+#define REGULATORS_MAINREGSTATUS_VREGUSB_Active (1UL) /*!< Voltage supplied on VREGUSB. */
+
+/* Register: REGULATORS_DISABLEHPBOR */
+/* Description: Enable or disable HPBOR */
+
+/* Bit 0 : Enable or disable HPBOR */
+#define REGULATORS_DISABLEHPBOR_DISABLE_Pos (0UL) /*!< Position of DISABLE field. */
+#define REGULATORS_DISABLEHPBOR_DISABLE_Msk (0x1UL << REGULATORS_DISABLEHPBOR_DISABLE_Pos) /*!< Bit mask of DISABLE field. */
+#define REGULATORS_DISABLEHPBOR_DISABLE_Enabled (0UL) /*!< Enable HPBOR */
+#define REGULATORS_DISABLEHPBOR_DISABLE_Disabled (1UL) /*!< Disable HPBOR */
 
 /* Register: REGULATORS_SYSTEMOFF */
 /* Description: System OFF register */
@@ -9347,11 +9784,293 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* Register: REGULATORS_POFCON */
 /* Description: Power-fail comparator configuration */
 
+/* Bit 6 : Bypass power-fail comparator hysteresis */
+#define REGULATORS_POFCON_HYSTDIS_Pos (6UL) /*!< Position of HYSTDIS field. */
+#define REGULATORS_POFCON_HYSTDIS_Msk (0x1UL << REGULATORS_POFCON_HYSTDIS_Pos) /*!< Bit mask of HYSTDIS field. */
+#define REGULATORS_POFCON_HYSTDIS_Normal (0UL) /*!< Hysteresis active */
+#define REGULATORS_POFCON_HYSTDIS_NoHyst (1UL) /*!< Hysteresis disabled */
+
+/* Bits 4..1 : Power-fail comparator threshold setting */
+#define REGULATORS_POFCON_THRESHOLD_Pos (1UL) /*!< Position of THRESHOLD field. */
+#define REGULATORS_POFCON_THRESHOLD_Msk (0xFUL << REGULATORS_POFCON_THRESHOLD_Pos) /*!< Bit mask of THRESHOLD field. */
+#define REGULATORS_POFCON_THRESHOLD_V17 (4UL) /*!< Set threshold to 1.7 V */
+#define REGULATORS_POFCON_THRESHOLD_V18 (5UL) /*!< Set threshold to 1.8 V */
+#define REGULATORS_POFCON_THRESHOLD_V19 (6UL) /*!< Set threshold to 1.9 V */
+#define REGULATORS_POFCON_THRESHOLD_V20 (7UL) /*!< Set threshold to 2.0 V */
+#define REGULATORS_POFCON_THRESHOLD_V21 (8UL) /*!< Set threshold to 2.1 V */
+#define REGULATORS_POFCON_THRESHOLD_V22 (9UL) /*!< Set threshold to 2.2 V */
+#define REGULATORS_POFCON_THRESHOLD_V23 (10UL) /*!< Set threshold to 2.3 V */
+#define REGULATORS_POFCON_THRESHOLD_V24 (11UL) /*!< Set threshold to 2.4 V */
+#define REGULATORS_POFCON_THRESHOLD_V25 (12UL) /*!< Set threshold to 2.5 V */
+#define REGULATORS_POFCON_THRESHOLD_V26 (13UL) /*!< Set threshold to 2.6 V */
+#define REGULATORS_POFCON_THRESHOLD_V27 (14UL) /*!< Set threshold to 2.7 V */
+#define REGULATORS_POFCON_THRESHOLD_V28 (15UL) /*!< Set threshold to 2.8 V */
+
 /* Bit 0 : Enable or disable power-fail comparator */
 #define REGULATORS_POFCON_POF_Pos (0UL) /*!< Position of POF field. */
 #define REGULATORS_POFCON_POF_Msk (0x1UL << REGULATORS_POFCON_POF_Pos) /*!< Bit mask of POF field. */
 #define REGULATORS_POFCON_POF_Disabled (0UL) /*!< Disable */
 #define REGULATORS_POFCON_POF_Enabled (1UL) /*!< Enable */
+
+/* Register: REGULATORS_IGNOREDAPCPWRREGMODE */
+/* Description: Ignore DAPCP power mode */
+
+/* Bit 0 : Ignore power request from debugger */
+#define REGULATORS_IGNOREDAPCPWRREGMODE_IGNOREDAPCPWRREGMODE_Pos (0UL) /*!< Position of IGNOREDAPCPWRREGMODE field. */
+#define REGULATORS_IGNOREDAPCPWRREGMODE_IGNOREDAPCPWRREGMODE_Msk (0x1UL << REGULATORS_IGNOREDAPCPWRREGMODE_IGNOREDAPCPWRREGMODE_Pos) /*!< Bit mask of IGNOREDAPCPWRREGMODE field. */
+#define REGULATORS_IGNOREDAPCPWRREGMODE_IGNOREDAPCPWRREGMODE_DoNotIgnore (0UL) /*!< Do not ignore power request from debugger */
+#define REGULATORS_IGNOREDAPCPWRREGMODE_IGNOREDAPCPWRREGMODE_Ignore (1UL) /*!< Ignore power request from debugger */
+
+/* Register: REGULATORS_RSTVTHTRIM */
+/* Description: Threshold trim, power-on reset */
+
+/* Bits 4..0 : Threshold trim, power-on reset */
+#define REGULATORS_RSTVTHTRIM_RSTVTHTRIM_Pos (0UL) /*!< Position of RSTVTHTRIM field. */
+#define REGULATORS_RSTVTHTRIM_RSTVTHTRIM_Msk (0x1FUL << REGULATORS_RSTVTHTRIM_RSTVTHTRIM_Pos) /*!< Bit mask of RSTVTHTRIM field. */
+
+/* Register: REGULATORS_BGREFTRIM */
+/* Description: Master bias bandgap trim */
+
+/* Bits 3..0 : Threshold trim, brown-out reset for VDDL battery */
+#define REGULATORS_BGREFTRIM_BGREFTRIM_Pos (0UL) /*!< Position of BGREFTRIM field. */
+#define REGULATORS_BGREFTRIM_BGREFTRIM_Msk (0xFUL << REGULATORS_BGREFTRIM_BGREFTRIM_Pos) /*!< Bit mask of BGREFTRIM field. */
+
+/* Register: REGULATORS_VREFULPTRIM */
+/* Description: Trim value of VREF_ULP */
+
+/* Bits 3..0 : Trim value of VREF_ULP Default 4'b0011 */
+#define REGULATORS_VREFULPTRIM_VREFULPTRIM_Pos (0UL) /*!< Position of VREFULPTRIM field. */
+#define REGULATORS_VREFULPTRIM_VREFULPTRIM_Msk (0xFUL << REGULATORS_VREFULPTRIM_VREFULPTRIM_Pos) /*!< Bit mask of VREFULPTRIM field. */
+
+/* Register: REGULATORS_FORCEVBUSDET */
+/* Description: Force VBUS detection indication */
+
+/* Bits 1..0 : Force VBUS detection indication, overriding the analog detection circuitry */
+#define REGULATORS_FORCEVBUSDET_FORCEVBUSDET_Pos (0UL) /*!< Position of FORCEVBUSDET field. */
+#define REGULATORS_FORCEVBUSDET_FORCEVBUSDET_Msk (0x3UL << REGULATORS_FORCEVBUSDET_FORCEVBUSDET_Pos) /*!< Bit mask of FORCEVBUSDET field. */
+#define REGULATORS_FORCEVBUSDET_FORCEVBUSDET_DoNotForce (0UL) /*!< Do not force VBUS detection output */
+#define REGULATORS_FORCEVBUSDET_FORCEVBUSDET_ForceNoVbusDet (1UL) /*!< Force detection output to 'no VBUS present' */
+#define REGULATORS_FORCEVBUSDET_FORCEVBUSDET_DoNotForce2 (2UL) /*!< Do not force VBUS detection output (same effect as DoNotForce) */
+#define REGULATORS_FORCEVBUSDET_FORCEVBUSDET_ForceVbusDet (3UL) /*!< Force detection output to 'VBUS present' */
+
+/* Register: REGULATORS_VREGANA_VOUT */
+/* Description: Control the output voltage */
+
+/* Bits 1..0 : Output voltage */
+#define REGULATORS_VREGANA_VOUT_VOUT_Pos (0UL) /*!< Position of VOUT field. */
+#define REGULATORS_VREGANA_VOUT_VOUT_Msk (0x3UL << REGULATORS_VREGANA_VOUT_VOUT_Pos) /*!< Bit mask of VOUT field. */
+#define REGULATORS_VREGANA_VOUT_VOUT_00 (0UL) /*!< 1.0 V */
+#define REGULATORS_VREGANA_VOUT_VOUT_01 (1UL) /*!< 1.05 V */
+#define REGULATORS_VREGANA_VOUT_VOUT_10 (2UL) /*!< 1.10 V */
+#define REGULATORS_VREGANA_VOUT_VOUT_11 (3UL) /*!< 1.20 V */
+
+/* Register: REGULATORS_VREGANA_DCDCEN */
+/* Description: Enable DC/DC operation of the regulator */
+
+/* Bit 0 : Enable or disable DC/DC converter */
+#define REGULATORS_VREGANA_DCDCEN_DCDCEN_Pos (0UL) /*!< Position of DCDCEN field. */
+#define REGULATORS_VREGANA_DCDCEN_DCDCEN_Msk (0x1UL << REGULATORS_VREGANA_DCDCEN_DCDCEN_Pos) /*!< Bit mask of DCDCEN field. */
+#define REGULATORS_VREGANA_DCDCEN_DCDCEN_Disabled (0UL) /*!< Disable */
+#define REGULATORS_VREGANA_DCDCEN_DCDCEN_Enabled (1UL) /*!< Enable */
+
+/* Register: REGULATORS_VREGANA_ENFORCEPWRREGMODE */
+/* Description: Enable forcing of power mode in power regulator */
+
+/* Bit 0 : Enable forcing of power mode in power regulator */
+#define REGULATORS_VREGANA_ENFORCEPWRREGMODE_ENFORCEPWRREGMODE_Pos (0UL) /*!< Position of ENFORCEPWRREGMODE field. */
+#define REGULATORS_VREGANA_ENFORCEPWRREGMODE_ENFORCEPWRREGMODE_Msk (0x1UL << REGULATORS_VREGANA_ENFORCEPWRREGMODE_ENFORCEPWRREGMODE_Pos) /*!< Bit mask of ENFORCEPWRREGMODE field. */
+#define REGULATORS_VREGANA_ENFORCEPWRREGMODE_ENFORCEPWRREGMODE_Disabled (0UL) /*!< Power regulator forcing off */
+#define REGULATORS_VREGANA_ENFORCEPWRREGMODE_ENFORCEPWRREGMODE_Enabled (1UL) /*!< Power regulator mode forced to value given by FORCEREGMODE */
+
+/* Register: REGULATORS_VREGANA_FORCEREGMODE */
+/* Description: Backdoor register for manual selection of power mode */
+
+/* Bits 2..0 : Force regulator mode to value */
+#define REGULATORS_VREGANA_FORCEREGMODE_FORCEREGMODE_Pos (0UL) /*!< Position of FORCEREGMODE field. */
+#define REGULATORS_VREGANA_FORCEREGMODE_FORCEREGMODE_Msk (0x7UL << REGULATORS_VREGANA_FORCEREGMODE_FORCEREGMODE_Pos) /*!< Bit mask of FORCEREGMODE field. */
+#define REGULATORS_VREGANA_FORCEREGMODE_FORCEREGMODE_Ext (0UL) /*!< Force external */
+#define REGULATORS_VREGANA_FORCEREGMODE_FORCEREGMODE_ULP (1UL) /*!< Force ULP mode */
+#define REGULATORS_VREGANA_FORCEREGMODE_FORCEREGMODE_LDO (2UL) /*!< Force LDO mode */
+#define REGULATORS_VREGANA_FORCEREGMODE_FORCEREGMODE_DCDC (3UL) /*!< Force DC/DC mode */
+#define REGULATORS_VREGANA_FORCEREGMODE_FORCEREGMODE_REF (4UL) /*!< Force REF mode */
+
+/* Register: REGULATORS_VREGANA_CURRENTPWRREGMODE */
+/* Description: Current mode in the power regulator */
+
+/* Bits 3..0 : Current mode in the power regulator */
+#define REGULATORS_VREGANA_CURRENTPWRREGMODE_CURRENTPWRREGMODE_Pos (0UL) /*!< Position of CURRENTPWRREGMODE field. */
+#define REGULATORS_VREGANA_CURRENTPWRREGMODE_CURRENTPWRREGMODE_Msk (0xFUL << REGULATORS_VREGANA_CURRENTPWRREGMODE_CURRENTPWRREGMODE_Pos) /*!< Bit mask of CURRENTPWRREGMODE field. */
+#define REGULATORS_VREGANA_CURRENTPWRREGMODE_CURRENTPWRREGMODE_Ext (0UL) /*!< External */
+#define REGULATORS_VREGANA_CURRENTPWRREGMODE_CURRENTPWRREGMODE_DCDC (2UL) /*!< DC/DC */
+#define REGULATORS_VREGANA_CURRENTPWRREGMODE_CURRENTPWRREGMODE_REF (3UL) /*!< REF */
+#define REGULATORS_VREGANA_CURRENTPWRREGMODE_CURRENTPWRREGMODE_LDO (4UL) /*!< ULP DC/DC */
+#define REGULATORS_VREGANA_CURRENTPWRREGMODE_CURRENTPWRREGMODE_LDO_DCDC (6UL) /*!< LDO DC/DC */
+#define REGULATORS_VREGANA_CURRENTPWRREGMODE_CURRENTPWRREGMODE_LDO_REF (7UL) /*!< LDO REF */
+#define REGULATORS_VREGANA_CURRENTPWRREGMODE_CURRENTPWRREGMODE_ULP (8UL) /*!< ULP */
+#define REGULATORS_VREGANA_CURRENTPWRREGMODE_CURRENTPWRREGMODE_DCDC_ULP (10UL) /*!< ULP DC/DC */
+#define REGULATORS_VREGANA_CURRENTPWRREGMODE_CURRENTPWRREGMODE_REF_ULP (11UL) /*!< REF ULP */
+#define REGULATORS_VREGANA_CURRENTPWRREGMODE_CURRENTPWRREGMODE_ULP_LDO (12UL) /*!< ULP DC/DC */
+
+/* Register: REGULATORS_VREGANA_TESTLOAD */
+/* Description: Test load setting */
+
+/* Bits 2..0 : Output load configuration (for test purposes) */
+#define REGULATORS_VREGANA_TESTLOAD_TESTLOAD_Pos (0UL) /*!< Position of TESTLOAD field. */
+#define REGULATORS_VREGANA_TESTLOAD_TESTLOAD_Msk (0x7UL << REGULATORS_VREGANA_TESTLOAD_TESTLOAD_Pos) /*!< Bit mask of TESTLOAD field. */
+#define REGULATORS_VREGANA_TESTLOAD_TESTLOAD_NormalOperation (0UL) /*!< Normal operation (default) */
+#define REGULATORS_VREGANA_TESTLOAD_TESTLOAD_1mATestLoad (1UL) /*!< 1 mA test load */
+#define REGULATORS_VREGANA_TESTLOAD_TESTLOAD_20mATestLoad (2UL) /*!< 20 mA test load */
+
+/* Register: REGULATORS_VREGANA_ULPCAL */
+/* Description: Calibration of ULP regulator */
+
+/* Bits 3..0 : Calibration value */
+#define REGULATORS_VREGANA_ULPCAL_CAL_Pos (0UL) /*!< Position of CAL field. */
+#define REGULATORS_VREGANA_ULPCAL_CAL_Msk (0xFUL << REGULATORS_VREGANA_ULPCAL_CAL_Pos) /*!< Bit mask of CAL field. */
+
+/* Register: REGULATORS_VREGANA_DEBUGLVLP */
+/* Description: Debug register - control spare signals in LVLP */
+
+/* Bits 13..0 : Connected to TBD */
+#define REGULATORS_VREGANA_DEBUGLVLP_DEBUGLVLP_Pos (0UL) /*!< Position of DEBUGLVLP field. */
+#define REGULATORS_VREGANA_DEBUGLVLP_DEBUGLVLP_Msk (0x3FFFUL << REGULATORS_VREGANA_DEBUGLVLP_DEBUGLVLP_Pos) /*!< Bit mask of DEBUGLVLP field. */
+
+/* Register: REGULATORS_VREGANA_BUCKCALPWM */
+/* Description: TBD */
+
+/* Bits 4..0 : TBD */
+#define REGULATORS_VREGANA_BUCKCALPWM_CALPWM_Pos (0UL) /*!< Position of CALPWM field. */
+#define REGULATORS_VREGANA_BUCKCALPWM_CALPWM_Msk (0x1FUL << REGULATORS_VREGANA_BUCKCALPWM_CALPWM_Pos) /*!< Bit mask of CALPWM field. */
+
+/* Register: REGULATORS_VREGANA_AVOIDULP */
+/* Description: Backdoor to avoid ULP mode */
+
+/* Bit 0 : Backdoor to avoid ULP mode */
+#define REGULATORS_VREGANA_AVOIDULP_ENABLE_Pos (0UL) /*!< Position of ENABLE field. */
+#define REGULATORS_VREGANA_AVOIDULP_ENABLE_Msk (0x1UL << REGULATORS_VREGANA_AVOIDULP_ENABLE_Pos) /*!< Bit mask of ENABLE field. */
+#define REGULATORS_VREGANA_AVOIDULP_ENABLE_Default (0UL) /*!< FSM will enter ULP mode if no power requests are present. */
+#define REGULATORS_VREGANA_AVOIDULP_ENABLE_AvoidUlp (1UL) /*!< Avoids ULP mode. By also setting disableDcdcDvdd=0 and disablePfmDvdd=0, PFM mode will be used as the lowest power regulator state. */
+
+/* Register: REGULATORS_VREGMAIN_VOUT */
+/* Description: Control the output voltage */
+
+/* Bits 3..0 : Output voltage */
+#define REGULATORS_VREGMAIN_VOUT_VOUT_Pos (0UL) /*!< Position of VOUT field. */
+#define REGULATORS_VREGMAIN_VOUT_VOUT_Msk (0xFUL << REGULATORS_VREGMAIN_VOUT_VOUT_Pos) /*!< Bit mask of VOUT field. */
+
+/* Register: REGULATORS_VREGMAIN_ULPALWAYSON */
+/* Description: Keep ULP regulator on at all times */
+
+/* Bit 0 : ULP always on */
+#define REGULATORS_VREGMAIN_ULPALWAYSON_ULPALWAYSON_Pos (0UL) /*!< Position of ULPALWAYSON field. */
+#define REGULATORS_VREGMAIN_ULPALWAYSON_ULPALWAYSON_Msk (0x1UL << REGULATORS_VREGMAIN_ULPALWAYSON_ULPALWAYSON_Pos) /*!< Bit mask of ULPALWAYSON field. */
+#define REGULATORS_VREGMAIN_ULPALWAYSON_ULPALWAYSON_Disabled (0UL) /*!< ULP regulator turned off in LDO modes */
+#define REGULATORS_VREGMAIN_ULPALWAYSON_ULPALWAYSON_Enabled (1UL) /*!< ULP regulator always on */
+
+/* Register: REGULATORS_VREGMAIN_ENFORCEPWRREGMODE */
+/* Description: Enable forcing of power mode in power regulator */
+
+/* Bit 0 : Enable forcing of power mode in power regulator */
+#define REGULATORS_VREGMAIN_ENFORCEPWRREGMODE_ENFORCEPWRREGMODE_Pos (0UL) /*!< Position of ENFORCEPWRREGMODE field. */
+#define REGULATORS_VREGMAIN_ENFORCEPWRREGMODE_ENFORCEPWRREGMODE_Msk (0x1UL << REGULATORS_VREGMAIN_ENFORCEPWRREGMODE_ENFORCEPWRREGMODE_Pos) /*!< Bit mask of ENFORCEPWRREGMODE field. */
+#define REGULATORS_VREGMAIN_ENFORCEPWRREGMODE_ENFORCEPWRREGMODE_Disabled (0UL) /*!< Power regulator forcing off */
+#define REGULATORS_VREGMAIN_ENFORCEPWRREGMODE_ENFORCEPWRREGMODE_Enabled (1UL) /*!< Power regulator mode forced to value given by FORCEREGMODE */
+
+/* Register: REGULATORS_VREGMAIN_FORCEREGMODE */
+/* Description: Backdoor register for manual selection of power mode */
+
+/* Bits 2..0 : Force regulator mode to value */
+#define REGULATORS_VREGMAIN_FORCEREGMODE_FORCEREGMODE_Pos (0UL) /*!< Position of FORCEREGMODE field. */
+#define REGULATORS_VREGMAIN_FORCEREGMODE_FORCEREGMODE_Msk (0x7UL << REGULATORS_VREGMAIN_FORCEREGMODE_FORCEREGMODE_Pos) /*!< Bit mask of FORCEREGMODE field. */
+#define REGULATORS_VREGMAIN_FORCEREGMODE_FORCEREGMODE_Ext (0UL) /*!< Force external */
+#define REGULATORS_VREGMAIN_FORCEREGMODE_FORCEREGMODE_ULP (1UL) /*!< Force ULP mode */
+#define REGULATORS_VREGMAIN_FORCEREGMODE_FORCEREGMODE_LDO (2UL) /*!< Force LDO mode */
+#define REGULATORS_VREGMAIN_FORCEREGMODE_FORCEREGMODE_DCDC (3UL) /*!< Force DC/DC mode */
+#define REGULATORS_VREGMAIN_FORCEREGMODE_FORCEREGMODE_REF (4UL) /*!< Force REF mode */
+
+/* Register: REGULATORS_VREGMAIN_CURRENTPWRREGMODE */
+/* Description: Current mode in the power regulator */
+
+/* Bits 3..0 : Current mode in the power regulator */
+#define REGULATORS_VREGMAIN_CURRENTPWRREGMODE_CURRENTPWRREGMODE_Pos (0UL) /*!< Position of CURRENTPWRREGMODE field. */
+#define REGULATORS_VREGMAIN_CURRENTPWRREGMODE_CURRENTPWRREGMODE_Msk (0xFUL << REGULATORS_VREGMAIN_CURRENTPWRREGMODE_CURRENTPWRREGMODE_Pos) /*!< Bit mask of CURRENTPWRREGMODE field. */
+#define REGULATORS_VREGMAIN_CURRENTPWRREGMODE_CURRENTPWRREGMODE_Ext (0UL) /*!< External */
+#define REGULATORS_VREGMAIN_CURRENTPWRREGMODE_CURRENTPWRREGMODE_DCDC (2UL) /*!< DC/DC */
+#define REGULATORS_VREGMAIN_CURRENTPWRREGMODE_CURRENTPWRREGMODE_REF (3UL) /*!< REF */
+#define REGULATORS_VREGMAIN_CURRENTPWRREGMODE_CURRENTPWRREGMODE_LDO (4UL) /*!< ULP DC/DC */
+#define REGULATORS_VREGMAIN_CURRENTPWRREGMODE_CURRENTPWRREGMODE_LDO_DCDC (6UL) /*!< LDO DC/DC */
+#define REGULATORS_VREGMAIN_CURRENTPWRREGMODE_CURRENTPWRREGMODE_LDO_REF (7UL) /*!< LDO REF */
+#define REGULATORS_VREGMAIN_CURRENTPWRREGMODE_CURRENTPWRREGMODE_ULP (8UL) /*!< ULP */
+#define REGULATORS_VREGMAIN_CURRENTPWRREGMODE_CURRENTPWRREGMODE_DCDC_ULP (10UL) /*!< ULP DC/DC */
+#define REGULATORS_VREGMAIN_CURRENTPWRREGMODE_CURRENTPWRREGMODE_REF_ULP (11UL) /*!< REF ULP */
+#define REGULATORS_VREGMAIN_CURRENTPWRREGMODE_CURRENTPWRREGMODE_ULP_LDO (12UL) /*!< ULP DC/DC */
+
+/* Register: REGULATORS_VREGMAIN_PWRREGICMPTIMER */
+/* Description: Control the stay-alive time for the current comparator */
+
+/* Bits 15..0 :   */
+#define REGULATORS_VREGMAIN_PWRREGICMPTIMER_COUNT_Pos (0UL) /*!< Position of COUNT field. */
+#define REGULATORS_VREGMAIN_PWRREGICMPTIMER_COUNT_Msk (0xFFFFUL << REGULATORS_VREGMAIN_PWRREGICMPTIMER_COUNT_Pos) /*!< Bit mask of COUNT field. */
+
+/* Register: REGULATORS_VREGMAIN_TESTLOAD */
+/* Description: Test load setting */
+
+/* Bits 2..0 : Output load configuration for test purposes */
+#define REGULATORS_VREGMAIN_TESTLOAD_TESTLOAD_Pos (0UL) /*!< Position of TESTLOAD field. */
+#define REGULATORS_VREGMAIN_TESTLOAD_TESTLOAD_Msk (0x7UL << REGULATORS_VREGMAIN_TESTLOAD_TESTLOAD_Pos) /*!< Bit mask of TESTLOAD field. */
+#define REGULATORS_VREGMAIN_TESTLOAD_TESTLOAD_NormalOperation (0UL) /*!< Normal operation (default) */
+#define REGULATORS_VREGMAIN_TESTLOAD_TESTLOAD_1mATestLoad (1UL) /*!< 1 mA test load */
+#define REGULATORS_VREGMAIN_TESTLOAD_TESTLOAD_20mATestLoad (2UL) /*!< 20 mA test load */
+
+/* Register: REGULATORS_VREGMAIN_ULPCAL */
+/* Description: Calibration of ULP regulator */
+
+/* Bits 3..0 : Calibration value */
+#define REGULATORS_VREGMAIN_ULPCAL_CAL_Pos (0UL) /*!< Position of CAL field. */
+#define REGULATORS_VREGMAIN_ULPCAL_CAL_Msk (0xFUL << REGULATORS_VREGMAIN_ULPCAL_CAL_Pos) /*!< Bit mask of CAL field. */
+
+/* Register: REGULATORS_VREGMAIN_ULPICMPCAL */
+/* Description: Calibration of current comparator on ULP regulator */
+
+/* Bits 2..0 :   */
+#define REGULATORS_VREGMAIN_ULPICMPCAL_CAL_Pos (0UL) /*!< Position of CAL field. */
+#define REGULATORS_VREGMAIN_ULPICMPCAL_CAL_Msk (0x7UL << REGULATORS_VREGMAIN_ULPICMPCAL_CAL_Pos) /*!< Bit mask of CAL field. */
+
+/* Register: REGULATORS_VREGMAIN_BYPASS */
+/* Description: Bypass control */
+
+/* Bit 0 : Bypass control */
+#define REGULATORS_VREGMAIN_BYPASS_CAL_Pos (0UL) /*!< Position of CAL field. */
+#define REGULATORS_VREGMAIN_BYPASS_CAL_Msk (0x1UL << REGULATORS_VREGMAIN_BYPASS_CAL_Pos) /*!< Bit mask of CAL field. */
+#define REGULATORS_VREGMAIN_BYPASS_CAL_NormalMode (0UL) /*!< Normal operation (default) */
+#define REGULATORS_VREGMAIN_BYPASS_CAL_BypassMode (1UL) /*!< Output voltage is 30 mV lower than input voltage */
+
+/* Register: REGULATORS_DISABLEPACSYSTEMOFFACK */
+/* Description: Enable or disable System OFF ack from PAC */
+
+/* Bit 0 : Enable or disable System OFF ack from PAC */
+#define REGULATORS_DISABLEPACSYSTEMOFFACK_DISABLE_Pos (0UL) /*!< Position of DISABLE field. */
+#define REGULATORS_DISABLEPACSYSTEMOFFACK_DISABLE_Msk (0x1UL << REGULATORS_DISABLEPACSYSTEMOFFACK_DISABLE_Pos) /*!< Bit mask of DISABLE field. */
+#define REGULATORS_DISABLEPACSYSTEMOFFACK_DISABLE_Enabled (0UL) /*!< Enable ack */
+#define REGULATORS_DISABLEPACSYSTEMOFFACK_DISABLE_Disabled (1UL) /*!< Disable ack */
+
+/* Register: REGULATORS_DISABLESRAMSYSTEMOFFACK */
+/* Description: Enable or disable System OFF ack from SRAM */
+
+/* Bit 0 : Enable or disable System OFF ack from SRAM */
+#define REGULATORS_DISABLESRAMSYSTEMOFFACK_DISABLE_Pos (0UL) /*!< Position of DISABLE field. */
+#define REGULATORS_DISABLESRAMSYSTEMOFFACK_DISABLE_Msk (0x1UL << REGULATORS_DISABLESRAMSYSTEMOFFACK_DISABLE_Pos) /*!< Bit mask of DISABLE field. */
+#define REGULATORS_DISABLESRAMSYSTEMOFFACK_DISABLE_Enabled (0UL) /*!< Enable ack */
+#define REGULATORS_DISABLESRAMSYSTEMOFFACK_DISABLE_Disabled (1UL) /*!< Disable ack */
+
+/* Register: REGULATORS_DISABLENVMSYSTEMOFFACK */
+/* Description: Enable or disable System OFF ack from NVM */
+
+/* Bit 0 : Enable or disable System OFF ack from NVM */
+#define REGULATORS_DISABLENVMSYSTEMOFFACK_DISABLE_Pos (0UL) /*!< Position of DISABLE field. */
+#define REGULATORS_DISABLENVMSYSTEMOFFACK_DISABLE_Msk (0x1UL << REGULATORS_DISABLENVMSYSTEMOFFACK_DISABLE_Pos) /*!< Bit mask of DISABLE field. */
+#define REGULATORS_DISABLENVMSYSTEMOFFACK_DISABLE_Enabled (0UL) /*!< Enable ack */
+#define REGULATORS_DISABLENVMSYSTEMOFFACK_DISABLE_Disabled (1UL) /*!< Disable ack */
 
 
 /* Peripheral: RESET */
@@ -9472,7 +10191,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RNG_PUBLISH_VALRDY_EN_Disabled (0UL) /*!< Disable publishing */
 #define RNG_PUBLISH_VALRDY_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event VALRDY will publish to. */
+/* Bits 7..0 : DPPI channel that event VALRDY will publish to */
 #define RNG_PUBLISH_VALRDY_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RNG_PUBLISH_VALRDY_CHIDX_Msk (0xFFUL << RNG_PUBLISH_VALRDY_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -9529,6 +10248,15 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* Bits 7..0 : Generated random number */
 #define RNG_VALUE_VALUE_Pos (0UL) /*!< Position of VALUE field. */
 #define RNG_VALUE_VALUE_Msk (0xFFUL << RNG_VALUE_VALUE_Pos) /*!< Bit mask of VALUE field. */
+
+/* Register: RNG_POWER */
+/* Description: Peripheral power control */
+
+/* Bit 0 : Peripheral power control. The peripheral and its registers will be reset to its initial state by switching the peripheral off and then back on again. */
+#define RNG_POWER_POWER_Pos (0UL) /*!< Position of POWER field. */
+#define RNG_POWER_POWER_Msk (0x1UL << RNG_POWER_POWER_Pos) /*!< Bit mask of POWER field. */
+#define RNG_POWER_POWER_Disabled (0UL) /*!< Peripheral is powered off */
+#define RNG_POWER_POWER_Enabled (1UL) /*!< Peripheral is powered on */
 
 
 /* Peripheral: RTC */
@@ -9654,7 +10382,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RTC_PUBLISH_TICK_EN_Disabled (0UL) /*!< Disable publishing */
 #define RTC_PUBLISH_TICK_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event TICK will publish to. */
+/* Bits 7..0 : DPPI channel that event TICK will publish to */
 #define RTC_PUBLISH_TICK_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RTC_PUBLISH_TICK_CHIDX_Msk (0xFFUL << RTC_PUBLISH_TICK_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -9667,7 +10395,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RTC_PUBLISH_OVRFLW_EN_Disabled (0UL) /*!< Disable publishing */
 #define RTC_PUBLISH_OVRFLW_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event OVRFLW will publish to. */
+/* Bits 7..0 : DPPI channel that event OVRFLW will publish to */
 #define RTC_PUBLISH_OVRFLW_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RTC_PUBLISH_OVRFLW_CHIDX_Msk (0xFFUL << RTC_PUBLISH_OVRFLW_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -9680,7 +10408,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RTC_PUBLISH_COMPARE_EN_Disabled (0UL) /*!< Disable publishing */
 #define RTC_PUBLISH_COMPARE_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event COMPARE[n] will publish to. */
+/* Bits 7..0 : DPPI channel that event COMPARE[n] will publish to */
 #define RTC_PUBLISH_COMPARE_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define RTC_PUBLISH_COMPARE_CHIDX_Msk (0xFFUL << RTC_PUBLISH_COMPARE_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -10105,7 +10833,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define SPIM_PUBLISH_STOPPED_EN_Disabled (0UL) /*!< Disable publishing */
 #define SPIM_PUBLISH_STOPPED_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event STOPPED will publish to. */
+/* Bits 7..0 : DPPI channel that event STOPPED will publish to */
 #define SPIM_PUBLISH_STOPPED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define SPIM_PUBLISH_STOPPED_CHIDX_Msk (0xFFUL << SPIM_PUBLISH_STOPPED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -10118,7 +10846,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define SPIM_PUBLISH_ENDRX_EN_Disabled (0UL) /*!< Disable publishing */
 #define SPIM_PUBLISH_ENDRX_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ENDRX will publish to. */
+/* Bits 7..0 : DPPI channel that event ENDRX will publish to */
 #define SPIM_PUBLISH_ENDRX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define SPIM_PUBLISH_ENDRX_CHIDX_Msk (0xFFUL << SPIM_PUBLISH_ENDRX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -10131,7 +10859,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define SPIM_PUBLISH_END_EN_Disabled (0UL) /*!< Disable publishing */
 #define SPIM_PUBLISH_END_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event END will publish to. */
+/* Bits 7..0 : DPPI channel that event END will publish to */
 #define SPIM_PUBLISH_END_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define SPIM_PUBLISH_END_CHIDX_Msk (0xFFUL << SPIM_PUBLISH_END_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -10144,7 +10872,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define SPIM_PUBLISH_ENDTX_EN_Disabled (0UL) /*!< Disable publishing */
 #define SPIM_PUBLISH_ENDTX_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ENDTX will publish to. */
+/* Bits 7..0 : DPPI channel that event ENDTX will publish to */
 #define SPIM_PUBLISH_ENDTX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define SPIM_PUBLISH_ENDTX_CHIDX_Msk (0xFFUL << SPIM_PUBLISH_ENDTX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -10157,7 +10885,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define SPIM_PUBLISH_STARTED_EN_Disabled (0UL) /*!< Disable publishing */
 #define SPIM_PUBLISH_STARTED_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event STARTED will publish to. */
+/* Bits 7..0 : DPPI channel that event STARTED will publish to */
 #define SPIM_PUBLISH_STARTED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define SPIM_PUBLISH_STARTED_CHIDX_Msk (0xFFUL << SPIM_PUBLISH_STARTED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -10627,7 +11355,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define SPIS_PUBLISH_END_EN_Disabled (0UL) /*!< Disable publishing */
 #define SPIS_PUBLISH_END_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event END will publish to. */
+/* Bits 7..0 : DPPI channel that event END will publish to */
 #define SPIS_PUBLISH_END_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define SPIS_PUBLISH_END_CHIDX_Msk (0xFFUL << SPIS_PUBLISH_END_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -10640,7 +11368,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define SPIS_PUBLISH_ENDRX_EN_Disabled (0UL) /*!< Disable publishing */
 #define SPIS_PUBLISH_ENDRX_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ENDRX will publish to. */
+/* Bits 7..0 : DPPI channel that event ENDRX will publish to */
 #define SPIS_PUBLISH_ENDRX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define SPIS_PUBLISH_ENDRX_CHIDX_Msk (0xFFUL << SPIS_PUBLISH_ENDRX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -10653,7 +11381,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define SPIS_PUBLISH_ACQUIRED_EN_Disabled (0UL) /*!< Disable publishing */
 #define SPIS_PUBLISH_ACQUIRED_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ACQUIRED will publish to. */
+/* Bits 7..0 : DPPI channel that event ACQUIRED will publish to */
 #define SPIS_PUBLISH_ACQUIRED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define SPIS_PUBLISH_ACQUIRED_CHIDX_Msk (0xFFUL << SPIS_PUBLISH_ACQUIRED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -11092,7 +11820,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define TIMER_PUBLISH_COMPARE_EN_Disabled (0UL) /*!< Disable publishing */
 #define TIMER_PUBLISH_COMPARE_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event COMPARE[n] will publish to. */
+/* Bits 7..0 : DPPI channel that event COMPARE[n] will publish to */
 #define TIMER_PUBLISH_COMPARE_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define TIMER_PUBLISH_COMPARE_CHIDX_Msk (0xFFUL << TIMER_PUBLISH_COMPARE_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -11347,6 +12075,15 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* Bits 31..0 : Capture/Compare value */
 #define TIMER_CC_CC_Pos (0UL) /*!< Position of CC field. */
 #define TIMER_CC_CC_Msk (0xFFFFFFFFUL << TIMER_CC_CC_Pos) /*!< Bit mask of CC field. */
+
+/* Register: TIMER_POWER */
+/* Description: Peripheral power control */
+
+/* Bit 0 : Peripheral power control. The peripheral and its registers will be reset to its initial state by switching the peripheral off and then back on again. */
+#define TIMER_POWER_POWER_Pos (0UL) /*!< Position of POWER field. */
+#define TIMER_POWER_POWER_Msk (0x1UL << TIMER_POWER_POWER_Pos) /*!< Bit mask of POWER field. */
+#define TIMER_POWER_POWER_Disabled (0UL) /*!< Peripheral is powered off */
+#define TIMER_POWER_POWER_Enabled (1UL) /*!< Peripheral is powered on */
 
 
 /* Peripheral: UARTE */
@@ -11616,7 +12353,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_PUBLISH_CTS_EN_Disabled (0UL) /*!< Disable publishing */
 #define UARTE_PUBLISH_CTS_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event CTS will publish to. */
+/* Bits 7..0 : DPPI channel that event CTS will publish to */
 #define UARTE_PUBLISH_CTS_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define UARTE_PUBLISH_CTS_CHIDX_Msk (0xFFUL << UARTE_PUBLISH_CTS_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -11629,7 +12366,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_PUBLISH_NCTS_EN_Disabled (0UL) /*!< Disable publishing */
 #define UARTE_PUBLISH_NCTS_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event NCTS will publish to. */
+/* Bits 7..0 : DPPI channel that event NCTS will publish to */
 #define UARTE_PUBLISH_NCTS_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define UARTE_PUBLISH_NCTS_CHIDX_Msk (0xFFUL << UARTE_PUBLISH_NCTS_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -11642,7 +12379,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_PUBLISH_RXDRDY_EN_Disabled (0UL) /*!< Disable publishing */
 #define UARTE_PUBLISH_RXDRDY_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event RXDRDY will publish to. */
+/* Bits 7..0 : DPPI channel that event RXDRDY will publish to */
 #define UARTE_PUBLISH_RXDRDY_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define UARTE_PUBLISH_RXDRDY_CHIDX_Msk (0xFFUL << UARTE_PUBLISH_RXDRDY_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -11655,7 +12392,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_PUBLISH_ENDRX_EN_Disabled (0UL) /*!< Disable publishing */
 #define UARTE_PUBLISH_ENDRX_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ENDRX will publish to. */
+/* Bits 7..0 : DPPI channel that event ENDRX will publish to */
 #define UARTE_PUBLISH_ENDRX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define UARTE_PUBLISH_ENDRX_CHIDX_Msk (0xFFUL << UARTE_PUBLISH_ENDRX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -11668,7 +12405,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_PUBLISH_TXDRDY_EN_Disabled (0UL) /*!< Disable publishing */
 #define UARTE_PUBLISH_TXDRDY_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event TXDRDY will publish to. */
+/* Bits 7..0 : DPPI channel that event TXDRDY will publish to */
 #define UARTE_PUBLISH_TXDRDY_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define UARTE_PUBLISH_TXDRDY_CHIDX_Msk (0xFFUL << UARTE_PUBLISH_TXDRDY_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -11681,7 +12418,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_PUBLISH_ENDTX_EN_Disabled (0UL) /*!< Disable publishing */
 #define UARTE_PUBLISH_ENDTX_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ENDTX will publish to. */
+/* Bits 7..0 : DPPI channel that event ENDTX will publish to */
 #define UARTE_PUBLISH_ENDTX_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define UARTE_PUBLISH_ENDTX_CHIDX_Msk (0xFFUL << UARTE_PUBLISH_ENDTX_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -11694,7 +12431,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_PUBLISH_ERROR_EN_Disabled (0UL) /*!< Disable publishing */
 #define UARTE_PUBLISH_ERROR_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ERROR will publish to. */
+/* Bits 7..0 : DPPI channel that event ERROR will publish to */
 #define UARTE_PUBLISH_ERROR_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define UARTE_PUBLISH_ERROR_CHIDX_Msk (0xFFUL << UARTE_PUBLISH_ERROR_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -11707,7 +12444,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_PUBLISH_RXTO_EN_Disabled (0UL) /*!< Disable publishing */
 #define UARTE_PUBLISH_RXTO_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event RXTO will publish to. */
+/* Bits 7..0 : DPPI channel that event RXTO will publish to */
 #define UARTE_PUBLISH_RXTO_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define UARTE_PUBLISH_RXTO_CHIDX_Msk (0xFFUL << UARTE_PUBLISH_RXTO_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -11720,7 +12457,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_PUBLISH_RXSTARTED_EN_Disabled (0UL) /*!< Disable publishing */
 #define UARTE_PUBLISH_RXSTARTED_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event RXSTARTED will publish to. */
+/* Bits 7..0 : DPPI channel that event RXSTARTED will publish to */
 #define UARTE_PUBLISH_RXSTARTED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define UARTE_PUBLISH_RXSTARTED_CHIDX_Msk (0xFFUL << UARTE_PUBLISH_RXSTARTED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -11733,7 +12470,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_PUBLISH_TXSTARTED_EN_Disabled (0UL) /*!< Disable publishing */
 #define UARTE_PUBLISH_TXSTARTED_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event TXSTARTED will publish to. */
+/* Bits 7..0 : DPPI channel that event TXSTARTED will publish to */
 #define UARTE_PUBLISH_TXSTARTED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define UARTE_PUBLISH_TXSTARTED_CHIDX_Msk (0xFFUL << UARTE_PUBLISH_TXSTARTED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -11746,7 +12483,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_PUBLISH_RTS_EN_Disabled (0UL) /*!< Disable publishing */
 #define UARTE_PUBLISH_RTS_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event RTS will publish to. */
+/* Bits 7..0 : DPPI channel that event RTS will publish to */
 #define UARTE_PUBLISH_RTS_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define UARTE_PUBLISH_RTS_CHIDX_Msk (0xFFUL << UARTE_PUBLISH_RTS_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -11759,7 +12496,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UARTE_PUBLISH_TXSTOPPED_EN_Disabled (0UL) /*!< Disable publishing */
 #define UARTE_PUBLISH_TXSTOPPED_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event TXSTOPPED will publish to. */
+/* Bits 7..0 : DPPI channel that event TXSTOPPED will publish to */
 #define UARTE_PUBLISH_TXSTOPPED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define UARTE_PUBLISH_TXSTOPPED_CHIDX_Msk (0xFFUL << UARTE_PUBLISH_TXSTOPPED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -12269,6 +13006,23 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UICR_TINSTANCE_TINSTANCE_Pos (28UL) /*!< Position of TINSTANCE field. */
 #define UICR_TINSTANCE_TINSTANCE_Msk (0xFUL << UICR_TINSTANCE_TINSTANCE_Pos) /*!< Bit mask of TINSTANCE field. */
 
+/* Register: UICR_PSELRESET */
+/* Description: Description collection: Mapping of the nRESET function (see POWER chapter for details) */
+
+/* Bit 31 : Connection */
+#define UICR_PSELRESET_CONNECT_Pos (31UL) /*!< Position of CONNECT field. */
+#define UICR_PSELRESET_CONNECT_Msk (0x1UL << UICR_PSELRESET_CONNECT_Pos) /*!< Bit mask of CONNECT field. */
+#define UICR_PSELRESET_CONNECT_Connected (0UL) /*!< Connect */
+#define UICR_PSELRESET_CONNECT_Disconnected (1UL) /*!< Disconnect */
+
+/* Bit 5 : Port number onto which nRESET is exposed */
+#define UICR_PSELRESET_PORT_Pos (5UL) /*!< Position of PORT field. */
+#define UICR_PSELRESET_PORT_Msk (0x1UL << UICR_PSELRESET_PORT_Pos) /*!< Bit mask of PORT field. */
+
+/* Bits 4..0 : GPIO pin number onto which nRESET is exposed */
+#define UICR_PSELRESET_PIN_Pos (0UL) /*!< Position of PIN field. */
+#define UICR_PSELRESET_PIN_Msk (0x1FUL << UICR_PSELRESET_PIN_Pos) /*!< Bit mask of PIN field. */
+
 
 /* Peripheral: USBD */
 /* Description: Universal serial bus device */
@@ -12579,7 +13333,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define USBD_PUBLISH_USBRESET_EN_Disabled (0UL) /*!< Disable publishing */
 #define USBD_PUBLISH_USBRESET_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event USBRESET will publish to. */
+/* Bits 7..0 : DPPI channel that event USBRESET will publish to */
 #define USBD_PUBLISH_USBRESET_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define USBD_PUBLISH_USBRESET_CHIDX_Msk (0xFFUL << USBD_PUBLISH_USBRESET_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -12592,7 +13346,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define USBD_PUBLISH_STARTED_EN_Disabled (0UL) /*!< Disable publishing */
 #define USBD_PUBLISH_STARTED_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event STARTED will publish to. */
+/* Bits 7..0 : DPPI channel that event STARTED will publish to */
 #define USBD_PUBLISH_STARTED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define USBD_PUBLISH_STARTED_CHIDX_Msk (0xFFUL << USBD_PUBLISH_STARTED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -12605,7 +13359,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define USBD_PUBLISH_ENDEPIN_EN_Disabled (0UL) /*!< Disable publishing */
 #define USBD_PUBLISH_ENDEPIN_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ENDEPIN[n] will publish to. */
+/* Bits 7..0 : DPPI channel that event ENDEPIN[n] will publish to */
 #define USBD_PUBLISH_ENDEPIN_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define USBD_PUBLISH_ENDEPIN_CHIDX_Msk (0xFFUL << USBD_PUBLISH_ENDEPIN_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -12618,7 +13372,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define USBD_PUBLISH_EP0DATADONE_EN_Disabled (0UL) /*!< Disable publishing */
 #define USBD_PUBLISH_EP0DATADONE_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event EP0DATADONE will publish to. */
+/* Bits 7..0 : DPPI channel that event EP0DATADONE will publish to */
 #define USBD_PUBLISH_EP0DATADONE_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define USBD_PUBLISH_EP0DATADONE_CHIDX_Msk (0xFFUL << USBD_PUBLISH_EP0DATADONE_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -12631,7 +13385,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define USBD_PUBLISH_ENDISOIN_EN_Disabled (0UL) /*!< Disable publishing */
 #define USBD_PUBLISH_ENDISOIN_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ENDISOIN will publish to. */
+/* Bits 7..0 : DPPI channel that event ENDISOIN will publish to */
 #define USBD_PUBLISH_ENDISOIN_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define USBD_PUBLISH_ENDISOIN_CHIDX_Msk (0xFFUL << USBD_PUBLISH_ENDISOIN_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -12644,7 +13398,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define USBD_PUBLISH_ENDEPOUT_EN_Disabled (0UL) /*!< Disable publishing */
 #define USBD_PUBLISH_ENDEPOUT_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ENDEPOUT[n] will publish to. */
+/* Bits 7..0 : DPPI channel that event ENDEPOUT[n] will publish to */
 #define USBD_PUBLISH_ENDEPOUT_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define USBD_PUBLISH_ENDEPOUT_CHIDX_Msk (0xFFUL << USBD_PUBLISH_ENDEPOUT_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -12657,7 +13411,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define USBD_PUBLISH_ENDISOOUT_EN_Disabled (0UL) /*!< Disable publishing */
 #define USBD_PUBLISH_ENDISOOUT_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ENDISOOUT will publish to. */
+/* Bits 7..0 : DPPI channel that event ENDISOOUT will publish to */
 #define USBD_PUBLISH_ENDISOOUT_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define USBD_PUBLISH_ENDISOOUT_CHIDX_Msk (0xFFUL << USBD_PUBLISH_ENDISOOUT_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -12670,7 +13424,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define USBD_PUBLISH_SOF_EN_Disabled (0UL) /*!< Disable publishing */
 #define USBD_PUBLISH_SOF_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event SOF will publish to. */
+/* Bits 7..0 : DPPI channel that event SOF will publish to */
 #define USBD_PUBLISH_SOF_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define USBD_PUBLISH_SOF_CHIDX_Msk (0xFFUL << USBD_PUBLISH_SOF_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -12683,7 +13437,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define USBD_PUBLISH_USBEVENT_EN_Disabled (0UL) /*!< Disable publishing */
 #define USBD_PUBLISH_USBEVENT_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event USBEVENT will publish to. */
+/* Bits 7..0 : DPPI channel that event USBEVENT will publish to */
 #define USBD_PUBLISH_USBEVENT_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define USBD_PUBLISH_USBEVENT_CHIDX_Msk (0xFFUL << USBD_PUBLISH_USBEVENT_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -12696,7 +13450,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define USBD_PUBLISH_EP0SETUP_EN_Disabled (0UL) /*!< Disable publishing */
 #define USBD_PUBLISH_EP0SETUP_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event EP0SETUP will publish to. */
+/* Bits 7..0 : DPPI channel that event EP0SETUP will publish to */
 #define USBD_PUBLISH_EP0SETUP_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define USBD_PUBLISH_EP0SETUP_CHIDX_Msk (0xFFUL << USBD_PUBLISH_EP0SETUP_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -12709,7 +13463,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define USBD_PUBLISH_EPDATA_EN_Disabled (0UL) /*!< Disable publishing */
 #define USBD_PUBLISH_EPDATA_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event EPDATA will publish to. */
+/* Bits 7..0 : DPPI channel that event EPDATA will publish to */
 #define USBD_PUBLISH_EPDATA_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define USBD_PUBLISH_EPDATA_CHIDX_Msk (0xFFUL << USBD_PUBLISH_EPDATA_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -12722,7 +13476,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define USBD_PUBLISH_ACCESSFAULT_EN_Disabled (0UL) /*!< Disable publishing */
 #define USBD_PUBLISH_ACCESSFAULT_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event ACCESSFAULT will publish to. */
+/* Bits 7..0 : DPPI channel that event ACCESSFAULT will publish to */
 #define USBD_PUBLISH_ACCESSFAULT_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define USBD_PUBLISH_ACCESSFAULT_CHIDX_Msk (0xFFUL << USBD_PUBLISH_ACCESSFAULT_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -14206,6 +14960,15 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define USBD_TURN_OFF_AUTO_CLOCKSOURCE_REQ_UNUSED_Pos (0UL) /*!< Position of UNUSED field. */
 #define USBD_TURN_OFF_AUTO_CLOCKSOURCE_REQ_UNUSED_Msk (0xFFFFFFFFUL << USBD_TURN_OFF_AUTO_CLOCKSOURCE_REQ_UNUSED_Pos) /*!< Bit mask of UNUSED field. */
 
+/* Register: USBD_POWER */
+/* Description: Peripheral power control */
+
+/* Bit 0 : Peripheral power control. The peripheral and its registers will be reset to its initial state by switching the peripheral off and then back on again. */
+#define USBD_POWER_POWER_Pos (0UL) /*!< Position of POWER field. */
+#define USBD_POWER_POWER_Msk (0x1UL << USBD_POWER_POWER_Pos) /*!< Bit mask of POWER field. */
+#define USBD_POWER_POWER_Disabled (0UL) /*!< Peripheral is powered off */
+#define USBD_POWER_POWER_Enabled (1UL) /*!< Peripheral is powered on */
+
 
 /* Peripheral: VMC */
 /* Description: Volatile Memory controller */
@@ -14356,7 +15119,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define WDT_PUBLISH_TIMEOUT_EN_Disabled (0UL) /*!< Disable publishing */
 #define WDT_PUBLISH_TIMEOUT_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event TIMEOUT will publish to. */
+/* Bits 7..0 : DPPI channel that event TIMEOUT will publish to */
 #define WDT_PUBLISH_TIMEOUT_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define WDT_PUBLISH_TIMEOUT_CHIDX_Msk (0xFFUL << WDT_PUBLISH_TIMEOUT_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 
@@ -14369,7 +15132,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define WDT_PUBLISH_STOPPED_EN_Disabled (0UL) /*!< Disable publishing */
 #define WDT_PUBLISH_STOPPED_EN_Enabled (1UL) /*!< Enable publishing */
 
-/* Bits 7..0 : DPPI channel that event STOPPED will publish to. */
+/* Bits 7..0 : DPPI channel that event STOPPED will publish to */
 #define WDT_PUBLISH_STOPPED_CHIDX_Pos (0UL) /*!< Position of CHIDX field. */
 #define WDT_PUBLISH_STOPPED_CHIDX_Msk (0xFFUL << WDT_PUBLISH_STOPPED_CHIDX_Pos) /*!< Bit mask of CHIDX field. */
 

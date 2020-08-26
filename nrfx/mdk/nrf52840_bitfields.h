@@ -17201,9 +17201,9 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_EVENTS_ACQREADY_EVENTS_ACQREADY_Generated (1UL) /*!< Event generated */
 
 /* Register: RADIO_EVENTS_SYNC */
-/* Description: Initial sync detected */
+/* Description: Preamble indicator. */
 
-/* Bit 0 : Initial sync detected */
+/* Bit 0 : Preamble indicator. */
 #define RADIO_EVENTS_SYNC_EVENTS_SYNC_Pos (0UL) /*!< Position of EVENTS_SYNC field. */
 #define RADIO_EVENTS_SYNC_EVENTS_SYNC_Msk (0x1UL << RADIO_EVENTS_SYNC_EVENTS_SYNC_Pos) /*!< Bit mask of EVENTS_SYNC field. */
 #define RADIO_EVENTS_SYNC_EVENTS_SYNC_NotGenerated (0UL) /*!< Event not generated */

@@ -1704,7 +1704,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 /* Peripheral: EGU */
-/* Description: Event Generator Unit 0 */
+/* Description: Event generator unit 0 */
 
 /* Register: EGU_TASKS_TRIGGER */
 /* Description: Description collection: Trigger n for triggering the corresponding TRIGGERED[n] event */
@@ -2255,8 +2255,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define FICR_INFO_PACKAGE_PACKAGE_Pos (0UL) /*!< Position of PACKAGE field. */
 #define FICR_INFO_PACKAGE_PACKAGE_Msk (0xFFFFFFFFUL << FICR_INFO_PACKAGE_PACKAGE_Pos) /*!< Bit mask of PACKAGE field. */
 #define FICR_INFO_PACKAGE_PACKAGE_QF (0x2000UL) /*!< QFxx - 48-pin QFN */
-#define FICR_INFO_PACKAGE_PACKAGE_CH (0x2001UL) /*!< CHxx - 7x8 WLCSP 56 balls */
-#define FICR_INFO_PACKAGE_PACKAGE_CI (0x2002UL) /*!< CIxx - 7x8 WLCSP 56 balls */
 #define FICR_INFO_PACKAGE_PACKAGE_QC (0x2003UL) /*!< QCxx - 32-pin QFN */
 #define FICR_INFO_PACKAGE_PACKAGE_CA (0x2004UL) /*!< CAxx - WLCSP */
 #define FICR_INFO_PACKAGE_PACKAGE_Unspecified (0xFFFFFFFFUL) /*!< Unspecified */
@@ -2563,6 +2561,28 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* Bits 12..8 : Calibrate internal bandgap reference in COMP */
 #define FICR_CHIPCONF04_COMPREFTRIM_Pos (8UL) /*!< Position of COMPREFTRIM field. */
 #define FICR_CHIPCONF04_COMPREFTRIM_Msk (0x1FUL << FICR_CHIPCONF04_COMPREFTRIM_Pos) /*!< Bit mask of COMPREFTRIM field. */
+
+/* Register: FICR_RCNFMODE6 */
+/* Description: Mode-specific RADIO configuration register for RADIO mode m=6 */
+
+/* Bits 15..8 : tDeltaPwrdnPa (default value for RADIO-&gt;QOVERRIDE21.TDELTAPWRDNPA) */
+#define FICR_RCNFMODE6_TDELTAPWRDNPA_Pos (8UL) /*!< Position of TDELTAPWRDNPA field. */
+#define FICR_RCNFMODE6_TDELTAPWRDNPA_Msk (0xFFUL << FICR_RCNFMODE6_TDELTAPWRDNPA_Pos) /*!< Bit mask of TDELTAPWRDNPA field. */
+
+/* Bits 7..0 : tIfsDelta (default value for RADIO-&gt;QOVERRIDE2.TIFSDELTA) */
+#define FICR_RCNFMODE6_TIFSDELTA_Pos (0UL) /*!< Position of TIFSDELTA field. */
+#define FICR_RCNFMODE6_TIFSDELTA_Msk (0xFFUL << FICR_RCNFMODE6_TIFSDELTA_Pos) /*!< Bit mask of TIFSDELTA field. */
+
+/* Register: FICR_RCNFMODE15 */
+/* Description: Mode-specific RADIO configuration register for RADIO mode m=15 */
+
+/* Bits 15..8 : tDeltaPwrdnPa (default value for RADIO-&gt;QOVERRIDE21.TDELTAPWRDNPA) */
+#define FICR_RCNFMODE15_TDELTAPWRDNPA_Pos (8UL) /*!< Position of TDELTAPWRDNPA field. */
+#define FICR_RCNFMODE15_TDELTAPWRDNPA_Msk (0xFFUL << FICR_RCNFMODE15_TDELTAPWRDNPA_Pos) /*!< Bit mask of TDELTAPWRDNPA field. */
+
+/* Bits 7..0 : tIfsDelta (default value for RADIO-&gt;QOVERRIDE2.TIFSDELTA) */
+#define FICR_RCNFMODE15_TIFSDELTA_Pos (0UL) /*!< Position of TIFSDELTA field. */
+#define FICR_RCNFMODE15_TIFSDELTA_Msk (0xFFUL << FICR_RCNFMODE15_TIFSDELTA_Pos) /*!< Bit mask of TIFSDELTA field. */
 
 /* Register: FICR_TEMP_A0 */
 /* Description: Slope definition A0 */
@@ -9047,8 +9067,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* Bits 2..1 : Status on what rate packet is received with in Long Range */
 #define RADIO_PDUSTAT_CISTAT_Pos (1UL) /*!< Position of CISTAT field. */
 #define RADIO_PDUSTAT_CISTAT_Msk (0x3UL << RADIO_PDUSTAT_CISTAT_Pos) /*!< Bit mask of CISTAT field. */
-#define RADIO_PDUSTAT_CISTAT_LR125kbit (0UL) /*!< Frame is received at 125kbps */
-#define RADIO_PDUSTAT_CISTAT_LR500kbit (1UL) /*!< Frame is received at 500kbps */
+#define RADIO_PDUSTAT_CISTAT_LR125kbit (0UL) /*!< Frame is received at 125 kbps */
+#define RADIO_PDUSTAT_CISTAT_LR500kbit (1UL) /*!< Frame is received at 500 kbps */
 
 /* Bit 0 : Status on payload length vs. PCNF1.MAXLEN */
 #define RADIO_PDUSTAT_PDUSTAT_Pos (0UL) /*!< Position of PDUSTAT field. */
@@ -11001,10 +11021,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_DEBUGPSEL_CLOCK_CONNECT_Connected (0UL) /*!< Connect */
 #define RADIO_DEBUGPSEL_CLOCK_CONNECT_Disconnected (1UL) /*!< Disconnect */
 
-/* Bits 9..8 : Port number */
-#define RADIO_DEBUGPSEL_CLOCK_PORT_Pos (8UL) /*!< Position of PORT field. */
-#define RADIO_DEBUGPSEL_CLOCK_PORT_Msk (0x3UL << RADIO_DEBUGPSEL_CLOCK_PORT_Pos) /*!< Bit mask of PORT field. */
-
 /* Bits 4..0 : Pin number */
 #define RADIO_DEBUGPSEL_CLOCK_PIN_Pos (0UL) /*!< Position of PIN field. */
 #define RADIO_DEBUGPSEL_CLOCK_PIN_Msk (0x1FUL << RADIO_DEBUGPSEL_CLOCK_PIN_Pos) /*!< Bit mask of PIN field. */
@@ -11017,10 +11033,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_DEBUGPSEL_DATA_CONNECT_Msk (0x1UL << RADIO_DEBUGPSEL_DATA_CONNECT_Pos) /*!< Bit mask of CONNECT field. */
 #define RADIO_DEBUGPSEL_DATA_CONNECT_Connected (0UL) /*!< Connect */
 #define RADIO_DEBUGPSEL_DATA_CONNECT_Disconnected (1UL) /*!< Disconnect */
-
-/* Bits 9..8 : Port number */
-#define RADIO_DEBUGPSEL_DATA_PORT_Pos (8UL) /*!< Position of PORT field. */
-#define RADIO_DEBUGPSEL_DATA_PORT_Msk (0x3UL << RADIO_DEBUGPSEL_DATA_PORT_Pos) /*!< Bit mask of PORT field. */
 
 /* Bits 4..0 : Pin number */
 #define RADIO_DEBUGPSEL_DATA_PIN_Pos (0UL) /*!< Position of PIN field. */
@@ -11317,10 +11329,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define RADIO_PSEL_DFEGPIO_CONNECT_Msk (0x1UL << RADIO_PSEL_DFEGPIO_CONNECT_Pos) /*!< Bit mask of CONNECT field. */
 #define RADIO_PSEL_DFEGPIO_CONNECT_Connected (0UL) /*!< Connect */
 #define RADIO_PSEL_DFEGPIO_CONNECT_Disconnected (1UL) /*!< Disconnect */
-
-/* Bit 5 : Port number */
-#define RADIO_PSEL_DFEGPIO_PORT_Pos (5UL) /*!< Position of PORT field. */
-#define RADIO_PSEL_DFEGPIO_PORT_Msk (0x1UL << RADIO_PSEL_DFEGPIO_PORT_Pos) /*!< Bit mask of PORT field. */
 
 /* Bits 4..0 : Pin number */
 #define RADIO_PSEL_DFEGPIO_PIN_Pos (0UL) /*!< Position of PIN field. */
