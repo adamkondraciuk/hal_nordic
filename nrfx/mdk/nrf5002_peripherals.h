@@ -46,85 +46,88 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     extern "C" {
 #endif
 
-/*Volatile Memory controller*/
-#define VMC_PRESENT
-#define VMC_COUNT 1
-
-#define VMC_FEATURE_RAM_REGISTERS_PRESENT
-#define VMC_FEATURE_RAM_REGISTERS_COUNT 3
-
-/*Non Volatile Memory Controller*/
-#define NVMC_PRESENT
-#define NVMC_COUNT 1
-
-/*Block Protect*/
-#define BPROT_PRESENT
-#define BPROT_COUNT 1
-
-#define BPROT_REGIONS_SIZE 4096
-#define BPROT_REGIONS_NUM 32
-
-/*32.768 kHz RC oscillator*/
-#define RCOSC32K_PRESENT
-#define RCOSC32K_COUNT 1
-
-/*Clock management*/
+/* Clock Peripheral */
 #define CLOCK_PRESENT
 #define CLOCK_COUNT 1
 
-/*Power control*/
+/* Power Peripheral */
 #define POWER_PRESENT
 #define POWER_COUNT 1
+
+/* Regulators Peripheral */
+#define REGULATORS_PRESENT
+#define REGULATORS_COUNT 1
 
 /*Reset control*/
 #define RESET_PRESENT
 #define RESET_COUNT 1
 
-/*GPIO Port*/
+/* Oscillators */
+#define OSCILLATORS_PRESENT
+#define OSCILLATORS_COUNT 1
+
+/* MPU and BPROT */
+#define BPROT_PRESENT
+
+#define BPROT_REGIONS_SIZE 2048
+#define BPROT_REGIONS_NUM 93
+
+/*Volatile Memory controller*/
+#define VMC_PRESENT
+#define VMC_COUNT 1
+
+#define VMC_FEATURE_RAM_REGISTERS_PRESENT
+#define VMC_FEATURE_RAM_REGISTERS_COUNT 12
+
+/* Non-Volatile Memory Controller */
+#define NVMC_PRESENT
+#define NVMC_COUNT 1
+
+/* GPIO */
 #define GPIO_PRESENT
 #define GPIO_COUNT 2
 
 #define P0_PIN_NUM 4
-#define P1_PIN_NUM 4
+#define P1_PIN_NUM 12
 
 #define P0_FEATURE_PINS_PRESENT 0x0000000FUL
-#define P1_FEATURE_PINS_PRESENT 0x000000F0UL
+#define P1_FEATURE_PINS_PRESENT 0x00000FFFUL
 
-/*Oscillator control*/
-#define OSCILLATORS_PRESENT
-#define OSCILLATORS_COUNT 1
-
-/*Regulator control*/
-#define REGULATORS_PRESENT
-#define REGULATORS_COUNT 1
-
-/*2.4 GHz radio*/
+/* Radio */
 #define RADIO_PRESENT
 #define RADIO_COUNT 1
 
-#define RADIO_EASYDMA_MAXCNT_SIZE 8
+#define RADIO_EASYDMA_MAXCNT_SIZE 14
 #define RADIO_FEATURE_IEEE_802_15_4_PRESENT
 
 #define RADIO_TXPOWER_TXPOWER_Max RADIO_TXPOWER_TXPOWER_Pos8dBm
+
+/* Accelerated Address Resolver */
+#define AAR_PRESENT
+#define AAR_COUNT 1
+
+#define AAR_MAX_IRK_NUM 16
+
+/* AES Electronic CodeBook mode encryption */
+#define ECB_PRESENT
+#define ECB_COUNT 1
+
+/* AES CCM mode encryption */
+#define CCM_PRESENT
+#define CCM_COUNT 1
 
 /*Random Number Generator*/
 #define RNG_PRESENT
 #define RNG_COUNT 1
 
-/*GPIO Tasks and Events*/
-#define GPIOTE_PRESENT
-#define GPIOTE_COUNT 1
+/* Distributed Peripheral to Peripheral Interconnect */
+#define DPPI_PRESENT
+#define DPPI_COUNT 1
 
-#define GPIOTE_CH_NUM 8
+#define DPPI_CH_NUM 16
+#define DPPI_GROUP_NUM 6
 
-#define GPIOTE_FEATURE_SET_PRESENT
-#define GPIOTE_FEATURE_CLR_PRESENT
-
-/*Watchdog Timer*/
-#define WDT_PRESENT
-#define WDT_COUNT 1
-
-/*Timer/Counter*/
+/* Timer/Counter */
 #define TIMER_PRESENT
 #define TIMER_COUNT 3
 
@@ -132,89 +135,79 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define TIMER1_MAX_SIZE 32
 #define TIMER2_MAX_SIZE 32
 
-#define TIMER0_CC_NUM 8
-#define TIMER1_CC_NUM 8
-#define TIMER2_CC_NUM 8
+#define TIMER0_CC_NUM 6
+#define TIMER1_CC_NUM 6
+#define TIMER2_CC_NUM 6
 
-/*AES ECB Mode Encryption*/
-#define ECB_PRESENT
-#define ECB_COUNT 1
-
-/*Accelerated Address Resolver*/
-#define AAR_PRESENT
-#define AAR_COUNT 1
-
-#define AAR_MAX_IRK_NUM 16
-
-/*AES CCM mode encryption*/
-#define CCM_PRESENT
-#define CCM_COUNT 1
-
-/*Distributed programmable peripheral interconnect controller*/
-#define DPPI_PRESENT
-#define DPPI_COUNT 1
-
-#define DPPI_CH_NUM 16
-#define DPPI_GROUP_NUM 6
-
-/*Real-time counter*/
+/* Real Time Counter */
 #define RTC_PRESENT
 #define RTC_COUNT 2
 
 #define RTC0_CC_NUM 4
 #define RTC1_CC_NUM 4
 
-/*Serial Peripheral Interface*/
-#define SPI_PRESENT
-#define SPI_COUNT 1
+/* Watchdog Timer */
+#define WDT_PRESENT
+#define WDT_COUNT 1
 
-/*Serial Peripheral Interface Master with EasyDMA*/
+/* Serial Peripheral Interface Master with DMA */
 #define SPIM_PRESENT
-#define SPIM_COUNT 1
+#define SPIM_COUNT 2
 
 #define SPIM0_MAX_DATARATE  8
+#define SPIM2_MAX_DATARATE  8
 
-#define SPIM0_FEATURE_HARDWARE_CSN_PRESENT
+#define SPIM0_FEATURE_HARDWARE_CSN_PRESENT  0
+#define SPIM2_FEATURE_HARDWARE_CSN_PRESENT  0
 
-#define SPIM0_FEATURE_DCX_PRESENT
+#define SPIM0_FEATURE_DCX_PRESENT 1
+#define SPIM2_FEATURE_DCX_PRESENT 1
 
-#define SPIM0_FEATURE_RXDELAY_PRESENT
+#define SPIM0_FEATURE_RXDELAY_PRESENT  0
+#define SPIM2_FEATURE_RXDELAY_PRESENT  0
 
 #define SPIM0_EASYDMA_MAXCNT_SIZE 8
+#define SPIM2_EASYDMA_MAXCNT_SIZE 8
 
 /*SPI Slave*/
 #define SPIS_PRESENT
-#define SPIS_COUNT 1
+#define SPIS_COUNT 2
 
 #define SPIS0_EASYDMA_MAXCNT_SIZE 8
+#define SPIS2_EASYDMA_MAXCNT_SIZE 8
 
-/*I2C compatible Two-Wire Interface*/
-#define TWI_PRESENT
-#define TWI_COUNT 1
+/* Two Wire Interface Master with DMA */
+#define TWIM_PRESENT
+#define TWIM_COUNT
 
-/*Universal Asynchronous Receiver/Transmitter*/
-#define UART_PRESENT
-#define UART_COUNT 1
+#define TWIM1_EASYDMA_MAXCNT_SIZE 8
 
-/*UART with EasyDMA*/
+/* Two Wire Interface Slave with DMA */
+#define TWIS_PRESENT
+#define TWIS_COUNT 1
+
+#define TWIS1_EASYDMA_MAXCNT_SIZE 8
+
+/* Universal Asynchronous Receiver-Transmitter with DMA */
 #define UARTE_PRESENT
 #define UARTE_COUNT 1
 
 #define UARTE0_EASYDMA_MAXCNT_SIZE 8
 
-/*I2C compatible Two-Wire Master Interface with EasyDMA*/
-#define TWIM_PRESENT
-#define TWIM_COUNT 1
-
-/*I2C compatible Two-Wire Slave Interface with EasyDMA*/
-#define TWIS_PRESENT
-#define TWIS_COUNT 1
-
-/*Quadrature Decoder*/
+/* Quadrature Decoder */
 #define QDEC_PRESENT
 #define QDEC_COUNT 1
 
-/*Analog to Digital Converter*/
+/* GPIO Tasks and Events */
+#define GPIOTE_PRESENT
+#define GPIOTE_COUNT 1
+
+#define GPIOTE_CH_NUM 2
+
+#define GPIOTE_FEATURE_SET_PRESENT
+#define GPIOTE_FEATURE_CLR_PRESENT
+
+/* Analog to Digital Converter */
 #define SAADC_PRESENT
 #define SAADC_COUNT 1
 

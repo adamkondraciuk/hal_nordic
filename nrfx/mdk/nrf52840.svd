@@ -2365,6 +2365,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
                   <value>0xFF</value>
                 </enumeratedValue>
                 <enumeratedValue>
+                  <name>HwDisabled</name>
+                  <description>Hardware disable for hardware-software-controlled access port protection devices</description>
+                  <value>0x5A</value>
+                </enumeratedValue>
+                <enumeratedValue>
                   <name>Enabled</name>
                   <description>Enable</description>
                   <value>0x00</value>
@@ -5265,6 +5270,79 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             </fields>
           </register>
         </cluster>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>APPROTECT</name>
+      <description>Access Port Protection</description>
+      <baseAddress>0x40000000</baseAddress>
+      <alternatePeripheral>AMLI</alternatePeripheral>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <groupName>APPROTECT</groupName>
+      <size>0x20</size>
+      <registers>
+        <register>
+          <name>LOCK</name>
+          <description>DISABLE register lock</description>
+          <addressOffset>0x550</addressOffset>
+          <access>read-writeonce</access>
+          <resetValue>0xFFFFFFFF</resetValue>
+          <fields>
+            <field>
+              <name>LOCK</name>
+              <description>Write 0x0 to lock writing of register DISABLE and disabling its output.</description>
+              <lsb>0</lsb>
+              <msb>7</msb>
+              <enumeratedValues>
+                <usage>read</usage>
+                <enumeratedValue>
+                  <name>Locked</name>
+                  <description>DISABLE register is locked.</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Unlocked</name>
+                  <description>DISABLE register is unlocked.</description>
+                  <value>0xFF</value>
+                </enumeratedValue>
+              </enumeratedValues>
+              <enumeratedValues>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>Lock</name>
+                  <description>Lock DISABLE register.</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DISABLE</name>
+          <description>Software disable APPROTECT mechanism</description>
+          <addressOffset>0x558</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>DISABLE</name>
+              <description>Software disable APPROTECT mechanism</description>
+              <lsb>0</lsb>
+              <msb>7</msb>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SwDisable</name>
+                  <description>Software disable APPROTECT mechanism</description>
+                  <value>0x5A</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
       </registers>
     </peripheral>
     <peripheral>

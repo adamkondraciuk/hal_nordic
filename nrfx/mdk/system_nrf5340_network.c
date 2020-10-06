@@ -28,6 +28,7 @@ NOTICE: This file has been modified by Nordic Semiconductor ASA.
 #include "nrf.h"
 #include "nrf_erratas.h"
 #include "system_nrf5340_network.h"
+#include "system_nrf53_approtect.h"
 
 /*lint ++flb "Enter library region" */
 
@@ -44,7 +45,7 @@ NOTICE: This file has been modified by Nordic Semiconductor ASA.
 
 void SystemCoreClockUpdate(void)
 {
-    SystemCoreClock = __SYSTEM_CLOCK >> (NRF_CLOCK_NS->HFCLKCTRL & (CLOCK_HFCLKCTRL_HCLK_Msk));
+    SystemCoreClock = __SYSTEM_CLOCK;
 }
 
 void SystemInit(void)
@@ -84,6 +85,9 @@ void SystemInit(void)
             NRF_RESET_NS->RESETREAS = ~RESET_RESETREAS_RESETPIN_Msk;
         }
     }
+
+    /* Handle fw-branch APPROTECT setup. */
+    nrf53_handle_approtect();
 
     SystemCoreClockUpdate();
 }

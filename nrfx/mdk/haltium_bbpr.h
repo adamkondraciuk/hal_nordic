@@ -67,7 +67,7 @@ typedef enum {
   MachineExternal_IRQn                   = -5,       /*!<  -5 Machine External (PLIC) Interrupt                                */
   CLICSoftware_IRQn                      = -4,       /*!<  -4 CLIC Software Interrupt                                          */
 /* ============================================== Processor Specific Interrupts ============================================== */
-  VPR_IRQn                               = 55,       /*!< 55 VPR                                                               */
+  VPR_IRQn                               = 52,       /*!< 52 VPR                                                               */
   GPIOTE00_IRQn                          = 104,      /*!< 104 GPIOTE00                                                         */
   GPIOTE01_IRQn                          = 105,      /*!< 105 GPIOTE01                                                         */
   GPIOTE10_IRQn                          = 106,      /*!< 106 GPIOTE10                                                         */
@@ -76,12 +76,9 @@ typedef enum {
   GIPCT00_IRQn                           = 209,      /*!< 209 GIPCT00                                                          */
   I3C0_IRQn                              = 211,      /*!< 211 I3C0                                                             */
   I3C1_IRQn                              = 212,      /*!< 212 I3C1                                                             */
-  I3C2_IRQn                              = 213,      /*!< 213 I3C2                                                             */
-  I3C3_IRQn                              = 214,      /*!< 214 I3C3                                                             */
   GTIMER0_IRQn                           = 226,      /*!< 226 GTIMER0                                                          */
   GTIMER1_IRQn                           = 227,      /*!< 227 GTIMER1                                                          */
   PWM0_IRQn                              = 228,      /*!< 228 PWM0                                                             */
-  SPIM0_SPIS0_TWIM0_TWIS0_UARTE0_IRQn    = 229,      /*!< 229 SPIM0_SPIS0_TWIM0_TWIS0_UARTE0                                   */
   HSSPIM0_IRQn                           = 230,      /*!< 230 HSSPIM0                                                          */
   HSSPIM1_IRQn                           = 231,      /*!< 231 HSSPIM1                                                          */
   GIPCT10_IRQn                           = 289,      /*!< 289 GIPCT10                                                          */
@@ -99,27 +96,27 @@ typedef enum {
   QDEC1_IRQn                             = 405,      /*!< 405 QDEC1                                                            */
   SIMIF_IRQn                             = 406,      /*!< 406 SIMIF                                                            */
   GMIPIRFFE_IRQn                         = 407,      /*!< 407 GMIPIRFFE                                                        */
-  TWIM9_IRQn                             = 408,      /*!< 408 TWIM9                                                            */
+  TWIM8_IRQn                             = 408,      /*!< 408 TWIM8                                                            */
   GTIMER2_IRQn                           = 418,      /*!< 418 GTIMER2                                                          */
   GTIMER3_IRQn                           = 419,      /*!< 419 GTIMER3                                                          */
   PWM1_IRQn                              = 420,      /*!< 420 PWM1                                                             */
-  SPIM1_SPIS1_TWIM1_TWIS1_UARTE1_IRQn    = 421,      /*!< 421 SPIM1_SPIS1_TWIM1_TWIS1_UARTE1                                   */
-  SPIM2_SPIS2_TWIM2_TWIS2_UARTE2_IRQn    = 422,      /*!< 422 SPIM2_SPIS2_TWIM2_TWIS2_UARTE2                                   */
+  SERIAL0_IRQn                           = 421,      /*!< 421 SERIAL0                                                          */
+  SERIAL1_IRQn                           = 422,      /*!< 422 SERIAL1                                                          */
   GTIMER4_IRQn                           = 434,      /*!< 434 GTIMER4                                                          */
   GTIMER5_IRQn                           = 435,      /*!< 435 GTIMER5                                                          */
   PWM2_IRQn                              = 436,      /*!< 436 PWM2                                                             */
-  SPIM3_SPIS3_TWIM3_TWIS3_UARTE3_IRQn    = 437,      /*!< 437 SPIM3_SPIS3_TWIM3_TWIS3_UARTE3                                   */
-  SPIM4_SPIS4_TWIM4_TWIS4_UARTE4_IRQn    = 438,      /*!< 438 SPIM4_SPIS4_TWIM4_TWIS4_UARTE4                                   */
+  SERIAL2_IRQn                           = 437,      /*!< 437 SERIAL2                                                          */
+  SERIAL3_IRQn                           = 438,      /*!< 438 SERIAL3                                                          */
   GTIMER6_IRQn                           = 450,      /*!< 450 GTIMER6                                                          */
   GTIMER7_IRQn                           = 451,      /*!< 451 GTIMER7                                                          */
   PWM3_IRQn                              = 452,      /*!< 452 PWM3                                                             */
-  SPIM5_SPIS5_TWIM5_TWIS5_UARTE5_IRQn    = 453,      /*!< 453 SPIM5_SPIS5_TWIM5_TWIS5_UARTE5                                   */
-  SPIM6_SPIS6_TWIM6_TWIS6_UARTE6_IRQn    = 454,      /*!< 454 SPIM6_SPIS6_TWIM6_TWIS6_UARTE6                                   */
+  SERIAL4_IRQn                           = 453,      /*!< 453 SERIAL4                                                          */
+  SERIAL5_IRQn                           = 454,      /*!< 454 SERIAL5                                                          */
   GTIMER8_IRQn                           = 466,      /*!< 466 GTIMER8                                                          */
   GTIMER9_IRQn                           = 467,      /*!< 467 GTIMER9                                                          */
   PWM4_IRQn                              = 468,      /*!< 468 PWM4                                                             */
-  SPIM7_SPIS7_TWIM7_TWIS7_UARTE7_IRQn    = 469,      /*!< 469 SPIM7_SPIS7_TWIM7_TWIS7_UARTE7                                   */
-  SPIM8_SPIS8_TWIM8_TWIS8_UARTE8_IRQn    = 470,      /*!< 470 SPIM8_SPIS8_TWIM8_TWIS8_UARTE8                                   */
+  SERIAL6_IRQn                           = 469,      /*!< 469 SERIAL6                                                          */
+  SERIAL7_IRQn                           = 470,      /*!< 470 SERIAL7                                                          */
 } IRQn_Type;
 
 
@@ -172,30 +169,27 @@ typedef enum {
 /* ================                                  Peripheral Address Map                                  ================ */
 /* =========================================================================================================================== */
 
-#define NRF_BBPR_CLIC_NS_BASE             0x43034000UL
-#define NRF_BBPR_CLIC_S_BASE              0x53034000UL
-#define NRF_BBPR_VPR_NS_BASE              0x43037000UL
-#define NRF_BBPR_VPR_S_BASE               0x53037000UL
+#define NRF_BBPR_VPR_NS_BASE              0x43034000UL
+#define NRF_BBPR_VPR_S_BASE               0x53034000UL
+#define NRF_BBPR_AMBIX_S_BASE             0x53036000UL
 
 /* =========================================================================================================================== */
 /* ================                                  Peripheral Declaration                                  ================ */
 /* =========================================================================================================================== */
 
-#define NRF_BBPR_CLIC_NS                  ((NRF_CLIC_Type*)                     NRF_BBPR_CLIC_NS_BASE)
-#define NRF_BBPR_CLIC_S                   ((NRF_CLIC_Type*)                     NRF_BBPR_CLIC_S_BASE)
 #define NRF_BBPR_VPR_NS                   ((NRF_VPR_Type*)                      NRF_BBPR_VPR_NS_BASE)
 #define NRF_BBPR_VPR_S                    ((NRF_VPR_Type*)                      NRF_BBPR_VPR_S_BASE)
+#define NRF_BBPR_AMBIX_S                  ((NRF_AMBIX_Type*)                    NRF_BBPR_AMBIX_S_BASE)
 
 /* =========================================================================================================================== */
 /* ================                                    TrustZone Remapping                                    ================ */
 /* =========================================================================================================================== */
 
 #ifdef NRF_NONSECURE                                 /*!< Remap NRF_X_NS instances to NRF_X symbol for ease of use.            */
-  #define NRF_BBPR_CLIC                           NRF_BBPR_CLIC_NS
   #define NRF_BBPR_VPR                            NRF_BBPR_VPR_NS
 #else                                                /*!< Remap NRF_X_S instances to NRF_X symbol for ease of use.             */
-  #define NRF_BBPR_CLIC                           NRF_BBPR_CLIC_S
   #define NRF_BBPR_VPR                            NRF_BBPR_VPR_S
+  #define NRF_BBPR_AMBIX                          NRF_BBPR_AMBIX_S
 #endif                                               /*!<  NRF_NONSECURE                                                       */
 
 /* =========================================================================================================================== */
@@ -203,8 +197,8 @@ typedef enum {
 /* =========================================================================================================================== */
 
 #ifdef NRF_BBPR                                      /*!< Remap NRF_DOMAIN instances to NRF_X symbol for ease of use.          */
-  #define NRF_CLIC                                NRF_BBPR_CLIC
   #define NRF_VPR                                 NRF_BBPR_VPR
+  #define NRF_AMBIX                               NRF_BBPR_AMBIX
 #endif                                               /*!< NRF_BBPR                                                             */
 
 /* ========================================== End of section using anonymous unions ========================================== */

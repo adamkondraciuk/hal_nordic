@@ -1162,6 +1162,28 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define AMLI_RAMPRI_SPIM3_RAM0_Pri1 (1UL) /*!< Priority 1 */
 
 
+/* Peripheral: APPROTECT */
+/* Description: Access Port Protection */
+
+/* Register: APPROTECT_LOCK */
+/* Description: DISABLE register lock */
+
+/* Bits 7..0 : Write 0x0 to lock writing of register DISABLE and disabling its output. */
+#define APPROTECT_LOCK_LOCK_Pos (0UL) /*!< Position of LOCK field. */
+#define APPROTECT_LOCK_LOCK_Msk (0xFFUL << APPROTECT_LOCK_LOCK_Pos) /*!< Bit mask of LOCK field. */
+#define APPROTECT_LOCK_LOCK_Locked (0x0UL) /*!< DISABLE register is locked. */
+#define APPROTECT_LOCK_LOCK_Unlocked (0xFFUL) /*!< DISABLE register is unlocked. */
+#define APPROTECT_LOCK_LOCK_Lock (0x0UL) /*!< Lock DISABLE register. */
+
+/* Register: APPROTECT_DISABLE */
+/* Description: Software disable APPROTECT mechanism */
+
+/* Bits 7..0 : Software disable APPROTECT mechanism */
+#define APPROTECT_DISABLE_DISABLE_Pos (0UL) /*!< Position of DISABLE field. */
+#define APPROTECT_DISABLE_DISABLE_Msk (0xFFUL << APPROTECT_DISABLE_DISABLE_Pos) /*!< Bit mask of DISABLE field. */
+#define APPROTECT_DISABLE_DISABLE_SwDisable (0x5AUL) /*!< Software disable APPROTECT mechanism */
+
+
 /* Peripheral: CCM */
 /* Description: AES CCM Mode Encryption */
 
@@ -25437,6 +25459,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UICR_APPROTECT_PALL_Pos (0UL) /*!< Position of PALL field. */
 #define UICR_APPROTECT_PALL_Msk (0xFFUL << UICR_APPROTECT_PALL_Pos) /*!< Bit mask of PALL field. */
 #define UICR_APPROTECT_PALL_Enabled (0x00UL) /*!< Enable */
+#define UICR_APPROTECT_PALL_HwDisabled (0x5AUL) /*!< Hardware disable for hardware-software-controlled access port protection devices */
 #define UICR_APPROTECT_PALL_Disabled (0xFFUL) /*!< Disable */
 
 /* Register: UICR_NFCPINS */

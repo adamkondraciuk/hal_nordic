@@ -89,6 +89,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     #include "nrf9160_modem_peripherals.h"
 
 #elif defined (HALTIUM_XXAA)
+    // No header file available yet.
+
 #else
     #error "Device must be defined. See nrf.h."
 #endif

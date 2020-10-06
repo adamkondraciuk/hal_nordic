@@ -44,63 +44,9 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /* MDK version */
 #define MDK_MAJOR_VERSION   8 
-#define MDK_MINOR_VERSION   35 
-#define MDK_MICRO_VERSION   0 
+#define MDK_MINOR_VERSION   36 
+#define MDK_MICRO_VERSION   1 
 
-/* Define NRF50_SERIES for common use in nRF50 series devices. Only if not previously defined. */
-#if defined (NRF5001_XXAA) ||\
-    defined (NRF5002_XXAA)
-    #ifndef NRF50_SERIES
-        #define NRF50_SERIES
-    #endif
-#endif
-
-/* Define NRF51_SERIES for common use in nRF51 series devices. Only if not previously defined. */
-#if defined (NRF51) ||\
-    defined (NRF51422_XXAA) ||\
-    defined (NRF51422_XXAB) ||\
-    defined (NRF51422_XXAC) ||\
-    defined (NRF51801_XXAB) ||\
-    defined (NRF51802_XXAA) ||\
-    defined (NRF51822_XXAA) ||\
-    defined (NRF51822_XXAB) ||\
-    defined (NRF51822_XXAC) ||\
-    defined (NRF51824_XXAA)
-    #ifndef NRF51_SERIES
-        #define NRF51_SERIES
-    #endif
-    #ifndef NRF51
-        #define NRF51
-    #endif
-#endif
-
-/* Redefine "old" too-generic name NRF52 to NRF52832_XXAA to keep backwards compatibility. */
-#if defined (NRF52)
-    #ifndef NRF52832_XXAA
-        #define NRF52832_XXAA
-    #endif
-#endif
-
-/* Define NRF52_SERIES for common use in nRF52 series devices. Only if not previously defined. */
-#if defined (NRF52805_XXAA) || defined (NRF52810_XXAA) || defined (NRF52811_XXAA) || defined (NRF52820_XXAA) || defined (NRF52832_XXAA) || defined (NRF52832_XXAB) || defined (NRF52833_XXAA) || defined (NRF52840_XXAA)
-    #ifndef NRF52_SERIES
-        #define NRF52_SERIES
-    #endif
-#endif
-
-/* Define NRF53_SERIES for common use in nRF53 series devices. */
-#if defined (NRF5340_XXAA_APPLICATION) || defined (NRF5340_XXAA_NETWORK)
-    #ifndef NRF53_SERIES
-        #define NRF53_SERIES
-    #endif
-#endif
-
-/* Define NRF91_SERIES for common use in nRF91 series devices. */
-#if defined (NRF9160_XXAA) || defined (NRF9160_XXAA_MODEM)
-    #ifndef NRF91_SERIES
-        #define NRF91_SERIES
-    #endif
-#endif
 
 /* Define coprocessor domains */
 #if defined (NRF5340_XXAA_APPLICATION) || defined (NRF5340_XXAA_NETWORK)
@@ -162,6 +108,61 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #if defined (NRF9160_XXAA_MODEM)
     #ifndef NRF_MODEM
         #define NRF_MODEM
+    #endif
+#endif
+
+/* Define NRF50_SERIES for common use in nRF50 series devices. Only if not previously defined. */
+#if defined (NRF5001_XXAA) ||\
+    defined (NRF5002_XXAA)
+    #ifndef NRF50_SERIES
+        #define NRF50_SERIES
+    #endif
+#endif
+
+/* Define NRF51_SERIES for common use in nRF51 series devices. Only if not previously defined. */
+#if defined (NRF51) ||\
+    defined (NRF51422_XXAA) ||\
+    defined (NRF51422_XXAB) ||\
+    defined (NRF51422_XXAC) ||\
+    defined (NRF51801_XXAB) ||\
+    defined (NRF51802_XXAA) ||\
+    defined (NRF51822_XXAA) ||\
+    defined (NRF51822_XXAB) ||\
+    defined (NRF51822_XXAC) ||\
+    defined (NRF51824_XXAA)
+    #ifndef NRF51_SERIES
+        #define NRF51_SERIES
+    #endif
+    #ifndef NRF51
+        #define NRF51
+    #endif
+#endif
+
+/* Redefine "old" too-generic name NRF52 to NRF52832_XXAA to keep backwards compatibility. */
+#if defined (NRF52)
+    #ifndef NRF52832_XXAA
+        #define NRF52832_XXAA
+    #endif
+#endif
+
+/* Define NRF52_SERIES for common use in nRF52 series devices. Only if not previously defined. */
+#if defined (NRF52805_XXAA) || defined (NRF52810_XXAA) || defined (NRF52811_XXAA) || defined (NRF52820_XXAA) || defined (NRF52832_XXAA) || defined (NRF52832_XXAB) || defined (NRF52833_XXAA) || defined (NRF52840_XXAA)
+    #ifndef NRF52_SERIES
+        #define NRF52_SERIES
+    #endif
+#endif
+
+/* Define NRF53_SERIES for common use in nRF53 series devices. */
+#if defined (NRF5340_XXAA)
+    #ifndef NRF53_SERIES
+        #define NRF53_SERIES
+    #endif
+#endif
+
+/* Define NRF91_SERIES for common use in nRF91 series devices. */
+#if defined (NRF9160_XXAA)
+    #ifndef NRF91_SERIES
+        #define NRF91_SERIES
     #endif
 #endif
 
