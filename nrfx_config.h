@@ -379,6 +379,14 @@
 #define NRFX_WDT1_ENABLED 1
 #endif
 
+#ifdef CONFIG_NRFX_PM
+#define NRFX_PM_ENABLED 1
+#endif
+
+#ifdef CONFIG_NRFX_RTN
+#define NRFX_RTN_ENABLED 1
+#endif
+
 #if defined(CONFIG_SOC_SERIES_BSIM_NRFXX)
 #include "nrfx_config_bsim.h"
 #endif

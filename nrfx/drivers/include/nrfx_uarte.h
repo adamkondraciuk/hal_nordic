@@ -368,6 +368,16 @@ void nrfx_uarte_rx_abort(nrfx_uarte_t const * p_instance);
  */
 uint32_t nrfx_uarte_errorsrc_get(nrfx_uarte_t const * p_instance);
 
+#if NRFX_CHECK(NRFX_PM_ENABLED)
+/**
+ * @brief Function for getting pointer to the power management structure.
+ *
+ * @param[in] p_instance Pointer to the driver instance structure.
+ *
+ * @return Pointer to the power management service.
+ */
+void * nrfx_uarte_pm_get(nrfx_uarte_t const * p_instance);
+#endif // NRFX_CHECK(NRFX_PM_ENABLED)
 
 #ifndef NRFX_DECLARE_ONLY
 NRFX_STATIC_INLINE uint32_t nrfx_uarte_task_address_get(nrfx_uarte_t const * p_instance,
