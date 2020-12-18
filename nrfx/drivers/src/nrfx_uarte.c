@@ -203,6 +203,162 @@ static void apply_workaround_for_enable_anomaly(nrfx_uarte_t const * p_instance)
 #endif // defined(NRF5340_XXAA_APPLICATION) || defined(NRF5340_XXAA_NETWORK) || defined(NRF9160_XXAA)
 }
 
+#if NRFX_CHECK(NRFX_PM_ENABLED)
+
+#include <helpers/include/nrfx_pm_driver.h>
+#include <helpers/include/nrfx_rtn.h>
+#include "soc/retention/nrfx_rtn_uarte.h"
+
+#if NRFX_CHECK(NRFX_UARTE0_ENABLED)
+static nrfx_err_t pm_uarte_0_transition_handler(nrfx_pm_operation_t operation);
+#endif
+
+#if NRFX_CHECK(NRFX_UARTE1_ENABLED)
+static nrfx_err_t pm_uarte_1_transition_handler(nrfx_pm_operation_t operation);
+#endif
+
+#if NRFX_CHECK(NRFX_UARTE2_ENABLED)
+static nrfx_err_t pm_uarte_2_transition_handler(nrfx_pm_operation_t operation);
+#endif
+
+#if NRFX_CHECK(NRFX_UARTE3_ENABLED)
+static nrfx_err_t pm_uarte_3_transition_handler(nrfx_pm_operation_t operation);
+#endif
+
+nrfx_rtn_uarte_t uarte_registers[NRFX_UARTE_ENABLED_COUNT];
+nrfx_pm_t uarte_pm[NRFX_UARTE_ENABLED_COUNT] =
+{
+#if NRFX_CHECK(NRFX_UARTE0_ENABLED)
+    [NRFX_UARTE0_INST_IDX] = NRFX_PM_DEFAULT_CONFIG(pm_uarte_0_transition_handler),
+#endif
+#if NRFX_CHECK(NRFX_UARTE1_ENABLED)
+    [NRFX_UARTE1_INST_IDX] = NRFX_PM_DEFAULT_CONFIG(pm_uarte_1_transition_handler),
+#endif
+#if NRFX_CHECK(NRFX_UARTE2_ENABLED)
+    [NRFX_UARTE2_INST_IDX] = NRFX_PM_DEFAULT_CONFIG(pm_uarte_2_transition_handler),
+#endif
+#if NRFX_CHECK(NRFX_UARTE3_ENABLED)
+    [NRFX_UARTE3_INST_IDX] = NRFX_PM_DEFAULT_CONFIG(pm_uarte_3_transition_handler),
+#endif
+};
+
+static nrfx_err_t pm_uarte_transition_handler(nrfx_pm_operation_t operation,
+                                              NRF_UARTE_Type *    p_reg,
+                                              uint8_t             inst_idx)
+{
+	//zamienic wszedzie na p_cb
+	uarte_control_block_t * p_cb = &m_cb[inst_idx];
+    switch (operation)
+    {
+        case NRFX_PM_OPERATION_TURN_ON:
+#if defined(NRF52_SERIES)
+            *(volatile uint32_t *)((uint8_t *)p_reg + (uint32_t)0xFFC) = 1;
+#endif
+            nrfx_rtn_restore(p_reg, nrfx_rtn_uarte_ctrl_list, &uarte_registers[inst_idx]);
+            nrf_uarte_event_clear(p_reg, NRF_UARTE_EVENT_ENDRX);
+            nrf_uarte_event_clear(p_reg, NRF_UARTE_EVENT_ENDTX);
+            nrf_uarte_event_clear(p_reg, NRF_UARTE_EVENT_ERROR);
+            nrf_uarte_event_clear(p_reg, NRF_UARTE_EVENT_RXTO);
+            nrf_uarte_event_clear(p_reg, NRF_UARTE_EVENT_TXSTOPPED);
+            nrf_uarte_int_enable(p_reg, NRF_UARTE_INT_ENDRX_MASK |
+                                        NRF_UARTE_INT_ENDTX_MASK |
+                                        NRF_UARTE_INT_ERROR_MASK |
+                                        NRF_UARTE_INT_RXTO_MASK  |
+                                        NRF_UARTE_INT_TXSTOPPED_MASK);
+            nrf_uarte_enable(p_reg);
+            nrfx_pm_notify(&uarte_pm[inst_idx]);
+            break;
+        case NRFX_PM_OPERATION_TURN_OFF:
+			if (p_cb->handler)
+			{
+				interrupts_disable(p_instance);
+			}
+			// Make sure all transfers are finished before UARTE is disabled
+			// to achieve the lowest power consumption.
+			nrf_uarte_shorts_disable(p_reg, NRF_UARTE_SHORT_ENDRX_STARTRX);
+
+			// Check if there is any ongoing reception.
+			if (p_cb->rx_buffer_length)
+			{
+				nrf_uarte_event_clear(p_reg, NRF_UARTE_EVENT_RXTO);
+				nrf_uarte_task_trigger(p_reg, NRF_UARTE_TASK_STOPRX);
+			}
+
+			nrf_uarte_event_clear(p_reg, NRF_UARTE_EVENT_TXSTOPPED);
+			nrf_uarte_task_trigger(p_reg, NRF_UARTE_TASK_STOPTX);
+
+			// Wait for TXSTOPPED event and for RXTO event, provided that there was ongoing reception.
+			bool stopped;
+
+			// The UARTE is able to receive up to four bytes after the STOPRX task has been triggered.
+			// On lowest supported baud rate (1200 baud), with parity bit and two stop bits configured
+			// (resulting in 12 bits per data byte sent), this may take up to 40 ms.
+			NRFX_WAIT_FOR((nrf_uarte_event_check(p_reg, NRF_UARTE_EVENT_TXSTOPPED) &&
+						  (!p_cb->rx_buffer_length || nrf_uarte_event_check(p_reg, NRF_UARTE_EVENT_RXTO))),
+						  40000, 1, stopped);
+			if (!stopped)
+			{
+				NRFX_LOG_ERROR("Failed to stop instance with base address: %p.", (void *)p_instance->p_reg);
+			}
+
+			nrf_uarte_disable(p_reg);
+			pins_to_default(p_instance);
+
+			
+            nrfx_rtn_backup(p_reg, nrfx_rtn_uarte_ctrl_list, &uarte_registers[inst_idx]);
+			
+#if defined(NRF52_SERIES)
+            *(volatile uint32_t *)((uint8_t *)p_reg + (uint32_t)0xFFC) = 0;
+#endif
+			nrf_uarte_disable(p_reg);
+            m_cb[inst_idx].p_tx_buffer = NULL;
+            m_cb[inst_idx].tx_buffer_length = 0;
+            m_cb[inst_idx].p_rx_buffer = NULL;
+            m_cb[inst_idx].rx_buffer_length = 0;
+            m_cb[inst_idx].rx_secondary_buffer_length = 0;
+            m_cb[inst_idx].rx_aborted = false;
+            nrfx_pm_notify(&uarte_pm[inst_idx]);
+            break;
+    }
+
+    return NRFX_SUCCESS;
+}
+
+#if NRFX_CHECK(NRFX_UARTE0_ENABLED)
+static nrfx_err_t pm_uarte_0_transition_handler(nrfx_pm_operation_t operation)
+{
+    return pm_uarte_transition_handler(operation, NRF_UARTE0, NRFX_UARTE0_INST_IDX);
+}
+#endif
+
+#if NRFX_CHECK(NRFX_UARTE1_ENABLED)
+static nrfx_err_t pm_uarte_1_transition_handler(nrfx_pm_operation_t operation)
+{
+    return pm_uarte_transition_handler(operation, NRF_UARTE1, NRFX_UARTE1_INST_IDX);
+}
+#endif
+
+#if NRFX_CHECK(NRFX_UARTE2_ENABLED)
+static nrfx_err_t pm_uarte_2_transition_handler(nrfx_pm_operation_t operation)
+{
+    return pm_uarte_transition_handler(operation, NRF_UARTE2, NRFX_UARTE2_INST_IDX);
+}
+#endif
+
+#if NRFX_CHECK(NRFX_UARTE3_ENABLED)
+static nrfx_err_t pm_uarte_3_transition_handler(nrfx_pm_operation_t operation)
+{
+    return pm_uarte_transition_handler(operation, NRF_UARTE3, NRFX_UARTE3_INST_IDX);
+}
+#endif
+
+void * nrfx_uarte_pm_get(nrfx_uarte_t const * p_instance)
+{
+    return &uarte_pm[p_instance->drv_inst_idx];
+}
+
+#endif // NRFX_CHECK(NRFX_PM_ENABLED)
+
 nrfx_err_t nrfx_uarte_init(nrfx_uarte_t const *        p_instance,
                            nrfx_uarte_config_t const * p_config,
                            nrfx_uarte_event_handler_t  event_handler)
@@ -263,6 +419,11 @@ nrfx_err_t nrfx_uarte_init(nrfx_uarte_t const *        p_instance,
     p_cb->rx_secondary_buffer_length = 0;
     p_cb->tx_buffer_length           = 0;
     p_cb->state                      = NRFX_DRV_STATE_INITIALIZED;
+
+#if NRFX_CHECK(NRFX_PM_ENABLED)
+    nrfx_pm_powered_set(&uarte_pm[p_instance->drv_inst_idx]);
+#endif
+
     NRFX_LOG_WARNING("Function: %s, error code: %s.",
                      __func__,
                      NRFX_LOG_ERROR_STRING_GET(err_code));
@@ -318,6 +479,23 @@ void nrfx_uarte_uninit(nrfx_uarte_t const * p_instance)
     NRFX_LOG_INFO("Instance uninitialized: %d.", p_instance->drv_inst_idx);
 }
 
+#if NRFX_CHECK(NRFX_PM_ENABLED)
+static bool rx_in_progress(uarte_control_block_t const * p_cb)
+{
+    return (p_cb->rx_buffer_length != 0);
+}
+#endif
+
+static bool tx_in_progress(uarte_control_block_t const * p_cb)
+{
+    return (p_cb->tx_buffer_length != 0);
+}
+
+bool nrfx_uarte_tx_in_progress(nrfx_uarte_t const * p_instance)
+{
+    return tx_in_progress(&m_cb[p_instance->drv_inst_idx]);
+}
+
 nrfx_err_t nrfx_uarte_tx(nrfx_uarte_t const * p_instance,
                          uint8_t const *      p_data,
                          size_t               length)
@@ -341,7 +519,7 @@ nrfx_err_t nrfx_uarte_tx(nrfx_uarte_t const * p_instance,
         return err_code;
     }
 
-    if (nrfx_uarte_tx_in_progress(p_instance))
+    if (tx_in_progress(p_cb))
     {
         err_code = NRFX_ERROR_BUSY;
         NRFX_LOG_WARNING("Function: %s, error code: %s.",
@@ -358,6 +536,10 @@ nrfx_err_t nrfx_uarte_tx(nrfx_uarte_t const * p_instance,
                            p_cb->tx_buffer_length * sizeof(p_cb->p_tx_buffer[0]));
 
     err_code = NRFX_SUCCESS;
+
+#if NRFX_CHECK(NRFX_PM_ENABLED)
+    nrfx_pm_busy_set(&uarte_pm[p_instance->drv_inst_idx], true);
+#endif
 
     nrf_uarte_event_clear(p_instance->p_reg, NRF_UARTE_EVENT_ENDTX);
     nrf_uarte_event_clear(p_instance->p_reg, NRF_UARTE_EVENT_TXSTOPPED);
@@ -389,15 +571,17 @@ nrfx_err_t nrfx_uarte_tx(nrfx_uarte_t const * p_instance,
             {}
         }
         p_cb->tx_buffer_length = 0;
+
+#if NRFX_CHECK(NRFX_PM_ENABLED)
+        if (!rx_in_progress(p_cb))
+        {
+            nrfx_pm_busy_set(&uarte_pm[p_instance->drv_inst_idx], false);
+        }
+#endif
     }
 
     NRFX_LOG_INFO("Function: %s, error code: %s.", __func__, NRFX_LOG_ERROR_STRING_GET(err_code));
     return err_code;
-}
-
-bool nrfx_uarte_tx_in_progress(nrfx_uarte_t const * p_instance)
-{
-    return (m_cb[p_instance->drv_inst_idx].tx_buffer_length != 0);
 }
 
 nrfx_err_t nrfx_uarte_rx(nrfx_uarte_t const * p_instance,
@@ -465,6 +649,10 @@ nrfx_err_t nrfx_uarte_rx(nrfx_uarte_t const * p_instance,
 
     err_code = NRFX_SUCCESS;
 
+#if NRFX_CHECK(NRFX_PM_ENABLED)
+    nrfx_pm_busy_set(&uarte_pm[p_instance->drv_inst_idx], true);
+#endif
+
     nrf_uarte_event_clear(p_instance->p_reg, NRF_UARTE_EVENT_ENDRX);
     nrf_uarte_event_clear(p_instance->p_reg, NRF_UARTE_EVENT_RXTO);
     nrf_uarte_rx_buffer_set(p_instance->p_reg, p_data, length);
@@ -499,6 +687,13 @@ nrfx_err_t nrfx_uarte_rx(nrfx_uarte_t const * p_instance,
         {
             err_code = NRFX_ERROR_FORBIDDEN;
         }
+
+#if NRFX_CHECK(NRFX_PM_ENABLED)
+        if (!tx_in_progress(p_cb))
+        {
+            nrfx_pm_busy_set(&uarte_pm[p_instance->drv_inst_idx], false);
+        }
+#endif
     }
     else
     {
@@ -523,7 +718,8 @@ uint32_t nrfx_uarte_errorsrc_get(nrfx_uarte_t const * p_instance)
 
 static void rx_done_event(uarte_control_block_t * p_cb,
                           size_t                  bytes,
-                          uint8_t *               p_data)
+                          uint8_t *               p_data,
+                          uint8_t                 inst_idx)
 {
     nrfx_uarte_event_t event;
 
@@ -531,11 +727,21 @@ static void rx_done_event(uarte_control_block_t * p_cb,
     event.data.rxtx.bytes  = bytes;
     event.data.rxtx.p_data = p_data;
 
+#if NRFX_CHECK(NRFX_PM_ENABLED)
+    if (!tx_in_progress(p_cb))
+    {
+        nrfx_pm_busy_set(&uarte_pm[inst_idx], false);
+    }
+#else
+    (void)inst_idx;
+#endif
+
     p_cb->handler(&event, p_cb->p_context);
 }
 
 static void tx_done_event(uarte_control_block_t * p_cb,
-                          size_t                  bytes)
+                          size_t                  bytes,
+                          uint8_t                 inst_idx)
 {
     nrfx_uarte_event_t event;
 
@@ -544,6 +750,15 @@ static void tx_done_event(uarte_control_block_t * p_cb,
     event.data.rxtx.p_data = (uint8_t *)p_cb->p_tx_buffer;
 
     p_cb->tx_buffer_length = 0;
+
+#if NRFX_CHECK(NRFX_PM_ENABLED)
+    if (!rx_in_progress(p_cb))
+    {
+        nrfx_pm_busy_set(&uarte_pm[inst_idx], false);
+    }
+#else
+    (void)inst_idx;
+#endif
 
     p_cb->handler(&event, p_cb->p_context);
 }
@@ -559,6 +774,14 @@ void nrfx_uarte_tx_abort(nrfx_uarte_t const * p_instance)
         while (!nrf_uarte_event_check(p_instance->p_reg, NRF_UARTE_EVENT_TXSTOPPED))
         {}
     }
+
+#if NRFX_CHECK(NRFX_PM_ENABLED)
+    if (!rx_in_progress(p_cb))
+    {
+        nrfx_pm_busy_set(&uarte_pm[p_instance->drv_inst_idx], false);
+    }
+#endif
+
     NRFX_LOG_INFO("TX transaction aborted.");
 }
 
@@ -574,12 +797,21 @@ void nrfx_uarte_rx_abort(nrfx_uarte_t const * p_instance)
     }
     p_cb->rx_aborted = true;
     nrf_uarte_task_trigger(p_instance->p_reg, NRF_UARTE_TASK_STOPRX);
+
+#if NRFX_CHECK(NRFX_PM_ENABLED)
+    if (!tx_in_progress(p_cb))
+    {
+        nrfx_pm_busy_set(&uarte_pm[p_instance->drv_inst_idx], false);
+    }
+#endif
+
     NRFX_LOG_INFO("RX transaction aborted.");
 }
 
-static void uarte_irq_handler(NRF_UARTE_Type *        p_uarte,
-                              uarte_control_block_t * p_cb)
+static void uarte_irq_handler(NRF_UARTE_Type * p_uarte, uint8_t inst_idx)
 {
+    uarte_control_block_t * p_cb = &m_cb[inst_idx];
+
     if (nrf_uarte_event_check(p_uarte, NRF_UARTE_EVENT_ERROR))
     {
         nrfx_uarte_event_t event;
@@ -596,6 +828,13 @@ static void uarte_irq_handler(NRF_UARTE_Type *        p_uarte,
         p_cb->rx_secondary_buffer_length = 0;
 
         p_cb->handler(&event, p_cb->p_context);
+
+#if NRFX_CHECK(NRFX_PM_ENABLED)
+        if (!tx_in_progress(p_cb))
+        {
+            nrfx_pm_busy_set(&uarte_pm[inst_idx], false);
+        }
+#endif
     }
     else if (nrf_uarte_event_check(p_uarte, NRF_UARTE_EVENT_ENDRX))
     {
@@ -612,12 +851,12 @@ static void uarte_irq_handler(NRF_UARTE_Type *        p_uarte,
                 p_cb->rx_buffer_length = p_cb->rx_secondary_buffer_length;
                 p_cb->p_rx_buffer = p_cb->p_rx_secondary_buffer;
                 p_cb->rx_secondary_buffer_length = 0;
-                rx_done_event(p_cb, amount, p_data);
+                rx_done_event(p_cb, amount, p_data, inst_idx);
             }
             else
             {
                 p_cb->rx_buffer_length = 0;
-                rx_done_event(p_cb, amount, p_cb->p_rx_buffer);
+                rx_done_event(p_cb, amount, p_cb->p_rx_buffer, inst_idx);
             }
         }
     }
@@ -632,7 +871,7 @@ static void uarte_irq_handler(NRF_UARTE_Type *        p_uarte,
             // In case of using double-buffered reception both variables storing buffer length
             // have to be cleared to prevent incorrect behaviour of the driver.
             p_cb->rx_secondary_buffer_length = 0;
-            rx_done_event(p_cb, nrf_uarte_rx_amount_get(p_uarte), p_cb->p_rx_buffer);
+            rx_done_event(p_cb, nrf_uarte_rx_amount_get(p_uarte), p_cb->p_rx_buffer, inst_idx);
         }
     }
 
@@ -646,7 +885,7 @@ static void uarte_irq_handler(NRF_UARTE_Type *        p_uarte,
 
         if (p_cb->tx_buffer_length != 0)
         {
-            tx_done_event(p_cb, nrf_uarte_tx_amount_get(p_uarte));
+            tx_done_event(p_cb, nrf_uarte_tx_amount_get(p_uarte), inst_idx);
         }
     }
 
@@ -655,7 +894,7 @@ static void uarte_irq_handler(NRF_UARTE_Type *        p_uarte,
         nrf_uarte_event_clear(p_uarte, NRF_UARTE_EVENT_TXSTOPPED);
         if (p_cb->tx_buffer_length != 0)
         {
-            tx_done_event(p_cb, nrf_uarte_tx_amount_get(p_uarte));
+            tx_done_event(p_cb, nrf_uarte_tx_amount_get(p_uarte), inst_idx);
         }
     }
 }
@@ -663,28 +902,28 @@ static void uarte_irq_handler(NRF_UARTE_Type *        p_uarte,
 #if NRFX_CHECK(NRFX_UARTE0_ENABLED)
 void nrfx_uarte_0_irq_handler(void)
 {
-    uarte_irq_handler(NRF_UARTE0, &m_cb[NRFX_UARTE0_INST_IDX]);
+    uarte_irq_handler(NRF_UARTE0, NRFX_UARTE0_INST_IDX);
 }
 #endif
 
 #if NRFX_CHECK(NRFX_UARTE1_ENABLED)
 void nrfx_uarte_1_irq_handler(void)
 {
-    uarte_irq_handler(NRF_UARTE1, &m_cb[NRFX_UARTE1_INST_IDX]);
+    uarte_irq_handler(NRF_UARTE1, NRFX_UARTE1_INST_IDX);
 }
 #endif
 
 #if NRFX_CHECK(NRFX_UARTE2_ENABLED)
 void nrfx_uarte_2_irq_handler(void)
 {
-    uarte_irq_handler(NRF_UARTE2, &m_cb[NRFX_UARTE2_INST_IDX]);
+    uarte_irq_handler(NRF_UARTE2, NRFX_UARTE2_INST_IDX);
 }
 #endif
 
 #if NRFX_CHECK(NRFX_UARTE3_ENABLED)
 void nrfx_uarte_3_irq_handler(void)
 {
-    uarte_irq_handler(NRF_UARTE3, &m_cb[NRFX_UARTE3_INST_IDX]);
+    uarte_irq_handler(NRF_UARTE3, NRFX_UARTE3_INST_IDX);
 }
 #endif
 

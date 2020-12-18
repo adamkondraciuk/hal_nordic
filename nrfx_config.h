@@ -106,6 +106,10 @@
 #define NRFX_PDM_ENABLED 1
 #endif
 
+#ifdef CONFIG_NRFX_PM
+#define NRFX_PM_ENABLED 1
+#endif
+
 #ifdef CONFIG_NRFX_POWER
 #define NRFX_POWER_ENABLED 1
 #endif
@@ -172,6 +176,10 @@
 #endif
 #ifdef CONFIG_NRFX_RTC2
 #define NRFX_RTC2_ENABLED 1
+#endif
+
+#ifdef CONFIG_NRFX_RTN
+#define NRFX_RTN_ENABLED 1
 #endif
 
 #ifdef CONFIG_NRFX_SAADC
