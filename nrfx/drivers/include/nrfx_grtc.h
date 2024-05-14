@@ -581,6 +581,8 @@ NRFX_STATIC_INLINE void nrfx_grtc_clock_source_set(nrf_grtc_clksel_t  clk_src)
     nrfy_grtc_clksel_set(NRF_GRTC, clk_src);
 }
 #endif // NRFY_GRTC_HAS_CLKSEL
+
+nrfx_err_t nrfx_grtc_clock_output_set(nrf_grtc_clkout_t type, bool enable, uint32_t pin, uint8_t divider);
 #endif // NRFX_DECLARE_ONLY
 
 /** @} */

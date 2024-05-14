@@ -38,6 +38,7 @@
 #include <nrfx_grtc.h>
 #include <soc/nrfx_coredep.h>
 #include <helpers/nrfx_flag32_allocator.h>
+#include <haly/nrfy_gpio.h>
 
 #define NRFX_LOG_MODULE GRTC
 #include <nrfx_log.h>
@@ -905,6 +906,21 @@ nrfx_err_t nrfx_grtc_syscounter_cc_value_read(uint8_t channel, uint64_t * p_val)
 
     NRFX_LOG_INFO("GRTC SYSCOUNTER capture for channel %u read: %llu.", (uint32_t)channel, *p_val);
     return err_code;
+}
+
+nrfx_err_t nrfx_grtc_clock_output_set(nrf_grtc_clkout_t type, bool enable, uint32_t pin, uint8_t divider)
+{
+    nrfy_grtc_clkout_set(NRF_GRTC, type, enable);
+    if (type == NRF_GRTC_CLKOUT_FAST)
+    {
+        nrf_grtc_clkout_divider_set(NRF_GRTC, (uint8_t)divider);
+    }
+    nrf_gpio_cfg_output(pin);
+#if NRF_GPIO_HAS_CLOCKPIN
+    nrfy_gpio_pin_clock_set(pin, enable);
+#endif
+
+    return NRFX_SUCCESS;
 }
 
 static void grtc_irq_handler(void)
