@@ -1,43 +1,8 @@
-/*
- * Copyright (c) 2015 - 2025, Nordic Semiconductor ASA
- * All rights reserved.
- *
- * SPDX-License-Identifier: BSD-3-Clause
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- *
- * 1. Redistributions of source code must retain the above copyright notice, this
- *    list of conditions and the following disclaimer.
- *
- * 2. Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in the
- *    documentation and/or other materials provided with the distribution.
- *
- * 3. Neither the name of the copyright holder nor the names of its
- *    contributors may be used to endorse or promote products derived from this
- *    software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
- * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- */
+/*$$$LICENCE_NORDIC_STANDARD<2015>$$$*/
 
 #include <nrfx.h>
 
 #if NRFX_CHECK(NRFX_TWIM_ENABLED)
-
-#if !NRFX_FEATURE_PRESENT(NRFX_TWIM, _ENABLED)
-#error "No enabled TWIM instances. Check <nrfx_config.h>."
-#endif
 
 #include <nrfx_twim.h>
 #include <haly/nrfy_gpio.h>
@@ -78,43 +43,19 @@
                                                   (_drive),                   \
                                                   NRF_GPIO_PIN_NOSENSE)
 
-#define TWIMX_LENGTH_VALIDATE(periph_name, prefix, i, drv_inst_idx, len1, len2) \
-    (((drv_inst_idx) == NRFX_CONCAT(NRFX_, periph_name, prefix, i, _INST_IDX)) && \
+#define TWIMX_LENGTH_VALIDATE(periph_name, prefix, i, p_twim, len1, len2) \
+    (((p_twim) == NRFX_CONCAT(NRF_, periph_name, prefix, i)) && \
      NRFX_EASYDMA_LENGTH_VALIDATE(NRFX_CONCAT(periph_name, prefix, i), len1, len2))
 
-#define TWIM_LENGTH_VALIDATE(drv_inst_idx, len1, len2)    \
-        (NRFX_FOREACH_ENABLED(TWIM, TWIMX_LENGTH_VALIDATE, (||), (0), drv_inst_idx, len1, len2))
+#define TWIM_LENGTH_VALIDATE(p_twim, len1, len2)    \
+        (NRFX_FOREACH_ENABLED(TWIM, TWIMX_LENGTH_VALIDATE, (||), (0), p_twim, len1, len2))
 
 #if NRFX_CHECK(NRFX_TWIM_NRF52_ANOMALY_219_WORKAROUND_ENABLED) || \
     NRFX_CHECK(NRFX_TWIM_NRF53_ANOMALY_47_WORKAROUND_ENABLED)
 #define USE_WORKAROUND_FOR_TWIM_FREQ_ANOMALY 1
-#else
+#else 
 #define USE_WORKAROUND_FOR_TWIM_FREQ_ANOMALY 0
 #endif
-
-// Control block - driver instance local data.
-typedef struct
-{
-    nrfx_twim_evt_handler_t handler;
-    void *                  p_context;
-    volatile uint32_t       int_mask;
-    nrfy_twim_xfer_desc_t   xfer_desc_primary;
-    nrfy_twim_xfer_desc_t   xfer_desc_secondary;
-    uint32_t                flags;
-    nrfx_twim_xfer_type_t   xfer_type;
-    uint8_t                 address;
-    nrfx_drv_state_t        state;
-    bool                    error;
-    volatile bool           busy;
-    bool                    repeated;
-    bool                    hold_bus_uninit;
-    bool                    skip_gpio_cfg;
-#if NRFX_CHECK(NRFX_TWIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED)
-    nrf_twim_frequency_t    bus_frequency;
-#endif
-} twim_control_block_t;
-
-static twim_control_block_t m_cb[NRFX_TWIM_ENABLED_COUNT];
 
 static nrfx_err_t twi_process_error(uint32_t errorsrc)
 {
@@ -138,7 +79,7 @@ static nrfx_err_t twi_process_error(uint32_t errorsrc)
     return ret;
 }
 
-static bool xfer_completeness_check(NRF_TWIM_Type * p_twim, twim_control_block_t const * p_cb)
+static bool xfer_completeness_check(NRF_TWIM_Type * p_twim, twim_control_block_t * p_cb)
 {
     // If the actual number of transferred bytes is not equal to what was requested,
     // but there was no error signaled by the peripheral, this means that something
@@ -193,7 +134,7 @@ static bool xfer_completeness_check(NRF_TWIM_Type * p_twim, twim_control_block_t
     return transfer_complete;
 }
 
-static void twim_configure(nrfx_twim_t const *        p_instance,
+static void twim_configure(nrfx_twim_t *        p_instance,
                            nrfx_twim_config_t const * p_config)
 {
     nrfy_twim_config_t nrfy_config =
@@ -215,7 +156,7 @@ static void twim_configure(nrfx_twim_t const *        p_instance,
 #endif
 
     nrfy_twim_periph_configure(p_instance->p_twim, &nrfy_config);
-    if (m_cb[p_instance->drv_inst_idx].handler)
+    if (p_instance->m_cb.handler)
     {
         nrfy_twim_int_init(p_instance->p_twim, 0, p_config->interrupt_priority, false);
     }
@@ -275,14 +216,29 @@ static bool pins_configure(nrfx_twim_config_t const * p_config)
     return true;
 }
 
-nrfx_err_t nrfx_twim_init(nrfx_twim_t const *        p_instance,
+NRFX_INSTANCES_DEFINE(TWIM, twim)
+
+nrfx_err_t nrfx_twim_init(nrfx_twim_t              * p_instance,
                           nrfx_twim_config_t const * p_config,
                           nrfx_twim_evt_handler_t    event_handler,
                           void *                     p_context)
 {
+    uint8_t inst_idx;
+    const NRF_TWIM_Type * nrf_instances[NRFX_TWIM_ENABLED_COUNT] = {
+        NRF_INSTANCES_LIST(TWIM)
+    };
+
     NRFX_ASSERT(p_config);
 
-    twim_control_block_t * p_cb  = &m_cb[p_instance->drv_inst_idx];
+    for (inst_idx = 0; inst_idx < NRFX_TWIM_ENABLED_COUNT; inst_idx++)
+    {
+        if(p_instance->p_twim == nrf_instances[inst_idx])
+        {
+            nrfx_twim_instances[inst_idx] = p_instance;
+            break;
+        }
+    }
+    twim_control_block_t * p_cb = &p_instance->m_cb;
     nrfx_err_t err_code;
 
     if (p_cb->state != NRFX_DRV_STATE_UNINITIALIZED)
@@ -303,7 +259,7 @@ nrfx_err_t nrfx_twim_init(nrfx_twim_t const *        p_instance,
         NRFX_INSTANCE_IRQ_HANDLERS_LIST(TWIM, twim)
     };
     if (nrfx_prs_acquire(p_instance->p_twim,
-            irq_handlers[p_instance->drv_inst_idx]) != NRFX_SUCCESS)
+            irq_handlers[inst_idx]) != NRFX_SUCCESS)
     {
         err_code = NRFX_ERROR_BUSY;
         NRFX_LOG_WARNING("Function: %s, error code: %s.",
@@ -345,12 +301,12 @@ nrfx_err_t nrfx_twim_init(nrfx_twim_t const *        p_instance,
     return err_code;
 }
 
-nrfx_err_t nrfx_twim_reconfigure(nrfx_twim_t const *        p_instance,
+nrfx_err_t nrfx_twim_reconfigure(nrfx_twim_t *        p_instance,
                                  nrfx_twim_config_t const * p_config)
 {
     NRFX_ASSERT(p_config);
 
-    twim_control_block_t * p_cb = &m_cb[p_instance->drv_inst_idx];
+    twim_control_block_t * p_cb = &p_instance->m_cb;
 
     if (p_cb->state == NRFX_DRV_STATE_UNINITIALIZED)
     {
@@ -375,21 +331,21 @@ nrfx_err_t nrfx_twim_reconfigure(nrfx_twim_t const *        p_instance,
     return err_code;
 }
 
-void nrfx_twim_callback_get(nrfx_twim_t const *       p_instance,
+void nrfx_twim_callback_get(nrfx_twim_t *             p_instance,
                             nrfx_twim_evt_handler_t * p_event_handler,
                             void **                   pp_context)
 {
-    twim_control_block_t * p_cb  = &m_cb[p_instance->drv_inst_idx];
+    twim_control_block_t * p_cb = &p_instance->m_cb;
 
     *p_event_handler = p_cb->handler;
     *pp_context      = p_cb->p_context;
 }
 
-nrfx_err_t nrfx_twim_callback_set(nrfx_twim_t const *     p_instance,
+nrfx_err_t nrfx_twim_callback_set(nrfx_twim_t *           p_instance,
                                   nrfx_twim_evt_handler_t event_handler,
                                   void *                  p_context)
 {
-    twim_control_block_t * p_cb  = &m_cb[p_instance->drv_inst_idx];
+    twim_control_block_t * p_cb = &p_instance->m_cb;
 
     NRFX_ASSERT(event_handler);
 
@@ -411,9 +367,9 @@ nrfx_err_t nrfx_twim_callback_set(nrfx_twim_t const *     p_instance,
     return NRFX_SUCCESS;
 }
 
-void nrfx_twim_uninit(nrfx_twim_t const * p_instance)
+void nrfx_twim_uninit(nrfx_twim_t * p_instance)
 {
-    twim_control_block_t * p_cb = &m_cb[p_instance->drv_inst_idx];
+    twim_control_block_t * p_cb = &p_instance->m_cb;
 
     NRFX_ASSERT(p_cb->state != NRFX_DRV_STATE_UNINITIALIZED);
 
@@ -434,30 +390,30 @@ void nrfx_twim_uninit(nrfx_twim_t const * p_instance)
     }
 
     p_cb->state = NRFX_DRV_STATE_UNINITIALIZED;
-    NRFX_LOG_INFO("Instance uninitialized: %d.", p_instance->drv_inst_idx);
+    NRFX_LOG_INFO("Instance uninitialized: %p.", p_instance->p_twim);
 }
 
-bool nrfx_twim_init_check(nrfx_twim_t const * p_instance)
+bool nrfx_twim_init_check(nrfx_twim_t * p_instance)
 {
-    twim_control_block_t * p_cb = &m_cb[p_instance->drv_inst_idx];
+    twim_control_block_t * p_cb = &p_instance->m_cb;
 
     return (p_cb->state != NRFX_DRV_STATE_UNINITIALIZED);
 }
 
-void nrfx_twim_enable(nrfx_twim_t const * p_instance)
+void nrfx_twim_enable(nrfx_twim_t * p_instance)
 {
-    twim_control_block_t * p_cb = &m_cb[p_instance->drv_inst_idx];
+    twim_control_block_t * p_cb = &p_instance->m_cb;
     NRFX_ASSERT(p_cb->state == NRFX_DRV_STATE_INITIALIZED);
 
     nrfy_twim_enable(p_instance->p_twim);
 
     p_cb->state = NRFX_DRV_STATE_POWERED_ON;
-    NRFX_LOG_INFO("Instance enabled: %d.", p_instance->drv_inst_idx);
+    NRFX_LOG_INFO("Instance enabled: %p.", p_instance->p_twim);
 }
 
-void nrfx_twim_disable(nrfx_twim_t const * p_instance)
+void nrfx_twim_disable(nrfx_twim_t * p_instance)
 {
-    twim_control_block_t * p_cb = &m_cb[p_instance->drv_inst_idx];
+    twim_control_block_t * p_cb = &p_instance->m_cb;
 
     NRFX_ASSERT(p_cb->state != NRFX_DRV_STATE_UNINITIALIZED);
 
@@ -465,12 +421,12 @@ void nrfx_twim_disable(nrfx_twim_t const * p_instance)
     nrfy_twim_stop(p_instance->p_twim);
     p_cb->state = NRFX_DRV_STATE_INITIALIZED;
     p_cb->busy = false;
-    NRFX_LOG_INFO("Instance disabled: %d.", p_instance->drv_inst_idx);
+    NRFX_LOG_INFO("Instance disabled: %p.", p_instance->p_twim);
 }
 
-bool nrfx_twim_is_busy(nrfx_twim_t const * p_instance)
+bool nrfx_twim_is_busy(nrfx_twim_t * p_instance)
 {
-    twim_control_block_t * p_cb = &m_cb[p_instance->drv_inst_idx];
+    twim_control_block_t * p_cb = &p_instance->m_cb;
     return p_cb->busy;
 }
 
@@ -687,15 +643,15 @@ static nrfx_err_t twim_xfer(twim_control_block_t        * p_cb,
 }
 
 
-nrfx_err_t nrfx_twim_xfer(nrfx_twim_t           const * p_instance,
+nrfx_err_t nrfx_twim_xfer(nrfx_twim_t                 * p_instance,
                           nrfx_twim_xfer_desc_t const * p_xfer_desc,
                           uint32_t                      flags)
 {
-    NRFX_ASSERT(TWIM_LENGTH_VALIDATE(p_instance->drv_inst_idx,
+    NRFX_ASSERT(TWIM_LENGTH_VALIDATE(p_instance->p_twim,
                                      p_xfer_desc->primary_length,
                                      p_xfer_desc->secondary_length));
 
-    twim_control_block_t * p_cb = &m_cb[p_instance->drv_inst_idx];
+    twim_control_block_t * p_cb = &p_instance->m_cb;
 
     NRFX_ASSERT(p_cb->state == NRFX_DRV_STATE_POWERED_ON);
 
@@ -719,24 +675,27 @@ nrfx_err_t nrfx_twim_xfer(nrfx_twim_t           const * p_instance,
     return twim_xfer(p_cb, p_instance->p_twim, p_xfer_desc, flags);
 }
 
-uint32_t nrfx_twim_start_task_address_get(nrfx_twim_t const *   p_instance,
+uint32_t nrfx_twim_start_task_address_get(nrfx_twim_t *   p_instance,
                                           nrfx_twim_xfer_type_t xfer_type)
 {
-    NRFX_ASSERT(m_cb[p_instance->drv_inst_idx].state != NRFX_DRV_STATE_UNINITIALIZED);
+    NRFX_ASSERT(p_instance->m_cb.state != NRFX_DRV_STATE_UNINITIALIZED);
 
     return nrfy_twim_task_address_get(p_instance->p_twim,
         (xfer_type != NRFX_TWIM_XFER_RX) ? NRF_TWIM_TASK_STARTTX : NRF_TWIM_TASK_STARTRX);
 }
 
-uint32_t nrfx_twim_stopped_event_address_get(nrfx_twim_t const * p_instance)
+uint32_t nrfx_twim_stopped_event_address_get(nrfx_twim_t * p_instance)
 {
-    NRFX_ASSERT(m_cb[p_instance->drv_inst_idx].state != NRFX_DRV_STATE_UNINITIALIZED);
+    NRFX_ASSERT(p_instance->m_cb.state != NRFX_DRV_STATE_UNINITIALIZED);
 
     return nrfy_twim_event_address_get(p_instance->p_twim, NRF_TWIM_EVENT_STOPPED);
 }
 
-static void irq_handler(NRF_TWIM_Type * p_twim, twim_control_block_t * p_cb)
+void nrfx_twim_irq_handler(nrfx_twim_t * p_instance)
 {
+    NRF_TWIM_Type * p_twim = p_instance->p_twim;
+    twim_control_block_t * p_cb = &p_instance->m_cb;
+
     nrfy_twim_xfer_desc_t * p_xfer = p_cb->xfer_type == NRFX_TWIM_XFER_RX ?
                                                         &p_cb->xfer_desc_primary :
                                                         &p_cb->xfer_desc_secondary;
@@ -931,6 +890,6 @@ static void irq_handler(NRF_TWIM_Type * p_twim, twim_control_block_t * p_cb)
     }
 }
 
-NRFX_INSTANCE_IRQ_HANDLERS(TWIM, twim)
+NRFX_NEW_INSTANCE_IRQ_HANDLERS(TWIM, twim)
 
 #endif // NRFX_CHECK(NRFX_TWIM_ENABLED)

@@ -1,35 +1,4 @@
-/*
- * Copyright (c) 2017 - 2025, Nordic Semiconductor ASA
- * All rights reserved.
- *
- * SPDX-License-Identifier: BSD-3-Clause
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- *
- * 1. Redistributions of source code must retain the above copyright notice, this
- *    list of conditions and the following disclaimer.
- *
- * 2. Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in the
- *    documentation and/or other materials provided with the distribution.
- *
- * 3. Neither the name of the copyright holder nor the names of its
- *    contributors may be used to endorse or promote products derived from this
- *    software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
- * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- */
+/*$$$LICENCE_NORDIC_STANDARD<2017>$$$*/
 
 #ifndef NRFX_COMMON_H__
 #define NRFX_COMMON_H__
@@ -355,6 +324,25 @@ extern "C" {
  */
 #define NRFX_INSTANCE_IRQ_HANDLERS(periph_name, periph_name_small) \
     NRFX_FOREACH_ENABLED(periph_name, _NRFX_IRQ_HANDLER, (), (), periph_name_small)
+
+#define NRFX_NEW_INSTANCE_IRQ_HANDLERS(periph_name, periph_name_small) \
+    NRFX_FOREACH_ENABLED(periph_name, _NRFX_NEW_IRQ_HANDLER, (), (), periph_name_small)
+
+
+#define NRF_INSTANCE(periph_name, prefix, i, periph_name_small) \
+    NRFX_CONCAT(NRF_, periph_name, i),
+
+#define NRF_INSTANCES_LIST(periph_name) \
+    NRFX_FOREACH_ENABLED(periph_name, NRF_INSTANCE, (), (), ())
+
+#define NRF_INSTANCES_ARRAY_DEFINE(periph_name, periph_name_small) \
+static const volatile NRFX_CONCAT(NRF_, periph_name, _Type) * NRFX_CONCAT(nrf_, periph_name_small, _instances[NRFX_, periph_name, _ENABLED_COUNT]) = \
+{ \
+    NRF_INSTANCES_LIST(periph_name) \
+};
+
+#define NRFX_INSTANCES_DEFINE(periph_name, periph_name_small) \
+static NRFX_CONCAT(nrfx_, periph_name_small, _t) * NRFX_CONCAT(nrfx_, periph_name_small, _instances[NRFX_, periph_name, _ENABLED_COUNT]);
 
 /**
  * @brief Macro for creating an interrupt handler for all enabled driver instances
